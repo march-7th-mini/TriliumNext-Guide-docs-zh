@@ -1,0 +1,93 @@
+name: 翻译 docs → docs-zh（半自动·两阶段）
+
+# 什么时候运行:
+#   1. 手动触发(推荐):仓库页面 → Actions → 本工作流 → Run workflow
+#   2. 每周日自动检查一次上游更新(不需要就删掉下面 schedule 那 3 行)
+on:
+  workflow_dispatch:
+    inputs:
+      only_init:
+        description: '只做初始化(建树+翻译标题+写属性),不翻译正文 —— 先 review 骨架用'
+        type: boolean
+        default: false
+  schedule:
+    - cron: '0 2 * * 0'   # 每周日凌晨 2 点(UTC)
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出你的翻译仓库(只含脚本和上次的翻译结果)
+        uses: actions/checkout@v4
+
+      - name: 只拉取上游 docs 三个目录(不克隆整个仓库)
+        run: |
+          # sparse checkout:只下载 docs/Developer Guide、docs/Release Notes、docs/User Guide
+          git clone --depth 1 --filter=blob:none --sparse \
+            https://github.com/TriliumNext/Trilium.git /tmp/upstream
+          cd /tmp/upstream
+          git sparse-checkout set \
+            "docs/Developer Guide" \
+            "docs/Release Notes" \
+            "docs/User Guide"
+          # 把三个目录复制进工作区(注意:必须在 /tmp/upstream 里 cd 到别处再复制,
+          # 不能 `cp -r "docs/Developer Guide" docs/`,因为目标 docs/Developer Guide
+          # 已存在,cp 会报 "are the same file" 导致整个流程失败)
+          mkdir -p docs
+          cp -r "/tmp/upstream/docs/Developer Guide" \
+                "/tmp/upstream/docs/Release Notes" \
+                "/tmp/upstream/docs/User Guide" docs/
+          echo "--- 已拉取 ---"
+          ls docs/
+
+      - name: 设置 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 阶段一 初始化(建树 + 批量翻译标题 + 生成ID + 写属性)
+        env:
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+        run: python3 translate_trilium_Guide_docs_CHS.py --init
+
+      - name: 阶段二 翻译正文(增量;勾选"只初始化"时跳过)
+        if: ${{ !inputs.only_init }}
+        env:
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+        run: python3 translate_trilium_Guide_docs_CHS.py
+
+      - name: 提交并推送到 translate-bot 分支
+        run: |
+          git config user.name "docs-zh bot"
+          git config user.email "docs-zh-bot@users.noreply.github.com"
+          git add docs-zh
+          if git diff --cached --quiet; then
+            echo "没有新的翻译变更"
+            exit 0
+          fi
+          git commit -m "docs-zh: 同步翻译 $(date +%F)"
+          git push --force origin HEAD:translate-bot
+
+      - name: 自动开 PR(已存在则跳过)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh pr view translate-bot --json number --jq .number >/dev/null 2>&1; then
+            echo "PR 已存在,跳过创建"
+          else
+            gh pr create \
+              --base main \
+              --head translate-bot \
+              --title "docs-zh: 翻译更新 $(date +%F)" \
+            --body "由 workflow 自动生成的 Trilium 帮助文档中文翻译更新。
+
+            【两阶段说明】
+            - 骨架 PR(只初始化):tree + 中文标题 + #originalHelpNoteId/#helpDoc 属性,正文仍为英文原文,先 review 结构和标题。
+            - 完整 PR:正文也已翻译。
+
+            请 review 后合并。合并后在 **Actions** 重新跑一次本工作流即可继续增量同步。"
+              fi
