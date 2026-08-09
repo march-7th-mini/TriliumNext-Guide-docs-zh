@@ -453,15 +453,12 @@ def main():
     used_ids = set()
     stats = {"translated": 0, "skipped": 0, "too_big": 0, "copied": 0}
 
-    all_roots = []
-    app_version = None
     for tree in SRC_TREES:
         meta_path = os.path.join(tree, "!!!meta.json")
         if not os.path.exists(meta_path):
             log(f"[跳过] 没找到 {meta_path}")
             continue
         meta = load_meta(tree)
-        app_version = app_version or meta.get("appVersion")
         dst_base = os.path.join(OUT_DIR, os.path.relpath(tree, "docs"))
 
         # 给每个根挂上基础路径,供 build_tree 递归使用
@@ -475,13 +472,14 @@ def main():
             roots = init_phase(meta, state, used_ids, stats)
         else:
             roots = translate_phase(meta, state, used_ids, stats)
-        all_roots.extend(roots)
 
-    # 合并导出:根目录一个 !!!meta.json,三棵树作为三个 files
-    out_meta = {"formatVersion": 2, "appVersion": app_version or "0.104.1", "files": all_roots}
-    os.makedirs(OUT_DIR, exist_ok=True)
-    with open(os.path.join(OUT_DIR, "!!!meta.json"), "w", encoding="utf-8") as f:
-        json.dump(out_meta, f, ensure_ascii=False, indent=2)
+        # 复刻官方 docs 目录导出形态:每棵树独立写自己的 !!!meta.json,
+        # files 数组只含本树根(含完整 children 嵌套)。
+        # 三个文档目录各自是完整的 Trilium 导出根,可分别打包单独导入。
+        tree_out = {"formatVersion": 2, "appVersion": meta.get("appVersion") or "0.104.1", "files": roots}
+        os.makedirs(dst_base, exist_ok=True)
+        with open(os.path.join(dst_base, "!!!meta.json"), "w", encoding="utf-8") as f:
+            json.dump(tree_out, f, ensure_ascii=False, indent=2)
 
     save_state(state)
 
@@ -490,9 +488,10 @@ def main():
         log("下一步: 先 review 这版骨架(树结构+中文标题+属性),确认后运行本脚本(不带 --init)翻译正文。")
     else:
         log(f"\n[translate] 完成: 翻译 {stats['translated']} | 复用 {stats['skipped']} | 太大跳过 {stats['too_big']}")
-    log(f"输出: {OUT_DIR}/!!!meta.json + 三棵树的正文目录")
-    log("打包: 把 docs-zh 目录内容打成 zip(!!!meta.json 必须在 zip 根目录),即可导入 Trilium")
-    log("      注意: 打包前删除 docs-zh/.translated.json(翻译记忆缓存,不导入 Trilium,但 git 要提交)")
+    log(f"输出: {OUT_DIR}/ 下三个独立文档目录(各含 !!!meta.json + 正文),1:1 复刻官方 docs 结构")
+    log("分别导入: 必须进入单个文档目录后再打 zip,让 !!!meta.json 落在 zip 根,例如:")
+    log('  cd "docs-zh/User Guide" && zip -r "../User Guide-zh.zip" .')
+    log("      注意: .translated.json 是翻译记忆缓存,在 docs-zh 根(不在任何文档目录内),不打进 zip 但要 git 提交")
 
 
 if __name__ == "__main__":
