@@ -1,31 +1,32 @@
-# Build deliveries locally
-## Building the desktop
+# 本地构建交付物
 
-Go to `apps/desktop`, and:
+## 构建桌面版
 
-*   To generate the packages, run `pnpm electron-forge:make`.
-*   To only build the Flatpak, run `pnpm electron-forge:make-flatpak`.
-*   To only build without packaging it, run `pnpm electron-forge:package`.
+进入 `apps/desktop` 目录，然后：
 
-## Building the server
+*   要生成安装包，运行 `pnpm electron-forge:make`。
+*   仅构建 Flatpak 包，运行 `pnpm electron-forge:make-flatpak`。
+*   仅构建而不打包，运行 `pnpm electron-forge:package`。
 
-Go to `apps/server` and run `pnpm package` to run the build script. The built artifacts will appear in `apps/server/dist`, whereas the packaged build will be available in `apps/server/out`.
+## 构建服务器版
 
-## On NixOS
+进入 `apps/server` 目录并运行 `pnpm package` 来执行构建脚本。构建产物将出现在 `apps/server/dist` 目录中，而打包后的构建版本则位于 `apps/server/out` 目录。
 
-Under NixOS the following `nix-shell` is needed:
+## 在 NixOS 上
+
+在 NixOS 下，需要以下 `nix-shell`：
 
 ```
 nix-shell -p jq
 ```
 
-For Linux builds:
+对于 Linux 构建：
 
 ```
 nix-shell -p jq fakeroot dpkg
 ```
 
-To test the Linux builds, use `steam-run`:
+要测试 Linux 构建，请使用 `steam-run`：
 
 ```javascript
 $ NIXPKGS_ALLOW_UNFREE=1 nix-shell -p steam-run

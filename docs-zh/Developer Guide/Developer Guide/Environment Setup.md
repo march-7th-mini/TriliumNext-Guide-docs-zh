@@ -1,36 +1,36 @@
-# Environment Setup
-## Setting up `pnpm`
+# 环境设置
+## 设置 `pnpm`
 
-Trilium uses the `pnpm` package manager in order to better manage its mono-repo structure. Unlike `npm` which comes by default with Node.js, `pnpm` needs to be manually activated.
+Trilium 使用 `pnpm` 包管理器来更好地管理其 monorepo 结构。与 Node.js 默认自带的 `npm` 不同，`pnpm` 需要手动激活。
 
-For most systems this can be achieved via `corepack`:
+在大多数系统上，可以通过 `corepack` 实现：
 
 ```
 corepack enable
 ```
 
-After that, run `pnpm` in a new terminal to see if it is working. On Windows, if you get:
+之后，在新终端中运行 `pnpm` 以确认其是否正常工作。在 Windows 上，如果你看到：
 
 ```
-pnpm : The term 'pnpm' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+pnpm : 无法将“pnpm”项识别为 cmdlet、函数、脚本文件或可运行程序的名称。请检查名称的拼写，如果包含路径，请确保路径正确，然后重试。
 ```
 
-The solution is to run `corepack enable` in a Terminal with administrative rights.
+解决方案是在具有管理员权限的终端中运行 `corepack enable`。
 
-As a quick heads-up of some differences when compared to `npm`:
+以下是相对于 `npm` 的一些差异的快速提示：
 
-*   Generally instead of `npm run` we have `pnpm run` instead.
-*   Instead of `npx` we have `pnpm exec`.
+*   通常，我们使用 `pnpm run` 而不是 `npm run`。
+*   我们使用 `pnpm exec` 而不是 `npx`。
 
-## Installing dependencies
+## 安装依赖
 
-Run `pnpm i` at the top of the `Trilium` repository to install the dependencies.
+在 `Trilium` 仓库的根目录下运行 `pnpm i` 来安装依赖。
 
-> [!NOTE]
-> Dependencies are kept up to date periodically in the project. Generally it's a good rule to do `pnpm i` after each `git pull` on the main branch.
+> [!注意]
+> 项目会定期更新依赖。通常，在主干分支上每次 `git pull` 之后执行 `pnpm i` 是一个好习惯。
 
 ## IDE
 
-Our recommended IDE for working on Trilium is Visual Studio Code (or VSCodium if you are looking for a fully open-source alternative).
+我们推荐使用 Visual Studio Code（或者，如果你想要一个完全开源的替代品，可以使用 VSCodium）来开发 Trilium。
 
-By default we include a number of suggested extensions which should appear when opening the repository in VS Code. Most of the extensions are for integrating various technologies we are using such as Playwright and Vitest for testing or for <a class="reference-link" href="Concepts/Internationalisation%20%20Translations.md">Internationalisation / Translations</a>.
+默认情况下，我们包含了一些建议的扩展，这些扩展在 VS Code 中打开仓库时应该会显示。大多数扩展用于集成我们正在使用的各种技术，例如用于测试的 Playwright 和 Vitest，或者用于<a class="reference-link" href="Concepts/Internationalisation%20%20Translations.md">国际化 / 翻译</a>。

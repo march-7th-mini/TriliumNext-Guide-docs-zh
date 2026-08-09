@@ -1,125 +1,126 @@
-# Tables
-Tables are a powerful feature for <a class="reference-link" href="../Text.md">Text</a> notes, since editing them is generally easy.
+# 表格
+
+表格是<a class="reference-link" href="../Text.md">文本</a>笔记的一项强大功能，因为编辑它们通常很容易。
 
 <figure class="image image-style-align-right"><img style="aspect-ratio:176/204;" src="6_Tables_image.png" width="176" height="204"></figure>
 
-To create a table, simply press the table button and select with the mouse the desired amount of columns and rows, as indicated in the adjacent figure.
+要创建表格，只需按下表格按钮，然后用鼠标选择所需的列数和行数，如旁边图示所示。
 
-## Formatting toolbar
+## 格式工具栏
 
-When a table is selected, a special formatting toolbar will appear:
+当选中表格时，会出现一个特殊的格式工具栏：
 
 <img src="10_Tables_image.png" width="384" height="100">
 
-## Navigating a table
+## 在表格中导航
 
-*   Using the mouse:
-    *   Click on a cell to focus it.
-    *   Click the <img src="11_Tables_image.png" width="28" height="27"> button at the top or the bottom of a table to insert an empty paragraph near it.
-    *   Click the <img src="5_Tables_image.png" width="24" height="26"> button at the top-left of the table to select it entirely (for easy copy-pasting or cutting) or drag and drop it to relocate the table.
-*   Using the keyboard:
-    *   Use the arrow keys on the keyboard to easily navigate between cells.
-    *   It's also possible to use <kbd>Tab</kbd> to go to the next cell and Shift+Tab to go to the previous cell.
-    *   Unlike arrow keys, pressing <kbd>Tab</kbd> at the end of the table (last row, last column) will create a new row automatically.
-    *   To select multiple cells, hold <kbd>Shift</kbd> while using the arrow keys.
+*   使用鼠标：
+    *   点击单元格以聚焦它。
+    *   点击表格顶部或底部的 <img src="11_Tables_image.png" width="28" height="27"> 按钮，在其附近插入一个空段落。
+    *   点击表格左上角的 <img src="5_Tables_image.png" width="24" height="26"> 按钮以完全选中它（便于复制粘贴或剪切），或拖放它以移动表格。
+*   使用键盘：
+    *   使用键盘上的方向键在单元格之间轻松导航。
+    *   也可以使用 <kbd>Tab</kbd> 键移动到下一个单元格，使用 Shift+Tab 移动到上一个单元格。
+    *   与方向键不同，在表格末尾（最后一行、最后一列）按 <kbd>Tab</kbd> 键会自动创建新行。
+    *   要选择多个单元格，在使用方向键时按住 <kbd>Shift</kbd> 键。
 
-## Resizing cells
+## 调整单元格大小
 
-*   Columns can be resized by hovering the mouse over the border of two adjacent cells and dragging it.
-*   By default, the row height is not adjustable using the mouse, but it can be configured from the cell settings (see below).
-*   To adjust exactly the width (in pixels or percentages) of a cell, select the <img src="8_Tables_image.png" width="19" height="19"> button.
+*   将鼠标悬停在两个相邻单元格的边界上并拖动，即可调整列宽。
+*   默认情况下，行高无法使用鼠标调整，但可以在单元格设置中配置（见下文）。
+*   要精确调整单元格的宽度（以像素或百分比为单位），请选择 <img src="8_Tables_image.png" width="19" height="19"> 按钮。
 
-## Inserting new rows and new columns
+## 插入新行和新列
 
-*   To insert a new column, click on a desired location, then press the <img src="Tables_image.png" width="18" height="20"> button from the formatting toolbar and select _Insert column left or right._
-*   To insert a new row, click on a desired location, then press the <img src="7_Tables_image.png" width="20" height="18"> button and select _Insert row above_ or _below_.
-    *   A quicker alternative to creating a new row while at the end of the table is to press the <kbd>Tab</kbd> key.
+*   要插入新列，请点击所需位置，然后按下格式工具栏中的 <img src="Tables_image.png" width="18" height="20"> 按钮，并选择 _在左侧或右侧插入列_。
+*   要插入新行，请点击所需位置，然后按下 <img src="7_Tables_image.png" width="20" height="18"> 按钮，并选择 _在上方或下方插入行_。
+    *   在表格末尾创建新行的更快替代方法是按 <kbd>Tab</kbd> 键。
 
-## Merging cells
+## 合并单元格
 
-To merge two or more cells together, simply select them via drag & drop and press the <img src="1_Tables_image.png" width="19" height="19"> button from the formatting toolbar.
+要合并两个或多个单元格，只需通过拖放选择它们，然后按下格式工具栏中的 <img src="1_Tables_image.png" width="19" height="19"> 按钮。
 
-More options are available by pressing the arrow next to it:
+按下其旁边的箭头可获得更多选项：
 
-*   Click on a single cell and select Merge cell up/down/right/left to merge with an adjacent cell.
-*   Select _Split cell vertically_ or _horizontally_, to split a cell into multiple cells (can also be used to undo a merge).
+*   点击单个单元格，然后选择向上/向下/向右/向左合并单元格，以与相邻单元格合并。
+*   选择 _垂直拆分单元格_ 或 _水平拆分单元格_，将一个单元格拆分为多个单元格（也可用于撤销合并）。
 
-## Table properties
+## 表格属性
 
 <figure class="image image-style-align-right"><img style="aspect-ratio:312/311;" src="2_Tables_image.png" width="312" height="311"></figure>
 
-The table properties can be accessed via the <img src="13_Tables_image.png" width="19" height="19"> button and allows for the following adjustments:
+可以通过 <img src="13_Tables_image.png" width="19" height="19"> 按钮访问表格属性，并允许进行以下调整：
 
-*   Border (not the border of the cells, but the outer rim of the table), which includes the style (single, double), color and width.
-*   The background color, with none set by default.
-*   The width and height of the table in percentage (must end with `%`) or pixels (must end with `px`).
-*   The alignment of the table.
-    *   Left or right-aligned, case in which the text will flow next to it.
-    *   Centered, case in which text will avoid the table, regardless of the table width.
+*   边框（不是单元格的边框，而是表格的外边缘），包括样式（单线、双线）、颜色和宽度。
+*   背景颜色，默认不设置。
+*   表格的宽度和高度，以百分比（必须以 `%` 结尾）或像素（必须以 `px` 结尾）为单位。
+*   表格的对齐方式。
+    *   左对齐或右对齐，此时文本将环绕在表格旁边。
+    *   居中对齐，此时文本将避开表格，无论表格宽度如何。
 
-The table will immediately update to reflect the changes, but the _Save_ button must be pressed for the changes to persist.
+表格将立即更新以反映更改，但必须按下 _保存_ 按钮才能使更改持久生效。
 
-## Cell properties
+## 单元格属性
 
 <figure class="image image-style-align-right"><img style="aspect-ratio:320/386;" src="3_Tables_image.png" width="320" height="386"></figure>
 
-Similarly to table properties, the <img src="12_Tables_image.png" width="19" height="19"> button opens a popup which adjusts the styling of one or more cells (based on the user's selection).
+与表格属性类似，<img src="12_Tables_image.png" width="19" height="19"> 按钮会打开一个弹出窗口，用于调整一个或多个单元格的样式（基于用户的选择）。
 
-The following options can be adjusted:
+可以调整以下选项：
 
-*   The border style, color and width (same as table properties), but applying to the current cell only.
-*   The background color, with none set by default.
-*   The width and height of the cell in percentage (must end with `%`) or pixels (must end with `px`).
-*   The padding (the distance of the text compared to the cell's borders).
-*   The alignment of the text, both horizontally (left, centered, right, justified) and vertically (top, middle or bottom).
+*   边框样式、颜色和宽度（与表格属性相同），但仅应用于当前单元格。
+*   背景颜色，默认不设置。
+*   单元格的宽度和高度，以百分比（必须以 `%` 结尾）或像素（必须以 `px` 结尾）为单位。
+*   内边距（文本与单元格边框之间的距离）。
+*   文本的对齐方式，包括水平（左对齐、居中、右对齐、两端对齐）和垂直（顶部、中部或底部）。
 
-The cell will immediately update to reflect the changes, but the _Save_ button must be pressed for the changes to persist.
+单元格将立即更新以反映更改，但必须按下 _保存_ 按钮才能使更改持久生效。
 
-## Caption
+## 标题
 
-Press the <img src="4_Tables_image.png" width="18" height="17"> button to insert a caption or a text description of the table, which is going to be displayed above the table.
+按下 <img src="4_Tables_image.png" width="18" height="17"> 按钮可插入表格的标题或文本描述，该标题将显示在表格上方。
 
-## Table borders
+## 表格边框
 
-By default, tables will come with a predefined gray border.
+默认情况下，表格会带有预定义的灰色边框。
 
-To adjust the borders, follow these steps:
+要调整边框，请按照以下步骤操作：
 
-1.  Select the table.
-2.  In the floating panel, select the _Table properties_ option (<img src="14_Tables_image.png" width="21" height="21">).
-    1.  Look for the _Border_ section at the top of the newly opened panel.
-    2.  This will control the outer borders of the table.
-    3.  Select a style for the border. Generally _Single_ is the desirable option.
-    4.  Select a color for the border.
-    5.  Select a width for the border, expressed in pixels.
-3.  Select all the cells of the table and then press the _Cell properties_ option (<img src="9_Tables_image.png" width="21" height="21">).
-    1.  This will control the inner borders of the table, at cell level.
-    2.  Note that it's possible to change the borders individually by selecting one or more cells, case in which it will only change the borders that intersect these cells.
-    3.  Repeat the same steps as from step (2).
+1.  选择表格。
+2.  在浮动面板中，选择 _表格属性_ 选项（<img src="14_Tables_image.png" width="21" height="21">）。
+    1.  在新打开的面板顶部查找 _边框_ 部分。
+    2.  这将控制表格的外边框。
+    3.  选择边框样式。通常 _单线_ 是理想的选择。
+    4.  选择边框颜色。
+    5.  选择边框宽度，以像素为单位。
+3.  选择表格的所有单元格，然后按下 _单元格属性_ 选项（<img src="9_Tables_image.png" width="21" height="21">）。
+    1.  这将控制表格的内边框，在单元格级别。
+    2.  请注意，可以通过选择一个或多个单元格来单独更改边框，这种情况下只会更改与这些单元格相交的边框。
+    3.  重复步骤（2）中的相同步骤。
 
-### Tables with invisible borders
+### 具有不可见边框的表格
 
-Tables can be set to have invisible borders in order to allow for basic layouts (columns, grids) of text or [images](Images.md) without the distraction of their border:
+可以将表格设置为具有不可见边框，以便实现文本或[图片](Images.md)的基本布局（列、网格），而不受边框的干扰：
 
-1.  First insert a table with the desired number of columns and rows.
-2.  Select the entire table.
-3.  In _Table properties_, set:
-    1.  _Style_ to _Single_
-    2.  _Color_ to `transparent`
-    3.  Width to `1px`.
-4.  In Cell Properties, set the same as on the previous step.
+1.  首先插入一个具有所需列数和行数的表格。
+2.  选择整个表格。
+3.  在 _表格属性_ 中，设置：
+    1.  _样式_ 为 _单线_
+    2.  _颜色_ 为 `transparent`
+    3.  宽度为 `1px`。
+4.  在 _单元格属性_ 中，设置与上一步相同的值。
 
-## Table indentation
+## 表格缩进
 
-Since v0.104.1, tables can be indented as a block (the whole table moves, rather than just the content of a cell).
+自 v0.104.1 起，表格可以作为块进行缩进（整个表格移动，而不仅仅是单元格的内容）。
 
-1.  Click the <img src="5_Tables_image.png" width="24" height="26"> button to select the entire table. Otherwise, the indentation applies only to the current cell's content.
-2.  Press <kbd>Tab</kbd> to increase the indent, or <kbd>Shift</kbd>+<kbd>Tab</kbd> to decrease it. Alternatively, use the indentation buttons in the formatting toolbar.
+1.  点击 <img src="5_Tables_image.png" width="24" height="26"> 按钮以选择整个表格。否则，缩进仅适用于当前单元格的内容。
+2.  按 <kbd>Tab</kbd> 键增加缩进，或按 <kbd>Shift</kbd>+<kbd>Tab</kbd> 键减少缩进。或者，使用格式工具栏中的缩进按钮。
 
-Markdown does not support indented tables, so the indentation is lost when converting to Markdown.
+Markdown 不支持缩进表格，因此在转换为 Markdown 时缩进会丢失。
 
-## Markdown import/export
+## Markdown 导入/导出
 
-Simple tables are exported in GitHub-flavored Markdown format (e.g. a series of `|` items). If the table is found to be more complex (it contains HTML elements, has custom sizes or images), the table is converted to a HTML one instead.
+简单表格以 GitHub 风格的 Markdown 格式导出（例如一系列 `|` 项目）。如果表格比较复杂（包含 HTML 元素、具有自定义大小或图片），则表格会转换为 HTML 格式。
 
-Generally formatting loss should be minimal when exported to Markdown due to the fallback to HTML formatting.
+通常，由于回退到 HTML 格式，导出为 Markdown 时的格式丢失应该是最小的。

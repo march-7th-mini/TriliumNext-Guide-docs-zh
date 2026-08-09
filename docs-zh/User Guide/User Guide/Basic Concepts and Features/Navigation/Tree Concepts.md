@@ -1,24 +1,24 @@
-# Tree Concepts
-This page explains the basic concepts related to the tree structure of notes in TriliumNext.
+# 树概念
+本页解释了TriliumNext中与笔记树结构相关的基本概念。
 
-## Note
+## 笔记
 
-A note is the central entity in TriliumNext. For more details, see <a class="reference-link" href="../Notes.md">Notes</a>.
+笔记是TriliumNext中的核心实体。更多详情，请参见<a class="reference-link" href="../Notes.md">笔记</a>。
 
-## Branch
+## 分支
 
-A branch describes the placement of a note within the note tree. Essentially, it is a tuple of `parentNoteId` and `noteId`, indicating that the given note is placed as a child under the specified parent note.
+分支描述了笔记在笔记树中的位置。本质上，它是`parentNoteId`和`noteId`的元组，表示给定笔记被放置在指定父笔记下的子位置。
 
-Each note can have multiple branches, meaning any note can be placed in multiple locations within the tree. This concept is referred to as <a class="reference-link" href="../Notes/Cloning%20Notes.md">Cloning Notes</a>.
+每个笔记可以有多个分支，这意味着任何笔记都可以放置在树中的多个位置。这个概念被称为<a class="reference-link" href="../Notes/Cloning%20Notes.md">克隆笔记</a>。
 
-## Prefix
+## 前缀
 
-A prefix is a branch-specific title modifier for a note. If you place your note in two different locations within the tree and want to alter the title slightly in one of those placements, you can use a prefix.
+前缀是笔记的分支特定标题修饰符。如果你将笔记放置在树中的两个不同位置，并希望在其中一处略微修改标题，可以使用前缀。
 
-To edit a prefix, right-click on the note in the tree pane and select _Edit branch prefix_.
+要编辑前缀，请在树面板中右键点击笔记，然后选择_编辑分支前缀_。
 
-The prefix is not part of the note itself and is not encrypted when the note is protected. This can be useful if you want part of the title to remain visible in the tree for easier navigation, even when the note is protected.
+前缀不是笔记本身的一部分，当笔记受保护时也不会被加密。如果你希望标题的一部分在树中保持可见以便于导航，即使笔记受保护时也是如此，这将非常有用。
 
-## Subtree
+## 子树
 
-A subtree consists of a particular note (the subtree root) and all its children and descendants. Some operations, such as exporting, work on entire subtrees.
+子树由特定笔记（子树根）及其所有子笔记和后代组成。某些操作（如导出）作用于整个子树。

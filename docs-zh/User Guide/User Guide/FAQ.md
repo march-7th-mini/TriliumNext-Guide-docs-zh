@@ -1,90 +1,90 @@
-# FAQ
-## Inspiration for the name “Trilium”
+# 常见问题解答
+## “Trilium”名称的灵感来源
 
-> Naming software is hard. I lived in Ontario when I first started the project and Trillium (the flower) is sort of a provincial logo, many institutions in Ontario are named "Trillium \[something\]". So I kept hearing/reading it almost everyday, I liked the sound of it and its nature motif, so I just reused it.
+> 给软件命名是件难事。我最初开始这个项目时住在安大略省，延龄草（Trillium，一种花）算是该省的标志之一，安大略省的许多机构都以“Trillium \[某词\]”命名。所以我几乎每天都会听到或看到它，我喜欢它的发音和自然主题，于是就直接沿用了。
 > 
-> _– Zadam (original Trilium maintainer)_
+> _– Zadam（Trilium 原维护者）_
 
 > [!NOTE]
-> Despite the fact that the Trillium flower has two “l"s, the Trilium application only has one.
+> 尽管延龄草（Trillium）这种花的名字里有两个“l”，但 Trilium 应用程序的名字里只有一个。
 
-## macOS support
+## macOS 支持
 
-Originally, Trilium Notes considered the macOS build unsupported. TriliumNext commits to make the experience on macOS as good as possible.
+最初，Trilium Notes 认为 macOS 版本不受支持。TriliumNext 致力于让 macOS 上的体验尽可能完善。
 
-if you find any platform-specific issues, feel free to [report them](Troubleshooting/Reporting%20issues.md).
+如果您发现任何特定平台的问题，欢迎[报告问题](Troubleshooting/Reporting%20issues.md)。
 
-## Translation / localisation support
+## 翻译 / 本地化支持
 
-The original Trilium Notes application did not support multiple languages. Since we believe that internationalisation is a core part of an application, we have added support for it.
+最初的 Trilium Notes 应用程序不支持多语言。由于我们认为国际化是应用程序的核心组成部分，因此我们添加了对此的支持。
 
-Contributions to translations are welcome.
+欢迎为翻译做出贡献。
 
-## Multi-user support
+## 多用户支持
 
-Common request is to allow multiple users collaborate, share notes etc. So far I'm resisting this because of these reasons:
+常见的需求是允许多个用户协作、共享笔记等。到目前为止，我一直抵制这个功能，原因如下：
 
-*   it's a huge feature, or rather a Pandora's box of collaboration features like user management, permissions, conflict resolution, real-time editing of a note by multiple people etc. This would be a huge amount of work. Trilium Notes is project made mostly by one person in free time and that's unlikely to change in the future.
-*   given its size it would probably pivot the attention away from my main focus which is a personal note-taking
-*   the assumption that only single person has access to the app simplifies many things, or just outright makes them possible. In multi-user app, our [scripting](Scripting.md)support would be a XSS security hole, while with the single user assumption it's an endless customizable tool.
+*   这是一个巨大的功能，或者更确切地说是协作功能的潘多拉魔盒，例如用户管理、权限、冲突解决、多人实时编辑笔记等。这将是非常大的工作量。Trilium Notes 是一个主要由一个人利用空闲时间进行的项目，这种情况在未来不太可能改变。
+*   考虑到其规模，它可能会将注意力从我主要的关注点——个人笔记——上转移开。
+*   假设只有一个人可以访问该应用程序，这简化了许多事情，或者直接使它们成为可能。在多用户应用程序中，我们的[脚本](Scripting.md)支持将是一个 XSS 安全漏洞，而在单用户假设下，它是一个无限可定制的工具。
 
-## How to open multiple documents in one Trilium instance
+## 如何在一个 Trilium 实例中打开多个文档
 
-This is normally not supported - one Trilium process can open only a single instance of a [database](Advanced%20Usage/Database.md). However, you can run two Trilium processes (from one installation), each connected to a separate document. To achieve this, you need to set a location for the [data directory](Installation%20%26%20Setup/Data%20directory.md) in the `TRILIUM_DATA_DIR` environment variable and separate port on `TRILIUM_PORT` environment variable. How to do that depends on the platform, in Unix-based systems you can achieve that by running command such as this:
+这通常不受支持——一个 Trilium 进程只能打开一个[数据库](Advanced%20Usage/Database.md)实例。但是，您可以运行两个 Trilium 进程（来自同一个安装），每个进程连接到一个单独的文档。为此，您需要在 `TRILIUM_DATA_DIR` 环境变量中设置[数据目录](Installation%20%26%20Setup/Data%20directory.md)的位置，并在 `TRILIUM_PORT` 环境变量中设置单独的端口。具体操作方法取决于平台，在基于 Unix 的系统中，您可以通过运行如下命令来实现：
 
 ```sh
 TRILIUM_DATA_DIR=/home/me/path/to/data/dir TRILIUM_PORT=12345 trilium 
 ```
 
-You can save this command into a `.sh` script file or make an alias. Do this similarly for a second instance with different data directory and port.
+您可以将此命令保存到 `.sh` 脚本文件中或创建别名。对于第二个实例，使用不同的数据目录和端口进行类似操作。
 
-## Can I use Dropbox / Google Drive / OneDrive to sync data across multiple computers.
+## 我可以使用 Dropbox / Google Drive / OneDrive 在多台计算机之间同步数据吗？
 
-No.
+不可以。
 
-These general purpose sync apps are not suitable to sync database files which are open and being worked on by another application. The result is that they will corrupt the database file, resulting in data loss and this message in the Trilium logs:
+这些通用同步应用程序不适合同步由另一个应用程序打开并正在使用的数据库文件。结果是它们会损坏数据库文件，导致数据丢失，并在 Trilium 日志中出现以下消息：
 
 ```
 SqliteError: database disk image is malformed
 ```
 
-The only supported way to sync Trilium's data across the network is to use a [sync/web server](Installation%20%26%20Setup/Synchronization.md).
+通过网络同步 Trilium 数据的唯一受支持方式是使用[同步/网络服务器](Installation%20%26%20Setup/Synchronization.md)。
 
-## Why database instead of flat files?
+## 为什么使用数据库而不是平面文件？
 
-Trilium stores notes in a [database](Advanced%20Usage/Database.md) which is an SQLite database. People often ask why doesn't Trilium rather use flat files for note storage - it's fair question since flat files are easily interoperable, work with SCM/git etc.
+Trilium 将笔记存储在[数据库](Advanced%20Usage/Database.md)中，这是一个 SQLite 数据库。人们经常问为什么 Trilium 不使用平面文件来存储笔记——这是一个合理的问题，因为平面文件易于互操作，可以与 SCM/git 等配合使用。
 
-Short answer is that file systems are simply not powerful enough for what we want to achieve with Trilium. Using filesystem would mean fewer features with probably more problems.
+简短的回答是，文件系统对于我们希望通过 Trilium 实现的目标来说根本不够强大。使用文件系统意味着功能更少，而问题可能更多。
 
-More detailed answer:
+更详细的回答：
 
-*   [clones](Basic%20Concepts%20and%20Features/Notes/Cloning%20Notes.md) are what you might call "hard directory link" in filesystem lingo, but this concept is not implemented in any filesystem
-*   filesystems make a distinction between directory and file while there's intentionally no such difference in Trilium
-*   files are stored in no particular order and user can't change this
-*   Trilium allows storing note [attributes](Advanced%20Usage/Attributes.md) which could be represented in extended user attributes but their support differs greatly among different filesystems / operating systems
-*   Trilium makes links / relations between different notes which can be quickly retrieved / navigated (e.g. for [note map](Advanced%20Usage/Note%20Map%20\(Link%20map%2C%20Tree%20map\).md)). There's no such support in file systems which means these would have to be stored in some kind of side-car files (mini-databases).
-*   Filesystems are generally not transactional. While this is not completely required for a note-taking application, having transactions make it way easier to keep notes and their metadata in predictable and consistent state.
+*   [克隆](Basic%20Concepts%20and%20Features/Notes/Cloning%20Notes.md) 在文件系统术语中可能被称为“硬目录链接”，但这个概念在任何文件系统中都没有实现。
+*   文件系统区分目录和文件，而 Trilium 中故意没有这种区别。
+*   文件存储没有特定顺序，用户无法更改这一点。
+*   Trilium 允许存储笔记[属性](Advanced%20Usage/Attributes.md)，这些属性可以用扩展用户属性来表示，但不同文件系统/操作系统对它们的支持差异很大。
+*   Trilium 在不同笔记之间建立链接/关系，可以快速检索/导航（例如用于[笔记地图](Advanced%20Usage/Note%20Map%20\(Link%20map%2C%20Tree%20map\).md)）。文件系统不支持这一点，这意味着这些关系必须存储在某种辅助文件（迷你数据库）中。
+*   文件系统通常不具备事务性。虽然这对笔记应用程序来说并非完全必需，但拥有事务可以更容易地保持笔记及其元数据处于可预测且一致的状态。
 
-## Search-related Questions
+## 与搜索相关的问题
 
-### Why does search sometimes find results with typos?
+### 为什么搜索有时会找到包含拼写错误的结果？
 
-Trilium uses a progressive search strategy that includes fuzzy matching when exact matches return fewer than 5 results. This finds notes despite minor typos in your search query. You can use fuzzy search operators (`~=` for fuzzy exact match and `~*` for fuzzy contains). See the <a class="reference-link" href="Basic%20Concepts%20and%20Features/Navigation/Search.md">Search</a> documentation for details.
+Trilium 使用渐进式搜索策略，当精确匹配返回的结果少于 5 个时，会包含模糊匹配。这样即使您的搜索查询中有轻微拼写错误，也能找到笔记。您可以使用模糊搜索运算符（`~=` 用于模糊精确匹配，`~*` 用于模糊包含）。详情请参阅 <a class="reference-link" href="Basic%20Concepts%20and%20Features/Navigation/Search.md">搜索</a> 文档。
 
-### How can I search for notes when I'm not sure of the exact spelling?
+### 当我不确定确切拼写时，如何搜索笔记？
 
-Use the fuzzy search operators:
+使用模糊搜索运算符：
 
-*   `#title ~= "projct"` - finds notes with titles like "project" despite the typo
-*   `note.content ~* "algoritm"` - finds content containing "algorithm" or similar words
+*   `#title ~= "projct"` - 即使有拼写错误，也能找到标题类似“project”的笔记。
+*   `note.content ~* "algoritm"` - 查找包含“algorithm”或类似单词的内容。
 
-### Why do some search results appear before others with lower scores?
+### 为什么某些得分较低的搜索结果会排在前面？
 
-Trilium places exact matches before fuzzy matches. When you search for "project", notes containing exactly "project" appear before notes with variations like "projects" or "projection", regardless of other scoring factors.
+Trilium 将精确匹配排在模糊匹配之前。当您搜索“project”时，完全包含“project”的笔记会排在包含“projects”或“projection”等变体的笔记之前，无论其他评分因素如何。
 
-### How can I make my searches faster?
+### 如何让我的搜索更快？
 
-1.  Use the "Fast search" option to search only titles and attributes (not content)
-2.  Limit search scope using the "Ancestor" field
-3.  Set a result limit to prevent loading too many results
-4.  For large databases, consider archiving old notes to reduce search scope
+1.  使用“快速搜索”选项，仅搜索标题和属性（不搜索内容）。
+2.  使用“祖先”字段限制搜索范围。
+3.  设置结果限制，防止加载过多结果。
+4.  对于大型数据库，请考虑归档旧笔记以缩小搜索范围。

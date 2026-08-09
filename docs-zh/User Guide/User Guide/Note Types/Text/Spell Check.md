@@ -1,69 +1,70 @@
-# Spell Check
-Trilium supports spell checking for your notes. How it works depends on whether you're using the **desktop application** (Electron) or accessing Trilium through a **web browser**.
+# 拼写检查
 
-## Desktop
+Trilium 支持对笔记进行拼写检查。其工作方式取决于您使用的是**桌面应用程序**（Electron）还是通过**网页浏览器**访问 Trilium。
 
-The desktop app uses Chromium's built-in spellchecker. You can configure it from _Options_ → _Spell Check_.
+## 桌面端
 
-### Enabling spell check
+桌面应用程序使用 Chromium 内置的拼写检查器。您可以在 _选项_ → _拼写检查_ 中进行配置。
 
-Toggle _Check spelling_ to enable or disable the spellchecker. A restart is required for changes to take effect — use the restart button at the bottom of the section.
+### 启用拼写检查
 
-### Choosing languages
+切换 _检查拼写_ 以启用或禁用拼写检查器。更改需要重启后才能生效 — 请使用该部分底部的重启按钮。
 
-When spell check is enabled, a _Spell Check Languages_ section appears listing all languages available on your system. Select one or more languages by checking the boxes. The spellchecker will accept words that are valid in _any_ of the selected languages.
+### 选择语言
 
-The available languages depend on your operating system's installed language packs. For example, on Windows you can add languages through _Options_ → _Time & Language_ → _Language & Region_ → _Add a language_.
+启用拼写检查后，会出现一个 _拼写检查语言_ 部分，列出您系统上可用的所有语言。通过勾选复选框来选择一种或多种语言。拼写检查器将接受在 _任意_ 所选语言中有效的单词。
+
+可用的语言取决于您操作系统安装的语言包。例如，在 Windows 上，您可以通过 _选项_ → _时间和语言_ → _语言和区域_ → _添加语言_ 来添加语言。
 
 > [!NOTE]
-> The changes take effect only after restarting the application.
+> 更改仅在重启应用程序后生效。
 
-### Custom dictionary
+### 自定义词典
 
 > [!TIP]
-> This function is available starting with Trilium v0.103.0.
+> 此功能自 Trilium v0.103.0 起可用。
 
-Words you add to the dictionary (e.g. via the right-click context menu → "Add to dictionary") are stored in a **synced note** inside Trilium. This means your custom dictionary automatically syncs across all your devices.
+您添加到词典中的单词（例如通过右键单击上下文菜单 → “添加到词典”）存储在 Trilium 内的一个**同步笔记**中。这意味着您的自定义词典会自动在您的所有设备之间同步。
 
-You can view and edit the dictionary directly from _Settings_ → _Spell Check_ → _Custom Dictionary_ → _Edit dictionary_. This opens the underlying note, which contains one word per line. You can add, remove, or modify entries as you like.
+您可以直接从 _设置_ → _拼写检查_ → _自定义词典_ → _编辑词典_ 查看和编辑词典。这将打开底层笔记，其中每行包含一个单词。您可以根据需要添加、删除或修改条目。
 
 > [!NOTE]
-> Changes to the custom dictionary (whether from the editor or the context menu) take effect after restarting the application.
+> 对自定义词典的更改（无论是从编辑器还是上下文菜单）在重启应用程序后生效。
 
-#### How the custom dictionary works
+#### 自定义词典的工作原理
 
-*   When you right-click a misspelled word and choose "Add to dictionary", the word is saved both to Electron's local spellchecker and to the synced dictionary note.
-*   On startup, Trilium loads all words from the dictionary note into the spellchecker session.
-*   If Trilium detects words in Electron's local dictionary but the dictionary note is empty (e.g. on first use), it performs a **one-time import** of those words into the note.
-*   Words that are in Electron's local dictionary but _not_ in the note (e.g. you removed them manually) are cleaned up from the local dictionary on startup.
+*   当您右键单击拼写错误的单词并选择“添加到词典”时，该单词会同时保存到 Electron 的本地拼写检查器和同步的词典笔记中。
+*   启动时，Trilium 会将词典笔记中的所有单词加载到拼写检查会话中。
+*   如果 Trilium 检测到 Electron 本地词典中有单词但词典笔记为空（例如首次使用时），它会将这些单词**一次性导入**到笔记中。
+*   存在于 Electron 本地词典中但 _不在_ 笔记中的单词（例如您手动删除了它们）会在启动时从本地词典中清理掉。
 
-#### Known limitations
+#### 已知限制
 
-On Windows and macOS, Electron delegates "Add to dictionary" to the operating system's user dictionary. This means:
+在 Windows 和 macOS 上，Electron 将“添加到词典”委托给操作系统的用户词典。这意味着：
 
-*   Words added via the context menu are also written to the OS-level dictionary (e.g. `%APPDATA%\Microsoft\Spelling\<language>\default.dic` on Windows).
-*   **Removing a word** from the Trilium dictionary note prevents it from being loaded into the spellchecker on next startup, but does _not_ remove it from the OS dictionary. The word may still be accepted by the OS spellchecker until you remove it from the OS dictionary manually.
+*   通过上下文菜单添加的单词也会写入操作系统级词典（例如在 Windows 上为 `%APPDATA%\Microsoft\Spelling\<language>\default.dic`）。
+*   从 Trilium 词典笔记中**删除一个单词**会阻止它在下次启动时被加载到拼写检查器中，但 _不会_ 将其从操作系统词典中删除。该单词可能仍会被操作系统拼写检查器接受，直到您手动将其从操作系统词典中删除。
 
-## Web browser
+## 网页浏览器
 
-When accessing Trilium through a web browser, spell checking is handled entirely by the browser itself. Trilium does not control the browser's spellchecker — language selection, dictionaries, and all other settings are managed through your browser's preferences.
+通过网页浏览器访问 Trilium 时，拼写检查完全由浏览器本身处理。Trilium 不控制浏览器的拼写检查器 — 语言选择、词典以及所有其他设置均通过您浏览器的偏好设置进行管理。
 
-The Spell Check settings page in Trilium will indicate that these options apply only to desktop builds.
+Trilium 中的拼写检查设置页面会提示这些选项仅适用于桌面版本。
 
-## Frequently asked questions
+## 常见问题解答
 
-### Do I need to restart after every change?
+### 每次更改后都需要重启吗？
 
-Yes. Spell check language selection and the custom dictionary are loaded once at startup. Any changes require a restart to take effect.
+是的。拼写检查语言选择和自定义词典在启动时加载一次。任何更改都需要重启才能生效。
 
-### Can I use multiple spell check languages at the same time?
+### 我可以同时使用多种拼写检查语言吗？
 
-Yes. Select as many languages as you need from the checklist. The spellchecker will accept words from any of the selected languages.
+可以。从复选列表中选择您需要的任意多种语言。拼写检查器将接受来自任何所选语言的单词。
 
-### My custom words disappeared after syncing to a new device — what happened?
+### 我的自定义单词在同步到新设备后消失了 — 发生了什么？
 
-On the first launch of a new device, Trilium may import existing local dictionary words into the note. If the note already has words from another device (via sync), those are preserved. Make sure sync completes before restarting the application on a new device.
+在新设备首次启动时，Trilium 可能会将现有的本地词典单词导入到笔记中。如果笔记中已有来自另一台设备（通过同步）的单词，这些单词会被保留。请确保在新设备上重启应用程序之前完成同步。
 
-### I removed a word from the dictionary note but it's still accepted
+### 我从词典笔记中删除了一个单词，但它仍然被接受
 
-This is likely due to the OS-level dictionary retaining the word (see [Known limitations](#known-limitations) above). You can manually remove it from your operating system's user dictionary.
+这很可能是由于操作系统级词典保留了该单词（请参阅上面的[已知限制](#known-limitations)）。您可以手动将其从操作系统的用户词典中删除。

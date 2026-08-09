@@ -1,10 +1,11 @@
-# Links
-There are two types of links:
+# 链接
 
-*   <a class="reference-link" href="Links/External%20links.md">External links</a>, for standard hyperlinks to websites or other resources.
-*   <a class="reference-link" href="Links/Internal%20(reference)%20links.md">Internal (reference) links</a> for links to other notes within Trilium.
-    *   The list of notes that refer to a particular note is called <a class="reference-link" href="Links/Backlinks.md">Backlinks</a>.
+链接有两种类型：
 
-## Note map
+*   <a class="reference-link" href="Links/External%20links.md">外部链接</a>，用于指向网站或其他资源的标准超链接。
+*   <a class="reference-link" href="Links/Internal%20(reference)%20links.md">内部（引用）链接</a>，用于指向 Trilium 中其他笔记的链接。
+    *   指向特定笔记的笔记列表称为<a class="reference-link" href="Links/Backlinks.md">反链</a>。
 
-Trilium provides a visualization of incoming and outgoing links for a particular note. See [note map](../../Advanced%20Usage/Note%20Map%20\(Link%20map%2C%20Tree%20map\).md) for details.
+## 笔记图谱
+
+Trilium 提供了特定笔记的入链和出链的可视化展示。详情请参阅[笔记图谱](../../Advanced%20Usage/Note%20Map%20\(Link%20map%2C%20Tree%20map\).md)。

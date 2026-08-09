@@ -1,3 +1,4 @@
+```markdown
 import {
     ActionButton, Button, LinkButton,
     Admonition, Collapsible,
@@ -22,15 +23,15 @@ export default function() {
 
     return (
         <div style={{ padding: 20, display: "flex", flexDirection: "column", gap: "1em" }}>
-            <h1>Widget showcase</h1>
+            <h1>小组件展示</h1>
 
             <Buttons />
             <Admonition type="note">
-                <strong>Admonition</strong><br />
+                <strong>警示框</strong><br />
                 {lorem}
             </Admonition>
 
-            <Collapsible title="Collapsible" initiallyExpanded>
+            <Collapsible title="可折叠区域" initiallyExpanded>
                 {lorem}
             </Collapsible>
 
@@ -44,15 +45,15 @@ export default function() {
 }
 
 function Buttons() {
-    const onClick = () => showMessage("A button was pressed");
+    const onClick = () => showMessage("按下了按钮");
 
     return (
         <>
-            <h2>Buttons</h2>
+            <h2>按钮</h2>
             <div style={{ display: "flex", gap: "1em", alignItems: "center" }}>
-                <ActionButton icon="bx bx-rocket" text="Action button" onClick={onClick} />
-                <Button icon="bx bx-rocket" text="Simple button" onClick={onClick} />
-                <LinkButton text="Link button" onClick={onClick} />
+                <ActionButton icon="bx bx-rocket" text="操作按钮" onClick={onClick} />
+                <Button icon="bx bx-rocket" text="简单按钮" onClick={onClick} />
+                <LinkButton text="链接按钮" onClick={onClick} />
             </div>
         </>
     )
@@ -67,74 +68,74 @@ function FormElements() {
 
     return (
         <>
-            <h2>Form elements</h2>
+            <h2>表单元素</h2>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1em" }}>
-                <FormGroup name="checkbox" label="Checkbox">
-                    <FormCheckbox label="Checkbox" currentValue={checkboxChecked} onChange={setCheckboxChecked} />
+                <FormGroup name="checkbox" label="复选框">
+                    <FormCheckbox label="复选框" currentValue={checkboxChecked} onChange={setCheckboxChecked} />
                 </FormGroup>
-                <FormGroup name="toggle" label="Toggle">
-                    <FormToggle switchOnName="Off" switchOffName="On" currentValue={checkboxChecked} onChange={setCheckboxChecked} />
+                <FormGroup name="toggle" label="开关">
+                    <FormToggle switchOnName="关" switchOffName="开" currentValue={checkboxChecked} onChange={setCheckboxChecked} />
                 </FormGroup>
-                <FormGroup name="dropdown" label="Dropdown">
+                <FormGroup name="dropdown" label="下拉列表">
                     <FormDropdownList
                         values={[
-                            { key: "key-1", name: "First item" },
-                            { key: "key-2", name: "Second item" },
-                            { key: "key-3", name: "Third item" },
+                            { key: "key-1", name: "第一项" },
+                            { key: "key-2", name: "第二项" },
+                            { key: "key-3", name: "第三项" },
                         ]}
                         currentValue={dropdownValue} onChange={setDropdownValue}
                         keyProperty="key" titleProperty="name"
                     />
                 </FormGroup>
-                <FormGroup name="radio-group" label="Radio group">
+                <FormGroup name="radio-group" label="单选组">
                     <FormRadioGroup
                         values={[
-                            { value: "key-1", label: "First item" },
-                            { value: "key-2", label: "Second item" },
-                            { value: "key-3", label: "Third item" },
+                            { value: "key-1", label: "第一项" },
+                            { value: "key-2", label: "第二项" },
+                            { value: "key-3", label: "第三项" },
                         ]}
                         currentValue={radioGroupValue} onChange={setRadioGroupValue}
                     />
                 </FormGroup>
-                <FormGroup name="text-box" label="Text box">
+                <FormGroup name="text-box" label="文本框">
                     <FormTextBox
-                        placeholder="Type something..."
+                        placeholder="输入一些内容..."
                         currentValue="" onChange={(newValue) => {}}
                     />
                 </FormGroup>
-                <FormGroup name="text-area" label="Text area">
+                <FormGroup name="text-area" label="文本区域">
                     <FormTextArea
-                        placeholder="Type something bigger..."
+                        placeholder="输入更多内容..."
                         currentValue="" onChange={(newValue) => {}}
                     />
                 </FormGroup>
-                <FormGroup name="color-picker" label="Color picker">
+                <FormGroup name="color-picker" label="颜色选择器">
                     <ColorPicker currentValue={color} onChange={setColor} />
                 </FormGroup>
-                <FormGroup name="slider" label="Slider">
+                <FormGroup name="slider" label="滑块">
                     <Slider
                         min={1} max={100}
                         value={sliderValue} onChange={setSliderValue}
                     />
                 </FormGroup>
-                <FormGroup name="file-upload" label="File upload">
+                <FormGroup name="file-upload" label="文件上传">
                     <FormFileUploadButton
-                        text="Upload"
+                        text="上传"
                         onChange={(files) => {
                             const file = files?.[0];
                             if (!file) return;
-                            showMessage(`Got file "${file.name}" of size ${file.size} B and type ${file.type}.`);
+                            showMessage(`获取到文件 "${file.name}"，大小为 ${file.size} 字节，类型为 ${file.type}。`);
                         }}
                     />
                 </FormGroup>
-                <FormGroup name="icon" label="Icon">
+                <FormGroup name="icon" label="图标">
                     <Icon icon="bx bx-smile" />
                 </FormGroup>
-                <FormGroup name="loading-spinner" label="Loading spinner">
+                <FormGroup name="loading-spinner" label="加载指示器">
                     <LoadingSpinner />
                 </FormGroup>
-                <FormGroup name="raw-html" label="Raw HTML">
-                    <RawHtml html="<strong>Hi</strong> <em>there</em>" />
+                <FormGroup name="raw-html" label="原始 HTML">
+                    <RawHtml html="<strong>你好</strong> <em>世界</em>" />
                 </FormGroup>
             </div>
         </>
@@ -146,19 +147,19 @@ function NoteElements() {
 
     return (
         <div>
-            <h2>Note elements</h2>
+            <h2>笔记元素</h2>
 
-            <FormGroup name="note-autocomplete" label="Note autocomplete">
+            <FormGroup name="note-autocomplete" label="笔记自动完成">
                 <NoteAutocomplete
-                    placeholder="Select a note"
+                    placeholder="选择一个笔记"
                     noteId={noteId} noteIdChanged={setNoteId}
                 />
             </FormGroup>
 
-            <FormGroup name="note-link" label="Note link">
+            <FormGroup name="note-link" label="笔记链接">
                 {noteId
                 ? <NoteLink notePath={noteId} showNoteIcon />
-                : <span>Select a note first</span>}
+                : <span>请先选择一个笔记</span>}
             </FormGroup>
         </div>
     );
@@ -169,10 +170,10 @@ function ModalSample() {
 
     return (
         <>
-            <h2>Modal</h2>
-            <Button text="Open modal" onClick={() => setShown(true)} />
-            <Modal title="Modal title" size="md" show={shown} onHidden={() => setShown(false)}>
-                Modal goes here.
+            <h2>模态框</h2>
+            <Button text="打开模态框" onClick={() => setShown(true)} />
+            <Modal title="模态框标题" size="md" show={shown} onHidden={() => setShown(false)}>
+                模态框内容显示在这里。
             </Modal>
         </>
     )
@@ -181,14 +182,14 @@ function ModalSample() {
 function DropdownSample() {
     return (
         <>
-            <h2>Dropdown menu</h2>
-            <Dropdown text="Dropdown" hideToggleArrow>
-                <FormListItem icon="bx bx-cut">Cut</FormListItem>
-                <FormListItem icon="bx bx-copy">Copy</FormListItem>
-                <FormListItem icon="bx bx-paste">Paste</FormListItem>
+            <h2>下拉菜单</h2>
+            <Dropdown text="下拉菜单" hideToggleArrow>
+                <FormListItem icon="bx bx-cut">剪切</FormListItem>
+                <FormListItem icon="bx bx-copy">复制</FormListItem>
+                <FormListItem icon="bx bx-paste">粘贴</FormListItem>
                 <FormDropdownDivider />
-                <FormDropdownSubmenu title="Submenu">
-                    <FormListItem>More items</FormListItem>
+                <FormDropdownSubmenu title="子菜单">
+                    <FormListItem>更多项目</FormListItem>
                 </FormDropdownSubmenu>
             </Dropdown>
         </>
@@ -198,23 +199,23 @@ function DropdownSample() {
 function CollectionViews() {
     return (
         <>
-            <h2>Collection views</h2>
+            <h2>集合视图</h2>
             <p>
-                A generic <code>Table</code> (Tabulator) is available. A <code>Calendar</code>
-                {" "}(FullCalendar) component is also exposed, but it requires you to pass a
-                {" "}<code>plugins</code> array to render a view, so it is not demonstrated here.
+                提供了一个通用的 <code>Table</code> (Tabulator) 组件。同时也提供了 <code>Calendar</code>
+                {" "}(FullCalendar) 组件，但它需要你传入一个 <code>plugins</code> 数组来渲染视图，因此这里不做演示。
             </p>
             <Table
                 layout="fitColumns"
                 columns={[
-                    { title: "Name", field: "name" },
-                    { title: "Progress", field: "progress" }
+                    { title: "名称", field: "name" },
+                    { title: "进度", field: "progress" }
                 ]}
                 data={[
-                    { id: 1, name: "First task", progress: "80%" },
-                    { id: 2, name: "Second task", progress: "20%" }
+                    { id: 1, name: "第一个任务", progress: "80%" },
+                    { id: 2, name: "第二个任务", progress: "20%" }
                 ]}
             />
         </>
     )
 }
+```

@@ -1,18 +1,19 @@
-# Anonymized Database
+# 匿名化数据库
+
 ![](Anonymized%20Database_image.png)
 
-In certain scenarios, understanding the structure of a database is crucial for troubleshooting issues. However, sharing your actual [database](../Advanced%20Usage/Database.md) file with personal notes is not advisable. To address this, Trilium offers a feature to anonymize the database. This feature can be accessed via Menu -> Options -> Advanced tab.
+在某些情况下，理解数据库的结构对于排查问题至关重要。然而，分享包含个人笔记的实际[数据库](../Advanced%20Usage/Database.md)文件并不可取。为了解决这个问题，Trilium 提供了数据库匿名化功能。您可以通过菜单 -> 选项 -> 高级选项卡访问此功能。
 
-This feature creates a copy of your database with all sensitive data removed. Specifically, it strips out note titles, contents, revisions, history, and some non-system attributes while retaining the overall structure and metadata, such as modification dates. After anonymization, the database undergoes a [vacuuming process](https://sqlite.org/lang_vacuum.html) to ensure no sensitive data remnants remain in the file. The anonymized database is saved in the `anonymized` directory within the [data directory](../Installation%20%26%20Setup/Data%20directory.md), making it safe to share with bug reports.
+此功能会创建数据库的一个副本，并移除所有敏感数据。具体来说，它会剔除笔记标题、内容、修订版本、历史记录以及部分非系统属性，同时保留整体结构和元数据（如修改日期）。匿名化完成后，数据库会经过[压缩处理](https://sqlite.org/lang_vacuum.html)，以确保文件中不残留任何敏感数据。匿名化后的数据库保存在[数据目录](../Installation%20%26%20Setup/Data%20directory.md)下的 `anonymized` 目录中，可以安全地随错误报告一起分享。
 
-This will create a copy of your document and remove all sensitive data (currently note titles, contents, revisions, history and some of the options, and non-system attributes) while leaving all structure and metadata (e.g. date of last change). After this is done, the database is [VACUUMed](https://sqlite.org/lang_vacuum.html) to make sure there's no stale sensitive data in the document file. The resulting file is stored in `anonymized` directory (placed in the [data directory](../Installation%20%26%20Setup/Data%20directory.md)). You can safely attach it to a bug report.
+这将创建文档的副本，并移除所有敏感数据（目前包括笔记标题、内容、修订版本、历史记录以及部分选项和非系统属性），同时保留所有结构和元数据（例如最后修改日期）。完成后，数据库会经过[压缩处理](https://sqlite.org/lang_vacuum.html)，以确保文档文件中没有过时的敏感数据。生成的文件存储在 `anonymized` 目录中（位于[数据目录](../Installation%20%26%20Setup/Data%20directory.md)内）。您可以放心地将其附加到错误报告中。
 
-## Command Line Anonymization
+## 命令行匿名化
 
-If your [database](../Advanced%20Usage/Database.md) is corrupted to the point where Trilium cannot start, the anonymization process can still be executed via the command line:
+如果您的[数据库](../Advanced%20Usage/Database.md)损坏到 Trilium 无法启动的程度，仍然可以通过命令行执行匿名化过程：
 
 ```
 node src/anonymize.js
 ```
 
-Run this command from the directory containing Trilium's source files, typically found in the `resources/app` directory for desktop builds.
+请在包含 Trilium 源文件的目录中运行此命令，对于桌面版，该目录通常位于 `resources/app` 中。

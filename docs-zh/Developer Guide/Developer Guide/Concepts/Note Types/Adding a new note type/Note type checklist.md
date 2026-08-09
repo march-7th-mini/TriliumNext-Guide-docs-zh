@@ -1,49 +1,49 @@
-# Note type checklist
-The goal of this checklist is to ensure a good implementation or re-test of a note type.
+# 笔记类型检查清单
+此检查清单旨在确保笔记类型的良好实现或重新测试。
 
-## Implementation checklist
+## 实现检查清单
 
-The note type widget must be created according to <a class="reference-link" href="First%20steps.md">First steps</a>:
+笔记类型小组件必须按照 <a class="reference-link" href="First%20steps.md">第一步</a> 创建：
 
-*   Register the note type in the server
-*   Register the note type in the client context menu
-*   Create a type widget
-*   Register the type widget
-*   Add the default icon mapping
-*   Add to note type selector
-*   Add the note to server allowed note types
-*   Update demo document to include this new note type
-*   Increase server sync version (see <a class="reference-link" href="#root/XPSyrTI07rbd/DrIXfwu9CVJP">Mindmap gets turned as file</a>).
+*   在服务器中注册笔记类型
+*   在客户端上下文菜单中注册笔记类型
+*   创建类型小组件
+*   注册类型小组件
+*   添加默认图标映射
+*   添加到笔记类型选择器
+*   将笔记添加到服务器允许的笔记类型中
+*   更新演示文档以包含此新笔记类型
+*   增加服务器同步版本（参见 <a class="reference-link" href="#root/XPSyrTI07rbd/DrIXfwu9CVJP">思维导图被转换为文件</a>）。
 
-## Validation checklist
+## 验证检查清单
 
-### Ensure that the note renders properly
+### 确保笔记正确渲染
 
-*   When refreshing to a note that is already displayed
-*   When going to another note and then going back
-*   When creating a new note of the given type
-*   Have two tabs of the same note type and switch between them
+*   刷新到已显示的笔记时
+*   转到另一个笔记然后返回时
+*   创建给定类型的新笔记时
+*   打开两个相同笔记类型的标签页并在它们之间切换
 
-### Ensure data persistence
+### 确保数据持久性
 
-*   Save data when modifying changes via spaced update
+*   通过间隔更新修改更改时保存数据
 
-### Ensure data retrieval
+### 确保数据检索
 
-*   Go on a note of this type and refresh the page
-*   Create a new note of this type while on another note of this type and ensure that the content is set properly.
+*   访问此类型的笔记并刷新页面
+*   在另一个此类型笔记上时，创建一个此类型的新笔记，并确保内容设置正确。
 
-### Set up a note preview
+### 设置笔记预览
 
-For an implementation reference, see <a class="reference-link" href="SVG%20rendering.md">SVG rendering</a>.
+有关实现参考，请参见 <a class="reference-link" href="SVG%20rendering.md">SVG 渲染</a>。
 
-*   Note preview rendering (go to parent and see note list).
-*   Include note
-*   Share
-*   Note revisions
+*   笔记预览渲染（转到父笔记并查看笔记列表）。
+*   包含笔记
+*   分享
+*   笔记修订
 
-### Import/export
+### 导入/导出
 
-*   Export & Import, making sure no data is lost in the process.
-*   Remove the data folder entirely to test that the demo document is well imported on first setup.
-    *   Ensure that the preview also works (check the preview in the root note).
+*   导出和导入，确保过程中不丢失任何数据。
+*   完全删除数据文件夹，以测试演示文档在首次设置时是否正确导入。
+    *   确保预览也能正常工作（检查根笔记中的预览）。

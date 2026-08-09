@@ -1,22 +1,23 @@
-# Demo document
-The demo document is an exported .zip that resides in `apps/server/src/assets/db/demo.zip`.
+# 演示文档
 
-During on-boarding, if the user selects that they are a new user then the `demo.zip` is imported into the root note.
+演示文档是一个导出的 .zip 文件，位于 `apps/server/src/assets/db/demo.zip`。
 
-## Modifying the document
+在引导过程中，如果用户选择他们是新用户，则 `demo.zip` 会被导入到根笔记中。
 
-1.  In the Git root, run `pnpm edit-docs:edit-demo`.
-2.  Wait for the desktop application to show up with the docs.
-3.  Simply make the needed modifications.
-4.  Wait for a few seconds for the change to be processed in the background.
-5.  Commit the change in Git.
+## 修改文档
 
-## Testing the changes
+1.  在 Git 根目录下，运行 `pnpm edit-docs:edit-demo`。
+2.  等待桌面应用显示文档。
+3.  直接进行所需的修改。
+4.  等待几秒钟，让更改在后台处理。
+5.  在 Git 中提交更改。
 
-1.  Run:
+## 测试更改
+
+1.  运行：
     
     ```
     rm -r data
     pnpm server:start
     ```
-2.  And then do the on-boarding again.
+2.  然后重新进行引导。

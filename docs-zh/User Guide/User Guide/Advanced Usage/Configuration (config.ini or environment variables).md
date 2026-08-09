@@ -1,168 +1,169 @@
-# Configuration (config.ini or environment variables)
-Trilium supports configuration via a file named `config.ini` and environment variables. This document provides a comprehensive reference for all configuration options.
+# 配置（config.ini 或环境变量）
 
-## Location of the configuration file
+Trilium 支持通过名为 `config.ini` 的文件和环境变量进行配置。本文档提供了所有配置选项的全面参考。
 
-The configuration file is not located in the same directory as the application. Instead, the `config.ini` is located in the <a class="reference-link" href="../Installation%20%26%20Setup/Data%20directory.md">Data directory</a>. As such, the configuration file is only available after starting the application and creating a database.
+## 配置文件的位置
 
-## Configuration Precedence
+配置文件与应用不在同一目录中。相反，`config.ini` 位于<a class="reference-link" href="../Installation%20%26%20Setup/Data%20directory.md">数据目录</a>中。因此，配置文件仅在启动应用并创建数据库后才可用。
 
-Configuration values are loaded in the following order of precedence (highest to lowest):
+## 配置优先级
 
-1.  **Environment variables** (checked first)
-2.  **config.ini file values**
-3.  **Default values**
+配置值按以下优先级顺序加载（从高到低）：
 
-## Environment Variable Patterns
+1.  **环境变量**（首先检查）
+2.  **config.ini 文件值**
+3.  **默认值**
 
-Trilium supports multiple environment variable patterns for flexibility. The primary pattern is: `TRILIUM_[SECTION]_[KEY]`
+## 环境变量模式
 
-Where:
+Trilium 支持多种环境变量模式以提供灵活性。主要模式为：`TRILIUM_[SECTION]_[KEY]`
 
-*   `SECTION` is the INI section name in UPPERCASE
-*   `KEY` is the camelCase configuration key converted to UPPERCASE (e.g., `instanceName` → `INSTANCENAME`)
+其中：
 
-Additionally, shorter aliases are available for common configurations (see Alternative Variables section below).
+*   `SECTION` 是 INI 节名称，使用大写
+*   `KEY` 是驼峰式配置键，转换为大写（例如，`instanceName` → `INSTANCENAME`）
 
-## Environment Variable Reference
+此外，常用配置还有更短的别名可用（请参阅下面的备选变量部分）。
 
-### General Section
+## 环境变量参考
 
-| Environment Variable | Type | Default | Description |
+### 常规部分
+
+| 环境变量 | 类型 | 默认值 | 描述 |
 | --- | --- | --- | --- |
-| `TRILIUM_GENERAL_INSTANCENAME` | string | "" | Instance name for API identification |
-| `TRILIUM_GENERAL_NOAUTHENTICATION` | boolean | false | Disable authentication (server only) |
-| `TRILIUM_GENERAL_NOBACKUP` | boolean | false | Disable automatic backups |
-| `TRILIUM_GENERAL_NODESKTOPICON` | boolean | false | Disable desktop icon creation |
-| `TRILIUM_GENERAL_READONLY` | boolean | false | Enable read-only mode |
+| `TRILIUM_GENERAL_INSTANCENAME` | string | "" | 用于 API 标识的实例名称 |
+| `TRILIUM_GENERAL_NOAUTHENTICATION` | boolean | false | 禁用身份验证（仅限服务器） |
+| `TRILIUM_GENERAL_NOBACKUP` | boolean | false | 禁用自动备份 |
+| `TRILIUM_GENERAL_NODESKTOPICON` | boolean | false | 禁用桌面图标创建 |
+| `TRILIUM_GENERAL_READONLY` | boolean | false | 启用只读模式 |
 
-### Network Section
+### 网络部分
 
-| Environment Variable | Type | Default | Description |
+| 环境变量 | 类型 | 默认值 | 描述 |
 | --- | --- | --- | --- |
-| `TRILIUM_NETWORK_HOST` | string | "0.0.0.0" | Server host binding |
-| `TRILIUM_NETWORK_PORT` | string | "8080" | Server port |
-| `TRILIUM_NETWORK_HTTPS` | boolean | false | Enable HTTPS |
-| `TRILIUM_NETWORK_CERTPATH` | string | "" | SSL certificate path |
-| `TRILIUM_NETWORK_KEYPATH` | string | "" | SSL key path |
-| `TRILIUM_NETWORK_TRUSTEDREVERSEPROXY` | boolean/string | false | Reverse proxy trust settings |
-| `TRILIUM_NETWORK_CORSALLOWORIGIN` | string | "" | CORS allowed origins |
-| `TRILIUM_NETWORK_CORSALLOWMETHODS` | string | "" | CORS allowed methods |
-| `TRILIUM_NETWORK_CORSALLOWHEADERS` | string | "" | CORS allowed headers |
-| `TRILIUM_NETWORK_CORSRESOURCEPOLICY` | string | same-origin | CORS Resource Policy allows same-origin/same-site/cross-origin as values, will error if not |
+| `TRILIUM_NETWORK_HOST` | string | "0.0.0.0" | 服务器主机绑定 |
+| `TRILIUM_NETWORK_PORT` | string | "8080" | 服务器端口 |
+| `TRILIUM_NETWORK_HTTPS` | boolean | false | 启用 HTTPS |
+| `TRILIUM_NETWORK_CERTPATH` | string | "" | SSL 证书路径 |
+| `TRILIUM_NETWORK_KEYPATH` | string | "" | SSL 密钥路径 |
+| `TRILIUM_NETWORK_TRUSTEDREVERSEPROXY` | boolean/string | false | 反向代理信任设置 |
+| `TRILIUM_NETWORK_CORSALLOWORIGIN` | string | "" | CORS 允许的来源 |
+| `TRILIUM_NETWORK_CORSALLOWMETHODS` | string | "" | CORS 允许的方法 |
+| `TRILIUM_NETWORK_CORSALLOWHEADERS` | string | "" | CORS 允许的标头 |
+| `TRILIUM_NETWORK_CORSRESOURCEPOLICY` | string | same-origin | CORS 资源策略允许 same-origin/same-site/cross-origin 作为值，否则将报错 |
 
-### Session Section
+### 会话部分
 
-| Environment Variable | Type | Default | Description |
+| 环境变量 | 类型 | 默认值 | 描述 |
 | --- | --- | --- | --- |
-| `TRILIUM_SESSION_COOKIEMAXAGE` | integer | 1814400 | Session cookie max age in seconds (21 days) |
+| `TRILIUM_SESSION_COOKIEMAXAGE` | integer | 1814400 | 会话 Cookie 最大有效期（秒）（21 天） |
 
-### Sync Section
+### 同步部分
 
-| Environment Variable | Type | Default | Description |
+| 环境变量 | 类型 | 默认值 | 描述 |
 | --- | --- | --- | --- |
-| `TRILIUM_SYNC_SYNCSERVERHOST` | string | "" | Sync server host URL |
-| `TRILIUM_SYNC_SYNCSERVERTIMEOUT` | string | "120000" | Sync server timeout in milliseconds |
-| `TRILIUM_SYNC_SYNCPROXY` | string | "" | Sync proxy URL |
+| `TRILIUM_SYNC_SYNCSERVERHOST` | string | "" | 同步服务器主机 URL |
+| `TRILIUM_SYNC_SYNCSERVERTIMEOUT` | string | "120000" | 同步服务器超时时间（毫秒） |
+| `TRILIUM_SYNC_SYNCPROXY` | string | "" | 同步代理 URL |
 
-### MultiFactorAuthentication Section
+### 多因素身份验证部分
 
-See <a class="reference-link" href="../Installation%20%26%20Setup/Server%20Installation/Signing%20in%20with%20OpenID%20Connect.md">Signing in with OpenID Connect</a>.
+请参阅<a class="reference-link" href="../Installation%20%26%20Setup/Server%20Installation/Signing%20in%20with%20OpenID%20Connect.md">使用 OpenID Connect 登录</a>。
 
-### Logging Section
+### 日志部分
 
-| Environment Variable | Type | Default | Description |
+| 环境变量 | 类型 | 默认值 | 描述 |
 | --- | --- | --- | --- |
-| `TRILIUM_LOGGING_RETENTIONDAYS` | integer | 90 | Number of days to retain log files |
+| `TRILIUM_LOGGING_RETENTIONDAYS` | integer | 90 | 日志文件保留天数 |
 
-### Development Section
+### 开发部分
 
-| Environment Variable | Type | Default | Description |
+| 环境变量 | 类型 | 默认值 | 描述 |
 | --- | --- | --- | --- |
-| `TRILIUM_MANUAL_DB_MIGRATION` | boolean | false | If `true`, the application will not start if automatic database migrations are pending and would modify the database schema. |
+| `TRILIUM_MANUAL_DB_MIGRATION` | boolean | false | 如果为 `true`，当存在待处理的自动数据库迁移且会修改数据库架构时，应用程序将不会启动。 |
 
-## Alternative Environment Variables
+## 备选环境变量
 
-The following alternative environment variable names are also supported and work identically to their longer counterparts:
+以下备选环境变量名称也受支持，并且与其较长的对应项功能相同：
 
-### Network CORS Variables
+### 网络 CORS 变量
 
-*   `TRILIUM_NETWORK_CORS_ALLOW_ORIGIN` (alternative to `TRILIUM_NETWORK_CORSALLOWORIGIN`)
-*   `TRILIUM_NETWORK_CORS_ALLOW_METHODS` (alternative to `TRILIUM_NETWORK_CORSALLOWMETHODS`)
-*   `TRILIUM_NETWORK_CORS_ALLOW_HEADERS` (alternative to `TRILIUM_NETWORK_CORSALLOWHEADERS`)
-*   `TRILIUM_NETWORK_CORS_RESOURCE_POLICY` (alternative to `TRILIUM_NETWORK_CORSRESOURCEPOLICY`)
+*   `TRILIUM_NETWORK_CORS_ALLOW_ORIGIN`（`TRILIUM_NETWORK_CORSALLOWORIGIN` 的备选）
+*   `TRILIUM_NETWORK_CORS_ALLOW_METHODS`（`TRILIUM_NETWORK_CORSALLOWMETHODS` 的备选）
+*   `TRILIUM_NETWORK_CORS_ALLOW_HEADERS`（`TRILIUM_NETWORK_CORSALLOWHEADERS` 的备选）
+*   `TRILIUM_NETWORK_CORS_RESOURCE_POLICY`（`TRILIUM_NETWORK_CORSRESOURCEPOLICY` 的备选）
 
-### Sync Variables
+### 同步变量
 
-*   `TRILIUM_SYNC_SERVER_HOST` (alternative to `TRILIUM_SYNC_SYNCSERVERHOST`)
-*   `TRILIUM_SYNC_SERVER_TIMEOUT` (alternative to `TRILIUM_SYNC_SYNCSERVERTIMEOUT`)
-*   `TRILIUM_SYNC_SERVER_PROXY` (alternative to `TRILIUM_SYNC_SYNCPROXY`)
+*   `TRILIUM_SYNC_SERVER_HOST`（`TRILIUM_SYNC_SYNCSERVERHOST` 的备选）
+*   `TRILIUM_SYNC_SERVER_TIMEOUT`（`TRILIUM_SYNC_SYNCSERVERTIMEOUT` 的备选）
+*   `TRILIUM_SYNC_SERVER_PROXY`（`TRILIUM_SYNC_SYNCPROXY` 的备选）
 
-### OAuth/MFA Variables
+### OAuth/MFA 变量
 
-*   `TRILIUM_OAUTH_BASE_URL` (alternative to `TRILIUM_MULTIFACTORAUTHENTICATION_OAUTHBASEURL`)
-*   `TRILIUM_OAUTH_CLIENT_ID` (alternative to `TRILIUM_MULTIFACTORAUTHENTICATION_OAUTHCLIENTID`)
-*   `TRILIUM_OAUTH_CLIENT_SECRET` (alternative to `TRILIUM_MULTIFACTORAUTHENTICATION_OAUTHCLIENTSECRET`)
-*   `TRILIUM_OAUTH_ISSUER_BASE_URL` (alternative to `TRILIUM_MULTIFACTORAUTHENTICATION_OAUTHISSUERBASEURL`)
-*   `TRILIUM_OAUTH_ISSUER_NAME` (alternative to `TRILIUM_MULTIFACTORAUTHENTICATION_OAUTHISSUERNAME`)
-*   `TRILIUM_OAUTH_ISSUER_ICON` (alternative to `TRILIUM_MULTIFACTORAUTHENTICATION_OAUTHISSUERICON`)
+*   `TRILIUM_OAUTH_BASE_URL`（`TRILIUM_MULTIFACTORAUTHENTICATION_OAUTHBASEURL` 的备选）
+*   `TRILIUM_OAUTH_CLIENT_ID`（`TRILIUM_MULTIFACTORAUTHENTICATION_OAUTHCLIENTID` 的备选）
+*   `TRILIUM_OAUTH_CLIENT_SECRET`（`TRILIUM_MULTIFACTORAUTHENTICATION_OAUTHCLIENTSECRET` 的备选）
+*   `TRILIUM_OAUTH_ISSUER_BASE_URL`（`TRILIUM_MULTIFACTORAUTHENTICATION_OAUTHISSUERBASEURL` 的备选）
+*   `TRILIUM_OAUTH_ISSUER_NAME`（`TRILIUM_MULTIFACTORAUTHENTICATION_OAUTHISSUERNAME` 的备选）
+*   `TRILIUM_OAUTH_ISSUER_ICON`（`TRILIUM_MULTIFACTORAUTHENTICATION_OAUTHISSUERICON` 的备选）
 
-### Logging Variables
+### 日志变量
 
-*   `TRILIUM_LOGGING_RETENTION_DAYS` (alternative to `TRILIUM_LOGGING_RETENTIONDAYS`)
+*   `TRILIUM_LOGGING_RETENTION_DAYS`（`TRILIUM_LOGGING_RETENTIONDAYS` 的备选）
 
-## Boolean Values
+## 布尔值
 
-Boolean environment variables accept the following values:
+布尔环境变量接受以下值：
 
-*   **True**: `"true"`, `"1"`, `1`
-*   **False**: `"false"`, `"0"`, `0`
-*   Any other value defaults to `false`
+*   **真**：`"true"`、`"1"`、`1`
+*   **假**：`"false"`、`"0"`、`0`
+*   任何其他值默认为 `false`
 
-## Using Environment Variables
+## 使用环境变量
 
-Both naming patterns are fully supported and can be used interchangeably:
+两种命名模式均完全受支持，可以互换使用：
 
-*   The longer format follows the section/key pattern for consistency with the INI file structure
-*   The shorter alternatives provide convenience for common configurations
-*   You can use whichever format you prefer - both are equally valid
+*   较长的格式遵循节/键模式，与 INI 文件结构保持一致
+*   较短的备选形式为常见配置提供了便利
+*   您可以使用任何一种您喜欢的格式——两者同样有效
 
-## Examples
+## 示例
 
-### Docker Compose Example
+### Docker Compose 示例
 
 ```yaml
 services:
   trilium:
     image: triliumnext/trilium
     environment:
-      # Using full format
+      # 使用完整格式
       TRILIUM_GENERAL_INSTANCENAME: "My Trilium Instance"
       TRILIUM_NETWORK_PORT: "8080"
       TRILIUM_NETWORK_CORSALLOWORIGIN: "https://myapp.com"
       TRILIUM_SYNC_SYNCSERVERHOST: "https://sync.example.com"
       TRILIUM_MULTIFACTORAUTHENTICATION_OAUTHBASEURL: "https://auth.example.com"
       
-      # Or using shorter alternatives (equally valid)
+      # 或使用较短的备选形式（同样有效）
       # TRILIUM_NETWORK_CORS_ALLOW_ORIGIN: "https://myapp.com"
       # TRILIUM_SYNC_SERVER_HOST: "https://sync.example.com"
       # TRILIUM_OAUTH_BASE_URL: "https://auth.example.com"
 ```
 
-### Shell Export Example
+### Shell 导出示例
 
 ```
-# Using either format
+# 使用任一格式
 export TRILIUM_GENERAL_NOAUTHENTICATION=false
 export TRILIUM_NETWORK_HTTPS=true
 export TRILIUM_NETWORK_CERTPATH=/path/to/cert.pem
 export TRILIUM_NETWORK_KEYPATH=/path/to/key.pem
 export TRILIUM_LOGGING_RETENTIONDAYS=30
 
-# Start Trilium
+# 启动 Trilium
 npm start
 ```
 
-## config.ini Reference
+## config.ini 参考
 
-For the complete list of configuration options and their INI file format, please review the [config-sample.ini](https://github.com/TriliumNext/Trilium/blob/main/apps/server/src/assets/config-sample.ini) file in the Trilium repository
+有关配置选项及其 INI 文件格式的完整列表，请查看 Trilium 仓库中的 [config-sample.ini](https://github.com/TriliumNext/Trilium/blob/main/apps/server/src/assets/config-sample.ini) 文件。

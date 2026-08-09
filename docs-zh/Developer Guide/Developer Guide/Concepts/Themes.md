@@ -1,17 +1,18 @@
-# Themes
-## Server-side
+# 主题
 
-*   There are three themes embedded in the application:
-    *   `light`, located in `src\public\stylesheets\theme-light.css`
-    *   `dark`, located in `src\public\stylesheets\theme-dark.css`
-    *   `next`, composed from `src\public\stylesheets\theme-next-light.css` and `src\public\stylesheets\theme-next-dark.css`.
-*   The default theme is set only once, when the database is created and is managed by `options_init#initNotSyncedOptions`.
-    *   In the original implementation: On Electron, the choice between `light` and `dark` is done based on the OS preference. Otherwise, the theme is always `dark`.
-    *   Now, we always choose `next` as the default theme.
-*   The theme is served via `src\routes\index.ts`, in the `getThemeCssUrl` method.
+## 服务端
 
-## Client-side
+*   应用程序内置了三个主题：
+    *   `light`，位于 `src\public\stylesheets\theme-light.css`
+    *   `dark`，位于 `src\public\stylesheets\theme-dark.css`
+    *   `next`，由 `src\public\stylesheets\theme-next-light.css` 和 `src\public\stylesheets\theme-next-dark.css` 组成。
+*   默认主题仅在创建数据库时设置一次，并由 `options_init#initNotSyncedOptions` 管理。
+    *   在原始实现中：在 Electron 上，`light` 和 `dark` 的选择基于操作系统偏好。否则，主题始终为 `dark`。
+    *   现在，我们始终选择 `next` 作为默认主题。
+*   主题通过 `src\routes\index.ts` 中的 `getThemeCssUrl` 方法提供。
 
-*   The predefined themes are hard-coded in the client in `src\public\app\widgets\type_widgets\options\appearance\theme.js`.
-*   The user-defined themes are obtained via a call to the server: `options/user-themes`.
-*   The theme retrieval is done via a request.
+## 客户端
+
+*   预定义主题在客户端的 `src\public\app\widgets\type_widgets\options\appearance\theme.js` 中硬编码。
+*   用户自定义主题通过调用服务器获取：`options/user-themes`。
+*   主题检索通过请求完成。

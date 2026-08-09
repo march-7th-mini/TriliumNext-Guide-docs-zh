@@ -1,74 +1,75 @@
-# Backend
-### Application Entry Point
+# 后端
 
-Location: `apps/server/src/main.ts`
+### 应用程序入口点
 
-**Startup Sequence:**
+位置：`apps/server/src/main.ts`
 
-1.  Load configuration
-2.  Initialize database
-3.  Run migrations
-4.  Load Becca cache
-5.  Start Express server
-6.  Initialize WebSocket
-7.  Start scheduled tasks
+**启动顺序：**
 
-### Service Layer
+1.  加载配置
+2.  初始化数据库
+3.  运行迁移
+4.  加载 Becca 缓存
+5.  启动 Express 服务器
+6.  初始化 WebSocket
+7.  启动定时任务
 
-Located at: `apps/server/src/services/`
+### 服务层
 
-**Core Services:**
+位于：`apps/server/src/services/`
 
-*   **Notes Management**
-    *   `notes.ts` - CRUD operations
-    *   `note_contents.ts` - Content handling
-    *   `note_types.ts` - Type-specific logic
-    *   `cloning.ts` - Note cloning/multi-parent
-*   **Tree Operations**
-    *   `tree.ts` - Tree structure management
-    *   `branches.ts` - Branch operations
-    *   `consistency_checks.ts` - Tree integrity
-*   **Search**
-    *   `search/search.ts` - Main search engine
-    *   `search/expressions/` - Search expression parsing
-    *   `search/services/` - Search utilities
-*   **Sync**
-    *   `sync.ts` - Synchronization protocol
-    *   `sync_update.ts` - Update handling
-    *   `sync_mutex.ts` - Concurrency control
-*   **Scripting**
-    *   `backend_script_api.ts` - Backend script API
-    *   `script_context.ts` - Script execution context
-*   **Import/Export**
-    *   `import/` - Various import formats
-    *   `export/` - Export to different formats
-    *   `zip.ts` - Archive handling
-*   **Security**
-    *   `encryption.ts` - Note encryption
-    *   `protected_session.ts` - Session management
-    *   `password.ts` - Password handling
+**核心服务：**
 
-### Route Structure
+*   **笔记管理**
+    *   `notes.ts` - 增删改查操作
+    *   `note_contents.ts` - 内容处理
+    *   `note_types.ts` - 类型特定逻辑
+    *   `cloning.ts` - 笔记克隆/多父级
+*   **树操作**
+    *   `tree.ts` - 树结构管理
+    *   `branches.ts` - 分支操作
+    *   `consistency_checks.ts` - 树完整性
+*   **搜索**
+    *   `search/search.ts` - 主搜索引擎
+    *   `search/expressions/` - 搜索表达式解析
+    *   `search/services/` - 搜索工具
+*   **同步**
+    *   `sync.ts` - 同步协议
+    *   `sync_update.ts` - 更新处理
+    *   `sync_mutex.ts` - 并发控制
+*   **脚本**
+    *   `backend_script_api.ts` - 后端脚本 API
+    *   `script_context.ts` - 脚本执行上下文
+*   **导入/导出**
+    *   `import/` - 各种导入格式
+    *   `export/` - 导出为不同格式
+    *   `zip.ts` - 归档处理
+*   **安全**
+    *   `encryption.ts` - 笔记加密
+    *   `protected_session.ts` - 会话管理
+    *   `password.ts` - 密码处理
 
-Located at: `apps/server/src/routes/`
+### 路由结构
+
+位于：`apps/server/src/routes/`
 
 ```
 routes/
-├── index.ts              # Route registration
-├── api/                  # REST API endpoints
+├── index.ts              # 路由注册
+├── api/                  # REST API 端点
 │   ├── notes.ts
 │   ├── branches.ts
 │   ├── attributes.ts
 │   ├── search.ts
 │   ├── login.ts
 │   └── ...
-└── custom/               # Special endpoints
+└── custom/               # 特殊端点
     ├── setup.ts
     ├── share.ts
     └── ...
 ```
 
-**API Endpoint Pattern:**
+**API 端点模式：**
 
 ```typescript
 router.get('/api/notes/:noteId', (req, res) => {
@@ -78,11 +79,11 @@ router.get('/api/notes/:noteId', (req, res) => {
 })
 ```
 
-### Middleware
+### 中间件
 
-Key middleware components:
+关键中间件组件：
 
-*   `auth.ts` - Authentication
-*   `csrf.ts` - CSRF protection
-*   `request_context.ts` - Request-scoped data
-*   `error_handling.ts` - Error responses
+*   `auth.ts` - 身份验证
+*   `csrf.ts` - CSRF 保护
+*   `request_context.ts` - 请求作用域数据
+*   `error_handling.ts` - 错误响应

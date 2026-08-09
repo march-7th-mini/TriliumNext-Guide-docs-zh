@@ -1,42 +1,42 @@
-# Release Template
-> [!NOTE]
-> If you enjoyed this release, consider showing a token of appreciation by:
+# 发布模板
+> [!注意]
+> 如果您喜欢本次发布，不妨通过以下方式表达感谢：
 > 
-> *   Pressing the “Star” button on [GitHub](https://github.com/TriliumNext/Trilium) (top-right).
-> *   Considering a one-time or recurrent donation to the [lead developer](https://github.com/eliandoran) via [GitHub Sponsors](https://github.com/sponsors/eliandoran) or [PayPal](https://paypal.me/eliandoran).
+> *   在 [GitHub](https://github.com/TriliumNext/Trilium) 上点击“Star”按钮（右上角）。
+> *   考虑通过 [GitHub Sponsors](https://github.com/sponsors/eliandoran) 或 [PayPal](https://paypal.me/eliandoran) 向[首席开发者](https://github.com/eliandoran)进行一次性或定期捐赠。
 
-## 💡 Key highlights
-
-1.  \[…\]
-
-## 🚨 Breaking changes
+## 💡 主要亮点
 
 1.  \[…\]
 
-## 📱 Mobile improvements
+## 🚨 破坏性变更
 
 1.  \[…\]
 
-## 🐞 Bugfixes
+## 📱 移动端改进
 
 1.  \[…\]
 
-## ✨ Improvements
+## 🐞 错误修复
 
 1.  \[…\]
 
-## 📖 Documentation
+## ✨ 功能改进
 
 1.  \[…\]
 
-## 🌍 Internationalization
+## 📖 文档
 
 1.  \[…\]
 
-## 🛠️ Technical updates
+## 🌍 国际化
 
 1.  \[…\]
 
-## 🔒️ Security improvements
+## 🛠️ 技术更新
+
+1.  \[…\]
+
+## 🔒️ 安全改进
 
 1.  \[…\]

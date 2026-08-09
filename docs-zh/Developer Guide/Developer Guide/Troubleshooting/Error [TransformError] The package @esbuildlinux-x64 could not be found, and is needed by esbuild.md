@@ -1,15 +1,15 @@
-# Error [TransformError]: The package "@esbuild/linux-x64" could not be found, and is needed by esbuild.
-Full log:
+# 错误 [TransformError]：找不到软件包“@esbuild/linux-x64”，而 esbuild 需要它。
+完整日志：
 
 ```
 > trilium@0.91.1-beta start-server
 > cross-env TRILIUM_DATA_DIR=./data TRILIUM_ENV=dev TRILIUM_SYNC_SERVER_HOST=http://tsyncserver:4000 nodemon src/main.ts
 
 [nodemon] 3.1.9
-[nodemon] to restart at any time, enter `rs`
-[nodemon] watching path(s): src/**/* translations/**/*
-[nodemon] watching extensions: ts,js,json
-[nodemon] starting `tsx src/main.ts`
+[nodemon] 要随时重启，请输入 `rs`
+[nodemon] 正在监视路径：src/**/* translations/**/*
+[nodemon] 正在监视扩展名：ts,js,json
+[nodemon] 正在启动 `tsx src/main.ts`
 
 node:internal/process/promises:391
     triggerUncaughtException(err, true /* fromPromise */);
@@ -32,7 +32,7 @@ for your current platform.
     at async Hooks.load (node:internal/modules/esm/hooks:451:20)
 ```
 
-The solution is to remove `node_modules` and reinstall all dependencies:
+解决方案是删除 `node_modules` 并重新安装所有依赖：
 
 ```
 rm -r node_modules

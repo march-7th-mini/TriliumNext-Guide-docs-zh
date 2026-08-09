@@ -1,15 +1,16 @@
-# Frontend logs
-To provide frontend logs, we need to open the Developer Console. Often the easiest way is to press <kbd>Ctrl</kbd>\-<kbd>Shift</kbd>\-<kbd>I</kbd> which should work in most browsers (and desktop app). Make sure that the error producing action happened right before you copy&paste the errors, the console is cleared on app restart.
+# 前端日志
 
-If that doesn't work, then:
+要提供前端日志，我们需要打开开发者控制台。通常最简单的方法是按下 <kbd>Ctrl</kbd>\-<kbd>Shift</kbd>\-<kbd>I</kbd>，这在大多数浏览器（及桌面应用）中应该都有效。请确保在复制粘贴错误信息之前，触发错误的相关操作刚刚发生，因为控制台会在应用重启时被清空。
 
-*   in Trilium desktop app, go to top-left menu button -> Advanced -> Open Dev Tools
-*   In Firefox/Chrome right-click anywhere in the page and click Inspect:
+如果上述方法无效，则：
+
+*   在 Trilium 桌面应用中，前往左上角菜单按钮 -> 高级 -> 打开开发者工具
+*   在 Firefox/Chrome 中，在页面任意位置右键点击并选择“检查”：
 
 ![](Frontend%20logs_error-logs-firefox-context-men.png)
 
-Once you have Dev Tools open, click on "Console" tab:
+打开开发者工具后，点击“控制台”标签页：
 
 ![](Frontend%20logs_image.png)
 
-Copy-paste (or screenshot) the logs. It's better to provide not just errors, but the whole log, which might provide context while analyzing the bug.
+复制粘贴（或截图）日志。最好提供完整的日志而不仅仅是错误信息，这可能为分析错误提供上下文。

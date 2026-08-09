@@ -1,21 +1,21 @@
-# Note types with split view
-Split view is a feature of <a class="reference-link" href="../../Note%20Types/Mermaid%20Diagrams.md">Mermaid Diagrams</a> and <a class="reference-link" href="../../Note%20Types/Markdown.md">Markdown</a> notes which displays both the source code on one side and the preview of the content on the other.
+# 带分屏视图的笔记类型
+分屏视图是<a class="reference-link" href="../../Note%20Types/Mermaid%20Diagrams.md">Mermaid 图表</a>和<a class="reference-link" href="../../Note%20Types/Markdown.md">Markdown</a>笔记的一项功能，它在一侧显示源代码，在另一侧显示内容预览。
 
-<a class="reference-link" href="../../Note%20Types/Mermaid%20Diagrams.md">Mermaid Diagrams</a> also allow changing between a horizontal or a vertical split, to accommodate for the various sizes of diagrams.
+<a class="reference-link" href="../../Note%20Types/Mermaid%20Diagrams.md">Mermaid 图表</a>还允许在水平或垂直分屏之间切换，以适应各种大小的图表。
 
-## Display modes and interaction
+## 显示模式与交互
 
-The split comes with three different display modes:
+分屏视图提供三种不同的显示模式：
 
-*   _Split view_, in which both the source code is available on one side and can be edited, and the preview is available on the other side.
-    *   In this mode, the size of either the source pane or the preview pane can be adjusted by dragging the small border between them.
-*   _Source view_ which shows the source code on the entire screen for a more focused editing experience.
-*   _Preview_ which displays only the rendering of the diagram or text in full screen, especially useful for read-only notes.
+*   _分屏视图_，一侧显示源代码并可编辑，另一侧显示预览。
+    *   在此模式下，可以通过拖动源代码窗格和预览窗格之间的小边框来调整任一窗格的大小。
+*   _源代码视图_，在整个屏幕上显示源代码，以获得更专注的编辑体验。
+*   _预览_，仅在全屏显示图表或文本的渲染结果，特别适用于只读笔记。
 
-These buttons can be found near the <a class="reference-link" href="Note%20buttons.md">Note buttons</a> section on the <a class="reference-link" href="New%20Layout.md">New Layout</a>, or in the <a class="reference-link" href="Floating%20buttons.md">Floating buttons</a> on the old layout.
+这些按钮可以在<a class="reference-link" href="New%20Layout.md">新布局</a>的<a class="reference-link" href="Note%20buttons.md">笔记按钮</a>部分附近找到，或者在旧布局的<a class="reference-link" href="Floating%20buttons.md">浮动按钮</a>中找到。
 
-The display node is stored at note level.
+显示模式存储在笔记级别。
 
-## Relation to read-only notes
+## 与只读笔记的关系
 
-If a note is marked as [read-only](../Notes/Read-Only%20Notes.md), the source view will not be editable. While in preview mode, marking a note as read-only has no effect since the preview itself is not editable.
+如果笔记被标记为[只读](../Notes/Read-Only%20Notes.md)，则源代码视图将不可编辑。在预览模式下，将笔记标记为只读没有效果，因为预览本身不可编辑。

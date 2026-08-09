@@ -1,15 +1,15 @@
-# Note List
+# 笔记列表
 <figure class="image"><img style="aspect-ratio:990/590;" src="Note List_image.png" width="990" height="590"></figure>
 
-When a note has one or more child notes, they will be listed at the end of the note for easy navigation.
+当一条笔记有一个或多个子笔记时，它们会列在笔记末尾，以便于导航。
 
-## Configuration
+## 配置
 
-*   To hide the note list for a particular note, simply apply the `hideChildrenOverview` [label](../../Advanced%20Usage/Attributes.md).
-*   For some view types, such as Grid view, only a subset of notes will be displayed and pagination can be used to navigate through all of them for performance reasons. To adjust the number of notes per page, set `pageSize` to the desired number.
+*   若要隐藏特定笔记的笔记列表，只需应用 `hideChildrenOverview` [标签](../../Advanced%20Usage/Attributes.md)。
+*   对于某些视图类型，如网格视图，出于性能考虑，只会显示部分笔记，并可通过分页浏览全部笔记。若要调整每页笔记数量，请将 `pageSize` 设置为所需数值。
 
-## View types
+## 视图类型
 
-The view types dictate how the child notes are represented. By default, the notes will be displayed in a grid, however there are also some other view types available.
+视图类型决定了子笔记的呈现方式。默认情况下，笔记将以网格形式显示，但还有其他一些视图类型可供选择。
 
-Generally the view type can only be changed in a <a class="reference-link" href="../../Collections.md">Collections</a> note from the <a class="reference-link" href="../UI%20Elements/Ribbon.md">Ribbon</a>, but it can also be changed manually on any type of note using the `#viewType` attribute.
+通常，视图类型只能在 <a class="reference-link" href="../../Collections.md">集合</a> 笔记中通过 <a class="reference-link" href="../UI%20Elements/Ribbon.md">功能区</a> 更改，但也可以在任何类型的笔记上使用 `#viewType` 属性手动更改。

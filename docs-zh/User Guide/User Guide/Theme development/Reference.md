@@ -1,26 +1,27 @@
-# Reference
-## Detecting mobile vs. desktop
+# 参考
 
-The mobile layout is different than the one on the desktop. Use `body.mobile` and `body.desktop` to differentiate between them.
+## 检测移动端与桌面端
+
+移动端布局与桌面端不同。使用 `body.mobile` 和 `body.desktop` 来区分它们。
 
 ```css
 body.mobile #root-widget {
-	/* Do something on mobile */
+	/* 在移动端执行某些操作 */
 }
 
 body.desktop #root-widget {
-	/* Do something on desktop */
+	/* 在桌面端执行某些操作 */
 }
 ```
 
-Do note that there is also a “tablet mode” in the mobile layout. For that particular case media queries are required:
+请注意，移动端布局中还有一种“平板模式”。对于这种情况，需要使用媒体查询：
 
 ```css
 @media (max-width: 991px) {
 
     #launcher-pane {
 
-        /* Do something on mobile layout */
+        /* 在移动端布局上执行某些操作 */
 
     }
 
@@ -32,40 +33,40 @@ Do note that there is also a “tablet mode” in the mobile layout. For that pa
 
     #launcher-pane {
 
-        /* Do something on mobile tablet + desktop layout */
+        /* 在移动端平板 + 桌面端布局上执行某些操作 */
 
     }
 
 }
 ```
 
-## Detecting horizontal vs. vertical layout
+## 检测水平与垂直布局
 
-The user can select between vertical layout (the classical one, where the launcher bar is on the left) and a horizontal layout (where the launcher bar is on the top and tabs are full-width).
+用户可以在垂直布局（经典布局，启动器栏在左侧）和水平布局（启动器栏在顶部且标签页为全宽）之间进行选择。
 
-Different styles can be applied by using classes at `body` level:
+可以通过在 `body` 级别使用类来应用不同的样式：
 
 ```
 body.layout-vertical #left-pane {
-	/* Do something */
+	/* 执行某些操作 */
 }
 
 body.layout-horizontal #center-pane {
-	/* Do something else */	
+	/* 执行其他操作 */	
 }
 ```
 
-The two different layouts use different containers (but they are present in the DOM regardless of the user's choice), for example `#horizontal-main-container` and `#vertical-main-container` can be used to customize the background of the content section.
+这两种不同的布局使用不同的容器（但无论用户如何选择，它们都存在于 DOM 中），例如，可以使用 `#horizontal-main-container` 和 `#vertical-main-container` 来自定义内容区域的背景。
 
-## Detecting platform (Windows, macOS) or Electron
+## 检测平台（Windows、macOS）或 Electron
 
-It is possible to add particular styles that only apply to a given platform by using the classes in `body`:
+可以通过在 `body` 中使用类来添加仅适用于特定平台的特定样式：
 
 | Windows | macOS |
 | --- | --- |
 | `<br>body.platform-win32 {<br> background: red;<br>}<br>` | `<br>body.platform-darwin {<br> background: red;<br>}<br>` |
 
-It is also possible to only apply a style if running under Electron (desktop application):
+也可以仅在 Electron（桌面应用程序）环境下应用样式：
 
 ```
 body.electron {
@@ -73,29 +74,29 @@ body.electron {
 }
 ```
 
-### Native title bar
+### 原生标题栏
 
-It's possible to detect if the user has selected the native title bar or the custom title bar by querying against `body`:
+可以通过查询 `body` 来检测用户是选择了原生标题栏还是自定义标题栏：
 
 ```
 body.electron.native-titlebar {
-	/* Do something */
+	/* 执行某些操作 */
 }
 
 body.electron:not(.native-titlebar) {
-	/* Do something else */
+	/* 执行其他操作 */
 }
 ```
 
-### Native window buttons
+### 原生窗口按钮
 
-When running under Electron with native title bar off, a feature was introduced to use the platform-specific window buttons such as the semaphore on macOS.
+在 Electron 环境下且关闭原生标题栏时，引入了一项功能，可以使用特定于平台的窗口按钮，例如 macOS 上的信号灯按钮。
 
-See [Native title bar buttons by eliandoran · Pull Request #702 · TriliumNext/Notes](https://github.com/TriliumNext/Notes/pull/702) for the original implementation of this feature, including screenshots.
+有关此功能的原始实现（包括截图），请参阅 [由 eliandoran 提交的原生标题栏按钮 · Pull Request #702 · TriliumNext/Notes](https://github.com/TriliumNext/Notes/pull/702)。
 
-#### On Windows
+#### 在 Windows 上
 
-The colors of the native window button area can be adjusted using a RGB hex color:
+可以使用 RGB 十六进制颜色调整原生窗口按钮区域的颜色：
 
 ```
 body {
@@ -104,7 +105,7 @@ body {
 }
 ```
 
-It is also possible to use transparency at the cost of reduced hover colors using a RGBA hex color:
+也可以使用 RGBA 十六进制颜色来实现透明效果，但代价是悬停颜色会减弱：
 
 ```
 body {
@@ -112,11 +113,11 @@ body {
 }
 ```
 
-Note that the value is read when the window is initialized and then it is refreshed only when the user changes their light/dark mode preference.
+请注意，该值在窗口初始化时读取，之后仅在用户更改其浅色/深色模式偏好时才会刷新。
 
-#### On macOS
+#### 在 macOS 上
 
-On macOS the semaphore window buttons are enabled by default when the native title bar is disabled. The offset of the buttons can be adjusted using:
+在 macOS 上，当禁用原生标题栏时，默认启用信号灯窗口按钮。可以使用以下方式调整按钮的偏移量：
 
 ```css
 body {
@@ -125,9 +126,9 @@ body {
 }
 ```
 
-### Background/transparency effects on Windows (Mica)
+### Windows 上的背景/透明效果（Mica）
 
-Windows 11 offers a special background/transparency effect called Mica, which can be enabled by themes by setting the `--background-material` variable at `body` level:
+Windows 11 提供了一种称为 Mica 的特殊背景/透明效果，主题可以通过在 `body` 级别设置 `--background-material` 变量来启用它：
 
 ```css
 body.electron.platform-win32 {
@@ -135,15 +136,15 @@ body.electron.platform-win32 {
 }
 ```
 
-The value can be either `tabbed` (especially useful for the horizontal layout) or `mica` (ideal for the vertical layout).
+该值可以是 `tabbed`（对水平布局特别有用）或 `mica`（非常适合垂直布局）。
 
-Do note that the Mica effect is applied at `body` level and the theme needs to make the entire hierarchy (semi-)transparent in order for it to be visible. Use the TrilumNext theme as an inspiration.
+请注意，Mica 效果应用于 `body` 级别，并且主题需要使整个层级结构（半）透明才能使其可见。可以参考 TriliumNext 主题作为灵感。
 
-## Note icons, tab workspace accent color
+## 笔记图标、标签页工作区强调色
 
-Theme capabilities are small adjustments done through CSS variables that can affect the layout or the visual aspect of the application.
+主题功能是通过 CSS 变量进行的小调整，可以影响应用程序的布局或视觉外观。
 
-In the tab bar, to display the icons of notes instead of the icon of the workspace:
+在标签栏中，要显示笔记的图标而不是工作区的图标：
 
 ```css
 :root {
@@ -151,7 +152,7 @@ In the tab bar, to display the icons of notes instead of the icon of the workspa
 }
 ```
 
-When a workspace is hoisted for a given tab, it is possible to get the background color of that workspace, for example to apply a small strip on the tab instead of the whole background color:
+当某个标签页提升（hoisted）了一个工作区时，可以获取该工作区的背景颜色，例如，在标签页上应用一个小条而不是整个背景颜色：
 
 ```css
 .note-tab .note-tab-wrapper {
@@ -169,13 +170,13 @@ When a workspace is hoisted for a given tab, it is possible to get the backgroun
 }
 ```
 
-## Custom fonts
+## 自定义字体
 
-Currently the only way to include a custom font is to use [Custom resource providers](../Advanced%20Usage/Custom%20Resource%20Providers.md). Basically import a font into Trilium and assign it `#customResourceProvider=fonts/myfont.ttf` and then import the font in CSS via `/custom/fonts/myfont.ttf`. Use `../../../custom/fonts/myfont.ttf` if you run your Trilium server on a different path than `/`.
+目前，包含自定义字体的唯一方法是使用[自定义资源提供器](../Advanced%20Usage/Custom%20Resource%20Providers.md)。基本上，将字体导入 Trilium 并为其分配 `#customResourceProvider=fonts/myfont.ttf`，然后通过 `/custom/fonts/myfont.ttf` 在 CSS 中导入字体。如果你的 Trilium 服务器运行在 `/` 以外的路径上，请使用 `../../../custom/fonts/myfont.ttf`。
 
-## Dark and light themes
+## 深色和浅色主题
 
-A light theme needs to have the following CSS:
+浅色主题需要具有以下 CSS：
 
 ```css
 :root {
@@ -183,9 +184,9 @@ A light theme needs to have the following CSS:
 }
 ```
 
-if the theme is dark, then `--theme-style` needs to be `dark`.
+如果主题是深色的，则 `--theme-style` 需要为 `dark`。
 
-If the theme is auto (e.g. supports both light or dark based on `prefers-color-scheme`) it must also declare (in addition to setting `--theme-style` to either `light` or `dark`):
+如果主题是自动的（例如，根据 `prefers-color-scheme` 同时支持浅色或深色），则它还必须声明（除了将 `--theme-style` 设置为 `light` 或 `dark` 之外）：
 
 ```css
 :root {
@@ -195,4 +196,4 @@ If the theme is auto (e.g. supports both light or dark based on `prefers-color-s
 }
 ```
 
-This will affect the behavior of the Electron application by informing the operating system of the color preference (e.g. background effects will appear correct on Windows).
+这将通过将颜色偏好告知操作系统来影响 Electron 应用程序的行为（例如，背景效果在 Windows 上将正确显示）。

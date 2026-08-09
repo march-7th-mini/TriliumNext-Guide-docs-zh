@@ -1,4 +1,4 @@
-# Refreshing the application
-Some changes to the application will not take effect immediately and as such it might require to manually reload or refresh the application.
+# 刷新应用程序
+应用程序的某些更改不会立即生效，因此可能需要手动重新加载或刷新应用程序。
 
-To do so, simply press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>.
+为此，只需按下 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd> 即可。

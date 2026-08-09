@@ -1,6 +1,6 @@
-# Copy image reference to the clipboard
-This function is handled by `src/public/app/widgets/floating_buttons/copy_image_reference_button.js` and it supports multiple note types out of the box.
+# 将图片引用复制到剪贴板
+此功能由 `src/public/app/widgets/floating_buttons/copy_image_reference_button.js` 处理，并且它开箱即用地支持多种笔记类型。
 
-To enable the display of the button, simply modify `isEnabled` to add support for the new note type.
+要启用按钮的显示，只需修改 `isEnabled` 以添加对新笔记类型的支持。
 
-No other modifications should be necessary.
+无需进行其他修改。

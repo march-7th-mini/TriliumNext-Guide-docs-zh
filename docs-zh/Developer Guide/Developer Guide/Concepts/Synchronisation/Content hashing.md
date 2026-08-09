@@ -1,7 +1,8 @@
-# Content hashing
-Entity hashing is done in `content_hash#getEntityHashes`.
+# 内容哈希
 
-*   It works by looking at the `entity_changes` table and going through each of the entity names/types:
+实体哈希在 `content_hash#getEntityHashes` 中完成。
+
+*   其工作原理是查看 `entity_changes` 表并遍历每个实体名称/类型：
     *   `blobs`
     *   `attributes`
     *   `revisions`
@@ -10,8 +11,8 @@ Entity hashing is done in `content_hash#getEntityHashes`.
     *   `branches`
     *   `etapi_tokens`
     *   `options`
-*   For some reason `note_reordering` entities are ignored specifically.
-*   All the rows in `entity_changes` are then ordered alphabetically, based on their `entityId`.
-*   Every entity row is then grouped by `entityName` and then by sector. The sector is defined as the first character of the `id`.
-*   The hash is altered to add the `isErased` value as well since the hash of deleted entries is not updated.
-*   For each sector, the hash is calculated using `utils.hash`, using SHA1 encoded as Base64.
+*   出于某种原因，`note_reordering` 实体被特别忽略。
+*   然后，`entity_changes` 中的所有行根据其 `entityId` 按字母顺序排序。
+*   每个实体行随后按 `entityName` 分组，再按扇区分组。扇区定义为 `id` 的第一个字符。
+*   哈希值会被修改以同时添加 `isErased` 值，因为已删除条目的哈希值不会更新。
+*   对于每个扇区，使用 `utils.hash` 计算哈希值，使用 Base64 编码的 SHA1。

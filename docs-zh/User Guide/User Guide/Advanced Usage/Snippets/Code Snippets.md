@@ -1,25 +1,25 @@
-# Code Snippets
-Code Snippets are closely related to <a class="reference-link" href="../Templates.md">Templates</a>, but instead of defining the content of an entire note, a snippet is a reusable piece of code that can easily be inserted into a <a class="reference-link" href="../../Note%20Types/Code.md">Code</a> note.
+# 代码片段
+代码片段与<a class="reference-link" href="../Templates.md">模板</a>密切相关，但片段并非定义整个笔记的内容，而是一段可复用的代码，可以轻松插入到<a class="reference-link" href="../../Note%20Types/Code.md">代码</a>笔记中。
 
-## Creating a Code snippet
+## 创建代码片段
 
-In the <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">Note Tree</a>: 
+在<a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">笔记树</a>中：
 
-1.  Right-click the note where you want to place the snippet.
-2.  Select **Insert child** _note_.
-3.  Select _**Code snippet**_.
+1.  右键单击要放置片段的位置的笔记。
+2.  选择 **插入子** _笔记_。
+3.  选择 _**代码片段**_。
 
-Then simply type the desired code into the note and set the correct language mode.
+然后只需在笔记中输入所需代码并设置正确的语言模式。
 
-The note's title becomes the title of the snippet. Optionally, you can add a description in the <a class="reference-link" href="../Attributes/Promoted%20Attributes.md">Promoted Attributes</a> section.
+笔记的标题即成为片段的标题。可选地，您可以在<a class="reference-link" href="../Attributes/Promoted%20Attributes.md">提升属性</a>部分添加描述。
 
-## Inserting a snippet
+## 插入片段
 
-To insert a snippet, type `/snippet` and select its title from the dropdown.
+要插入片段，请键入 `/snippet` 并从下拉菜单中选择其标题。
 
-> [!IMPORTANT]
-> Only code snippets whose language mode matches the current code note are listed. For example, a CSS code note shows only CSS snippets, not JavaScript ones. The exception is snippets set to "Plain text", which are available in <a class="reference-link" href="../../Note%20Types/Markdown.md">Markdown</a> notes and any code note regardless of its language mode.
+> [!重要]
+> 仅列出语言模式与当前代码笔记匹配的代码片段。例如，CSS 代码笔记仅显示 CSS 片段，而不显示 JavaScript 片段。例外情况是设置为“纯文本”的片段，这些片段可在<a class="reference-link" href="../../Note%20Types/Markdown.md">Markdown</a>笔记以及任何代码笔记中使用，无论其语言模式如何。
 
-## Limitations
+## 限制
 
-*   Unlike <a class="reference-link" href="../Templates.md">Templates</a>, snippets cannot be limited to a particular [workspace](../../Basic%20Concepts%20and%20Features/Navigation/Workspaces.md).
+*   与<a class="reference-link" href="../Templates.md">模板</a>不同，片段不能限制在特定的[工作区](../../Basic%20Concepts%20and%20Features/Navigation/Workspaces.md)中。

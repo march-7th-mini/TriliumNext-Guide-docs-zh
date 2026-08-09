@@ -1,28 +1,29 @@
-# Multi-factor authentication with TOTP
-Multi-factor authentication (MFA) is a security process that requires users to provide two or more verification factors to gain access to a system, application, or account. This adds an extra layer of protection beyond just using a password.
+# 使用 TOTP 进行多因素身份验证
 
-By requiring more than one verification method, MFA helps reduce the risk of unauthorized access, even if someone has obtained your password. It’s highly recommended for securing sensitive information stored in your notes.
+多因素身份验证（MFA）是一种安全流程，要求用户提供两个或更多验证因素才能访问系统、应用程序或账户。这比仅使用密码增加了一层额外的保护。
 
-## Relationship to OpenID Connect (OIDC)
+通过要求多种验证方法，MFA 有助于降低未经授权访问的风险，即使有人获取了您的密码也是如此。强烈建议使用 MFA 来保护存储在笔记中的敏感信息。
 
-Multi-factor authentication makes your Trilium login safer by requiring an additional proof of identity apart from your password. <a class="reference-link" href="Signing%20in%20with%20OpenID%20Connect.md">Signing in with OpenID Connect</a> is a different concept which delegates your authentication to an external provider (e.g. your Google provider, or a self-hosted one such as Authelia). These authentication providers might provide their own security features such as TOTP or passkeys.
+## 与 OpenID Connect（OIDC）的关系
 
-## Time-based one-time password (TOTP)
+多因素身份验证通过要求除密码之外的额外身份证明，使您的 Trilium 登录更加安全。<a class="reference-link" href="Signing%20in%20with%20OpenID%20Connect.md">使用 OpenID Connect 登录</a>是一个不同的概念，它将您的身份验证委托给外部提供商（例如您的 Google 提供商，或自托管的提供商，如 Authelia）。这些身份验证提供商可能会提供自己的安全功能，例如 TOTP 或通行密钥。
 
-TOTP (Time-Based One-Time Password) is a security feature that generates a unique, temporary code on your device, like a smartphone, which changes every 30 seconds. You use this code, along with your password, to log into your account, making it much harder for anyone else to access them.
+## 基于时间的一次性密码（TOTP）
 
-1.  Go to <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">Options</a> → _Password & Auth._
-2.  Make sure _Sign-in with_ has _Local password_ selected.
-3.  In the _Two-factor authentication_ section, press _Set up._
-4.  Scan the QR code or manually enter the code in your authenticator app.
-5.  Enter the verification code from your authenticator app to confirm that the setup was successful and press _Verify & continue_.
-6.  Save the recovery codes, then tick the confirmation and press _Finish setup_.
-7.  Re-login will be required after TOTP setup is finished (After you refreshing the page).
+TOTP（基于时间的一次性密码）是一种安全功能，可在您的设备（如智能手机）上生成唯一的临时代码，该代码每 30 秒更改一次。您可以将此代码与密码一起使用来登录您的账户，从而使其他人更难访问这些账户。
 
-## Recovery codes
+1.  前往 <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">选项</a> → _密码与身份验证。_
+2.  确保 _登录方式_ 选择了 _本地密码_。
+3.  在 _双因素身份验证_ 部分，点击 _设置_。
+4.  扫描二维码或在您的身份验证器应用中手动输入代码。
+5.  输入来自身份验证器应用的验证码以确认设置成功，然后点击 _验证并继续_。
+6.  保存恢复代码，然后勾选确认并点击 _完成设置_。
+7.  TOTP 设置完成后需要重新登录（在您刷新页面之后）。
 
-Recovery codes can be used in place of the TOTP if you lose access to your authenticator. Trilium provides 8 different recovery codes, each recovery code can be used once.
+## 恢复代码
 
-To use a recovery code, simply login with your password and use the recovery code as the security token.
+如果您无法访问身份验证器，可以使用恢复代码代替 TOTP。Trilium 提供 8 个不同的恢复代码，每个恢复代码只能使用一次。
 
-The initial set of recovery codes is generated when setting up your TOTP for the first time. They can be regenerated at any time by going to  <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">Options</a> → _Password & Auth_ and pressing the _Regenerate recovery codes_ button. This will generate a new set of recovery codes while at the same time disabling the previous ones.
+要使用恢复代码，只需使用您的密码登录，并将恢复代码用作安全令牌。
+
+初始的恢复代码集是在您首次设置 TOTP 时生成的。您可以随时通过前往 <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">选项</a> → _密码与身份验证_ 并点击 _重新生成恢复代码_ 按钮来重新生成它们。这将生成一组新的恢复代码，同时使之前的恢复代码失效。

@@ -1,66 +1,67 @@
-# Ribbon
+# 功能区
+
 ![](Ribbon_image.png)
 
-The ribbon allows changing options, attributes and viewing information about the current note.
+功能区允许更改当前笔记的选项、属性和查看信息。
 
-## Settings
+## 设置
 
-It is possible to change whether some ribbon items will be automatically open when navigating to a new note. To do so, in [Settings](Options.md), go to _Appearance_ and look for the _Ribbon widgets_ section.
+可以更改某些功能区项目在导航到新笔记时是否自动打开。为此，在[设置](Options.md)中，转到_外观_并查找_功能区小组件_部分。
 
-## Formatting
+## 格式化
 
-If you are using the _Fixed_ formatting toolbar, all the formatting buttons for text notes will appear here. See [Formatting toolbar](../../Note%20Types/Text/Formatting%20toolbar.md) for more information.
+如果您使用的是_固定_格式化工具栏，则文本笔记的所有格式化按钮都将显示在此处。有关更多信息，请参阅[格式化工具栏](../../Note%20Types/Text/Formatting%20toolbar.md)。
 
-## Tabs
+## 标签页
 
-### Basic Properties
+### 基本属性
 
-*   _**Note type**_ allows changing the [note type](../../Note%20Types.md) of a note.
-    *   Generally this is desirable only if the note is empty.
-    *   As a more advanced use, it's possible to change the note type in order to modify the [source code](../../Advanced%20Usage/Note%20source.md) of a note.
-*   _**Protect the note**_ toggles whether the current note is encrypted and accessible only by entering the protected session. See [Protected Notes](../Notes/Protected%20Notes.md) for more information.
-*   _**Editable**_ changes whether the current note:
-    *   Enters [read-only mode](../Notes/Read-Only%20Notes.md) automatically if the note is too big (default behavior).
-    *   Is always in read-only mode (however it can still be edited temporarily).
-    *   Is always editable, regardless of its size.
-*   _**Bookmark**_ toggles the display of the current note into the [Launch Bar](Launch%20Bar.md) for easy access. See [Bookmarks](../Navigation/Bookmarks.md) for more information.
-*   _**Shared**_ toggles whether the current note is publicly accessible if you have a [server instance](../../Installation%20%26%20Setup/Server%20Installation.md) set up. See [Sharing](../../Advanced%20Usage/Sharing.md) for more information.
-*   _**Template**_ toggles whether the current note is considered a template and can be used to easily create notes with the same content. See [Template](../../Advanced%20Usage/Templates.md) for more information.
-*   _**Language**_ changes the main language of the current note, mostly useful for spell checking or right-to-left support. See [Content language & Right-to-left support](../../Note%20Types/Text/Content%20language%20%26%20Right-to-left%20support.md) for more information.
+*   _**笔记类型**_ 允许更改笔记的[笔记类型](../../Note%20Types.md)。
+    *   通常，仅在笔记为空时才需要更改。
+    *   作为更高级的用法，可以更改笔记类型以修改笔记的[源代码](../../Advanced%20Usage/Note%20source.md)。
+*   _**保护笔记**_ 切换当前笔记是否加密，并且只能通过进入受保护会话才能访问。有关更多信息，请参阅[受保护的笔记](../Notes/Protected%20Notes.md)。
+*   _**可编辑**_ 更改当前笔记是否：
+    *   如果笔记太大，自动进入[只读模式](../Notes/Read-Only%20Notes.md)（默认行为）。
+    *   始终处于只读模式（但仍可临时编辑）。
+    *   无论大小，始终可编辑。
+*   _**书签**_ 切换当前笔记是否显示在[启动栏](Launch%20Bar.md)中以便快速访问。有关更多信息，请参阅[书签](../Navigation/Bookmarks.md)。
+*   _**共享**_ 切换如果您设置了[服务器实例](../../Installation%20%26%20Setup/Server%20Installation.md)，当前笔记是否可公开访问。有关更多信息，请参阅[共享](../../Advanced%20Usage/Sharing.md)。
+*   _**模板**_ 切换当前笔记是否被视为模板，并可用于轻松创建具有相同内容的笔记。有关更多信息，请参阅[模板](../../Advanced%20Usage/Templates.md)。
+*   _**语言**_ 更改当前笔记的主要语言，主要用于拼写检查或从右到左支持。有关更多信息，请参阅[内容语言与从右到左支持](../../Note%20Types/Text/Content%20language%20%26%20Right-to-left%20support.md)。
 
-### Owned Attributes
+### 自有属性
 
-This section allows editing the labels and relations of a note. For more information, see [Attributes](../../Advanced%20Usage/Attributes.md).
+此部分允许编辑笔记的标签和关系。有关更多信息，请参阅[属性](../../Advanced%20Usage/Attributes.md)。
 
-The plus button to the right offers a simplified way to insert labels and relations, via a graphical input. From this menu, it's also possible to define label and relation definitions (see [Promoted Attributes](../../Advanced%20Usage/Attributes/Promoted%20Attributes.md)).
+右侧的加号按钮提供了一种通过图形输入插入标签和关系的简化方式。在此菜单中，还可以定义标签和关系定义（请参阅[提升属性](../../Advanced%20Usage/Attributes/Promoted%20Attributes.md)）。
 
-### Inherited Attributes
+### 继承属性
 
-This section displays the attributes which are applied to this note via [Attribute Inheritance](../../Advanced%20Usage/Attributes/Attribute%20Inheritance.md). It is not possible to alter the attributes from this section.
+此部分显示通过[属性继承](../../Advanced%20Usage/Attributes/Attribute%20Inheritance.md)应用于此笔记的属性。无法从此部分更改属性。
 
-### Note Paths
+### 笔记路径
 
-This section displays all the places where the current note has been cloned to. Here the current note can also be cloned to a new location (similar to the [Note Tree](Note%20Tree.md)) See [Cloning Notes](../Notes/Cloning%20Notes.md) for more information.
+此部分显示当前笔记被克隆到的所有位置。此处也可以将当前笔记克隆到新位置（类似于[笔记树](Note%20Tree.md)）。有关更多信息，请参阅[克隆笔记](../Notes/Cloning%20Notes.md)。
 
-### Note Map
+### 笔记图谱
 
-The note map displays all the relations of the current note to other notes, as well as the subtree structure. See [Note Tree](Note%20Tree.md) for more information.
+笔记图谱显示当前笔记与其他笔记的所有关系，以及子树结构。有关更多信息，请参阅[笔记树](Note%20Tree.md)。
 
-### Similar Notes
+### 相似笔记
 
-This section lists all the notes that are similar to the current one. See [Similar Notes](../Navigation/Similar%20Notes.md) for more information.
+此部分列出与当前笔记相似的所有笔记。有关更多信息，请参阅[相似笔记](../Navigation/Similar%20Notes.md)。
 
-### Note Info
+### 笔记信息
 
-This section displays information about the current note:
+此部分显示有关当前笔记的信息：
 
-*   The [internal ID](../../Advanced%20Usage/Note%20ID.md) of the note.
-*   The [type of the note](../../Note%20Types.md), as well as its MIME type (used mostly for exporting notes).
-*   The created and modification dates.
-*   The estimated size of the note in the [Database](../../Advanced%20Usage/Database.md), as well as its children count and size.
+*   笔记的[内部 ID](../../Advanced%20Usage/Note%20ID.md)。
+*   [笔记类型](../../Note%20Types.md)及其 MIME 类型（主要用于导出笔记）。
+*   创建和修改日期。
+*   笔记在[数据库](../../Advanced%20Usage/Database.md)中的估计大小，以及其子项数量和大小。
 
-### Edited notes
+### 已编辑的笔记
 
-This section pops automatically when entering a [day note](../../Advanced%20Usage/Advanced%20Showcases/Day%20Notes.md) and shows the notes that were edited that day.
+当进入[日记笔记](../../Advanced%20Usage/Advanced%20Showcases/Day%20Notes.md)时，此部分会自动弹出，并显示当天编辑过的笔记。
 
-It is possible to disable this behavior from settings, by going to <a class="reference-link" href="#root/_hidden/_options/_optionsAppearance">Appearance</a> settings and looking for the _Ribbon widgets_ section.
+可以通过转到<a class="reference-link" href="#root/_hidden/_options/_optionsAppearance">外观</a>设置并查找_功能区小组件_部分来禁用此行为。

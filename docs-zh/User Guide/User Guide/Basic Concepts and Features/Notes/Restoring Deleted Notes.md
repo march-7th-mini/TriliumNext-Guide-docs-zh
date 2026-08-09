@@ -1,11 +1,11 @@
-# Restoring Deleted Notes
-Deleted notes are listed in the "Deleted Notes" dialog (**Global Menu → Show Deleted Notes**) and can be restored by pressing the "**undelete**" link.
+# 恢复已删除的笔记
+已删除的笔记会列在“已删除笔记”对话框中（**全局菜单 → 显示已删除笔记**），可以通过点击“**恢复**”链接来恢复。
 
-If a note has child notes, they will be restored along with it. Should the original location no longer exist (e.g. the parent has been deleted), the note will be restored into the default location for new notes (<a class="reference-link" href="Note%20Inbox.md">Note Inbox</a>).
+如果笔记有子笔记，它们将一并被恢复。如果原始位置已不存在（例如父笔记已被删除），该笔记将被恢复到新笔记的默认位置（<a class="reference-link" href="Note%20Inbox.md">笔记收件箱</a>）。
 
 > [!NOTE]
-> When a note is hoisted in the tree, the dialog will only display notes deleted from the subtree of that hoisted note.
+> 当笔记在树中被提升时，对话框将仅显示从该提升笔记的子树中删除的笔记。
 
-To permanently erase deleted notes and clear the list, press the three-dots menu and select **"Erase deleted notes now"**.
+要永久删除已删除的笔记并清空列表，请点击三点菜单并选择**“立即清除已删除笔记”**。
 
-Deleted notes are permanently erased after a certain amount of time (7 days by default). To change this interval, press the three-dots menu and select **"Deleted Notes Settings"**.
+已删除的笔记会在一定时间后（默认为 7 天）被永久清除。要更改此时间间隔，请点击三点菜单并选择**“已删除笔记设置”**。

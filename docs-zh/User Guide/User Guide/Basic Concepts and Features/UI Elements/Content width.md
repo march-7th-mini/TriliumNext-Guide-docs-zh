@@ -1,22 +1,23 @@
-# Content width
-Some note types such as <a class="reference-link" href="../../Note%20Types/Text.md">Text</a>, <a class="reference-link" href="../../Note%20Types/Relation%20Map.md">Relation Map</a>, and saved search intentionally limit the width of the content.
+# 内容宽度
 
-This might appear surprising at first, but the idea is to make text fit well on wider screens without appearing distorted. This is especially the case if the document contains <a class="reference-link" href="../../Note%20Types/Text/Images.md">Images</a>, tables or other width-dependent elements.
+某些笔记类型，例如<a class="reference-link" href="../../Note%20Types/Text.md">文本</a>、<a class="reference-link" href="../../Note%20Types/Relation%20Map.md">关系图</a>和已保存的搜索，会刻意限制内容的宽度。
 
-## Configuring the content width and alignment
+乍一看这可能令人意外，但其目的是让文本在更宽的屏幕上也能良好适配，而不会显得扭曲。如果文档包含<a class="reference-link" href="../../Note%20Types/Text/Images.md">图片</a>、表格或其他依赖宽度的元素，这一点尤其重要。
 
-The content width is expressed in pixels and can be changed from <a class="reference-link" href="Options.md">Options</a> → _Appearance_ → _Content Width_ and adjusting the _Max content width_ section.
+## 配置内容宽度和对齐方式
 
-To effectively disable the content width limitation, simply set the width to a value larger than your screen size (e.g. 9999).
+内容宽度以像素为单位表示，可以通过<a class="reference-link" href="Options.md">选项</a> → _外观_ → _内容宽度_ 并调整 _最大内容宽度_ 部分来更改。
 
-By default, the content is aligned to the left, but it can be centered horizontally by checking _Keep content centered_ from the same section as the content width.
+要有效禁用内容宽度限制，只需将宽度设置为大于屏幕尺寸的值（例如 9999）。
 
-## Adjusting at note level
+默认情况下，内容左对齐，但可以通过在同一部分（内容宽度所在部分）勾选 _保持内容居中_ 来使其水平居中。
 
-For notes with large elements such as <a class="reference-link" href="../../Note%20Types/Text/Tables.md">Tables</a>, it sometimes makes sense to avoid the content width without affecting other notes. To do so:
+## 在笔记级别调整
 
-*   Since v0.104.0 in the <a class="reference-link" href="New%20Layout.md">New Layout</a> only, go to <a class="reference-link" href="Note%20buttons.md">Note buttons</a> and toggle _Full width_.
-*   Or manually apply the `fullContentWidth` [label](../../Advanced%20Usage/Attributes/Labels.md) to the note.
+对于包含<a class="reference-link" href="../../Note%20Types/Text/Tables.md">表格</a>等大型元素的笔记，有时在不影响其他笔记的情况下避免内容宽度限制是有意义的。操作方法如下：
+
+*   自 v0.104.0 起，仅在<a class="reference-link" href="New%20Layout.md">新布局</a>中，转到<a class="reference-link" href="Note%20buttons.md">笔记按钮</a>并切换 _全宽_。
+*   或者手动将 `fullContentWidth` [标签](../../Advanced%20Usage/Attributes/Labels.md) 应用到笔记上。
 
 > [!NOTE]
-> Some [note types](../../Note%20Types.md) are full width by default, such as the <a class="reference-link" href="../../Note%20Types/Canvas.md">Canvas</a>. In that case the _Full width_ toggle will not be displayed and the label will have no effect.
+> 某些[笔记类型](../../Note%20Types.md)默认就是全宽的，例如<a class="reference-link" href="../../Note%20Types/Canvas.md">画布</a>。在这种情况下，_全宽_ 切换按钮将不会显示，该标签也不会生效。

@@ -1,15 +1,16 @@
-# revisions
-| Column Name | Data Type | Nullity | Default value | Description |
+# 修订版本
+
+| 列名 | 数据类型 | 可空性 | 默认值 | 描述 |
 | --- | --- | --- | --- | --- |
-| `revisionId` | Text | Non-null |  | Unique ID of the revision (e.g. `0GjgUqnEudI8`). |
-| `noteId` | Text | Non-null |  | ID of the [note](notes.md) this revision belongs to. |
-| `type` | Text | Non-null | `""` | The type of note (i.e. `text`, `file`, `code`, `relationMap`, `mermaid`, `canvas`). |
-| `mime` | Text | Non-null | `""` | The MIME type of the note (e.g. `text/html`). |
-| `title` | Text | Non-null |  | The title of the note, as defined by the user. |
-| `isProtected` | Integer | Non-null | 0 | `1` if the entity is [protected](../../../Concepts/Protected%20entities.md), `0` otherwise. |
-| `blobId` | Text | Nullable | `null` | The corresponding ID from <a class="reference-link" href="blobs.md">blobs</a>. Although it can theoretically be `NULL`, haven't found any such note yet. |
-| `utcDateLastEdited` | Text | Non-null |  | **Not sure how it differs from modification date.** |
-| `utcDateCreated` | Text | Non-null |  | Creation date in UTC format (e.g. `2023-11-08 16:43:44.204Z`) |
-| `utcDateModified` | Text | Non-null |  | Modification date in UTC format (e.g. `2023-11-08 16:43:44.204Z`) |
-| `dateLastEdited` | Text | Non-null |  | **Not sure how it differs from modification date.** |
-| `dateCreated` | Text | Non-null |  | Localized creatino date (e.g. `2023-08-12 15:10:04.045+0300`) |
+| `revisionId` | 文本 | 非空 |  | 修订版本的唯一 ID（例如 `0GjgUqnEudI8`）。 |
+| `noteId` | 文本 | 非空 |  | 此修订版本所属[笔记](notes.md)的 ID。 |
+| `type` | 文本 | 非空 | `""` | 笔记的类型（即 `text`、`file`、`code`、`relationMap`、`mermaid`、`canvas`）。 |
+| `mime` | 文本 | 非空 | `""` | 笔记的 MIME 类型（例如 `text/html`）。 |
+| `title` | 文本 | 非空 |  | 用户定义的笔记标题。 |
+| `isProtected` | 整数 | 非空 | 0 | 如果实体是[受保护的](../../../Concepts/Protected%20entities.md)，则为 `1`，否则为 `0`。 |
+| `blobId` | 文本 | 可空 | `null` | 来自 <a class="reference-link" href="blobs.md">blobs</a> 的对应 ID。虽然理论上可以是 `NULL`，但尚未发现任何此类笔记。 |
+| `utcDateLastEdited` | 文本 | 非空 |  | **不确定它与修改日期有何不同。** |
+| `utcDateCreated` | 文本 | 非空 |  | UTC 格式的创建日期（例如 `2023-11-08 16:43:44.204Z`） |
+| `utcDateModified` | 文本 | 非空 |  | UTC 格式的修改日期（例如 `2023-11-08 16:43:44.204Z`） |
+| `dateLastEdited` | 文本 | 非空 |  | **不确定它与修改日期有何不同。** |
+| `dateCreated` | 文本 | 非空 |  | 本地化的创建日期（例如 `2023-08-12 15:10:04.045+0300`） |

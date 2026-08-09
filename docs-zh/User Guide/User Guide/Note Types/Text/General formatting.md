@@ -1,88 +1,88 @@
-# General formatting
-## Headings
+# 常规格式设置
+## 标题
 
 <figure class="image image-style-align-right"><img style="aspect-ratio:255/284;" src="3_General formatting_image.png" width="255" height="284"></figure>
 
-Trilium provides headings to define sections within text. Headings are numbered from 2 to 6.
+Trilium 提供了标题功能，用于定义文本中的各个部分。标题的级别从 2 到 6。
 
-The reason why Heading 1 is missing from the list is that it is being reserved for the title of note.
+列表中缺少一级标题的原因是，一级标题被保留用于笔记的标题。
 
-To turn a heading back into a normal text, select _Paragraph_ from the list.
+若要将标题恢复为普通文本，请从列表中选择 _段落_。
 
-Apart from using the UI, it is also possible to quickly insert headings using the Markdown-like shortcuts:
+除了使用界面外，还可以使用类似 Markdown 的快捷方式快速插入标题：
 
-*   `##` for Heading 2
-*   `###` for Heading 3
-*   `####` for Heading 4
-*   `#####` for Heading 5
-*   `######` for Heading 6
+*   `##` 用于二级标题
+*   `###` 用于三级标题
+*   `####` 用于四级标题
+*   `#####` 用于五级标题
+*   `######` 用于六级标题
 
-## Font size
+## 字体大小
 
 <figure class="image image-style-align-right"><img style="aspect-ratio:363/249;" src="General formatting_image.png" width="363" height="249"></figure>
 
-One way to highlight a portion of text is to increase the size of the font.
+突出显示部分文本的一种方法是增大字体大小。
 
-To do so, select some text and choose an option from the _Font size_ selector (as pictured to the right).
+为此，请选择一些文本，然后从 _字体大小_ 选择器中选择一个选项（如右图所示）。
 
-Unlike other text editors such as Microsoft Word, the font size is relative (i.e. “Tiny”, “Small” instead of a number like 12).
+与 Microsoft Word 等其他文本编辑器不同，这里的字体大小是相对的（例如，“极小”、“小”，而不是像 12 这样的数字）。
 
-Avoid using this feature just to simply make all text bigger. In that case it's generally better to adjust the font size for all notes in <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">Options</a> or by zooming.
+请避免仅仅为了将所有文本变大而使用此功能。在这种情况下，通常最好在 <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">选项</a> 中调整所有笔记的字体大小，或者通过缩放来实现。
 
-## Bold, italic, underline, strike-through
+## 加粗、斜体、下划线、删除线
 
 <figure class="image image-style-align-right"><img style="aspect-ratio:215/71;" src="4_General formatting_image.png" width="215" height="71"></figure>
 
-Text can be formatted as **Bold,** _Italic,_ Underline or ~~Strike-through~~ via the dedicated buttons in the formatting toolbar.
+文本可以通过格式工具栏中的专用按钮设置为 **加粗**、_斜体_、下划线 或 ~~删除线~~。
 
-This formatting can be easily removed using the _Remove formatting_ item.
+使用 _清除格式_ 项目可以轻松移除这些格式。
 
-The following keyboard shortcuts can be used here:
+这里可以使用以下键盘快捷键：
 
-*   <kbd>Ctrl</kbd>+<kbd>B</kbd> for bold
-*   <kbd>Ctrl</kbd>+<kbd>I</kbd> for italic
-*   <kbd>Ctrl</kbd>+<kbd>U</kbd> for underline
+*   <kbd>Ctrl</kbd>+<kbd>B</kbd> 用于加粗
+*   <kbd>Ctrl</kbd>+<kbd>I</kbd> 用于斜体
+*   <kbd>Ctrl</kbd>+<kbd>U</kbd> 用于下划线
 
-Alternatively, Markdown-like formatting can be used:
+或者，也可以使用类似 Markdown 的格式：
 
-*   **Bold**: Type `**text**` or `__text__`
-*   _Italic_: Type `*text*` or `_text_`
-*   ~~Strikethrough~~: Type `~~text~~`
+*   **加粗**：输入 `**text**` 或 `__text__`
+*   _斜体_：输入 `*text*` 或 `_text_`
+*   ~~删除线~~：输入 `~~text~~`
 
-## Superscript, subscript
+## 上标、下标
 
-This allows writing superscript or subscript text.
+这允许编写上标或下标文本。
 
-This is mostly useful for units of measure (e.g. cm3 for cubic centimeters) and chemical notations (e.g. NaHCO3)
+这对于度量单位（例如，立方厘米的 cm3）和化学符号（例如，NaHCO3）最为有用。
 
-For mathematical formulas, prefer the <a class="reference-link" href="Math%20Equations.md">Math Equations</a> feature instead.
+对于数学公式，请优先使用 <a class="reference-link" href="Math%20Equations.md">数学公式</a> 功能。
 
-## Font color and background color
+## 字体颜色和背景颜色
 
 <figure class="image image-style-align-right"><img style="aspect-ratio:167/204;" src="2_General formatting_image.png" width="167" height="204"></figure>
 
-Selected text can be colored with one of the predefined colors from a palette or any color can be selected using the color picker.
+选中的文本可以使用调色板中的预定义颜色之一进行着色，也可以使用颜色选择器选择任意颜色。
 
-Once there is at least one color defined in the document, it will appear in the list for easy reuse.
+一旦文档中定义了至少一种颜色，它就会出现在列表中，方便重复使用。
 
-When selecting a foreground or a background color, consider the contrast if switching between a dark theme or a light [theme](../../Basic%20Concepts%20and%20Features/Themes.md).
+在选择前景色或背景色时，请考虑在深色主题和浅色 [主题](../../Basic%20Concepts%20and%20Features/Themes.md) 之间切换时的对比度。
 
-To remove either the background or foreground color of a text, select the corresponding formatting button and press _Remove color_ or use the _Remove formatting_ toolbar item.
+要移除文本的背景色或前景色，请选择相应的格式按钮并按下 _清除颜色_，或使用 _清除格式_ 工具栏项目。
 
-## Remove formatting
+## 清除格式
 
-The <img src="1_General formatting_image.png" width="17" height="16"> _Remove formatting_ button is a quick way to eliminate the general formatting styling of a particular text.
+<img src="1_General formatting_image.png" width="17" height="16"> _清除格式_ 按钮是快速消除特定文本常规格式样式的方法。
 
-Simply select the text and press the button to remove the formatting (bold, italic, colors, sizes, etc.). If the text does not have any removable formatting, the button will appear disabled.
+只需选择文本并按下该按钮即可移除格式（加粗、斜体、颜色、大小等）。如果文本没有任何可移除的格式，该按钮将显示为禁用状态。
 
-Note that heading styles are not taken into consideration, these must be manually changed back to a paragraph according to the _Headings_ section.
+请注意，标题样式不会被考虑在内，必须根据 _标题_ 部分手动将其更改回段落。
 
-When pasting content that comes with undesired formatting, an alternative to pasting and then removing formatting is pasting as plain text via <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd>.
+当粘贴带有不需要的格式的内容时，除了粘贴后清除格式外，还可以通过 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd> 以纯文本形式粘贴。
 
-## Format painter
+## 格式刷
 
-The <a class="reference-link" href="Format%20Painter.md">Format Painter</a> allows users to copy the formatting of text (such as bold, italic, Strikethrough, etc.) and apply it to other parts of the document. It helps maintain consistent formatting and accelerates the creation of rich content.
+<a class="reference-link" href="Format%20Painter.md">格式刷</a> 允许用户复制文本的格式（如加粗、斜体、删除线等），并将其应用于文档的其他部分。它有助于保持格式一致，并加速富内容的创建。
 
-## Support for Markdown
+## Markdown 支持
 
-When exported to <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/Import%20%26%20Export/Markdown.md">Markdown</a>, most of the general formatting is maintained such as headings, bold, italic, underline, etc.
+当导出为 <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/Import%20%26%20Export/Markdown.md">Markdown</a> 时，大部分常规格式（如标题、加粗、斜体、下划线等）都会得到保留。

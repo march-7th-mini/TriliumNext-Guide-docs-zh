@@ -1,26 +1,26 @@
-# Third-party cloud hosting
-As an alternative to [hosting your own Trilium instance](1.%20Installing%20the%20server), there are two services out there that provide out of the box support for Trilium.
+# 第三方云托管
+
+作为[自行托管 Trilium 实例](1.%20Installing%20the%20server)的替代方案，目前有两项服务提供对 Trilium 的开箱即用支持。
 
 > [!IMPORTANT]
-> **Disclaimer**: The Trilium Notes project and maintainers are not directly affiliated with either of the projects.
+> **免责声明**：Trilium Notes 项目及其维护者与上述两个项目均无直接关联。
 > 
-> PikaPods have gracefully offered us free credits for testing purposes.
+> PikaPods 慷慨地为我们提供了免费额度用于测试目的。
 
-## Cloud instance providers
+## 云实例提供商
 
 ### PikaPods
 
-1.  Go to [pikapods.com](https://www.pikapods.com)  and sign up.
-2.  In the “Available Apps” section, look for "TriliumNext  
-     and select “Run your own”.
-3.  Follow the on-screen instructions to set up your own cloud hosted instance.
+1.  前往 [pikapods.com](https://www.pikapods.com) 并注册。
+2.  在“可用应用”部分，查找“TriliumNext”并选择“运行你自己的实例”。
+3.  按照屏幕上的说明设置你自己的云托管实例。
 
-PikaPods generally updates their Trilium instances to the latest version within a two-week interval after a new version is released.
+PikaPods 通常会在新版本发布后的两周内将其 Trilium 实例更新到最新版本。
 
-## Matching your version with the cloud instance
+## 使你的版本与云实例匹配
 
-Please note that once you set up <a class="reference-link" href="../Synchronization.md">Synchronization</a> between a cloud instance and [desktop](../Desktop%20Installation.md) clients, it's important that the version of the desktop application and the server match up.
+请注意，一旦你在云实例和[桌面](../Desktop%20Installation.md)客户端之间设置了<a class="reference-link" href="../Synchronization.md">同步</a>，确保桌面应用程序的版本与服务器版本匹配就非常重要。
 
-When setting up a cloud instance, it's best to check the version of the server by accessing it via a web browser and going to the _About_ section. It's best that both the desktop and the server have the same _App version_; however it's generally OK to update the desktop to a newer version than the server if it has the same _Sync version_.
+在设置云实例时，最好通过网页浏览器访问服务器并进入“关于”部分来检查服务器版本。最好桌面端和服务器端具有相同的“应用版本”；但是，如果桌面端的“同步版本”与服务器相同，通常也可以将桌面端更新到比服务器更新的版本。
 
-If the _Sync version_ between the server and the desktop application doesn't match, synchronization will not work.
+如果服务器和桌面应用程序之间的“同步版本”不匹配，同步将无法工作。

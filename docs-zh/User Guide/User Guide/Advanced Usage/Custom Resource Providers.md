@@ -1,26 +1,27 @@
-# Custom Resource Providers
-A custom resource provider allows any file imported into Trilium (images, fonts, stylesheets) to be publicly accessible via a URL.
+# 自定义资源提供器
 
-A potential use case for this is to add embed a custom font alongside a theme.
+自定义资源提供器允许导入到 Trilium 中的任何文件（图片、字体、样式表）通过 URL 公开访问。
 
-## Steps for creating a custom resource provider
+一个潜在的使用场景是在主题中嵌入自定义字体。
 
-1.  Import a file such as an image or a font into Trilium by drag & drop.
-2.  Select the file and go to the _Owned Attributes_ section.
-3.  Add the label `#customResourceProvider=hello`.
-4.  To test if it is working, use a browser to navigate to `<protocol>://<host>/custom/hello` (where `<protocol>` is either `http` or `https` based on your setup, and `<host>` is the host or IP to your Trilium server instance). If you are running the TriliumNext application without a server, use `http://localhost:37840` as the base URL.
-5.  If everything went well, at the previous step the browser should have downloaded the file uploaded in the first step.
+## 创建自定义资源提供器的步骤
 
-Instead of `hello`, the name can be:
+1.  通过拖放将文件（如图片或字体）导入到 Trilium 中。
+2.  选择该文件并转到 _自有属性_ 部分。
+3.  添加标签 `#customResourceProvider=hello`。
+4.  要测试其是否正常工作，请使用浏览器访问 `<协议>://<主机>/custom/hello`（其中 `<协议>` 根据你的设置是 `http` 或 `https`，`<主机>` 是你的 Trilium 服务器实例的主机名或 IP 地址）。如果你在没有服务器的情况下运行 TriliumNext 应用程序，请使用 `http://localhost:37840` 作为基础 URL。
+5.  如果一切顺利，在上一步中浏览器应该已经下载了第一步中上传的文件。
 
-*   A path, such as `fonts/Roboto.ttf`, which would be accessible via `<host>/custom/fonts/Roboto.ttf`.
-*   As a more advanced use case, a regular expression to match multiple routes, such as `hello/.*` which will be accessible via `/custom/hello/1`, `/custom/hello/2`, `/custom/hello/world`, etc.
+除了 `hello`，该名称还可以是：
 
-## Using it in a theme
+*   一个路径，例如 `fonts/Roboto.ttf`，可通过 `<主机>/custom/fonts/Roboto.ttf` 访问。
+*   作为一个更高级的用例，可以使用正则表达式来匹配多个路由，例如 `hello/.*`，它将可以通过 `/custom/hello/1`、`/custom/hello/2`、`/custom/hello/world` 等路径访问。
 
-For example, if you have a custom font to be imported by the theme, first upload a font file into Trilium and assign it the `#customResourceProvider=fonts/myfont.ttf` attribute.
+## 在主题中使用
 
-Then modify the theme CSS to point to:
+例如，如果你有一个自定义字体需要被主题导入，首先将一个字体文件上传到 Trilium，并为其分配 `#customResourceProvider=fonts/myfont.ttf` 属性。
+
+然后修改主题 CSS 以指向：
 
 ```css
 @font-face {

@@ -1,169 +1,170 @@
-# Calendar
+# 日历
+
 <figure class="image"><img style="aspect-ratio:2016/1413;" src="1_Calendar_image.png" width="2016" height="1413"></figure>
 
-The Calendar view will display each child note in a calendar that has a start date and optionally an end date, as an event.
+日历视图会将每个子笔记以事件的形式显示在日历中，该日历具有开始日期，并可选择结束日期。
 
-The Calendar view has multiple display modes:
+日历视图有多种显示模式：
 
-*   Month view, where the entire month is displayed and all-day events can be inserted. Both time-specific events and all-day events are listed.
-*   Week view, where all the 7 days of the week (or 5 if the weekends are hidden) are displayed in columns. This mode allows entering and displaying time-specific events, not just all-day events.
-*   Day view, which views only a single day. Especially useful for heavy agendas or mobile views.
-*   List view, which displays all the events of a given month in sequence.
-*   Year view, which displays the entire year for quick reference.
+*   月视图，显示整个月，可以插入全天事件。同时列出特定时间事件和全天事件。
+*   周视图，将一周的 7 天（如果隐藏周末则为 5 天）以列的形式显示。此模式允许输入和显示特定时间事件，而不仅仅是全天事件。
+*   日视图，仅查看单日。特别适用于日程密集或移动端视图。
+*   列表视图，按顺序显示给定月份的所有事件。
+*   年视图，显示整年以供快速参考。
 
-Unlike other Collection view types, the Calendar view also allows some kind of interaction, such as moving events around as well as creating new ones.
+与其他集合视图类型不同，日历视图还允许某种形式的交互，例如移动事件以及创建新事件。
 
-## Creating a calendar
+## 创建日历
 
-Right click on an existing note in the <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">Note Tree</a> and select _Insert child note_ and look for _Calendar_.
+在<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">笔记树</a>中右键单击现有笔记，选择 _插入子笔记_，然后查找 _日历_。
 
-## Creating a new event/note
+## 创建新事件/笔记
 
-To create a new event:
+要创建新事件：
 
-*   First, click the desired day (month & year views) or the desired timeslot (day view).
-*   Alternatively, drag across multiple days (or time slots) to set both the start and end date.
+*   首先，点击所需的日期（月视图和年视图）或所需的时间段（日视图）。
+*   或者，拖拽跨越多个日期（或时间段）以同时设置开始和结束日期。
 
-In either cases, a small popup will show with a prompt for a title and the date & time of the event that will be created.
+无论哪种情况，都会显示一个小弹窗，提示输入标题以及将要创建的事件的日期和时间。
 
-At this point, the event hasn't been created yet to protect against accidental clicks. Add a title optionally and press the _Create_ button. If no title is provided, the event will follow the <a class="reference-link" href="../Advanced%20Usage/Default%20Note%20Title.md">Default Note Title</a> rules.
+此时，为防止意外点击，事件尚未创建。可选地添加标题，然后按 _创建_ 按钮。如果未提供标题，事件将遵循<a class="reference-link" href="../Advanced%20Usage/Default%20Note%20Title.md">默认笔记标题</a>规则。
 
-After creating the event, it will show up on the calendar. To edit the content of the event (including recurrence), click on it to bring it into the popup view.
+创建事件后，它将显示在日历上。要编辑事件内容（包括重复规则），请点击它以打开弹窗视图。
 
 > [!NOTE]
-> Creating new notes from the calendar will respect the `~child:template` relation if set on the Collection note.
+> 从日历创建新笔记时，如果集合笔记上设置了 `~child:template` 关系，则会遵循该关系。
 
-## Interacting with events
+## 与事件交互
 
-*   Hovering the mouse over an event will display information about the note.  
+*   将鼠标悬停在事件上会显示有关该笔记的信息。  
     ![](4_Calendar_image.png)
-*   Left clicking the event will open a dedicated popup to quickly configure the event or edit its note content.
-*   Right click will offer more options including opening the note in a new split or window.
-*   Drag and drop an event on the calendar to move it to another day.
-*   The length of an event can be changed by placing the mouse to the right edge of the event and dragging the mouse around.
+*   左键单击事件将打开一个专用弹窗，用于快速配置事件或编辑其笔记内容。
+*   右键单击将提供更多选项，包括在新分屏或新窗口中打开笔记。
+*   在日历上拖放事件以将其移动到另一天。
+*   可以通过将鼠标放在事件的右边缘并拖动鼠标来更改事件的时长。
 
-### Popup view
+### 弹窗视图
 
-When an event is clicked, a popup will show near the event which contains the following inforamtion:
+点击事件时，事件附近会显示一个弹窗，其中包含以下信息：
 
-*   The title and icon of the event, both editable.
-*   Buttons to interact with the event:
-    *   Open the event in the same pane, new tab, etc.
-    *   Color picker to change the color of the event.
-    *   Button to remove the event from the calendar, which can optionally delete its corresponding note.
-*   Calendar-specific features:
-    *   A toggle for all-day events.
-    *   A start/end date & time selector.
-    *   A full recurrence editor, to have the same event show up weekly, monthly, etc.
-*   The <a class="reference-link" href="../Advanced%20Usage/Attributes/Promoted%20Attributes.md">Promoted Attributes</a> of the marker, if any.
-*   The note's content which can be edited directly from the panel.
+*   事件的标题和图标，均可编辑。
+*   用于与事件交互的按钮：
+    *   在同一窗格、新标签页等中打开事件。
+    *   用于更改事件颜色的颜色选择器。
+    *   用于从日历中移除事件的按钮，可以选择删除其对应的笔记。
+*   日历特定功能：
+    *   全天事件切换开关。
+    *   开始/结束日期和时间选择器。
+    *   完整的重复编辑器，使同一事件按周、按月等重复出现。
+*   标记的<a class="reference-link" href="../Advanced%20Usage/Attributes/Promoted%20Attributes.md">提升属性</a>（如果有）。
+*   笔记内容，可直接在面板中编辑。
 
-To dismiss the popup:
+要关闭弹窗：
 
-*   Press the X button at the top-right of the popup.
-*   In the calendar, press anywhere outside the popup.
-*   Or simply press the <kbd spellcheck="false">Escape</kbd> key.
+*   按弹窗右上角的 X 按钮。
+*   在日历中，点击弹窗以外的任意位置。
+*   或直接按 <kbd spellcheck="false">Escape</kbd> 键。
 
-It is possible to switch between events by clicking on them even when the popup view is already open.
+即使在弹窗视图已打开的情况下，也可以通过点击来切换不同的事件。
 
-Events can have <a class="reference-link" href="../Note%20Types/Text/Links/Internal%20(reference)%20links.md">Internal (reference) links</a> between them and clicking on such a link will automatically navigate the calendar to the right date and the popup view to the new note.
+事件之间可以包含<a class="reference-link" href="../Note%20Types/Text/Links/Internal%20(reference)%20links.md">内部（引用）链接</a>，点击此类链接将自动将日历导航到正确的日期，并将弹窗视图切换到新笔记。
 
-## Interaction on mobile
+## 移动端交互
 
-When Trilium is on mobile, the interaction with the calendar is slightly different:
+当 Trilium 在移动端时，与日历的交互略有不同：
 
-*   Clicking on an event displays the popup view, which allows editing the event.
-*   Long-presing an event triggers the contextual menu, including the option to open in <a class="reference-link" href="../Basic%20Concepts%20and%20Features/Navigation/Quick%20edit.md">Quick edit</a>.
-*   To insert a new event, touch and hold the empty space. When successful, the empty space will become colored to indicate the selection.
-    *   Before releasing, drag across multiple spaces to create multi-day events.
-    *   When released, a prompt will appear to enter the note title.
-*   To move an existing event, touch and hold the event until the empty space near it will become colored.
-    *   At this point the event can be dragged across other days on the calendar.
-    *   Or the event can be resized by tapping on the small circle to the right end of the event.
-    *   To exit out of editing mode, simply tap the empty space anywhere on the calendar.
+*   点击事件会显示弹窗视图，允许编辑事件。
+*   长按事件会触发上下文菜单，包括在<a class="reference-link" href="../Basic%20Concepts%20and%20Features/Navigation/Quick%20edit.md">快速编辑</a>中打开的选项。
+*   要插入新事件，请触摸并按住空白区域。成功后，空白区域将变色以指示选中状态。
+    *   在释放之前，拖拽跨越多个区域以创建多日事件。
+    *   释放时，将出现提示以输入笔记标题。
+*   要移动现有事件，请触摸并按住事件，直到其附近的空白区域变色。
+    *   此时，可以将事件拖拽到日历上的其他日期。
+    *   或者，可以通过点击事件右端的小圆圈来调整事件大小。
+    *   要退出编辑模式，只需点击日历上的任意空白区域。
 
-## Configuring the calendar view
+## 配置日历视图
 
-In the _Collections_ tab in the <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Ribbon.md">Ribbon</a>, it's possible to adjust the following:
+在<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Ribbon.md">功能区</a>的 _集合_ 选项卡中，可以调整以下内容：
 
-*   Hide weekends from the week view.
-*   Display week numbers on the calendar.
-*   Set the slot duration (the length of each time row in day/week view).
-*   Set the slot label interval (how often time labels appear on the axis in day/week view).
+*   在周视图中隐藏周末。
+*   在日历上显示周数。
+*   设置时间段持续时间（日/周视图中每个时间行的长度）。
+*   设置时间标签间隔（日/周视图中时间标签在轴上的出现频率）。
 
-## Configuring the calendar using attributes
+## 使用属性配置日历
 
-The following attributes can be added to the Collection type:
+可以向集合类型添加以下属性：
 
 <table>
     <thead>
         <tr>
-            <th>Name</th>
-            <th>Description</th>
+            <th>名称</th>
+            <th>描述</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td><code spellcheck="false">#calendar:hideWeekends</code></td>
-            <td>When present (regardless of value), it will hide Saturday and Sundays from the calendar.</td>
+            <td>当存在时（无论值如何），将从日历中隐藏周六和周日。</td>
         </tr>
         <tr>
             <td><code spellcheck="false">#calendar:weekNumbers</code></td>
-            <td>When present (regardless of value), it will show the number of the week on the calendar.</td>
+            <td>当存在时（无论值如何），将在日历上显示周数。</td>
         </tr>
         <tr>
             <td><code spellcheck="false">#calendar:initialDate</code></td>
-            <td>Change the date the calendar opens on. When not present, the calendar opens on the current date.</td>
+            <td>更改日历打开的日期。当不存在时，日历在当前日期打开。</td>
         </tr>
         <tr>
             <td><code spellcheck="false">#calendar:view</code></td>
-            <td><p>Which view to display in the calendar:</p><ul><li><code spellcheck="false">timeGridDay</code> for the <em>day</em> view;</li><li><code spellcheck="false">timeGridWeek</code> for the <em>week</em> view;</li><li><code spellcheck="false">dayGridMonth</code> for the <em>month</em> view;</li><li><code spellcheck="false">multiMonthYear</code> for the <em>year</em> view;</li><li><code spellcheck="false">listMonth</code> for the <em>list</em> view.</li></ul><p>Any other value will be dismissed and the default view (month) will be used instead.</p><p>The value of this label is automatically updated when changing the view using the UI buttons.</p></td>
+            <td><p>日历中显示的视图：</p><ul><li><code spellcheck="false">timeGridDay</code> 用于 <em>日</em> 视图；</li><li><code spellcheck="false">timeGridWeek</code> 用于 <em>周</em> 视图；</li><li><code spellcheck="false">dayGridMonth</code> 用于 <em>月</em> 视图；</li><li><code spellcheck="false">multiMonthYear</code> 用于 <em>年</em> 视图；</li><li><code spellcheck="false">listMonth</code> 用于 <em>列表</em> 视图。</li></ul><p>任何其他值将被忽略，并使用默认视图（月）。</p><p>使用 UI 按钮更改视图时，此标签的值会自动更新。</p></td>
         </tr>
         <tr>
             <td><code spellcheck="false">#calendar:slotDuration</code></td>
-            <td>Sets how long each timeslot is on the calendar. Defaults to <code spellcheck="false">00:15:00</code> (15 minutes). Must have the format "HH:MM:SS". For example, to create timeslots for every 10 minutes, you would set <code spellcheck="false">#calendar:slotDuration="00:10:00"</code>.</td>
+            <td>设置日历上每个时间段的时长。默认为 <code spellcheck="false">00:15:00</code>（15 分钟）。必须采用“HH:MM:SS”格式。例如，要为每 10 分钟创建时间段，可以设置 <code spellcheck="false">#calendar:slotDuration="00:10:00"</code>。</td>
         </tr>
         <tr>
             <td><code spellcheck="false">#calendar:slotLabelInterval</code></td>
-            <td>Sets how often the timeslots on the calendar should be labeled. Defaults to <code spellcheck="false">01:00:00</code> (1 hour). Must have the format "HH:MM:SS". For example, to label timeslots every 30 minutes, you would set <code spellcheck="false">#calendar:slotLabelInterval="00:30:00"</code>.</td>
+            <td>设置日历上时间段应标记标签的频率。默认为 <code spellcheck="false">01:00:00</code>（1 小时）。必须采用“HH:MM:SS”格式。例如，要每 30 分钟标记一次时间段，可以设置 <code spellcheck="false">#calendar:slotLabelInterval="00:30:00"</code>。</td>
         </tr>
         <tr>
             <td><code spellcheck="false">~child:template</code></td>
-            <td>Defines the template for newly created notes in the calendar (via dragging or clicking).</td>
+            <td>定义日历中新建笔记（通过拖拽或点击）的模板。</td>
         </tr>
     </tbody>
 </table>
 
-In addition, the first day of the week can be either Sunday or Monday and can be adjusted from the application settings.
+此外，一周的第一天可以是周日或周一，可以在应用程序设置中调整。
 
-## Configuring the calendar events using attributes
+## 使用属性配置日历事件
 
-For each note of the calendar, the following attributes can be used:
+对于日历中的每个笔记，可以使用以下属性：
 
-| Name | Description |
+| 名称 | 描述 |
 | --- | --- |
-| `#startDate` | The date the event starts, which will display it in the calendar. The format is `YYYY-MM-DD` (year, month and day separated by a minus sign). |
-| `#endDate` | Similar to `startDate`, mentions the end date if the event spans across multiple days. The date is inclusive, so the end day is also considered. The attribute can be missing for single-day events. |
-| `#startTime` | The time the event starts at. If this value is missing, then the event is considered a full-day event. The format is `HH:MM` (hours in 24-hour format and minutes). |
-| `#endTime` | Similar to `startTime`, it mentions the time at which the event ends (in relation with `endDate` if present, or `startDate`). |
-| `#recurrence` | This is an optional CalDAV `RRULE` string that if present, determines whether a task should repeat or not. Note that it does not include the `DTSTART` attribute, which is derived from the `#startDate` and `#startTime` directly. For examples of valid `RRULE` strings see [https://icalendar.org/rrule-tool.html](https://icalendar.org/rrule-tool.html) |
-| `#color` | Displays the event with a specified color (named such as `red`, `gray` or hex such as `#FF0000`). This will also change the color of the note in other places such as the note tree. |
-| `#calendar:color` | **❌️ Removed since v0.100.0. Use** `#color` **instead.**      <br>  <br>Similar to `#color`, but applies the color only for the event in the calendar and not for other places such as the note tree. |
-| `#iconClass` | If present, the icon of the note will be displayed to the left of the event title. |
-| `#calendar:title` | Changes the title of an event to point to an attribute of the note other than the title, can either a label or a relation (without the `#` or `~` symbol). See _Use-cases_ for more information. |
-| `#calendar:displayedAttributes` | Allows displaying the value of one or more attributes in the calendar like this:           <br>  <br>![](6_Calendar_image.png)          <br>  <br>`#weight="70" #Mood="Good" #calendar:displayedAttributes="weight,Mood"`         <br>  <br>It can also be used with relations, case in which it will display the title of the target note:          <br>  <br>`~assignee=@My assignee #calendar:displayedAttributes="assignee"` |
-| `#calendar:startDate` | Allows using a different label to represent the start date, other than `startDate` (e.g. `expiryDate`). The label name **must not be** prefixed with `#`. If the label is not defined for a note, the default will be used instead. |
-| `#calendar:endDate` | Similar to `#calendar:startDate`, allows changing the attribute which is being used to read the end date. |
-| `#calendar:startTime` | Similar to `#calendar:startDate`, allows changing the attribute which is being used to read the start time. |
-| `#calendar:endTime` | Similar to `#calendar:startDate`, allows changing the attribute which is being used to read the end time. |
+| `#startDate` | 事件开始的日期，它将显示在日历中。格式为 `YYYY-MM-DD`（年、月、日之间用减号分隔）。 |
+| `#endDate` | 类似于 `startDate`，如果事件跨越多个日期，则提及结束日期。该日期是包含在内的，因此结束日也被考虑在内。对于单日事件，此属性可以缺失。 |
+| `#startTime` | 事件开始的时间。如果此值缺失，则该事件被视为全天事件。格式为 `HH:MM`（24 小时制的小时和分钟）。 |
+| `#endTime` | 类似于 `startTime`，提及事件结束的时间（与 `endDate`（如果存在）或 `startDate` 相关）。 |
+| `#recurrence` | 这是一个可选的 CalDAV `RRULE` 字符串，如果存在，则决定任务是否应重复。请注意，它不包括 `DTSTART` 属性，该属性直接由 `#startDate` 和 `#startTime` 派生。有关有效 `RRULE` 字符串的示例，请参阅 [https://icalendar.org/rrule-tool.html](https://icalendar.org/rrule-tool.html) |
+| `#color` | 以指定颜色显示事件（例如 `red`、`gray` 等命名颜色或 `#FF0000` 等十六进制颜色）。这也会更改笔记在其他位置（如笔记树）中的颜色。 |
+| `#calendar:color` | **❌️ 自 v0.100.0 起已移除。请改用** `#color` **。**     <br>  <br>类似于 `#color`，但仅对日历中的事件应用颜色，而不影响笔记树等其他位置。 |
+| `#iconClass` | 如果存在，笔记的图标将显示在事件标题的左侧。 |
+| `#calendar:title` | 将事件的标题更改为指向笔记的某个属性，而不是标题本身，可以是标签或关系（不带 `#` 或 `~` 符号）。有关更多信息，请参阅 _使用案例_。 |
+| `#calendar:displayedAttributes` | 允许在日历中显示一个或多个属性的值，如下所示：          <br>  <br>![](6_Calendar_image.png)         <br>  <br>`#weight="70" #Mood="Good" #calendar:displayedAttributes="weight,Mood"`        <br>  <br>它也可以与关系一起使用，在这种情况下，它将显示目标笔记的标题：         <br>  <br>`~assignee=@My assignee #calendar:displayedAttributes="assignee"` |
+| `#calendar:startDate` | 允许使用除 `startDate` 之外的不同标签来表示开始日期（例如 `expiryDate`）。标签名称**不得**以 `#` 为前缀。如果笔记未定义该标签，则将使用默认值。 |
+| `#calendar:endDate` | 类似于 `#calendar:startDate`，允许更改用于读取结束日期的属性。 |
+| `#calendar:startTime` | 类似于 `#calendar:startDate`，允许更改用于读取开始时间的属性。 |
+| `#calendar:endTime` | 类似于 `#calendar:startDate`，允许更改用于读取结束时间的属性。 |
 
-## How the calendar works
+## 日历的工作原理
 
 ![](8_Calendar_image.png)
 
-The calendar displays all the child notes of the Collection that have a `#startDate`. An `#endDate` can optionally be added.
+日历显示集合中所有具有 `#startDate` 的子笔记。可以选择添加 `#endDate`。
 
-The start date & end date can easily be edited from the calendar collection itself by clicking on the event. To edit the date while in the event note itself, the following attributes can be added to the Collection note:
+可以直接在日历集合中通过点击事件来轻松编辑开始日期和结束日期。要在事件笔记本身中编辑日期，可以向集合笔记添加以下属性：
 
 ```
 #viewType=calendar #label:startDate(inheritable)="promoted,alias=Start Date,single,date"
@@ -171,123 +172,123 @@ The start date & end date can easily be edited from the calendar collection itse
 #hidePromotedAttributes 
 ```
 
-This will result in:
+这将产生：
 
 ![](7_Calendar_image.png)
 
-When not used in a Journal, the calendar is recursive. That is, it will look for events not just in its child notes but also in the children of these child notes.
+当不在日志中使用时，日历是递归的。也就是说，它不仅会在其子笔记中查找事件，还会在这些子笔记的子级中查找事件。
 
-## Recurrence
+## 重复
 
-The built in calendar view also supports repeating tasks (e.g. every week, every month as well as more complex recurrency rules).
+内置的日历视图也支持重复任务（例如，每周、每月以及更复杂的重复规则）。
 
-Starting with v0.105.0, recurrence can be directly edited from the calendar by clicking on an event and then selecting the _Repeats_ option.
+从 v0.105.0 开始，可以通过点击事件然后选择 _重复_ 选项直接从日历编辑重复规则。
 
-### Custom recurrence using a subset of RRULE
+### 使用 RRULE 子集自定义重复
 
-If the existing recurrence editor from the event popup is not sufficient, more complex rules can be manually set via the `#recurrence` label.
+如果事件弹窗中的现有重复编辑器不够用，可以通过 `#recurrence` 标签手动设置更复杂的规则。
 
-For example, to make a note repeat on the calendar:
+例如，要使笔记在日历上重复：
 
-*   Every Day - `#recurrence="FREQ=DAILY;INTERVAL=1"`
-*   Every 3 days - `#recurrence="FREQ=DAILY;INTERVAL=3"`
-*   Every week - `#recurrence="FREQ=WEEKLY;INTERVAL=1"`
-*   Every 2 weeks on Monday, Wednesday and Friday - `#recurrence="FREQ=WEEKLY;INTERVAL=2;BYDAY=MO,WE,FR"`
-*   Every 3 months - `#recurrence="FREQ=MONTHLY;INTERVAL=3"`
-*   Every 2 months on the First Sunday - `#recurrence="FREQ=MONTHLY;INTERVAL=2;BYDAY=1SU"`
-*   Every month on the Last Friday - `#recurrence="FREQ=MONTHLY;INTERVAL=1;BYDAY=-1FR"`
+*   每天 - `#recurrence="FREQ=DAILY;INTERVAL=1"`
+*   每 3 天 - `#recurrence="FREQ=DAILY;INTERVAL=3"`
+*   每周 - `#recurrence="FREQ=WEEKLY;INTERVAL=1"`
+*   每 2 周的周一、周三和周五 - `#recurrence="FREQ=WEEKLY;INTERVAL=2;BYDAY=MO,WE,FR"`
+*   每 3 个月 - `#recurrence="FREQ=MONTHLY;INTERVAL=3"`
+*   每 2 个月的第一个周日 - `#recurrence="FREQ=MONTHLY;INTERVAL=2;BYDAY=1SU"`
+*   每个月的最后一个周五 - `#recurrence="FREQ=MONTHLY;INTERVAL=1;BYDAY=-1FR"`
 
-For other examples of valid `RRULE` strings see [https://icalendar.org/rrule-tool.html](https://icalendar.org/rrule-tool.html)
+有关有效 `RRULE` 字符串的其他示例，请参阅 [https://icalendar.org/rrule-tool.html](https://icalendar.org/rrule-tool.html)
 
-Note that the recurrence string does not include the `DTSTART` attribute as defined in the iCAL specifications. This is derived directly from the `startDate` and `startTime` attributes
+请注意，重复字符串不包括 iCAL 规范中定义的 `DTSTART` 属性。这直接由 `startDate` 和 `startTime` 属性派生。
 
-If you want to override the label the calendar uses to fetch the recurrence string, you can use the `#calendar:recurrence` attribute. For example, you can set `#calendar:recurrence=taskRepeats`. Then you can set your recurrence string like `#taskRepeats="FREQ=DAILY;INTERVAL=1"`
+如果要覆盖日历用于获取重复字符串的标签，可以使用 `#calendar:recurrence` 属性。例如，可以设置 `#calendar:recurrence=taskRepeats`。然后可以像这样设置重复字符串 `#taskRepeats="FREQ=DAILY;INTERVAL=1"`。
 
-Also note that the recurrence label can be made promoted as with the start and end dates. 
+另请注意，重复标签可以像开始和结束日期一样被提升。
 
 > [!WARNING]
-> If the recurrence string is not valid, a toast will be shown with the note ID and title of the note with the erroneous recurrence message. This note will not be added to the calendar
+> 如果重复字符串无效，将显示一个包含笔记 ID 和标题以及错误重复消息的提示。该笔记将不会添加到日历中。
 
-## Slot Duration & Slot Label Interval
+## 时间段持续时间和时间标签间隔
 
-Trilium's calendar view is powered by FullCalendar, which gives you fine-grained control over how the time grid looks and behaves for day and week views. Two labels you can use to configure these views are `#calendar:slotDuration` and `#calendar:slotLabelInterval`. Understanding what each one does — and how they interact — lets you tailor the calendar to match your workflow, whether you're scheduling in 15-minute increments or planning out your day in broad hourly blocks.
+Trilium 的日历视图由 FullCalendar 提供支持，它允许您对日视图和周视图的时间网格外观和行为进行细粒度控制。可用于配置这些视图的两个标签是 `#calendar:slotDuration` 和 `#calendar:slotLabelInterval`。理解每个标签的作用以及它们如何交互，可以让您根据自己的工作流程定制日历，无论是按 15 分钟增量安排日程，还是按宽泛的小时间隔规划一天。
 
-These settings can also be adjusted from the _Collections_ tab in the <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Ribbon.md">Ribbon</a>.
+这些设置也可以在<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Ribbon.md">功能区</a>的 _集合_ 选项卡中调整。
 
-### Slot duration
+### 时间段持续时间
 
-Controls how tall each time slot is on the calendar — essentially the smallest unit of time the grid is divided into. A shorter duration means more rows and finer granularity; a longer one means fewer, chunkier rows. The default is one row every 15 minutes.
+控制日历上每个时间段的高度——本质上是网格划分的最小时间单位。较短的持续时间意味着更多的行和更细的粒度；较长的持续时间意味着更少、更粗的行。默认是每 15 分钟一行。
 
-**Examples:**
+**示例：**
 
-| Value | Result |
+| 值 | 结果 |
 | --- | --- |
-| `#calendar:slotDuration="00:15:00"` | One row every 15 minutes |
-| `#calendar:slotDuration="00:30:00"` | One row every 30 minutes |
-| `#calendar:slotDuration="01:00:00"` | One row every hour |
+| `#calendar:slotDuration="00:15:00"` | 每 15 分钟一行 |
+| `#calendar:slotDuration="00:30:00"` | 每 30 分钟一行 |
+| `#calendar:slotDuration="01:00:00"` | 每小时一行 |
 
-### Label interval
+### 标签间隔
 
-Controls how often a time label appears on the left-hand axis. This is independent of the slot size — you can have very small slots but only label every hour to keep the axis readable. The default is a time label shown every hour.
+控制左侧轴上时间标签出现的频率。这与时间段大小无关——您可以有非常小的时间段，但只每小时标记一次以保持轴的可读性。默认是每小时显示一个时间标签。
 
-**Examples:**
+**示例：**
 
-| Value | Result |
+| 值 | 结果 |
 | --- | --- |
-| `#calendar:slotLabelInterval="00:30:00"` | Show a time label every 30 minutes |
-| `#calendar:slotLabelInterval="01:00:00"` | Show a time label every hour |
+| `#calendar:slotLabelInterval="00:30:00"` | 每 30 分钟显示一个时间标签 |
+| `#calendar:slotLabelInterval="01:00:00"` | 每小时显示一个时间标签 |
 
-### Useful combinations
+### 有用的组合
 
-| `#calendar:slotDuration` | `#calendar:slotLabelInterval` | Result |
+| `#calendar:slotDuration` | `#calendar:slotLabelInterval` | 结果 |
 | --- | --- | --- |
-| `00:15:00` | `01:00:00` | Fine grid, clean axis — good for busy schedules |
-| `00:30:00` | `01:00:00` | Standard calendar feel |
-| `01:00:00` | `01:00:00` | Simple hourly grid — good for day planning |
-| `00:15:00` | `00:30:00` | Fine grid, labels every 30 min — balanced detail |
+| `00:15:00` | `01:00:00` | 精细网格，简洁轴——适合繁忙的日程 |
+| `00:30:00` | `01:00:00` | 标准日历感觉 |
+| `01:00:00` | `01:00:00` | 简单的小时网格——适合日计划 |
+| `00:15:00` | `00:30:00` | 精细网格，每 30 分钟标记一次——平衡的细节 |
 
-### Format
+### 格式
 
-Both values use `HH:mm:ss` format. Hours can go up to `24` (`24:00:00`), while minutes and seconds must be between `00` and `59`. The minimum meaningful duration is 1 minute (`00:01:00`).
+两个值都使用 `HH:mm:ss` 格式。小时可以到 `24`（`24:00:00`），而分钟和秒必须在 `00` 到 `59` 之间。最小有意义的持续时间是 1 分钟（`00:01:00`）。
 
-## Use-cases
+## 使用案例
 
-### Using with the Journal / calendar
+### 与日志/日历一起使用
 
-It is possible to integrate the calendar view into the Journal with day notes. In order to do so change the note type of the Journal note (calendar root) to Collection and then select the Calendar View.
+可以将日历视图集成到带有日笔记的日志中。为此，请将日志笔记（日历根）的笔记类型更改为集合，然后选择日历视图。
 
-While in journal mode, the popup editor will not show dates, recurrence, colors or removal, since day notes aren't editable events.
+在日志模式下，弹窗编辑器不会显示日期、重复、颜色或移除选项，因为日笔记不是可编辑的事件。
 
-Based on the `#calendarRoot` (or `#workspaceCalendarRoot`) attribute, the calendar will know that it's in a calendar and apply the following:
+基于 `#calendarRoot`（或 `#workspaceCalendarRoot`）属性，日历将知道它处于日历模式，并应用以下规则：
 
-*   The calendar events are now rendered based on their `dateNote` attribute rather than `startDate`.
-*   Interactive editing such as dragging over an empty era or resizing an event is no longer possible.
-*   Clicking on the empty space on a date will automatically open that day's note or create it if it does not exist.
-*   Direct children of a day note will be displayed on the calendar despite not having a `dateNote` attribute. Children of the child notes will not be displayed.
+*   日历事件现在根据其 `dateNote` 属性而不是 `startDate` 渲染。
+*   诸如在空白区域拖拽或调整事件大小之类的交互式编辑不再可能。
+*   点击日期上的空白区域将自动打开该日的笔记，如果不存在则创建它。
+*   日笔记的直接子笔记将显示在日历上，即使它们没有 `dateNote` 属性。子笔记的子级将不会显示。
 
 <img src="5_Calendar_image.png" width="1217" height="724">
 
-### Using a different attribute as event title
+### 使用不同的属性作为事件标题
 
-<img class="image-style-align-right" src="2_Calendar_image.png" width="445" height="124">By default, events are displayed on the calendar by their note title. However, it is possible to configure a different attribute to be displayed instead.
+<img class="image-style-align-right" src="2_Calendar_image.png" width="445" height="124">默认情况下，事件在日历上以其笔记标题显示。但是，可以配置显示不同的属性。
 
-To do so, assign `#calendar:title` to the child note (not the calendar/Collection note), with the value being `name` where `name` can be any label (make not to add the `#` prefix). The attribute can also come through inheritance such as a template attribute. If the note does not have the requested label, the title of the note will be used instead.
+为此，将 `#calendar:title` 分配给子笔记（不是日历/集合笔记），其值为 `name`，其中 `name` 可以是任何标签（注意不要添加 `#` 前缀）。该属性也可以通过继承获得，例如模板属性。如果笔记没有请求的标签，则将使用笔记的标题。
 
 ```
 #startDate=2025-02-11 #endDate=2025-02-13 #name="My vacation" #calendar:title="name"
 ```
 
-### Using a relation attribute as event title
+### 使用关系属性作为事件标题
 
-<img class="image-style-align-right image_resized" style="aspect-ratio:294/151;width:21.22%;" src="3_Calendar_image.png" width="294" height="151">Similarly to using an attribute, use `#calendar:title` and set it to `name` where `name` is the name of the relation to use.
+<img class="image-style-align-right image_resized" style="aspect-ratio:294/151;width:21.22%;" src="3_Calendar_image.png" width="294" height="151">与使用属性类似，使用 `#calendar:title` 并将其设置为 `name`，其中 `name` 是要使用的关系的名称。
 
-Moreover, if there are more relations of the same name, they will be displayed as multiple events coming from the same note.
+此外，如果存在更多同名关系，它们将显示为来自同一笔记的多个事件。
 
 ```
 #startDate=2025-02-14 #endDate=2025-02-15 ~for=@John Smith ~for=@Jane Doe #calendar:title="for"
 ```
 
-<img class="image-style-align-left" src="Calendar_image.png" width="296" height="150">Note that it's even possible to have a `#calendar:title` on the target note (e.g. “John Smith”) which will try to render an attribute of it. Note that it's not possible to use a relation here as well for safety reasons (an accidental recursion  of attributes could cause the application to loop infinitely).
+<img class="image-style-align-left" src="Calendar_image.png" width="296" height="150">请注意，甚至可以在目标笔记（例如“John Smith”）上设置 `#calendar:title`，它将尝试渲染该笔记的某个属性。请注意，出于安全原因，此处不能使用关系（属性意外递归可能导致应用程序无限循环）。
 
 ```
 #calendar:title="shortName" #shortName="John S."

@@ -1,49 +1,50 @@
-# Syntax highlighting
-## Defining the MIME type
+# 语法高亮
 
-The first step to supporting a new language for either code blocks or code notes is to define the MIME type. Go to `mime_type.ts` in `packages/commons` and add a corresponding entry:
+## 定义 MIME 类型
+
+为代码块或代码笔记支持新语言的第一步是定义 MIME 类型。前往 `packages/commons` 中的 `mime_type.ts` 文件，并添加相应的条目：
 
 ```
 { title: "ABAP (SAP)", mime: "text/x-abap", mdLanguageCode: "abap" }
 ```
 
-Where `mdLanguageCode` is a Markdown-friendly name of the language.
+其中 `mdLanguageCode` 是该语言在 Markdown 中的友好名称。
 
-## Syntax highlighting for Highlight.js
+## Highlight.js 的语法高亮
 
-The Highlight.js instance in Trilium identifies the code to highlight by the mime type mappings defined in `syntax_highlighting.ts` in `packages/highlightjs`.
+Trilium 中的 Highlight.js 实例通过 `packages/highlightjs` 中 `syntax_highlighting.ts` 文件里定义的 MIME 类型映射来识别需要高亮的代码。
 
-There are three possible cases, all involving modifying the `byMimeType` record:
+有三种可能的情况，均涉及修改 `byMimeType` 记录：
 
-### Highlight.js built-in languages:
+### Highlight.js 内置语言：
 
-Simply add a corresponding entry:
+直接添加相应的条目：
 
 ```
 "application/dart": () => import("highlight.js/lib/languages/dart"),
 ```
 
-### External modules from NPM
+### 来自 NPM 的外部模块
 
-1.  Install the module as a dependency in `packages/highlight.js`
-2.  Import:
+1.  在 `packages/highlight.js` 中将该模块安装为依赖项
+2.  导入：
     
     ```
     "application/x-cypher-query": () => import("highlightjs-cypher")
     ```
-3.  Do this if the npm module is relatively new and it has TypeScript mappings, if not see the last option.
+3.  如果 npm 模块相对较新且带有 TypeScript 映射，则执行此操作；如果没有，请参见最后一个选项。
 
-### Modules integrated directly into Trilium
+### 直接集成到 Trilium 中的模块
 
-*   Allows making small modifications if needed (especially if the module is old).
-*   Works well for modules missing type definitions, since types are added directly in code.
+*   允许在需要时进行小幅修改（尤其是当模块较旧时）。
+*   对于缺少类型定义的模块效果很好，因为类型是直接在代码中添加的。
 
-Steps:
+步骤：
 
-1.  Copy the syntax highlighting file ([example](https://github.com/highlightjs/highlightjs-sap-abap/blob/main/src/abap.js)) into `packages/highlightjs/src/languages/[code].ts`.
-2.  Add a link in a comment at the top of the file linking to the original source code.
-3.  Replace `module.exports =` by `export default`.
-4.  Add types to the method:
+1.  将语法高亮文件（[示例](https://github.com/highlightjs/highlightjs-sap-abap/blob/main/src/abap.js)）复制到 `packages/highlightjs/src/languages/[code].ts`。
+2.  在文件顶部的注释中添加指向原始源代码的链接。
+3.  将 `module.exports =` 替换为 `export default`。
+4.  为该方法添加类型：
     
     ```
     import { HLJSApi, Language } from "highlight.js";
@@ -52,42 +53,43 @@ Steps:
         // [...]
     }
     ```
-5.  Remove any module loading mechanism or shims outside the main highlight function.
-6.  Modify `syntax_highlighting.js` to support the new language:
+5.  移除主高亮函数外部的任何模块加载机制或填充代码（shims）。
+6.  修改 `syntax_highlighting.js` 以支持新语言：
     
     ```
     "text/x-abap": () => import("./languages/abap.js"),
     ```
 
-## Syntax highlighting for CodeMirror
+## CodeMirror 的语法高亮
 
 > [!NOTE]
-> Newer versions of Trilium use CodeMirror 6, so the plugin must be compatible with this version.
+> 较新版本的 Trilium 使用 CodeMirror 6，因此插件必须与此版本兼容。
 
-### Adding the MIME type mapping
+### 添加 MIME 类型映射
 
-Similar to Highlight.js, the mappings for each MIME type are handled in `syntax_highlighting.ts` in `packages/codemirror`, by modifying the `byMimeType` record.
+与 Highlight.js 类似，每种 MIME 类型的映射在 `packages/codemirror` 的 `syntax_highlighting.ts` 中通过修改 `byMimeType` 记录来处理。
 
-1.  Official modules:
+1.  官方模块：
     
     ```
     async () => (await import('@codemirror/lang-html')).html(),
     ```
-2.  Legacy modules (ported from CodeMirror 5):
+2.  旧版模块（从 CodeMirror 5 移植而来）：
     
     ```
     "text/turtle": async () => (await import('@codemirror/legacy-modes/mode/turtle')).turtle, 
     ```
-3.  Modules integrated into Trilium:
+3.  集成到 Trilium 中的模块：
     
     ```
     "application/x-bat": async () => (await import("./languages/batch.js")).batch,
     ```
 
-### Integrating existing modules
+### 集成现有模块
 
-*   Add a comment at the beginning indicating the link to the original source code.
-*   Some imports might require updating:
-    *   Instead of  
-        `import { StreamParser, StringStream } from "@codemirror/stream-parser";`, use    
-        `import { StreamParser, StringStream } from "@codemirror/language";`
+*   在开头添加注释，指明原始源代码的链接。
+*   某些导入可能需要更新：
+    *   使用  
+        `import { StreamParser, StringStream } from "@codemirror/language";`  
+        替代  
+        `import { StreamParser, StringStream } from "@codemirror/stream-parser";`。

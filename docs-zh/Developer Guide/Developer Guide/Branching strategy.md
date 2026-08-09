@@ -1,30 +1,30 @@
-# Branching strategy
-## Main branch
+# 分支策略
+## 主分支
 
-The main development branch is conveniently called `main`. This branch contains all the merged features and is considered semi-stable.
+主开发分支被命名为 `main`。该分支包含所有已合并的功能，并被视为半稳定状态。
 
-## Development
+## 开发
 
-Every new development must be done in a separate branch (usually prefixed with `feature/`). The PR must then be reviewed.
+每一项新开发都必须在独立的分支中完成（通常以 `feature/` 作为前缀）。随后，必须对拉取请求（PR）进行审查。
 
-## Reviewing
+## 审查
 
-Each PR must be tested manually and reviewed by a maintainer. For PRs that are made by the maintainers themselves, an LLM review from Copilot or Gemini are also accepted.
+每个拉取请求（PR）都必须由维护者进行手动测试和审查。对于由维护者自己提出的 PR，来自 Copilot 或 Gemini 的大语言模型审查同样被接受。
 
-After a PR is approved, it is merged into the `main` branch and the change log draft is updated.
+在 PR 获得批准后，它会被合并到 `main` 分支，并更新变更日志草稿。
 
-## Releasing
+## 发布
 
-[Releasing a new version](Building/Releasing%20a%20new%20version.md) is done straight from the `main` branch once it's deemed stable enough for production.
+一旦 `main` 分支被认为足够稳定，可以用于生产环境，就直接从该分支进行[新版本发布](Building/Releasing%20a%20new%20version.md)。
 
-## Hot-fixing
+## 热修复
 
-After releasing a new version, it's sometimes desirable to create a hotfix in order to fix some issues with the production version without introducing many changes that might have already been merged in `main`.
+在发布新版本后，有时需要创建一个热修复分支，以解决生产版本中的某些问题，而无需引入可能已合并到 `main` 分支中的大量更改。
 
-To do so, the procedure is as follows:
+为此，操作步骤如下：
 
-1.  A `hotfix` branch is created, from the tag of the release.
-2.  If fixes/features from the `main` branch are needed, they are cherry-picked directly onto the branch.
-3.  New fixes/features are either developed directly on the `hotfix` branch or an a PR that targets this branch, depending on the complexity.
-4.  A new version is released from the `hotfix` version.
-5.  The `hotfix` version is merged back into `main`, via a PR.
+1.  从发布标签创建一个 `hotfix` 分支。
+2.  如果需要来自 `main` 分支的修复/功能，则直接将其 cherry-pick 到该分支上。
+3.  新的修复/功能根据复杂性，要么直接在 `hotfix` 分支上开发，要么通过针对该分支的 PR 进行。
+4.  从 `hotfix` 分支发布一个新版本。
+5.  通过 PR 将 `hotfix` 分支合并回 `main` 分支。

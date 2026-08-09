@@ -1,16 +1,17 @@
-# Note context aware widget
-Note context-aware widgets are a different type of widget which automatically react to changes in the current note.
+# 笔记上下文感知小组件
 
-Important aspects:
+笔记上下文感知小组件是一种特殊类型的小组件，它会自动响应当前笔记的变化。
 
-*   The widget must export a `class` and not an instance of the class (e.g. `no new`) because it needs to be multiplied for each note, so that splits work correctly.
-*   Since the `class` is exported instead of an instance, the `parentWidget` getter must be `static`, otherwise the widget is ignored.
+重要方面：
 
-## Example displaying the current note title
+*   小组件必须导出一个 `class`，而不是类的实例（例如，不要使用 `new`），因为它需要为每个笔记进行复制，以便拆分功能正常工作。
+*   由于导出的是 `class` 而不是实例，`parentWidget` 获取器必须是 `static`，否则该小组件将被忽略。
 
-This is a note context-aware widget that simply displays the name the current note. 
+## 显示当前笔记标题的示例
 
-### Classic example
+这是一个笔记上下文感知小组件，它简单地显示当前笔记的名称。
+
+### 经典示例
 
 ```
 class HelloNoteDetail extends api.NoteContextAwareWidget {
@@ -36,7 +37,7 @@ class HelloNoteDetail extends api.NoteContextAwareWidget {
 module.exports = HelloNoteDetail;
 ```
 
-### Preact (v0.101.0+)
+### Preact（v0.101.0+）
 
 ```
 import { defineWidget, useNoteContext, useNoteProperty } from "trilium:preact";

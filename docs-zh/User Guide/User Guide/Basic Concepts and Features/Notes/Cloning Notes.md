@@ -1,65 +1,66 @@
-# Cloning Notes
-## Motivation
+# 克隆笔记
 
-Trilium's core feature is the ability to structure your notes into hierarchical tree-like structure.
+## 动机
 
-It is expected then that you'll have an elaborate and deep note hierarchy - each subtree will represent a more refined and specialized view of your knowledge base.
+Trilium 的核心功能是能够将你的笔记组织成层级树状结构。
 
-This is a pretty powerful approach, but it also carries a hidden assumption that each "subtopic" is "owned" by one parent. I'll illustrate this with an example - let's say my basic structure is this:
+因此，你可以预期会有一个精心设计且深层的笔记层级——每个子树都代表你知识库中一个更精细、更专业化的视图。
 
-*   Technology
-    *   Programming
+这是一种相当强大的方法，但它也隐含了一个假设：每个“子主题”都由一个父节点“拥有”。我用一个例子来说明——假设我的基本结构是这样的：
+
+*   技术
+    *   编程
         *   Kotlin
         *   JavaScript
-    *   Operating systems
+    *   操作系统
         *   Linux
         *   Windows
 
-Now, I'm starting to learn about [Bash](https://en.wikipedia.org/wiki/Bash_\(Unix_shell\)) and would like to create notes related to this topic. But now I'm facing a problem of where to categorize this. The issue here is that Bash is both a programming language and a tool (shell) very much tied into Linux. It seems it belongs to both of these, I can't (and don't want to) choose one over the other.
+现在，我开始学习 [Bash](https://en.wikipedia.org/wiki/Bash_\(Unix_shell\))，并想创建与此主题相关的笔记。但我现在面临一个问题：该把它归到哪一类。问题在于 Bash 既是一种编程语言，又是一个与 Linux 紧密相关的工具（Shell）。它似乎同时属于这两者，我不能（也不想）只选择其中一个。
 
-## Solution
+## 解决方案
 
-The solution to the problem shown above is to allow notes to have multiple parents.
+针对上述问题的解决方案是允许笔记拥有多个父节点。
 
-I call these "clones", but that is a bit misleading - there's no original and cloned note - the notes in both of the parents categories are identical.
+我称这些为“克隆”，但这有点误导——这里没有原始笔记和克隆笔记之分——两个父类别中的笔记是完全相同的。
 
-Another misleading thing about "cloning" is that it suggests that a copy of the note has been made. That's not really true, the note itself stays in just one original, it is just referenced in multiple places in the tree hierarchy. So changing it in one category changes it in all the others, because they're all the same note.
+关于“克隆”的另一个误导之处在于，它暗示已经制作了笔记的副本。这并不完全正确，笔记本身只保留一个原件，只是在树状层级中被多处引用。因此，在一个类别中修改它，所有其他类别中的它也会随之改变，因为它们都是同一个笔记。
 
-Here's the final structure with cloning:
+以下是使用克隆后的最终结构：
 
-*   Technology
-    *   Programming
+*   技术
+    *   编程
         *   Kotlin
         *   JavaScript
         *   Bash
-            *   some sub-notes ...
-    *   Operating systems
+            *   一些子笔记...
+    *   操作系统
         *   Linux
             *   Bash
-                *   some sub-notes ...
+                *   一些子笔记...
         *   Windows
 
-So now the "Bash" subtree appears on multiple locations in the hierarchy. Both the Bash subtrees are the same and contain the same sub-categories and notes.
+所以现在“Bash”子树出现在层级结构中的多个位置。两个 Bash 子树是相同的，并且包含相同的子类别和笔记。
 
-### Demo
+### 演示
 
 ![](Cloning%20Notes_create-clone.gif)
 
-In the demo, you can see how a clone can be created using the context menu. It's possible to do this also using the Add Link dialog or with <kbd>Ctrl</kbd>+<kbd>C</kbd> and <kbd>Ctrl</kbd>+<kbd>V</kbd> [keyboard shortcuts](../Keyboard%20Shortcuts.md).
+在演示中，你可以看到如何使用上下文菜单创建克隆。也可以使用“添加链接”对话框或 <kbd>Ctrl</kbd>+<kbd>C</kbd> 和 <kbd>Ctrl</kbd>+<kbd>V</kbd> [键盘快捷键](../Keyboard%20Shortcuts.md) 来完成此操作。
 
-You can view the list of all available clones:
+你可以查看所有可用克隆的列表：
 
-*   In the <a class="reference-link" href="../UI%20Elements/Right%20Sidebar/Connections%20tab.md">Connections tab</a> for the <a class="reference-link" href="../UI%20Elements/New%20Layout.md">New Layout</a>.
-*   For the old layout, in the "Note Paths" tab in the <a class="reference-link" href="../UI%20Elements/Ribbon.md">Ribbon</a>.
+*   在 <a class="reference-link" href="../UI%20Elements/Right%20Sidebar/Connections%20tab.md">连接标签页</a> 中，适用于 <a class="reference-link" href="../UI%20Elements/New%20Layout.md">新布局</a>。
+*   对于旧布局，在 <a class="reference-link" href="../UI%20Elements/Ribbon.md">功能区</a> 的“笔记路径”标签页中。
 
-Titles of cloned notes in the tree view have an asterisk to the right to easily see that the note is also placed into some other location.
+树状视图中克隆笔记的标题右侧会有一个星号，以便轻松识别该笔记也被放置在其他位置。
 
-## Deleting notes/clones
+## 删除笔记/克隆
 
-With clones, it might not be immediately obvious how deleting works.
+有了克隆，删除的工作方式可能不是那么直观。
 
-If you try to delete a note, it works like this:
+如果你尝试删除一个笔记，其工作方式如下：
 
-1.  if the note has multiple clones, delete just this clone and leave the actual note (and its other clones) as it is.
-2.  if this note doesn't have any other clones, delete the note
-    *   Run the whole process starting with 1. on all note's children notes
+1.  如果该笔记有多个克隆，则仅删除此克隆，并保留实际笔记（及其其他克隆）不变。
+2.  如果该笔记没有其他克隆，则删除该笔记。
+    *   对该笔记的所有子笔记从步骤 1 开始重复整个过程。

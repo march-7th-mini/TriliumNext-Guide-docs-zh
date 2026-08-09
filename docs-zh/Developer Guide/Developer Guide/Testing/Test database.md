@@ -1,32 +1,32 @@
-# Test database
-The integration tests do not use the same database as `pnpm server:start`. Instead, the tracked fixture database lives at `packages/trilium-core/src/test/fixtures/document.db`.
+# 测试数据库
+集成测试不使用与 `pnpm server:start` 相同的数据库。相反，受跟踪的夹具数据库位于 `packages/trilium-core/src/test/fixtures/document.db`。
 
-## In-memory database
+## 内存数据库
 
-Even though we ship our own database, there is still the problem of one test affecting the content for the others or accidentally removing important test notes.
+尽管我们自带数据库，但仍然存在一个问题：一个测试可能会影响其他测试的内容，或者意外删除重要的测试笔记。
 
-To avoid this, the test setup (`apps/server/spec/setup.ts`) loads the fixture into memory and operates from there. That means any changes made while tests run are never persisted to disk. Another benefit of having the database in memory is that test files can run in parallel (each vitest fork gets its own copy) without interfering with each other.
+为了避免这种情况，测试设置（`apps/server/spec/setup.ts`）会将夹具加载到内存中，并在内存中运行。这意味着测试运行期间所做的任何更改都不会持久化到磁盘。使用内存数据库的另一个好处是测试文件可以并行运行（每个 vitest 分支都有自己的副本），而不会相互干扰。
 
-## How to make changes to the database
+## 如何修改数据库
 
-The database can be edited manually to add content that is relevant to the tests. To do so, run a dedicated editing server:
+可以手动编辑数据库以添加与测试相关的内容。为此，请运行专用的编辑服务器：
 
 ```
 pnpm --filter server run edit-integration-db
 ```
 
-This opens a server on port **8086** that attaches **directly** to the tracked fixture (`packages/trilium-core/src/test/fixtures/document.db`) via `TRILIUM_DOCUMENT_PATH`, so your changes land in the committed file — no copy step is required. Ancillary runtime files (logs, tmp, `config.ini`) still live in the git-ignored `apps/server/spec/db/`.
+这将在端口 **8086** 上打开一个服务器，通过 `TRILIUM_DOCUMENT_PATH` **直接**连接到受跟踪的夹具（`packages/trilium-core/src/test/fixtures/document.db`），因此您的更改会直接写入已提交的文件中——无需复制步骤。辅助运行时文件（日志、临时文件、`config.ini`）仍位于被 Git 忽略的 `apps/server/spec/db/` 目录中。
 
-After finishing the desired changes, close the server (Ctrl-C) to prevent any interference with further test runs.
+完成所需的更改后，关闭服务器（Ctrl-C）以防止对后续测试运行产生任何干扰。
 
-## The database is tracked by Git
+## 数据库由 Git 跟踪
 
-This is intentional: any change to the database marks the file as changed in Git as well. Some tests require a specific note and it would be too wasteful to recreate it via Playwright each time. Instead the content is added manually and the tests operate directly on those notes.
+这是有意为之：对数据库的任何更改也会在 Git 中标记该文件为已更改。某些测试需要特定的笔记，每次通过 Playwright 重新创建这些笔记过于浪费。相反，内容会被手动添加，测试直接在这些笔记上操作。
 
-To keep the database easy to track, the editing server opens it in the rollback (`DELETE`) journal mode instead of WAL (see `apps/server/src/sql_provider.ts`). This means only the single `.db` file is produced and needs to be committed — no `-wal`/`-shm` sidecars. (Those sidecars are git-ignored under the fixtures directory regardless.)
+为了便于跟踪数据库，编辑服务器会以回滚（`DELETE`）日志模式而非 WAL 模式打开它（参见 `apps/server/src/sql_provider.ts`）。这意味着只会生成单个 `.db` 文件并需要提交——不会产生 `-wal`/`-shm` 附带文件。（这些附带文件在夹具目录下无论如何都会被 Git 忽略。）
 
-## Cleaning up the database
+## 清理数据库
 
-It's recommended to clean up any deleted notes to avoid unnecessary changes being committed. To do so go to Recent Changes in the launcher and select "Erase deleted notes now".
+建议清理任何已删除的笔记，以避免提交不必要的更改。为此，请在启动器中转到“最近更改”，然后选择“立即清除已删除的笔记”。
 
-It's also a good idea to go to Options → Advanced → Vacuum database to clean it up.
+同时建议前往“选项”→“高级”→“压缩数据库”进行清理。

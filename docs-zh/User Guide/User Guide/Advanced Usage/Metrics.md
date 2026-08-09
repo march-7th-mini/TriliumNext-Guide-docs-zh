@@ -1,28 +1,29 @@
-# Metrics
-The Trilium Metrics API provides comprehensive monitoring data about your Trilium instance, designed for external monitoring systems like Prometheus.
+# 指标
 
-## **Endpoint**
+Trilium 指标 API 提供关于您的 Trilium 实例的全面监控数据，专为 Prometheus 等外部监控系统设计。
 
-*   **URL**: `/etapi/metrics`
-*   **Method**: `GET`
-*   **Authentication**: ETAPI token required
-*   **Default Format**: Prometheus text format
+## **端点**
 
-## **Authentication**
+*   **URL**： `/etapi/metrics`
+*   **方法**： `GET`
+*   **身份验证**： 需要 ETAPI 令牌
+*   **默认格式**： Prometheus 文本格式
 
-You need an ETAPI token to access the metrics endpoint. Get one by:
+## **身份验证**
+
+您需要一个 ETAPI 令牌才能访问指标端点。通过以下方式获取：
 
 ```
-# Get an ETAPI token
+# 获取 ETAPI 令牌
 curl -X POST http://localhost:8080/etapi/auth/login \
   -H "Content-Type: application/json" \
   -d '{"password": "your_password"}'
 
 ```
 
-## **Usage**
+## **用法**
 
-### **Prometheus Format (Default)**
+### **Prometheus 格式（默认）**
 
 ```
 curl -H "Authorization: YOUR_ETAPI_TOKEN" \
@@ -30,7 +31,7 @@ curl -H "Authorization: YOUR_ETAPI_TOKEN" \
 
 ```
 
-Returns metrics in Prometheus text format:
+以 Prometheus 文本格式返回指标：
 
 ```
 # HELP trilium_info Trilium instance information
@@ -43,7 +44,7 @@ trilium_notes_total 1234 1701432000
 
 ```
 
-### **JSON Format**
+### **JSON 格式**
 
 ```
 curl -H "Authorization: YOUR_ETAPI_TOKEN" \
@@ -51,44 +52,44 @@ curl -H "Authorization: YOUR_ETAPI_TOKEN" \
 
 ```
 
-Returns detailed metrics in JSON format for debugging or custom integrations.
+以 JSON 格式返回详细指标，用于调试或自定义集成。
 
-## **Available Metrics**
+## **可用指标**
 
-### **Instance Information**
+### **实例信息**
 
-*   `trilium_info` - Version and build information with labels
+*   `trilium_info` - 带有标签的版本和构建信息
 
-### **Database Metrics**
+### **数据库指标**
 
-*   `trilium_notes_total` - Total notes (including deleted)
-*   `trilium_notes_deleted` - Number of deleted notes
-*   `trilium_notes_active` - Number of active notes
-*   `trilium_notes_protected` - Number of protected notes
-*   `trilium_attachments_total` - Total attachments
-*   `trilium_attachments_active` - Active attachments
-*   `trilium_revisions_total` - Total note revisions
-*   `trilium_branches_total` - Active branches
-*   `trilium_attributes_total` - Active attributes
-*   `trilium_blobs_total` - Total blob records
-*   `trilium_etapi_tokens_total` - Active ETAPI tokens
-*   `trilium_embeddings_total` - Note embeddings (if available)
+*   `trilium_notes_total` - 笔记总数（包括已删除的）
+*   `trilium_notes_deleted` - 已删除的笔记数量
+*   `trilium_notes_active` - 活跃笔记数量
+*   `trilium_notes_protected` - 受保护笔记数量
+*   `trilium_attachments_total` - 附件总数
+*   `trilium_attachments_active` - 活跃附件数量
+*   `trilium_revisions_total` - 笔记修订总数
+*   `trilium_branches_total` - 活跃分支数量
+*   `trilium_attributes_total` - 活跃属性数量
+*   `trilium_blobs_total` - 二进制大对象记录总数
+*   `trilium_etapi_tokens_total` - 活跃的 ETAPI 令牌数量
+*   `trilium_embeddings_total` - 笔记嵌入（如果可用）
 
-### **Categorized Metrics**
+### **分类指标**
 
-*   `trilium_notes_by_type{type="text|code|image|file"}` - Notes by type
-*   `trilium_attachments_by_type{mime_type="..."}` - Attachments by MIME type
+*   `trilium_notes_by_type{type="text|code|image|file"}` - 按类型分类的笔记
+*   `trilium_attachments_by_type{mime_type="..."}` - 按 MIME 类型分类的附件
 
-### **Statistics**
+### **统计信息**
 
-*   `trilium_database_size_bytes` - Database size in bytes
-*   `trilium_oldest_note_timestamp` - Timestamp of oldest note
-*   `trilium_newest_note_timestamp` - Timestamp of newest note
-*   `trilium_last_modified_timestamp` - Last modification timestamp
+*   `trilium_database_size_bytes` - 数据库大小（字节）
+*   `trilium_oldest_note_timestamp` - 最早笔记的时间戳
+*   `trilium_newest_note_timestamp` - 最新笔记的时间戳
+*   `trilium_last_modified_timestamp` - 最后修改时间戳
 
-## **Prometheus Configuration**
+## **Prometheus 配置**
 
-Add to your `prometheus.yml`:
+添加到您的 `prometheus.yml`：
 
 ```
 scrape_configs:
@@ -101,20 +102,20 @@ scrape_configs:
 
 ```
 
-## **Error Responses**
+## **错误响应**
 
-*   `400` - Invalid format parameter
-*   `401` - Missing or invalid ETAPI token
-*   `500` - Internal server error
+*   `400` - 无效的格式参数
+*   `401` - 缺少或无效的 ETAPI 令牌
+*   `500` - 内部服务器错误
 
-## **Grafana Dashboard**
+## **Grafana 仪表板**
 
 <figure class="image"><img style="aspect-ratio:2594/1568;" src="1_Metrics_image.png" width="2594" height="1568"></figure>
 
-You can also use the Grafana Dashboard that has been created for TriliumNext - just take the JSON from <a class="reference-link" href="Metrics/grafana-dashboard.json">grafana-dashboard.json</a> and then import the dashboard, following these screenshots:
+您还可以使用为 TriloniNext 创建的 Grafana 仪表板 - 只需从 <a class="reference-link" href="Metrics/grafana-dashboard.json">grafana-dashboard.json</a> 获取 JSON，然后按照以下截图导入仪表板：
 
 <figure class="image"><img style="aspect-ratio:1881/282;" src="2_Metrics_image.png" width="1881" height="282"></figure>
 
-Then paste the JSON, and hit load:
+然后粘贴 JSON，并点击加载：
 
 <figure class="image"><img style="aspect-ratio:1055/830;" src="Metrics_image.png" width="1055" height="830"></figure>

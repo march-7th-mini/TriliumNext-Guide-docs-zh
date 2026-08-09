@@ -1,7 +1,7 @@
 # CSS
-## Classic widgets
+## 经典小组件
 
-In `doRender()`:<sup><a href="#fn1saoftmefpp">[1]</a></sup>
+在 `doRender()` 中：<sup><a href="#fn1saoftmefpp">[1]</a></sup>
 
 ```
 this.cssBlock(`#my-widget {
@@ -12,10 +12,10 @@ this.cssBlock(`#my-widget {
 }`);
 ```
 
-## Preact widgets
+## Preact 小组件
 
-See the dedicated page: <a class="reference-link" href="../Preact/CSS.md">CSS</a>.
+请参阅专门页面：<a class="reference-link" href="../Preact/CSS.md">CSS</a>。
 
 1.  <sup><strong><a href="#fnref1saoftmefpp">^</a></strong></sup>
     
-    Reference: [https://trilium.rocks/X7pxYpiu0lgU](https://trilium.rocks/X7pxYpiu0lgU)
+    参考：[https://trilium.rocks/X7pxYpiu0lgU](https://trilium.rocks/X7pxYpiu0lgU)

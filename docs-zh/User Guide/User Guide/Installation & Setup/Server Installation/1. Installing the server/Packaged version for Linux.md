@@ -1,36 +1,36 @@
-# Packaged version for Linux
-This is essentially Trilium sources + node modules + node.js runtime packaged into one 7z file.
+# Linux 打包版本
+这本质上是 Trilium 源码 + node 模块 + node.js 运行时打包成一个 7z 文件。
 
-## Steps
+## 步骤
 
-*   SSH into your server
-*   use `wget` (or `curl`) to download latest `TriliumNotes-Server-[VERSION]-linux-x64.tar.xz` (copy link from [release page](https://github.com/TriliumNext/Trilium/releases), notice `-Server` suffix) on your server.
-*   unpack the archive, e.g. using `tar -xf -d TriliumNotes-Server-[VERSION]-linux-x64.tar.xz`
+*   SSH 登录到你的服务器
+*   使用 `wget`（或 `curl`）在服务器上下载最新的 `TriliumNotes-Server-[VERSION]-linux-x64.tar.xz`（从[发布页面](https://github.com/TriliumNext/Trilium/releases)复制链接，注意 `-Server` 后缀）。
+*   解压归档文件，例如使用 `tar -xf -d TriliumNotes-Server-[VERSION]-linux-x64.tar.xz`
 *   `cd trilium-linux-x64-server`
 *   `./trilium.sh`
-*   you can open the browser and open http://\[your-server-hostname\]:8080 and you should see Trilium initialization page
+*   你可以打开浏览器并访问 http://\[你的服务器主机名\]:8080，你应该会看到 Trilium 初始化页面
 
-The problem with above steps is that once you close the SSH connection, the Trilium process is terminated. To avoid that, you have two options:
+上述步骤的问题在于，一旦你关闭 SSH 连接，Trilium 进程就会被终止。为了避免这种情况，你有两个选择：
 
-*   Kill it (with e.g. <kbd>Ctrl</kbd> + <kbd>C</kbd>) and run again like this: `nohup ./trilium.sh &`. (nohup keeps the process running in the background, `&` runs it in the background)
-*   Configure systemd to automatically run Trilium in the background on every boot
+*   终止它（例如使用 <kbd>Ctrl</kbd> + <kbd>C</kbd>）然后像这样重新运行：`nohup ./trilium.sh &`。（nohup 保持进程在后台运行，`&` 使其在后台运行）
+*   配置 systemd，让 Trilium 在每次启动时自动在后台运行
 
-## Configure Trilium to auto-run on boot with systemd
+## 使用 systemd 配置 Trilium 开机自启
 
-*   After downloading, extract and move Trilium:
+*   下载、解压并移动 Trilium：
 
 ```
 tar -xvf TriliumNotes-Server-[VERSION]-linux-x64.tar.xz
 sudo mv trilium-linux-x64-server /opt/trilium
 ```
 
-*   Create the service:
+*   创建服务：
 
 ```
 sudo nano /etc/systemd/system/trilium.service
 ```
 
-*   Paste this into the file (replace the user and group as needed):
+*   将以下内容粘贴到文件中（根据需要替换用户和组）：
 
 ```
 [Unit]
@@ -45,36 +45,36 @@ ExecStart=/opt/trilium/trilium.sh
 WorkingDirectory=/opt/trilium/
 
 TimeoutStopSec=20
-# KillMode=process leads to error, according to https://www.freedesktop.org/software/systemd/man/systemd.kill.html
+# KillMode=process 会导致错误，根据 https://www.freedesktop.org/software/systemd/man/systemd.kill.html
 Restart=always
 
 [Install]
 WantedBy=multi-user.target
 ```
 
-*   Save the file (CTRL-S) and exit (CTRL-X)
-*   Enable and launch the service:
+*   保存文件（CTRL-S）并退出（CTRL-X）
+*   启用并启动服务：
 
 ```
 sudo systemctl enable --now -q trilium
 ```
 
-*   You can now open a browser to http://\[your-server-hostname\]:8080 and you should see the Trilium initialization page.
+*   现在你可以打开浏览器访问 http://\[你的服务器主机名\]:8080，你应该会看到 Trilium 初始化页面。
 
-## Simple Autoupdate for Server
+## 服务器的简单自动更新
 
-Run as the same User Trilium runs
+以运行 Trilium 的同一用户身份运行
 
-if you run as root please remove 'sudo' from the commands
+如果你以 root 身份运行，请从命令中移除 'sudo'
 
-requires "jq" `apt install jq`
+需要 "jq" `apt install jq`
 
-It will stop the service above, overwrite everything (i expect no config.ini), and start service It also creates a version file in the Trilium directory so it updates only with a newer Version
+它会停止上述服务，覆盖所有内容（我假设没有 config.ini），然后启动服务。它还会在 Trilium 目录中创建一个版本文件，以便仅在存在更新版本时才进行更新。
 
 ```
 #!/bin/bash
 
-# Configuration
+# 配置
 REPO="TriliumNext/Trilium"
 PATTERN="TriliumNotes-Server-.*-linux-x64.tar.xz"
 DOWNLOAD_DIR="/var/tmp/trilium_download"
@@ -82,22 +82,22 @@ OUTPUT_DIR="/opt/trilium"
 SERVICE_NAME="trilium"
 VERSION_FILE="$OUTPUT_DIR/version.txt"
 
-# Ensure dependencies are installed
-command -v curl >/dev/null 2>&1 || { echo "Error: curl is required"; exit 1; }
-command -v jq >/dev/null 2>&1 || { echo "Error: jq is required"; exit 1; }
-command -v tar >/dev/null 2>&1 || { echo "Error: tar is required"; exit 1; }
+# 确保依赖项已安装
+command -v curl >/dev/null 2>&1 || { echo "错误：需要 curl"; exit 1; }
+command -v jq >/dev/null 2>&1 || { echo "错误：需要 jq"; exit 1; }
+command -v tar >/dev/null 2>&1 || { echo "错误：需要 tar"; exit 1; }
 
-# Create download directory
-mkdir -p "$DOWNLOAD_DIR" || { echo "Error: Cannot create $DOWNLOAD_DIR"; exit 1; }
+# 创建下载目录
+mkdir -p "$DOWNLOAD_DIR" || { echo "错误：无法创建 $DOWNLOAD_DIR"; exit 1; }
 
-# Get the latest release version
+# 获取最新发布版本
 LATEST_VERSION=$(curl -sL https://api.github.com/repos/$REPO/releases/latest | jq -r '.tag_name')
 if [ -z "$LATEST_VERSION" ]; then
-  echo "Error: Could not fetch latest release version"
+  echo "错误：无法获取最新发布版本"
   exit 1
 fi
 
-# Check current installed version (from version.txt or existing tarball)
+# 检查当前安装的版本（来自 version.txt 或现有的 tarball）
 CURRENT_VERSION=""
 if [ -f "$VERSION_FILE" ]; then
   CURRENT_VERSION=$(cat "$VERSION_FILE")
@@ -105,67 +105,67 @@ elif [ -f "$DOWNLOAD_DIR/TriliumNotes-Server-$LATEST_VERSION-linux-x64.tar.xz" ]
   CURRENT_VERSION="$LATEST_VERSION"
 fi
 
-# Compare versions
+# 比较版本
 if [ "$CURRENT_VERSION" = "$LATEST_VERSION" ]; then
-  echo "Latest version ($LATEST_VERSION) is already installed"
+  echo "已安装最新版本（$LATEST_VERSION）"
   exit 0
 fi
 
-# Download the latest release
+# 下载最新发布版本
 LATEST_URL=$(curl -sL https://api.github.com/repos/$REPO/releases/latest | jq -r ".assets[] | select(.name | test(\"$PATTERN\")) | .browser_download_url")
 if [ -z "$LATEST_URL" ]; then
-  echo "Error: No asset found matching pattern '$PATTERN'"
+  echo "错误：未找到匹配模式 '$PATTERN' 的资源"
   exit 1
 fi
 
 FILE_NAME=$(basename "$LATEST_URL")
 FILE_PATH="$DOWNLOAD_DIR/$FILE_NAME"
 
-# Download if not already present
+# 如果尚未下载则进行下载
 if [ -f "$FILE_PATH" ]; then
-  echo "Latest release $FILE_NAME already downloaded"
+  echo "最新版本 $FILE_NAME 已下载"
 else
-  curl -LO --output-dir "$DOWNLOAD_DIR" "$LATEST_URL" || { echo "Error: Download failed"; exit 1; }
-  echo "Downloaded $FILE_NAME to $DOWNLOAD_DIR"
+  curl -LO --output-dir "$DOWNLOAD_DIR" "$LATEST_URL" || { echo "错误：下载失败"; exit 1; }
+  echo "已将 $FILE_NAME 下载到 $DOWNLOAD_DIR"
 fi
 
-# Extract the tarball
+# 解压 tarball
 EXTRACT_DIR="$DOWNLOAD_DIR/extracted"
 mkdir -p "$EXTRACT_DIR"
-tar -xJf "$FILE_PATH" -C "$EXTRACT_DIR" || { echo "Error: Extraction failed"; exit 1; }
+tar -xJf "$FILE_PATH" -C "$EXTRACT_DIR" || { echo "错误：解压失败"; exit 1; }
 
-# Find the extracted directory (e.g., TriliumNotes-Server-0.97.2-linux-x64)
+# 查找解压后的目录（例如，TriliumNotes-Server-0.97.2-linux-x64）
 INNER_DIR=$(find "$EXTRACT_DIR" -maxdepth 1 -type d -name "TriliumNotes-Server-*-linux-x64" | head -n 1)
 if [ -z "$INNER_DIR" ]; then
-  echo "Error: Could not find extracted directory matching TriliumNotes-Server-*-linux-x64"
+  echo "错误：找不到匹配 TriliumNotes-Server-*-linux-x64 的解压目录"
   exit 1
 fi
 
-# Stop the trilium-server service
+# 停止 trilium-server 服务
 if systemctl is-active --quiet "$SERVICE_NAME"; then
-  echo "Stopping $SERVICE_NAME service..."
-  sudo systemctl stop "$SERVICE_NAME" || { echo "Error: Failed to stop $SERVICE_NAME"; exit 1; }
+  echo "正在停止 $SERVICE_NAME 服务..."
+  sudo systemctl stop "$SERVICE_NAME" || { echo "错误：无法停止 $SERVICE_NAME"; exit 1; }
 fi
 
-# Copy contents to /opt/trilium, overwriting existing files
-echo "Copying contents from $INNER_DIR to $OUTPUT_DIR..."
+# 将内容复制到 /opt/trilium，覆盖现有文件
+echo "正在将内容从 $INNER_DIR 复制到 $OUTPUT_DIR..."
 sudo mkdir -p "$OUTPUT_DIR"
-sudo cp -r "$INNER_DIR"/* "$OUTPUT_DIR"/ || { echo "Error: Copy failed"; exit 1; }
+sudo cp -r "$INNER_DIR"/* "$OUTPUT_DIR"/ || { echo "错误：复制失败"; exit 1; }
 echo "$LATEST_VERSION" | sudo tee "$VERSION_FILE" >/dev/null
-echo "Files copied to $OUTPUT_DIR"
+echo "文件已复制到 $OUTPUT_DIR"
 
-# Start the trilium-server service
-echo "Starting $SERVICE_NAME service..."
-sudo systemctl start "$SERVICE_NAME" || { echo "Error: Failed to start $SERVICE_NAME"; exit 1; }
+# 启动 trilium-server 服务
+echo "正在启动 $SERVICE_NAME 服务..."
+sudo systemctl start "$SERVICE_NAME" || { echo "错误：无法启动 $SERVICE_NAME"; exit 1; }
 
-# Clean up
+# 清理
 rm -rf "$EXTRACT_DIR"
-echo "Cleanup complete. Trilium updated to $LATEST_VERSION."
+echo "清理完成。Trilium 已更新到 $LATEST_VERSION。"
 ```
 
-## Common issues
+## 常见问题
 
-### Outdated glibc
+### glibc 过旧
 
 ```
 Error: /usr/lib64/libstdc++.so.6: version `GLIBCXX_3.4.21' not found (required by /var/www/virtual/.../node_modules/@mlink/scrypt/build/Release/scrypt.node)
@@ -174,8 +174,8 @@ Error: /usr/lib64/libstdc++.so.6: version `GLIBCXX_3.4.21' not found (required b
     at tryModuleLoad (module.js:505:12)
 ```
 
-If you get an error like this, you need to either upgrade your glibc (typically by upgrading to up-to-date distribution version) or use some other [server installation](../../Server%20Installation.md) method.
+如果你遇到这样的错误，你需要升级你的 glibc（通常通过升级到最新的发行版版本）或者使用其他[服务器安装](../../Server%20Installation.md)方法。
 
 ## TLS
 
-Don't forget to [configure TLS](../HTTPS%20\(TLS\).md), which is required for secure usage!
+不要忘记[配置 TLS](../HTTPS%20\(TLS\).md)，这是安全使用所必需的！

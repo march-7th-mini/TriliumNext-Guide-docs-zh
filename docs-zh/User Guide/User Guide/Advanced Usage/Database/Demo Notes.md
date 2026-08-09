@@ -1,19 +1,20 @@
-# Demo Notes
-When you run Trilium for the first time, it will generate a new database containing demo notes. These notes showcase its many features, such as:
+# 演示笔记
 
-*   <a class="reference-link" href="../../Note%20Types/Relation%20Map.md">Relation Map</a>
-*   <a class="reference-link" href="../Advanced%20Showcases/Day%20Notes.md">Day Notes</a>
-*   <a class="reference-link" href="../Advanced%20Showcases/Weight%20Tracker.md">Weight Tracker</a>
-*   <a class="reference-link" href="../Advanced%20Showcases/Task%20Manager.md">Task Manager</a>
-*   <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/Themes.md">Themes</a>
+首次运行 Trilium 时，它会生成一个包含演示笔记的新数据库。这些笔记展示了其众多功能，例如：
 
-### Restoring Demo Notes
+*   <a class="reference-link" href="../../Note%20Types/Relation%20Map.md">关系图</a>
+*   <a class="reference-link" href="../Advanced%20Showcases/Day%20Notes.md">日记笔记</a>
+*   <a class="reference-link" href="../Advanced%20Showcases/Weight%20Tracker.md">体重追踪器</a>
+*   <a class="reference-link" href="../Advanced%20Showcases/Task%20Manager.md">任务管理器</a>
+*   <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/Themes.md">主题</a>
 
-There are some cases in which you may want to restore the original demo notes. For example, if you experimented with some of the more advanced features and want to see the original reference, or if you simply want to explore the latest version of the demo notes, which might showcase new features.
+### 恢复演示笔记
 
-You can easily restore the demo notes by using Trilium's built-in import feature by importing them:
+在某些情况下，您可能希望恢复原始的演示笔记。例如，如果您尝试了一些更高级的功能并希望查看原始参考，或者您只是想探索最新版本的演示笔记（其中可能展示了新功能）。
 
-*   Download [the .zip archive](https://github.com/TriliumNext/Trilium/raw/refs/heads/main/apps/server/src/assets/db/demo.zip) with the latest version of the demo notes
-*   Right click on any note in your tree under which you would like the demo notes to be imported
-*   Click "Import into note"
-*   Select the .zip archive to import it
+您可以通过使用 Trilium 内置的导入功能轻松恢复演示笔记，具体操作如下：
+
+*   下载包含最新版本演示笔记的 [.zip 压缩包](https://github.com/TriliumNext/Trilium/raw/refs/heads/main/apps/server/src/assets/db/demo.zip)
+*   在树中右键单击您希望将演示笔记导入到的任何笔记
+*   点击“导入到笔记”
+*   选择 .zip 压缩包进行导入

@@ -1,7 +1,8 @@
-# Saving data via spaced update
-The data persistence is achieved via the spaced update mechanism which is already present and needs to be integrated within the newly created type widgets.
+## 通过间隔更新保存数据
 
-First, the class must implement `getData`, in order to retrieve the data from the custom widget in a serialized form. As an example from the mind map implementation:
+数据持久化通过间隔更新机制实现，该机制已存在，需要集成到新创建的类型组件中。
+
+首先，类必须实现 `getData`，以便从自定义组件中以序列化形式检索数据。以下来自思维导图实现的示例：
 
 ```
 async getData() {
@@ -16,9 +17,9 @@ async getData() {
 }
 ```
 
-Here the content is a string containing a JSON. It is also possible to provide attachments here as well, such as <a class="reference-link" href="SVG%20rendering.md">SVG rendering</a> to provide a preview of the content.
+此处 `content` 是包含 JSON 的字符串。也可以在此处提供附件，例如 <a class="reference-link" href="SVG%20rendering.md">SVG 渲染</a> 以提供内容的预览。
 
-Then to trigger an update, register a listener within the custom widget that calls the spaced update, for example:
+然后，要触发更新，请在自定义组件内注册一个监听器来调用间隔更新，例如：
 
 ```
 mind.bus.addListener("operation", (operation) => {

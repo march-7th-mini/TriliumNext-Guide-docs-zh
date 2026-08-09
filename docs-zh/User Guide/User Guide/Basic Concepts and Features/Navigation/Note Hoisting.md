@@ -1,8 +1,8 @@
-# Note Hoisting
-Hoisting is a standard outliner feature which allows you to focus on (or "zoom into") a specific note and its subtree by hiding all parent and sibling notes. Demo:
+# 笔记提升
+提升是一个标准的大纲功能，允许您通过隐藏所有父级和同级笔记来聚焦（或“放大”）特定笔记及其子树。演示：
 
 ![](Note%20Hoisting_note-hoisting.gif)
 
-In addition to showing only this subtree, this also narrows both full text search and [“jump to note”](Note%20Navigation.md) to just notes present in hoisted subtree.
+除了仅显示此子树外，这还将全文搜索和[“跳转到笔记”](Note%20Navigation.md)的范围缩小到仅提升子树中存在的笔记。
 
-See also [Workspace](Workspaces.md) which extends this feature.
+另请参阅扩展此功能的[工作区](Workspaces.md)。

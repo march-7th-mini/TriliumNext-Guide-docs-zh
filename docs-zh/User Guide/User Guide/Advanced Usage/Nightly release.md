@@ -1,27 +1,28 @@
-# Nightly release
-Nightly releases are versions built every day, containing the latest improvements and bugfixes, directly from the main development branch. These versions are generally useful in preparation for a release, to ensure that there are no significant bugs that need to be addressed first, or they can be used to confirm whether a particular bug is fixed or feature is well implemented.
+# 夜间版
 
-## Regarding the stability
+夜间版是每天构建的版本，包含来自主开发分支的最新改进和错误修复。这些版本通常在准备发布时很有用，可以确保没有需要优先处理的重要错误，或者可以用来确认某个特定错误是否已修复或某个功能是否已正确实现。
 
-Despite being on a development branch, generally the main branch is pretty stable since PRs are tested before they are merged. If you notice any issues, feel free to report them either via a ticket or via the Matrix.
+## 关于稳定性
 
-## Downloading the nightly release manually
+尽管位于开发分支上，但主分支通常相当稳定，因为拉取请求在合并之前已经过测试。如果您发现任何问题，请随时通过工单或 Matrix 报告。
 
-Go to [github.com/TriliumNext/Trilium/releases/tag/nightly](https://github.com/TriliumNext/Trilium/releases/tag/nightly) and look for the artifacts starting with `TriliumNotes-main`. Choose the appropriate one for your platform (e.g. `windows-x64.zip`).
+## 手动下载夜间版
 
-Depending on your use case, you can either test the portable version or even use the installer.
+前往 [github.com/TriliumNext/Trilium/releases/tag/nightly](https://github.com/TriliumNext/Trilium/releases/tag/nightly) 并查找以 `TriliumNotes-main` 开头的构建产物。选择适合您平台的那个（例如 `windows-x64.zip`）。
+
+根据您的使用场景，您可以测试便携版，甚至可以使用安装程序。
 
 > [!NOTE]
-> If you choose the installable version (e.g. the .exe on Windows), it will replace your stable installation.
+> 如果您选择可安装版本（例如 Windows 上的 .exe），它将替换您的稳定安装。
 
 > [!IMPORTANT]
-> By default, the nightly uses the same database as the production version. Generally you could easily downgrade if needed. However, if there are changes to the database or sync version, it will not be possible to downgrade without having to restore from a backup.
+> 默认情况下，夜间版使用与生产版本相同的数据库。通常，如果需要，您可以轻松降级。但是，如果数据库或同步版本有更改，则必须从备份中恢复才能降级。
 
-## Automatically download and install the latest nightly
+## 自动下载并安装最新的夜间版
 
-This is pretty useful if you are a beta tester that wants to periodically update their version:
+如果您是希望定期更新版本的测试人员，这将非常有用：
 
-## On Ubuntu (Bash)
+## 在 Ubuntu 上（Bash）
 
 ```sh
 #!/usr/bin/env bash
@@ -33,7 +34,7 @@ sudo apt-get install ./$name
 rm $name
 ```
 
-## On Windows (PowerShell)
+## 在 Windows 上（PowerShell）
 
 ```powershell
 if ($env:PROCESSOR_ARCHITECTURE -eq "ARM64") {

@@ -1,17 +1,17 @@
-# Upgrading TriliumNext
-This document outlines the steps required to upgrade Trilium to a new release version.
+# 升级 TriliumNext
+本文档概述了将 Trilium 升级到新发布版本所需的步骤。
 
-## How to Upgrade
+## 如何升级
 
-Trilium does not support built-in automatic upgrades; all updates must be performed manually. The upgrade process varies depending on the installation method:
+Trilium 不支持内置自动升级；所有更新都必须手动执行。升级过程因安装方法而异：
 
-*   [**Docker Server Installation**](Server%20Installation/1.%20Installing%20the%20server/Using%20Docker.md): Pull the new image and restart the container.
-*   **Other Installations**: Download the latest version from the [release page](https://github.com/TriliumNext/Trilium/releases/latest) and replace the existing application files.
+*   [**Docker 服务器安装**](Server%20Installation/1.%20Installing%20the%20server/Using%20Docker.md)：拉取新镜像并重启容器。
+*   **其他安装方式**：从[发布页面](https://github.com/TriliumNext/Trilium/releases/latest)下载最新版本并替换现有的应用程序文件。
 
-## Database Compatibility and Migration
+## 数据库兼容性与迁移
 
-Upon startup, Trilium will automatically migrate the [database](../Advanced%20Usage/Database.md) to the new version. Note that after migration, older versions of Trilium will be unable to read the database. If you need to revert to a previous version of Trilium and its database, you can restore the [backup](Backup.md) that is created prior to migration.
+启动时，Trilium 将自动把[数据库](../Advanced%20Usage/Database.md)迁移到新版本。请注意，迁移后，旧版本的 Trilium 将无法读取该数据库。如果您需要回退到先前版本的 Trilium 及其数据库，可以恢复在迁移前创建的[备份](Backup.md)。
 
-## Sync Compatibility
+## 同步兼容性
 
-The [synchronization](Synchronization.md) protocol used by Trilium is versioned, requiring all members of the sync cluster to use the same protocol version. Therefore, when upgrading to a new version, you may need to upgrade all instances in the sync cluster. Changes to the sync protocol version are typically indicated on the release page.
+Trilium 使用的[同步](Synchronization.md)协议是版本化的，要求同步集群中的所有成员使用相同的协议版本。因此，升级到新版本时，您可能需要升级同步集群中的所有实例。同步协议版本的变更通常会在发布页面上注明。

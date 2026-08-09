@@ -1,17 +1,17 @@
-# Themes
-## Default Themes
+# 主题
+## 默认主题
 
-Trilium comes with a couple pre-installed color themes, with the default being a light theme. To switch to a dark theme or any other available theme, navigate to the Options menu (accessible via the app icon in the top-left corner), select the Appearance tab, and choose your preferred theme.
+Trilium 自带几个预装的颜色主题，默认是浅色主题。要切换到深色主题或任何其他可用主题，请导航到“选项”菜单（可通过左上角的应用程序图标访问），选择“外观”选项卡，然后选择你偏好的主题。
 
-![Dark Theme](Themes_dark-theme.png)
+![深色主题](Themes_dark-theme.png)
 
-## Creating Custom CSS Themes
+## 创建自定义 CSS 主题
 
-Trilium supports custom user themes, allowing you to personalize the application's appearance. To create a custom theme, follow these steps:
+Trilium 支持自定义用户主题，允许你个性化应用程序的外观。要创建自定义主题，请按照以下步骤操作：
 
-1.  **Create a CSS Code Note**: Start by creating a new [code note](../Note%20Types/Code.md) with the `CSS` type.
-2.  **Annotate with** `#appTheme`: Add the [attribute](../Advanced%20Usage/Attributes.md) `#appTheme=my-theme-name` to your note, where `my-theme-name` is the name of your custom theme.
-3.  **Define Your Styles**: Write your custom CSS within the note. Below is an example of a custom theme:
+1.  **创建 CSS 代码笔记**：首先创建一个新的 `CSS` 类型的[代码笔记](../Note%20Types/Code.md)。
+2.  **使用** `#appTheme` **进行标注**：为你的笔记添加 `#appTheme=my-theme-name` [属性](../Advanced%20Usage/Attributes.md)，其中 `my-theme-name` 是你自定义主题的名称。
+3.  **定义你的样式**：在笔记中编写你的自定义 CSS。以下是一个自定义主题的示例：
 
 ```
 @font-face {
@@ -69,64 +69,64 @@ body .CodeMirror {
 }
 ```
 
-### Activating Your Custom Theme
+### 激活你的自定义主题
 
-Once you've created your custom theme:
+创建自定义主题后：
 
-1.  Go to "Menu" -> "Options" -> "Appearance."
-2.  In the theme selection dropdown, you should see your custom theme listed under the name you provided with the `#appTheme` [label](../Advanced%20Usage/Attributes.md).
-3.  Select your custom theme to activate it.
+1.  转到“菜单” -> “选项” -> “外观”。
+2.  在主题选择下拉菜单中，你应该会看到你的自定义主题，其名称与你通过 `#appTheme` [标签](../Advanced%20Usage/Attributes.md)提供的名称一致。
+3.  选择你的自定义主题以激活它。
 
-If you make changes to your theme, press <kbd>Ctrl</kbd> + <kbd>R</kbd> to reload the frontend and apply your updates.
+如果你对主题进行了更改，请按 <kbd>Ctrl</kbd> + <kbd>R</kbd> 重新加载前端以应用更新。
 
-### Sharing and Importing Themes
+### 分享和导入主题
 
-Custom themes can be exported as `.tar` archives, which can be shared with other users. However, be cautious when importing themes from untrusted sources, as they may contain executable scripts that could pose security risks.
+自定义主题可以导出为 `.tar` 归档文件，并与其他用户共享。但是，从不受信任的来源导入主题时要小心，因为它们可能包含可执行脚本，从而带来安全风险。
 
-An example user theme, _Steel Blue_, is available in the demo document.
+一个示例用户主题 _Steel Blue_ 可在演示文档中找到。
 
-![Steel Blue Theme](Themes_steel-blue.png)
+![Steel Blue 主题](Themes_steel-blue.png)
 
-### Using Custom CSS for Specific Purposes
+### 将自定义 CSS 用于特定目的
 
-In addition to full themes, Trilium allows for custom CSS that isn't tied to a theme. This can be particularly useful in scripting contexts, where you might want to modify specific UI elements, such as changing the colors of notes in the tree view.
+除了完整的主题之外，Trilium 还允许使用与主题无关的自定义 CSS。这在脚本编写场景中特别有用，你可能希望修改特定的 UI 元素，例如更改树视图中笔记的颜色。
 
-### Applying Custom CSS
+### 应用自定义 CSS
 
-To use custom CSS:
+要使用自定义 CSS：
 
-1.  **Create a CSS Code Note**: Create a new <a class="reference-link" href="../Note%20Types/Code.md">Code</a> note with the `CSS` type.
-2.  **Add the** `appCss` **Label**: Annotate the note with the `#appCss` [label](../Advanced%20Usage/Attributes.md).
-3.  **Write Your CSS**: Add your custom CSS rules to the note.
+1.  **创建 CSS 代码笔记**：创建一个新的 `CSS` 类型的 <a class="reference-link" href="../Note%20Types/Code.md">代码</a> 笔记。
+2.  **添加** `appCss` **标签**：使用 `#appCss` [标签](../Advanced%20Usage/Attributes.md) 对笔记进行标注。
+3.  **编写你的 CSS**：将你的自定义 CSS 规则添加到笔记中。
 
-For example:
+例如：
 
 ```
-/* Custom CSS to style specific elements */
+/* 用于样式化特定元素的自定义 CSS */
 .tree-item {
-    color: #ff6347; /* Change tree item color */
+    color: #ff6347; /* 更改树项目颜色 */
 }
 ```
 
-When Trilium's frontend starts, all notes labeled with `appCss` are automatically included in the style element of the HTML page.
+当 Trilium 的前端启动时，所有标记有 `appCss` 的笔记都会自动包含在 HTML 页面的样式元素中。
 
-After making changes, press <kbd>Ctrl</kbd> + <kbd>R</kbd> to reload the frontend and apply your new styles.
+进行更改后，按 <kbd>Ctrl</kbd> + <kbd>R</kbd> 重新加载前端以应用你的新样式。
 
 ![](Themes_image.png)
 
-### Styling Specific Notes in the Tree
+### 为树中的特定笔记设置样式
 
-To apply specific styles to certain notes in the tree:
+要为树中的某些笔记应用特定样式：
 
-*   **Use the** `cssClass` **Attribute**: Add the `cssClass` [attribute](../Advanced%20Usage/Attributes.md) to a note, and assign it a value representing the desired CSS class.
-*   **Define an** `iconClass`: You can also define a custom icon for a note using the `iconClass` attribute, selecting from [Box Icons](https://boxicons.com) or your own custom classes.
+*   **使用** `cssClass` **属性**：为笔记添加 `cssClass` [属性](../Advanced%20Usage/Attributes.md)，并为其分配一个表示所需 CSS 类的值。
+*   **定义** `iconClass`：你还可以使用 `iconClass` 属性为笔记定义自定义图标，可以从 [Box Icons](https://boxicons.com) 或你自己的自定义类中选择。
 
-For example, if you want to style notes of a specific type, such as notes containing PNG images, you can target them with classes like `type-image mime-image-png`.
+例如，如果你想为特定类型的笔记设置样式，例如包含 PNG 图像的笔记，你可以使用 `type-image mime-image-png` 等类来定位它们。
 
-### User-Provided Themes
+### 用户提供的主题
 
-A gallery of user-created themes is available, showcasing the variety of customizations that the Trilium community has developed. For more information, check the <a class="reference-link" href="Themes/Theme%20Gallery.md">Theme Gallery</a>.
+提供了一个用户创建主题的图库，展示了 Trilium 社区开发的各种自定义主题。有关更多信息，请查看 <a class="reference-link" href="Themes/Theme%20Gallery.md">主题图库</a>。
 
-### Asset Path Management
+### 资源路径管理
 
-When referencing built-in assets like images in your custom themes or CSS, you can avoid hardcoding version numbers by using the `vX` alias. For example, instead of specifying `/assets/v0.57.0-beta/images/icon-grey.png`, you can use `/assets/vX/images/icon-grey.png` to keep your theme compatible with future versions of Trilium.
+在自定义主题或 CSS 中引用内置资源（如图像）时，你可以使用 `vX` 别名来避免硬编码版本号。例如，你可以使用 `/assets/vX/images/icon-grey.png` 而不是指定 `/assets/v0.57.0-beta/images/icon-grey.png`，以使你的主题与 Trilium 的未来版本保持兼容。

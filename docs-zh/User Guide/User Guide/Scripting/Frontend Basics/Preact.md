@@ -1,47 +1,47 @@
 # Preact
-Since v0.101.0, Trilium integrates Preact for front-end scripting, including support for JSX.
+自 v0.101.0 版本起，Trilium 集成了 Preact 用于前端脚本编写，并支持 JSX。
 
-Preact can be used for:
+Preact 可用于以下场景：
 
-*   <a class="reference-link" href="../../Note%20Types/Render%20Note.md">Render Note</a>, where a JSX code note is used instead of a HTML one.
-*   <a class="reference-link" href="Custom%20Widgets.md">Custom Widgets</a>, where JSX can be used to replace the old, jQuery-based mechanism.
+*   <a class="reference-link" href="../../Note%20Types/Render%20Note.md">渲染笔记</a>，使用 JSX 代码笔记替代 HTML 笔记。
+*   <a class="reference-link" href="Custom%20Widgets.md">自定义组件</a>，使用 JSX 替代旧的基于 jQuery 的机制。
 
-To get started, the first step is to enable JSX in the list of Code languages. Go to Options → Code Notes and check the “JSX” language. Afterwards, proceed with the documentation in either <a class="reference-link" href="../../Note%20Types/Render%20Note.md">Render Note</a> or <a class="reference-link" href="Custom%20Widgets.md">Custom Widgets</a>, which will both have a section on how to use the new Preact integration.
+要开始使用，第一步是在代码语言列表中启用 JSX。前往 选项 → 代码笔记 并勾选“JSX”语言。之后，请参阅 <a class="reference-link" href="../../Note%20Types/Render%20Note.md">渲染笔记</a> 或 <a class="reference-link" href="Custom%20Widgets.md">自定义组件</a> 的文档，这两处都将包含如何使用新的 Preact 集成的章节。
 
 > [!IMPORTANT]
-> The documentation assumes prior knowledge with React or Preact. As a starting point, consider the [FreeCodeCamp course on Front End Development Libraries](https://www.freecodecamp.org/learn/front-end-development-libraries-v9/) or the [Preact Tutorial](https://preactjs.com/tutorial/).
+> 本文档假设您已具备 React 或 Preact 的相关知识。作为入门，您可以参考 [FreeCodeCamp 前端开发库课程](https://www.freecodecamp.org/learn/front-end-development-libraries-v9/) 或 [Preact 教程](https://preactjs.com/tutorial/)。
 
-## Import/exports
+## 导入/导出
 
-When using Preact with JSX, there is a special syntax which provides ES-like imports. This `import` syntax makes way for a more intuitive that doesn't make use of global objects and paves the way for better auto-completion support that might be introduced in the future. 
+在将 Preact 与 JSX 结合使用时，有一种特殊的语法可以提供类似 ES 的导入功能。这种 `import` 语法为更直观的编程方式开辟了道路，无需使用全局对象，并为未来可能引入的更好的自动补全支持铺平了道路。
 
-### API imports
+### API 导入
 
-Instead of:
+不再使用：
 
 ```jsx
 api.showMessage("Hello");
 ```
 
-the JSX version looks like this:
+JSX 版本如下所示：
 
 ```jsx
 import { showMessage } from "trilium:api";
 showMessage("hello");
 ```
 
-### Preact API imports (hooks, components)
+### Preact API 导入（钩子、组件）
 
-There's a new <a class="reference-link" href="../Script%20API.md">Script API</a> dedicated to Preact, which provides shared components that are also used by Trilium internally as well as hooks, for example.
+有一个新的 <a class="reference-link" href="../Script%20API.md">脚本 API</a> 专门用于 Preact，它提供了 Trilium 内部也使用的共享组件以及钩子等。
 
 ```jsx
 import { useState } from "trilium:preact";
 const [ myState, setMyState ] = useState("Hi");
 ```
 
-### Exporting
+### 导出
 
-JSX notes can export a component for use in <a class="reference-link" href="../../Note%20Types/Render%20Note.md">Render Note</a> or for <a class="reference-link" href="Preact/Component%20libraries.md">Component libraries</a>: 
+JSX 笔记可以导出一个组件，用于 <a class="reference-link" href="../../Note%20Types/Render%20Note.md">渲染笔记</a> 或 <a class="reference-link" href="Preact/Component%20libraries.md">组件库</a>：
 
 ```jsx
 export default function() {
@@ -53,13 +53,13 @@ export default function() {
 }
 ```
 
-### Import/export are not required
+### 导入/导出并非必需
 
-These imports are syntactic sugar meant to replace the usage for the `api` global object (see <a class="reference-link" href="../Script%20API.md">Script API</a>). 
+这些导入是语法糖，旨在替代 `api` 全局对象的使用（参见 <a class="reference-link" href="../Script%20API.md">脚本 API</a>）。
 
 > [!NOTE]
-> The `import` and `export` syntax work only for JSX notes. Standard/jQuery code notes still need to use the `api` global and `module.exports`.
+> `import` 和 `export` 语法仅适用于 JSX 笔记。标准/jQuery 代码笔记仍需要使用 `api` 全局对象和 `module.exports`。
 
-## Under the hood
+## 底层原理
 
-Unlike JavaScript, JSX requires pre-processing to turn it into JavaScript (just like TypeScript). To do so, Trilium uses [Sucrase](https://github.com/alangpierce/sucrase), a JavaScript library which processes the JSX to pure JavaScript. The processing is done each time a script is run (for widgets this happens at every program startup). If you notice any performance degradation due to long compilation, consider [reporting the issue](../../Troubleshooting/Reporting%20issues.md) to us.
+与 JavaScript 不同，JSX 需要预处理才能转换为 JavaScript（就像 TypeScript 一样）。为此，Trilium 使用 [Sucrase](https://github.com/alangpierce/sucrase)，这是一个 JavaScript 库，可将 JSX 处理为纯 JavaScript。该处理在每次运行脚本时都会执行（对于小组件，每次程序启动时都会执行）。如果您发现因编译时间过长而导致性能下降，请考虑向我们[报告问题](../../Troubleshooting/Reporting%20issues.md)。

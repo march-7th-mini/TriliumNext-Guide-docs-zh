@@ -1,53 +1,54 @@
-# Troubleshooting
-While Trilium is actively maintained and stable, encountering bugs is possible.
+# 故障排除
 
-## General Quick Fix
+尽管 Trilium 会积极维护且保持稳定，但遇到错误仍有可能发生。
 
-The first step in troubleshooting is often a restart.
+## 常规快速修复
 
-If you experience an UI issue, the frontend may have entered an inconsistent state. Reload the application by pressing <kbd>Ctrl</kbd> + <kbd>R</kbd>. This will reload the frontend.
+故障排除的第一步通常是重启。
 
-If the issue persists or appears to be a backend problem, restart the entire application. For the desktop (Electron) build, simply close and reopen the window. If you're using a Docker build, restart the container.
+如果您遇到界面问题，前端可能已进入不一致状态。按 <kbd>Ctrl</kbd> + <kbd>R</kbd> 重新加载应用程序。这将重新加载前端。
 
-## Broken Note Crashes Trilium
+如果问题仍然存在或似乎是后端问题，请重启整个应用程序。对于桌面（Electron）版本，只需关闭并重新打开窗口。如果您使用的是 Docker 版本，请重启容器。
 
-Certain problems, such as rendering a note with a faulty script, can cause Trilium to crash. If Trilium attempts to reload the problematic note upon restart, it will continue to crash.
+## 损坏的笔记导致 Trilium 崩溃
 
-To resolve this, use the `TRILIUM_START_NOTE_ID` environment variable to reset the open tabs to a single specified note ID (e.g., `root`). In Linux, you can set it as follows:
+某些问题，例如渲染带有错误脚本的笔记，可能会导致 Trilium 崩溃。如果 Trilium 在重启时尝试重新加载有问题的笔记，它将持续崩溃。
+
+要解决此问题，请使用 `TRILIUM_START_NOTE_ID` 环境变量将打开的标签页重置为单个指定的笔记 ID（例如 `root`）。在 Linux 中，您可以按如下方式设置：
 
 ```
 TRILIUM_START_NOTE_ID=root ./trilium
 ```
 
-## Broken Script Prevents Application Startup
+## 损坏的脚本阻止应用程序启动
 
-If a custom script causes Trilium to crash, and it is set as a startup script or in an active [custom widget](Scripting/Frontend%20Basics/Custom%20Widgets.md), start Triliumin "safe mode" to prevent any custom scripts from executing:
+如果自定义脚本导致 Trilium 崩溃，并且该脚本被设置为启动脚本或位于活动的[自定义小组件](Scripting/Frontend%20Basics/Custom%20Widgets.md)中，请以“安全模式”启动 Trilium 以防止任何自定义脚本执行：
 
 ```
 TRILIUM_SAFE_MODE=true ./trilium
 ```
 
-Depending on your Trilium distribution, you may have pre-made scripts available: `trilium-safe-mode.bat` and `trilium-safe-mode.sh`.
+根据您的 Trilium 发行版，您可能有预制的脚本可用：`trilium-safe-mode.bat` 和 `trilium-safe-mode.sh`。
 
-Once Trilium starts, locate and fix or delete the problematic note.
+Trilium 启动后，找到并修复或删除有问题的笔记。
 
-## Sync and Consistency Checks
+## 同步与一致性检查
 
-Trilium periodically verifies the logical consistency of the database (e.g., ensuring every note has a parent). If inconsistencies are detected, you will be notified via the UI.
+Trilium 会定期验证数据库的逻辑一致性（例如，确保每个笔记都有父笔记）。如果检测到不一致，您将通过界面收到通知。
 
-In such cases, file a bug report and attach an [anonymized database](Troubleshooting/Anonymized%20Database.md) if necessary.
+在这种情况下，请提交错误报告，并在必要时附上[匿名化数据库](Troubleshooting/Anonymized%20Database.md)。
 
-## Restoring Backup
+## 恢复备份
 
-Trilium makes regular automatic backups. If issues become severe, you can [restore from a backup](Installation%20%26%20Setup/Backup.md).
+Trilium 会定期进行自动备份。如果问题变得严重，您可以[从备份中恢复](Installation%20%26%20Setup/Backup.md)。
 
-## Forgotten Password
+## 忘记密码
 
-See <a class="reference-link" href="Installation%20%26%20Setup/Server%20Installation/Authentication/Resetting%20your%20password.md">Resetting your password</a>.
+请参阅 <a class="reference-link" href="Installation%20%26%20Setup/Server%20Installation/Authentication/Resetting%20your%20password.md">重置密码</a>。
 
-## Reporting Bugs
+## 报告错误
 
-Reporting bugs is highly valuable. Here are some tips:
+报告错误非常有价值。以下是一些提示：
 
-*   Use GitHub issues for reporting: [https://github.com/TriliumNext/Trilium/issues](https://github.com/TriliumNext/Trilium/issues)
-*   Refer to the [error logs](Troubleshooting/Error%20logs.md) page for information on providing necessary details.
+*   使用 GitHub issues 进行报告：[https://github.com/TriliumNext/Trilium/issues](https://github.com/TriliumNext/Trilium/issues)
+*   请参阅[错误日志](Troubleshooting/Error%20logs.md)页面，了解提供必要详细信息的相关信息。

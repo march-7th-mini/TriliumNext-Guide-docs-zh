@@ -1,11 +1,11 @@
-# Note Title Widget
+# 笔记标题小组件
 <figure class="image"><img style="aspect-ratio:1007/94;" src="Note Title Widget_image.png" width="1007" height="94"></figure>
 
-This is an example of a note context-aware widget, which reacts to the currently opened note and refreshes automatically as the user navigates through the notes.
+这是一个笔记上下文感知小组件的示例，它会响应当前打开的笔记，并在用户浏览笔记时自动刷新。
 
-## Legacy widget
+## 旧版小组件
 
-In this example, the title of the note is displayed. It works best on the [horizontal layout](../../../Basic%20Concepts%20and%20Features/UI%20Elements/Vertical%20and%20horizontal%20layout.md).
+在此示例中，会显示笔记的标题。它最适合在[水平布局](../../../Basic%20Concepts%20and%20Features/UI%20Elements/Vertical%20and%20horizontal%20layout.md)中使用。
 
 ```javascript
 const TPL = `\
@@ -33,7 +33,7 @@ class NoteTitleWidget extends api.NoteContextAwareWidget {
 module.exports = new NoteTitleWidget();
 ```
 
-## Preact widget (v0.101.0+)
+## Preact 小组件（v0.101.0+）
 
 ```jsx
 import { defineLauncherWidget, useActiveNoteContext } from "trilium:preact";

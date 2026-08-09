@@ -1,94 +1,95 @@
-# Text Extraction (OCR)
-Optical Character Recognition is the process in which the text from images or PDFs is extracted.
+# 文本提取（OCR）
 
-## Built-in support
+光学字符识别是从图像或PDF中提取文本的过程。
 
-Since v0.103.0, Trilium has built-in support for OCR. The extracted text can be:
+## 内置支持
 
-*   Integrated with <a class="reference-link" href="../Basic%20Concepts%20and%20Features/Navigation/Search.md">Search</a>, to quickly find the image or file based on snippets of text.
-*   Integrated with the <a class="reference-link" href="../AI.md">AI</a> feature, which allows the agent to access the content of a non-text note.
-*   Manually accessed for other purposes (e.g. copying into a note or sending it somewhere else).
+自 v0.103.0 版本起，Trilium 内置了 OCR 支持。提取的文本可以：
 
-## Supported formats
+*   与<a class="reference-link" href="../Basic%20Concepts%20and%20Features/Navigation/Search.md">搜索</a>集成，以便根据文本片段快速找到图像或文件。
+*   与<a class="reference-link" href="../AI.md">AI</a>功能集成，允许智能体访问非文本笔记的内容。
+*   手动访问以用于其他目的（例如，复制到笔记中或发送到其他地方）。
 
-OCR in Trilium supports the following formats:
+## 支持的格式
 
-### Images
+Trilium 中的 OCR 支持以下格式：
 
-*   Both [individual image notes](../Note%20Types/File.md) and [attachments in text files](../Note%20Types/Text/Images.md) are supported.
-*   Supported formats:
+### 图像
+
+*   支持[单个图像笔记](../Note%20Types/File.md)和[文本文件中的附件](../Note%20Types/Text/Images.md)。
+*   支持的格式：
     *   JPEG
     *   PNG
-    *   GIF (only non-animated)
+    *   GIF（仅限非动画）
     *   BMP
     *   WebP
-*   Note that this feature works best for computer-rendered text rather than handwriting.
-*   The underlying technology is Tesseract.js.
+*   请注意，此功能最适合计算机渲染的文本，而非手写内容。
+*   底层技术是 Tesseract.js。
 
-### PDFs
+### PDF
 
-Currently only text extraction is supported and not OCR.
+目前仅支持文本提取，不支持 OCR。
 
-*   This means that the PDF needs to have proper text information in it (i.e. the text can be selected in a PDF viewer), whereas scanned documents are not yet supported.
-*   There are plans to integrate the same OCR-based recognition for PDFs used for images, but this is not yet implemented.
+*   这意味着 PDF 需要包含正确的文本信息（即文本可以在 PDF 查看器中选择），而扫描文档尚不支持。
+*   有计划为 PDF 集成与图像相同的基于 OCR 的识别功能，但尚未实现。
 
-### Office documents
+### Office 文档
 
-The text will be extracted from the following file formats:
+将从以下文件格式中提取文本：
 
-*   Microsoft Word documents
-*   Microsoft Excel documents
-    *   Only the raw text information, the cell structure is not maintained.
-    *   Values are extracted raw, so searching for dates will not work. The OpenDocument alternative will actually extract the properly formatted value.
-*   Microsoft PowerPoint documents
-*   The OpenDocument alternatives to the previous formats (Text, Spreadsheet, Presentation), created by editors such as LibreOffice and OpenOffice.
-*   [Rich Text Format (RTF)](https://en.wikipedia.org/wiki/Rich_Text_Format), since v0.104.0.
-*   [EPUB](https://en.wikipedia.org/wiki/EPUB), since v0.104.1.
+*   Microsoft Word 文档
+*   Microsoft Excel 文档
+    *   仅提取原始文本信息，不保留单元格结构。
+    *   值是原始提取的，因此搜索日期将不起作用。OpenDocument 替代格式将实际提取格式正确的值。
+*   Microsoft PowerPoint 文档
+*   前述格式的 OpenDocument 替代格式（文本、电子表格、演示文稿），由 LibreOffice 和 OpenOffice 等编辑器创建。
+*   [富文本格式 (RTF)](https://en.wikipedia.org/wiki/Rich_Text_Format)，自 v0.104.0 起。
+*   [EPUB](https://en.wikipedia.org/wiki/EPUB)，自 v0.104.1 起。
 
-## Configuring and triggering OCR
+## 配置和触发 OCR
 
-The OCR can be configured by going to <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">Options</a> → <a class="reference-link" href="#root/_hidden/_options/_optionsMedia">Media</a> and looking for the _Text Extraction (OCR)_ section.
+可以通过转到 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">选项</a> → <a class="reference-link" href="#root/_hidden/_options/_optionsMedia">媒体</a> 并查找 _文本提取 (OCR)_ 部分来配置 OCR。
 
-There are three ways to trigger the OCR:
+有三种方式可以触发 OCR：
 
-*   By enabling _Auto-process new files_ which will process only the notes or attachments created after enabling the option, existing files will remain unprocessed.
-*   By pressing _Start Batch Processing_ which will process all the existing notes.
-*   By manually requesting for an image or file to have its text extracted, regardless of whether the automatic processing is enabled or not.
+*   启用 _自动处理新文件_，这将仅处理启用该选项后创建的笔记或附件，现有文件将保持未处理状态。
+*   按下 _开始批量处理_，这将处理所有现有笔记。
+*   手动请求提取图像或文件的文本，无论自动处理是否启用。
 
-### Minimum confidence
+### 最低置信度
 
-When extracting text from an image, there is a certain level of confidence which indicates whether the extracted text appears relevant.
+从图像中提取文本时，存在一定程度的置信度，用于指示提取的文本是否看起来相关。
 
-When the minimum confidence is set to a low percentage, the text extraction can interpret symbols and drawings incorrectly resulting in garbled text.
+当最低置信度设置为较低百分比时，文本提取可能会错误地解释符号和图形，导致乱码文本。
 
-If the extracted text for a note or an attachment quality is lower than the minimum confidence, the OCR is disregarded.
+如果笔记或附件的提取文本质量低于最低置信度，则忽略 OCR 结果。
 
-## Language management
+## 语言管理
 
-OCR needs to be aware of the language of the content in order for it to work correctly. The reason is that each language has its own data which needs to be downloaded, and accents or other symbols will not be supported by the default language.
+OCR 需要了解内容的语言才能正常工作。原因是每种语言都有自己的数据需要下载，并且默认语言不支持重音符号或其他符号。
 
-To configure the languages that are supported by the OCR, simply go to <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">Options</a> → <a class="reference-link" href="#root/_hidden/_options/_optionsLocalization">Language &amp; Region</a> and adjust the _Content languages_.
+要配置 OCR 支持的语言，只需转到 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">选项</a> → <a class="reference-link" href="#root/_hidden/_options/_optionsLocalization">语言与区域</a> 并调整 _内容语言_。
 
-When there are no content languages defined, the user interface _Language_ is used instead.
+当未定义内容语言时，将使用用户界面 _语言_。
 
-After making this change, the automatic processing or manual reprocessing will take into consideration the new languages.
+进行此更改后，自动处理或手动重新处理将考虑新的语言。
 
-To enforce the detection in a particular language for a given note, use the `language` [attribute](Attributes.md), similar to [text content language](../Note%20Types/Text/Content%20language%20%26%20Right-to-left%20support.md). For <a class="reference-link" href="../Basic%20Concepts%20and%20Features/Notes/Attachments.md">Attachments</a>, it's not possible to manually adjust the language.
+要为给定笔记强制使用特定语言进行检测，请使用 `language` [属性](Attributes.md)，类似于[文本内容语言](../Note%20Types/Text/Content%20language%20%26%20Right-to-left%20support.md)。对于<a class="reference-link" href="../Basic%20Concepts%20and%20Features/Notes/Attachments.md">附件</a>，无法手动调整语言。
 
 > [!NOTE]
-> The trained data for each language is not packaged with Trilium, as that would require a significant amount of space that might not be otherwise needed. As such, when the trained data will be downloaded automatically via [Tesseract.js](https://github.com/naptha/tesseract.js/).
+> 每种语言的训练数据不随 Trilium 打包，因为那将需要大量可能不需要的空间。因此，训练数据将通过 [Tesseract.js](https://github.com/naptha/tesseract.js/) 自动下载。
 > 
-> The downloaded trained data is located in the <a class="reference-link" href="../Installation%20%26%20Setup/Data%20directory.md">Data directory</a>, in the `ocr-cache` directory.
+> 下载的训练数据位于<a class="reference-link" href="../Installation%20%26%20Setup/Data%20directory.md">数据目录</a>中的 `ocr-cache` 目录中。
 
-## Viewing extracted content for a single note
+## 查看单个笔记的提取内容
 
-To access the extracted content of a note:
+要访问笔记的提取内容：
 
-*   For <a class="reference-link" href="../Note%20Types/File.md">File</a> notes, go to the <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20buttons.md">Note buttons</a> → _Advanced_ → _View OCR Text_.
-*   For <a class="reference-link" href="../Basic%20Concepts%20and%20Features/Notes/Attachments.md">Attachments</a> (e.g. <a class="reference-link" href="../Note%20Types/Text/Images.md">Images</a> in <a class="reference-link" href="../Note%20Types/Text.md">Text</a> notes), double-click the attachment to view the details, press the \[…\] button at the left and select _View extracted text (OCR)_.
+*   对于<a class="reference-link" href="../Note%20Types/File.md">文件</a>笔记，转到 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20buttons.md">笔记按钮</a> → _高级_ → _查看 OCR 文本_。
+*   对于<a class="reference-link" href="../Basic%20Concepts%20and%20Features/Notes/Attachments.md">附件</a>（例如<a class="reference-link" href="../Note%20Types/Text.md">文本</a>笔记中的<a class="reference-link" href="../Note%20Types/Text/Images.md">图像</a>），双击附件查看详细信息，按左侧的 \[…\] 按钮并选择 _查看提取的文本 (OCR)_。
 
-This section allows:
+此部分允许：
 
-*   Viewing the extracted text, which can be copied elsewhere if needed or just to check the quality of the extraction.
-*   If the note has not been extracted yet, pressing _Process OCR_ will process it in the background. If the extraction confidence is lower than the minimum confidence, there will be a notification.
-*   Similarly, if the minimum confidence was changed in settings, it is possible to press the _Process OCR_ button again to extract the text again.
+*   查看提取的文本，如有需要可以复制到其他地方，或仅用于检查提取质量。
+*   如果笔记尚未提取，按 _处理 OCR_ 将在后台处理。如果提取置信度低于最低置信度，将会有通知。
+*   类似地，如果在设置中更改了最低置信度，可以再次按 _处理 OCR_ 按钮以重新提取文本。

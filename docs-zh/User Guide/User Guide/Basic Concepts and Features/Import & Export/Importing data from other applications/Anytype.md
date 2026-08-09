@@ -1,120 +1,121 @@
 # Anytype
-Starting with v0.104.0, Trilium is able to import data from Anytype from JSON imports which preserve most of the formatting and the metainformation.
 
-## Import process
+从 v0.104.0 版本开始，Trilium 能够从 Anytype 的 JSON 导入中导入数据，该导入方式保留了大部分格式和元信息。
 
-The first step is to export the data from Anytype:
+## 导入流程
 
-*   To export a single page:
-    *   Select the page to export.
-    *   Press the \[…\] at the top-right of the window and select _Export_.
-    *   Ensure the following options are set:
-        *   Export format: Any-Block
-        *   File Format: JSON
-        *   Zip archive: On
-        *   Include linked objects: On
-        *   Include files: On
-        *   Include archived objects: On
-*   To export an entire channel:
-    *   Select the desired channel from the left bar.
-    *   Underneath the channel icon in the left sidebar, press the name of the channel with an arrow and select _Channel Settings_.
-    *   In the left sidebar, look for the _Integrations_ section and select _Export_.
-    *   Press _Any-Block_.
-    *   Ensure the following options are set:
-        *   File Format: JSON
-        *   Zip archive: On
-        *   Include files: On
-        *   Include archived objects: On
+第一步是从 Anytype 导出数据：
 
-In Trilium Notes:
+*   要导出单个页面：
+    *   选择要导出的页面。
+    *   点击窗口右上角的 \[…\]，然后选择 _导出_。
+    *   确保设置以下选项：
+        *   导出格式：Any-Block
+        *   文件格式：JSON
+        *   Zip 压缩包：开启
+        *   包含链接的对象：开启
+        *   包含文件：开启
+        *   包含已归档对象：开启
+*   要导出整个频道：
+    *   从左侧栏中选择所需的频道。
+    *   在左侧边栏的频道图标下方，点击带有箭头的频道名称，然后选择 _频道设置_。
+    *   在左侧边栏中，找到 _集成_ 部分并选择 _导出_。
+    *   点击 _Any-Block_。
+    *   确保设置以下选项：
+        *   文件格式：JSON
+        *   Zip 压缩包：开启
+        *   包含文件：开启
+        *   包含已归档对象：开启
 
-1.  In the <a class="reference-link" href="../../UI%20Elements/Note%20Tree.md">Note Tree</a>, right click and select _Import into note_.
-2.  In the _Import from_ section, select _Anytype_.
-3.  Upload the ZIP.
+在 Trilium Notes 中：
+
+1.  在 <a class="reference-link" href="../../UI%20Elements/Note%20Tree.md">笔记树</a> 中，右键点击并选择 _导入到笔记_。
+2.  在 _从导入_ 部分，选择 _Anytype_。
+3.  上传 ZIP 文件。
 
 > [!NOTE]
-> Exporting collections individually can sometimes miss information that would otherwise be picked up from an export of the entire channel. The reason is that Anytype leaves out some information when exporting individual pages/collections.
+> 单独导出集合有时可能会遗漏信息，而这些信息本可以从整个频道的导出中获取。原因是 Anytype 在导出单个页面/集合时会省略某些信息。
 
-## Supported features
+## 支持的功能
 
-The following features are preserved by Trilium during the import process:
+Trilium 在导入过程中会保留以下功能：
 
-*   Basic formatting (bold, italic, underline, strikethrough, headings, colors, highlights, inline code).
-*   <a class="reference-link" href="../../../Note%20Types/Text/Lists.md">Lists</a> (numbered or bullet)
-*   <a class="reference-link" href="../../../Note%20Types/Text/Images.md">Images</a> and files are handled as <a class="reference-link" href="../../Notes/Attachments.md">Attachments</a>.
-*   To-do lists
-*   Toggle sections
-*   <a class="reference-link" href="../../../Note%20Types/Text/Tables.md">Tables</a>
-*   Inline <a class="reference-link" href="../../../Note%20Types/Mermaid%20Diagrams.md">Mermaid Diagrams</a>
-*   <a class="reference-link" href="../../../Note%20Types/Text/Math%20Equations.md">Math Equations</a>
-*   Highlight blocks are imported as block quotes.
-*   <a class="reference-link" href="../../../Note%20Types/Text/Developer-specific%20formatting/Code%20blocks.md">Code blocks</a>, with a best-effort attempt to restore the language.
-*   Links between other imported pages are converted to <a class="reference-link" href="../../../Note%20Types/Text/Links/Internal%20(reference)%20links.md">Internal (reference) links</a> if they are part of the same import.
-    *   Applies to both block links and inline links.
-*   Collections are imported as Trilium-native <a class="reference-link" href="../../../Collections.md">Collections</a> (see below).
-    *   Files inside collections are imported as <a class="reference-link" href="../../../Note%20Types/File.md">File</a> notes.
-*   Dividers (line, dots) are imported as horizontal rules.
-*   [Admonitions](../../../Note%20Types/Text/Block%20quotes%20%26%20admonitions.md) are preserved, including its emoji (added as part of the content).
-*   Creation and modification date of pages is preserved.
+*   基本格式（粗体、斜体、下划线、删除线、标题、颜色、高亮、行内代码）。
+*   <a class="reference-link" href="../../../Note%20Types/Text/Lists.md">列表</a>（有序或无序）
+*   <a class="reference-link" href="../../../Note%20Types/Text/Images.md">图片</a>和文件作为<a class="reference-link" href="../../Notes/Attachments.md">附件</a>处理。
+*   待办事项列表
+*   折叠区块
+*   <a class="reference-link" href="../../../Note%20Types/Text/Tables.md">表格</a>
+*   行内<a class="reference-link" href="../../../Note%20Types/Mermaid%20Diagrams.md">Mermaid 图表</a>
+*   <a class="reference-link" href="../../../Note%20Types/Text/Math%20Equations.md">数学公式</a>
+*   高亮块作为块引用导入。
+*   <a class="reference-link" href="../../../Note%20Types/Text/Developer-specific%20formatting/Code%20blocks.md">代码块</a>，并尽力恢复其语言。
+*   同一导入中其他已导入页面之间的链接会转换为<a class="reference-link" href="../../../Note%20Types/Text/Links/Internal%20(reference)%20links.md">内部（引用）链接</a>。
+    *   适用于块链接和行内链接。
+*   集合作为 Trilium 原生的<a class="reference-link" href="../../../Collections.md">集合</a>导入（见下文）。
+    *   集合内的文件作为<a class="reference-link" href="../../../Note%20Types/File.md">文件</a>笔记导入。
+*   分隔线（直线、圆点）作为水平分割线导入。
+*   [警示框](../../../Note%20Types/Text/Block%20quotes%20%26%20admonitions.md)会被保留，包括其表情符号（作为内容的一部分添加）。
+*   页面的创建和修改日期会被保留。
 
-## Collections
+## 集合
 
-Collections created in Anytype are imported on a best-effort basis, preserving both the view mode and the page properties as <a class="reference-link" href="../../../Advanced%20Usage/Attributes/Promoted%20Attributes.md">Promoted Attributes</a>.
+在 Anytype 中创建的集合会尽力导入，保留视图模式和页面属性作为<a class="reference-link" href="../../../Advanced%20Usage/Attributes/Promoted%20Attributes.md">提升属性</a>。
 
-The following view modes are supported:
+支持以下视图模式：
 
-*   List as <a class="reference-link" href="../../../Collections/List%20View.md">List View</a>
-*   Gallery as <a class="reference-link" href="../../../Collections/Grid%20View.md">Grid View</a>
-*   <a class="reference-link" href="../../../Collections/Calendar.md">Calendar</a>, preserving the attribute which identifies the date.
-*   <a class="reference-link" href="../../../Collections/Kanban%20Board.md">Kanban Board</a>, preserving the board group column.
-*   <a class="reference-link" href="../../../Collections/Table.md">Table</a>, also used as fallback for unsupported collection layouts.
+*   列表作为<a class="reference-link" href="../../../Collections/List%20View.md">列表视图</a>
+*   画廊作为<a class="reference-link" href="../../../Collections/Grid%20View.md">网格视图</a>
+*   <a class="reference-link" href="../../../Collections/Calendar.md">日历</a>，保留标识日期的属性。
+*   <a class="reference-link" href="../../../Collections/Kanban%20Board.md">看板</a>，保留看板分组列。
+*   <a class="reference-link" href="../../../Collections/Table.md">表格</a>，也用作不支持集合布局的回退方案。
 
-The following types are supported:
+支持以下类型：
 
 <table>
     <thead>
         <tr>
-            <th scope="col">Anytype property type</th>
+            <th scope="col">Anytype 属性类型</th>
             <th scope="col">Trilium</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>Text / Select</td>
-            <td>Single-valued <code spellcheck="false">text</code> label</td>
+            <td>文本 / 单选</td>
+            <td>单值 <code spellcheck="false">text</code> 标签</td>
         </tr>
         <tr>
-            <td>Number</td>
-            <td>Single-valued <code spellcheck="false">number</code> label</td>
+            <td>数字</td>
+            <td>单值 <code spellcheck="false">number</code> 标签</td>
         </tr>
         <tr>
-            <td>Multi-select</td>
-            <td>One <code spellcheck="false">text</code> label per option (multi)</td>
+            <td>多选</td>
+            <td>每个选项一个 <code spellcheck="false">text</code> 标签（多值）</td>
         </tr>
         <tr>
-            <td>Date / Date with time</td>
-            <td><ul><li><code spellcheck="false">datetime</code> if the time is included.</li><li><code spellcheck="false">date</code> if only dates.</li></ul></td>
+            <td>日期 / 日期时间</td>
+            <td><ul><li>如果包含时间，则为 <code spellcheck="false">datetime</code>。</li><li>如果仅日期，则为 <code spellcheck="false">date</code>。</li></ul></td>
         </tr>
         <tr>
-            <td>File</td>
-            <td>The files are preserved as attachments, and a link to them is prepended to the content of the note for visibility.</td>
+            <td>文件</td>
+            <td>文件作为附件保留，并在笔记内容前添加指向它们的链接以便查看。</td>
         </tr>
         <tr>
-            <td>Checkbox</td>
-            <td><code spellcheck="false">boolean</code> label (<code spellcheck="false">true</code>/<code spellcheck="false">false</code>).</td>
+            <td>复选框</td>
+            <td><code spellcheck="false">boolean</code> 标签（<code spellcheck="false">true</code>/<code spellcheck="false">false</code>）。</td>
         </tr>
         <tr>
-            <td>URL / Email / Phone</td>
-            <td><code spellcheck="false">url</code> label (<code spellcheck="false">mailto:</code>, <code spellcheck="false">tel:</code> prefix)</td>
+            <td>URL / 电子邮件 / 电话</td>
+            <td><code spellcheck="false">url</code> 标签（<code spellcheck="false">mailto:</code>、<code spellcheck="false">tel:</code> 前缀）</td>
         </tr>
     </tbody>
 </table>
 
-## Reporting issues
+## 报告问题
 
-When importing your Anytype notes, you might find issues in how a note is imported; in that case consider [reporting](../../../Troubleshooting/Reporting%20issues.md) it.
+在导入 Anytype 笔记时，您可能会发现笔记导入方式存在问题；在这种情况下，请考虑[报告](../../../Troubleshooting/Reporting%20issues.md)问题。
 
-When reporting such an issue make sure to provide the following information:
+报告此类问题时，请务必提供以下信息：
 
-*   A .zip export of the original note (and children if applicable). This allows us to reproduce the issue.
-*   A screenshot with how it originally looked like before the import and how it looks after the import.
+*   原始笔记（以及适用的子笔记）的 .zip 导出文件。这使我们能够重现问题。
+*   导入前原始样子的截图以及导入后的样子。

@@ -1,31 +1,32 @@
-# Multiple selection
-In the <a class="reference-link" href="../Note%20Tree.md">Note Tree</a>, it's possible to select multiple notes at one time. This won't affect the currently displayed note, but it allows to do batch operations.
+# 多选
 
-## Types of multiple selection
+在<a class="reference-link" href="../Note%20Tree.md">笔记树</a>中，可以同时选择多个笔记。这不会影响当前显示的笔记，但允许进行批量操作。
+
+## 多选的类型
 
 <figure class="image image-style-align-right image_resized" style="width:28.54%;"><img style="aspect-ratio:335/306;" src="Multiple selection_image.png" width="335" height="306"></figure>
 
-### Selecting notes one by one
+### 逐个选择笔记
 
-To individually select each note, press the <kbd>Alt</kbd> key and click on the note to be selected.
+要逐个选择每个笔记，请按住 <kbd>Alt</kbd> 键并点击要选择的笔记。
 
-The selected notes will be indicated via a different background color and an icon.
+选中的笔记将通过不同的背景颜色和图标来标识。
 
-### Selecting notes in a sequence
+### 连续选择笔记
 
 <figure class="image image-style-align-right image_resized" style="width:29.24%;"><img style="aspect-ratio:233/205;" src="1_Multiple selection_image.png" width="233" height="205"></figure>
 
-When notes are in a sequence (e.g. one underneath the other), the entire selection can be made just by selecting the first and the last item instead of individually clicking all the notes.
+当笔记是连续排列时（例如一个在另一个下方），只需选择第一个和最后一个项目即可完成整个选择，而无需逐个点击所有笔记。
 
-To do so, first select the note to start the selection with. Then hold <kbd>Shift</kbd> and click on the note to end the selection with. All the notes between the start and the end note will be selected as well.
+为此，首先选择要开始选择的笔记。然后按住 <kbd>Shift</kbd> 键并点击要结束选择的笔记。起始笔记和结束笔记之间的所有笔记也将被选中。
 
-## Selected notes vs. active note
+## 选中的笔记与活动笔记
 
-There is a distinction between _selected notes_ and the _active note_:
+_选中的笔记_ 和 _活动笔记_ 之间存在区别：
 
-*   _Selected notes_ are simply the notes that were selected in the multiple section process (i.e. either via <kbd>Alt</kbd> or <kbd>Shift</kbd>).
-*   The _active note_ is simply the note that whose content is being displayed to the right of the tree.
-    *   Visually, it's identified in the tree by having a different background color and a subtle shadow.
-    *   The active note can also be selected case in which the icon and background will also change:
+*   _选中的笔记_ 简单来说就是在多选过程中被选中的笔记（即通过 <kbd>Alt</kbd> 或 <kbd>Shift</kbd> 键选择的）。
+*   _活动笔记_ 简单来说就是其内容显示在树右侧的笔记。
+    *   在视觉上，它通过在树中具有不同的背景颜色和微妙的阴影来识别。
+    *   活动笔记也可以被选中，在这种情况下，图标和背景也会发生变化：
         
         <img class="image_resized" style="aspect-ratio:317/223;width:35.1%;" src="2_Multiple selection_image.png" width="317" height="223">

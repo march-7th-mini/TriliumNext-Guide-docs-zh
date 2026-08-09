@@ -1,15 +1,15 @@
 # i18n-ally
-[`i18n-ally`](https://github.com/lokalise/i18n-ally) is a VS Code extension that aids in internationalization.
+[`i18n-ally`](https://github.com/lokalise/i18n-ally) 是一个有助于国际化的 VS Code 扩展。
 
-It is currently integrated in the project and offers features such as:
+它目前已集成到项目中，并提供以下功能：
 
-*   Highlight, autocomplete translations.
-*   Display translations inline.
-*   Extract messages into translation.
+*   高亮、自动补全翻译。
+*   内联显示翻译。
+*   将消息提取到翻译中。
 
-### Extracting messages into translation
+### 将消息提取到翻译中
 
-1.  Open any .js file and select an untranslated string inside a template (`TPL`).
-2.  Press Ctrl+P and look for “i18n Ally: Extract text into i18n messages”
-3.  Select the first template.
-4.  Select the path of translation, taking into consideration the  <a class="reference-link" href="Guidelines.md">Guidelines</a> (e.g. `jump_to_note.search-for-note-by-its-name`).
+1.  打开任意 .js 文件，并在模板（`TPL`）中选择一个未翻译的字符串。
+2.  按 Ctrl+P 并查找 “i18n Ally: Extract text into i18n messages”
+3.  选择第一个模板。
+4.  选择翻译的路径，同时参考 <a class="reference-link" href="Guidelines.md">指南</a>（例如 `jump_to_note.search-for-note-by-its-name`）。

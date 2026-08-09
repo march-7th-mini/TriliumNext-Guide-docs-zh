@@ -1,5 +1,5 @@
 # CSS
-## Inline styles
+## 内联样式
 
 ```jsx
 <div style={{
@@ -12,6 +12,6 @@
 }}>/* [...] */</div>
 ```
 
-## Custom CSS file
+## 自定义 CSS 文件
 
-Simply create a <a class="reference-link" href="../../../Theme%20development/Custom%20app-wide%20CSS.md">Custom app-wide CSS</a>. Make sure the class names are unique enough to not intersect with other UI elements, consider adding a prefix (e.g. `x-mywidget-`).
+只需创建一个<a class="reference-link" href="../../../Theme%20development/Custom%20app-wide%20CSS.md">自定义应用级 CSS</a>。确保类名具有足够的唯一性，以免与其他 UI 元素冲突，建议添加前缀（例如 `x-mywidget-`）。

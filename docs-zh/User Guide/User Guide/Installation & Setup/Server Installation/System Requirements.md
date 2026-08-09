@@ -1,11 +1,11 @@
-# System Requirements
-*   Using Docker, the server can be run on Windows, Linux and macOS devices.
-*   Native binaries are provided for Linux x64 and ARM (`aarch64`).
+# 系统要求
+*   使用 Docker 时，服务器可以在 Windows、Linux 和 macOS 设备上运行。
+*   为 Linux x64 和 ARM（`aarch64`）架构提供了原生二进制文件。
 
-## Legacy ARM support
+## 旧版 ARM 支持
 
-The Docker builds also provide `linux/arm/v7` and `linux/arm/v8` platforms. These platforms are considered legacy since Trilium uses Node.js version 24 which have [officially downgraded support](https://github.com/nodejs/node/commit/6682861d6f) for these platforms to “experimental”.
+Docker 构建也提供 `linux/arm/v7` 和 `linux/arm/v8` 平台。这些平台被视为旧版，因为 Trilium 使用的 Node.js 版本 24 已[官方降级](https://github.com/nodejs/node/commit/6682861d6f)了对这些平台的支持至“实验性”级别。
 
-As a result, Trilium needs to use Node.js 22 for these versions. As soon as soon Node.js 22 will no longer be compatible, support for `armv7` and `armv8` will be dropped entirely.
+因此，Trilium 需要为这些版本使用 Node.js 22。一旦 Node.js 22 不再兼容，对 `armv7` 和 `armv8` 的支持将被完全移除。
 
-Regardless of upstream support, these platforms are supported on a best-effort basis and are not officially supported by the Trilium development team. Bug reports are accepted but they will not be treated with priority; contributions are welcome.
+无论上游支持情况如何，这些平台都是基于尽力而为的原则提供支持，并非由 Trilium 开发团队官方支持。我们接受错误报告，但不会优先处理；欢迎贡献代码。

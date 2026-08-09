@@ -1,10 +1,11 @@
-# Archived Notes
-Archived notes are notes which have `archived` [attribute](../../Advanced%20Usage/Attributes.md) - either directly or [inherited](../../Advanced%20Usage/Attributes/Attribute%20Inheritance.md).
+# 已归档笔记
 
-Such notes are then by default not shown in the autocomplete and in the full text [search](../Navigation/Search.md).
+已归档笔记是指带有 `archived` [属性](../../Advanced%20Usage/Attributes.md)的笔记——该属性可以是直接设置的，也可以是[继承](../../Advanced%20Usage/Attributes/Attribute%20Inheritance.md)而来的。
 
-This can be useful for notes which are no longer very useful but still valuable enough to keep around without them getting too much in the way.
+默认情况下，此类笔记不会显示在自动补全和全文[搜索](../Navigation/Search.md)结果中。
 
-You can control whether archived notes are displayed in the note tree with a setting:
+这对于那些不再常用但仍有一定价值、希望保留下来又不想让其干扰日常使用的笔记来说非常有用。
+
+您可以通过一个设置来控制是否在笔记树中显示已归档的笔记：
 
 ![](Archived%20Notes_hide-archived.png)

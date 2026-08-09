@@ -1,123 +1,124 @@
-# Printing & Exporting as PDF
-<figure class="image"><img style="aspect-ratio:2023/1488;" src="1_Printing &amp; Exporting as PDF_image.png" width="2023" height="1488"><figcaption>Screenshot of the Print preview functionality introduced in v0.103.0.</figcaption></figure>
+# 打印与导出为 PDF
 
-Trilium allows printing notes to a real printer, or generating a structured PDF for a single note or for multiple notes through <a class="reference-link" href="../../Collections.md">Collections</a>.
+<figure class="image"><img style="aspect-ratio:2023/1488;" src="1_Printing &amp; Exporting as PDF_image.png" width="2023" height="1488"><figcaption>v0.103.0 中引入的打印预览功能截图。</figcaption></figure>
 
-Note that not all note types are printable as of now. We do plan to increase the coverage of supported note types in the future.
+Trilium 允许将笔记打印到真实打印机，或通过<a class="reference-link" href="../../Collections.md">集合</a>为单个笔记或多个笔记生成结构化的 PDF。
 
-Printing and exporting as PDF are not perfect. Due to technical limitations, and sometimes even browser or Electron glitches the text might appear cut off in some circumstances. 
+请注意，目前并非所有笔记类型都可打印。我们计划在未来增加对更多笔记类型的支持。
 
-## Printing a note or exporting as PDF on the desktop
+打印和导出为 PDF 并非完美无缺。由于技术限制，有时甚至是浏览器或 Electron 的故障，文本在某些情况下可能会出现截断。
+
+## 在桌面上打印笔记或导出为 PDF
 
 > [!NOTE]
-> Versions prior to v0.103.0 had two different options, one for printing and another one for exporting to PDF. With the introduction of the print preview, these functions have been unified.
+> v0.103.0 之前的版本有两个不同的选项，一个用于打印，另一个用于导出为 PDF。随着打印预览的引入，这些功能已统一。
 
-On the desktop application of Trilium it is possible to export a note as PDF. To print a note:
+在 Trilium 桌面应用程序中，可以将笔记导出为 PDF。要打印笔记：
 
-*   Press the menu button in the <a class="reference-link" href="../UI%20Elements/Note%20buttons.md">Note buttons</a> area and select _Print note_.
-*   Alternatively, printing can be triggered from a [keyboard shortcut](../Keyboard%20Shortcuts.md) (unassigned by default) or through the [command palette](../Navigation/Jump%20to%20%26%20command%20palette.md).
+*   按下<a class="reference-link" href="../UI%20Elements/Note%20buttons.md">笔记按钮</a>区域中的菜单按钮，然后选择 _打印笔记_。
+*   或者，可以通过[键盘快捷键](../Keyboard%20Shortcuts.md)（默认未分配）或通过[命令面板](../Navigation/Jump%20to%20%26%20command%20palette.md)触发打印。
 
-This will trigger the print preview screen next.
+接下来将触发打印预览屏幕。
 
-### Print preview & print options
+### 打印预览与打印选项
 
-The print preview dialog allows the following printing options to be adjusted:
+打印预览对话框允许调整以下打印选项：
 
-*   The printer to use
+*   要使用的打印机
     
-    *   _Save as PDF_ generates a PDF that is structured (maintains a table of contents, keeps the text selectable). Prefer this over other virtual PDF printers that ship with the operating system.
-*   Page orientation: _Portrait_ (default) or _Landscape_.
-*   Page size
-*   Scale the entire content from 10% to 200% to improve the fit within the page.
-*   Margins, which can be removed completely or adjusted individually for all the four edges.
-*   Print only a subset of pages. Individual page numbers are separated by colons and hyphen-based ranges are supported (e.g. 3-5 for pages 3 to 5).
+    *   _另存为 PDF_ 会生成结构化的 PDF（保留目录，保持文本可选）。优先选择此选项，而不是操作系统自带的虚拟 PDF 打印机。
+*   页面方向：_纵向_（默认）或 _横向_。
+*   纸张大小
+*   将整个内容缩放 10% 到 200%，以更好地适应页面。
+*   页边距，可以完全移除或分别调整四个边缘。
+*   仅打印部分页面。单个页码用冒号分隔，支持基于连字符的范围（例如 3-5 表示第 3 到 5 页）。
 
-Additional interaction:
+其他交互：
 
-*   _Print using system dialog_ allows setting more options that are otherwise not available in Trilium.
+*   _使用系统对话框打印_ 允许设置 Trilium 中不可用的更多选项。
 
 > [!NOTE]
-> Most of the options here (expect printer & which pages to print) are managed at note level through <a class="reference-link" href="../../Advanced%20Usage/Attributes.md">Attributes</a> (such as `#printLandscape`, `#printPageSize`, `#printScale`, `#printMargins`).
+> 此处的大多数选项（打印机和要打印的页面除外）通过<a class="reference-link" href="../../Advanced%20Usage/Attributes.md">属性</a>（例如 `#printLandscape`、`#printPageSize`、`#printScale`、`#printMargins`）在笔记级别进行管理。
 > 
-> This means that the print settings will be restored when printing the same note. There are no default settings that can be configured for all the notes, but this can be achieved via [inheritable attributes](../../Advanced%20Usage/Attributes/Attribute%20Inheritance.md).
+> 这意味着打印同一笔记时会恢复打印设置。没有可以为所有笔记配置的默认设置，但可以通过[可继承属性](../../Advanced%20Usage/Attributes/Attribute%20Inheritance.md)实现。
 
-## Printing on the browser
+## 在浏览器中打印
 
-This feature allows printing of notes. It works on both the desktop client, but also on the web.
+此功能允许打印笔记。它既适用于桌面客户端，也适用于 Web 端。
 
-To print a note, select the <img src="Printing &amp; Exporting as PDF_image.png" width="29" height="31"> button to the right of the note and select _Print note_. Depending on the size and type of the note, this can take up to a few seconds. Afterwards you will be redirected to the system/browser printing dialog.
+要打印笔记，请选择笔记右侧的 <img src="Printing &amp; Exporting as PDF_image.png" width="29" height="31"> 按钮，然后选择 _打印笔记_。根据笔记的大小和类型，这可能需要几秒钟。之后您将被重定向到系统/浏览器打印对话框。
 
-On the server or PWA (mobile), the option is not available due to technical constraints and it will be hidden.
+在服务器或 PWA（移动端）上，由于技术限制，该选项不可用且将被隐藏。
 
-## Reporting issues with the rendering
+## 报告渲染问题
 
-Should you encounter any visual issues in the resulting PDF file (e.g. a table does not fit properly, there is cut off text, etc.) feel free to [report the issue](../../Troubleshooting/Reporting%20issues.md). In this case, it's best to offer a sample note (click on the <img src="Printing &amp; Exporting as PDF_image.png" width="29" height="31"> button, select Export note → This note and all of its descendants → HTML in ZIP archive). Make sure not to accidentally leak any personal information.
+如果您在生成的 PDF 文件中遇到任何视觉问题（例如表格无法正确适配、文本截断等），请随时[报告问题](../../Troubleshooting/Reporting%20issues.md)。在这种情况下，最好提供一个示例笔记（点击 <img src="Printing &amp; Exporting as PDF_image.png" width="29" height="31"> 按钮，选择导出笔记 → 此笔记及其所有子笔记 → HTML 压缩包）。确保不要意外泄露任何个人信息。
 
-Consider adjusting font sizes and using [page breaks](../../Note%20Types/Text/Insert%20buttons.md) to work around the layout.
+请考虑调整字体大小并使用[分页符](../../Note%20Types/Text/Insert%20buttons.md)来解决布局问题。
 
 > [!TIP]
-> Although direct export as PDF is not available in the browser version of the application, it's still possible to generate a PDF by selecting the _Print_ option instead and selecting “Save to PDF” as the printer (depending on the browser). Generally, Mozilla Firefox has better printing capabilities.
+> 尽管在应用程序的浏览器版本中无法直接导出为 PDF，但仍然可以通过选择 _打印_ 选项并将打印机选择为“另存为 PDF”来生成 PDF（取决于浏览器）。通常，Mozilla Firefox 具有更好的打印功能。
 
-### Automatic opening of the file
+### 自动打开文件
 
-When the PDF is exported, it is automatically opened with the system default application for easy preview.
+导出 PDF 后，它将自动使用系统默认应用程序打开，以便于预览。
 
-Note that if you are using Linux with the GNOME desktop environment, sometimes the default application might seem incorrect (such as opening in GIMP). This is because it uses Gnome's “Recommended applications” list.
+请注意，如果您使用带有 GNOME 桌面环境的 Linux，有时默认应用程序可能看起来不正确（例如在 GIMP 中打开）。这是因为它使用了 GNOME 的“推荐应用程序”列表。
 
-To solve this, you can change the recommended application for PDFs via this command line. First, list the available applications via `gio mime application/pdf` and then set the desired one. For example to use GNOME's Evince:
+要解决此问题，您可以通过以下命令行更改 PDF 的推荐应用程序。首先，通过 `gio mime application/pdf` 列出可用的应用程序，然后设置所需的应用程序。例如，要使用 GNOME 的 Evince：
 
 ```
 gio mime application/pdf
 ```
 
-## Printing multiple notes
+## 打印多个笔记
 
-Since v0.100.0, it is possible to print more than one note at the time by using <a class="reference-link" href="../../Collections.md">Collections</a>:
+自 v0.100.0 起，可以使用<a class="reference-link" href="../../Collections.md">集合</a>一次打印多个笔记：
 
-1.  First create a collection.
-2.  Configure it to use <a class="reference-link" href="../../Collections/List%20View.md">List View</a>.
-3.  Print the collection note normally.
+1.  首先创建一个集合。
+2.  将其配置为使用<a class="reference-link" href="../../Collections/List%20View.md">列表视图</a>。
+3.  正常打印集合笔记。
 
-The resulting collection will contain all the children of the collection, while maintaining the hierarchy.
+生成的集合将包含集合的所有子笔记，同时保持层级结构。
 
 > [!NOTE]
-> Not all note types are supported when printing or exporting to PDF. When an unsupported note is encountered, it is skipped. At the end, if any of the notes were skipped, a message will be displayed with the possibility of viewing the full list of skipped notes. The same limitations as the ones described in _Constraints & limitations_ apply.
+> 并非所有笔记类型在打印或导出为 PDF 时都受支持。遇到不支持的笔记时，将跳过该笔记。最后，如果有任何笔记被跳过，将显示一条消息，并可以查看被跳过笔记的完整列表。与 _约束与限制_ 中描述的相同限制适用。
 
-## Keyboard shortcut
+## 键盘快捷键
 
-It's possible to trigger both printing and export as PDF from the keyboard by going to _Keyboard shortcuts_ in <a class="reference-link" href="../UI%20Elements/Options.md">Options</a> and assigning a key combination for:
+可以通过转到<a class="reference-link" href="../UI%20Elements/Options.md">选项</a>中的 _键盘快捷键_ 并为以下操作分配组合键，从键盘触发打印和导出为 PDF：
 
-*   _Print Active Note_
-*   _Export Active Note as PDF_
+*   _打印当前笔记_
+*   _将当前笔记导出为 PDF_
 
-## Constraints & limitations
+## 约束与限制
 
-Not all <a class="reference-link" href="../../Note%20Types.md">Note Types</a> are supported when printing, in which case the _Print_ and _Export as PDF_ options will be disabled.
+并非所有<a class="reference-link" href="../../Note%20Types.md">笔记类型</a>在打印时都受支持，在这种情况下，_打印_ 和 _导出为 PDF_ 选项将被禁用。
 
-*   For <a class="reference-link" href="../../Note%20Types/Code.md">Code</a> notes:
-    *   Line numbers are not printed.
-    *   Syntax highlighting is enabled, however a default theme (Visual Studio) is enforced.
-*   For <a class="reference-link" href="../../Collections.md">Collections</a>, the following are supported:
-    *   <a class="reference-link" href="../../Collections/List%20View.md">List View</a>, allowing to print multiple notes at once while preserving hierarchy (similar to a book).
-    *   <a class="reference-link" href="../../Collections/Presentation.md">Presentation</a>, where each slide/sub-note is displayed.
-        *   Most note types are supported, especially the ones that have an image representation such as <a class="reference-link" href="../../Note%20Types/Canvas.md">Canvas</a> and <a class="reference-link" href="../../Note%20Types/Mind%20Map.md">Mind Map</a>.
-    *   <a class="reference-link" href="../../Collections/Table.md">Table</a>, where the table is rendered in a print-friendly way.
-        *   Tables that are too complex (especially if they have multiple columns) might not fit properly, however tables with a large number of rows are supported thanks to pagination.
-        *   Consider printing in landscape mode, or using `#printLandscape` if exporting to PDF.
-    *   The rest of the collections are not supported, but we plan to add support for all the collection types at some point.
-*   Using <a class="reference-link" href="../../Theme%20development/Custom%20app-wide%20CSS.md">Custom app-wide CSS</a> for printing is no longer supported, instead a custom `printCss` relation needs to be used (see below).
+*   对于<a class="reference-link" href="../../Note%20Types/Code.md">代码</a>笔记：
+    *   不打印行号。
+    *   启用语法高亮，但强制使用默认主题（Visual Studio）。
+*   对于<a class="reference-link" href="../../Collections.md">集合</a>，支持以下类型：
+    *   <a class="reference-link" href="../../Collections/List%20View.md">列表视图</a>，允许一次打印多个笔记，同时保持层级结构（类似于书籍）。
+    *   <a class="reference-link" href="../../Collections/Presentation.md">演示文稿</a>，显示每张幻灯片/子笔记。
+        *   支持大多数笔记类型，尤其是具有图像表示的类型，如<a class="reference-link" href="../../Note%20Types/Canvas.md">画布</a>和<a class="reference-link" href="../../Note%20Types/Mind%20Map.md">思维导图</a>。
+    *   <a class="reference-link" href="../../Collections/Table.md">表格</a>，以适合打印的方式渲染表格。
+        *   过于复杂的表格（尤其是多列表格）可能无法正确适配，但由于分页，支持具有大量行的表格。
+        *   请考虑横向打印，或在导出为 PDF 时使用 `#printLandscape`。
+    *   其余集合类型不受支持，但我们计划在某个时候添加对所有集合类型的支持。
+*   不再支持使用<a class="reference-link" href="../../Theme%20development/Custom%20app-wide%20CSS.md">自定义应用级 CSS</a>进行打印，而是需要使用自定义的 `printCss` 关系（见下文）。
 
-## Customizing the print CSS
+## 自定义打印 CSS
 
-As an advanced use case, it's possible to customize the CSS used for printing such as adjusting the fonts, sizes or margins. Note that <a class="reference-link" href="../../Theme%20development/Custom%20app-wide%20CSS.md">Custom app-wide CSS</a> will not work for printing.
+作为一个高级用例，可以自定义用于打印的 CSS，例如调整字体、大小或页边距。请注意，<a class="reference-link" href="../../Theme%20development/Custom%20app-wide%20CSS.md">自定义应用级 CSS</a> 不适用于打印。
 
-To do so:
+为此：
 
-*   Create a CSS [code note](../../Note%20Types/Code.md).
-*   On the note being printed, apply the `~printCss` relation to point to the newly created CSS code note.
-*   To apply the CSS to multiple notes, consider using [inheritable attributes](../../Advanced%20Usage/Attributes/Attribute%20Inheritance.md) or <a class="reference-link" href="../../Advanced%20Usage/Templates.md">Templates</a>.
+*   创建一个 CSS [代码笔记](../../Note%20Types/Code.md)。
+*   在要打印的笔记上，应用 `~printCss` 关系指向新创建的 CSS 代码笔记。
+*   要将 CSS 应用于多个笔记，请考虑使用[可继承属性](../../Advanced%20Usage/Attributes/Attribute%20Inheritance.md)或<a class="reference-link" href="../../Advanced%20Usage/Templates.md">模板</a>。
 
-For example, to change the font of the document from the one defined by the theme or the user to a serif one:
+例如，将文档的字体从主题或用户定义的字体更改为衬线字体：
 
 ```
 body {
@@ -127,20 +128,20 @@ body {
 ```
 
 > [!IMPORTANT]
-> When altering `--print-font-family`, make sure the change is done at `body` level and not `:root`, since otherwise it won't be picked up due to specificity rules.
+> 更改 `--print-font-family` 时，请确保更改是在 `body` 级别而不是 `:root` 级别进行的，否则由于特异性规则，更改将不会被应用。
 
-To remark:
+需要说明的是：
 
-*   Multiple CSS notes can be add by using multiple `~printCss` relations.
-*   If the note pointing to the `printCss` doesn't have the right note type or mime type, it will be ignored.
-*   If migrating from a previous version where <a class="reference-link" href="../../Theme%20development/Custom%20app-wide%20CSS.md">Custom app-wide CSS</a>, there's no need for `@media print {`  since the style-sheet is used only for printing.
+*   可以通过使用多个 `~printCss` 关系来添加多个 CSS 笔记。
+*   如果指向 `printCss` 的笔记没有正确的笔记类型或 MIME 类型，它将被忽略。
+*   如果从使用<a class="reference-link" href="../../Theme%20development/Custom%20app-wide%20CSS.md">自定义应用级 CSS</a>的先前版本迁移，则无需 `@media print {`，因为样式表仅用于打印。
 
-## Under the hood
+## 底层机制
 
-Both printing and exporting as PDF use the same mechanism: a note is rendered individually in a separate webpage that is then sent to the browser or the Electron application either for printing or exporting as PDF.
+打印和导出为 PDF 都使用相同的机制：笔记在单独的网页中单独渲染，然后发送到浏览器或 Electron 应用程序进行打印或导出为 PDF。
 
-The webpage that renders a single note can actually be accessed in a web browser. For example `http://localhost:8080/#root/WWRGzqHUfRln/RRZsE9Al8AIZ?ntxId=0o4fzk` becomes `http://localhost:8080/?print#root/WWRGzqHUfRln/RRZsE9Al8AIZ`.
+渲染单个笔记的网页实际上可以在 Web 浏览器中访问。例如，`http://localhost:8080/#root/WWRGzqHUfRln/RRZsE9Al8AIZ?ntxId=0o4fzk` 变为 `http://localhost:8080/?print#root/WWRGzqHUfRln/RRZsE9Al8AIZ`。
 
-Accessing the print note in a web browser allows for easy debugging to understand why a particular note doesn't render well. The mechanism for rendering is similar to the one used in <a class="reference-link" href="Note%20List.md">Note List</a>.
+在 Web 浏览器中访问打印笔记可以方便地进行调试，以了解特定笔记为何渲染不佳。渲染机制与<a class="reference-link" href="Note%20List.md">笔记列表</a>中使用的机制类似。
 
 1.  <sup><strong><a href="#fnrefsr779u3zm6">^</a></strong></sup>

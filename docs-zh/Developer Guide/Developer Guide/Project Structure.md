@@ -1,30 +1,30 @@
-# Project Structure
-As the application grew in complexity, we decided to switch to a monorepo based on `pnpm`. Our initial monorepo implementation used NX, but we've switched to pure `pnpm` workspaces and our own build scripts.
+# 项目结构
+随着应用程序复杂度的增加，我们决定改用基于 `pnpm` 的 monorepo。我们最初的 monorepo 实现使用了 NX，但我们已经转向纯 `pnpm` workspaces 和我们自己的构建脚本。
 
-## Project structure
+## 项目结构
 
-The mono-repo is mainly structured in:
+monorepo 主要结构如下：
 
-*   `apps`, representing runnable entry-points such as the `desktop`, the `server` but also additional tooling.
-    *   `client`, representing the front-end that is used both by the server and the desktop application.
-    *   `server`, representing the Node.js / server version of the application.
-    *   `desktop`, representing the Electron-based desktop application.
-    *   `web-clipper`, representing the browser extension to easily clip web pages into Trilium, with support for both Firefox and Chrome (manifest V3).
-*   `packages`, containing dependencies used by one or more `apps`.
-    *   `commons`, containing shared code for all the apps.
+*   `apps`，代表可运行的入口点，如 `desktop`、`server`，以及额外的工具。
+    *   `client`，代表前端，供服务器和桌面应用程序共同使用。
+    *   `server`，代表应用程序的 Node.js / 服务器版本。
+    *   `desktop`，代表基于 Electron 的桌面应用程序。
+    *   `web-clipper`，代表浏览器扩展，用于轻松将网页剪辑到 Trilium，支持 Firefox 和 Chrome（manifest V3）。
+*   `packages`，包含一个或多个 `apps` 使用的依赖项。
+    *   `commons`，包含所有应用程序共享的代码。
 
-## Working with the project
+## 使用项目
 
-For example to run the server instance:
+例如，要运行服务器实例：
 
 ```
 pnpm server:start
 ```
 
-## Running and building
+## 运行和构建
 
-Each application has a number of tasks. Here's a non-exhaustive list of the tasks that are useful during development. See <a class="reference-link" href="Building">Building</a>.
+每个应用程序都有许多任务。以下是开发过程中有用任务的不完整列表。参见 <a class="reference-link" href="Building">构建</a>。
 
-## Managing dependencies across the mono-repo
+## 管理 monorepo 中的依赖项
 
-We are using [pnpm workspaces](https://pnpm.io/workspaces) to manage the project structure. The workspace configuration is in `pnpm-workspace.yaml` at project level but it generally should not be modified.
+我们使用 [pnpm workspaces](https://pnpm.io/workspaces) 来管理项目结构。工作区配置位于项目级别的 `pnpm-workspace.yaml` 中，但通常不应修改。

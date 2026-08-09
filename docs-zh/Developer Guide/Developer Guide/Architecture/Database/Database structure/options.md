@@ -1,7 +1,8 @@
-# options
-| Column Name | Data Type | Nullity | Default value | Description |
+# 选项
+
+| 列名 | 数据类型 | 可空性 | 默认值 | 描述 |
 | --- | --- | --- | --- | --- |
-| `name` | Text | Non-null |  | The name of option (e.g. `maxContentWidth`) |
-| `value` | Text | Non-null |  | The value of the option. |
-| `isSynced` | Integer | Non-null | 0 | `0` if the option is not synchronized and thus can differ between clients, `1` if the option is synchronized. |
-| `utcDateModified` | Text | Non-null |  | Modification date in UTC format (e.g. `2023-11-08 16:43:44.204Z`) |
+| `name` | 文本 | 非空 |  | 选项名称（例如 `maxContentWidth`） |
+| `value` | 文本 | 非空 |  | 选项的值。 |
+| `isSynced` | 整数 | 非空 | 0 | 如果选项未同步，因此在不同客户端之间可能不同，则为 `0`；如果选项已同步，则为 `1`。 |
+| `utcDateModified` | 文本 | 非空 |  | 以 UTC 格式表示的修改日期（例如 `2023-11-08 16:43:44.204Z`） |

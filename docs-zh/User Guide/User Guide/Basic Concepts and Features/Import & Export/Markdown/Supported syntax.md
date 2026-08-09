@@ -1,74 +1,74 @@
-# Supported syntax
-[GitHub-Flavored Markdown](https://github.github.com/gfm/) is the main syntax that Trilium is following.
+# 支持的语法
+[GitHub 风格 Markdown](https://github.github.com/gfm/) 是 Trilium 遵循的主要语法。
 
-## Images
+## 图片
 
-When exporting, images are usually kept in the basic Markdown syntax but will use the HTML syntax if the image has a custom width. Figures are always embedded as HTML.
+导出时，图片通常保留基本的 Markdown 语法，但如果图片有自定义宽度，则会使用 HTML 语法。图形始终以 HTML 形式嵌入。
 
-## Tables
+## 表格
 
-Simple tables are supported with the Markdown syntax. If the table is too complex or contains elements that would render as HTML, the table is also rendered as HTML.
+简单的表格支持使用 Markdown 语法。如果表格过于复杂或包含会渲染为 HTML 的元素，则该表格也会以 HTML 形式渲染。
 
-## Links
+## 链接
 
-Standard Markdown links are supported.
+支持标准的 Markdown 链接。
 
-Trilium internal links (that mirror a note's title and display its icon) are embedded as HTML in order to preserve the information on import.
+Trilium 内部链接（镜像笔记标题并显示其图标）以 HTML 形式嵌入，以便在导入时保留信息。
 
-## Math equations
+## 数学公式
 
-Both inline and display equations are supported, using the `$` and `$$` syntaxes.
+支持行内公式和块级公式，使用 `$` 和 `$$` 语法。
 
-## Admonitions
+## 警示框
 
-The Markdown syntax for admonitions as supported by Trilium is the one that GitHub uses, which is as follows:
+Trilium 支持的警示框 Markdown 语法与 GitHub 使用的语法一致，如下所示：
 
 ```
 > [!NOTE]
-> This is a note.
+> 这是一个笔记。
 
 > [!TIP]
-> This is a tip.
+> 这是一个提示。
 
 > [!IMPORTANT]
-> This is a very important information.
+> 这是一条非常重要的信息。
 
 > [!CAUTION]
-> This is a caution.
+> 这是一个警告。
 ```
 
-There are currently no plans of supporting alternative admonition syntaxes such as `!!! note`.
+目前暂无计划支持其他警示框语法，例如 `!!! note`。
 
-## Wikilinks
+## Wiki 链接
 
-Basic support for wikilinks has been added in v0.96.0:
+v0.96.0 中增加了对 Wiki 链接的基本支持：
 
-*   `[[foo/bar]]` will look for the `bar.md` file in the `foo` directory and turn it into an internal link.
-*   `![[foo/baz.png]]` will look for the `baz.png` file in the `foo` directory and turn it into an image.
+*   `[[foo/bar]]` 将在 `foo` 目录中查找 `bar.md` 文件，并将其转换为内部链接。
+*   `![[foo/baz.png]]` 将在 `foo` 目录中查找 `baz.png` 文件，并将其转换为图片。
 
-This feature is import-only, which means that it will turn wikilinks into Trilium-compatible syntax, but it will not export Trilium Notes into Markdown files with this syntax.
+此功能仅用于导入，这意味着它会将 Wiki 链接转换为 Trilium 兼容的语法，但不会将 Trilium 笔记导出为使用此语法的 Markdown 文件。
 
 > [!IMPORTANT]
-> The path to pages in wikilinks is resolved relatively to the _import root_ and not the current directory of the note. This is to be inline with other platforms that use wikilinks such as SilverBullet.
+> Wiki 链接中页面的路径是相对于 _导入根目录_ 解析的，而不是相对于笔记的当前目录。这是为了与其他使用 Wiki 链接的平台（如 SilverBullet）保持一致。
 > 
-> The root path of the import is determined as follows:
+> 导入的根路径确定方式如下：
 > 
-> *   If there is a single directory within the archive at root level, then that directory is considered the root.
-> *   If there are multiple files & directories at root level, then the archive root (containing all of these items) is considered the root.
+> *   如果归档文件根级别只有一个目录，则该目录被视为根目录。
+> *   如果根级别有多个文件和目录，则归档根目录（包含所有这些项目）被视为根目录。
 
-## Highlights
+## 高亮
 
-Background highlights are supported in two ways:
+背景高亮支持两种方式：
 
-*   The Markdown `==` extension which is supported by other Markdown-based applications such as Obsidian:
+*   Markdown `==` 扩展语法，其他基于 Markdown 的应用（如 Obsidian）也支持此语法：
     
     ```
-    ==highlighted==
+    ==高亮==
     ```
-*   The canonical HTML representation of highlights, as supported by Trilium:
+*   Trilium 支持的规范 HTML 高亮表示形式：
     
     ```html
-    <span style="background-color:hsl(0,0%,100%);">Highlighted</span>
+    <span style="background-color:hsl(0,0%,100%);">高亮</span>
     ```
 
-When the yellow highlight is used, import/export prefers the `==` syntax whereas the canonical HTML reprepresentation is used otherwise.
+当使用黄色高亮时，导入/导出优先使用 `==` 语法，否则使用规范的 HTML 表示形式。

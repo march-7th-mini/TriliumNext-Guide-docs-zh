@@ -1,20 +1,21 @@
-# Downloading responses from Google Forms
-This tutorial showcases a basic integration with Google Forms, where we are able to download the responses of a form using the “Link to Sheets" functionality.
+# 从 Google 表单下载回复
 
-Note that the link will be publicly accessible to everyone (however the link is in a hard-to-guess format such as `https://docs.google.com/spreadsheets/d/e/2PACX-1vTA8NU2_eZFhc8TFadCZPreBfvP7un8IHd6J0SchrLLw3ueGmntNZjwRmsH2ZRcp1pJYDAzMz1FmFaj/pub?output=csv`). Make sure you are not accidentally publishing sensitive information.
+本教程展示了与 Google 表单的基本集成，我们可以使用“关联到表格”功能下载表单的回复。
 
-## Obtaining the CSV link
+请注意，该链接将对所有人公开可访问（不过链接格式难以猜测，例如 `https://docs.google.com/spreadsheets/d/e/2PACX-1vTA8NU2_eZFhc8TFadCZPreBfvP7un8IHd6J0SchrLLw3ueGmntNZjwRmsH2ZRcp1pJYDAzMz1FmFaj/pub?output=csv`）。请确保您不会意外发布敏感信息。
 
-1.  Open the Google Forms in a browser.
-2.  Select the “Responses” tab and click on “Link to Sheets”.
-3.  Select “Create a new spreadsheet” and press “Create”.
-4.  In Google Sheets, select File → Share → Publish to web.
-5.  In the “Publish to the web” screen, make sure the “Link” tab is selected and instead of “Web page”, select “Comma-separated values (.csv)”.
-6.  Copy the given link which will be used for the upcoming script.
+## 获取 CSV 链接
 
-## Creating the script
+1.  在浏览器中打开 Google 表单。
+2.  选择“回复”选项卡，然后点击“关联到表格”。
+3.  选择“创建新电子表格”，然后按“创建”。
+4.  在 Google 表格中，选择 文件 → 共享 → 发布到网络。
+5.  在“发布到网络”界面中，确保选中“链接”选项卡，并将“网页”改为“逗号分隔值 (.csv)”。
+6.  复制提供的链接，该链接将用于接下来的脚本。
 
-Create a “JS Frontend” script:
+## 创建脚本
+
+创建一个“JS 前端”脚本：
 
 ```
 const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTiwooLV2whjCSVa49dJ99p_G3_qhqHHRqttMjYCJVfLXVdTgUSNJu5K0rpqmaHYF2k7Vofi3o7gW82/pub?output=csv";
@@ -30,10 +31,10 @@ async function fetchData() {
 
 const data = await fetchData();
 console.log(data);
-// Do something with the data.
+// 对数据执行某些操作。
 ```
 
-Note that the data will be received as a string and there is no library to do the CSV parsing for us. To do a very simple parsing of CSV:
+请注意，数据将以字符串形式接收，并且没有库可供我们进行 CSV 解析。要进行非常简单的 CSV 解析：
 
 ```
 const content = data
@@ -42,4 +43,4 @@ const content = data
 	.map((row) => row.split(","));
 ```
 
-This will return the data as an array of arrays.
+这将把数据作为数组的数组返回。

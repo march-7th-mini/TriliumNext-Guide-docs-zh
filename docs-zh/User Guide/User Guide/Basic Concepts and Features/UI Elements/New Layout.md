@@ -1,148 +1,149 @@
-# New Layout
-The _New layout_ is a series of UI/UX changes that were introduced in v0.101.0 that heavily change both existing UI elements, as well as adding some new ones. The goal of this new layout is to modernize the application and to make it more intuitive but at the same time to reduce clutter.
+# 新布局
 
-## Newly introduced features
+_新布局_ 是在 v0.101.0 中引入的一系列 UI/UX 更改，它极大地改变了现有的 UI 元素，并添加了一些新元素。此新布局的目标是使应用程序现代化，使其更直观，同时减少杂乱。
 
-### Status bar
+## 新引入的功能
 
-At the bottom of the window there is a new bar called the _Status bar_. This bar houses multiple items such as the Breadcrumb navigation and information and settings about the current note, such as the [content language](../../Note%20Types/Text/Content%20language%20%26%20Right-to-left%20support.md) and <a class="reference-link" href="../../Advanced%20Usage/Attributes.md">Attributes</a>.
+### 状态栏
 
-For more information, consult the [dedicated page](New%20Layout/Status%20bar.md).
+窗口底部有一个名为 _状态栏_ 的新栏。此栏包含多个项目，例如面包屑导航以及当前笔记的信息和设置，如[内容语言](../../Note%20Types/Text/Content%20language%20%26%20Right-to-left%20support.md)和<a class="reference-link" href="../../Advanced%20Usage/Attributes.md">属性</a>。
+
+有关更多信息，请参阅[专门页面](New%20Layout/Status%20bar.md)。
 
 <figure class="image"><img style="aspect-ratio:1150/27;" src="5_New Layout_image.png" width="1150" height="27"></figure>
 
-### Inline title
+### 内联标题
 
-In previous versions of Trilium, the title bar was fixed at all times. In the new layout, there is both a fixed title bar and one that scrolls with the text. The newly introduced title is called the _Inline title_ and it displays the title in a larger font, while also displaying additional information such as the creation and the modification date.
+在以前版本的 Trilium 中，标题栏始终是固定的。在新布局中，既有固定的标题栏，也有随文本滚动的标题栏。新引入的标题称为 _内联标题_，它以更大的字体显示标题，同时还显示其他信息，例如创建日期和修改日期。
 
-Whenever the title is scrolled past, the fixed title is shown instead.
+每当标题滚动过去时，就会显示固定的标题。
 
-This only affects <a class="reference-link" href="../../Note%20Types/Text.md">Text</a> and <a class="reference-link" href="../../Note%20Types/Code.md">Code</a> notes. Note types that take the entirety of the screen such as <a class="reference-link" href="../../Note%20Types/Canvas.md">Canvas</a> will always have only the fixed title bar.
+这仅影响<a class="reference-link" href="../../Note%20Types/Text.md">文本</a>和<a class="reference-link" href="../../Note%20Types/Code.md">代码</a>笔记。占据整个屏幕的笔记类型（例如<a class="reference-link" href="../../Note%20Types/Canvas.md">画布</a>）将始终只有固定的标题栏。
 
-Depending on the note type, the inline title will also present some more interactive options such as being able to switch the note type (see below).
+根据笔记类型的不同，内联标题还会提供一些更交互式的选项，例如能够切换笔记类型（见下文）。
 
-<figure class="image"><img style="aspect-ratio:899/122;" src="New Layout_image.png" width="899" height="122"><figcaption>The <em>Inline title</em>, which is displayed at the top of the note and can be scrolled past.</figcaption></figure><figure class="image"><img style="aspect-ratio:910/104;" src="4_New Layout_image.png" width="910" height="104"><figcaption>The fixed title bar. The title only appears after scrolling past the <em>Inline title</em>.</figcaption></figure>
+<figure class="image"><img style="aspect-ratio:899/122;" src="New Layout_image.png" width="899" height="122"><figcaption>_内联标题_，显示在笔记顶部，可以滚动过去。</figcaption></figure><figure class="image"><img style="aspect-ratio:910/104;" src="4_New Layout_image.png" width="910" height="104"><figcaption>固定标题栏。只有在滚动过 _内联标题_ 后才会显示标题。</figcaption></figure>
 
-### New note type switcher
+### 新的笔记类型切换器
 
-When a new <a class="reference-link" href="../../Note%20Types/Text.md">Text</a> or <a class="reference-link" href="../../Note%20Types/Code.md">Code</a> note is created, a note type switcher will appear below the _Inline title_. Apart from changing the note type, it's also possible to apply a [template](../../Advanced%20Usage/Templates.md).
+当创建新的<a class="reference-link" href="../../Note%20Types/Text.md">文本</a>或<a class="reference-link" href="../../Note%20Types/Code.md">代码</a>笔记时，_内联标题_ 下方会出现一个笔记类型切换器。除了更改笔记类型外，还可以应用[模板](../../Advanced%20Usage/Templates.md)。
 
-The switcher will disappear as soon as a text is entered.
+一旦输入文本，切换器就会消失。
 
 <img src="6_New Layout_image.png" width="735" height="143">
 
-### Note badges
+### 笔记徽章
 
-Note badges appear near the fixed note title and indicate important information about the note such as whether it is read-only. Some of the badges are also interactive.
+笔记徽章出现在固定笔记标题附近，指示有关笔记的重要信息，例如它是否为只读。某些徽章也是可交互的。
 
 <figure class="image"><img style="aspect-ratio:910/49;" src="3_New Layout_image.png" width="910" height="49"></figure>
 
-The following badges are available:
+可用的徽章如下：
 
-*   **Read-only badge**, which will be shown if the note is not editable due to either automatic read-only or manual read-only. Clicking on the badge will temporarily edit the note (similar to the Edit [floating button](Floating%20buttons.md)).
-*   **Share badge**, which will indicate that the current note is shared. The badge will also indicate if the share is on the local network (for the desktop application without <a class="reference-link" href="../../Installation%20%26%20Setup/Synchronization.md">Synchronization</a> set up) or publicly accessible (for the server).
-*   **Web clip badge**, which will indicate if the note was clipped using the <a class="reference-link" href="../../Installation%20%26%20Setup/Web%20Clipper.md">Web Clipper</a>. The badge acts as a link, so it can be clicked on to navigate to the page or right clicked for more options.
-*   **Execute badge**, for [scripts](../../Scripting.md) or [saved SQL queries](../../Advanced%20Usage/Database/Manually%20altering%20the%20database/SQL%20Console.md) which have an execute button or a description.
+*   **只读徽章**，如果笔记因自动只读或手动只读而无法编辑，则会显示。点击该徽章将临时编辑笔记（类似于编辑[浮动按钮](Floating%20buttons.md)）。
+*   **分享徽章**，指示当前笔记已共享。该徽章还会指示共享是在本地网络上（对于未设置<a class="reference-link" href="../../Installation%20%26%20Setup/Synchronization.md">同步</a>的桌面应用程序）还是可公开访问（对于服务器）。
+*   **网页剪藏徽章**，指示笔记是否使用<a class="reference-link" href="../../Installation%20%26%20Setup/Web%20Clipper.md">网页剪藏器</a>剪藏。该徽章充当链接，因此可以单击以导航到页面或右键单击以获取更多选项。
+*   **执行徽章**，用于具有执行按钮或描述的[脚本](../../Scripting.md)或[已保存的 SQL 查询](../../Advanced%20Usage/Database/Manually%20altering%20the%20database/SQL%20Console.md)。
 
-Some of these badges replace the dedicated panels at the top of the note.
+其中一些徽章取代了笔记顶部的专用面板。
 
-### Collapsible sections
+### 可折叠部分
 
 <figure class="image"><img style="aspect-ratio:496/265;" src="1_New Layout_image.png" width="496" height="265"></figure>
 
-The following sections have been made collapsible:
+以下部分已变为可折叠：
 
-*   _Promoted Attributes_
-    *   For full-height notes such as <a class="reference-link" href="../../Note%20Types/Canvas.md">Canvas</a>, the promoted attributes are collapsed by default to make room.
-    *   The keyboard shortcut previously used to trigger the promoted attributes ribbon tab (which was no longer working) has been repurposed to toggle the promoted attributes instead.
-*   _Edited Notes_, which appears for <a class="reference-link" href="../../Advanced%20Usage/Advanced%20Showcases/Day%20Notes.md">Day Notes</a> is now shown underneath the title.
-    *   Whether the section is collapsed or not depends on the choice in <a class="reference-link" href="Options.md">Options</a> → Appearance.
-*   _Search Properties_, which appears for the full <a class="reference-link" href="../Navigation/Search.md">Search</a> and <a class="reference-link" href="../../Note%20Types/Saved%20Search.md">Saved Search</a>.
+*   _提升属性_
+    *   对于全高笔记（如<a class="reference-link" href="../../Note%20Types/Canvas.md">画布</a>），提升属性默认折叠以腾出空间。
+    *   以前用于触发提升属性功能区选项卡（已不再起作用）的键盘快捷键已被重新用于切换提升属性。
+*   _已编辑笔记_，出现在<a class="reference-link" href="../../Advanced%20Usage/Advanced%20Showcases/Day%20Notes.md">日记</a>中，现在显示在标题下方。
+    *   该部分是否折叠取决于<a class="reference-link" href="Options.md">选项</a> → 外观中的选择。
+*   _搜索属性_，出现在完整的<a class="reference-link" href="../Navigation/Search.md">搜索</a>和<a class="reference-link" href="../../Note%20Types/Saved%20Search.md">已保存搜索</a>中。
 
-### Save status indicator
+### 保存状态指示器
 
-<img class="image-style-align-right" src="2_New Layout_image.png" width="168" height="47">To the right of the note title, a temporary indicators appears after making a change to the document that indicates whether the document has been saved.
+<img class="image-style-align-right" src="2_New Layout_image.png" width="168" height="47">在笔记标题的右侧，对文档进行更改后会出现一个临时指示器，指示文档是否已保存。
 
-It indicates the following states:
+它指示以下状态：
 
-*   _Unsaved_, if the changes will be saved soon.
-*   _Saving_, if the changes are being saved.
-*   _Saved_, if all the changes were successfully saved to the server.
-*   _Error_, if the changes could not be saved, for example due to a communication server with the server.
+*   _未保存_，如果更改即将保存。
+*   _正在保存_，如果更改正在保存中。
+*   _已保存_，如果所有更改都已成功保存到服务器。
+*   _错误_，如果更改无法保存，例如由于与服务器的通信问题。
 
-After all changes have been saved, the indicator will hide automatically after a few seconds.
+在所有更改都已保存后，指示器会在几秒钟后自动隐藏。
 
-## Changing to the existing layout
+## 对现有布局的更改
 
-### Removal of the ribbon
+### 移除功能区
 
-The most significant change is the removal of the ribbon. All the actions and options from the ribbon were integrated in other places in the application.
+最显著的变化是移除了功能区。功能区中的所有操作和选项都已集成到应用程序的其他位置。
 
-Here's how all the different tabs that were once part of the ribbon are now available in the new layout:
+以下是曾经属于功能区的不同选项卡现在在新布局中的可用方式：
 
-*   “Formatting toolbar” was relocated to the top of the page.
-    *   Instead of having one per split, now there is a single formatting toolbar per tab. This allows more space for the toolbar items.
-*   “Owned attributes” and “Inherited attributes” were merged and moved to the status bar region (displayed one above the other).
-*   “Basic Properties” were integrated in the <a class="reference-link" href="Note%20buttons.md">Note buttons</a> menu.
-    *   The only exception here is the Language combo box which can now be found in the status bar (top-right of the screen).
-*   “File” and “Image” tabs
-    *   The buttons were moved to the right of the note title, as dedicated entries in <a class="reference-link" href="Note%20buttons.md">Note buttons</a>.
-    *   The info section has been merged into the _Note info_ section of the status bar.
-*   Edited notes
-    *   Moved underneath the title, displayed under a collapsible area and the notes are represented as badges/chips.
-    *   Whether the section is expanded or collapsed depends on the “Edited Notes ribbon tab will automatically open on day notes” setting from Options → Appearance.
-*   Search definition tab
-    *   Moved underneath the title under a collapsible area.
-    *   Expanded by default for new searches, collapsed for saved searches.
-*   The Note map is now available in the Note actions menu.
-    *   Instead of opening into a panel in the ribbon, the note map now opens in the sidebar, in the <a class="reference-link" href="Right%20Sidebar/Connections%20tab.md">Connections tab</a> where it can also be maximized.
-*   “Note info” tab was moved to a small (i) icon in the status bar.
-*   “Similar notes” tab
-    *   Instead of opening into a panel in the ribbon, the similar notes are now shown in the sidebar, in the <a class="reference-link" href="Right%20Sidebar/Connections%20tab.md">Connections tab</a>.
-*   The Collection properties tab were relocated under the note title and grouped into:
-    *   A combo box to quickly switch between views.
-    *   Individual settings for the current view in a submenu.
-*   Some smaller ribbon tabs were converted to badges that appear near the note title in the breadcrumb section:
-    *   Original URL indicator for clipped web pages (`#pageUrl`).
-    *   SQL and script execute buttons.
+*   “格式工具栏”已重新定位到页面顶部。
+    *   现在每个选项卡只有一个格式工具栏，而不是每个分屏一个。这为工具栏项目提供了更多空间。
+*   “自有属性”和“继承属性”已合并并移至状态栏区域（上下显示）。
+*   “基本属性”已集成到<a class="reference-link" href="Note%20buttons.md">笔记按钮</a>菜单中。
+    *   唯一的例外是语言组合框，现在可以在状态栏（屏幕右上角）中找到它。
+*   “文件”和“图片”选项卡
+    *   按钮已移至笔记标题右侧，作为<a class="reference-link" href="Note%20buttons.md">笔记按钮</a>中的专用条目。
+    *   信息部分已合并到状态栏的 _笔记信息_ 部分。
+*   已编辑笔记
+    *   移至标题下方，显示在可折叠区域下，笔记以徽章/标签形式表示。
+    *   该部分是展开还是折叠取决于选项 → 外观中的“已编辑笔记功能区选项卡将在日记上自动打开”设置。
+*   搜索定义选项卡
+    *   移至标题下方的可折叠区域。
+    *   对于新搜索默认展开，对于已保存搜索默认折叠。
+*   笔记图谱现在可以在笔记操作菜单中找到。
+    *   笔记图谱不再是打开到功能区中的面板，而是在侧边栏的<a class="reference-link" href="Right%20Sidebar/Connections%20tab.md">连接选项卡</a>中打开，并且可以在那里最大化。
+*   “笔记信息”选项卡已移至状态栏中的一个小 (i) 图标。
+*   “相似笔记”选项卡
+    *   相似笔记不再是打开到功能区中的面板，而是在侧边栏的<a class="reference-link" href="Right%20Sidebar/Connections%20tab.md">连接选项卡</a>中显示。
+*   集合属性选项卡已重新定位到笔记标题下方，并分组为：
+    *   一个用于快速切换视图的组合框。
+    *   子菜单中当前视图的单独设置。
+*   一些较小的功能区选项卡已转换为徽章，显示在面包屑区域的笔记标题附近：
+    *   剪藏网页的原始 URL 指示器（`#pageUrl`）。
+    *   SQL 和脚本执行按钮。
 
-> [!NOTE]
-> The ribbon keyboard shortcuts (e.g. `toggleRibbonTabClassicEditor`) have been repurposed to work on the new layout, where they will toggle the appropriate panel.
+> [!注意]
+> 功能区键盘快捷键（例如 `toggleRibbonTabClassicEditor`）已被重新用于新布局，它们将切换相应的面板。
 
-### Removal of the floating buttons
+### 移除浮动按钮
 
-Most of the buttons were relocated to the right of the note title, in the <a class="reference-link" href="Note%20buttons.md">Note buttons</a> area, with the exception of:
+大多数按钮已重新定位到笔记标题右侧的<a class="reference-link" href="Note%20buttons.md">笔记按钮</a>区域，但以下情况除外：
 
-*   The Edit button is displayed near the note title, as a badge.
-*   _Backlinks_ are now displayed in the sidebar, in the <a class="reference-link" href="Right%20Sidebar/Connections%20tab.md">Connections tab</a>.
-    *   Alternatively, the backlinks count is displayed in the status bar and when clicked the sidebar opens at the right section.
-*   Relation map zoom buttons are now part of the relation map itself.
-*   Export image to PNG/SVG are now in the Note actions menu, in the _Export as image_ option.
+*   编辑按钮作为徽章显示在笔记标题附近。
+*   _反链_ 现在显示在侧边栏的<a class="reference-link" href="Right%20Sidebar/Connections%20tab.md">连接选项卡</a>中。
+    *   或者，反链计数显示在状态栏中，点击后侧边栏会在相应部分打开。
+*   关系图谱缩放按钮现在是关系图谱本身的一部分。
+*   导出为 PNG/SVG 图像现在位于笔记操作菜单中的 _导出为图像_ 选项下。
 
-### Changes to the sidebar
+### 侧边栏的更改
 
-The sidebar (also known as the right pane) also received some important changes.
+侧边栏（也称为右侧窗格）也进行了一些重要的更改。
 
-Most importantly, v0.105.0 splits the sidebar into multiple tabs with additional functionality:
+最重要的是，v0.105.0 将侧边栏拆分为多个具有附加功能的选项卡：
 
-*   <a class="reference-link" href="Right%20Sidebar/Outline%20tab.md">Outline tab</a>, which gathers the table of contents and highlights lists.
-*   <a class="reference-link" href="Right%20Sidebar/Attributes%20tab.md">Attributes tab</a>, which provides a graphical method of editing labels, relations and (promoted) attribute definitions.
-*   A dedicated <a class="reference-link" href="Right%20Sidebar/AI%20chat%20tab.md">AI chat tab</a>.
-*   <a class="reference-link" href="Right%20Sidebar/Connections%20tab.md">Connections tab</a>, which groups together the note map, note paths, backlinks and similar notes.
+*   <a class="reference-link" href="Right%20Sidebar/Outline%20tab.md">大纲选项卡</a>，汇集了目录和高亮列表。
+*   <a class="reference-link" href="Right%20Sidebar/Attributes%20tab.md">属性选项卡</a>，提供了一种图形化的方法来编辑标签、关系和（提升的）属性定义。
+*   一个专用的<a class="reference-link" href="Right%20Sidebar/AI%20chat%20tab.md">AI 对话选项卡</a>。
+*   <a class="reference-link" href="Right%20Sidebar/Connections%20tab.md">连接选项卡</a>，将笔记图谱、笔记路径、反链和相似笔记组合在一起。
 
-The previous iteration of the sidebar would appear contextually, depending on whether there are any items to be displayed. This caused occasional content shifts when moving between two panes in a split view. In the new layout, the sidebar acts more like the <a class="reference-link" href="Note%20Tree.md">Note Tree</a> pane, remaining visible even if there is nothing to display.
+以前版本的侧边栏会根据是否有要显示的项目而按上下文显示。这导致在分屏视图中的两个窗格之间移动时偶尔会发生内容偏移。在新布局中，侧边栏更像<a class="reference-link" href="Note%20Tree.md">笔记树</a>窗格，即使没有要显示的内容也保持可见。
 
-In order to toggle the sidebar, there is a new button on the top-right side of the screen, near the window buttons (on Windows and Linux).
+为了切换侧边栏，屏幕右上角靠近窗口按钮（在 Windows 和 Linux 上）有一个新按钮。
 
-Now each section of the sidebar (e.g. “Table of Contents”, “Highlights list”) is individually collapsible and will remember whether it was collapsed.
+现在，侧边栏的每个部分（例如“目录”、“高亮列表”）都可以单独折叠，并会记住其折叠状态。
 
-Some sidebar items also have a contextual menu, indicated by the three dots on the title. For example, the highlights filter can be adjusted directly from that menu. 
+一些侧边栏项目也有一个上下文菜单，由标题上的三个点表示。例如，可以直接从该菜单调整高亮过滤器。
 
-Custom widgets are still supported. For custom scripts, the three dots menu allows quick navigation to the corresponding script note.
+自定义小组件仍然受支持。对于自定义脚本，三点菜单允许快速导航到相应的脚本笔记。
 
-## How to toggle the new layout
+## 如何切换新布局
 
-Starting with v0.101.0, this new layout is enabled by default. It is possible to fall back to the old layout by going to <a class="reference-link" href="Options.md">Options</a> → Appearance and selecting _Old layout_.
+从 v0.101.0 开始，此新布局默认启用。可以通过转到<a class="reference-link" href="Options.md">选项</a> → 外观并选择 _旧布局_ 来回退到旧布局。
 
-> [!IMPORTANT]
-> Since a new layout was introduced, this becomes the standard one. The _Old layout_ is considered deprecated and will not receive new features (for example, the breadcrumb) as we focus on the new one. At some point the old layout will be removed entirely, as maintaining two layouts with major differences creates a maintenance burden.
+> [!重要]
+> 由于引入了新布局，这已成为标准布局。_旧布局_ 被视为已弃用，并且不会获得新功能（例如面包屑），因为我们专注于新布局。在某个时候，旧布局将被完全移除，因为维护两个差异巨大的布局会造成维护负担。

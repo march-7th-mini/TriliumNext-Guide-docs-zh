@@ -1,113 +1,113 @@
-# Quick search
+# 快速搜索
 <figure class="image image-style-align-center"><img style="aspect-ratio:659/256;" src="Quick search_image.png" width="659" height="256"></figure>
 
-The _Quick search_ function does a full-text search (that is, it searches through the content of notes and not just the title of a note) and displays the result in an easy-to-access manner.
+_快速搜索_功能执行全文搜索（即搜索笔记内容而不仅仅是笔记标题），并以易于访问的方式显示结果。
 
-The alternative to the quick search is the <a class="reference-link" href="Search.md">Search</a> function, which opens in a dedicated tab and has support for advanced queries.
+快速搜索的替代方案是<a class="reference-link" href="Search.md">搜索</a>功能，它在专用标签页中打开，并支持高级查询。
 
-For even faster navigation, it's possible to use <a class="reference-link" href="Jump%20to%20%26%20command%20palette.md">Jump to...</a> which will only search through the note titles instead of the content.
+为了实现更快速的导航，可以使用<a class="reference-link" href="Jump%20to%20%26%20command%20palette.md">跳转到...</a>，它只搜索笔记标题而非内容。
 
-## Layout
+## 布局
 
-Based on the <a class="reference-link" href="../UI%20Elements/Vertical%20and%20horizontal%20layout.md">Vertical and horizontal layout</a>, the quick search is placed:
+根据<a class="reference-link" href="../UI%20Elements/Vertical%20and%20horizontal%20layout.md">垂直和水平布局</a>，快速搜索的位置如下：
 
-*   On the vertical layout, it is displayed right above the <a class="reference-link" href="../UI%20Elements/Note%20Tree.md">Note Tree</a>.
-*   On the horizontal layout, it is displayed in the <a class="reference-link" href="../UI%20Elements/Launch%20Bar.md">Launch Bar</a>, where it can be positioned just like any other icon.
+*   在垂直布局中，它显示在<a class="reference-link" href="../UI%20Elements/Note%20Tree.md">笔记树</a>的正上方。
+*   在水平布局中，它显示在<a class="reference-link" href="../UI%20Elements/Launch%20Bar.md">启动栏</a>中，可以像任何其他图标一样定位。
 
-## Search Features
+## 搜索功能
 
-Quick search includes the following features:
+快速搜索包括以下功能：
 
-### Content Previews
+### 内容预览
 
-Search results now display a 200-character preview of the note content below the note title. This preview shows the context where your search terms appear, making it easier to identify the right note without opening it.
+搜索结果现在会在笔记标题下方显示 200 个字符的笔记内容预览。此预览显示搜索词出现的上下文，使您无需打开笔记即可更轻松地识别正确的笔记。
 
-### Infinite Scrolling
+### 无限滚动
 
-Results are loaded progressively as you scroll:
+结果会在您滚动时逐步加载：
 
-*   Initial display shows 15 results
-*   Scrolling near the bottom automatically loads 10 more results
-*   Continue scrolling to load all matching notes
+*   初始显示 15 条结果
+*   滚动到接近底部时自动加载 10 条更多结果
+*   继续滚动以加载所有匹配的笔记
 
-### Visual Features
+### 视觉功能
 
-*   **Highlighting**: Search terms appear in bold with accent colors
-*   **Separation**: Results are separated with dividers
-*   **Theme Support**: Highlighting colors adapt to light/dark themes
+*   **高亮显示**：搜索词以粗体和强调色显示
+*   **分隔**：结果之间用分隔线隔开
+*   **主题支持**：高亮颜色适应浅色/深色主题
 
-### Search Behavior
+### 搜索行为
 
-Quick search uses progressive search:
+快速搜索使用渐进式搜索：
 
-1.  Shows exact matches first
-2.  Includes fuzzy matches when exact results are fewer than 5
-3.  Exact matches appear before fuzzy matches
+1.  首先显示精确匹配
+2.  当精确结果少于 5 条时，包含模糊匹配
+3.  精确匹配排在模糊匹配之前
 
-### Keyboard Navigation
+### 键盘导航
 
-*   Press `Enter` to open the first result
-*   Use arrow keys to navigate through results
-*   Press `Escape` to close the quick search
+*   按 `Enter` 打开第一个结果
+*   使用箭头键在结果中导航
+*   按 `Escape` 关闭快速搜索
 
-## Using Quick Search
+## 使用快速搜索
 
-1.  **Typo tolerance**: Search finds results despite minor typos
-2.  **Content previews**: 200-character snippets show match context
-3.  **Infinite scrolling**: Additional results load on scroll
-4.  **Specific terms**: Specific search terms return more focused results
-5.  **Match locations**: Bold text indicates where matches occur
+1.  **拼写容错**：即使有轻微拼写错误也能找到结果
+2.  **内容预览**：200 字符的片段显示匹配上下文
+3.  **无限滚动**：滚动时加载更多结果
+4.  **特定术语**：特定的搜索词返回更精确的结果
+5.  **匹配位置**：粗体文本指示匹配发生的位置
 
-## Quick Search - Exact Match Operator
+## 快速搜索 - 精确匹配运算符
 
-Quick Search now supports the exact match operator (`=`) at the beginning of your search query. This allows you to search for notes where the title or content exactly matches your search term, rather than just containing it.
+快速搜索现在支持在搜索查询开头使用精确匹配运算符（`=`）。这允许您搜索标题或内容与搜索词完全匹配的笔记，而不仅仅是包含搜索词。
 
-### Usage
+### 用法
 
-To use exact match in Quick Search:
+要在快速搜索中使用精确匹配：
 
-1.  Start your search query with the `=` operator
-2.  Follow it immediately with your search term (no space after `=`)
+1.  以 `=` 运算符开始搜索查询
+2.  紧跟搜索词（`=` 后无空格）
 
-#### Examples
+#### 示例
 
-*   `=example` - Finds notes with title exactly "example" or content exactly "example"
-*   `=Project Plan` - Finds notes with title exactly "Project Plan" or content exactly "Project Plan"
-*   `='hello world'` - Use quotes for multi-word exact matches
+*   `=example` - 查找标题完全为“example”或内容完全为“example”的笔记
+*   `=Project Plan` - 查找标题完全为“Project Plan”或内容完全为“Project Plan”的笔记
+*   `='hello world'` - 使用引号进行多词精确匹配
 
-#### Comparison with Regular Search
+#### 与常规搜索的比较
 
-| Query | Behavior |
+| 查询 | 行为 |
 | --- | --- |
-| `example` | Finds all notes containing "example" anywhere in title or content |
-| `=example` | Finds only notes where the title equals "example" or content equals "example" exactly |
+| `example` | 查找标题或内容中任何位置包含“example”的所有笔记 |
+| `=example` | 仅查找标题完全等于“example”或内容完全等于“example”的笔记 |
 
-### Technical Details
+### 技术细节
 
-When you use the `=` operator:
+使用 `=` 运算符时：
 
-*   The search performs an exact match on note titles
-*   For note content, it looks for exact matches of the entire content
-*   Partial word matches are excluded
-*   The search is case-insensitive
+*   搜索对笔记标题执行精确匹配
+*   对于笔记内容，它查找整个内容的精确匹配
+*   排除部分单词匹配
+*   搜索不区分大小写
 
-### Limitations
+### 限制
 
-*   The `=` operator must be at the very beginning of the search query
-*   Spaces after `=` will treat it as a regular search
-*   Multiple `=` operators (like `==example`) are treated as regular text search
+*   `=` 运算符必须位于搜索查询的最开头
+*   `=` 后的空格将使其被视为常规搜索
+*   多个 `=` 运算符（如 `==example`）被视为常规文本搜索
 
-### Use Cases
+### 使用场景
 
-This feature is particularly useful when:
+此功能在以下情况下特别有用：
 
-*   You know the exact title of a note
-*   You want to find notes with specific, complete content
-*   You need to distinguish between notes with similar but not identical titles
-*   You want to avoid false positives from partial matches
+*   您知道笔记的确切标题
+*   您想查找具有特定完整内容的笔记
+*   您需要区分标题相似但不完全相同的笔记
+*   您想避免部分匹配产生的误报
 
-### Related Features
+### 相关功能
 
-*   For more complex exact matching queries, use the full [Search](Search.md) functionality
-*   For fuzzy matching (finding results despite typos), use the `~=` operator in the full search
-*   For partial matches with wildcards, use operators like `*=*`, `=*`, or `*=` in the full search
+*   对于更复杂的精确匹配查询，请使用完整的[搜索](Search.md)功能
+*   对于模糊匹配（即使有拼写错误也能找到结果），请在完整搜索中使用 `~=` 运算符
+*   对于带通配符的部分匹配，请在完整搜索中使用 `*=*`、`=*` 或 `*=` 等运算符

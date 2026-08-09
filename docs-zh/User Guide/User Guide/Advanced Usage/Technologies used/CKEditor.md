@@ -1,34 +1,34 @@
 # CKEditor
-## Editor core
+## 编辑器核心
 
-The CKEditor is the WYSIWYG (standing for What You See Is What You Get) editor behind [Text](../../Note%20Types/Text.md) notes.
+CKEditor 是支持 [文本](../../Note%20Types/Text.md) 笔记的所见即所得（WYSIWYG，即“你所见即你所得到”）编辑器。
 
-Their website is [ckeditor.com](https://ckeditor.com/).
+其官方网站为 [ckeditor.com](https://ckeditor.com/)。
 
-CKEditor by itself is a commercial product, but the core is open-source. As described in [its documentation](https://ckeditor.com/docs/ckeditor5/latest/features/index.html), the editor supports quite a large number of features. Do note that not all the features are enabled in Trilium.
+CKEditor 本身是一个商业产品，但其核心是开源的。正如其 [文档](https://ckeditor.com/docs/ckeditor5/latest/features/index.html) 所述，该编辑器支持相当多的功能。请注意，并非所有功能都在 Trilium 中启用。
 
-## Premium features
+## 高级功能
 
-Some features are marked as premium in the CKEditor feature set. This means that they cannot be used without a license.
+CKEditor 功能集中的某些功能被标记为高级功能。这意味着，没有许可证则无法使用这些功能。
 
-Trilium cannot benefit from any of these premium features as they require a commercial license, however we are in discussions with the CKEditor team to allow us to use a subset of these premium features such as [Slash commands](https://ckeditor.com/docs/ckeditor5/latest/features/slash-commands.html).
+Trilium 无法使用任何这些高级功能，因为它们需要商业许可证。不过，我们正在与 CKEditor 团队进行讨论，以期允许我们使用其中一部分高级功能，例如 [斜杠命令](https://ckeditor.com/docs/ckeditor5/latest/features/slash-commands.html)。
 
-## Plugins
+## 插件
 
-The CKEditor ecosystem is quite extensible, in the sense that custom plugins can be written to extend the functionality of the editor beyond its original scope.
+CKEditor 生态系统具有很高的可扩展性，这意味着可以编写自定义插件来扩展编辑器的功能，使其超越原有范围。
 
-Trilium makes use of such features:
+Trilium 利用了此类功能：
 
-*   The math feature is added by a version of [isaul32/ckeditor5-math: Math feature for CKEditor 5.](https://github.com/isaul32/ckeditor5-math) modified by us to fit our needs.
-*   We also make use of modified upstream plugins such as [ckeditor/ckeditor5-mermaid](https://github.com/ckeditor/ckeditor5-mermaid) to allow inline Mermaid code.
+*   数学公式功能是通过 [isaul32/ckeditor5-math: Math feature for CKEditor 5.](https://github.com/isaul32/ckeditor5-math) 的一个版本添加的，我们对其进行了修改以适应我们的需求。
+*   我们还使用了修改后的上游插件，例如 [ckeditor/ckeditor5-mermaid](https://github.com/ckeditor/ckeditor5-mermaid)，以支持内联的 Mermaid 代码。
 *   [mlewand/ckeditor5-keyboard-marker: Plugin adds support for the keyboard input element (`<kbd>`) to CKEditor 5.](https://github.com/mlewand/ckeditor5-keyboard-marker)
-*   A modified version of [ThomasAitken/ckeditor5-footnotes: Footnotes plugin for CKEditor5](https://github.com/ThomasAitken/ckeditor5-footnotes) to allow footnotes.
+*   [ThomasAitken/ckeditor5-footnotes: Footnotes plugin for CKEditor5](https://github.com/ThomasAitken/ckeditor5-footnotes) 的一个修改版本，用于支持脚注。
 
-Apart from that, Trilium also has its own set of specific plugins such as:
+除此之外，Trilium 还有自己的一套特定插件，例如：
 
-*   <a class="reference-link" href="../../Note%20Types/Text/Cut%20to%20subnote.md">Cut to subnote</a>
-*   <a class="reference-link" href="../../Note%20Types/Text/Include%20Note.md">Include Note</a>
-*   Mentions, for linking pages.
+*   <a class="reference-link" href="../../Note%20Types/Text/Cut%20to%20subnote.md">剪切到子笔记</a>
+*   <a class="reference-link" href="../../Note%20Types/Text/Include%20Note.md">包含笔记</a>
+*   提及（Mentions），用于链接页面。
 *   <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/Import%20%26%20Export/Markdown.md">Markdown</a>
-*   [Reference links](../../Note%20Types/Text/Links.md)
-*   [Admonitions](../../Note%20Types/Text/Block%20quotes%20%26%20admonitions.md), we ended up creating our own plugin but [aarkue/ckeditor5-admonition](https://github.com/aarkue/ckeditor5-admonition) was a good inspiration (including the toolbar icon).
+*   [引用链接](../../Note%20Types/Text/Links.md)
+*   [警示框](../../Note%20Types/Text/Block%20quotes%20%26%20admonitions.md)，我们最终创建了自己的插件，但 [aarkue/ckeditor5-admonition](https://github.com/aarkue/ckeditor5-admonition) 提供了很好的灵感（包括工具栏图标）。

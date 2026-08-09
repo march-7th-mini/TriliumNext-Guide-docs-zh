@@ -1,258 +1,258 @@
-# Geo Map
+# 地理地图
 <figure class="image"><img style="aspect-ratio:1561/1149;" src="Geo Map_image.png" width="1561" height="1149"></figure>
 
-This note type displays the children notes on a geographical map, based on an attribute. It is also possible to add new notes at a specific location using the built-in interface.
+此笔记类型基于属性在地图上显示子笔记。也可以使用内置界面在特定位置添加新笔记。
 
-## Features
+## 功能特性
 
-*   Add markers on the map, which can be customized with icons, colors and text.
-*   Display tracks on the map using `.gpx` files.
-*   3D view of the map, which displays buildings when using a vector map.
+*   在地图上添加标记，可自定义图标、颜色和文本。
+*   使用 `.gpx` 文件在地图上显示轨迹。
+*   地图的 3D 视图，使用矢量地图时可显示建筑物。
 
-## System requirements
+## 系统要求
 
-Starting with v0.105.0, the geomap uses MapLibre GL which requires WebGL v1 support. In general, most devices will support it because browsers/Electron can render it in software if needed.
+从 v0.105.0 开始，地理地图使用 MapLibre GL，这需要 WebGL v1 支持。一般来说，大多数设备都支持它，因为浏览器/Electron 在需要时可以使用软件渲染。
 
-If the map could not be drawn because WebGL could not be initialized, an error message will appear instead of the map (_This map can't be drawn because WebGL isn't available…_).
+如果由于无法初始化 WebGL 而导致地图无法绘制，将显示错误消息而不是地图（_无法绘制此地图，因为 WebGL 不可用…_）。
 
-## Interaction
+## 交互操作
 
-*   At the bottom-center there is a central toolbar which provides editing features: adding new markers on the map and importing GPX tracks.
-*   At the bottom-right there are the viewport items:
-    *   Zoom in/out
-        *   On mobile these are hidden, use pinch to zoom instead.
-        *   On desktop, alternatively use the scroll wheel to adjust the zoom.
-    *   Full screen button which focuses the entire map onto the screen, while still allowing for edits.
+*   底部中央有一个中央工具栏，提供编辑功能：在地图上添加新标记和导入 GPX 轨迹。
+*   右下角是视口项目：
+    *   放大/缩小
+        *   在移动设备上这些按钮是隐藏的，请改用双指手势缩放。
+        *   在桌面上，也可以使用鼠标滚轮调整缩放。
+    *   全屏按钮，将整个地图聚焦到屏幕上，同时仍允许编辑。
 
-## Creating a new geo map
+## 创建新的地理地图
 
-Right click on an existing note in the <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">Note Tree</a> and select _Insert child note_ → _Geo Map_.
+在<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">笔记树</a>中右键单击现有笔记，然后选择 _插入子笔记_ → _地理地图_。
 
-By default the map will be empty and will show the entire world.
+默认情况下，地图为空，并显示整个世界。
 
-## Repositioning the map
+## 重新定位地图
 
-*   Click and drag the map in order to move across the map.
-*   Use the mouse wheel, two-finger gesture on a touchpad or the +/- buttons on the bottom-right to adjust the zoom.
+*   单击并拖动地图以在地图上移动。
+*   使用鼠标滚轮、触控板上的双指手势或右下角的 +/- 按钮调整缩放。
 
-The position on the map and the zoom are saved inside the map note and restored when visiting again the note.
+地图上的位置和缩放级别会保存在地图笔记中，并在再次访问该笔记时恢复。
 
-## Adding a marker using the map
+## 使用地图添加标记
 
-### Adding a new note using the plus button
+### 使用加号按钮添加新笔记
 
-1.  To create a marker, first navigate to the desired point on the map. Then press the _Add marker_ button at the center-bottom of the map.
-2.  Once pressed, the map will enter in the insert mode, as illustrated by the notification. Additionally, a preview of the marker will be shown at the cursor position.  
+1.  要创建标记，首先在地图上导航到所需位置。然后按下地图底部中央的 _添加标记_ 按钮。
+2.  按下后，地图将进入插入模式，如通知所示。此外，标记的预览将显示在光标位置。
       
-    Simply click the point on the map where to place the marker. To cancel, press either the  <kbd spellcheck="false">Escape</kbd> key or press again the _Add marker_ button.
-3.  Once clicked, the marker will show up on the map and a popup will show to the right with the title already selected to be changed.
+    只需单击地图上要放置标记的点即可。要取消，请按 <kbd spellcheck="false">Escape</kbd> 键或再次按下 _添加标记_ 按钮。
+3.  单击后，标记将显示在地图上，右侧将显示一个弹出窗口，标题已选中以便更改。
 
-### Adding a new note using the contextual menu
+### 使用上下文菜单添加新笔记
 
-1.  Right click anywhere on the map, where to place the newly created marker (and corresponding note).
-2.  Select _Add a marker at this location_.
-3.  Once clicked on a position on the map, the marker will show up on the map and a popup will show to the right with the title already selected to be changed.
+1.  在地图上的任意位置右键单击，以放置新创建的标记（以及相应的笔记）。
+2.  选择 _在此位置添加标记_。
+3.  在地图上的某个位置单击后，标记将显示在地图上，右侧将显示一个弹出窗口，标题已选中以便更改。
 
-### Adding an existing note from the note tree
+### 从笔记树添加现有笔记
 
-1.  Select the desired note in the <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">Note Tree</a>.
-2.  Hold the mouse on the note and drag it to the map to the desired location.
-3.  The map should be updated with the new marker.
+1.  在<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">笔记树</a>中选择所需的笔记。
+2.  按住鼠标左键并拖动笔记到地图上的所需位置。
+3.  地图应更新为新标记。
 
-This works for:
+这适用于：
 
-*   Notes that are not part of the geo map, case in which a [clone](../Basic%20Concepts%20and%20Features/Notes/Cloning%20Notes.md) will be created.
-*   Notes that are a child of the geo map but not yet positioned on the map.
-*   Notes that are a child of the geo map and also positioned, case in which the marker will be relocated to the new position.
-
-> [!NOTE]
-> Dragging existing notes only works if the map is in editing mode. See the _Read-only_ section for more information.
-
-## How the location of the markers is stored
-
-The location of a marker is stored in the `#geolocation` attribute of the child notes:
-
-This value can be added manually if needed. The value of the attribute is made up of the latitude and longitude separated by a comma.
-
-## Repositioning markers
-
-Once a marker is set, it can be repositioned using one of the two ways:
-
-*   By right clicking the marker and selecting _Move to another location_.
-*   By clicking the marker to open the popup and selecting the _Move to another location_ button underneath the title bar.
-
-After clicking the button to move the marker, click at the desired position on the map to replace it. To cancel the operation, press <kbd spellcheck="false">Escape</kbd>.
+*   不属于地理地图的笔记，这种情况下将创建一个[克隆](../Basic%20Concepts%20and%20Features/Notes/Cloning%20Notes.md)。
+*   是地理地图的子笔记但尚未在地图上定位的笔记。
+*   是地理地图的子笔记且已定位的笔记，这种情况下标记将重新定位到新位置。
 
 > [!NOTE]
-> If the map is locked for editing (see below), the map needs to be unlocked before moving the marker.
+> 拖动现有笔记仅在地图处于编辑模式时有效。有关更多信息，请参阅 _只读_ 部分。
 
-## Interaction with the markers
+## 标记位置如何存储
 
-*   Hovering over a marker will display a <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tooltip.md">Note Tooltip</a> with the content of the note it belongs to.
-    *   Clicking on the note title in the tooltip will navigate to the note in the current view.
-*   Right-clicking the marker will open a contextual menu (as described below).
-*   Clicking a marker will focus on the marker and display a dedicated popup with the details. This works regardless of whether the map is editable or not.
+标记的位置存储在子笔记的 `#geolocation` 属性中：
 
-### Popup view
+如有需要，可以手动添加此值。该属性的值由逗号分隔的纬度和经度组成。
 
-When a marker or a track is clicked, a popup will open to the right which contains the following information:
+## 重新定位标记
 
-*   The title and icon of the marker, both editable.
-*   An indicator for the coordinates; clicking it will copy the coordinates to clipboard.
-*   A button to maximize the popup.
-*   Buttons to interact with the markers:
-    *   Open the marker in the same pane, new tab, etc.
-    *   A button to open the location in a dedicated application (e.g. Google Maps on mobile).
-    *   Color picker to change the color of the marker.
-    *   Button to remove the marker from the map, which can optionally delete its corresponding note. Removing a marker without deleting the note will only remove its `#geolocation` attribute (case in which the coordinates have to be manually added back in in order to get the note to show on the map again).
-*   The <a class="reference-link" href="../Advanced%20Usage/Attributes/Promoted%20Attributes.md">Promoted Attributes</a> of the marker, if any.
-*   The note's content which can be edited directly from the panel.
+一旦设置了标记，可以通过以下两种方式之一重新定位：
 
-To dismiss the popup:
+*   右键单击标记并选择 _移动到另一个位置_。
+*   单击标记以打开弹出窗口，然后选择标题栏下方的 _移动到另一个位置_ 按钮。
 
-*   Press the X button at the top-right of the popup.
-*   In the map, press anywhere outside the popup.
-*   Or simply press the <kbd spellcheck="false">Escape</kbd> key.
+单击移动标记的按钮后，在地图上单击所需位置以替换它。要取消操作，请按 <kbd spellcheck="false">Escape</kbd> 键。
 
-When a marker is clicked, the map will automatically adjust the viewport so that the marker is still visible with the popup open. The currently selected marker is shown slightly bigger.
+> [!NOTE]
+> 如果地图已锁定编辑（见下文），则需要先解锁地图才能移动标记。
 
-It is possible to switch between markers by clicking on them even when the popup view is already open.
+## 与标记交互
 
-Markers can have <a class="reference-link" href="../Note%20Types/Text/Links/Internal%20(reference)%20links.md">Internal (reference) links</a> between them and clicking on such a link will automatically adjust the viewport and the popup view to the new note.
+*   将鼠标悬停在标记上会显示一个<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tooltip.md">笔记工具提示</a>，其中包含其所属笔记的内容。
+    *   单击工具提示中的笔记标题将在当前视图中导航到该笔记。
+*   右键单击标记将打开一个上下文菜单（如下所述）。
+*   单击标记将聚焦于该标记，并显示一个专门的弹出窗口，其中包含详细信息。无论地图是否可编辑，此功能均有效。
 
-### Contextual menu
+### 弹出窗口视图
 
-It's possible to press the right mouse button to display a contextual menu.
+当单击标记或轨迹时，右侧将打开一个弹出窗口，其中包含以下信息：
 
-1.  If right-clicking an empty section of the map (not on a marker), it allows to:
-    1.  Displays the latitude and longitude. Clicking this option will copy them to the clipboard.
-    2.  Open the location using an external application (if the operating system supports it).
-    3.  Adding a new marker at that location.
-2.  If right-clicking on a marker, it allows to:
-    1.  Displays the latitude and longitude. Clicking this option will copy them to the clipboard.
-    2.  Open the location using an external application (if the operating system supports it).
-    3.  Open the note in a new tab, split or window.
-    4.  Button to remove the marker from the map, which can optionally delete its corresponding note. Removing a marker without deleting the note will only remove its `#geolocation` attribute (case in which the coordinates have to be manually added back in in order to get the note to show on the map again).
+*   标记的标题和图标，均可编辑。
+*   坐标指示器；单击它会将坐标复制到剪贴板。
+*   一个最大化弹出窗口的按钮。
+*   与标记交互的按钮：
+    *   在同一窗格、新标签页等中打开标记。
+    *   一个在专用应用程序（例如移动设备上的 Google 地图）中打开位置的按钮。
+    *   用于更改标记颜色的颜色选择器。
+    *   从地图中移除标记的按钮，可以选择删除其对应的笔记。不移除笔记而仅移除标记将只删除其 `#geolocation` 属性（这种情况下，必须手动重新添加坐标才能使笔记再次显示在地图上）。
+*   标记的<a class="reference-link" href="../Advanced%20Usage/Attributes/Promoted%20Attributes.md">提升属性</a>（如果有）。
+*   笔记的内容，可以直接从面板中编辑。
 
-### Icon and color of the markers
+要关闭弹出窗口：
+
+*   按弹出窗口右上角的 X 按钮。
+*   在地图上，点击弹出窗口外部的任意位置。
+*   或者直接按 <kbd spellcheck="false">Escape</kbd> 键。
+
+当单击标记时，地图将自动调整视口，以便在弹出窗口打开时标记仍然可见。当前选中的标记会显示得稍大一些。
+
+即使在弹出窗口视图已打开的情况下，也可以通过单击来切换标记。
+
+标记之间可以有<a class="reference-link" href="../Note%20Types/Text/Links/Internal%20(reference)%20links.md">内部（引用）链接</a>，单击此类链接将自动调整视口和弹出窗口视图以显示新笔记。
+
+### 上下文菜单
+
+可以按鼠标右键显示上下文菜单。
+
+1.  如果右键单击地图的空白区域（不在标记上），则允许：
+    1.  显示纬度和经度。单击此选项会将它们复制到剪贴板。
+    2.  使用外部应用程序打开该位置（如果操作系统支持）。
+    3.  在该位置添加新标记。
+2.  如果右键单击标记，则允许：
+    1.  显示纬度和经度。单击此选项会将它们复制到剪贴板。
+    2.  使用外部应用程序打开该位置（如果操作系统支持）。
+    3.  在新标签页、分屏或窗口中打开笔记。
+    4.  从地图中移除标记的按钮，可以选择删除其对应的笔记。不移除笔记而仅移除标记将只删除其 `#geolocation` 属性（这种情况下，必须手动重新添加坐标才能使笔记再次显示在地图上）。
+
+### 标记的图标和颜色
 
 <figure class="image image-style-align-right image_resized" style="width:47.42%;"><img style="aspect-ratio:885/321;" src="3_Geo Map_image.png" width="885" height="321"></figure>
 
-The markers will have the same icon as the note.
+标记将具有与笔记相同的图标。
 
-It's possible to add a custom color to a marker by assigning them a `#color` attribute such as `#color=green`.
+可以通过为标记分配 `#color` 属性（例如 `#color=green`）来为其添加自定义颜色。
 
-### Adding the coordinates manually
+### 手动添加坐标
 
-In a nutshell, create a child note and set the `#geolocation` attribute to the coordinates.
+简而言之，创建一个子笔记并将 `#geolocation` 属性设置为坐标。
 
-The value of the attribute is made up of the latitude and longitude separated by a comma.
+该属性的值由逗号分隔的纬度和经度组成。
 
-#### Adding from Google Maps
+#### 从 Google 地图添加
 
-1.  In Google Maps, on the web:
-    1.  Look for a desired location, right click on it and a context menu will show up.
-    2.  Simply click on the first item displaying the coordinates and they will be copied to clipboard.
-2.  In Trilium, create a child note under the map.
-3.  Then paste the value inside the text box into the `#geolocation` attribute of a child note of the map (don't forget to surround the value with a `"` character).
+1.  在网页版 Google 地图中：
+    1.  查找所需位置，右键单击它，将显示一个上下文菜单。
+    2.  只需单击显示坐标的第一项，它们将被复制到剪贴板。
+2.  在 Trilium 中，在地图下创建一个子笔记。
+3.  然后将文本框中的值粘贴到地图子笔记的 `#geolocation` 属性中（不要忘记用 `"` 字符将值括起来）。
 
-#### Adding from OpenStreetMap
+#### 从 OpenStreetMap 添加
 
-Similarly to the Google Maps approach:
+与 Google 地图的方法类似：
 
-1.  Go to any location on openstreetmap.org and right click to bring up the context menu. Select the _Show address_ item.
-2.  The address will be visible in the top-left of the screen, in the place of the search bar. Select the coordinates and copy them into the clipboard.
-3.  Simply paste the value inside the text box into the `#geolocation` attribute of a child note of the map and then it should be displayed on the map.
+1.  转到 openstreetmap.org 上的任何位置，然后右键单击以调出上下文菜单。选择 _显示地址_ 项。
+2.  地址将显示在屏幕左上角，即搜索栏的位置。选择坐标并将其复制到剪贴板。
+3.  只需将文本框中的值粘贴到地图子笔记的 `#geolocation` 属性中，然后它就应该显示在地图上。
 
-## Adding GPS tracks (.gpx)
+## 添加 GPS 轨迹 (.gpx)
 
 <figure class="image"><img style="aspect-ratio:1566/1155;" src="1_Geo Map_image.png" width="1566" height="1155"></figure>
 
-Trilium can display GPS tracks on the geo map, in the form of `.gpx` files.
+Trilium 可以在地理地图上以 `.gpx` 文件的形式显示 GPS 轨迹。
 
-To add a track, either:
+要添加轨迹，可以：
 
-1.  Drag & drop a `.gpx` file inside the geo map in the note tree.
-    1.  In order for the file to be recognized as a GPS track, it needs to show up as `application/gpx+xml` in the _File type_ field.
-2.  Press the _Add a GPS track from a GPX file_ which will directly prompt for a GPX file and import it as a subnote of the collection.
+1.  将 `.gpx` 文件拖放到笔记树中的地理地图内。
+    1.  为了使文件被识别为 GPS 轨迹，它需要在 _文件类型_ 字段中显示为 `application/gpx+xml`。
+2.  按下 _从 GPX 文件添加 GPS 轨迹_，这将直接提示选择 GPX 文件并将其作为集合的子笔记导入。
 
-When going back to the map, the track should now be visible.
+返回地图时，轨迹现在应该可见。
 
-The starting point of the track will be displayed as a marker, with the name of the note underneath. The start marker will also respect the icon and the `color` of the note. The end marker is displayed with a distinct icon.
+轨迹的起点将显示为标记，其下方带有笔记名称。起点标记也将遵循笔记的图标和 `color`。终点标记使用不同的图标显示。
 
-If the track file contains multiple tracks, they will all be displayed as well as markers. Trilium will also split a single track that happens to have non-continuous points.
+如果轨迹文件包含多条轨迹，它们都将显示为标记。Trilium 还会拆分具有不连续点的单条轨迹。
 
-If the GPX contains waypoints, they will also be displayed, including their names.
+如果 GPX 包含航点，它们也会显示，包括其名称。
 
-When the track is clicked, the entire route is brought into view, as well as the right popup will indicate details about the track such as distance, duration and the elevation map. This information is also displayed when clicking the `.gpx` note itself.
+当单击轨迹时，整个路线将进入视野，右侧弹出窗口将显示有关轨迹的详细信息，例如距离、持续时间和海拔图。单击 `.gpx` 笔记本身时也会显示此信息。
 
-When clicking on the markers of a track (whether it's the start or stop builtin markers, or custom markers that are part of the track), only that marker is brought into view, as opposed to the entire route.
+当单击轨迹的标记（无论是起点或终点的内置标记，还是作为轨迹一部分的自定义标记）时，只有该标记会进入视野，而不是整个路线。
 
-## Read-only mode
+## 只读模式
 
-When a map is in read-only all editing features will be disabled such as:
+当地图处于只读状态时，所有编辑功能都将被禁用，例如：
 
-*   The add button at the bottom of the map.
-*   Repositioning markers.
-*   Editing from the contextual menu (removing locations or adding new items).
+*   地图底部的添加按钮。
+*   重新定位标记。
+*   从上下文菜单进行编辑（移除位置或添加新项目）。
 
-To enable read-only mode simply press the _Lock_ icon from the <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20buttons.md">Note buttons</a> (or <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Floating%20buttons.md">Floating buttons</a> for the old layout). To disable it, press the button again.
+要启用只读模式，只需按下<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20buttons.md">笔记按钮</a>中的 _锁定_ 图标（对于旧布局，则为<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Floating%20buttons.md">浮动按钮</a>）。要禁用它，请再次按下该按钮。
 
-## Configuration
+## 配置
 
-### Map Style
+### 地图样式
 
-The styling of the map can be adjusted in the <a class="reference-link" href="Collection%20Properties.md">Collection Properties</a> or manually via the `#map:style` attribute.
+地图的样式可以在<a class="reference-link" href="Collection%20Properties.md">集合属性</a>中调整，也可以通过 `#map:style` 属性手动设置。
 
-The geo map comes with two different types of styles:
+地理地图带有两种不同类型的样式：
 
-*   Raster styles
-    *   For these styles the map is represented as a grid of images at different zoom levels. This is the traditional way OpenStreetMap used to work.
-    *   Zoom is slightly restricted.
-    *   Currently, the only raster theme is the original OpenStreetMap style.
-*   Vector styles
-    *   Vector styles are not represented as images, but as geometrical shapes. This makes the rendering much smoother, especially when zooming and looking at the building edges, for example.
-    *   The map can be zoomed in much further.
-    *   These come in various styles that are both light (Colorful, Graybeard, Neutrino) and dark (Eclipse, Shadow).
-    *   The vector styles come from [VersaTiles](https://versatiles.org/), a free and open-source project providing map tiles based on OpenStreetMap.
-    *   The VersaTiles layers also provide 3D building information (see below).
+*   栅格样式
+    *   对于这些样式，地图表示为不同缩放级别下的图像网格。这是 OpenStreetMap 过去的传统工作方式。
+    *   缩放略有受限。
+    *   目前，唯一的栅格主题是原始的 OpenStreetMap 样式。
+*   矢量样式
+    *   矢量样式不表示为图像，而是表示为几何形状。这使得渲染更加平滑，尤其是在缩放和查看建筑物边缘时。
+    *   地图可以放大得更远。
+    *   这些样式有多种，既有浅色主题（Colorful、Graybeard、Neutrino），也有深色主题（Eclipse、Shadow）。
+    *   矢量样式来自 [VersaTiles](https://versatiles.org/)，这是一个基于 OpenStreetMap 提供地图瓦片的免费开源项目。
+    *   VersaTiles 图层还提供 3D 建筑物信息（见下文）。
 
-The default theme is Versatiles Colorful (vector).
+默认主题是 Versatiles Colorful（矢量）。
 
-#### 3D view with buildings
+#### 带建筑物的 3D 视图
 
 <figure class="image"><img style="aspect-ratio:2727/1642;" src="2_Geo Map_image.png" width="2727" height="1642"></figure>
 
-Trilium v0.105.0 introduces a 3D view, courtesy of MapLibre GL. To enter 3D mode, simply press the corresponding button at the bottom-right of the map or press <kbd spellcheck="false">Ctrl</kbd> and drag across the map.
+Trilium v0.105.0 引入了 3D 视图，由 MapLibre GL 提供支持。要进入 3D 模式，只需按下地图右下角的相应按钮，或按住 <kbd spellcheck="false">Ctrl</kbd> 键并在地图上拖动。
 
-The buildings will only appear from zoom 14 onwards to avoid lag.
-
-> [!NOTE]
-> To get 3D buildings, make sure you are using the _VersaTiles_ styles which provide the building informatia via the `versatiles-shortbread` source.
-
-### Custom map style / tiles
-
-Starting with v0.102.0 it is possible to use custom tile sets, but only in raster format.
-
-To do so, manually set the `#map:style` [label](../Advanced%20Usage/Attributes/Labels.md) to the URL of the tile set. For example, to use Esri.NatGeoWorldMap, set the value to [`https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}`.](https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/%7Bz%7D/%7By%7D/%7Bx%7D.)
-
-Additionally:
-
-*   Hi-DPI tiles are supported via the `{r}` placeholder.
-*   To mark the custom style as dark (which affects the styling of the UI), apply the `map:darkStyle` label. This attribute also overrides builtin themes.
+建筑物仅在缩放级别 14 及以上才会显示，以避免卡顿。
 
 > [!NOTE]
-> For a list of tile sets, see the [Leaflet Providers preview](https://leaflet-extras.github.io/leaflet-providers/preview/) page. Select a desired tile set and just copy the URL from the _Plain JavaScript_ example.
+> 要获得 3D 建筑物，请确保使用 _VersaTiles_ 样式，该样式通过 `versatiles-shortbread` 源提供建筑物信息。
 
-Custom vector map support is planned, but not yet implemented.
+### 自定义地图样式 / 瓦片
 
-### Other options
+从 v0.102.0 开始，可以使用自定义瓦片集，但仅限于栅格格式。
 
-The following options can be configured either via the <a class="reference-link" href="Collection%20Properties.md">Collection Properties</a>, by clicking on the settings (Gear icon). Alternatively, each of these options also have a corresponding [label](../Advanced%20Usage/Attributes/Labels.md) that can be set manually.
+为此，请手动将 `#map:style` [标签](../Advanced%20Usage/Attributes/Labels.md)设置为瓦片集的 URL。例如，要使用 Esri.NatGeoWorldMap，请将该值设置为 [`https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}`。](https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/%7Bz%7D/%7By%7D/%7Bx%7D.)
 
-*   Scale, which illustrates the scale of the map in either kilometers or miles in the bottom-left of the map.
-    *   The unit is determined by the _Formatting locale_ option in _Language & Region_.
-*   The name of the markers is displayed by default underneath the pin on the map. Since v0.102.0, it is possible to hide these labels which increases the performance and decreases clutter when there are many markers on the map.
-*   v0.105.0 also introduces a feature called _Group nearby markers_ which will cluster multiple markers together at low zoom.
-    *   The clusters display the number of items they contain. The color also changes based on the count.
-    *   Clicking on a cluster will automatically zoom in so that the individual markers that make up the cluster are now visible.
+此外：
+
+*   通过 `{r}` 占位符支持 Hi-DPI 瓦片。
+*   要将自定义样式标记为深色（这会影响 UI 的样式），请应用 `map:darkStyle` 标签。此属性也会覆盖内置主题。
+
+> [!NOTE]
+> 有关瓦片集的列表，请参阅 [Leaflet Providers preview](https://leaflet-extras.github.io/leaflet-providers/preview/) 页面。选择所需的瓦片集，然后从 _Plain JavaScript_ 示例中复制 URL。
+
+自定义矢量地图支持已计划，但尚未实现。
+
+### 其他选项
+
+以下选项可以通过<a class="reference-link" href="Collection%20Properties.md">集合属性</a>进行配置，方法是单击设置（齿轮图标）。或者，这些选项中的每一个也有相应的[标签](../Advanced%20Usage/Attributes/Labels.md)可以手动设置。
+
+*   比例尺，以公里或英里为单位在地图左下角显示地图的比例。
+    *   单位由 _语言与区域_ 中的 _格式区域设置_ 选项决定。
+*   默认情况下，标记的名称显示在地图图钉下方。从 v0.102.0 开始，可以隐藏这些标签，这可以提高性能并减少地图上标记众多时的杂乱感。
+*   v0.105.0 还引入了一项名为 _对附近的标记进行分组_ 的功能，该功能会在低缩放级别时将多个标记聚集在一起。
+    *   聚类显示其包含的项目数。颜色也会根据数量而变化。
+    *   单击聚类将自动放大，以便现在可以看到构成该聚类的各个标记。

@@ -1,7 +1,8 @@
-# Analog Watch
+# 模拟手表
+
 <figure class="image"><img style="aspect-ratio:1007/94;" src="Analog Watch_image.png" width="1007" height="94"></figure>
 
-This is a more intricate example of a basic widget, which displays an analog watch in the launch bar. Unlike note-context aware widgets, basic widgets don't react to note navigation.
+这是一个基础小组件的更复杂示例，它在启动栏中显示一个模拟手表。与感知笔记上下文的小组件不同，基础小组件不会对笔记导航做出反应。
 
 ```javascript
 const TPL = `

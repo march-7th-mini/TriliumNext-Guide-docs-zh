@@ -1,83 +1,84 @@
-# Outline tab
-The Outline tab appears in the <a class="reference-link" href="../Right%20Sidebar.md">Right Sidebar</a> and displays the headings and highlights for the current note.
+# 大纲标签页
 
-## Table of contents
+大纲标签页出现在<a class="reference-link" href="../Right%20Sidebar.md">右侧边栏</a>中，显示当前笔记的标题和高亮内容。
 
-The table of contents displays the titles / headings in the current note and allows easy navigation.
+## 目录
 
-The following note types are supported:
+目录显示当前笔记中的标题/标题，并支持轻松导航。
 
-*   <a class="reference-link" href="../../../Note%20Types/Text.md">Text</a>
+支持以下笔记类型：
+
+*   <a class="reference-link" href="../../../Note%20Types/Text.md">文本</a>
 *   <a class="reference-link" href="../../../Note%20Types/Markdown.md">Markdown</a>
-*   <a class="reference-link" href="../../../Note%20Types/File/PDFs.md">PDFs</a>
-*   <a class="reference-link" href="../../../AI.md">AI</a> chat notes
-*   The pages of the in-app documentation
+*   <a class="reference-link" href="../../../Note%20Types/File/PDFs.md">PDF</a>
+*   <a class="reference-link" href="../../../AI.md">AI</a> 对话笔记
+*   应用内文档的页面
 
 <figure class="image image-style-align-right image_resized" style="width:47%;"><img style="aspect-ratio:556/205;" src="1_Outline tab_image.png" width="556" height="205"></figure>
 
-### Interaction
+### 交互
 
-*   Clicking on a heading will scroll the document to the position of the heading.
-*   Pressing the close button will dismiss the table of contents but it can be shown again from the <a class="reference-link" href="../Floating%20buttons.md">Floating buttons</a> section.
+*   点击标题会将文档滚动到该标题的位置。
+*   按下关闭按钮将关闭目录，但可以从<a class="reference-link" href="../Floating%20buttons.md">浮动按钮</a>部分重新显示。
 
-### Configuration
+### 配置
 
 > [!NOTE]
-> This section is relevant only for the old layout, the <a class="reference-link" href="../New%20Layout.md">New Layout</a> shows the table of contents regardless of the number of headings.
+> 本节仅适用于旧布局，<a class="reference-link" href="../New%20Layout.md">新布局</a>无论标题数量多少都会显示目录。
 
-*   To change the option globally, go to <a class="reference-link" href="#root/_hidden/_options/_optionsTextNotes">Text Notes</a> options, look for the _Table of Contents_ section and configure the minimum amount of headings that need to be present in the current note in order for the table of contents to show:
-    *   To always hide it, set the value to a really large number (e.g. 10000).
-    *   To always display it if there's at least a single heading, set the value to 1.
-*   Use <a class="reference-link" href="../../../Advanced%20Usage/Attributes.md">Attributes</a> to configure the table of contents for a particular note:
-    *   `#toc=show` will show the table of contents for that note regardless of the global settings.
-    *   Similarly, `#toc=hide` will always hide the table of contents for that note.
+*   要全局更改此选项，请前往<a class="reference-link" href="#root/_hidden/_options/_optionsTextNotes">文本笔记</a>选项，找到 _目录_ 部分，并配置当前笔记中需要存在的最小标题数量，以便显示目录：
+    *   要始终隐藏，请将该值设置为一个非常大的数字（例如 10000）。
+    *   要始终显示（只要至少有一个标题），请将该值设置为 1。
+*   使用<a class="reference-link" href="../../../Advanced%20Usage/Attributes.md">属性</a>为特定笔记配置目录：
+    *   `#toc=show` 将显示该笔记的目录，无论全局设置如何。
+    *   同样，`#toc=hide` 将始终隐藏该笔记的目录。
 
-## Highlights
+## 高亮
 
 <figure class="image image-style-align-right image_resized" style="width:46.04%;"><img style="aspect-ratio:489/240;" src="Outline tab_image.png" width="489" height="240"></figure>
 
-Similar to the table of contents, but instead of headings this feature will list highlighted text from a text note and allow easy navigation to them.
+与目录类似，但此功能不是列出标题，而是列出文本笔记中的高亮文本，并支持轻松导航到这些文本。
 
-Unlike table of contents which supports multiple note types, the highlights are specific to the <a class="reference-link" href="../../../Note%20Types/Text.md">Text</a> notes.
+与支持多种笔记类型的目录不同，高亮功能特定于<a class="reference-link" href="../../../Note%20Types/Text.md">文本</a>笔记。
 
-Highlighted text is defined as:
+高亮文本定义为：
 
-*   Bold text.
-*   Italic text.
-*   Underlined text.
-*   Text with a foreground color set.
-*   Text with a background color/highlight set.
+*   粗体文本。
+*   斜体文本。
+*   带下划线的文本。
+*   设置了前景色的文本。
+*   设置了背景色/高亮的文本。
 
-### Interaction
+### 交互
 
-*   Clicking on a highlighted text will scroll the document to its position.
-*   For the old layout only, pressing the close button will dismiss the list of highlights but it can be shown again from the <a class="reference-link" href="../Floating%20buttons.md">Floating buttons</a> section.
+*   点击高亮文本会将文档滚动到其位置。
+*   仅限旧布局：按下关闭按钮将关闭高亮列表，但可以从<a class="reference-link" href="../Floating%20buttons.md">浮动按钮</a>部分重新显示。
 
-### Configuration
+### 配置
 
-*   Globally, it's possible to toggle the display of each category of highlighted text (as defined above) 
-    *   For the new layout, pressing the gear button in the top-right part of the section will reveal a menu to toggle between the highlight categories.
-    *   Alternatively, they can be changed by going to <a class="reference-link" href="#root/_hidden/_options/_optionsTextNotes">Text Notes</a> settings and looking for the _Highlights List_ section.
-*   For the old layout only, to suppress the display of highlighted text for one specific note, use <a class="reference-link" href="../../../Advanced%20Usage/Attributes.md">Attributes</a> to add the `#hideHighlightWidget` label.
+*   在全局范围内，可以切换显示每个类别的高亮文本（如上定义）
+    *   对于新布局，按下该部分右上角的齿轮按钮将显示一个菜单，用于切换高亮类别。
+    *   或者，可以通过前往<a class="reference-link" href="#root/_hidden/_options/_optionsTextNotes">文本笔记</a>设置并查找 _高亮列表_ 部分来更改它们。
+*   仅限旧布局：要抑制特定笔记的高亮文本显示，请使用<a class="reference-link" href="../../../Advanced%20Usage/Attributes.md">属性</a>添加 `#hideHighlightWidget` 标签。
 
-## PDF-specific outline
+## PDF 特定大纲
 
-When <a class="reference-link" href="../../../Note%20Types/File/PDFs.md">PDFs</a> are opened in Trilium, the <a class="reference-link" href="../Right%20Sidebar.md">Right Sidebar</a> is augmented with PDF-specific navigation, with the following features:
+当在 Trilium 中打开<a class="reference-link" href="../../../Note%20Types/File/PDFs.md">PDF</a>时，<a class="reference-link" href="../Right%20Sidebar.md">右侧边栏</a>会增强 PDF 特定的导航功能，具有以下特性：
 
-*   Table of contents/outline
-    *   All the headings and “bookmarks” will be displayed hierarchically.
-    *   The heading on the current page is also highlighted (note that it can be slightly offset depending on how many headings are on the same page).
-    *   Clicking on a heading will jump to the corresponding position in the PDF.
-*   Pages
-    *   A preview of all the pages with a small thumbnail.
-    *   Clicking on a page will automatically navigate to that page.
-*   Annotations
-    *   Highlight and comment annotations are listed here.
-    *   For the old layout, this feature is not directly available, however there is a listing of comments directly in the PDF toolbar.
-*   Attachments
-    *   If the PDF has its own attachments (not to be confused with Trilium's <a class="reference-link" href="../../Notes/Attachments.md">Attachments</a>), they will be displayed in a list.
-    *   Some information such as the name and size of the attachment are displayed.
-    *   It's possible to download the attachment by clicking on the download button.
-*   Layers
-    *   A less common feature, if the PDF has toggle-able layers, these layers will be displayed in a list here.
-    *   It's possible to toggle the visibility for each individual layer.
+*   目录/大纲
+    *   所有标题和“书签”将按层级显示。
+    *   当前页面上的标题也会被高亮显示（请注意，根据同一页面上标题的数量，可能会有轻微偏移）。
+    *   点击标题将跳转到 PDF 中的相应位置。
+*   页面
+    *   所有页面的预览，带有小缩略图。
+    *   点击页面将自动导航到该页面。
+*   注释
+    *   高亮和评论注释在此列出。
+    *   对于旧布局，此功能不直接可用，但 PDF 工具栏中直接有一个评论列表。
+*   附件
+    *   如果 PDF 有自己的附件（不要与 Trilium 的<a class="reference-link" href="../../Notes/Attachments.md">附件</a>混淆），它们将显示在列表中。
+    *   会显示一些信息，例如附件的名称和大小。
+    *   可以通过点击下载按钮下载附件。
+*   图层
+    *   一个不太常见的功能，如果 PDF 具有可切换的图层，这些图层将在此处的列表中显示。
+    *   可以切换每个单独图层的可见性。

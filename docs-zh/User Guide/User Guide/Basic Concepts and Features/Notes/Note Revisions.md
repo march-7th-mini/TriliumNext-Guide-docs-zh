@@ -1,74 +1,75 @@
-# Note Revisions
+# 笔记修订历史
+
 <figure class="image"><img style="aspect-ratio:2089/1515;" src="2_Note Revisions_image.png" width="2089" height="1515"></figure>
 
-Trilium supports seamless versioning of notes by storing snapshots ("revisions") of notes at regular intervals.
+Trilium 通过定期存储笔记的快照（“修订版本”）来支持无缝的笔记版本管理。
 
-## Displaying the revisions
+## 显示修订版本
 
-*   On the <a class="reference-link" href="../UI%20Elements/New%20Layout.md">New Layout</a>, press the [note context menu](../UI%20Elements/Note%20buttons.md) and select _Note revisions…_
-*   On the old layout, press directly the <img class="image_resized" style="aspect-ratio:27/25;width:2.32%;" src="1_Note Revisions_image.png" width="27" height="25"> button in the <a class="reference-link" href="../UI%20Elements/Note%20buttons.md">Note buttons</a> area.
+*   在<a class="reference-link" href="../UI%20Elements/New%20Layout.md">新布局</a>中，点击[笔记上下文菜单](../UI%20Elements/Note%20buttons.md)并选择 _笔记修订版本…_
+*   在旧布局中，直接点击<a class="reference-link" href="../UI%20Elements/Note%20buttons.md">笔记按钮</a>区域中的 <img class="image_resized" style="aspect-ratio:27/25;width:2.32%;" src="1_Note Revisions_image.png" width="27" height="25"> 按钮。
 
-## Interaction
+## 交互操作
 
 > [!NOTE]
-> This documentation matches the redesign of the note revisions dialog on v0.103.0, older versions have a similar dialog but with some differences.
+> 本文档与 v0.103.0 版本中重新设计的笔记修订版本对话框相匹配，旧版本的对话框类似但存在一些差异。
 
-*   The full list of revisions are displayed on the left in reverse chronological order.
-    *   The revisions are grouped by the date the revision was taken.
-    *   This list does not contain the _current state_ of the note, so it is possible to have notes with no revisions/snapshots saved.
-*   The icon of a revision indicates the _source_ of that revision (e.g. a <img class="image_resized" style="aspect-ratio:20/21;width:2.49%;" src="Note Revisions_image.png" width="20" height="21"> icon for a manually saved revision).
-*   Pressing the \[…\] on the top-right of the dialog displays multiple options, including:
-    *   Saving a new revision now.
-    *   Checking the interval and limit for this note (see below).
-    *   Deleting all the revisions of this note.
-*   For supported notes (text, code), changes are highlighted. This behavior can be toggled via the _Highlight changes_ at the top of the dialog.
-    *   The highlighted changes are relative to the **current state of the note**, not to the revision prior to this one.
-*   For any given revision, the buttons on the top-right allow operating on it:
-    *   Deleting the revision.
-    *   Downloading the revision locally.
-    *   Restoring the revision, which replaces the current content of the note with the one from the revision. Another revision is saved containing the current content of the note.
+*   完整的修订版本列表按时间倒序显示在左侧。
+    *   修订版本按创建日期进行分组。
+    *   此列表不包含笔记的_当前状态_，因此笔记可能没有保存任何修订版本/快照。
+*   修订版本的图标表示该修订版本的_来源_（例如，<img class="image_resized" style="aspect-ratio:20/21;width:2.49%;" src="Note Revisions_image.png" width="20" height="21"> 图标表示手动保存的修订版本）。
+*   点击对话框右上角的 \[…\] 按钮会显示多个选项，包括：
+    *   立即保存一个新的修订版本。
+    *   查看此笔记的保存间隔和数量限制（见下文）。
+    *   删除此笔记的所有修订版本。
+*   对于支持的笔记类型（文本、代码），更改会被高亮显示。此行为可通过对话框顶部的 _高亮更改_ 开关进行切换。
+    *   高亮显示的更改是相对于笔记的**当前状态**，而不是相对于上一个修订版本。
+*   对于任何给定的修订版本，右上角的按钮可对其进行操作：
+    *   删除该修订版本。
+    *   将修订版本下载到本地。
+    *   恢复该修订版本，即用该修订版本的内容替换笔记的当前内容。同时会保存另一个修订版本，其中包含笔记的当前内容。
 
-## Named revisions
+## 命名修订版本
 
-Named revisions are a new feature of Trilium v0.103.0 which allows adding a short description of what the changes in the snapshot contain.
+命名修订版本是 Trilium v0.103.0 的新功能，允许为快照中的更改添加简短描述。
 
-In the list of note revisions:
+在笔记修订版本列表中：
 
-*   The name of the revision is displayed underneath the time of the revision in the sidebar, as well as at the top of the dialog where it is displayed in full.
-*   Clicking on the edit button near the name of the revision allows it to be changed.
+*   修订版本的名称显示在侧边栏中该修订版本时间的下方，以及对话框顶部（完整显示）。
+*   点击修订版本名称旁边的编辑按钮可以修改名称。
 
-To create a named revision, either:
+要创建命名修订版本，可以：
 
-*   Go to the <a class="reference-link" href="../UI%20Elements/Note%20buttons.md">Note buttons</a>, select _Save named revision…_, enter the name of revision and confirm.
-*   Use the corresponding [keyboard shortcut](../Keyboard%20Shortcuts.md) or the <a class="reference-link" href="../Navigation/Jump%20to%20%26%20command%20palette.md">Jump to...</a> command with the same name.
-*   Save a revision normally, and adjust the name afterwards from the note revision list.
+*   前往<a class="reference-link" href="../UI%20Elements/Note%20buttons.md">笔记按钮</a>，选择 _保存命名修订版本…_，输入修订版本名称并确认。
+*   使用相应的[键盘快捷键](../Keyboard%20Shortcuts.md)或同名的<a class="reference-link" href="../Navigation/Jump%20to%20%26%20command%20palette.md">跳转到...</a>命令。
+*   正常保存一个修订版本，然后从笔记修订版本列表中调整其名称。
 
-## When revisions are saved
+## 何时保存修订版本
 
-Revisions are saved:
+修订版本在以下情况下保存：
 
-*   Automatically at a fixed interval. This behavior can be configured (see below).
-*   Manually, by:
-    *   Going to the press the [note context menu](../UI%20Elements/Note%20buttons.md) and select _Save revision._
-    *   Using the _Force Save Revision_ [keyboard shortcut](../Keyboard%20Shortcuts.md).
-    *   In the _Revisions_ dialog, pressing the \[…\] button in the top-right and selecting _Save a revision now_.
+*   按固定时间间隔自动保存。此行为可以配置（见下文）。
+*   手动保存，方式包括：
+    *   点击[笔记上下文菜单](../UI%20Elements/Note%20buttons.md)并选择 _保存修订版本_。
+    *   使用 _强制保存修订版本_ [键盘快捷键](../Keyboard%20Shortcuts.md)。
+    *   在 _修订版本_ 对话框中，点击右上角的 \[…\] 按钮并选择 _立即保存修订版本_。
 
-Additionally, revisions can also come from somewhere else, and this is indicated via the icon of the revision:
+此外，修订版本也可能来自其他来源，这通过修订版本的图标来表示：
 
-*   Generated externally, by <a class="reference-link" href="../../Advanced%20Usage/ETAPI%20(REST%20API).md">ETAPI (REST API)</a>.
-*   A modification created by <a class="reference-link" href="../../AI.md">AI</a>.
-*   A revision is restored, causing the existing note content to be saved as a revision to prevent potential data loss.
+*   由<a class="reference-link" href="../../Advanced%20Usage/ETAPI%20(REST%20API).md">ETAPI (REST API)</a> 在外部生成。
+*   由<a class="reference-link" href="../../AI.md">AI</a> 创建的修改。
+*   恢复修订版本时，现有笔记内容会被保存为一个修订版本，以防止潜在的数据丢失。
 
-#### Snapshot interval
+#### 快照间隔
 
-Time interval of taking note snapshot is configurable in the Options -> Other dialog. This provides a trade-off between more revisions and more data to store.
+笔记快照的时间间隔可在 选项 -> 其他 对话框中配置。这需要在更多修订版本和更多存储数据之间进行权衡。
 
-To turn off note versioning for a particular note (or sub-tree), add `disableVersioning` [label](../../Advanced%20Usage/Attributes.md) to the note.
+要为特定笔记（或子树）关闭笔记版本管理，请为该笔记添加 `disableVersioning` [标签](../../Advanced%20Usage/Attributes.md)。
 
-#### Maximum revisions
+#### 最大修订版本数
 
-The limit on the number of note snapshots can be configured in the Options -> Other dialog. The note revision snapshot number limit refers to the maximum number of revisions that can be saved for each note. Where -1 means no limit, 0 means delete all revisions. You can set the maximum revisions for a single note through the `versioningLimit=X` label.
+笔记快照数量的限制可在 选项 -> 其他 对话框中配置。笔记修订版本快照数量限制是指每个笔记最多可保存的修订版本数量。其中 -1 表示无限制，0 表示删除所有修订版本。你可以通过 `versioningLimit=X` 标签为单个笔记设置最大修订版本数。
 
-The note limit will not take effect immediately; it will only apply when the note is modified.
+笔记的限制不会立即生效；它只会在笔记被修改时生效。
 
-You can click the _Erase excess revision snapshots now_ button to apply the changes immediately.
+你可以点击 _立即清除多余的修订版本快照_ 按钮来立即应用更改。

@@ -1,19 +1,19 @@
-# Collapsible blocks
-Collapsible blocks are sections of content that can be expanded and collapsed, letting you hide detail until it's needed.
+# 可折叠块
+可折叠块是可以展开和折叠的内容区域，让您可以在需要时隐藏细节。
 
-A collapsible block consists of:
+一个可折叠块由以下部分组成：
 
-*   **An always-visible header**, containing:
-    *   **An arrow** that expands or collapses the block when clicked.
-    *   **A summary line** that acts as the block's title. With the cursor in the summary line, press <kbd>Ctrl</kbd>+<kbd>Enter</kbd> to expand or collapse the block.
-    *   **A drag handle** for repositioning the block within the note.
-*   **The body**, which is hidden while the block is collapsed. It can hold any kind of content, including nested collapsible blocks. To break out of a collapsible block and continue typing outside it, press <kbd>Enter</kbd> twice at the end of the block.
+*   **一个始终可见的标题**，包含：
+    *   **一个箭头**，点击时可展开或折叠该块。
+    *   **一个摘要行**，作为该块的标题。将光标置于摘要行中，按 <kbd>Ctrl</kbd>+<kbd>Enter</kbd> 即可展开或折叠该块。
+    *   **一个拖动手柄**，用于在笔记中重新定位该块。
+*   **主体部分**，在块折叠时被隐藏。它可以包含任何类型的内容，包括嵌套的可折叠块。要跳出可折叠块并在其外部继续输入，请在该块末尾按两次 <kbd>Enter</kbd> 键。
 
-You can use the arrow keys to move freely with the cursor between the summary line, the block's body, and the text around the block.
+您可以使用方向键在摘要行、块的主体以及块周围的文本之间自由移动光标。
 
-## Inserting a collapsible block
+## 插入可折叠块
 
-In the formatting bar, go to “**Insert” → “Collapsible Block”**.
+在格式工具栏中，转到“**插入” → “可折叠块”**。
 
 > [!TIP]
-> Place multiple collapsible blocks one after another to create an accordion, where each block can be expanded or collapsed independently.
+> 将多个可折叠块依次放置，可以创建一个手风琴效果，每个块都可以独立展开或折叠。

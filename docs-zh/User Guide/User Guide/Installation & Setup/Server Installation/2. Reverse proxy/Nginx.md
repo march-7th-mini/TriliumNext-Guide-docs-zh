@@ -1,44 +1,45 @@
 # Nginx
-Configure Nginx proxy and HTTPS. The operating system here is Ubuntu.
 
-## Installing Nginx
+配置 Nginx 代理和 HTTPS。此处操作系统为 Ubuntu。
 
-Download Nginx and remove Apache2
+## 安装 Nginx
+
+下载 Nginx 并移除 Apache2
 
 ```
 sudo apt-get install nginx
 sudo apt-get remove apache2
 ```
 
-## Build the configuration file
+## 构建配置文件
 
-1.  First, create the configuration file:
+1.  首先，创建配置文件：
     
     ```
     cd /etc/nginx/conf.d
     vim default.conf
     ```
-2.  Fill the file with the context shown below, part of the setting show be changed. Then you can enjoy your web with HTTPS forced and proxy.
+2.  将下方所示内容填入文件，其中部分设置需要更改。然后你就可以享受强制 HTTPS 和代理带来的网络体验了。
     
     ```
-    # This part configures, where your Trilium server is running
+    # 此部分配置你的 Trilium 服务器运行位置
     upstream trilium {
       zone trilium 64k;
-      server 127.0.0.1:8080; # change it to a different hostname and port if non-default is used
+      server 127.0.0.1:8080; # 如果使用非默认主机名和端口，请更改
       keepalive 2;
     }
     
-    # This part is for proxy and HTTPS configure
+    # 此部分用于代理和 HTTPS 配置
     server {
         listen 443 ssl;
-        server_name trilium.example.net; #change trilium.example.net to your domain without HTTPS or HTTP.
-        ssl_certificate /etc/ssl/note/example.crt; #change /etc/ssl/note/example.crt to your path of crt file.
-        ssl_certificate_key /etc/ssl/note/example.net.key; #change /etc/ssl/note/example.net.key to your path of key file.
+        server_name trilium.example.net; #将 trilium.example.net 更改为你的域名（不带 HTTPS 或 HTTP）。
+        ssl_certificate /etc/ssl/note/example.crt; #将 /etc/ssl/note/example.crt 更改为你的 crt 文件路径。
+        ssl_certificate_key /etc/ssl/note/example.net.key; #将 /etc/ssl/note/example.net.key 更改为你的密钥文件路径。
         ssl_session_cache builtin:1000 shared:SSL:10m;
         ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
         ssl_ciphers HIGH:!aNULL:!eNULL:!EXPORT:!CAMELLIA:!DES:!MD5:!PSK:!RC4;
         ssl_prefer_server_ciphers on;
-        access_log /var/log/nginx/access.log; #check the path of access.log, if it doesn't fit your file, change it
+        access_log /var/log/nginx/access.log; #检查 access.log 的路径，如果不适合你的文件，请更改
     
         location / {
             proxy_set_header Host $host;
@@ -52,20 +53,20 @@ sudo apt-get remove apache2
         }
     }
     
-    # This part is for HTTPS forced
+    # 此部分用于强制 HTTPS
     server {
         listen 80;
-        server_name trilium.example.net; # change to your domain
+        server_name trilium.example.net; # 更改为你的域名
         return 301 https://$server_name$request_uri;
     }
     ```
 
-## Serving under a different path
+## 在不同路径下提供服务
 
-Alternatively if you want to serve the instance under a different path (useful e.g. if you want to serve multiple instances), update the location block like so:
+或者，如果你想在不同的路径下提供服务（例如，如果你想同时提供多个实例），请按如下方式更新 location 块：
 
-*   update the location with your desired path (make sure to not leave a trailing slash "/", if your `proxy_pass` does not end on a slash as well)
-*   add the `proxy_cookie_path` directive with the same path: this allows you to stay logged in at multiple instances at the same time.
+*   将 location 更新为你想要的路径（如果你的 `proxy_pass` 不以斜杠结尾，请确保不要留下尾随斜杠“/”）
+*   添加具有相同路径的 `proxy_cookie_path` 指令：这允许你在多个实例上同时保持登录状态。
 
 ```
     location /trilium/instance-one {
@@ -82,6 +83,6 @@ Alternatively if you want to serve the instance under a different path (useful e
     }
 ```
 
-## Configuring the trusted proxy
+## 配置受信任的代理
 
-After setting up a reverse proxy, make sure to configure the <a class="reference-link" href="Trusted%20proxy.md">Trusted proxy</a>.
+设置反向代理后，请确保配置 <a class="reference-link" href="Trusted%20proxy.md">受信任的代理</a>。

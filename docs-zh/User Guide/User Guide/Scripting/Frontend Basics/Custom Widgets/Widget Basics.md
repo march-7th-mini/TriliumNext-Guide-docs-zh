@@ -1,9 +1,10 @@
-# Widget Basics
-This guide will walk you through creating a basic widget inside Trilium. By following these steps, you'll learn how to build a simple UI element that interacts with the user.
+# 小组件基础
 
-### Step 1: The Basic Widget Structure
+本指南将引导您在 Trilium 中创建一个基本的小组件。通过遵循这些步骤，您将学习如何构建一个与用户交互的简单 UI 元素。
 
-To start, we'll create the most basic widget possible. Here's a simple example:
+### 第一步：小组件基本结构
+
+首先，我们将创建尽可能基本的小组件。以下是一个简单示例：
 
 ```
 class MyWidget extends api.BasicWidget {
@@ -19,20 +20,20 @@ class MyWidget extends api.BasicWidget {
 module.exports = new MyWidget();
 ```
 
-To implement this widget:
+要实现此小组件：
 
-1.  Create a new `JS Frontend` note in Trilium and paste in the code above.
-2.  Assign the `#widget` [attribute](../../../Advanced%20Usage/Attributes.md) to the [note](../../../Basic%20Concepts%20and%20Features/Notes.md).
-3.  Restart Trilium or reload the window.
+1.  在 Trilium 中创建一个新的 `JS 前端` 笔记，并粘贴上述代码。
+2.  为[笔记](../../../Basic%20Concepts%20and%20Features/Notes.md)分配 `#widget` [属性](../../../Advanced%20Usage/Attributes.md)。
+3.  重启 Trilium 或重新加载窗口。
 
-To verify that the widget is working, open the developer tools (<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>I</kbd>) and run `document.querySelector("#my-widget")`. If the element is found, the widget is functioning correctly. If `undefined` is returned, double-check that the [note](../../../Basic%20Concepts%20and%20Features/Notes.md) has the `#widget` [attribute](../../../Advanced%20Usage/Attributes.md).
+要验证小组件是否正常工作，请打开开发者工具（<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>I</kbd>）并运行 `document.querySelector("#my-widget")`。如果找到了该元素，则小组件运行正常。如果返回 `undefined`，请仔细检查[笔记](../../../Basic%20Concepts%20and%20Features/Notes.md)是否具有 `#widget` [属性](../../../Advanced%20Usage/Attributes.md)。
 
-### Step 2: Adding an UI Element
+### 第二步：添加 UI 元素
 
-Next, let's improve the widget by adding a button to it.
+接下来，我们通过向小组件添加一个按钮来改进它。
 
 ```
-const template = `<div id="my-widget"><button>Click Me!</button></div>`;
+const template = `<div id="my-widget"><button>点击我！</button></div>`;
 
 class MyWidget extends api.BasicWidget {
     get position() {return 1;}
@@ -47,19 +48,19 @@ class MyWidget extends api.BasicWidget {
 module.exports = new MyWidget();
 ```
 
-After making this change, reload Trilium. You should now see a button in the top-left corner of the left pane.
+进行此更改后，重新加载 Trilium。您现在应该会在左侧面板的左上角看到一个按钮。
 
-### Step 3: Styling the Widget
+### 第三步：为小组件设置样式
 
-To make the button more visually appealing and position it correctly, we'll apply some custom styling. Trilium includes [Box Icons](https://boxicons.com), which we'll use to replace the button text with an icon. For example the `bx bxs-magic-wand` icon.
+为了使按钮更具视觉吸引力并正确定位，我们将应用一些自定义样式。Trilium 包含 [Box Icons](https://boxicons.com)，我们将使用它来用图标替换按钮文本。例如 `bx bxs-magic-wand` 图标。
 
-Here's the updated template:
+以下是更新后的模板：
 
 ```
 const template = `<div id="my-widget"><button class="tree-floating-button bx bxs-magic-wand tree-settings-button"></button></div>`;
 ```
 
-Next, we'll adjust the button's position using CSS:
+接下来，我们将使用 CSS 调整按钮的位置：
 
 ```
 class MyWidget extends api.BasicWidget {
@@ -81,11 +82,11 @@ class MyWidget extends api.BasicWidget {
 module.exports = new MyWidget();
 ```
 
-After reloading Trilium, the button should now appear at the bottom left of the left pane, alongside other action buttons.
+重新加载 Trilium 后，按钮现在应出现在左侧面板的左下角，与其他操作按钮一起。
 
-### Step 4: Adding User Interaction
+### 第四步：添加用户交互
 
-Let’s make the button interactive by showing a message when it’s clicked. We'll use the `api.showMessage` method from the [Script API](../../Script%20API.md).
+让我们通过点击按钮时显示一条消息来使其具有交互性。我们将使用 [脚本 API](../../Script%20API.md) 中的 `api.showMessage` 方法。
 
 ```
 class MyWidget extends api.BasicWidget {
@@ -100,7 +101,7 @@ class MyWidget extends api.BasicWidget {
             left: 60px;
             z-index: 1;
         }`);
-        this.$widget.find("button").on("click", () => api.showMessage("Hello World!"));
+        this.$widget.find("button").on("click", () => api.showMessage("你好，世界！"));
         return this.$widget;
     }
 }
@@ -108,6 +109,6 @@ class MyWidget extends api.BasicWidget {
 module.exports = new MyWidget();
 ```
 
-For the list of possible values for `parentWidget()`, see <a class="reference-link" href="../Custom%20Widgets.md">Custom Widgets</a>. 
+有关 `parentWidget()` 的可能值列表，请参阅 <a class="reference-link" href="../Custom%20Widgets.md">自定义小组件</a>。
 
-[Reload](../../../Troubleshooting/Refreshing%20the%20application.md) the application one last time. When you click the button, a "Hello World!" message should appear, confirming that your widget is fully functional.
+最后[重新加载](../../../Troubleshooting/Refreshing%20the%20application.md)应用程序。当您点击按钮时，应出现一条“你好，世界！”消息，确认您的小组件完全正常工作。

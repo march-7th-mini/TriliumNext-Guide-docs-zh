@@ -1,42 +1,43 @@
-# Data directory
-Data directory contains:
+# 数据目录
 
-*   `document.db` - [database](../Advanced%20Usage/Database.md)
-*   `config.ini` - instance level settings like port on which the Trilium application runs
-*   `backup` - contains automatically [backup](Backup.md) of documents
-*   `log` - contains application log files
+数据目录包含：
 
-## Location of the data directory
+*   `document.db` - [数据库](../Advanced%20Usage/Database.md)
+*   `config.ini` - 实例级设置，如 Trilium 应用程序运行的端口
+*   `backup` - 包含自动[备份](Backup.md)的文档
+*   `log` - 包含应用程序日志文件
 
-Easy way how to find out which data directory Trilium uses is to look at the "About Trilium Notes" dialog (from "Menu" in upper left corner):
+## 数据目录的位置
+
+查找 Trilium 使用的数据目录的简单方法是查看“关于 Trilium Notes”对话框（从左上角的“菜单”进入）：
 
 ![](Data%20directory_image.png)
 
-Here's how the location is decided:
+以下是位置的确定方式：
 
-Data directory is normally named `trilium-data` and it is stored in:
+数据目录通常命名为 `trilium-data`，存储位置如下：
 
-*   `/home/[user]/.local/share` for Linux
-*   `C:\Users\[user]\AppData\Roaming` for Windows Vista and up
-*   `/Users/[user]/Library/Application Support` for Mac OS
-*   user's home is a fallback if some of the paths above don't exist
-*   user's home is also a default setup for \[\[docker|Docker server installation\]\]
+*   Linux 系统：`/home/[user]/.local/share`
+*   Windows Vista 及以上系统：`C:\Users\[user]\AppData\Roaming`
+*   Mac OS 系统：`/Users/[user]/Library/Application Support`
+*   如果上述某些路径不存在，则回退到用户主目录
+*   用户主目录也是 \[\[docker|Docker 服务器安装\]\] 的默认设置
 
-If you want to back up your Trilium data, just backup this single directory - it contains everything you need.
+如果你想备份 Trilium 数据，只需备份这一个目录即可——它包含了你需要的一切。
 
-### Changing the location of data directory
+### 更改数据目录的位置
 
-If you want to use some other location for the data directory than the default one, you may change it via `TRILIUM_DATA_DIR` environment variable to some other location:
+如果你希望将数据目录放在其他位置而非默认位置，可以通过 `TRILIUM_DATA_DIR` 环境变量将其更改为其他位置：
 
 ### Windows
 
-1.  Press the Windows key on your keyboard.
-2.  Search and select “Edit the system variables”.
-3.  Press the “Environment Variables…” button in the bottom-right of the newly opened screen.
-4.  On the top section ("User variables for \[user\]"), press the “New…” button.
-5.  In the _Variable name_ field insert `TRILIUM_DATA_DIR`.
-6.  Press the _Browse Directory…_ button and select the new directory where to store the database.
-7.  Close all the windows by pressing the _OK_ button for each of them.
+1.  按下键盘上的 Windows 键。
+2.  搜索并选择“编辑系统变量”。
+3.  在新打开的屏幕右下角点击“环境变量…”按钮。
+4.  在顶部区域（“[用户] 的用户变量”），点击“新建…”按钮。
+5.  在_变量名_字段中输入 `TRILIUM_DATA_DIR`。
+6.  点击_浏览目录…_按钮并选择存储数据库的新目录。
+7.  依次点击每个窗口的_确定_按钮关闭所有窗口。
 
 #### Linux
 
@@ -46,11 +47,11 @@ export TRILIUM_DATA_DIR=/home/myuser/data/my-trilium-data
 
 #### Mac OS X
 
-You need to create a `.plist` file under `~/Library/LaunchAgents` to load it properly each login.
+你需要在 `~/Library/LaunchAgents` 下创建一个 `.plist` 文件，以便每次登录时正确加载。
 
-To load it manually, you need to use `launchctl setenv TRILIUM_DATA_DIR <yourpath>`
+要手动加载，你需要使用 `launchctl setenv TRILIUM_DATA_DIR <yourpath>`
 
-Here is a pre-defined template, where you just need to add your path to:
+以下是一个预定义模板，你只需将你的路径添加到其中：
 
 ```
         Label
@@ -65,34 +66,34 @@ Here is a pre-defined template, where you just need to add your path to:
             /Users/YourUserName/Library/Application Support/trilium-data    
 ```
 
-### Create a script to run with specific data directory
+### 创建使用特定数据目录运行的脚本
 
-An alternative to globally setting environment variable is to run only the Trilium Notes with this environment variable. This then allows for different setup styles like two [database](../Advanced%20Usage/Database.md) instances or "portable" installation.
+全局设置环境变量的替代方案是仅为此环境变量运行 Trilium Notes。这样可以实现不同的设置方式，例如两个[数据库](../Advanced%20Usage/Database.md)实例或“便携式”安装。
 
-To do this in Unix-based systems simply run `trilium` like this:
+在基于 Unix 的系统上执行此操作，只需像这样运行 `trilium`：
 
 ```
 TRILIUM_DATA_DIR=/home/myuser/data/my-trilium-data trilium
 ```
 
-You can then save the above command as a shell script on your path for convenience.
+然后，你可以将上述命令保存为路径中的 shell 脚本，以方便使用。
 
-## Electron user data directory (desktop only)
+## Electron 用户数据目录（仅限桌面版）
 
-When running the desktop application, Electron stores internal data (caches, spell-check dictionaries, session storage, etc.) separately from the Trilium data directory. By default this goes to the system's application data folder (e.g. `%APPDATA%` on Windows), which may be undesirable in corporate environments with roaming profiles or when running in portable mode.
+运行桌面应用程序时，Electron 会将内部数据（缓存、拼写检查词典、会话存储等）与 Trilium 数据目录分开存储。默认情况下，这些数据存储在系统的应用程序数据文件夹中（例如 Windows 上的 `%APPDATA%`），在具有漫游配置文件的企业环境或便携模式下运行时，这可能不是期望的行为。
 
-To keep Electron data out of the system's roaming profile, set the `TRILIUM_ELECTRON_DATA_DIR` environment variable to an explicit path. The `trilium-portable` script does this automatically, pointing it to `trilium-electron-data/` next to the application.
+要将 Electron 数据保留在系统的漫游配置文件之外，请将 `TRILIUM_ELECTRON_DATA_DIR` 环境变量设置为显式路径。`trilium-portable` 脚本会自动执行此操作，将其指向应用程序旁边的 `trilium-electron-data/`。
 
-## Fine-grained directory/path location
+## 细粒度的目录/路径位置
 
-Apart from the data directory, some of the subdirectories of it can be moved elsewhere by changing an environment variable:
+除了数据目录之外，其某些子目录也可以通过更改环境变量移动到其他位置：
 
-| Environment variable | Default value | Description |
+| 环境变量 | 默认值 | 描述 |
 | --- | --- | --- |
-| `TRILIUM_DOCUMENT_PATH` | `${TRILIUM_DATA_DIR}/document.db` | Path to the <a class="reference-link" href="../Advanced%20Usage/Database.md">Database</a> (storing all notes and metadata). |
-| `TRILIUM_BACKUP_DIR` | `${TRILIUM_DATA_DIR}/backup` | Directory where automated <a class="reference-link" href="Backup.md">Backup</a> databases are stored. |
-| `TRILIUM_LOG_DIR` | `${TRILIUM_DATA_DIR}/log` | Directory where daily <a class="reference-link" href="../Troubleshooting/Error%20logs/Backend%20(server)%20logs.md">Backend (server) logs</a> are stored. |
-| `TRILIUM_TMP_DIR` | `${TRILIUM_DATA_DIR}/tmp` | Directory where temporary files are stored (for example when opening in an external app). |
-| `TRILIUM_ANONYMIZED_DB_DIR` | `${TRILIUM_DATA_DIR}/anonymized-db` | Directory where a <a class="reference-link" href="../Troubleshooting/Anonymized%20Database.md">Anonymized Database</a> is stored. |
-| `TRILIUM_CONFIG_INI_PATH` | `${TRILIUM_DATA_DIR}/config.ini` | Path to <a class="reference-link" href="../Advanced%20Usage/Configuration%20(config.ini%20or%20environment%20variables).md">Configuration (config.ini or environment variables)</a> file. |
-| `TRILIUM_ELECTRON_DATA_DIR` | System appData | Directory for Electron internal data (caches, spell-check dictionaries, etc.). Set this in portable mode to avoid writing to the system profile (desktop only). |
+| `TRILIUM_DOCUMENT_PATH` | `${TRILIUM_DATA_DIR}/document.db` | <a class="reference-link" href="../Advanced%20Usage/Database.md">数据库</a>（存储所有笔记和元数据）的路径。 |
+| `TRILIUM_BACKUP_DIR` | `${TRILIUM_DATA_DIR}/backup` | 存储自动<a class="reference-link" href="Backup.md">备份</a>数据库的目录。 |
+| `TRILIUM_LOG_DIR` | `${TRILIUM_DATA_DIR}/log` | 存储每日<a class="reference-link" href="../Troubleshooting/Error%20logs/Backend%20(server)%20logs.md">后端（服务器）日志</a>的目录。 |
+| `TRILIUM_TMP_DIR` | `${TRILIUM_DATA_DIR}/tmp` | 存储临时文件的目录（例如在外部应用程序中打开时）。 |
+| `TRILIUM_ANONYMIZED_DB_DIR` | `${TRILIUM_DATA_DIR}/anonymized-db` | 存储<a class="reference-link" href="../Troubleshooting/Anonymized%20Database.md">匿名数据库</a>的目录。 |
+| `TRILIUM_CONFIG_INI_PATH` | `${TRILIUM_DATA_DIR}/config.ini` | <a class="reference-link" href="../Advanced%20Usage/Configuration%20(config.ini%20or%20environment%20variables).md">配置（config.ini 或环境变量）</a>文件的路径。 |
+| `TRILIUM_ELECTRON_DATA_DIR` | 系统 appData | Electron 内部数据（缓存、拼写检查词典等）的目录。在便携模式下设置此项以避免写入系统配置文件（仅限桌面版）。 |

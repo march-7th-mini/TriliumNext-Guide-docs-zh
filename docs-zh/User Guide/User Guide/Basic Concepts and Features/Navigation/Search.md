@@ -1,193 +1,193 @@
-# Search
+# 搜索
 <figure class="image"><img style="aspect-ratio:987/725;" src="Search_image.png" width="987" height="725"></figure>
 
-Note search enables you to find notes by searching for text in the title, content, or [attributes](../../Advanced%20Usage/Attributes.md) of the notes. You also have the option to save your searches, which will create a special search note which is visible on your navigation tree and contains the search results as sub-items.
+笔记搜索使您能够通过搜索笔记的标题、内容或[属性](../../Advanced%20Usage/Attributes.md)中的文本来查找笔记。您还可以选择保存搜索，这将创建一个特殊的搜索笔记，该笔记在导航树中可见，并将搜索结果作为子项包含在内。
 
-## Accessing the search
+## 访问搜索
 
-*   From the <a class="reference-link" href="../UI%20Elements/Launch%20Bar.md">Launch Bar</a>, look for the dedicated search button.
-*   To limit the search to a note and its children, select _Search from subtree_ from the <a class="reference-link" href="../UI%20Elements/Note%20Tree/Note%20tree%20contextual%20menu.md">Note tree contextual menu</a> or press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd>.
+*   从<a class="reference-link" href="../UI%20Elements/Launch%20Bar.md">启动栏</a>中，查找专用的搜索按钮。
+*   要将搜索限制在某条笔记及其子笔记中，请从<a class="reference-link" href="../UI%20Elements/Note%20Tree/Note%20tree%20contextual%20menu.md">笔记树上下文菜单</a>中选择 _从子树中搜索_，或按 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd>。
 
-## Interaction
+## 交互操作
 
-To search for notes, click on the magnifying glass icon on the toolbar or press the keyboard [shortcut](../Keyboard%20Shortcuts.md).
+要搜索笔记，请点击工具栏上的放大镜图标或按下键盘[快捷键](../Keyboard%20Shortcuts.md)。
 
-1.  Set the text to search for in the _Search string_ field.
-    1.  Apart from searching for words literally, there is also the possibility to search for attributes or properties of notes.
-    2.  See the examples below for more information.
-2.  To limit the search to a note and its sub-children, set a note in _Ancestor_.
-    1.  This value is also pre-filled if the search is triggered from a [hoisted note](Note%20Hoisting.md) or a [workspace](Workspaces.md).
-    2.  To search the entire database, keep the value empty.
-3.  To limit the search to only a few levels of hierarchy (e.g. look in sub-children but not in sub-sub-children of a note), set the _depth_ field to one of the provided values.
-4.  In addition to that, the search can be configured via the _Add search options_ buttons, as described in the follow-up section.
-5.  Press _Search_ to trigger the search. The results are displayed below the search configuration pane.
-6.  The _Search & Execute actions_ button is only relevant if at least one action has been added (as described in the section below).
-7.  The _Save to note_ will create a new note with the search configuration. For more information, see <a class="reference-link" href="../../Note%20Types/Saved%20Search.md">Saved Search</a>.
+1.  在 _搜索字符串_ 字段中设置要搜索的文本。
+    1.  除了按字面意思搜索单词外，还可以搜索笔记的属性或特性。
+    2.  有关更多信息，请参见下面的示例。
+2.  要将搜索限制在某条笔记及其子笔记中，请在 _祖先_ 中设置一条笔记。
+    1.  如果从[提升笔记](Note%20Hoisting.md)或[工作区](Workspaces.md)触发搜索，此值也会被预填。
+    2.  要搜索整个数据库，请保持该值为空。
+3.  要将搜索限制在少数几个层级（例如，查找子笔记但不查找子-子笔记），请将 _深度_ 字段设置为提供的值之一。
+4.  除此之外，还可以通过 _添加搜索选项_ 按钮配置搜索，如下一节所述。
+5.  按 _搜索_ 触发搜索。结果显示在搜索配置面板下方。
+6.  _搜索并执行操作_ 按钮仅在至少添加了一个操作时相关（如下一节所述）。
+7.  _保存到笔记_ 将使用搜索配置创建一个新笔记。有关更多信息，请参见<a class="reference-link" href="../../Note%20Types/Saved%20Search.md">已保存的搜索</a>。
 
-## Search options
+## 搜索选项
 
-Click on which search option to apply from the Add search option section.
+从“添加搜索选项”部分点击要应用的搜索选项。
 
-*   For each search option selected, the search configuration will update to reveal the entry. Each search option will have its own configuration.
-*   To remove a search option, simply press the X button to the right of it.
+*   对于每个选中的搜索选项，搜索配置将更新以显示输入项。每个搜索选项都有自己的配置。
+*   要移除搜索选项，只需按右侧的 X 按钮。
 
-The options available are:
+可用的选项有：
 
-1.  Search script
-    1.  This feature allows writing a <a class="reference-link" href="../../Note%20Types/Code.md">Code</a> note that will handle the search on its own.
-2.  Fast search
-    1.  The search will not look into the content of the notes, but it will still look into note titles and attributes, relations (based on the search query).
-    2.  This method can speed up the search considerably for large [databases](../../Advanced%20Usage/Database.md).
-3.  Include archived
-    1.  <a class="reference-link" href="../Notes/Archived%20Notes.md">Archived Notes</a> will also be included in the results, whereas otherwise they would be ignored.
-4.  Order by
-    1.  Allows changing the criteria for ordering the results, for example to order by creation date or alphabetically instead of by relevancy (default).
-    2.  It's also possible to change the order (ascending or descending) of the results.
-5.  Limit
-    1.  Limits the results to a given maximum.
-    2.  This can help if the number of results would otherwise be high, at the cost of not being able to view all the results.
-6.  Debug
-    1.  This will print additional information in the server log (see <a class="reference-link" href="../../Troubleshooting/Error%20logs.md">Error logs</a>), regarding how the search expression was parsed.
-    2.  This function is especially useful after understanding the search functionality in detail, in order to determine why a complex search query is not working as expected.
-7.  Action
-    1.  Apart from just searching, it is also possible to apply actions such as to add a label or a relation to the notes that have been matched by the search.
-    2.  Unlike other search configurations, here it's possible to apply the same action multiple times (i.e. in order to be able to apply multiple labels to notes).
-    3.  The actions given are the same as the ones in <a class="reference-link" href="../../Advanced%20Usage/Bulk%20Actions.md">Bulk Actions</a>, which is an alternative for operating directly with notes within the <a class="reference-link" href="../UI%20Elements/Note%20Tree.md">Note Tree</a>.
-    4.  After defining the actions, first press _Search_ to check the matched notes and then press _Search & Execute actions_ to trigger the actions.
+1.  搜索脚本
+    1.  此功能允许编写一个<a class="reference-link" href="../../Note%20Types/Code.md">代码</a>笔记来独立处理搜索。
+2.  快速搜索
+    1.  搜索不会查看笔记的内容，但仍会查看笔记标题、属性、关系（基于搜索查询）。
+    2.  对于大型[数据库](../../Advanced%20Usage/Database.md)，此方法可以显著加快搜索速度。
+3.  包含已归档
+    1.  <a class="reference-link" href="../Notes/Archived%20Notes.md">已归档笔记</a>也将包含在结果中，否则它们将被忽略。
+4.  排序方式
+    1.  允许更改结果排序的标准，例如按创建日期或字母顺序排序，而不是按相关性（默认）排序。
+    2.  也可以更改结果的顺序（升序或降序）。
+5.  限制
+    1.  将结果限制在给定的最大值内。
+    2.  如果结果数量可能很大，这有助于限制数量，代价是无法查看所有结果。
+6.  调试
+    1.  这将在服务器日志中打印附加信息（参见<a class="reference-link" href="../../Troubleshooting/Error%20logs.md">错误日志</a>），说明搜索表达式是如何被解析的。
+    2.  在详细了解搜索功能后，此功能对于确定复杂搜索查询为何无法按预期工作尤其有用。
+7.  操作
+    1.  除了仅搜索之外，还可以对搜索匹配到的笔记应用操作，例如添加标签或关系。
+    2.  与其他搜索配置不同，这里可以多次应用相同的操作（即，以便能够向笔记添加多个标签）。
+    3.  提供的操作与<a class="reference-link" href="../../Advanced%20Usage/Bulk%20Actions.md">批量操作</a>中的操作相同，这是在<a class="reference-link" href="../UI%20Elements/Note%20Tree.md">笔记树</a>中直接操作笔记的替代方法。
+    4.  定义操作后，首先按 _搜索_ 检查匹配的笔记，然后按 _搜索并执行操作_ 触发操作。
 
-### Simple Note Search Examples
+### 简单笔记搜索示例
 
-*   `rings tolkien`: Full-text search to find notes containing both "rings" and "tolkien".
-*   `"The Lord of the Rings" Tolkien`: Full-text search where "The Lord of the Rings" must match exactly.
-*   `note.content *=* rings OR note.content *=* tolkien`: Find notes containing "rings" or "tolkien" in their content.
-*   `towers #book`: Combine full-text and attribute search to find notes containing "towers" and having the "book" label.
-*   `towers #book or #author`: Search for notes containing "towers" and having either the "book" or "author" label.
-*   `towers #!book`: Search for notes containing "towers" and not having the "book" label.
-*   `#book #publicationYear = 1954`: Find notes with the "book" label and "publicationYear" set to 1954.
-*   `#genre *=* fan`: Find notes with the "genre" label containing the substring "fan". Additional operators include `*=*` for "contains", `=*` for "starts with", `*=` for "ends with", and `!=` for "is not equal to".
-*   `#book #publicationYear >= 1950 #publicationYear < 1960`: Use numeric operators to find all books published in the 1950s.
-*   `#dateNote >= TODAY-30`: Find notes with the "dateNote" label within the last 30 days. Supported date values include NOW +- seconds, TODAY +- days, MONTH +- months, YEAR +- years.
-*   `~author.title *=* Tolkien`: Find notes related to an author whose title contains "Tolkien".
-*   `#publicationYear %= '19[0-9]{2}'`: Use the '%=' operator to match a regular expression (regex). This feature has been available since Trilium 0.52.
-*   `note.content %= '\\d{2}:\\d{2} (PM|AM)'`: Find notes that mention a time. Backslashes in a regex must be escaped.
+*   `rings tolkien`：全文搜索，查找同时包含“rings”和“tolkien”的笔记。
+*   `"The Lord of the Rings" Tolkien`：全文搜索，其中“The Lord of the Rings”必须完全匹配。
+*   `note.content *=* rings OR note.content *=* tolkien`：查找内容中包含“rings”或“tolkien”的笔记。
+*   `towers #book`：结合全文和属性搜索，查找包含“towers”且具有“book”标签的笔记。
+*   `towers #book or #author`：搜索包含“towers”且具有“book”或“author”标签的笔记。
+*   `towers #!book`：搜索包含“towers”但不具有“book”标签的笔记。
+*   `#book #publicationYear = 1954`：查找具有“book”标签且“publicationYear”设置为1954的笔记。
+*   `#genre *=* fan`：查找“genre”标签包含子字符串“fan”的笔记。其他运算符包括 `*=`* 表示“包含”，`=*` 表示“以...开头”，`*=` 表示“以...结尾”，`!=` 表示“不等于”。
+*   `#book #publicationYear >= 1950 #publicationYear < 1960`：使用数字运算符查找所有在20世纪50年代出版的书籍。
+*   `#dateNote >= TODAY-30`：查找“dateNote”标签在过去30天内的笔记。支持的日期值包括 NOW +- 秒，TODAY +- 天，MONTH +- 月，YEAR +- 年。
+*   `~author.title *=* Tolkien`：查找与标题包含“Tolkien”的作者相关的笔记。
+*   `#publicationYear %= '19[0-9]{2}'`：使用 '%=' 运算符匹配正则表达式。此功能自 Trilium 0.52 起可用。
+*   `note.content %= '\\d{2}:\\d{2} (PM|AM)'`：查找提及时间的笔记。正则表达式中的反斜杠必须转义。
 
-### Fuzzy Search
+### 模糊搜索
 
-Trilium supports fuzzy search operators that find results with typos or spelling variations:
+Trilium 支持模糊搜索运算符，可以查找包含拼写错误或拼写变体的结果：
 
-*   `#title ~= trilim`: Fuzzy exact match - finds notes with titles like "Trilium" even if you typed "trilim" (with typo)
-*   `#content ~* progra`: Fuzzy contains match - finds notes containing words like "program", "programmer", "programming" even with slight misspellings
-*   `note.content ~* develpment`: Will find notes containing "development" despite the typo
+*   `#title ~= trilim`：模糊精确匹配 - 即使您输入了“trilim”（带拼写错误），也能找到标题如“Trilium”的笔记。
+*   `#content ~* progra`：模糊包含匹配 - 查找包含如“program”、“programmer”、“programming”等单词的笔记，即使有轻微拼写错误。
+*   `note.content ~* develpment`：尽管有拼写错误，也能找到包含“development”的笔记。
 
-**Important notes about fuzzy search:**
+**关于模糊搜索的重要说明：**
 
-*   Fuzzy search requires at least 3 characters in the search term
-*   Maximum edit distance is 2 characters (number of character changes needed)
-*   Diacritics are normalized (e.g., "café" matches "cafe")
-*   Fuzzy matches work best for finding content with minor typos or spelling variations
+*   模糊搜索要求搜索词至少包含3个字符。
+*   最大编辑距离为2个字符（所需的字符更改次数）。
+*   变音符号会被规范化（例如，“café”匹配“cafe”）。
+*   模糊匹配最适合查找包含轻微拼写错误或拼写变体的内容。
 
-### Advanced Use Cases
+### 高级用例
 
-*   `~author.relations.son.title = 'Christopher Tolkien'`: Search for notes with an "author" relation to a note that has a "son" relation to "Christopher Tolkien". This can be modeled with the following note structure:
-    *   Books
-        *   Lord of the Rings
-            *   label: “book”
-            *   relation: “author” points to “J. R. R. Tolkien” note
-    *   People
+*   `~author.relations.son.title = 'Christopher Tolkien'`：搜索具有“author”关系指向某笔记，且该笔记具有指向“Christopher Tolkien”的“son”关系的笔记。这可以通过以下笔记结构建模：
+    *   书籍
+        *   指环王
+            *   标签：“book”
+            *   关系：“author”指向“J. R. R. Tolkien”笔记
+    *   人物
         *   J. R. R. Tolkien
-            *   relation: “son” points to "Christopher Tolkien" note
+            *   关系：“son”指向“Christopher Tolkien”笔记
             *   Christopher Tolkien
-*   `~author.title *= Tolkien OR (#publicationDate >= 1954 AND #publicationDate <= 1960)`: Use boolean expressions and parentheses to group expressions. Note that expressions starting with a parenthesis need an "expression separator sign" (# or ~) prepended.
-*   `note.parents.title = 'Books'`: Find notes with a parent named "Books".
-*   `note.parents.parents.title = 'Books'`: Find notes with a grandparent named "Books".
-*   `note.ancestors.title = 'Books'`: Find notes with an ancestor named "Books".
-*   `note.children.title = 'sub-note'`: Find notes with a child named "sub-note".
+*   `~author.title *= Tolkien OR (#publicationDate >= 1954 AND #publicationDate <= 1960)`：使用布尔表达式和括号对表达式进行分组。请注意，以括号开头的表达式需要前置“表达式分隔符”（# 或 ~）。
+*   `note.parents.title = 'Books'`：查找父笔记名为“Books”的笔记。
+*   `note.parents.parents.title = 'Books'`：查找祖父笔记名为“Books”的笔记。
+*   `note.ancestors.title = 'Books'`：查找祖先笔记名为“Books”的笔记。
+*   `note.children.title = 'sub-note'`：查找子笔记名为“sub-note”的笔记。
 
-### Search with Note Properties
+### 使用笔记属性搜索
 
-Notes have properties that can be used in searches, such as `noteId`, `dateModified`, `dateCreated`, `isProtected`, `type`, `title`, `text`, `content`, `rawContent`, `ownedLabelCount`, `labelCount`, `ownedRelationCount`, `relationCount`, `ownedRelationCountIncludingLinks`, `relationCountIncludingLinks`, `ownedAttributeCount`, `attributeCount`, `targetRelationCount`, `targetRelationCountIncludingLinks`, `parentCount`, `childrenCount`, `isArchived`, `contentSize`, `noteSize`, and `revisionCount`.
+笔记具有可用于搜索的属性，例如 `noteId`、`dateModified`、`dateCreated`、`isProtected`、`type`、`title`、`text`、`content`、`rawContent`、`ownedLabelCount`、`labelCount`、`ownedRelationCount`、`relationCount`、`ownedRelationCountIncludingLinks`、`relationCountIncludingLinks`、`ownedAttributeCount`、`attributeCount`、`targetRelationCount`、`targetRelationCountIncludingLinks`、`parentCount`、`childrenCount`、`isArchived`、`contentSize`、`noteSize` 和 `revisionCount`。
 
-These properties can be accessed via the `note.` prefix, e.g., `note.type = code AND note.mime = 'application/json'`.
+这些属性可以通过 `note.` 前缀访问，例如 `note.type = code AND note.mime = 'application/json'`。
 
-### Order by and Limit
+### 排序与限制
 
 ```
 #author=Tolkien orderBy #publicationDate desc, note.title limit 10
 ```
 
-This example will:
+此示例将：
 
-1.  Find notes with the author label "Tolkien".
-2.  Order the results by `publicationDate` in descending order.
-3.  Use `note.title` as a secondary ordering if publication dates are equal.
-4.  Limit the results to the first 10 notes.
+1.  查找具有作者标签“Tolkien”的笔记。
+2.  按 `publicationDate` 降序对结果排序。
+3.  如果出版日期相同，则使用 `note.title` 作为次级排序。
+4.  将结果限制为前10条笔记。
 
-### Negation
+### 否定
 
-Some queries can only be expressed with negation:
+某些查询只能通过否定来表达：
 
 ```
 #book AND not(note.ancestor.title = 'Tolkien')
 ```
 
-This query finds all book notes not in the "Tolkien" subtree.
+此查询查找所有不在“Tolkien”子树中的书籍笔记。
 
-## Progressive Search Strategy
+## 渐进式搜索策略
 
-Trilium uses a progressive search strategy that performs exact matching first, then adds fuzzy matching when needed.
+Trilium 使用渐进式搜索策略，首先执行精确匹配，然后在需要时添加模糊匹配。
 
-### How Progressive Search Works
+### 渐进式搜索的工作原理
 
-1.  **Phase 1 - Exact Matching**: When you search, Trilium first looks for exact matches of your search terms. This handles the vast majority of searches (90%+) and returns results almost instantly.
-2.  **Phase 2 - Fuzzy Fallback**: If Phase 1 doesn't find enough high-quality results (fewer than 5 results with good relevance scores), Trilium automatically adds fuzzy matching to find results with typos or spelling variations.
-3.  **Result Ordering**: Exact matches always appear before fuzzy matches, regardless of individual scores. This ensures that when you search for "project", notes containing the exact word "project" will appear before notes containing similar words like "projects" or "projection".
+1.  **阶段 1 - 精确匹配**：当您搜索时，Trilium 首先查找搜索词的精确匹配。这处理了绝大多数搜索（90%以上）并几乎立即返回结果。
+2.  **阶段 2 - 模糊回退**：如果阶段 1 没有找到足够多的高质量结果（少于5个具有良好相关性评分的结果），Trilium 会自动添加模糊匹配以查找包含拼写错误或拼写变体的结果。
+3.  **结果排序**：无论单个分数如何，精确匹配总是出现在模糊匹配之前。这确保了当您搜索“project”时，包含确切单词“project”的笔记会出现在包含类似单词如“projects”或“projection”的笔记之前。
 
-### Progressive Search Behavior
+### 渐进式搜索行为
 
-*   **Speed**: Most searches complete using only exact matching
-*   **Ordering**: Exact matches appear before fuzzy matches
-*   **Fallback**: Fuzzy matching activates when exact matches return fewer than 5 results
-*   **Identification**: Results indicate whether they are exact or fuzzy matches
+*   **速度**：大多数搜索仅使用精确匹配即可完成。
+*   **排序**：精确匹配出现在模糊匹配之前。
+*   **回退**：当精确匹配返回少于5个结果时，模糊匹配被激活。
+*   **标识**：结果会指示它们是精确匹配还是模糊匹配。
 
-### Search Performance
+### 搜索性能
 
-Search system specifications:
+搜索系统规格：
 
-*   Content size limit: 10MB per note (previously 50KB)
-*   Edit distance calculations for fuzzy matching
-*   Infinite scrolling in Quick Search
+*   内容大小限制：每条笔记10MB（之前为50KB）。
+*   模糊匹配的编辑距离计算。
+*   快速搜索中的无限滚动。
 
-## Under the Hood
+## 底层原理
 
-### Label and Relation Shortcuts
+### 标签和关系快捷方式
 
-The "full" syntax for searching by labels is:
+按标签搜索的“完整”语法是：
 
 ```
 note.labels.publicationYear = 1954
 ```
 
-For relations:
+对于关系：
 
 ```
 note.relations.author.title *=* Tolkien
 ```
 
-However, common label and relation searches have shortcut syntax:
+然而，常见的标签和关系搜索有快捷语法：
 
 ```
 #publicationYear = 1954
 ~author.title *=* Tolkien
 ```
 
-### Separating Full-Text and Attribute Parts
+### 分隔全文和属性部分
 
-Search syntax allows combining full-text search with attribute-based search. For example, `tolkien #book` contains:
+搜索语法允许将全文搜索与基于属性的搜索相结合。例如，`tolkien #book` 包含：
 
-1.  Full-text tokens - `tolkien`
-2.  Attribute expressions - `#book`
+1.  全文标记 - `tolkien`
+2.  属性表达式 - `#book`
 
-Trilium detects the separation between full text search and attribute/property search by looking for certain special characters or words that denote attributes and properties (e.g., #, ~, note.). If you need to include these in full-text search, escape them with a backslash so they are processed as regular text:
+Trilium 通过查找表示属性和特性的特定特殊字符或单词（例如 #、~、note.）来检测全文搜索和属性/特性搜索之间的分隔。如果您需要在全文搜索中包含这些字符，请使用反斜杠对其进行转义，以便将它们作为常规文本处理：
 
 ```
 "note.txt" 
@@ -195,9 +195,9 @@ Trilium detects the separation between full text search and attribute/property s
 #myLabel = 'Say "Hello World"'
 ```
 
-### Escaping Special Characters
+### 转义特殊字符
 
-Special characters can be enclosed in quotes or escaped with a backslash to be used in full-text search:
+特殊字符可以用引号括起来或用反斜杠转义，以便在全文搜索中使用：
 
 ```
 "note.txt"
@@ -205,37 +205,37 @@ Special characters can be enclosed in quotes or escaped with a backslash to be u
 #myLabel = 'Say "Hello World"'
 ```
 
-Three types of quotes are supported: single, double, and backtick.
+支持三种类型的引号：单引号、双引号和反引号。
 
-### Type Coercion
+### 类型强制转换
 
-Label values are technically strings but can be coerced for numeric comparisons:
+标签值在技术上是字符串，但可以强制转换以进行数字比较：
 
 ```
 note.dateCreated =* '2019-05'
 ```
 
-This finds notes created in May 2019. Numeric operators like `#publicationYear >= 1960` convert string values to numbers for comparison.
+这将查找2019年5月创建的笔记。数字运算符如 `#publicationYear >= 1960` 会将字符串值转换为数字进行比较。
 
-## Auto-Trigger Search from URL
+## 从 URL 自动触发搜索
 
-You can open Trilium and automatically trigger a search by including the search [url encoded](https://meyerweb.com/eric/tools/dencoder/) string in the URL:
+您可以通过在 URL 中包含[URL 编码](https://meyerweb.com/eric/tools/dencoder/)的搜索字符串来打开 Trilium 并自动触发搜索：
 
 `http://localhost:8080/#?searchString=abc`
 
-## Search Configuration
+## 搜索配置
 
-### Parameters
+### 参数
 
-| Parameter | Value | Description |
+| 参数 | 值 | 描述 |
 | --- | --- | --- |
-| `MIN_FUZZY_TOKEN_LENGTH` | 3 | Minimum characters for fuzzy matching |
-| `MAX_EDIT_DISTANCE` | 2 | Maximum character changes allowed |
-| `RESULT_SUFFICIENCY_THRESHOLD` | 5 | Minimum exact results before fuzzy fallback |
-| `MAX_CONTENT_SIZE` | 10MB | Maximum note content size for search processing |
+| `MIN_FUZZY_TOKEN_LENGTH` | 3 | 模糊匹配的最小字符数 |
+| `MAX_EDIT_DISTANCE` | 2 | 允许的最大字符更改次数 |
+| `RESULT_SUFFICIENCY_THRESHOLD` | 5 | 触发模糊回退前所需的最小精确结果数 |
+| `MAX_CONTENT_SIZE` | 10MB | 搜索处理的最大笔记内容大小 |
 
-### Limits
+### 限制
 
-*   Searched note content is limited to 10MB per note to prevent performance issues
-*   Notes exceeding this limit will still be included in title and attribute searches
-*   Fuzzy matching requires tokens of at least 3 characters
+*   为避免性能问题，被搜索的笔记内容限制为每条笔记10MB。
+*   超过此限制的笔记仍将包含在标题和属性搜索中。
+*   模糊匹配要求标记至少包含3个字符。

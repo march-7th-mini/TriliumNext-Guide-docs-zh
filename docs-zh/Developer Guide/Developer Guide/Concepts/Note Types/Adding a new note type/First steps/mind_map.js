@@ -1,3 +1,4 @@
+```javascript
 import TypeWidget from "./type_widget.js";
 
 const TPL = `
@@ -25,3 +26,4 @@ export default class MindMapWidget extends TypeWidget {
         }
     }
 }
+```

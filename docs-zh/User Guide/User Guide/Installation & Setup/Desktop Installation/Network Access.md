@@ -1,14 +1,15 @@
-# Network Access
-Prior to v0.104.0, the [desktop application](../Desktop%20Installation.md) would also open a network port so that it can offer access to <a class="reference-link" href="../../Advanced%20Usage/ETAPI%20(REST%20API).md">ETAPI (REST API)</a> or even use it as a web server (see <a class="reference-link" href="Using%20the%20desktop%20application%20as%20a%20server.md">Using the desktop application as a server</a>).
+# 网络访问
 
-In order to reduce the attack surface, Trilium now enables these services only for the local device (e.g. `localhost`) instead of serving them over the LAN.
+在 v0.104.0 版本之前，[桌面应用程序](../Desktop%20Installation.md) 也会开放一个网络端口，以便提供对 <a class="reference-link" href="../../Advanced%20Usage/ETAPI%20(REST%20API).md">ETAPI (REST API)</a> 的访问，甚至可以用作 Web 服务器（参见 <a class="reference-link" href="Using%20the%20desktop%20application%20as%20a%20server.md">将桌面应用程序用作服务器</a>）。
 
-To better understand what is affected, refer to the following table:
+为了减少攻击面，Trilium 现在仅为本机设备（例如 `localhost`）启用这些服务，而不再通过局域网提供访问。
 
-| Feature | Network access OFF | Network access ON |
+为了更好地理解受影响的功能，请参考下表：
+
+| 功能 | 网络访问关闭 | 网络访问开启 |
 | --- | --- | --- |
-| <a class="reference-link" href="../Web%20Clipper.md">Web Clipper</a> | 🔒️ `localhost` only (still accessible to the browser extension on the same device) | 🌐 `localhost` + LAN |
-| <a class="reference-link" href="../../Advanced%20Usage/ETAPI%20(REST%20API).md">ETAPI (REST API)</a> | 🔒️ `localhost` only | 🌐 `localhost` + LAN |
-| [LLM MCP](../../AI.md) (only if enabled in settings) | 🔒️ `localhost` only (needs auth) | 🌐 `localhost` + LAN (needs auth) |
-| [Web app](Using%20the%20desktop%20application%20as%20a%20server.md) | ❌️ completely disabled (403), only the desktop app is usable. | 🌐 `localhost` + LAN |
-| <a class="reference-link" href="../../Advanced%20Usage/Sharing.md">Sharing</a> notes | ❌️ completely disabled (403), if you are using <a class="reference-link" href="../Synchronization.md">Synchronization</a> this will still work as part of the [server](../Server%20Installation.md). | 🌐 `localhost` + LAN |
+| <a class="reference-link" href="../Web%20Clipper.md">Web Clipper</a> | 🔒️ 仅 `localhost`（同一设备上的浏览器扩展仍可访问） | 🌐 `localhost` + 局域网 |
+| <a class="reference-link" href="../../Advanced%20Usage/ETAPI%20(REST%20API).md">ETAPI (REST API)</a> | 🔒️ 仅 `localhost` | 🌐 `localhost` + 局域网 |
+| [LLM MCP](../../AI.md)（仅在设置中启用时） | 🔒️ 仅 `localhost`（需要身份验证） | 🌐 `localhost` + 局域网（需要身份验证） |
+| [Web 应用](Using%20the%20desktop%20application%20as%20a%20server.md) | ❌️ 完全禁用（403），仅可使用桌面应用程序。 | 🌐 `localhost` + 局域网 |
+| <a class="reference-link" href="../../Advanced%20Usage/Sharing.md">分享</a> 笔记 | ❌️ 完全禁用（403），如果您使用 <a class="reference-link" href="../Synchronization.md">同步</a>，此功能仍可作为[服务器](../Server%20Installation.md)的一部分正常工作。 | 🌐 `localhost` + 局域网 |

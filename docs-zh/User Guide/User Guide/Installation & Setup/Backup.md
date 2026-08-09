@@ -1,47 +1,48 @@
-# Backup
-Trilium supports simple backup scheme where it saves copy of the <a class="reference-link" href="../Advanced%20Usage/Database.md">Database</a> on these events:
+# 备份
 
-*   once a day
-*   once a week
-*   once a month
-*   before DB migration to newer version
+Trilium 支持简单的备份方案，它会在以下事件发生时保存一份 <a class="reference-link" href="../Advanced%20Usage/Database.md">数据库</a> 的副本：
 
-So in total you'll have at most 4 backups from different points in time which should protect you from various problems. These backups are stored by default in `backup` directory placed in the [data directory](Data%20directory.md).
+*   每天一次
+*   每周一次
+*   每月一次
+*   在数据库迁移到新版本之前
 
-This is only very basic backup solution, and you're encouraged to add some better backup solution - e.g. backing up the <a class="reference-link" href="../Advanced%20Usage/Database.md">Database</a> to cloud / different computer etc.
+因此，您总共最多会有 4 个来自不同时间点的备份，这应该能保护您免受各种问题的影响。这些备份默认存储在 [数据目录](Data%20directory.md) 中的 `backup` 目录下。
 
-Note that <a class="reference-link" href="Synchronization.md">Synchronization</a> provides also some backup capabilities by its nature of distributing the data to other computers.
+这只是一个非常基础的备份解决方案，我们建议您添加一些更好的备份方案——例如，将 <a class="reference-link" href="../Advanced%20Usage/Database.md">数据库</a> 备份到云端或其他计算机等。
 
-## Downloading backup
+请注意，<a class="reference-link" href="Synchronization.md">同步</a> 本身通过将数据分发到其他计算机的特性，也提供了一些备份能力。
 
-You can download an existing backup by going to Settings > Backup > Existing backups > Download
+## 下载备份
 
-## Restoring backup
+您可以通过进入 设置 > 备份 > 现有备份 > 下载 来下载现有备份。
 
-Let's assume you want to restore the weekly backup, here's how to do it:
+## 恢复备份
 
-*   find [data directory](Data%20directory.md) Trilium uses - easy way is to open "About Trilium Notes" from "Menu" in upper left corner and looking at "data directory"
-    *   I'll refer to `~/trilium-data` as data directory from now on
-*   find `~/trilium-data/backup/backup-weekly.db` - this is the <a class="reference-link" href="../Advanced%20Usage/Database.md">Database</a> backup
-*   at this point stop/kill Trilium
-*   delete `~/trilium-data/document.db`, `~/trilium-data/document.db-wal` and `~/trilium-data/document.db-shm` (latter two files are auto generated)
-*   copy and rename this `~/trilium-data/backup/backup-weekly.db` to `~/trilium-data/document.db`
-*   make sure that the file is writable, e.g. with `chmod 600 document.db`
-*   start Trilium again
+假设您想要恢复每周备份，操作步骤如下：
 
-If you have configured sync then you need to do it across all members of the sync cluster, otherwise older version (restored backup) of the document will be detected and synced to the newer version.
+*   找到 Trilium 使用的 [数据目录](Data%20directory.md) —— 简单的方法是点击左上角“菜单”中的“关于 Trilium Notes”，然后查看“数据目录”
+    *   从现在起，我将把 `~/trilium-data` 称为数据目录
+*   找到 `~/trilium-data/backup/backup-weekly.db` —— 这是 <a class="reference-link" href="../Advanced%20Usage/Database.md">数据库</a> 的备份
+*   此时停止/结束 Trilium 进程
+*   删除 `~/trilium-data/document.db`、`~/trilium-data/document.db-wal` 和 `~/trilium-data/document.db-shm`（后两个文件是自动生成的）
+*   将此 `~/trilium-data/backup/backup-weekly.db` 复制并重命名为 `~/trilium-data/document.db`
+*   确保该文件可写，例如使用 `chmod 600 document.db` 命令
+*   重新启动 Trilium
 
-## Disabling backup
+如果您已配置同步，则需要对同步集群中的所有成员执行此操作，否则会检测到旧版本（恢复的备份）的文档并将其同步到新版本。
 
-Although this is not recommended, it is possible to disable backup in `config.ini` in the [data directory](Data%20directory.md):
+## 禁用备份
+
+虽然不建议这样做，但可以在 [数据目录](Data%20directory.md) 的 `config.ini` 中禁用备份：
 
 ```
 [General]
-... some other configs
-# set to true to disable backups (e.g. because of limited space on server)
+... 其他配置
+# 设置为 true 以禁用备份（例如，因为服务器空间有限）
 noBackup=true
 ```
 
-You can also review the [configuration](../Advanced%20Usage/Configuration%20\(config.ini%20or%20environment%20variables\).md) file to provide all `config.ini` values as environment variables instead.
+您也可以查看 [配置](../Advanced%20Usage/Configuration%20\(config.ini%20or%20environment%20variables\).md) 文件，以了解如何将所有 `config.ini` 值作为环境变量提供。
 
-See [sample config](https://github.com/TriliumNext/Trilium/blob/master/config-sample.ini).
+参见 [示例配置](https://github.com/TriliumNext/Trilium/blob/master/config-sample.ini)。

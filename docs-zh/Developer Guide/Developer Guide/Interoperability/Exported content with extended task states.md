@@ -1,9 +1,10 @@
-# Exported content with extended task states
-If you're a developer working with HTML or Markdown content exported from Trilium, here are the details on how task states are stored.
+# 带有扩展任务状态的导出内容
 
-## HTML notes
+如果你是处理从 Trilium 导出的 HTML 或 Markdown 内容的开发者，以下是关于任务状态如何存储的详细信息。
 
-Trilium stores the task state identifier in the `data-trilium-task-state` attribute on the `<li>` element of the to-do list. The task state's title is also included to provide a fallback, human-readable tooltip (shown even when no custom checkbox is rendered).
+## HTML 笔记
+
+Trilium 将任务状态标识符存储在待办列表 `<li>` 元素的 `data-trilium-task-state` 属性中。同时也会包含任务状态的标题，以提供可读的备用工具提示（即使未渲染自定义复选框时也会显示）。
 
 ```html
 <ul class="todo-list">
@@ -20,26 +21,26 @@ Trilium stores the task state identifier in the `data-trilium-task-state` attrib
 </ul>
 ```
 
-The checkbox glyph, color and other details are not present in the HTML markup. They are resolved at render time from the task state definition under "Task States" in Trilium's hidden subtree.
+复选框的图形、颜色和其他细节不包含在 HTML 标记中。它们是在渲染时根据 Trilium 隐藏子树中“任务状态”下的任务状态定义来解析的。
 
-The default task states use the following identifiers:
+默认任务状态使用以下标识符：
 
-| Title | Identifier | Counts as completed |
+| 标题 | 标识符 | 是否计入已完成 |
 | --- | --- | --- |
-| None | none | No |
-| Doing | doing | No |
-| Done | done | Yes |
-| Maybe | maybe | No |
-| Cancelled | cancelled | No |
+| 无 | none | 否 |
+| 进行中 | doing | 否 |
+| 已完成 | done | 是 |
+| 可能 | maybe | 否 |
+| 已取消 | cancelled | 否 |
 
-## Markdown notes
+## Markdown 笔记
 
-Exported Markdown notes simply carry the Markdown symbol corresponding to the task state inside the checkbox body, just as it appears in the editor.
+导出的 Markdown 笔记只是在复选框主体内携带与任务状态对应的 Markdown 符号，与编辑器中的显示方式一致。
 
 ```html
-- [ ] None
-- [/] Doing
-- [X] Done
-- [?] Maybe
-- [-] Cancelled
+- [ ] 无
+- [/] 进行中
+- [X] 已完成
+- [?] 可能
+- [-] 已取消
 ```

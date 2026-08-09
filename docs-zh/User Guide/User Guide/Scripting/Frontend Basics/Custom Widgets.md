@@ -1,29 +1,30 @@
-# Custom Widgets
-Custom widgets are a special subset of scripts that render graphical elements in certain parts of the application. These can be used to add new functionality to the Trilium application.
+# 自定义组件
 
-## Preact with JSX vs. vanilla jQuery
+自定义组件是脚本的一个特殊子集，用于在应用程序的特定区域渲染图形元素。这些组件可用于为 Trilium 应用程序添加新功能。
 
-In older versions of Trilium, custom widgets were exclusively written in a combination of jQuery with Trilium's internal widget architecture (e.g., `BasicWidget`, `NoteContextAwareWidget`).
+## 使用 JSX 的 Preact 与原生 jQuery 对比
 
-Starting with v0.101.0, custom widgets can also be written in JSX using the <a class="reference-link" href="Preact.md">Preact</a> framework. Both legacy and Preact widgets have the same capabilities, with a single difference:
+在 Trilium 的旧版本中，自定义组件完全使用 jQuery 结合 Trilium 的内部组件架构（例如 `BasicWidget`、`NoteContextAwareWidget`）编写。
 
-*   Preact widgets are content-sized by default whereas legacy widgets need `this.contentSized()` applied in the constructor. For more information, see the corresponding section in <a class="reference-link" href="Custom%20Widgets/Troubleshooting.md">Troubleshooting</a>.
+从 v0.101.0 版本开始，自定义组件也可以使用 <a class="reference-link" href="Preact.md">Preact</a> 框架以 JSX 编写。传统组件和 Preact 组件具有相同的功能，只有一个区别：
 
-Wherever possible, widget examples will be both in the legacy and Preact format.
+*   Preact 组件默认按内容大小调整，而传统组件需要在构造函数中应用 `this.contentSized()`。更多信息请参阅 <a class="reference-link" href="Custom%20Widgets/Troubleshooting.md">Troubleshooting</a> 中的相应章节。
 
-## Creating a custom widget
+在可能的情况下，组件示例将同时提供传统格式和 Preact 格式。
 
-1.  Create a <a class="reference-link" href="../../Note%20Types/Code.md">Code</a> note.
-2.  Set the language to:
-    1.  JavaScript (frontend) for legacy widgets using jQuery.
-    2.  JSX for Preact widgets. You might need to go to Options → Code to enable the language first.
-3.  Apply the `#widget` [label](../../Advanced%20Usage/Attributes/Labels.md).
+## 创建自定义组件
 
-## Getting started with a simple example
+1.  创建一个 <a class="reference-link" href="../../Note%20Types/Code.md">代码</a> 笔记。
+2.  将语言设置为：
+    1.  对于使用 jQuery 的传统组件，选择 JavaScript（前端）。
+    2.  对于 Preact 组件，选择 JSX。您可能需要前往 选项 → 代码 先启用该语言。
+3.  应用 `#widget` [标签](../../Advanced%20Usage/Attributes/Labels.md)。
 
-Let's start by creating a widget that shows a message near the content area. Follow the previous section to create a code note, and use the following content.
+## 从一个简单的示例开始
 
-### Legacy version (jQuery)
+让我们先创建一个在内容区域附近显示消息的组件。按照上一节创建一个代码笔记，并使用以下内容。
+
+### 传统版本（jQuery）
 
 ```
 class HelloCenterPane extends api.BasicWidget {
@@ -44,9 +45,9 @@ class HelloCenterPane extends api.BasicWidget {
 module.exports = new HelloCenterPane();
 ```
 
-[Refresh the application](../../Troubleshooting/Refreshing%20the%20application.md) and the widget should appear underneath the content area.
+[刷新应用程序](../../Troubleshooting/Refreshing%20the%20application.md)，组件应出现在内容区域下方。
 
-### Preact version
+### Preact 版本
 
 ```
 import { defineWidget } from "trilium:preact";
@@ -57,11 +58,11 @@ export default defineWidget({
 });
 ```
 
-[Refresh the application](../../Troubleshooting/Refreshing%20the%20application.md) and the widget should appear underneath the content area.
+[刷新应用程序](../../Troubleshooting/Refreshing%20the%20application.md)，组件应出现在内容区域下方。
 
-## Widget location (parent widget)
+## 组件位置（父组件）
 
-A widget can be placed in one of the following sections of the applications:
+组件可以放置在应用程序的以下区域之一：
 
 <table class="ck-table-resized">
     <colgroup>
@@ -72,51 +73,51 @@ A widget can be placed in one of the following sections of the applications:
     </colgroup>
     <thead>
         <tr>
-            <th>Value for <code spellcheck="false">parentWidget</code></th>
-            <th>Description</th>
-            <th>Sample widget</th>
-            <th>Special requirements</th>
+            <th><code spellcheck="false">parentWidget</code> 的值</th>
+            <th>描述</th>
+            <th>示例组件</th>
+            <th>特殊要求</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <th><code spellcheck="false">left-pane</code></th>
-            <td>Appears within the same pane that holds the&nbsp;<a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">Note Tree</a>.</td>
-            <td>Same as above, with only a different <code spellcheck="false">parentWidget</code>.</td>
-            <td>None.</td>
+            <td>出现在包含 <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">笔记树</a> 的同一窗格中。</td>
+            <td>与上述相同，仅 <code spellcheck="false">parentWidget</code> 不同。</td>
+            <td>无。</td>
         </tr>
         <tr>
             <th><code spellcheck="false">center-pane</code></th>
-            <td>In the content area. If a split is open, the widget will span all of the splits.</td>
-            <td>See example above.</td>
-            <td>None.</td>
+            <td>在内容区域中。如果打开了分屏，组件将横跨所有分屏。</td>
+            <td>参见上面的示例。</td>
+            <td>无。</td>
         </tr>
         <tr>
             <th><code spellcheck="false">note-detail-pane</code></th>
-            <td><p>In the content area, inside the note detail area. If a split is open, the widget will be contained inside the split.</p><p>This is ideal if the widget is note-specific.</p></td>
-            <td><a class="reference-link" href="Custom%20Widgets/Note%20context%20aware%20widget.md">Note context aware widget</a></td>
-            <td><ul><li>The widget must export a <code spellcheck="false">class</code> and not an instance of the class (e.g. <code spellcheck="false">no new</code>) because it needs to be multiplied for each note, so that splits work correctly.</li><li>Since the <code spellcheck="false">class</code> is exported instead of an instance, the <code spellcheck="false">parentWidget</code> getter must be <code spellcheck="false">static</code>, otherwise the widget is ignored.</li></ul></td>
+            <td><p>在内容区域的笔记详情区域内。如果打开了分屏，组件将包含在分屏内部。</p><p>如果组件是特定于笔记的，则此位置是理想选择。</p></td>
+            <td><a class="reference-link" href="Custom%20Widgets/Note%20context%20aware%20widget.md">笔记上下文感知组件</a></td>
+            <td><ul><li>组件必须导出一个 <code spellcheck="false">class</code> 而不是类的实例（例如 <code spellcheck="false">no new</code>），因为它需要为每个笔记进行复制，以便分屏正常工作。</li><li>由于导出的是 <code spellcheck="false">class</code> 而不是实例，因此 <code spellcheck="false">parentWidget</code> 获取器必须是 <code spellcheck="false">static</code>，否则组件将被忽略。</li></ul></td>
         </tr>
         <tr>
             <th><code spellcheck="false">right-pane</code></th>
-            <td>In the&nbsp;<a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Right%20Sidebar.md">Right Sidebar</a>, as a dedicated section.</td>
-            <td><a class="reference-link" href="Custom%20Widgets/Right%20pane%20widget.md">Right pane widget</a></td>
-            <td><ul><li>Although not mandatory, it's best to use a <code spellcheck="false">RightPanelWidget</code> instead of a <code spellcheck="false">BasicWidget</code> or a <code spellcheck="false">NoteContextAwareWidget</code>.</li></ul></td>
+            <td>在 <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Right%20Sidebar.md">右侧边栏</a> 中，作为一个专用区域。</td>
+            <td><a class="reference-link" href="Custom%20Widgets/Right%20pane%20widget.md">右侧窗格组件</a></td>
+            <td><ul><li>虽然不是强制性的，但最好使用 <code spellcheck="false">RightPanelWidget</code> 而不是 <code spellcheck="false">BasicWidget</code> 或 <code spellcheck="false">NoteContextAwareWidget</code>。</li></ul></td>
         </tr>
     </tbody>
 </table>
 
-To position the widget somewhere else, just change the value passed to `get parentWidget()` for legacy widgets or the `parent` field for Preact. Do note that some positions such as `note-detail-pane` and `right-pane` have special requirements that need to be accounted for (see the table above).
+要将组件放置在其他位置，只需更改传递给传统组件的 `get parentWidget()` 或 Preact 组件的 `parent` 字段的值。请注意，某些位置（如 `note-detail-pane` 和 `right-pane`）有需要满足的特殊要求（参见上表）。
 
-## Launch bar widgets
+## 启动栏组件
 
-Launch bar widgets are similar to _Custom widgets_ but are specific to the <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Launch%20Bar.md">Launch Bar</a>. See <a class="reference-link" href="Launch%20Bar%20Widgets.md">Launch Bar Widgets</a> for more information.
+启动栏组件与 _自定义组件_ 类似，但特定于 <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Launch%20Bar.md">启动栏</a>。更多信息请参阅 <a class="reference-link" href="Launch%20Bar%20Widgets.md">启动栏组件</a>。
 
-## Custom position
+## 自定义位置
 
-The position of a custom widget is defined via a `position` integer.
+自定义组件的位置通过 `position` 整数定义。
 
-In legacy widgets:
+在传统组件中：
 
 ```
 class MyWidget extends api.BasicWidget {
@@ -125,7 +126,7 @@ class MyWidget extends api.BasicWidget {
 }
 ```
 
-In Preact widgets:
+在 Preact 组件中：
 
 ```
 export default defineWidget({

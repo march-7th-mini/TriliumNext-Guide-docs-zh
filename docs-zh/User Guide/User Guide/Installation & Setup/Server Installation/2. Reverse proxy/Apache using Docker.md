@@ -1,18 +1,19 @@
-# Apache using Docker
-This tutorial assumes that you have created a DNS A record for `trilium.yourdomain.com` that you want to use for your Trilium server.
+# 使用 Docker 的 Apache
 
-## Docker setup
+本教程假设您已经为 `trilium.yourdomain.com` 创建了 DNS A 记录，并希望将其用于您的 Trilium 服务器。
 
-Download docker image and create container
+## Docker 设置
+
+下载 Docker 镜像并创建容器
 
 ```
  docker pull triliumnext/trilium:[VERSION]
  docker create --name trilium -t -p 127.0.0.1:8080:8080 -v ~/trilium-data:/home/node/trilium-data triliumnext/trilium:[VERSION]
 ```
 
-## Configuring the Apache proxy
+## 配置 Apache 代理
 
-1.  Enable apache proxy modules
+1.  启用 Apache 代理模块
     
     ```
      a2enmod ssl
@@ -20,20 +21,20 @@ Download docker image and create container
      a2enmod proxy_http
      a2enmod proxy_wstunnel
     ```
-2.  Create a new let's encrypt certificate
+2.  创建新的 Let's Encrypt 证书
     
     ```
      sudo certbot certonly -d trilium.mydomain.com
     ```
     
-    Choose standalone (2) and note the location of the created certificates (typically /etc/letsencrypt/live/...)
-3.  Create a new virtual host file for apache (you may want to use `apachectl -S` to determine the server root location, mine is /etc/apache2)
+    选择 standalone (2) 并记下所创建证书的位置（通常为 /etc/letsencrypt/live/...）
+3.  为 Apache 创建新的虚拟主机文件（您可能希望使用 `apachectl -S` 来确定服务器根目录的位置，我的是 /etc/apache2）
     
     ```
      sudo nano /etc/apache2/sites-available/trilium.yourdomain.com.conf
     ```
     
-    Paste (and customize) the following text into the configuration file
+    将以下文本粘贴（并自定义）到配置文件中
     
     ```
      
@@ -55,18 +56,18 @@ Download docker image and create container
          Include /etc/letsencrypt/options-ssl-apache.conf
      
     ```
-4.  Enable the virtual host with `sudo a2ensite trilium.yourdomain.com.conf`
-5.  Reload apache2 with `sudo systemctl reload apache2`
+4.  使用 `sudo a2ensite trilium.yourdomain.com.conf` 启用虚拟主机
+5.  使用 `sudo systemctl reload apache2` 重新加载 Apache2
 
-## Configuring the trusted proxy
+## 配置受信任的代理
 
-After setting up a reverse proxy, make sure to configure the <a class="reference-link" href="Trusted%20proxy.md">Trusted proxy</a>.
+设置反向代理后，请确保配置 <a class="reference-link" href="Trusted%20proxy.md">受信任的代理</a>。
 
-## Setup the systemd service to start up the server
+## 设置 systemd 服务以启动服务器
 
-Create and enable a systemd service to start the docker container on boot
+创建并启用一个 systemd 服务，以便在启动时启动 Docker 容器
 
-1.  Create a new empty file called `/lib/systemd/system/trilium.service` with the contents
+1.  创建一个名为 `/lib/systemd/system/trilium.service` 的新空文件，内容如下
     
     ```
      [Unit]
@@ -82,7 +83,7 @@ Create and enable a systemd service to start the docker container on boot
      [Install]
      WantedBy=local.target
     ```
-2.  Install, enable and start service
+2.  安装、启用并启动服务
     
     ```
      sudo systemctl daemon-reload
