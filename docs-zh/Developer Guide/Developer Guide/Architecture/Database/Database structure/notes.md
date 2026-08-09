@@ -1,15 +1,15 @@
-# notes
-| Column Name | Data Type | Nullity | Default value | Description |
+# 笔记
+| 列名 | 数据类型 | 可空性 | 默认值 | 描述 |
 | --- | --- | --- | --- | --- |
-| `noteId` | Text | Non-null |  | The unique ID of the note (e.g. `2LJrKqIhr0Pe`). |
-| `title` | Text | Non-null | `"note"` | The title of the note, as defined by the user. |
-| `isProtected` | Integer | Non-null | 0 | `1` if the entity is [protected](../../../Concepts/Protected%20entities.md), `0` otherwise. |
-| `type` | Text | Non-null | `"text"` | The type of note (i.e. `text`, `file`, `code`, `relationMap`, `mermaid`, `canvas`). |
-| `mime` | Text | Non-null | `"text/html"` | The MIME type of the note (e.g. `text/html`).. Note that it can be an empty string in some circumstances, but not null. |
-| `blobId` | Text | Nullable | `null` | The corresponding ID from <a class="reference-link" href="blobs.md">blobs</a>. Although it can theoretically be `NULL`, haven't found any such note yet. |
-| `isDeleted` | Integer | Nullable | 0 | `1` if the entity is [deleted](../../../Concepts/Deleted%20notes.md), `0` otherwise. |
-| `deleteId` | Text | Non-null | `null` |  |
-| `dateCreated` | Text | Non-null |  | Localized creation date (e.g. `2023-11-08 18:43:44.204+0200`) |
-| `dateModified` | Text | Non-null |  | Localized modification date (e.g. `2023-11-08 18:43:44.204+0200`) |
-| `utcDateCreated` | Text | Non-null |  | Creation date in UTC format (e.g. `2023-11-08 16:43:44.204Z`) |
-| `utcDateModified` | Text | Non-null |  | Modification date in UTC format (e.g. `2023-11-08 16:43:44.204Z`) |
+| `noteId` | 文本 | 非空 |  | 笔记的唯一 ID（例如 `2LJrKqIhr0Pe`）。 |
+| `title` | 文本 | 非空 | `"note"` | 笔记的标题，由用户定义。 |
+| `isProtected` | 整数 | 非空 | 0 | 如果实体是[受保护的](../../../Concepts/Protected%20entities.md)，则为 `1`，否则为 `0`。 |
+| `type` | 文本 | 非空 | `"text"` | 笔记的类型（即 `text`、`file`、`code`、`relationMap`、`mermaid`、`canvas`）。 |
+| `mime` | 文本 | 非空 | `"text/html"` | 笔记的 MIME 类型（例如 `text/html`）。请注意，在某些情况下它可以是空字符串，但不能为 null。 |
+| `blobId` | 文本 | 可空 | `null` | 来自 <a class="reference-link" href="blobs.md">blobs</a> 的对应 ID。虽然理论上可以是 `NULL`，但尚未发现任何此类笔记。 |
+| `isDeleted` | 整数 | 可空 | 0 | 如果实体是[已删除的](../../../Concepts/Deleted%20notes.md)，则为 `1`，否则为 `0`。 |
+| `deleteId` | 文本 | 非空 | `null` |  |
+| `dateCreated` | 文本 | 非空 |  | 本地化的创建日期（例如 `2023-11-08 18:43:44.204+0200`） |
+| `dateModified` | 文本 | 非空 |  | 本地化的修改日期（例如 `2023-11-08 18:43:44.204+0200`） |
+| `utcDateCreated` | 文本 | 非空 |  | UTC 格式的创建日期（例如 `2023-11-08 16:43:44.204Z`） |
+| `utcDateModified` | 文本 | 非空 |  | UTC 格式的修改日期（例如 `2023-11-08 16:43:44.204Z`） |

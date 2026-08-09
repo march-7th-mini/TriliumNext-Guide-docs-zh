@@ -1,75 +1,75 @@
-# Launch Bar
-## Position of the Launch bar
+# 启动栏
+## 启动栏的位置
 
-On desktop, depending on the layout selected, the launcher bar will either be on the left side of the screen with buttons displayed vertically or at the top of the screen. See <a class="reference-link" href="Vertical%20and%20horizontal%20layout.md">Vertical and horizontal layout</a> for more information.
+在桌面上，根据所选的布局，启动栏将位于屏幕左侧（按钮垂直显示）或屏幕顶部。更多信息请参阅<a class="reference-link" href="Vertical%20and%20horizontal%20layout.md">垂直和水平布局</a>。
 
-On mobile, the launch bar will always be at the bottom.
+在移动设备上，启动栏始终位于底部。
 
-If there are too many items in the launch bar to fit the screen, it will become scrollable.
+如果启动栏中的项目过多而无法容纳在屏幕上，它将变为可滚动。
 
-## Terminology
+## 术语
 
-*   **Launcher**: a button that can be (or is) displayed on the launch bar.
-*   **Available Launcher**: a launcher that is not displayed on the launch bar, but can be added.
-*   **Visible Launcher**: a launcher that is currently displayed on the launch bar.
+*   **启动器**：可以（或已经）显示在启动栏上的按钮。
+*   **可用启动器**：未显示在启动栏上，但可以添加的启动器。
+*   **可见启动器**：当前显示在启动栏上的启动器。
 
-## Configuring the desktop Launch bar
+## 配置桌面启动栏
 
-There are two ways to configure the launch bar:
+有两种配置启动栏的方法：
 
-*   Right click in the empty space between launchers on the launch bar and select _Configure Launchbar._
-*   Click on the <a class="reference-link" href="Global%20menu.md">Global menu</a> and select _Configure Launchbar_.
+*   右键单击启动栏上启动器之间的空白区域，然后选择 _配置启动栏_。
+*   点击<a class="reference-link" href="Global%20menu.md">全局菜单</a>，然后选择 _配置启动栏_。
 
-This will open a new tab with the <a class="reference-link" href="Note%20Tree.md">Note Tree</a> listing the launchers.
+这将打开一个新标签页，其中包含<a class="reference-link" href="Note%20Tree.md">笔记树</a>，列出各个启动器。
 
 ![](Launch%20Bar_image.png)
 
-Expanding _Available Launchers_ section will show the list of launchers that are not displayed on the launch bar. The _Visible Launchers_ will show the ones that are currently displayed.
+展开 _可用启动器_ 部分将显示未在启动栏上显示的启动器列表。_可见启动器_ 将显示当前显示的启动器。
 
-## Configuring the mobile launch bar
+## 配置移动端启动栏
 
-The launch bar on mobile uses a different configuration from the desktop one. The reasoning is that not all desktop icons are available on mobile, and fewer icons fit on a mobile screen.
+移动端的启动栏使用与桌面端不同的配置。原因是并非所有桌面图标在移动端都可用，而且移动端屏幕上能容纳的图标更少。
 
-To configure the launch bar on mobile, go to <a class="reference-link" href="Global%20menu.md">Global menu</a> and select _Configure Launchbar_.
+要在移动端配置启动栏，请前往<a class="reference-link" href="Global%20menu.md">全局菜单</a>并选择 _配置启动栏_。
 
-The configure the mobile launch bar while on the desktop (especially useful to configure more complicated launchers such as scripts or custom widgets), go to <a class="reference-link" href="Global%20menu.md">Global menu</a> → Advanced → Show Hidden Subtree and look for the _Mobile Launch Bar_ section. While in the hidden subtree, it's also possible to drag launchers between the _Mobile Launch Bar_ and (Desktop) _Launch Bar_ sections.
+要在桌面上配置移动端启动栏（这对于配置更复杂的启动器（如脚本或自定义小组件）特别有用），请前往<a class="reference-link" href="Global%20menu.md">全局菜单</a> → 高级 → 显示隐藏子树，然后查找 _移动端启动栏_ 部分。在隐藏子树中，还可以在 _移动端启动栏_ 和（桌面端）_启动栏_ 部分之间拖拽启动器。
 
-### Adding/removing and reordering launchers
+### 添加/移除和重新排序启动器
 
-To display a new launcher in the launch bar, first look for it in the _Available Launchers_ section. Then right click it and select _Move to visible launchers_. It is also possible to drag and drop the item manually.
+要在启动栏中显示新的启动器，首先在 _可用启动器_ 部分中找到它。然后右键单击它并选择 _移动到可见启动器_。也可以手动拖放该项目。
 
-Similarly, to remove it from the launch bar, simply look for it in _Visible Launchers_ then right click it and select _Move to available launchers_ or use drag-and-drop.
+同样，要将其从启动栏中移除，只需在 _可见启动器_ 中找到它，然后右键单击它并选择 _移动到可用启动器_ 或使用拖放操作。
 
-Drag-and-drop the items in the tree in order to change their order. See <a class="reference-link" href="Note%20Tree.md">Note Tree</a> for more interaction options, including using keyboard shortcuts.
+拖放树中的项目以更改其顺序。有关更多交互选项（包括使用键盘快捷键），请参阅<a class="reference-link" href="Note%20Tree.md">笔记树</a>。
 
-## Customizing the launcher
+## 自定义启动器
 
-*   The icon of a launcher can be changed just like a normal note. See <a class="reference-link" href="../Notes/Note%20Icons%20%26%20Colors.md">Note Icons</a> for more information.
-*   The title of the launcher can also be changed.
+*   启动器的图标可以像普通笔记一样更改。更多信息请参阅<a class="reference-link" href="../Notes/Note%20Icons%20%26%20Colors.md">笔记图标</a>。
+*   启动器的标题也可以更改。
 
-### Resetting
+### 重置
 
-Resetting allows restoring the original configuration of Trilium for the launcher bar, or for a portion of it. Simply right click a launcher (or even the entire _Launch Bar_ section) and select _Reset_ to bring it back to the original state.
+重置允许将启动栏（或其一部分）恢复为 Trilium 的原始配置。只需右键单击一个启动器（甚至整个 _启动栏_ 部分）并选择 _重置_ 即可将其恢复到原始状态。
 
-### Creating new launchers / types of launchers
+### 创建新的启动器 / 启动器类型
 
-Right click either the _Available launchers_ or _Visible launchers_ sections and select one of the options:
+右键单击 _可用启动器_ 或 _可见启动器_ 部分，然后选择以下选项之一：
 
-1.  **Note Launcher**  
-    A note launcher will simply navigate to a specified note.
+1.  **笔记启动器**  
+    笔记启动器将简单地导航到指定的笔记。
     
-    1.  Set the `target` promoted attribute to the note to navigate to.
-    2.  Optionally, set `hoistedNote` to hoist a particular note. See <a class="reference-link" href="../Navigation/Note%20Hoisting.md">Note Hoisting</a> for more information.
-    3.  Optionally, set a `keyboardShortcut` to trigger the launcher.
-2.  **Script Launcher**  
-    An advanced launcher which will run a script upon pressing. See <a class="reference-link" href="../../Scripting.md">Scripting</a> for more information.
+    1.  将 `target` 提升属性设置为要导航到的笔记。
+    2.  可选地，设置 `hoistedNote` 以提升特定笔记。更多信息请参阅<a class="reference-link" href="../Navigation/Note%20Hoisting.md">笔记提升</a>。
+    3.  可选地，设置 `keyboardShortcut` 以触发启动器。
+2.  **脚本启动器**  
+    一个高级启动器，按下时将运行脚本。更多信息请参阅<a class="reference-link" href="../../Scripting.md">脚本</a>。
     
-    1.  Set `script` to point to the desired script to run.
-    2.  Optionally, set a `keyboardShortcut` to trigger the launcher.
-3.  **Custom Widget**
+    1.  将 `script` 设置为指向要运行的所需脚本。
+    2.  可选地，设置 `keyboardShortcut` 以触发启动器。
+3.  **自定义小组件**
     
-    Allows defining a custom widget to be rendered inside the launcher. See <a class="reference-link" href="../../Scripting/Frontend%20Basics/Custom%20Widgets/Widget%20Basics.md">Widget Basics</a> for more information.
-4.  **Spacers**  
-    Launchers that create some distance between other launchers for better visual distinction.
+    允许定义要在启动器内渲染的自定义小组件。更多信息请参阅<a class="reference-link" href="../../Scripting/Frontend%20Basics/Custom%20Widgets/Widget%20Basics.md">小组件基础</a>。
+4.  **分隔符**  
+    在启动器之间创建一定距离以实现更好视觉区分的启动器。
 
-Launchers are configured via predefined <a class="reference-link" href="../../Advanced%20Usage/Attributes/Promoted%20Attributes.md">Promoted Attributes</a>.
+启动器通过预定义的<a class="reference-link" href="../../Advanced%20Usage/Attributes/Promoted%20Attributes.md">提升属性</a>进行配置。

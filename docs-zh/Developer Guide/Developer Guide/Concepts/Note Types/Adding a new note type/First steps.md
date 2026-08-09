@@ -1,53 +1,54 @@
-# First steps
-> **Note**: When adding or updating step titles/order, don't forget to update the corresponding list in <a class="reference-link" href="Note%20type%20checklist.md">Note type checklist</a>.
+# 第一步
 
-## Step 1. Register the note type in the server
+> **注意**：在添加或更新步骤标题/顺序时，不要忘记更新 <a class="reference-link" href="Note%20type%20checklist.md">笔记类型清单</a> 中的相应列表。
 
-Go to `src\services\note_types.ts` and add a new entry in `noteTypes` with the type ID and the default MIME type.
+## 步骤 1. 在服务器中注册笔记类型
 
-## Step 2. Register the note type in the client context menu
+前往 `src\services\note_types.ts`，在 `noteTypes` 中添加一个新条目，包含类型 ID 和默认 MIME 类型。
 
-The client lists the available note types in `src\public\app\services\note_types.ts`.
+## 步骤 2. 在客户端上下文菜单中注册笔记类型
 
-## Step 3. Create a type widget
+客户端在 `src\public\app\services\note_types.ts` 中列出可用的笔记类型。
 
-Go to `src\public\app\widgets\type_widgets` directory and create a new file corresponding to the new note type.
+## 步骤 3. 创建类型小组件
 
-A blank implementation looks something like this:
+前往 `src\public\app\widgets\type_widgets` 目录，创建一个与新笔记类型对应的新文件。
 
-## Step 4. Register the type widget
+一个空白的实现大致如下：
 
-The type widget needs to go in `src\public\app\widgets\note_detail.ts`where there is a `typeWidgetClasses` map, mapping the type IDs with the corresponding type widget that was created at the previous step.
+## 步骤 4. 注册类型小组件
 
-## Step 5. Add the default icon mapping
+类型小组件需要放入 `src\public\app\widgets\note_detail.ts`，其中有一个 `typeWidgetClasses` 映射，将类型 ID 与上一步创建的类型小组件对应起来。
 
-To set a default icon for this note type, go to `src\public\app\entities\fnote.ts` and add it to `NOTE_TYPE_ICONS`.
+## 步骤 5. 添加默认图标映射
 
-## Step 6. Add to note type selector
+要为该笔记类型设置默认图标，请前往 `src\public\app\entities\fnote.ts` 并将其添加到 `NOTE_TYPE_ICONS` 中。
 
-Go to `src/public/app/widgets/note_type.ts` and register the new note type in `NOTE_TYPES`.
+## 步骤 6. 添加到笔记类型选择器
 
-## Step 7. Add the note to server allowed note types
+前往 `src/public/app/widgets/note_type.ts`，在 `NOTE_TYPES` 中注册新的笔记类型。
 
-This is required in order to make imports possible, otherwise they will be imported as plain text.
+## 步骤 7. 将笔记添加到服务器允许的笔记类型中
 
-Go to `src/becca/entities/rows.ts` and add the new note type to `ALLOWED_NOTE_TYPES`.
+这是实现导入所必需的，否则它们将被作为纯文本导入。
 
-## Additional changes
+前往 `src/becca/entities/rows.ts`，将新的笔记类型添加到 `ALLOWED_NOTE_TYPES` 中。
 
-*   If the widget requires a full height, it must be configured in `src\public\app\widgets\note_detail.ts` (look for `checkFullHeight`) then a `height: 100%` style can be applied to the containers to make them fit.
-*   To make the note always full width (ignoring the user's content width), go to `note_wrapper` and look for the `refresh` method. There is a `toggleClass` for `full-content-width` based on the note type.
-*   To allow the note source to be viewed, go to `src/public/app/widgets/buttons/note_actions.ts` and look for `this.toggleDisabled(this.$showSourceButton` in `refreshVisibility`.
+## 其他更改
 
-## Final steps
+*   如果小组件需要全高度，则必须在 `src\public\app\widgets\note_detail.ts` 中配置（查找 `checkFullHeight`），然后可以对容器应用 `height: 100%` 样式以使其适配。
+*   要使笔记始终全宽（忽略用户的内容宽度），请前往 `note_wrapper` 并查找 `refresh` 方法。其中有一个基于笔记类型的 `full-content-width` 的 `toggleClass`。
+*   要允许查看笔记源，请前往 `src/public/app/widgets/buttons/note_actions.ts`，在 `refreshVisibility` 中查找 `this.toggleDisabled(this.$showSourceButton`。
 
-*   Update the <a class="reference-link" href="../../Demo%20document.md">Demo document</a> to showcase the new note type.
+## 最后步骤
 
-## Troubleshooting
+*   更新 <a class="reference-link" href="../../Demo%20document.md">演示文档</a> 以展示新的笔记类型。
 
-### Content does not appear, however it appears as hidden in the DOM
+## 故障排除
 
-Type widgets do a check whenever a note is selected to determine whether the widget needs to be displayed or not, based on the note type. Make sure `getType()` is well implemented in the newly added type widget (take great care that the value is returned but also that the note type ID matches the ones registered in the previous steps):
+### 内容不显示，但在 DOM 中显示为隐藏
+
+类型小组件会在每次选择笔记时进行检查，以确定是否需要根据笔记类型显示该小组件。确保新添加的类型小组件中正确实现了 `getType()`（特别注意返回值，并确保笔记类型 ID 与前面步骤中注册的 ID 匹配）：
 
 ```
 static getType() { return "foo"; }

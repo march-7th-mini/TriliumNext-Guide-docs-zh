@@ -1,36 +1,37 @@
-# Keyboard shortcuts
-The <a class="reference-link" href="../Note%20Tree.md">Note Tree</a> comes with multiple keyboard shortcuts to make editing faster:
+# 键盘快捷键
 
-## Navigation within the tree
+<a class="reference-link" href="../Note%20Tree.md">笔记树</a>提供了多种键盘快捷键，以加快编辑速度：
 
-*   <kbd><span>↑</span></kbd> and <kbd><span>↑</span></kbd> to navigate between notes.
-*   <kbd><span>←</span></kbd> to collapse a note with children, or <kbd><span>→</span></kbd> to expand it.
-*   <kbd><span>←</span></kbd> on a note with no children to navigate to its parent.
+## 在树中导航
 
-## Opening notes
+*   <kbd><span>↑</span></kbd> 和 <kbd><span>↑</span></kbd> 在笔记之间导航。
+*   <kbd><span>←</span></kbd> 折叠带有子笔记的笔记，或 <kbd><span>→</span></kbd> 展开它。
+*   在没有子笔记的笔记上按 <kbd><span>←</span></kbd> 可导航到其父笔记。
 
-*   <kbd>Click</kbd> to open the note in the current tab.
-*   <kbd>Ctrl</kbd>+<kbd>Click</kbd> or <kbd>Middle click</kbd> to open the note in a new tab.
-*   <kbd>Ctrl</kbd>+<kbd>Right click</kbd> to open the note in <a class="reference-link" href="../../Navigation/Quick%20edit.md">Quick edit</a>.
+## 打开笔记
 
-## Clipboard management
+*   <kbd>点击</kbd> 在当前标签页中打开笔记。
+*   <kbd>Ctrl</kbd>+<kbd>点击</kbd> 或 <kbd>鼠标中键点击</kbd> 在新标签页中打开笔记。
+*   <kbd>Ctrl</kbd>+<kbd>右键点击</kbd> 在<a class="reference-link" href="../../Navigation/Quick%20edit.md">快速编辑</a>中打开笔记。
 
-*   <kbd>Ctrl</kbd>+<kbd>C</kbd> to copy one or more notes based on selection (see <a class="reference-link" href="../../Notes/Cloning%20Notes.md">Cloning Notes</a>).
-*   <kbd>Ctrl</kbd>+<kbd>X</kbd> to cut one or more notes (for moving them).
-*   <kbd>Ctrl</kbd>+<kbd>V</kbd> to paste them somewhere (which results in a copy or move based on the shortcut used).
+## 剪贴板管理
 
-## Moving notes
+*   <kbd>Ctrl</kbd>+<kbd>C</kbd> 根据选择复制一个或多个笔记（参见<a class="reference-link" href="../../Notes/Cloning%20Notes.md">克隆笔记</a>）。
+*   <kbd>Ctrl</kbd>+<kbd>X</kbd> 剪切一个或多个笔记（用于移动它们）。
+*   <kbd>Ctrl</kbd>+<kbd>V</kbd> 将它们粘贴到某处（根据使用的快捷键，结果可能是复制或移动）。
 
-*   <kbd>Ctrl</kbd> + <kbd><span>↑</span></kbd> , <kbd>Ctrl</kbd> + <kbd><span>↓</span></kbd> - move note up/down in the note list.
-*   <kbd>Ctrl</kbd> + <kbd><span>←</span></kbd> - move note up in the note tree.
-*   <kbd>Ctrl</kbd>+<kbd><span>→</span></kbd> - move note down in the note tree.
-*   <kbd>Del</kbd> - deletes note and optionally its subtree (asked in the dialog).
+## 移动笔记
 
-## Multiple selection
+*   <kbd>Ctrl</kbd> + <kbd><span>↑</span></kbd> , <kbd>Ctrl</kbd> + <kbd><span>↓</span></kbd> - 在笔记列表中向上/向下移动笔记。
+*   <kbd>Ctrl</kbd> + <kbd><span>←</span></kbd> - 在笔记树中向上移动笔记。
+*   <kbd>Ctrl</kbd>+<kbd><span>→</span></kbd> - 在笔记树中向下移动笔记。
+*   <kbd>Del</kbd> - 删除笔记及其子树（可选，在对话框中询问）。
 
-See <a class="reference-link" href="Multiple%20selection.md">Multiple selection</a> for more information about how selection works.
+## 多选
 
-*   <kbd>Alt</kbd>+<kbd>Click</kbd> – add a single note to the current selection.
-*   <kbd>Shift</kbd>+<kbd>Click</kbd> – select a range of notes, starting from the current note (the highlighted one) to the one that is being clicked.
-*   <kbd>Shift</kbd>+<kbd><span>↑</span></kbd>, <kbd>Shift</kbd>+<kbd><span>↓</span></kbd> – multi-select not above/below.
-*   <kbd>Ctrl</kbd>+<kbd>A</kbd> – select all notes in the current level
+有关选择如何工作的更多信息，请参阅<a class="reference-link" href="Multiple%20selection.md">多选</a>。
+
+*   <kbd>Alt</kbd>+<kbd>点击</kbd> – 将单个笔记添加到当前选择中。
+*   <kbd>Shift</kbd>+<kbd>点击</kbd> – 选择从当前笔记（高亮显示的）到被点击笔记之间的一个范围的笔记。
+*   <kbd>Shift</kbd>+<kbd><span>↑</span></kbd>, <kbd>Shift</kbd>+<kbd><span>↓</span></kbd> – 向上/向下多选。
+*   <kbd>Ctrl</kbd>+<kbd>A</kbd> – 选择当前层级中的所有笔记。

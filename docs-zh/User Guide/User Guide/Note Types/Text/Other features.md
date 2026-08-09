@@ -1,33 +1,33 @@
-# Other features
-## Indentation
+# 其他功能
+## 缩进
 
 <figure class="image image-style-align-right"><img style="aspect-ratio:201/124;" src="6_Other features_image.png" width="201" height="124"></figure>
 
-Paragraphs can be indented to the right using the  button from the <a class="reference-link" href="Formatting%20toolbar.md">Formatting toolbar</a>.
+段落可以使用 <a class="reference-link" href="Formatting%20toolbar.md">格式工具栏</a> 中的按钮向右缩进。
 
-*   Press <img src="5_Other features_image.png" width="17" height="14"> to increase the indentation of the current paragraph by one. Can be pressed multiple times if needed.
-*   Press <img src="1_Other features_image.png" width="17" height="14"> to decrease the indentation of a current paragraph. The button will be disabled if it is already at the minimum indentation level.
-*   For convenience, keyboard shortcuts are also available. Press <kbd>Tab</kbd> to indent or <kbd>Shift</kbd>+<kbd>Tab</kbd> to decrease the indentation. These shortcuts work even if the cursor is not at the beginning of a paragraph or a list.
-*   Apart from paragraphs, the indent button is also enabled in <a class="reference-link" href="Lists.md">Lists</a>, where it can be used to create nested lists.
+*   按下 <img src="5_Other features_image.png" width="17" height="14"> 可将当前段落的缩进增加一级。如有需要，可以多次按下。
+*   按下 <img src="1_Other features_image.png" width="17" height="14"> 可减少当前段落的缩进。如果已经处于最小缩进级别，该按钮将被禁用。
+*   为方便起见，也可以使用键盘快捷键。按下 <kbd>Tab</kbd> 键进行缩进，或按下 <kbd>Shift</kbd>+<kbd>Tab</kbd> 键减少缩进。即使光标不在段落或列表的开头，这些快捷键也能生效。
+*   除了段落之外，缩进按钮在 <a class="reference-link" href="Lists.md">列表</a> 中也可用，可用于创建嵌套列表。
 
-## Markdown import
+## Markdown 导入
 
-If the clipboard contains Markdown text, it can be easily imported into text notes. Simply copy a Markdown-formatted text and press the <img src="2_Other features_image.png" width="20" height="14"> to insert its visual representation.
+如果剪贴板中包含 Markdown 文本，则可以轻松地将其导入到文本笔记中。只需复制 Markdown 格式的文本，然后按下 <img src="2_Other features_image.png" width="20" height="14"> 即可插入其可视化表示。
 
-Note that this only works with raw Markdown (e.g. `# Heading 1` to generate a heading) and not the visual representation of the Markdown (e.g. as in the preview pane of an application). In that case, simply use the paste function which already accepts HTML-formatted content.
+请注意，这仅适用于原始 Markdown（例如，使用 `# 标题 1` 来生成标题），而不适用于 Markdown 的可视化表示（例如，应用程序预览窗格中的内容）。在这种情况下，只需使用粘贴功能，该功能已接受 HTML 格式的内容。
 
-This is mostly useful for snippets of text, for entire Markdown documents use the dedicated <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/Import%20%26%20Export/Markdown.md">Markdown</a> import/export function.
+这对于文本片段最为有用，对于整个 Markdown 文档，请使用专门的 <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/Import%20%26%20Export/Markdown.md">Markdown</a> 导入/导出功能。
 
-If accessing Trilium with a web browser, the Markdown import action will ask for the content to be inserted into a dedicated screen since it does not have access to the clipboard.
+如果通过 Web 浏览器访问 Trilium，由于无法访问剪贴板，Markdown 导入操作将要求将内容插入到专用屏幕中。
 
-## Cut to subnote
+## 剪切到子笔记
 
-The <img src="Other features_image.png" width="16" height="20"> button will create a child note with the selected text. For more information, see <a class="reference-link" href="Cut%20to%20subnote.md">Cut to subnote</a>.
+<img src="Other features_image.png" width="16" height="20"> 按钮将使用选中的文本创建一个子笔记。有关更多信息，请参阅 <a class="reference-link" href="Cut%20to%20subnote.md">剪切到子笔记</a>。
 
-## Find and replace
+## 查找和替换
 
 <figure class="image image-style-align-right"><img style="aspect-ratio:394/203;" src="4_Other features_image.png" width="394" height="203"></figure>
 
-The <img src="3_Other features_image.png" width="18" height="17"> button will open the editor's dedicated search and replace functionality.
+<img src="3_Other features_image.png" width="18" height="17"> 按钮将打开编辑器专用的查找和替换功能。
 
-Alternatively, the <kbd>Ctrl</kbd>+<kbd>F</kbd> combination can be pressed to show the dialog.
+或者，可以按下 <kbd>Ctrl</kbd>+<kbd>F</kbd> 组合键来显示该对话框。

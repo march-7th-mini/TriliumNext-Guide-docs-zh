@@ -1,40 +1,40 @@
-# List View
+# 列表视图
 <figure class="image"><img style="aspect-ratio:1387/758;" src="List View_image.png" width="1387" height="758"></figure>
 
-List view is similar to <a class="reference-link" href="Grid%20View.md">Grid View</a>, but in the list view mode, each note is displayed in a single row with only the title and the icon of the note being visible by the default. By pressing the expand button it's possible to view the content of the note, as well as the children of the note (recursively).
+列表视图与<a class="reference-link" href="Grid%20View.md">网格视图</a>类似，但在列表视图模式下，每个笔记以单行显示，默认情况下仅显示笔记的标题和图标。通过点击展开按钮，可以查看笔记的内容以及笔记的子笔记（递归展开）。
 
-In the example above, the "Node.js" note on the left panel contains several child notes. The right panel displays the content of these child notes as a single continuous document.
+在上面的示例中，左侧面板中的“Node.js”笔记包含多个子笔记。右侧面板将这些子笔记的内容显示为单个连续文档。
 
-### Creating a new table
+### 创建新表格
 
-Right click on an existing note in the <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">Note Tree</a> and select _Insert child note_ and look for _List View_.
+在<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">笔记树</a>中右键点击现有笔记，选择 _插入子笔记_，然后查找 _列表视图_。
 
-## Interaction
+## 交互
 
-*   Each note can be expanded or collapsed by clicking on the arrow to the left of the title.
-*   In the <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Ribbon.md">Ribbon</a>, in the _Collection_ tab there are options to expand and to collapse all notes easily.
+*   每个笔记可以通过点击标题左侧的箭头来展开或折叠。
+*   在<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Ribbon.md">功能区</a>的 _集合_ 选项卡中，有选项可以轻松展开和折叠所有笔记。
 
-## Printing and exporting to PDF
+## 打印和导出为 PDF
 
-Since v0.100.0, list collections can be [printed or exported to PDF](../Basic%20Concepts%20and%20Features/Notes/Printing%20%26%20Exporting%20as%20PDF.md).
+自 v0.100.0 起，列表集合可以[打印或导出为 PDF](../Basic%20Concepts%20and%20Features/Notes/Printing%20%26%20Exporting%20as%20PDF.md)。
 
-A printed list collection will print all the notes in the collection, in the right order and preserving the full hierarchy.
+打印列表集合将按正确顺序打印集合中的所有笔记，并保留完整的层级结构。
 
-If exported to PDF within the desktop application, there is additional functionality:
+如果在桌面应用程序中导出为 PDF，则还有额外功能：
 
-*   The table of contents of the PDF will reflect the structure of the notes.
-*   Reference and inline links to other notes within the same hierarchy will be functional (will jump to the corresponding page). If a link refers to a note that is not in the printed hierarchy, it will be unlinked.
+*   PDF 的目录将反映笔记的结构。
+*   同一层级内指向其他笔记的引用和内联链接将可用（将跳转到相应页面）。如果链接指向不在打印层级中的笔记，则该链接将变为非链接。
 
-## Expanding and collapsing multiple notes at once
+## 同时展开和折叠多个笔记
 
-Apart from individually expanding or collapsing notes, it's also possible to expand or collapse them all at once. To do so, go to the <a class="reference-link" href="Collection%20Properties.md">Collection Properties</a> and look for the corresponding button.
+除了单独展开或折叠笔记外，还可以一次性全部展开或折叠。为此，请前往<a class="reference-link" href="Collection%20Properties.md">集合属性</a>并查找相应的按钮。
 
-By default, the _Expand_ button will only expand the direct children (first level) of the collection. Starting with v0.100.0, it's possible to expand multiple levels of notes using the arrow button next to the button.
+默认情况下，_展开_ 按钮只会展开集合的直接子笔记（第一层级）。从 v0.100.0 开始，可以使用按钮旁边的箭头按钮展开多个层级的笔记。
 
-Manually expanded notes will reset if the application/tab is closed and then the collection is visited again. Automatically expanded notes, using the ribbon configuration will persist.
+如果应用程序/标签页关闭后再次访问该集合，手动展开的笔记将重置。使用功能区配置自动展开的笔记将保持不变。
 
 > [!TIP]
-> By design, the UI provides only a handful of levels of depth for expanding notes (direct children, 2-5, all levels). It's also possible to specify any desired depth by manually setting the [corresponding label](../Advanced%20Usage/Attributes/Labels.md). For example: `#expanded=100` to expand up to 100 levels of depth.
+> 按照设计，UI 仅提供有限的层级深度用于展开笔记（直接子笔记、2-5 层、所有层级）。也可以通过手动设置[相应的标签](../Advanced%20Usage/Attributes/Labels.md)来指定任意所需深度。例如：`#expanded=100` 表示展开到 100 层深度。
 
 > [!NOTE]
-> From a performance standpoint, the List collection is efficient since it does not load child notes unless the notes are actually expanded. Expanding the list for a significantly large hierarchy can cause slow-downs.
+> 从性能角度来看，列表集合是高效的，因为它不会加载子笔记，除非笔记实际被展开。对于非常大的层级结构，展开列表可能会导致速度变慢。

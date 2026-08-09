@@ -1,13 +1,14 @@
-# Script bundles
-For both <a class="reference-link" href="../../Note%20Types/Render%20Note.md">Render Note</a> and more complicated scripts, it's generally useful to split the code into multiple <a class="reference-link" href="../../Note%20Types/Code.md">Code</a> notes.
+# 脚本捆绑包
 
-When a script is run, the sub-children of the script being run (or the <a class="reference-link" href="../../Note%20Types/Render%20Note.md">Render Note</a>) are checked for children. If the children are Code notes of the corresponding type (front-end or backend) as the code being run, they will be evaluated as well.
+对于<a class="reference-link" href="../../Note%20Types/Render%20Note.md">渲染笔记</a>和更复杂的脚本，通常将代码拆分为多个<a class="reference-link" href="../../Note%20Types/Code.md">代码</a>笔记是很有用的。
 
-The collection of a script and its child notes is called a _bundle_. A child note inside a bundle is called a _module_.
+当脚本运行时，会检查正在运行的脚本（或<a class="reference-link" href="../../Note%20Types/Render%20Note.md">渲染笔记</a>）的子笔记。如果这些子笔记是与所运行代码类型（前端或后端）相对应的代码笔记，它们也会被一并求值。
 
-As a basic example of dependencies, consider the following note structure:
+一个脚本及其子笔记的集合称为_捆绑包_。捆绑包中的子笔记称为_模块_。
 
-*   _Script with dependency_
+作为依赖关系的基本示例，请考虑以下笔记结构：
+
+*   _带依赖的脚本_
     
     ```javascript
     api.log(MyMath.sum(2, 2));
@@ -23,26 +24,26 @@ As a basic example of dependencies, consider the following note structure:
         };
         ```
 
-When _Script with dependency_ is run, it will detect _MyMath_ as a submodule and provide the result of its `module.exports` object into a global object with the same name as the note.
+当运行_带依赖的脚本_时，它会检测到_MyMath_作为子模块，并将其`module.exports`对象的结果提供到一个与笔记同名的全局对象中。
 
 > [!NOTE]
-> If the note contains spaces or special characters, they will be stripped. For example `My Nice Note!` becomes `MyNiceNote`.
+> 如果笔记名称包含空格或特殊字符，这些字符将被移除。例如`My Nice Note!`会变成`MyNiceNote`。
 
-## Alternative syntax
+## 替代语法
 
-Instead of providing an object to `module.exports`, it's also possible to add fields individually:
+除了向`module.exports`提供一个对象，也可以逐个添加字段：
 
 ```javascript
 module.exports.sum = (a, b) => a + b;
 module.exports.subtract = (a, b) => a - b;
 ```
 
-## Ignoring a code script from a bundle
+## 从捆绑包中忽略代码脚本
 
-To ignore a script from being included in a bundle (e.g. if it's unrelated to the parent script note), apply the `#disableInclusion` label.
+要忽略某个脚本使其不包含在捆绑包中（例如，如果它与父脚本笔记无关），请应用`#disableInclusion`标签。
 
-## Sharing a module across multiple bundles
+## 在多个捆绑包之间共享模块
 
-Modules can be reused across multiple scripts by simply cloning the shared module between two modules (see <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/Notes/Cloning%20Notes.md">Cloning Notes</a>).
+可以通过在两个模块之间简单地克隆共享模块来在多个脚本之间重用模块（参见<a class="reference-link" href="../../Basic%20Concepts%20and%20Features/Notes/Cloning%20Notes.md">克隆笔记</a>）。
 
-Optionally, a separate note can be used to contain all the different reusable modules for an easy way to discover them.
+可选地，可以使用一个单独的笔记来包含所有不同的可重用模块，以便于发现它们。

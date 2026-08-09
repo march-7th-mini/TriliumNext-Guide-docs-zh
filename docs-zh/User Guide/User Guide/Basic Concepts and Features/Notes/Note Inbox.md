@@ -1,28 +1,29 @@
-# Note Inbox
-The inbox is the default destination for quickly captured notes. When a note is created without picking a location first, it lands in the inbox. This makes it easy to quickly capture notes and sort them later.
+# 笔记收件箱
 
-## Where the inbox is used
+收件箱是快速捕获笔记的默认位置。当创建笔记时未先选择位置，它就会放入收件箱。这样可以轻松快速捕获笔记，并在之后进行分类整理。
 
-*   The _New note_ button in the <a class="reference-link" href="../UI%20Elements/Launch%20Bar.md">Launch Bar</a>.
-*   The global _Create note into inbox_ shortcut (default <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>P</kbd>).
-*   The _New note_ action in the [tray icon menu](../../Installation%20%26%20Setup/Desktop%20Installation/Tray%20icon%20%26%20automatic%20startup.md).
-*   The <a class="reference-link" href="../../Installation%20%26%20Setup/Web%20Clipper.md">Web Clipper</a> extension.
+## 收件箱的使用位置
 
-## Setting a note inbox
+*   <a class="reference-link" href="../UI%20Elements/Launch%20Bar.md">启动栏</a>中的_新建笔记_按钮。
+*   全局_创建笔记到收件箱_快捷键（默认为 <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>P</kbd>）。
+*   [托盘图标菜单](../../Installation%20%26%20Setup/Desktop%20Installation/Tray%20icon%20%26%20automatic%20startup.md)中的_新建笔记_操作。
+*   <a class="reference-link" href="../../Installation%20%26%20Setup/Web%20Clipper.md">Web Clipper</a> 扩展。
 
-To create a note inbox, apply the `#inbox` [label](../../Advanced%20Usage/Attributes/Labels.md) to it.
+## 设置笔记收件箱
 
-Only one note should carry this label. If there are multiple notes, only one will be used by the application.
+要创建笔记收件箱，请为其应用 `#inbox` [标签](../../Advanced%20Usage/Attributes/Labels.md)。
+
+只有一个笔记应带有此标签。如果有多个笔记，应用程序将只使用其中一个。
 
 > [!NOTE]
-> If there is no inbox note, Trilium will fall back to today's [day note](../../Advanced%20Usage/Advanced%20Showcases/Day%20Notes.md) instead.
+> 如果没有收件箱笔记，Trilium 将回退使用今天的[日记笔记](../../Advanced%20Usage/Advanced%20Showcases/Day%20Notes.md)。
 
-## Workspace inboxes
+## 工作区收件箱
 
-Each [workspace](../Navigation/Workspaces.md) can have its own inbox, set via the `#workspaceInbox` label.
+每个[工作区](../Navigation/Workspaces.md)都可以有自己的收件箱，通过 `#workspaceInbox` 标签设置。
 
-When a new note is created while hoisted in a workspace, the location is determined in the following order:
+当在工作区中提升（hoisted）状态下创建新笔记时，位置按以下顺序确定：
 
-*   A note carrying the `#workspaceInbox` label in that workspace.
-*   A note carrying the `#inbox` within that workspace.
-*   The workspace root note itself.
+*   该工作区中带有 `#workspaceInbox` 标签的笔记。
+*   该工作区中带有 `#inbox` 标签的笔记。
+*   工作区根笔记本身。

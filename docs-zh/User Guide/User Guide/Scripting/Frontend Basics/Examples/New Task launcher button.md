@@ -1,14 +1,15 @@
-# "New Task" launcher button
-In this example we are going to extend the functionality of <a class="reference-link" href="../../../Advanced%20Usage/Advanced%20Showcases/Task%20Manager.md">Task Manager</a> showcase (which comes by default with Trilium) by adding a button in the <a class="reference-link" href="../../../Basic%20Concepts%20and%20Features/UI%20Elements/Launch%20Bar.md">Launch Bar</a>  (![](New%20Task%20launcher%20button_image.png)) to create a new task automatically and open it.
+# “新建任务”启动器按钮
 
-## Creating the note
+在本示例中，我们将扩展 <a class="reference-link" href="../../../Advanced%20Usage/Advanced%20Showcases/Task%20Manager.md">任务管理器</a> 示例（Trilium 默认自带）的功能，在 <a class="reference-link" href="../../../Basic%20Concepts%20and%20Features/UI%20Elements/Launch%20Bar.md">启动栏</a> 中添加一个按钮（![](New%20Task%20launcher%20button_image.png)），用于自动创建新任务并打开它。
 
-1.  First, create a new <a class="reference-link" href="../../../Note%20Types/Code.md">Code</a> note type with the _JavaScript (Trilium frontend)_ language.
-2.  Define the `#run=frontendStartup` label in <a class="reference-link" href="../../../Advanced%20Usage/Attributes.md">Attributes</a>.
+## 创建笔记
 
-## Content of the script
+1.  首先，创建一个新的 <a class="reference-link" href="../../../Note%20Types/Code.md">代码</a> 笔记类型，语言选择 _JavaScript (Trilium 前端)_。
+2.  在 <a class="reference-link" href="../../../Advanced%20Usage/Attributes.md">属性</a> 中定义 `#run=frontendStartup` 标签。
 
-Copy-paste the following script:
+## 脚本内容
+
+复制粘贴以下脚本：
 
 ```javascript
 api.addButtonToToolbar({
@@ -28,11 +29,11 @@ api.addButtonToToolbar({
 });
 ```
 
-## Testing the functionality
+## 测试功能
 
-Since we set the script to be run on start-up, all we need to do is to [refresh the application](../../../Troubleshooting/Refreshing%20the%20application.md).
+由于我们设置了脚本在启动时运行，我们只需要 [刷新应用程序](../../../Troubleshooting/Refreshing%20the%20application.md) 即可。
 
-## Understanding how the script works
+## 理解脚本的工作原理
 
 <table class="ck-table-resized">
     <colgroup>
@@ -49,30 +50,30 @@ Since we set the script to be run on start-up, all we need to do is to [refresh 
     	// [...]
     }
 });</code></pre></td>
-            <td><p>This uses the <a href="../../Frontend%20Basics.md">Front-end API</a> to create a icon in the&nbsp;<a class="reference-link" href="../../../Basic%20Concepts%20and%20Features/UI%20Elements/Launch%20Bar.md">Launch Bar</a>, by specifying:</p><ul><li>A title</li><li>A corresponding boxicons icon (without the <code>bx-</code> prefix).</li><li>Optionally, a keyboard shortcut to assign to it.</li><li>The action, which will be executed when the button is pressed.</li></ul></td>
+            <td><p>这使用了 <a href="../../Frontend%20Basics.md">前端 API</a> 在 <a class="reference-link" href="../../../Basic%20Concepts%20and%20Features/UI%20Elements/Launch%20Bar.md">启动栏</a> 中创建一个图标，通过指定：</p><ul><li>标题</li><li>相应的 boxicons 图标（不带 <code>bx-</code> 前缀）。</li><li>可选地，为其分配的键盘快捷键。</li><li>按下按钮时将执行的操作。</li></ul></td>
         </tr>
         <tr>
             <td><pre><code class="language-application-javascript-env-frontend">const taskNoteId = await api.runOnBackend(() =&gt; {
-    // Shown below.           
+    // 如下所示。           
     return resp.note.noteId;
 });</code></pre></td>
-            <td><ul><li>This portion of code is actually executed on the server (backend) and not on the client (i.e. browser).<ul><li>The reason is that the creating notes is the responsibility of the server.</li></ul></li><li>Here we can also see that it is possible to return results from the server execution and read them in the client (<code>taskNoteId</code>).</li></ul></td>
+            <td><ul><li>这部分代码实际上是在服务器（后端）上执行的，而不是在客户端（即浏览器）上。<ul><li>原因是创建笔记是服务器的职责。</li></ul></li><li>这里我们还可以看到，可以从服务器执行中返回结果并在客户端（<code>taskNoteId</code>）中读取。</li></ul></td>
         </tr>
         <tr>
             <td><pre><code class="language-application-javascript-env-frontend">const todoRootNote = api.getNoteWithLabel("taskTodoRoot");</code></pre></td>
-            <td><ul><li>Here we identify a note with the <a href="../../../Advanced%20Usage/Attributes.md">label</a> <code>#taskTodoRoot</code>. This is how the&nbsp;<a class="reference-link" href="../../../Advanced%20Usage/Advanced%20Showcases/Task%20Manager.md">Task Manager</a>&nbsp;showcase knows where to place all the different tasks.</li><li>Normally this might return a <code>null</code> value if no such note could be identified, but error handling is outside the scope of this example.&nbsp;</li></ul></td>
+            <td><ul><li>这里我们通过 <a href="../../../Advanced%20Usage/Attributes.md">标签</a> <code>#taskTodoRoot</code> 来识别一个笔记。这就是 <a class="reference-link" href="../../../Advanced%20Usage/Advanced%20Showcases/Task%20Manager.md">任务管理器</a> 示例知道将所有不同任务放置在哪里的方式。</li><li>通常，如果找不到这样的笔记，这可能会返回 <code>null</code> 值，但错误处理不在本示例的范围内。</li></ul></td>
         </tr>
         <tr>
             <td><pre><code class="language-application-javascript-env-frontend">const resp = api.createTextNote(todoRootNote.noteId, "New task", "")</code></pre></td>
-            <td><ul><li>We create a new child note within the to-do root note (first argument) with the title “New task" (second argument) and no content by default (third argument).</li></ul></td>
+            <td><ul><li>我们在待办事项根笔记（第一个参数）内创建一个新的子笔记，标题为“New task”（第二个参数），默认无内容（第三个参数）。</li></ul></td>
         </tr>
         <tr>
             <td><pre><code class="language-application-javascript-env-frontend">await api.waitUntilSynced();</code></pre></td>
-            <td><ul><li>Back on the client, since we created a new note on the server, we now need to wait for the change to be reflected in the client.</li></ul></td>
+            <td><ul><li>回到客户端，由于我们在服务器上创建了一个新笔记，我们现在需要等待更改在客户端中反映出来。</li></ul></td>
         </tr>
         <tr>
             <td><pre><code class="language-application-javascript-env-frontend">await api.activateNewNote(taskNoteId);</code></pre></td>
-            <td><ul><li>Since we know the <a href="../../../Advanced%20Usage/Note%20ID.md">ID</a> of the newly created note, all we have to do now is to show this note to the user.</li></ul></td>
+            <td><ul><li>由于我们知道新创建笔记的 <a href="../../../Advanced%20Usage/Note%20ID.md">ID</a>，我们现在要做的就是向用户展示这个笔记。</li></ul></td>
         </tr>
     </tbody>
 </table>

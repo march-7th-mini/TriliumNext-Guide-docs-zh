@@ -1,33 +1,33 @@
-# Documentation references in the application
-## Hard-coded links
+# 应用程序中的文档引用
+## 硬编码链接
 
-Hard-coded links are present throughout the application, either in dialogs or in the source code as comments.
+硬编码链接遍布整个应用程序，要么出现在对话框中，要么作为注释出现在源代码中。
 
-You can identify these links by searching for:
+您可以通过搜索以下内容来识别这些链接：
 
 ```
 https://triliumnext.github.io/Docs/Wiki/
 ```
 
-## Help buttons
+## 帮助按钮
 
-There is a pattern of “?” buttons throughout the application which make use of the `data-help-page` attribute. Whenever these buttons are pressed, the user is redirected to the corresponding wiki page by prepending the wiki root URL to the `data-help-page` attribute.
+整个应用程序中有一类“？”按钮模式，它们使用 `data-help-page` 属性。每当按下这些按钮时，用户会通过在 `data-help-page` 属性前加上 wiki 根 URL 而被重定向到相应的 wiki 页面。
 
-### Deprecated `help-page` attribute
+### 已弃用的 `help-page` 属性
 
-Since the current wiki has a different structure than the original, for example to link to [https://github.com/TriliumNext/Docs/blob/main/Wiki/tree-concepts.md](https://github.com/TriliumNext/Docs/blob/main/Wiki/tree-concepts.md) the `data-help-page` attribute must be set to `tree-concepts.md`.
+由于当前 wiki 的结构与原始版本不同，例如要链接到 [https://github.com/TriliumNext/Docs/blob/main/Wiki/tree-concepts.md](https://github.com/TriliumNext/Docs/blob/main/Wiki/tree-concepts.md)，`data-help-page` 属性必须设置为 `tree-concepts.md`。
 
-For links to headings, simply add the heading after the `.md`: `tree-concepts.md#prefix`
+对于指向标题的链接，只需在 `.md` 后面添加标题：`tree-concepts.md#prefix`
 
-You can identify those by looking for:
+您可以通过查找以下内容来识别这些：
 
 *   `.attr("data-help-page"`
 *   `data-help-page="`
 
-### More modern `data-in-app-help` attribute
+### 更新的 `data-in-app-help` 属性
 
-Instead of opening in a web browser, this opens the help directly in the application in a split view. This is handled via the `data-in-app-help` attribute, where the value is the note ID of the help page without the `_help_` prefix.
+此属性不是在网络浏览器中打开，而是在应用程序中以分屏视图直接打开帮助。这是通过 `data-in-app-help` 属性处理的，其值是帮助页面的笔记 ID，不带 `_help_` 前缀。
 
 ### React
 
-Use the `HelpButton` component in the same fashion as the `data-in-app-help` attribute.
+使用 `HelpButton` 组件，其用法与 `data-in-app-help` 属性相同。

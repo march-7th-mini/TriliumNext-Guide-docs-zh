@@ -1,82 +1,83 @@
 # Obsidian
-Although Obsidian was indirectly supported through the standard <a class="reference-link" href="../Markdown.md">Markdown</a> import, its vault structure is distinct enough to warrant its own dedicated import channel.
 
-## Import process
+虽然 Obsidian 可以通过标准的 <a class="reference-link" href="../Markdown.md">Markdown</a> 导入间接获得支持，但其 vault 结构足够独特，值得拥有专门的导入通道。
 
-The first step is to obtain a .zip of your Obsidian vault:
+## 导入流程
 
-1.  First, identify where your Obsidian vault is located. The easiest way to do so is to open Obsidian and right clicking the name of the vault at the bottom of the left sidebar and then selecting _Show in system explorer_.
-2.  In your system explorer, right click the directory containing your Obsidian vault and compress it to a ZIP file (e.g. on Windows, _Compress To_ → _ZIP_).
+第一步是获取你的 Obsidian vault 的 .zip 压缩包：
+
+1.  首先，确定你的 Obsidian vault 所在位置。最简单的方法是打开 Obsidian，右键点击左侧边栏底部的 vault 名称，然后选择 _在系统资源管理器中显示_。
+2.  在系统资源管理器中，右键点击包含你的 Obsidian vault 的目录，并将其压缩为 ZIP 文件（例如，在 Windows 上，选择 _压缩为_ → _ZIP_）。
 
 > [!TIP]
-> When zipping, you can either ZIP the outer folder of the vault, or the contents of the vault as Trilium will automatically determine the position of the vault in the archive via the `.obsidian` directory.
+> 压缩时，你可以压缩 vault 的外部文件夹，也可以压缩 vault 的内容，因为 Trilium 会通过 `.obsidian` 目录自动确定 vault 在压缩包中的位置。
 
-Then, in Trilium Notes:
+然后，在 Trilium Notes 中：
 
-1.  In the <a class="reference-link" href="../../UI%20Elements/Note%20Tree.md">Note Tree</a>, right click and select _Import into note_.
-2.  In the _Import from_ section, select _Obsidian_.
-3.  Upload the ZIP obtained in the previous step.
+1.  在 <a class="reference-link" href="../../UI%20Elements/Note%20Tree.md">笔记树</a> 中，右键点击并选择 _导入到笔记_。
+2.  在 _从_ 部分，选择 _Obsidian_。
+3.  上传上一步获取的 ZIP 文件。
 
-## Supported features
+## 支持的功能
 
-The following features are preserved by Trilium during the import process:
+Trilium 在导入过程中会保留以下功能：
 
-*   Folder hierarchy is preserved.
-*   Basic Markdown formatting (bold, italic, underline, strikethrough, headings).
-*   Specific Obsidian formatting (highlighting).
-*   <a class="reference-link" href="../../../Note%20Types/Text/Lists.md">Lists</a>
-*   To-do lists
-*   <a class="reference-link" href="../../../Note%20Types/Text/Images.md">Images</a> and <a class="reference-link" href="../../Notes/Attachments.md">Attachments</a>
-    *   Non-Markdown files in the Vault are treated as attachments by default if they are referenced by at least one note.
-    *   Otherwise, they will be imported as <a class="reference-link" href="../../../Note%20Types/File.md">File</a> notes.
-*   Transclusions are converted to <a class="reference-link" href="../../../Note%20Types/Text/Include%20Note.md">Include Note</a> or <a class="reference-link" href="../../../Note%20Types/Text/Images.md">Images</a> (depending on type).
-*   <a class="reference-link" href="../../../Note%20Types/Text/Math%20Equations.md">Math Equations</a> (inline or block)
-*   <a class="reference-link" href="../../../Note%20Types/Text/Developer-specific%20formatting/Code%20blocks.md">Code blocks</a>, with a best-effort attempt to restore the language.
-*   Links between pages are converted to <a class="reference-link" href="../../../Note%20Types/Text/Links/Internal%20(reference)%20links.md">Internal (reference) links</a>.
-*   Callouts are converted to Trilium's [Admonitions](../../../Note%20Types/Text/Block%20quotes%20%26%20admonitions.md).
-    *   Obsidian has many more types of callouts (`tldr`, `question`, `attention`), these are all mapped to one of Trilium's existing admonition types (e.g. Note, Tip, Important).
-    *   Custom titles are kept and shown as a bold line at the top of the admonition, since there is no concept of admonition title in Trilium.
-    *   Foldable callouts are imported expanded and without a fold marker.
-*   Notes created by the [_Excalidraw_](https://github.com/zsviczian/obsidian-excalidraw-plugin) community plugin for Obsidian are converted to <a class="reference-link" href="../../../Note%20Types/Canvas.md">Canvas</a> (same underlying technology).
-    *   Note that custom features introduced by that plugin will not be supported.
-*   Modification date is preserved via the information obtained from the .zip archive, creation date is not recoverable so it's kept the same as the modification date.
+*   文件夹层级结构得以保留。
+*   基本的 Markdown 格式（粗体、斜体、下划线、删除线、标题）。
+*   特定的 Obsidian 格式（高亮）。
+*   <a class="reference-link" href="../../../Note%20Types/Text/Lists.md">列表</a>
+*   待办事项列表
+*   <a class="reference-link" href="../../../Note%20Types/Text/Images.md">图片</a> 和 <a class="reference-link" href="../../Notes/Attachments.md">附件</a>
+    *   默认情况下，如果 Vault 中的非 Markdown 文件被至少一个笔记引用，则将其视为附件。
+    *   否则，它们将被导入为 <a class="reference-link" href="../../../Note%20Types/File.md">文件</a> 笔记。
+*   嵌入（Transclusions）被转换为 <a class="reference-link" href="../../../Note%20Types/Text/Include%20Note.md">包含笔记</a> 或 <a class="reference-link" href="../../../Note%20Types/Text/Images.md">图片</a>（取决于类型）。
+*   <a class="reference-link" href="../../../Note%20Types/Text/Math%20Equations.md">数学公式</a>（内联或块级）
+*   <a class="reference-link" href="../../../Note%20Types/Text/Developer-specific%20formatting/Code%20blocks.md">代码块</a>，并尽力恢复其语言。
+*   页面之间的链接被转换为 <a class="reference-link" href="../../../Note%20Types/Text/Links/Internal%20(reference)%20links.md">内部（引用）链接</a>。
+*   标注（Callouts）被转换为 Trilium 的 [警示框](../../../Note%20Types/Text/Block%20quotes%20%26%20admonitions.md)。
+    *   Obsidian 有更多类型的标注（`tldr`、`question`、`attention`），这些都被映射到 Trilium 现有的警示框类型之一（例如，Note、Tip、Important）。
+    *   自定义标题会被保留，并显示为警示框顶部的粗体行，因为 Trilium 没有警示框标题的概念。
+    *   可折叠的标注在导入时会展开，并且没有折叠标记。
+*   由 Obsidian 的 [_Excalidraw_](https://github.com/zsviczian/obsidian-excalidraw-plugin) 社区插件创建的笔记会被转换为 <a class="reference-link" href="../../../Note%20Types/Canvas.md">画布</a>（使用相同的底层技术）。
+    *   请注意，该插件引入的自定义功能将不受支持。
+*   修改日期通过从 .zip 压缩包获取的信息得以保留，创建日期无法恢复，因此与修改日期保持一致。
 
-## Properties
+## 属性
 
-Properties are Obsidian's equivalent of <a class="reference-link" href="../../../Advanced%20Usage/Attributes/Promoted%20Attributes.md">Promoted Attributes</a>. One of the core differences between the two is where the property information is stored (i.e. name and type): in Obsidian everything is stored at vault level and shared across all notes, whereas in Trilium each page can have individual promoted attributes, shared through <a class="reference-link" href="../../../Advanced%20Usage/Templates.md">Templates</a> or <a class="reference-link" href="../../../Advanced%20Usage/Attributes/Attribute%20Inheritance.md">Attribute Inheritance</a>.
+属性是 Obsidian 中与 <a class="reference-link" href="../../../Advanced%20Usage/Attributes/Promoted%20Attributes.md">提升属性</a> 相对应的概念。两者之间的核心区别之一在于属性信息（即名称和类型）的存储位置：在 Obsidian 中，所有内容都存储在 vault 级别，并在所有笔记之间共享；而在 Trilium 中，每个页面可以有独立的提升属性，通过 <a class="reference-link" href="../../../Advanced%20Usage/Templates.md">模板</a> 或 <a class="reference-link" href="../../../Advanced%20Usage/Attributes/Attribute%20Inheritance.md">属性继承</a> 共享。
 
-Another important difference is that promoted attributes in Trilium are always displayed, even if empty. In Obsidian, these are simply suggested when creating a new property.
+另一个重要的区别是，Trilium 中的提升属性始终显示，即使为空。在 Obsidian 中，这些属性只是在创建新属性时作为建议出现。
 
-To reconcile all these differences, properties are converted to <a class="reference-link" href="../../../Advanced%20Usage/Attributes/Promoted%20Attributes.md">Promoted Attributes</a> at note level.
+为了调和所有这些差异，属性会在笔记级别转换为 <a class="reference-link" href="../../../Advanced%20Usage/Attributes/Promoted%20Attributes.md">提升属性</a>。
 
-The following note types are supported:
+支持以下笔记类型：
 
-| Obsidian type | Trilium |
+| Obsidian 类型 | Trilium |
 | --- | --- |
-| Text or not defined | Single-valued `text` label |
-| Number | Single-valued `number` label |
-| Multitext | Multi-valued `text` label |
-| Checkbox | `boolean` label (`true`/`false`). |
-| Date | `date` |
-| Date & Time | `datetime` |
+| 文本或未定义 | 单值 `text` 标签 |
+| 数字 | 单值 `number` 标签 |
+| 多文本 | 多值 `text` 标签 |
+| 复选框 | `boolean` 标签（`true`/`false`）。 |
+| 日期 | `date` |
+| 日期和时间 | `datetime` |
 
-### Special properties
+### 特殊属性
 
-Obsidian has a few reserved property names, which are treated differently in Trilium as well:
+Obsidian 有一些保留的属性名称，在 Trilium 中也会被区别对待：
 
-*   `tags`, where every tag is turned into its own [label](../../../Advanced%20Usage/Attributes/Labels.md) (e.g. `#one`, `#two` when `tags: [ one, two ]`).
-*   `aliases` are simply mapped to individual `#alias` labels
-*   `cssclasses`, `publish`, `permalink` are ignored.
+*   `tags`，其中每个标签都会变成自己的 [标签](../../../Advanced%20Usage/Attributes/Labels.md)（例如，当 `tags: [ one, two ]` 时，会生成 `#one`、`#two`）。
+*   `aliases` 直接映射为单独的 `#alias` 标签。
+*   `cssclasses`、`publish`、`permalink` 将被忽略。
 
-## Limitations
+## 限制
 
-*   Comments (`%%` syntax) are simply stripped.
-*   Obsidian _bases_ functionality is not preserved.
-    *   The closest equivalent in Trilium would be <a class="reference-link" href="../../../Collections.md">Collections</a> but they work fundamentally different because bases don't store particular notes, they act more like a <a class="reference-link" href="../../../Note%20Types/Saved%20Search.md">Saved Search</a> with a collection view.
-    *   Since the base query format is quite different to Trilium's <a class="reference-link" href="../../Navigation/Search.md">Search</a> syntax, it's unlikely they'll ever be supported.
-    *   When a base is encountered, it is simply ignored from the import.
-*   Canvases are not imported.
-    *   Theoretically they could map to either <a class="reference-link" href="../../../Note%20Types/Canvas.md">Canvas</a> or <a class="reference-link" href="../../../Note%20Types/Relation%20Map.md">Relation Map</a> but they are too different to reconcile.
-*   Links
-    *   Links to a specific heading in another note will still point to the right note, but the heading anchor will be dropped.
-    *   Dangling links (pointing to a note that doesn't exist) and ambiguous links (same base name in 2+ notes) are unwrapped to plain text.
+*   注释（`%%` 语法）会被直接剥离。
+*   Obsidian 的 _bases_ 功能不会被保留。
+    *   Trilium 中最接近的等价物是 <a class="reference-link" href="../../../Collections.md">集合</a>，但它们的运作方式根本不同，因为 bases 不存储特定笔记，它们更像是一个带有集合视图的 <a class="reference-link" href="../../../Note%20Types/Saved%20Search.md">已保存搜索</a>。
+    *   由于 base 查询格式与 Trilium 的 <a class="reference-link" href="../../Navigation/Search.md">搜索</a> 语法差异很大，因此它们不太可能得到支持。
+    *   当遇到 base 时，它会在导入时被直接忽略。
+*   画布（Canvases）不会被导入。
+    *   理论上它们可以映射到 <a class="reference-link" href="../../../Note%20Types/Canvas.md">画布</a> 或 <a class="reference-link" href="../../../Note%20Types/Relation%20Map.md">关系图</a>，但它们差异太大，难以调和。
+*   链接
+    *   指向另一个笔记中特定标题的链接仍会指向正确的笔记，但标题锚点将被丢弃。
+    *   悬空链接（指向不存在的笔记）和歧义链接（在 2 个或更多笔记中具有相同的基础名称）将被转换为纯文本。

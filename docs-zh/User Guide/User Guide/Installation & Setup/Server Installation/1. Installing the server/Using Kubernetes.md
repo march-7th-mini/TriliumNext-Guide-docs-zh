@@ -1,36 +1,37 @@
-# Using Kubernetes
-As Trilium can be run in Docker it also can be deployed in Kubernetes. You can either use our Helm chart, a community Helm chart, or roll your own Kubernetes deployment.
+# 使用 Kubernetes
 
-The recommended way is to use a Helm chart.
+由于 Trilium 可以在 Docker 中运行，因此也可以部署在 Kubernetes 中。您可以使用我们的 Helm chart、社区 Helm chart，或者自行创建 Kubernetes 部署。
 
-## Root privileges
+推荐使用 Helm chart。
+
+## 根权限
 
 > [!NOTE]
-> The Trilium container at this time needs to be run with root privileges. It will swap to UID and GID `1000:1000` to run the `node` process after execution though, so the main process doesn't run with root privileges.
+> 目前 Trilium 容器需要以根权限运行。不过，它会在执行后切换到 UID 和 GID `1000:1000` 来运行 `node` 进程，因此主进程不会以根权限运行。
 
-The Trilium docker container needs to be run with root privileges. The node process inside the container will be started with reduced privileges (uid:gid 1000:1000) after some initialization logic. Please make sure that you don't use a security context (PodSecurityContext) which changes the user ID. To use a different uid:gid for file storage and the application, please use the `USER_UID` & `USER_GID` environment variables.
+Trilium docker 容器需要以根权限运行。容器内的 node 进程会在一些初始化逻辑之后以降低的权限（uid:gid 1000:1000）启动。请确保您没有使用会更改用户 ID 的安全上下文（PodSecurityContext）。要为文件存储和应用程序使用不同的 uid:gid，请使用 `USER_UID` 和 `USER_GID` 环境变量。
 
-The docker image will also fix the permissions of `/home/node` so you don't have to use an init container.
+docker 镜像还会修复 `/home/node` 的权限，因此您不必使用 init 容器。
 
 ## Helm Charts
 
-[Official Helm chart](https://github.com/TriliumNext/helm-charts) from TriliumNext Unofficial helm chart by [ohdearaugustin](https://github.com/ohdearaugustin): [https://github.com/ohdearaugustin/charts](https://github.com/ohdearaugustin/charts)
+来自 TriliumNext 的[官方 Helm chart](https://github.com/TriliumNext/helm-charts) 由 [ohdearaugustin](https://github.com/ohdearaugustin) 提供的非官方 helm chart：[https://github.com/ohdearaugustin/charts](https://github.com/ohdearaugustin/charts)
 
-## Adding a Helm repository
+## 添加 Helm 仓库
 
-Below is an example of how
+以下是一个示例：
 
 ```
 helm repo add trilium https://triliumnext.github.io/helm-charts
 "trilium" has been added to your repositories
 ```
 
-## How to install a chart
+## 如何安装 chart
 
-After reviewing the [`values.yaml`](https://github.com/TriliumNext/helm-charts/blob/main/charts/trilium/values.yaml) from the Helm chart, modifying as required and then creating your own:
+在查看 Helm chart 中的 [`values.yaml`](https://github.com/TriliumNext/helm-charts/blob/main/charts/trilium/values.yaml) 文件，根据需要进行修改并创建您自己的文件之后：
 
 ```
 helm install --create-namespace --namespace trilium trilium trilium/trilium -f values.yaml
 ```
 
-For more information on using Helm, please refer to the Helm documentation, or create a Discussion in the TriliumNext GitHub Organization.
+有关使用 Helm 的更多信息，请参阅 Helm 文档，或在 TriliumNext GitHub 组织中创建 Discussion。

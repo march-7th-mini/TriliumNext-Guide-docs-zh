@@ -1,10 +1,11 @@
-# Zoom
-Zoom applies to the entire UI, including text.
+# 缩放
 
-On the desktop application, use the <a class="reference-link" href="Global%20menu.md">Global menu</a> to zoom in/out.
+缩放适用于整个用户界面，包括文本。
 
-On both web browser and the desktop, the keyboard shortcuts <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>+</kbd> and <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>-</kbd> can be used.
+在桌面应用中，使用<a class="reference-link" href="Global%20menu.md">全局菜单</a>进行放大/缩小。
 
-## Adjusting the text size instead
+在网页浏览器和桌面端，可以使用键盘快捷键 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>+</kbd> 和 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>-</kbd>。
 
-As an alternative to the zoom, the text size can be individually adjusted by going to <a class="reference-link" href="Options.md">Options</a> → _Appearance_.
+## 改为调整文本大小
+
+作为缩放的替代方案，可以通过进入<a class="reference-link" href="Options.md">选项</a> → _外观_ 来单独调整文本大小。

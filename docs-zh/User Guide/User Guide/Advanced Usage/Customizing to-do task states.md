@@ -1,42 +1,42 @@
-# Customizing to-do task states
-Trilium features customizable to-do list task states. To customize them, go to **"Options"** → **"Text Notes"** → **"Related Settings"** → **"Custom checkbox states for to-do lists"**. Alternatively, right-click a checkbox in an editable text note and click the pencil icon.
+# 自定义待办任务状态
+Trilium 支持自定义待办列表的任务状态。要自定义它们，请前往 **“选项”** → **“文本笔记”** → **“相关设置”** → **“待办列表的自定义复选框状态”**。或者，在可编辑的文本笔记中右键单击复选框，然后点击铅笔图标。
 
 > [!WARNING]
-> Changes take effect only after restarting the application.
+> 更改仅在重新启动应用程序后生效。
 
-## Creating a new task state
+## 创建新的任务状态
 
-Click the plus icon next to Task States in the left-side pane, then define the task details as described in the next section.
+点击左侧面板中“任务状态”旁边的加号图标，然后按照下一节所述定义任务详情。
 
-## Editing a task state
+## 编辑任务状态
 
-Selecting any state other than "None" and "Done" (which cannot be modified) from the side pane reveals the following editable fields:
+从侧边面板中选择除“无”和“已完成”（这两个状态无法修改）之外的任何状态，将显示以下可编辑字段：
 
-*   **Icon** (required): The symbol shown inside the checkbox. You can pick an icon just as you would for any regular note, including from custom icon packs.
-*   **Title** (required): The name of the task state shown in the UI. For example: "Doing", "Postponed".
-*   **Identifier** (required): A short name for the state, using only letters, digits, "`-`" and "`_`". It is stored as metadata in the note's markup and used to identify the task state. Two task states cannot share the same identifier.  
-    Prefix the identifiers of your custom task states with an underscore "`_`" or a hyphen "`-`" to avoid clashes with task states that may be introduced in future versions of Trilium.
-*   **Markdown symbol**: A single character used to represent the state in Markdown syntax. For example, "`#`" creates a task state that can be applied in Markdown using " `- [#]` ". Make sure no other task state uses the same symbol.
-*   **Counts as completed**: If checked, the task is treated as completed.
-*   **Color**: The color of the checkbox. Its lightness and saturation are adjusted automatically to match the current color scheme or theme.
-*   **Hidden from toolbar**: The state is not listed in the UI. This is useful when you want existing notes to keep rendering the state correctly but no longer need to apply it yourself.
-
-> [!NOTE]
-> The task definition details are validated at startup. If errors are found, a toast provides the details and the affected task definition is ignored.
-
-## Reordering task states
-
-To change the order in which task states appear in the UI and when cycling through them with the keyboard, simply reorder the states in the side pane (or tree panel, if it's the case).
-
-## Deleting task states
-
-Any task state other than "None" and "Done" can be deleted.
-
-Once deleted, to-do items using that state will no longer display the custom checkbox. They fall back to either a "None" or "Done" state, depending on the state's "Counts as completed" setting. The identifier and title remain stored in the note until you set the checkbox to a new state.
-
-## Transferring notes with custom task states between Trilium database instances
-
-Exporting notes to another Trilium database instance preserves the task states of to-do items, but does not include the custom task definitions. As a result, the destination instance won't know how to render the checkbox unless you recreate the task state there with the same identifier and Markdown symbol.
+*   **图标**（必填）：复选框中显示的符号。您可以像为任何常规笔记选择图标一样选择图标，包括从自定义图标包中选择。
+*   **标题**（必填）：界面中显示的任务状态名称。例如：“进行中”、“已推迟”。
+*   **标识符**（必填）：状态的短名称，仅使用字母、数字、“`-`”和“`_`”。它作为元数据存储在笔记的标记中，用于标识任务状态。两个任务状态不能共享相同的标识符。  
+    请为您自定义任务状态的标识符添加下划线“`_`”或连字符“`-`”前缀，以避免与 Trilium 未来版本可能引入的任务状态发生冲突。
+*   **Markdown 符号**：用于在 Markdown 语法中表示该状态的单个字符。例如，“`#`”创建一个可以在 Markdown 中使用“ `- [#]` ”应用的任务状态。请确保没有其他任务状态使用相同的符号。
+*   **计为已完成**：如果选中，则该任务被视为已完成。
+*   **颜色**：复选框的颜色。其亮度和饱和度会自动调整以匹配当前的配色方案或主题。
+*   **在工具栏中隐藏**：该状态不会在界面中列出。当您希望现有笔记继续正确渲染该状态但不再需要自己应用它时，这很有用。
 
 > [!NOTE]
-> This is a known limitation of the current version. If there is enough interest in the community for transferring notes between Trilium database instances more easily, the Trilium team may consider a better state definition mechanism.
+> 任务定义详情会在启动时进行验证。如果发现错误，会通过提示消息提供详细信息，并且受影响的任务定义将被忽略。
+
+## 重新排序任务状态
+
+要更改任务状态在界面中显示的顺序以及使用键盘循环切换时的顺序，只需在侧边面板（或树形面板，如果适用）中重新排序这些状态即可。
+
+## 删除任务状态
+
+除“无”和“已完成”之外的任何任务状态都可以删除。
+
+删除后，使用该状态的待办事项将不再显示自定义复选框。它们将回退到“无”或“已完成”状态，具体取决于该状态的“计为已完成”设置。标识符和标题将保留在笔记中，直到您将复选框设置为新状态。
+
+## 在 Trilium 数据库实例之间传输带有自定义任务状态的笔记
+
+将笔记导出到另一个 Trilium 数据库实例会保留待办事项的任务状态，但不会包含自定义任务定义。因此，目标实例将不知道如何渲染该复选框，除非您在那里使用相同的标识符和 Markdown 符号重新创建该任务状态。
+
+> [!NOTE]
+> 这是当前版本的一个已知限制。如果社区对在 Trilium 数据库实例之间更轻松地传输笔记有足够的兴趣，Trilium 团队可能会考虑更好的状态定义机制。

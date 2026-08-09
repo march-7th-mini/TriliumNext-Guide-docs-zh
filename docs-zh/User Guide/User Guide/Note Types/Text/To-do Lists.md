@@ -1,33 +1,33 @@
-# To-do Lists
-## Extended task states
+# 待办清单
+## 扩展任务状态
 
 <figure class="image image-style-align-left"><img style="aspect-ratio:303/264;" src="To-do Lists_image.png" width="303" height="264"></figure>
 
-In Trilium, to-do items aren't limited to a simple "done" or "not done." Tasks can also be marked as _in progress_ ("doing"), _under consideration_ ("maybe"), or _cancelled_ ("won't do"), thus giving a more accurate picture of where things actually stand.
+在 Trilium 中，待办事项不仅限于简单的“已完成”或“未完成”。任务还可以标记为_进行中_（“doing”）、_考虑中_（“maybe”）或_已取消_（“won't do”），从而更准确地反映实际进展。
 
-Right-click the checkbox and select the desired state. Alternatively, press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Enter </kbd> to cycle through the task states. Tapping or left-clicking the checkbox will always toggle between "None" and "Done".
+右键单击复选框并选择所需状态。或者，按 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Enter </kbd> 可在任务状态间循环切换。点击或左键单击复选框将始终在“无”和“已完成”之间切换。
 
-Task states are fully preserved when converting between <a class="reference-link" href="../Text.md">Text</a> and <a class="reference-link" href="../Markdown.md">Markdown</a> notes, in both directions.
+在 <a class="reference-link" href="../Text.md">文本</a> 和 <a class="reference-link" href="../Markdown.md">Markdown</a> 笔记之间进行双向转换时，任务状态会完整保留。
 
-### Customizing the extended task states
+### 自定义扩展任务状态
 
-Task states are customizable: you can reorder them, create new ones with different colors and symbols, or delete the ones you don't need. See <a class="reference-link" href="../../Advanced%20Usage/Customizing%20to-do%20task%20states.md">Customizing to-do task states</a> for more details.
+任务状态是可自定义的：您可以重新排序、创建具有不同颜色和符号的新状态，或删除不需要的状态。有关更多详细信息，请参阅 <a class="reference-link" href="../../Advanced%20Usage/Customizing%20to-do%20task%20states.md">自定义待办任务状态</a>。
 
-## Keyboard shortcuts
+## 键盘快捷键
 
-When at the beginning on an empty paragraph, type the following to insert a to-do list:
+当光标位于空段落开头时，输入以下内容可插入待办清单：
 
-*   `[ ]` for an unchecked item
-*   `[x]` for a checked item
+*   `[ ]` 表示未选中项
+*   `[x]` 表示已选中项
 
-Extended task states are supported as well, using its corresponding _Markdown symbol_. These are the defaults but they can be changed if needed (see <a class="reference-link" href="../../Advanced%20Usage/Customizing%20to-do%20task%20states.md">Customizing to-do task states</a>):
+扩展任务状态也受支持，使用其对应的 _Markdown 符号_。以下是默认值，但如有需要可以更改（参见 <a class="reference-link" href="../../Advanced%20Usage/Customizing%20to-do%20task%20states.md">自定义待办任务状态</a>）：
 
-*   `[/]` for “Doing”.
-*   `[?]` for “Maybe”.
-*   `[-]` for “Cancelled”.
+*   `[/]` 表示“进行中”。
+*   `[?]` 表示“考虑中”。
+*   `[-]` 表示“已取消”。
 
-To reorder the item under the cursor, press <kbd>Alt</kbd>+<kbd>Up</kbd> or <kbd>Alt</kbd>+<kbd>Down</kbd>. To reorder multiple items, select them first.
+要重新排列光标下的项目，请按 <kbd>Alt</kbd>+<kbd>Up</kbd> 或 <kbd>Alt</kbd>+<kbd>Down</kbd>。要重新排列多个项目，请先选中它们。
 
-## See also
+## 另请参阅
 
-*   To-do lists are meant for small task lists. For more complicated, day-to-day task tracking consider using a <a class="reference-link" href="../../Collections/Kanban%20Board.md">Kanban Board</a> collection instead.
+*   待办清单适用于小型任务列表。对于更复杂的日常任务跟踪，请考虑使用 <a class="reference-link" href="../../Collections/Kanban%20Board.md">看板</a> 集合。

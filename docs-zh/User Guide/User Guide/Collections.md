@@ -1,78 +1,79 @@
-# Collections
-Collections are a unique type of note that don't have content, but instead display their child notes in various presentation methods.
+# 集合
 
-## Main collections
+集合是一种独特的笔记类型，它们没有内容，而是以各种展示方式显示其子笔记。
+
+## 主要集合
 
 |  |  |
 | --- | --- |
-| <figure class="image"><img style="aspect-ratio:1651/810;" src="Collections_collection_calendar.webp" width="1651" height="810"></figure> | <a class="reference-link" href="Collections/Calendar.md">Calendar</a>       <br>which displays a week, month or year calendar with the notes being shown as events. New events can be added easily by dragging across the calendar. |
-| <figure class="image"><img style="aspect-ratio:1643/647;" src="Collections_collection_table.webp" width="1643" height="647"></figure> | <a class="reference-link" href="Collections/Table.md">Table</a>       <br>displays each note as a row in a table, with <a class="reference-link" href="Advanced%20Usage/Attributes/Promoted%20Attributes.md">Promoted Attributes</a> being shown as well. This makes it easy to visualize attributes of notes, as well as making them easily editable. |
-| <figure class="image"><img style="aspect-ratio:1174/850;" src="Collections_collection_board.webp" width="1174" height="850"></figure> | <a class="reference-link" href="Collections/Kanban%20Board.md">Kanban Board</a>       <br>displays notes in columns, grouped by the value of a label. Items and columns can easily be created or dragged around to change their status. |
-| <figure class="image"><img style="aspect-ratio:844/639;" src="Collections_collection_geomap.webp" width="844" height="639"></figure> | <a class="reference-link" href="Collections/Geo%20Map.md">Geo Map</a>       <br>which displays a geographical map in which the notes are represented as markers/pins on the map. New events can be easily added by pointing on the map. |
-| <figure class="image"><img style="aspect-ratio:1120/763;" src="Collections_collection_presentation.webp" width="1120" height="763"></figure> | <a class="reference-link" href="Collections/Presentation.md">Presentation</a>       <br>which shows each note as a slide and can be presented full-screen with smooth transitions or exported to PDF for sharing. |
+| <figure class="image"><img style="aspect-ratio:1651/810;" src="Collections_collection_calendar.webp" width="1651" height="810"></figure> | <a class="reference-link" href="Collections/Calendar.md">日历</a>      <br>以周、月或年日历的形式展示笔记，笔记显示为事件。通过拖拽日历即可轻松添加新事件。 |
+| <figure class="image"><img style="aspect-ratio:1643/647;" src="Collections_collection_table.webp" width="1643" height="647"></figure> | <a class="reference-link" href="Collections/Table.md">表格</a>      <br>将每条笔记显示为表格中的一行，同时显示<a class="reference-link" href="Advanced%20Usage/Attributes/Promoted%20Attributes.md">提升属性</a>。这样可以轻松可视化笔记的属性，并方便编辑。 |
+| <figure class="image"><img style="aspect-ratio:1174/850;" src="Collections_collection_board.webp" width="1174" height="850"></figure> | <a class="reference-link" href="Collections/Kanban%20Board.md">看板</a>      <br>将笔记按标签值分组显示在列中。可以轻松创建或拖拽项目和列来更改其状态。 |
+| <figure class="image"><img style="aspect-ratio:844/639;" src="Collections_collection_geomap.webp" width="844" height="639"></figure> | <a class="reference-link" href="Collections/Geo%20Map.md">地理地图</a>      <br>显示地理地图，笔记以标记/图钉的形式显示在地图上。通过点击地图即可轻松添加新事件。 |
+| <figure class="image"><img style="aspect-ratio:1120/763;" src="Collections_collection_presentation.webp" width="1120" height="763"></figure> | <a class="reference-link" href="Collections/Presentation.md">演示文稿</a>      <br>将每条笔记显示为一张幻灯片，可以全屏演示并带有平滑过渡效果，或导出为 PDF 进行分享。 |
 
-## Classic collections
+## 经典集合
 
-Classic collections are read-only mode and compiles the contents of all child notes into one continuous view. This makes it ideal for reading extensive information broken into smaller, manageable segments.
+经典集合为只读模式，会将所有子笔记的内容合并为一个连续的视图。这对于阅读被拆分为较小、易于管理片段的大量信息非常理想。
 
-*   <a class="reference-link" href="Collections/Grid%20View.md">Grid View</a> which is the default presentation method for child notes (see <a class="reference-link" href="Basic%20Concepts%20and%20Features/Notes/Note%20List.md">Note List</a>), where the notes are displayed as tiles with their title and content being visible.
-*   <a class="reference-link" href="Collections/List%20View.md">List View</a> is similar to <a class="reference-link" href="Collections/Grid%20View.md">Grid View</a>, but it displays the notes one under the other with the content being expandable/collapsible, but also works recursively.
+*   <a class="reference-link" href="Collections/Grid%20View.md">网格视图</a>，这是子笔记的默认展示方式（参见<a class="reference-link" href="Basic%20Concepts%20and%20Features/Notes/Note%20List.md">笔记列表</a>），笔记以平铺方式显示，标题和内容可见。
+*   <a class="reference-link" href="Collections/List%20View.md">列表视图</a>与<a class="reference-link" href="Collections/Grid%20View.md">网格视图</a>类似，但它将笔记上下排列显示，内容可展开/折叠，并且支持递归显示。
 
-Classic collections make use of pagination to support a large number of notes. The size of a page can be customized via `pageSize`.
+经典集合利用分页来支持大量笔记。页面大小可通过 `pageSize` 自定义。
 
-## Creating a new collection
+## 创建新集合
 
-To create a new collections, right click in the <a class="reference-link" href="Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">Note Tree</a> and look for the _Collections_ entry and select the desired type.
+要创建新的集合，请在<a class="reference-link" href="Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">笔记树</a>中右键点击，查找 _集合_ 条目并选择所需的类型。
 
-By default, collections come with a default configuration and sometimes even sample notes. To create a collection completely from scratch:
+默认情况下，集合带有默认配置，有时甚至包含示例笔记。要完全从零开始创建集合：
 
-1.  Create a new note of type _Text_ (or any type).
-2.  Change the [note type](Note%20Types.md) to _Collection_.
-3.  In <a class="reference-link" href="Collections/Collection%20Properties.md">Collection Properties</a>, select the desired view type.
-4.  Consult the help page of the corresponding view type in order to understand how to configure them.
+1.  创建一条类型为 _文本_（或任何类型）的新笔记。
+2.  将[笔记类型](Note%20Types.md)更改为 _集合_。
+3.  在<a class="reference-link" href="Collections/Collection%20Properties.md">集合属性</a>中，选择所需的视图类型。
+4.  查阅相应视图类型的帮助页面以了解如何配置它们。
 
-## Configuration
+## 配置
 
-To change the configuration of a collection or even switch to a different collection (e.g. from Kanban Board to a Calendar), see the <a class="reference-link" href="Collections/Collection%20Properties.md">Collection Properties</a> bar at the top of the note.
+要更改集合的配置，甚至切换到不同的集合（例如从看板切换到日历），请参阅笔记顶部的<a class="reference-link" href="Collections/Collection%20Properties.md">集合属性</a>栏。
 
-## Archived notes
+## 已归档笔记
 
-By default, [archived notes](Basic%20Concepts%20and%20Features/Notes/Archived%20Notes.md) will not be shown in collections. This behavior can be changed by going to <a class="reference-link" href="Collections/Collection%20Properties.md">Collection Properties</a> and checking _Show archived notes_.
+默认情况下，[已归档笔记](Basic%20Concepts%20and%20Features/Notes/Archived%20Notes.md)不会显示在集合中。可以通过进入<a class="reference-link" href="Collections/Collection%20Properties.md">集合属性</a>并勾选 _显示已归档笔记_ 来更改此行为。
 
-Archived notes will be generally indicated by being greyed out as opposed to the normal ones.
+已归档笔记通常会以灰色显示，与普通笔记区分开来。
 
-## Hiding the child notes from the note tree
+## 在笔记树中隐藏子笔记
 
-For collections with a large number of items, it can be helpful to hide the items from the note tree for performance reasons and to reduce clutter. This is especially useful for standalone collections, such as a geomap or a task board.
+对于包含大量项目的集合，出于性能考虑和减少杂乱，在笔记树中隐藏这些项目会很有帮助。这对于独立集合（如地理地图或任务看板）尤其有用。
 
-To do so, go to <a class="reference-link" href="Collections/Collection%20Properties.md">Collection Properties</a> and select _Hide child notes in tree_.
+为此，请进入<a class="reference-link" href="Collections/Collection%20Properties.md">集合属性</a>并选择 _在树中隐藏子笔记_。
 
-## Advanced use cases
+## 高级用例
 
-### Adding a description to a collection
+### 为集合添加描述
 
-To add a text before the collection, for example to describe it:
+要在集合之前添加文本，例如进行描述：
 
-1.  Create a new collection.
-2.  Change the [note type](Note%20Types.md) from _Collection_ to _Text_.
+1.  创建一个新集合。
+2.  将[笔记类型](Note%20Types.md)从 _集合_ 更改为 _文本_。
 
-Now the text will be displayed above while still maintaining the collection view.
+现在文本将显示在上方，同时保持集合视图。
 
-The only downside to this method is that <a class="reference-link" href="Collections/Collection%20Properties.md">Collection Properties</a> will not be shown anymore. In this case, modify the attributes manually or switch back temporarily to the _Collection_ type for configuration purposes.
+此方法的唯一缺点是<a class="reference-link" href="Collections/Collection%20Properties.md">集合属性</a>将不再显示。在这种情况下，请手动修改属性，或临时切换回 _集合_ 类型进行配置。
 
-### Using saved search
+### 使用已保存搜索
 
-Collections, by default, only display the child notes. However, it is possible to use the <a class="reference-link" href="Basic%20Concepts%20and%20Features/Navigation/Search.md">Search</a> functionality to display notes all across the tree, with advanced querying functionality.
+默认情况下，集合仅显示子笔记。但是，可以使用<a class="reference-link" href="Basic%20Concepts%20and%20Features/Navigation/Search.md">搜索</a>功能配合高级查询功能来显示整个树中的笔记。
 
-To do so, simply start a <a class="reference-link" href="Basic%20Concepts%20and%20Features/Navigation/Search.md">Search</a> and go to the _Collection Properties_ tab in the <a class="reference-link" href="Basic%20Concepts%20and%20Features/UI%20Elements/Ribbon.md">Ribbon</a> and select a desired type of collection. To keep the search-based collection, use a <a class="reference-link" href="Note%20Types/Saved%20Search.md">Saved Search</a>.
+为此，只需启动一个<a class="reference-link" href="Basic%20Concepts%20and%20Features/Navigation/Search.md">搜索</a>，然后在<a class="reference-link" href="Basic%20Concepts%20and%20Features/UI%20Elements/Ribbon.md">功能区</a>中转到 _集合属性_ 选项卡，选择所需的集合类型。要保留基于搜索的集合，请使用<a class="reference-link" href="Note%20Types/Saved%20Search.md">已保存搜索</a>。
 
 > [!IMPORTANT]
-> While in search, none of the collections will not display the child notes of the search results. The reason is that the search might hit a note multiple times, causing an exponential rise in the number of results.
+> 在搜索状态下，任何集合都不会显示搜索结果的子笔记。原因是搜索可能会多次命中同一条笔记，导致结果数量呈指数级增长。
 
-## Under the hood
+## 底层原理
 
-Collections by themselves are simply notes with no content that rely on the <a class="reference-link" href="Basic%20Concepts%20and%20Features/Notes/Note%20List.md">Note List</a> mechanism (the one that lists the children notes at the bottom of a note) to display information.
+集合本身只是没有内容的笔记，依赖<a class="reference-link" href="Basic%20Concepts%20and%20Features/Notes/Note%20List.md">笔记列表</a>机制（即在笔记底部列出子笔记的机制）来显示信息。
 
-By default, new collections use predefined <a class="reference-link" href="Advanced%20Usage/Templates.md">Templates</a> that are stored safely in the <a class="reference-link" href="Advanced%20Usage/Hidden%20Notes.md">Hidden Notes</a> to define some basic configuration such as the type of view, but also some <a class="reference-link" href="Advanced%20Usage/Attributes/Promoted%20Attributes.md">Promoted Attributes</a> to make editing easier.
+默认情况下，新集合使用预定义的<a class="reference-link" href="Advanced%20Usage/Templates.md">模板</a>，这些模板安全地存储在<a class="reference-link" href="Advanced%20Usage/Hidden%20Notes.md">隐藏笔记</a>中，用于定义一些基本配置（如视图类型），以及一些<a class="reference-link" href="Advanced%20Usage/Attributes/Promoted%20Attributes.md">提升属性</a>以方便编辑。
 
-Collections don't store their configuration (e.g. the position on the map, the hidden columns in a table) in the content of the note itself, but as attachments.
+集合不将其配置（例如地图上的位置、表格中隐藏的列）存储在笔记本身的内容中，而是作为附件存储。

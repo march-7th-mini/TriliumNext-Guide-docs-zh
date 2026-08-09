@@ -1,15 +1,16 @@
-# Developer Guide
-This documentation is intended for developers planning to implement new features or maintain the Trilium Notes application, as it describes the architecture of the application.
+# 开发者指南
 
-For the user-facing documentation, including how to write scripts and the various APIs, consult the [user guide](https://docs.triliumnotes.org/user-guide/) instead.
+本文档面向计划为 Trilium Notes 应用程序实现新功能或进行维护的开发者，其中描述了应用程序的架构。
 
-### Quick links
+面向用户的文档，包括如何编写脚本以及各种 API，请参阅[用户指南](https://docs.triliumnotes.org/user-guide/)。
 
-*   <a class="reference-link" href="Developer%20Guide/Environment%20Setup.md">Environment Setup</a>
-*   <a class="reference-link" href="Developer%20Guide/Project%20Structure.md">Project Structure</a>
+### 快速链接
 
-### External links
+*   <a class="reference-link" href="Developer%20Guide/Environment%20Setup.md">环境设置</a>
+*   <a class="reference-link" href="Developer%20Guide/Project%20Structure.md">项目结构</a>
 
-*   The [Trilium Notes website](https://triliumnotes.org/), for a quick presentation of the application.
-*   [User Guide](https://docs.triliumnotes.org/user-guide/), to understand the concepts of the application itself.
-*   [GitHub Repository (TriliumNext/Trilium)](https://github.com/TriliumNext/Trilium/)
+### 外部链接
+
+*   [Trilium Notes 网站](https://triliumnotes.org/)，快速了解应用程序。
+*   [用户指南](https://docs.triliumnotes.org/user-guide/)，了解应用程序本身的概念。
+*   [GitHub 仓库 (TriliumNext/Trilium)](https://github.com/TriliumNext/Trilium/)

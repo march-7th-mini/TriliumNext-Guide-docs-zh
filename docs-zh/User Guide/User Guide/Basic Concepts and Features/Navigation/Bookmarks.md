@@ -1,18 +1,19 @@
-# Bookmarks
-Frequently used notes can be bookmarked, which will make them appear in the <a class="reference-link" href="../UI%20Elements/Launch%20Bar.md">Launch Bar</a> for easy access.
+# 书签
 
-## Configuring the launch bar
+常用笔记可以添加书签，添加后它们将显示在<a class="reference-link" href="../UI%20Elements/Launch%20Bar.md">启动栏</a>中，方便快速访问。
 
-If bookmarks don't appear in the launch bar, then most likely the bookmark section has been hidden. Go to the <a class="reference-link" href="../UI%20Elements/Launch%20Bar.md">Launch Bar</a> configuration from the <a class="reference-link" href="../UI%20Elements/Global%20menu.md">Global menu</a> and ensure _Bookmarks_ is in the _Visible Launchers_ section.
+## 配置启动栏
 
-## Bookmark folder
+如果书签没有出现在启动栏中，很可能是书签部分被隐藏了。请从<a class="reference-link" href="../UI%20Elements/Global%20menu.md">全局菜单</a>进入<a class="reference-link" href="../UI%20Elements/Launch%20Bar.md">启动栏</a>配置，确保 _书签_ 位于 _可见启动器_ 部分中。
 
-Space in the left panel is limited, and you might want to bookmark many items. One possible solution is to bookmark a folder, so it shows its children:
+## 书签文件夹
 
-To do this, bookmark a folder and assign it the `#bookmarkFolder` label.
+左侧面板的空间有限，而您可能想要为许多项目添加书签。一种可行的解决方案是为文件夹添加书签，这样即可显示其子项目：
 
-## Mobile
+为此，请为文件夹添加书签，并为其分配 `#bookmarkFolder` 标签。
 
-On mobile, bookmarks are only displayed starting with v0.102.0. Because of the more constrained screen size, the bookmarks are grouped under a single icon instead of displaying them as separate icons.
+## 移动端
 
-When pressed, a menu will appear listing all the bookmarks. Bookmark folders are also supported and will appear as sub-menus.
+在移动端，书签自 v0.102.0 版本起才显示。由于屏幕尺寸更为受限，书签会分组显示在单个图标下，而不是作为单独的图标显示。
+
+按下该图标时，将出现一个菜单，列出所有书签。书签文件夹同样受支持，并会以子菜单的形式显示。

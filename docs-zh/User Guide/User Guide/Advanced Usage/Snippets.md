@@ -1,2 +1,3 @@
-# Snippets
-Snippets let you define reusable pieces of text, Markdown or code that can be quickly inserted into your notes.
+# 代码片段
+
+代码片段允许您定义可重复使用的文本、Markdown 或代码片段，以便快速插入到笔记中。

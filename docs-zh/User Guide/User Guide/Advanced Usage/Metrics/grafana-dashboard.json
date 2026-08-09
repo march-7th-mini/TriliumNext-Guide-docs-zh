@@ -1,3 +1,4 @@
+```json
 {
   "annotations": {
     "list": [
@@ -31,14 +32,14 @@
       },
       "id": 100,
       "panels": [],
-      "title": "🏠 Trilium Overview",
+      "title": "🏠 Trilium 概览",
       "type": "row"
     },
     {
       "datasource": {
         "uid": "${datasource}"
       },
-      "description": "Current Trilium version and build information",
+      "description": "当前 Trilium 版本和构建信息",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -95,7 +96,7 @@
           "refId": "A"
         }
       ],
-      "title": "📋 Instance Information",
+      "title": "📋 实例信息",
       "transformations": [
         {
           "id": "organize",
@@ -109,12 +110,12 @@
             },
             "indexByName": {},
             "renameByName": {
-              "build_date": "Build Date",
-              "build_revision": "Git Revision",
-              "db_version": "DB Version",
+              "build_date": "构建日期",
+              "build_revision": "Git 修订版本",
+              "db_version": "数据库版本",
               "node_version": "Node.js",
-              "sync_version": "Sync Version",
-              "version": "Version"
+              "sync_version": "同步版本",
+              "version": "版本"
             }
           }
         }
@@ -125,7 +126,7 @@
       "datasource": {
         "uid": "${datasource}"
       },
-      "description": "Database file size in human-readable format",
+      "description": "数据库文件大小（人类可读格式）",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -186,14 +187,14 @@
           "refId": "A"
         }
       ],
-      "title": "💾 Database Size",
+      "title": "💾 数据库大小",
       "type": "stat"
     },
     {
       "datasource": {
         "uid": "${datasource}"
       },
-      "description": "Total active notes in your Trilium instance",
+      "description": "Trilium 实例中活跃笔记的总数",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -254,7 +255,7 @@
           "refId": "A"
         }
       ],
-      "title": "📝 Active Notes",
+      "title": "📝 活跃笔记",
       "type": "stat"
     },
     {
@@ -267,14 +268,14 @@
       },
       "id": 200,
       "panels": [],
-      "title": "📊 Key Metrics",
+      "title": "📊 关键指标",
       "type": "row"
     },
     {
       "datasource": {
         "uid": "${datasource}"
       },
-      "description": "Total notes including deleted ones",
+      "description": "笔记总数（包括已删除的）",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -327,7 +328,7 @@
             "uid": "${datasource}"
           },
           "expr": "trilium_notes_active{job=~'$job',instance=~'$instance'}",
-          "legendFormat": "Active Notes",
+          "legendFormat": "活跃笔记",
           "refId": "A"
         },
         {
@@ -335,7 +336,7 @@
             "uid": "${datasource}"
           },
           "expr": "trilium_notes_deleted{job=~'$job',instance=~'$instance'}",
-          "legendFormat": "Deleted Notes",
+          "legendFormat": "已删除笔记",
           "refId": "B"
         },
         {
@@ -343,18 +344,18 @@
             "uid": "${datasource}"
           },
           "expr": "trilium_notes_protected{job=~'$job',instance=~'$instance'}",
-          "legendFormat": "Protected Notes",
+          "legendFormat": "受保护笔记",
           "refId": "C"
         }
       ],
-      "title": "📝 Notes Distribution",
+      "title": "📝 笔记分布",
       "type": "piechart"
     },
     {
       "datasource": {
         "uid": "${datasource}"
       },
-      "description": "Breakdown of attachments by MIME type",
+      "description": "按 MIME 类型分类的附件明细",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -411,14 +412,14 @@
           "refId": "A"
         }
       ],
-      "title": "🖼️ Attachments by Type",
+      "title": "🖼️ 按类型分类的附件",
       "type": "piechart"
     },
     {
       "datasource": {
         "uid": "${datasource}"
       },
-      "description": "Distribution of notes by their content type",
+      "description": "按内容类型分类的笔记分布",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -478,7 +479,7 @@
           "refId": "A"
         }
       ],
-      "title": "📄 Notes by Content Type",
+      "title": "📄 按内容类型分类的笔记",
       "type": "piechart"
     },
     {
@@ -491,14 +492,14 @@
       },
       "id": 300,
       "panels": [],
-      "title": "📈 Trends & Time Series",
+      "title": "📈 趋势与时间序列",
       "type": "row"
     },
     {
       "datasource": {
         "uid": "${datasource}"
       },
-      "description": "Growth of notes over time",
+      "description": "笔记随时间增长的情况",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -552,7 +553,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "Active Notes"
+              "options": "活跃笔记"
             },
             "properties": [
               {
@@ -567,7 +568,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "Total Notes"
+              "options": "笔记总数"
             },
             "properties": [
               {
@@ -611,7 +612,7 @@
             "uid": "${datasource}"
           },
           "expr": "trilium_notes_active{job=~'$job',instance=~'$instance'}",
-          "legendFormat": "Active Notes",
+          "legendFormat": "活跃笔记",
           "refId": "A"
         },
         {
@@ -619,18 +620,18 @@
             "uid": "${datasource}"
           },
           "expr": "trilium_notes_total{job=~'$job',instance=~'$instance'}",
-          "legendFormat": "Total Notes",
+          "legendFormat": "笔记总数",
           "refId": "B"
         }
       ],
-      "title": "📈 Notes Growth Over Time",
+      "title": "📈 笔记随时间增长",
       "type": "timeseries"
     },
     {
       "datasource": {
         "uid": "${datasource}"
       },
-      "description": "Attachment storage trends",
+      "description": "附件存储趋势",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -684,7 +685,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "Active Attachments"
+              "options": "活跃附件"
             },
             "properties": [
               {
@@ -699,7 +700,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "Total Attachments"
+              "options": "附件总数"
             },
             "properties": [
               {
@@ -743,7 +744,7 @@
             "uid": "${datasource}"
           },
           "expr": "trilium_attachments_active{job=~'$job',instance=~'$instance'}",
-          "legendFormat": "Active Attachments",
+          "legendFormat": "活跃附件",
           "refId": "A"
         },
         {
@@ -751,11 +752,11 @@
             "uid": "${datasource}"
           },
           "expr": "trilium_attachments_total{job=~'$job',instance=~'$instance'}",
-          "legendFormat": "Total Attachments",
+          "legendFormat": "附件总数",
           "refId": "B"
         }
       ],
-      "title": "📎 Attachments Growth Over Time",
+      "title": "📎 附件随时间增长",
       "type": "timeseries"
     },
     {
@@ -768,14 +769,14 @@
       },
       "id": 400,
       "panels": [],
-      "title": "🔧 Advanced Metrics",
+      "title": "🔧 高级指标",
       "type": "row"
     },
     {
       "datasource": {
         "uid": "${datasource}"
       },
-      "description": "Number of branches connecting notes",
+      "description": "连接笔记的分支数量",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -828,14 +829,14 @@
           "refId": "A"
         }
       ],
-      "title": "🌳 Total Branches",
+      "title": "🌳 分支总数",
       "type": "stat"
     },
     {
       "datasource": {
         "uid": "${datasource}"
       },
-      "description": "Number of note attributes",
+      "description": "笔记属性数量",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -888,14 +889,14 @@
           "refId": "A"
         }
       ],
-      "title": "🏷️ Attributes",
+      "title": "🏷️ 属性",
       "type": "stat"
     },
     {
       "datasource": {
         "uid": "${datasource}"
       },
-      "description": "Number of note revisions",
+      "description": "笔记修订数量",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -948,14 +949,14 @@
           "refId": "A"
         }
       ],
-      "title": "🔄 Revisions",
+      "title": "🔄 修订",
       "type": "stat"
     },
     {
       "datasource": {
         "uid": "${datasource}"
       },
-      "description": "Number of ETAPI tokens",
+      "description": "ETAPI 令牌数量",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1008,14 +1009,14 @@
           "refId": "A"
         }
       ],
-      "title": "🔑 API Tokens",
+      "title": "🔑 API 令牌",
       "type": "stat"
     },
     {
       "datasource": {
         "uid": "${datasource}"
       },
-      "description": "Various storage and system metrics",
+      "description": "各种存储和系统指标",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1069,7 +1070,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "Recent Notes"
+              "options": "最近笔记"
             },
             "properties": [
               {
@@ -1112,7 +1113,7 @@
             "uid": "${datasource}"
           },
           "expr": "trilium_blobs_total{job=~'$job',instance=~'$instance'}",
-          "legendFormat": "Blob Records",
+          "legendFormat": "Blob 记录",
           "refId": "A"
         },
         {
@@ -1120,7 +1121,7 @@
             "uid": "${datasource}"
           },
           "expr": "trilium_recent_notes_total{job=~'$job',instance=~'$instance'}",
-          "legendFormat": "Recent Notes",
+          "legendFormat": "最近笔记",
           "refId": "B"
         },
         {
@@ -1128,7 +1129,7 @@
             "uid": "${datasource}"
           },
           "expr": "trilium_embeddings_total{job=~'$job',instance=~'$instance'}",
-          "legendFormat": "Embeddings",
+          "legendFormat": "嵌入",
           "refId": "C"
         },
         {
@@ -1136,18 +1137,18 @@
             "uid": "${datasource}"
           },
           "expr": "trilium_embedding_providers_total{job=~'$job',instance=~'$instance'}",
-          "legendFormat": "Embedding Providers",
+          "legendFormat": "嵌入提供者",
           "refId": "D"
         }
       ],
-      "title": "📊 Storage & System Metrics",
+      "title": "📊 存储与系统指标",
       "type": "timeseries"
     },
     {
       "datasource": {
         "uid": "${datasource}"
       },
-      "description": "Timeline showing when content was created and last modified",
+      "description": "显示内容创建和最后修改时间的时间线",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1226,7 +1227,7 @@
             "uid": "${datasource}"
           },
           "expr": "trilium_oldest_note_timestamp{job=~'$job',instance=~'$instance'} * 1000",
-          "legendFormat": "Oldest Note",
+          "legendFormat": "最早的笔记",
           "refId": "A"
         },
         {
@@ -1234,7 +1235,7 @@
             "uid": "${datasource}"
           },
           "expr": "trilium_newest_note_timestamp{job=~'$job',instance=~'$instance'} * 1000",
-          "legendFormat": "Newest Note",
+          "legendFormat": "最新的笔记",
           "refId": "B"
         },
         {
@@ -1242,11 +1243,11 @@
             "uid": "${datasource}"
           },
           "expr": "trilium_last_modified_timestamp{job=~'$job',instance=~'$instance'} * 1000",
-          "legendFormat": "Last Modified",
+          "legendFormat": "最后修改时间",
           "refId": "C"
         }
       ],
-      "title": "⏰ Content Timeline",
+      "title": "⏰ 内容时间线",
       "type": "timeseries"
     }
   ],
@@ -1267,7 +1268,7 @@
           "value": "PA04845DA3A4B088E"
         },
         "includeAll": false,
-        "label": "Datasource",
+        "label": "数据源",
         "name": "datasource",
         "options": [],
         "query": "prometheus",
@@ -1278,7 +1279,7 @@
       {
         "allValue": ".*",
         "current": {
-          "text": "All",
+          "text": "全部",
           "value": "$__all"
         },
         "datasource": {
@@ -1286,7 +1287,7 @@
           "type": ""
         },
         "includeAll": true,
-        "label": "Job",
+        "label": "任务",
         "multi": true,
         "name": "job",
         "options": [],
@@ -1300,7 +1301,7 @@
         "allValue": ".*",
         "current": {
           "text": [
-            "All"
+            "全部"
           ],
           "value": [
             "$__all"
@@ -1311,7 +1312,7 @@
           "uid": "${datasource}"
         },
         "includeAll": true,
-        "label": "Instance",
+        "label": "实例",
         "multi": true,
         "name": "instance",
         "options": [],
@@ -1329,7 +1330,8 @@
   },
   "timepicker": {},
   "timezone": "browser",
-  "title": "TriliumNext Dashboard",
+  "title": "TriliumNext 仪表板",
   "uid": "06993f9b-a477-4723-bf18-47743393b382",
   "version": 5
 }
+```

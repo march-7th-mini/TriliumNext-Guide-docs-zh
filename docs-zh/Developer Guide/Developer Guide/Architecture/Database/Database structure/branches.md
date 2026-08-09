@@ -1,12 +1,12 @@
 # branches
-| Column Name | Data Type | Nullity | Default value | Description |
+| 列名 | 数据类型 | 可空性 | 默认值 | 描述 |
 | --- | --- | --- | --- | --- |
-| `branchId` | Text | Non-null |  | The ID of the branch, in the form of `a_b` where `a` is the `parentNoteId` and `b` is the `noteId`. |
-| `noteId` | Text | Non-null |  | The ID of the [note](notes.md). |
-| `parentNoteId` | Text | Non-null |  | The ID of the parent [note](notes.md) the note belongs to. |
-| `notePosition` | Integer | Non-null |  | The position of the branch within the same level of hierarchy, the value is usually a multiple of 10. |
-| `prefix` | Text | Nullable |  | The [branch prefix](../../../Concepts/Branch%20prefixes.md) if any, or `NULL` otherwise. |
-| `isExpanded` | Integer | Non-null | 0 | Whether the branch should appear expanded (its children shown) to the user. |
-| `isDeleted` | Integer | Non-null | 0 | `1` if the entity is [deleted](../../../Concepts/Deleted%20notes.md), `0` otherwise. |
-| `deleteId` | Text | Nullable | `null` |  |
-| `utcDateModified` | Text | Non-null |  | Modification date in UTC format (e.g. `2023-11-08 16:43:44.204Z`) |
+| `branchId` | 文本 | 非空 |  | 分支的ID，格式为`a_b`，其中`a`是`parentNoteId`，`b`是`noteId`。 |
+| `noteId` | 文本 | 非空 |  | [笔记](notes.md)的ID。 |
+| `parentNoteId` | 文本 | 非空 |  | 笔记所属父级[笔记](notes.md)的ID。 |
+| `notePosition` | 整数 | 非空 |  | 分支在同一层级中的位置，该值通常是10的倍数。 |
+| `prefix` | 文本 | 可空 |  | [分支前缀](../../../Concepts/Branch%20prefixes.md)（如果有），否则为`NULL`。 |
+| `isExpanded` | 整数 | 非空 | 0 | 分支是否应向用户显示为展开状态（显示其子项）。 |
+| `isDeleted` | 整数 | 非空 | 0 | 如果实体已被[删除](../../../Concepts/Deleted%20notes.md)，则为`1`，否则为`0`。 |
+| `deleteId` | 文本 | 可空 | `null` |  |
+| `utcDateModified` | 文本 | 非空 |  | UTC格式的修改日期（例如`2023-11-08 16:43:44.204Z`） |

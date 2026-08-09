@@ -1,53 +1,53 @@
-# Automatic replacements
-## Automatic replacements
+# 自动替换
+## 自动替换
 
-As you type in a text note, certain character sequences are replaced with the typographic symbol they represent. Typing `(c)` gives you `©`, `...` gives you `…`, and `"quote"` gives you `“quote”`.
+在文本笔记中输入时，某些字符序列会被替换为其所代表的排版符号。输入 `(c)` 会得到 `©`，输入 `...` 会得到 `…`，输入 `"quote"` 会得到 `“quote”`。
 
-These replacements are not applied inside code blocks or inline code, and pasted text is never affected — only text you type. If you have pasted a code snippet, or written one inside a code block, its characters are left exactly as they are.
+这些替换不会在代码块或行内代码中应用，粘贴的文本也永远不会受影响——只有您输入的文本才会被替换。如果您粘贴了代码片段，或在代码块中编写了代码，其字符将保持原样。
 
-Once an automatic replacement takes place, it can be undone by:
+一旦自动替换发生，可以通过以下方式撤销：
 
-*   Pressing <kbd>Backspace</kbd> immediately after a replacement undoes it and restores what you typed.
-    *   Note that this consumes the undo, so a further <kbd>Ctrl</kbd>+<kbd>Z</kbd> might delete your typed text.
-    *   Pressing <kbd>Space</kbd> or changing the cursor position disables this functionality.
-*   Pressing <kbd>Ctrl</kbd>+<kbd>Z</kbd>, which works even after pressing space.
+*   在替换后立即按下 <kbd>Backspace</kbd> 可撤销替换并恢复您输入的内容。
+    *   请注意，这会消耗一次撤销操作，因此再次按下 <kbd>Ctrl</kbd>+<kbd>Z</kbd> 可能会删除您输入的文本。
+    *   按下 <kbd>Space</kbd> 或更改光标位置会禁用此功能。
+*   按下 <kbd>Ctrl</kbd>+<kbd>Z</kbd>，即使在按下空格后也有效。
 
-Each group can be turned off in <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">Options</a> → _Text notes_ → _Automatic replacements_.
+每个分组都可以在 <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">选项</a> → _文本笔记_ → _自动替换_ 中关闭。
 
-| Group | What it replaces |
+| 分组 | 替换内容 |
 | --- | --- |
-| Punctuation | `...` with an ellipsis (`…`), and `--` and `---` _surrounded by spaces_ with an en dash (`–`) and an em dash (`—`) |
-| Mathematical symbols | fractions such as `1/2` with `½`, and the operators `<=`, `>=`, `!=`, `<-` and `->` with `≤`, `≥`, `≠`, `←` and `→` |
-| Copyright and trademark | `(c)`, `(r)` and `(tm)` with `©`, `®` and `™` |
-| Quotation marks | straight quotes with typographic ones — see below |
+| 标点符号 | `...` 替换为省略号（`…`），以及 _两侧有空格_ 的 `--` 和 `---` 替换为短破折号（`–`）和长破折号（`—`） |
+| 数学符号 | 分数如 `1/2` 替换为 `½`，运算符 `<=`、`>=`、`!=`、`<-` 和 `->` 替换为 `≤`、`≥`、`≠`、`←` 和 `→` |
+| 版权和商标 | `(c)`、`(r)` 和 `(tm)` 替换为 `©`、`®` 和 `™` |
+| 引号 | 直引号替换为排版引号——见下文 |
 
-## Quotation marks
+## 引号
 
-Quotation marks are configured separately from the rest, with one setting for the **double** quote key and one for the **single** quote key, because which pair belongs on which key differs between conventions — British typography traditionally sets a quotation in `‘…’` where American sets it in `“…”`.
+引号与其他设置分开配置，**双**引号键和**单**引号键各有一个设置，因为哪个键对应哪对引号在不同惯例中有所不同——英式排版传统上将引号设置为 `‘…’`，而美式排版则设置为 `“…”`。
 
-Each offers:
+每个设置提供：
 
-*   _Based on the note's content language_ (the default) — English gives `“quote”`, German `„quote“`, French `« quote »`, Japanese `「quote」`. See _Content language & Right-to-left support_ for how a note's language is decided.
-*   _Disabled,_ straight quotes stay straight.
-*   _A specific pair_ — `“…”`, `‘…’`, `„…“`, `„…”`, `«…»`, `« … »`, `‹…›`, `「…」`, `『…』`. Choosing one applies it to every note, whatever language it is written in.
+*   _基于笔记的内容语言_（默认）——英语给出 `“quote”`，德语给出 `„quote“`，法语给出 `« quote »`，日语给出 `「quote」`。有关如何确定笔记语言，请参阅 _内容语言与从右到左支持_。
+*   _禁用_，直引号保持直引号。
+*   _特定引号对_——`“…”`、`‘…’`、`„…“`、`„…”`、`«…»`、`« … »`、`‹…›`、`「…」`、`『…』`。选择其中一个将应用于所有笔记，无论其使用何种语言编写。
 
-## Custom replacements
+## 自定义替换
 
-You can add your own under <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">Options</a> → _Text notes_ → _Automatic replacements_ → _Custom replacements_. Type the text to replace and the replacement, then press Enter. Existing ones are shown as chips and removed with the × on each.
+您可以在 <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">选项</a> → _文本笔记_ → _自动替换_ → _自定义替换_ 下添加您自己的替换规则。输入要替换的文本和替换文本，然后按 Enter 键。现有的替换规则会以标签形式显示，点击每个标签上的 × 可将其删除。
 
-A custom replacement is applied when the text is typed as a whole word and followed by a space, so longer words that begin with it are left alone — a `TN` replacement does not rewrite the end of `BTN`, and `TNT` can still be typed.
+当文本作为完整单词输入并后跟空格时，自定义替换才会应用，因此以该文本开头的较长单词不会受到影响——`TN` 替换不会改写 `BTN` 的结尾，`TNT` 仍然可以输入。
 
-Capitalisation follows what you type, unless the replacement has capitals of its own:
+大小写遵循您输入的内容，除非替换文本本身包含大写字母：
 
-| **Replacement you defined** | **You type** | **You get** |
+| **您定义的替换规则** | **您输入** | **您得到** |
 | --- | --- | --- |
 | `teh` → `the` | `teh` / `Teh` / `TEH` | `the` / `The` / `THE` |
-| `TN` → `Trilium Notes` | `TN` or `tn` | `Trilium Notes` (unchanged — it has capitals) |
+| `TN` → `Trilium Notes` | `TN` 或 `tn` | `Trilium Notes`（不变——因为它包含大写字母） |
 
-The text to replace is matched literally; it is not a pattern. Typing a replacement whose "text to replace" already exists updates that entry rather than adding a second one.
+要替换的文本是字面匹配的；它不是模式。输入一个“要替换的文本”已存在的替换规则会更新该条目，而不是添加第二个条目。
 
-## Characters that only look replaced (ligatures)
+## 看起来像被替换的字符（连字）
 
-If you see `!=` displayed as `≠` or `->` as `→` inside a code block, that is not a replacement — replacements never run there. It is a _font ligature_: the default monospace font draws certain character pairs as a single symbol. The underlying text is unchanged, and copying it out gives you back `!=` and `->`.
+如果您在代码块中看到 `!=` 显示为 `≠` 或 `->` 显示为 `→`，那不是替换——替换永远不会在代码块中运行。这是_字体连字_：默认的等宽字体将某些字符对绘制为单个符号。底层文本不变，复制出来仍然是 `!=` 和 `->`。
 
-This can be turned off with <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">Options</a>_→ Appearance → Fonts → Programming ligatures._
+这可以通过 <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">选项</a> → _外观_ → _字体_ → _编程连字_ 关闭。

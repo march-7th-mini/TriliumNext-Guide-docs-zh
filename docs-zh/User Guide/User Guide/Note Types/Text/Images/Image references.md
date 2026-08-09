@@ -1,21 +1,21 @@
-# Image references
+# 图片引用
 <figure class="image image-style-align-right image_resized" style="width:50.47%;"><img style="aspect-ratio:880/553;" src="Image references_image.png" width="880" height="553"></figure>
 
-Image references are an easy way to embed the preview of another note type into a <a class="reference-link" href="../../Text.md">Text</a> note.
+图片引用是一种将其他笔记类型的预览嵌入到<a class="reference-link" href="../../Text.md">文本</a>笔记中的简便方法。
 
-## Supported note types
+## 支持的笔记类型
 
-*   <a class="reference-link" href="../../Canvas.md">Canvas</a>
-*   <a class="reference-link" href="../../Mermaid%20Diagrams.md">Mermaid Diagrams</a>
-*   <a class="reference-link" href="../../Mind%20Map.md">Mind Map</a>
+*   <a class="reference-link" href="../../Canvas.md">画布</a>
+*   <a class="reference-link" href="../../Mermaid%20Diagrams.md">Mermaid 图表</a>
+*   <a class="reference-link" href="../../Mind%20Map.md">思维导图</a>
 
-## Steps
+## 操作步骤
 
-1.  Go to one of the supported notes (listed above) and look for the ![](1_Image%20references_image.png) button in the <a class="reference-link" href="../../../Basic%20Concepts%20and%20Features/UI%20Elements/Floating%20buttons.md">Floating buttons</a> area.
-2.  Go to a <a class="reference-link" href="../../Text.md">Text</a> note and use the Paste function to insert the reference to that note.
+1.  前往上述支持的笔记类型之一，在<a class="reference-link" href="../../../Basic%20Concepts%20and%20Features/UI%20Elements/Floating%20buttons.md">浮动按钮</a>区域查找 ![](1_Image%20references_image.png) 按钮。
+2.  前往一个<a class="reference-link" href="../../Text.md">文本</a>笔记，使用粘贴功能插入对该笔记的引用。
 
-## Interaction
+## 交互操作
 
-*   Double-clicking an image reference from a text note will automatically open the target note.
-*   Clicking an image reference while <kbd>Ctrl</kbd> is pressed will open the target note in a new tab.
-*   Modifying the target note should also update the image reference. If that doesn't happen, consider <a class="reference-link" href="../../../Troubleshooting/Refreshing%20the%20application.md">Refreshing the application</a>.
+*   双击文本笔记中的图片引用将自动打开目标笔记。
+*   按住 <kbd>Ctrl</kbd> 键的同时点击图片引用将在新标签页中打开目标笔记。
+*   修改目标笔记后，图片引用也应随之更新。如果未更新，请考虑<a class="reference-link" href="../../../Troubleshooting/Refreshing%20the%20application.md">刷新应用程序</a>。

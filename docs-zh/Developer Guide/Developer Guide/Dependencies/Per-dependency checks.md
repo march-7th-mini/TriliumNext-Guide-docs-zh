@@ -1,4 +1,4 @@
-# Per-dependency checks
+# 各依赖项检查
 <table class="ck-table-resized">
     <colgroup>
         <col>
@@ -9,74 +9,74 @@
     </colgroup>
     <thead>
         <tr>
-            <th>Dependency</th>
-            <th>Name in <code>library_loader</code></th>
-            <th>Things to check for a basic sanity check</th>
+            <th>依赖项</th>
+            <th><code>library_loader</code> 中的名称</th>
+            <th>基本健全性检查事项</th>
             <th>&nbsp;</th>
-            <th>Protected by unit tests</th>
+            <th>受单元测试保护</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td><code>better-sqlite3</code></td>
             <td>&nbsp;</td>
-            <td>See&nbsp;<a class="reference-link" href="Per-dependency%20checks/bettersqlite%20binaries.md">bettersqlite binaries</a>.</td>
+            <td>参见&nbsp;<a class="reference-link" href="Per-dependency%20checks/bettersqlite%20binaries.md">bettersqlite 二进制文件</a>。</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td><code>jsdom</code></td>
             <td>&nbsp;</td>
-            <td><ul><li>Note map</li><li>Clipper</li><li>Note similarity</li></ul></td>
-            <td>Protected by typings, should catch any potential changes in API.</td>
-            <td>Yes</td>
+            <td><ul><li>笔记图谱</li><li>剪藏扩展</li><li>笔记相似度</li></ul></td>
+            <td>受类型定义保护，应能捕获 API 的任何潜在变化。</td>
+            <td>是</td>
         </tr>
         <tr>
             <td><code>async-mutex</code></td>
             <td>&nbsp;</td>
-            <td><ul><li>Sync</li></ul></td>
+            <td><ul><li>同步</li></ul></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td><code>axios</code></td>
             <td>&nbsp;</td>
-            <td><ul><li>Can't be directly tested, as it's exposed only via the backend script API.</li></ul></td>
+            <td><ul><li>无法直接测试，因为它仅通过后端脚本 API 暴露。</li></ul></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td><code>sax</code></td>
             <td>&nbsp;</td>
-            <td><ul><li>EverNote imports</li></ul></td>
+            <td><ul><li>EverNote 导入</li></ul></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td><ul><li><code>ws</code></li><li><code>debounce</code></li></ul></td>
             <td>&nbsp;</td>
-            <td><ul><li>Check any action is reported from server to client (e.g. delete a note).</li></ul></td>
+            <td><ul><li>检查是否有任何操作从服务器报告到客户端（例如删除笔记）。</li></ul></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td><code>ejs</code></td>
             <td>&nbsp;</td>
-            <td><ul><li>Onboarding / first setup</li></ul></td>
+            <td><ul><li>引导流程 / 首次设置</li></ul></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td><code>dayjs</code></td>
             <td>&nbsp;</td>
-            <td><ul><li>Day notes</li></ul></td>
+            <td><ul><li>日记笔记</li></ul></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td><code>semver</code></td>
             <td>&nbsp;</td>
-            <td><ul><li>Application should start.</li></ul></td>
+            <td><ul><li>应用程序应能启动。</li></ul></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
@@ -90,70 +90,70 @@
         <tr>
             <td><code>sax</code></td>
             <td>&nbsp;</td>
-            <td><ul><li>EverNote import</li></ul></td>
+            <td><ul><li>EverNote 导入</li></ul></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td><code>ini</code></td>
             <td>&nbsp;</td>
-            <td><ul><li>Affects config, generally if the application starts then it should be OK.</li></ul></td>
+            <td><ul><li>影响配置，通常如果应用程序能启动则应该没问题。</li></ul></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td><code>jsplumb</code></td>
             <td><code>RELATION_MAP</code></td>
-            <td><ul><li>Relation map note type</li></ul></td>
+            <td><ul><li>关系图谱笔记类型</li></ul></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td><code>jquery.mark.es6</code></td>
             <td><code>MARKJS</code></td>
-            <td><ul><li>In search, when highlighting the text that matched.</li><li>In search in HTML, which might not actually be used since it seems to have been replaced by CKEditor's own find &amp; replace dialog.</li></ul></td>
+            <td><ul><li>在搜索中，当高亮匹配的文本时。</li><li>在 HTML 中搜索时，这可能实际上并未被使用，因为它似乎已被 CKEditor 自身的查找与替换对话框所取代。</li></ul></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td><code>knockout.js</code></td>
             <td>&nbsp;</td>
-            <td><ul><li>Used in rendering the login and main layout of the application.</li></ul></td>
+            <td><ul><li>用于渲染应用程序的登录页面和主布局。</li></ul></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td><code>normalize.min.css</code></td>
             <td>&nbsp;</td>
-            <td><ul><li>Used in shared notes.</li></ul></td>
+            <td><ul><li>用于共享笔记。</li></ul></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td><code>wheel-zoom.min.js</code></td>
             <td><code>WHEEL_ZOOM</code></td>
-            <td><ul><li>When opening a image that is in attachment.</li><li>When opening a stand-alone image note.</li><li>When zooming in a mermaid chart.</li></ul></td>
+            <td><ul><li>打开附件中的图片时。</li><li>打开独立的图片笔记时。</li><li>在 mermaid 图表中缩放时。</li></ul></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td><code>fancytree</code></td>
             <td>&nbsp;</td>
-            <td><ul><li>The note tree should be fully functional.</li></ul></td>
+            <td><ul><li>笔记树应完全正常运作。</li></ul></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td><code>bootstrap</code></td>
             <td>&nbsp;</td>
-            <td><ul><li>Check mostly the on-boarding pages, when there is no database.</li></ul></td>
+            <td><ul><li>主要检查没有数据库时的引导页面。</li></ul></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td><code>electron-debug</code></td>
             <td>&nbsp;</td>
-            <td><ul><li>Run electron using <code>npm run start-electron</code> and check that the debug hotkeys are still working (Ctrl+Shift+I on Windows/Linux, Cmd+Alt+I for dev tools, Cmd/Ctrl+R for reload).</li></ul></td>
+            <td><ul><li>使用 <code>npm run start-electron</code> 运行 Electron，并检查调试热键是否仍然有效（Windows/Linux 上为 Ctrl+Shift+I，开发者工具为 Cmd+Alt+I，重新加载为 Cmd/Ctrl+R）。</li></ul></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
@@ -174,14 +174,14 @@
         <tr>
             <td><code>marked</code></td>
             <td>&nbsp;</td>
-            <td><ul><li>Importing a markdown note.</li></ul></td>
+            <td><ul><li>导入 Markdown 笔记。</li></ul></td>
             <td>&nbsp;</td>
-            <td>Yes</td>
+            <td>是</td>
         </tr>
         <tr>
             <td><code>force-graph</code></td>
             <td>&nbsp;</td>
-            <td><ul><li>Note map</li></ul></td>
+            <td><ul><li>笔记图谱</li></ul></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>

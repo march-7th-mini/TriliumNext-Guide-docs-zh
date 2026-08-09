@@ -1,241 +1,242 @@
-# Using Docker
-Official docker images are published on docker hub for **AMD64**, **ARMv7** and **ARM64/v8**: [https://hub.docker.com/r/triliumnext/trilium/](https://hub.docker.com/r/triliumnext/trilium/)
+# 使用 Docker
 
-## Prerequisites
+官方 Docker 镜像已发布在 Docker Hub 上，支持 **AMD64**、**ARMv7** 和 **ARM64/v8** 架构：[https://hub.docker.com/r/triliumnext/trilium/](https://hub.docker.com/r/triliumnext/trilium/)
 
-Ensure Docker is installed on your system.
+## 前提条件
 
-If you need help installing Docker, reference the [Docker Installation Docs](https://docs.docker.com/engine/install/)
+确保您的系统上已安装 Docker。
 
-**Note:** Trilium's Docker container requires root privileges to operate correctly.
+如果您需要有关安装 Docker 的帮助，请参考 [Docker 安装文档](https://docs.docker.com/engine/install/)
+
+**注意：** Trilium 的 Docker 容器需要 root 权限才能正常运行。
 
 > [!WARNING]
-> If you're using a SMB/CIFS share or folder as your Trilium data directory, [you'll need](https://github.com/TriliumNext/Notes/issues/415#issuecomment-2344824400) to add the mount options of `nobrl` and `noperm` when mounting your SMB share.
+> 如果您使用 SMB/CIFS 共享或文件夹作为 Trilium 数据目录，[您需要](https://github.com/TriliumNext/Notes/issues/415#issuecomment-2344824400) 在挂载 SMB 共享时添加 `nobrl` 和 `noperm` 挂载选项。
 
-## Running with Docker Compose
+## 使用 Docker Compose 运行
 
-### Grab the latest docker-compose.yml:
+### 获取最新的 docker-compose.yml：
 
 ```
 wget https://raw.githubusercontent.com/TriliumNext/Trilium/master/docker-compose.yml
 ```
 
-Optionally, edit the `docker-compose.yml` file to configure the container settings prior to starting it. Unless configured otherwise, the data directory will be `~/trilium-data` and the container will be accessible at port 8080.
+（可选）在启动容器之前，编辑 `docker-compose.yml` 文件以配置容器设置。除非另行配置，否则数据目录将为 `~/trilium-data`，容器将在 8080 端口可访问。
 
-### Start the container:
+### 启动容器：
 
-Run the following command to start the container in the background:
+运行以下命令在后台启动容器：
 
 ```
 docker compose up -d
 ```
 
-## Running without Docker Compose / Further Configuration
+## 不使用 Docker Compose 运行 / 进一步配置
 
-### Pulling the Docker Image
+### 拉取 Docker 镜像
 
-To pull the image, use the following command, replacing `[VERSION]` with the desired version or tag, such as `v0.91.6` or just `latest`. (See published tag names at [https://hub.docker.com/r/triliumnext/trilium/tags](https://hub.docker.com/r/triliumnext/trilium/tags).):
+要拉取镜像，请使用以下命令，将 `[VERSION]` 替换为所需的版本或标签，例如 `v0.91.6` 或仅使用 `latest`。（请参阅 [https://hub.docker.com/r/triliumnext/trilium/tags](https://hub.docker.com/r/triliumnext/trilium/tags) 上发布的标签名称。）：
 
 ```
 docker pull triliumnext/trilium:v0.91.6
 ```
 
-**Warning:** Avoid using the "latest" tag, as it may automatically upgrade your instance to a new minor version, potentially disrupting sync setups or causing other issues.
+**警告：** 避免使用 “latest” 标签，因为它可能会自动将您的实例升级到新的次要版本，从而可能中断同步设置或导致其他问题。
 
-### Preparing the Data Directory
+### 准备数据目录
 
-Trilium requires a directory on the host system to store its data. This directory must be mounted into the Docker container with write permissions.
+Trilium 需要在主机系统上有一个目录来存储其数据。此目录必须挂载到 Docker 容器中并具有写权限。
 
-### Running the Docker Container
+### 运行 Docker 容器
 
-#### Local Access Only
+#### 仅本地访问
 
-Run the container to make it accessible only from the localhost. This setup is suitable for testing or when using a proxy server like Nginx or Apache.
+运行容器以使其只能从 localhost 访问。此设置适用于测试或使用 Nginx 或 Apache 等代理服务器时。
 
 ```
 sudo docker run -t -i -p 127.0.0.1:8080:8080 -v ~/trilium-data:/home/node/trilium-data triliumnext/trilium:[VERSION]
 ```
 
-1.  Verify the container is running using `docker ps`.
-2.  Access Trilium via a web browser at `127.0.0.1:8080`.
+1.  使用 `docker ps` 验证容器是否正在运行。
+2.  通过 Web 浏览器访问 `127.0.0.1:8080` 上的 Trilium。
 
-#### Local Network Access
+#### 本地网络访问
 
-To make the container accessible only on your local network, first create a new Docker network:
+要使容器只能在本地网络上访问，请先创建一个新的 Docker 网络：
 
 ```
 docker network create -d macvlan -o parent=eth0 --subnet 192.168.2.0/24 --gateway 192.168.2.254 --ip-range 192.168.2.252/27 mynet
 ```
 
-Then, run the container with the network settings:
+然后，使用网络设置运行容器：
 
 ```
 docker run --net=mynet -d -p 127.0.0.1:8080:8080 -v ~/trilium-data:/home/node/trilium-data triliumnext/trilium:-latest
 ```
 
-To set a different user ID (UID) and group ID (GID) for the saved data, use the `USER_UID` and `USER_GID` environment variables:
+要为保存的数据设置不同的用户 ID (UID) 和组 ID (GID)，请使用 `USER_UID` 和 `USER_GID` 环境变量：
 
 ```
 docker run --net=mynet -d -p 127.0.0.1:8080:8080 -e "USER_UID=1001" -e "USER_GID=1001" -v ~/trilium-data:/home/node/trilium-data triliumnext/trilium:-latest
 ```
 
-Find the local IP address using `docker inspect [container_name]` and access the service from devices on the local network.
+使用 `docker inspect [container_name]` 查找本地 IP 地址，并从本地网络上的设备访问该服务。
 
 ```
 docker ps
 docker inspect [container_name]
 ```
 
-#### Global Access
+#### 全局访问
 
-To allow access from any IP address, run the container as follows:
+要允许从任何 IP 地址访问，请按如下方式运行容器：
 
 ```
 docker run -d -p 0.0.0.0:8080:8080 -v ~/trilium-data:/home/node/trilium-data triliumnext/trilium:[VERSION]
 ```
 
-Stop the container with `docker stop <CONTAINER ID>`, where the container ID is obtained from `docker ps`.
+使用 `docker stop <CONTAINER ID>` 停止容器，其中容器 ID 从 `docker ps` 获取。
 
-### Custom Data Directory
+### 自定义数据目录
 
-For a custom data directory, use:
+对于自定义数据目录，请使用：
 
 ```
 -v ~/YourOwnDirectory:/home/node/trilium-data triliumnext/trilium:[VERSION]
 ```
 
-If you want to run your instance in a non-default way, please use the volume switch as follows: `-v ~/YourOwnDirectory:/home/node/trilium-data triliumnext/trilium:<VERSION>`. It is important to be aware of how Docker works for volumes, with the first path being your own and the second the one to virtually bind to. [https://docs.docker.com/storage/volumes/](https://docs.docker.com/storage/volumes/) The path before the colon is the host directory, and the path after the colon is the container's path. More details can be found in the [Docker Volumes Documentation](https://docs.docker.com/storage/volumes/).
+如果您想以非默认方式运行实例，请按如下方式使用卷开关：`-v ~/YourOwnDirectory:/home/node/trilium-data triliumnext/trilium:<VERSION>`。了解 Docker 卷的工作原理非常重要，第一个路径是您自己的路径，第二个路径是要虚拟绑定的路径。[https://docs.docker.com/storage/volumes/](https://docs.docker.com/storage/volumes/) 冒号前的路径是主机目录，冒号后的路径是容器的路径。更多详细信息可以在 [Docker 卷文档](https://docs.docker.com/storage/volumes/) 中找到。
 
-## Reverse Proxy
+## 反向代理
 
 1.  [Nginx](../2.%20Reverse%20proxy/Nginx.md)
 2.  [Apache](../2.%20Reverse%20proxy/Apache%20using%20Docker.md)
 
-### Note on --user Directive
+### 关于 --user 指令的说明
 
-The `--user` directive is unsupported. Instead, use the `USER_UID` and `USER_GID` environment variables to set the appropriate user and group IDs.
+不支持 `--user` 指令。请改用 `USER_UID` 和 `USER_GID` 环境变量来设置适当的用户和组 ID。
 
-### Note on timezones
+### 关于时区的说明
 
-If you are having timezone issues and you are not using docker-compose, you may need to add a `TZ` environment variable with the [TZ identifier](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) of your local timezone.
+如果您遇到时区问题并且未使用 docker-compose，则可能需要添加一个 `TZ` 环境变量，其值为您本地时区的 [TZ 标识符](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)。
 
-## Rootless Docker Image
+## 无根 Docker 镜像
 
 > [!NOTE]
-> Please keep in mind that the data directory is at `/home/trilium/trilium-data` instead of the typical `/home/node/trilium-data`. This is because a new user is created and used to run Trilium within the rootless containers.
+> 请记住，数据目录位于 `/home/trilium/trilium-data`，而不是通常的 `/home/node/trilium-data`。这是因为在无根容器中创建了一个新用户来运行 Trilium。
 
-If you would prefer to run Trilium without having to run the Docker container as `root`, you can use either of the provided Debian (default) and Alpine-based images with the `rootless` tag. 
+如果您希望在不以 `root` 身份运行 Docker 容器的情况下运行 Trilium，则可以使用带有 `rootless` 标签的 Debian（默认）和 Alpine 镜像中的任意一个。
 
-_**If you're unsure, stick to the “rootful” Docker image referenced above.**_
+_**如果您不确定，请坚持使用上面提到的 “rootful” Docker 镜像。**_
 
-Below are some commands to pull the rootless images:
+以下是一些拉取无根镜像的命令：
 
 ```
-# For Debian-based image
+# 对于基于 Debian 的镜像
 docker pull triliumnext/trilium:rootless
 
-# For Alpine-based image
+# 对于基于 Alpine 的镜像
 docker pull triliumnext/trilium:rootless-alpine
 ```
 
-### Why Rootless?
+### 为什么使用无根模式？
 
-Running containers as non-root is a security best practice that reduces the potential impact of container breakouts. If an attacker manages to escape the container, they'll only have the permissions of the non-root user instead of full root access to the host.
+以非 root 用户身份运行容器是一种安全最佳实践，可以降低容器逃逸的潜在影响。如果攻击者设法逃逸容器，他们只会拥有非 root 用户的权限，而不是对主机的完全 root 访问权限。
 
-### How It Works
+### 工作原理
 
-The rootless Trilium image:
+无根 Trilium 镜像：
 
-1.  Creates a non-root user (`trilium`) during build time
-2.  Configures the application to run as this non-root user
-3.  Allows runtime customization of the user's UID/GID via Docker's `--user` flag
-4.  Does not require a separate Docker `entrypoint` script
+1.  在构建时创建一个非 root 用户（`trilium`）
+2.  将应用程序配置为以此非 root 用户身份运行
+3.  允许通过 Docker 的 `--user` 标志在运行时自定义用户的 UID/GID
+4.  不需要单独的 Docker `entrypoint` 脚本
 
-### Usage
+### 使用方法
 
-#### **Using docker-compose (Recommended)**
+#### **使用 docker-compose（推荐）**
 
 ```
-# Run with default UID/GID (1000:1000)
+# 使用默认 UID/GID (1000:1000) 运行
 docker-compose -f docker-compose.rootless.yml up -d
 
-# Run with custom UID/GID (e.g., match your host user)
+# 使用自定义 UID/GID 运行（例如，匹配您的主机用户）
 TRILIUM_UID=$(id -u) TRILIUM_GID=$(id -g) docker-compose -f docker-compose.rootless.yml up -d
 
-# Specify a custom data directory
+# 指定自定义数据目录
 TRILIUM_DATA_DIR=/path/to/your/data TRILIUM_UID=$(id -u) TRILIUM_GID=$(id -g) docker-compose -f docker-compose.rootless.yml up -d
 
 ```
 
-#### **Using Docker CLI**
+#### **使用 Docker CLI**
 
 ```
-# Build the image
+# 构建镜像
 docker build -t triliumnext/trilium:rootless -f apps/server/Dockerfile.rootless .
 
-# Run with default UID/GID (1000:1000)
+# 使用默认 UID/GID (1000:1000) 运行
 docker run -d --name trilium -p 8080:8080 -v ~/trilium-data:/home/trilium/trilium-data triliumnext/trilium:rootless
 
-# Run with custom UID/GID
+# 使用自定义 UID/GID 运行
 docker run -d --name trilium -p 8080:8080 --user $(id -u):$(id -g) -v ~/trilium-data:/home/trilium/trilium-data triliumnext/trilium:rootless
 
 ```
 
-### Environment Variables
+### 环境变量
 
-*   `TRILIUM_UID`: UID to use for the container process (passed to Docker's `--user` flag)
-*   `TRILIUM_GID`: GID to use for the container process (passed to Docker's `--user` flag)
-*   `TRILIUM_DATA_DIR`: Path to the data directory inside the container (default: `/home/node/trilium-data`)
+*   `TRILIUM_UID`：用于容器进程的 UID（传递给 Docker 的 `--user` 标志）
+*   `TRILIUM_GID`：用于容器进程的 GID（传递给 Docker 的 `--user` 标志）
+*   `TRILIUM_DATA_DIR`：容器内数据目录的路径（默认：`/home/node/trilium-data`）
 
-For a complete list of configuration environment variables (network settings, authentication, sync, etc.), see <a class="reference-link" href="../../../Advanced%20Usage/Configuration%20(config.ini%20or%20environment%20variables).md">Configuration (config.ini or environment variables)</a>.
+有关配置环境变量（网络设置、身份验证、同步等）的完整列表，请参阅 <a class="reference-link" href="../../../Advanced%20Usage/Configuration%20(config.ini%20or%20environment%20variables).md">配置（config.ini 或环境变量）</a>。
 
-### Volume Permissions
+### 卷权限
 
-If you encounter permission issues with the data volume, ensure that:
+如果您遇到数据卷的权限问题，请确保：
 
-1.  The host directory has appropriate permissions for the UID/GID you're using
-2.  You're setting both `TRILIUM_UID` and `TRILIUM_GID` to match the owner of the host directory
+1.  主机目录对您使用的 UID/GID 具有适当的权限
+2.  您同时设置了 `TRILIUM_UID` 和 `TRILIUM_GID` 以匹配主机目录的所有者
 
 ```
-# For example, if your data directory is owned by UID 1001 and GID 1001:
+# 例如，如果您的数据目录由 UID 1001 和 GID 1001 所有：
 TRILIUM_UID=1001 TRILIUM_GID=1001 docker-compose -f docker-compose.rootless.yml up -d
 
 ```
 
-### Considerations
+### 注意事项
 
-*   The container starts with a specific UID/GID which can be customized at runtime
-*   Unlike the traditional setup, this approach does not use a separate entrypoint script with `usermod`/`groupmod` commands
-*   The container cannot modify its own UID/GID at runtime, which is a security feature of rootless containers
+*   容器以特定的 UID/GID 启动，可以在运行时自定义
+*   与传统设置不同，此方法不使用带有 `usermod`/`groupmod` 命令的单独 entrypoint 脚本
+*   容器无法在运行时修改自身的 UID/GID，这是无根容器的一项安全功能
 
-### Available Rootless Images
+### 可用的无根镜像
 
-Two rootless variants are provided:
+提供了两个无根变体：
 
-1.  **Debian-based** (default): Uses the Debian Bullseye Slim base image
-    *   Dockerfile: `apps/server/Dockerfile.rootless`
-    *   Recommended for most users
-2.  **Alpine-based**: Uses the Alpine base image for smaller size
-    *   Dockerfile: `apps/server/Dockerfile.alpine.rootless`
-    *   Smaller image size, but may have compatibility issues with some systems
+1.  **基于 Debian**（默认）：使用 Debian Bullseye Slim 基础镜像
+    *   Dockerfile：`apps/server/Dockerfile.rootless`
+    *   推荐给大多数用户
+2.  **基于 Alpine**：使用 Alpine 基础镜像以获得更小的体积
+    *   Dockerfile：`apps/server/Dockerfile.alpine.rootless`
+    *   镜像体积更小，但可能与某些系统存在兼容性问题
 
-### Building Custom Rootless Images
+### 构建自定义无根镜像
 
-If you would prefer, you can also customize the UID/GID at build time:
+如果您愿意，还可以在构建时自定义 UID/GID：
 
 ```
-# For Debian-based image with custom UID/GID
+# 对于具有自定义 UID/GID 的基于 Debian 的镜像
 docker build --build-arg USER=myuser --build-arg UID=1001 --build-arg GID=1001 \
   -t triliumnext/trilium:rootless-custom -f apps/server/Dockerfile.rootless .
 
-# For Alpine-based image with custom UID/GID
+# 对于具有自定义 UID/GID 的基于 Alpine 的镜像
 docker build --build-arg USER=myuser --build-arg UID=1001 --build-arg GID=1001 \
   -t triliumnext/trilium:alpine-rootless-custom -f apps/server/Dockerfile.alpine.rootless .
 
 ```
 
-Available build arguments:
+可用的构建参数：
 
-*   `USER`: Username for the non-root user (default: trilium)
-*   `UID`: User ID for the non-root user (default: 1000)
-*   `GID`: Group ID for the non-root user (default: 1000)
+*   `USER`：非 root 用户的用户名（默认：trilium）
+*   `UID`：非 root 用户的用户 ID（默认：1000）
+*   `GID`：非 root 用户的组 ID（默认：1000）

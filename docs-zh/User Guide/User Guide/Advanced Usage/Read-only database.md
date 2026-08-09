@@ -1,32 +1,32 @@
-# Read-only database
+# 只读数据库
 > [!WARNING]
-> This functionality is still in preview, expect possible issues or even the feature disappearing completely.  
-> Feel free to [report](../Troubleshooting/Reporting%20issues.md) any issues you might have.
+> 此功能仍处于预览阶段，可能会遇到问题，甚至该功能可能会完全消失。
+> 如有任何问题，欢迎[报告](../Troubleshooting/Reporting%20issues.md)。
 
-The read-only database is an alternative to <a class="reference-link" href="Sharing.md">Sharing</a> notes. Although the share functionality works pretty well to publish pages to the Internet in a wiki, blog-like format it does not offer the full functionality behind Trilium (such as the advanced <a class="reference-link" href="../Basic%20Concepts%20and%20Features/Navigation/Search.md">Search</a> or the interactivity behind <a class="reference-link" href="../Collections.md">Collections</a> or the various <a class="reference-link" href="../Note%20Types.md">Note Types</a>).
+只读数据库是<a class="reference-link" href="Sharing.md">分享</a>笔记的一种替代方案。虽然分享功能在将页面以维基、博客类似格式发布到互联网上时效果很好，但它无法提供 Trilium 背后的全部功能，例如高级<a class="reference-link" href="../Basic%20Concepts%20and%20Features/Navigation/Search.md">搜索</a>、<a class="reference-link" href="../Collections.md">集合</a>背后的交互性，或各种<a class="reference-link" href="../Note%20Types.md">笔记类型</a>。
 
-When the database is in read-only mode, the Trilium application can be used as normal, but editing is disabled and changes are made in-memory only.
+当数据库处于只读模式时，Trilium 应用程序可以正常使用，但编辑功能被禁用，更改仅在内存中进行。
 
-## What it does
+## 功能说明
 
-*   All notes are read-only, without the possibility of editing them.
-*   Features that would normally alter the database such as the list of recent notes are disabled.
+*   所有笔记均为只读，无法进行编辑。
+*   通常会更改数据库的功能（如最近笔记列表）将被禁用。
 
-## Limitations
+## 限制
 
-*   Some features might “slip through” and still end up creating a note, for example.
-    *   However, the database is still read-only, so all modifications will be reset if the server is restarted.
-    *   Whenever this occurs, `ERROR: read-only DB ignored` will be shown in the logs.
+*   某些功能可能会“漏网”并最终创建笔记，例如。
+    *   但是，数据库仍然是只读的，因此如果服务器重启，所有修改都将被重置。
+    *   每当发生这种情况时，日志中将显示 `ERROR: read-only DB ignored`。
 
-## Setting a database as read-only
+## 将数据库设置为只读
 
-First, make sure the database is initialized (e.g. the first set up is complete). Then modify the [config.ini](Configuration%20\(config.ini%20or%20environment%20variables\).md) by looking for the `[General]` section and adding a new `readOnly` field:
+首先，确保数据库已初始化（例如，首次设置已完成）。然后修改 [config.ini](Configuration%20\(config.ini%20or%20environment%20variables\).md)，找到 `[General]` 部分并添加一个新的 `readOnly` 字段：
 
 ```
 [General]
 readOnly=true
 ```
 
-If your server is already running, restart it to apply the changes.
+如果您的服务器已在运行，请重启以应用更改。
 
-Similarly, to disable read-only remove the line or set it to `false`.
+同样，要禁用只读模式，请删除该行或将其设置为 `false`。

@@ -1,16 +1,17 @@
-# Note Navigation
-One of the Trilium's goals is to provide fast and comfortable navigation between notes.
+# 笔记导航
 
-## Backwards and forward
+Trilium 的目标之一是在笔记之间提供快速且舒适的导航。
 
-You can use alt-left and alt-right to move back and forward in history of viewed pages.
+## 后退与前进
 
-This works identically to browser backwards / forwards, it's actually using built-in browser support for this.
+您可以使用 alt-left 和 alt-right 在已查看页面的历史记录中后退和前进。
+
+这与浏览器的后退/前进功能相同，实际上它使用的是浏览器内置的支持。
 
 ![](Note%20Navigation_image.png)
 
-## Jump to note
+## 跳转到笔记
 
-This is useful to quickly find and view arbitrary notes - click on `Jump to` button on the top or press <kbd>Ctrl</kbd> + <kbd>J</kbd> . Then type part of the note name and autocomplete will help you pick the desired note.
+这对于快速查找和查看任意笔记非常有用 - 点击顶部的 `跳转到` 按钮或按 <kbd>Ctrl</kbd> + <kbd>J</kbd>。然后输入笔记名称的一部分，自动补全功能将帮助您选择所需的笔记。
 
-See <a class="reference-link" href="Jump%20to%20%26%20command%20palette.md">Jump to Note</a> for more information.
+更多信息请参阅 <a class="reference-link" href="Jump%20to%20%26%20command%20palette.md">跳转到笔记</a>。

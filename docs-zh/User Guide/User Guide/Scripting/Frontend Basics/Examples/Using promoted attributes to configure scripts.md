@@ -1,56 +1,57 @@
-# Using promoted attributes to configure scripts
-A good use case of promoted attributes is to easily define the various parameters a script might need, for example an input and output note if it's processing data, or a checkbox to define a particular change in behavior for the script.
+# 使用提升属性配置脚本
+
+提升属性的一个很好的用例是轻松定义脚本可能需要的各种参数，例如处理数据时的输入和输出笔记，或者用于定义脚本行为特定变化的复选框。
 
 ![](Using%20promoted%20attributes%20to%20configure%20scripts_image.png)
 
-## Using check boxes to toggle flags
+## 使用复选框切换标志
 
-Instead of asking the user to modify a boolean value in the script, it's much more intuitive to use a checkbox for it as a promoted attribute.
+与其要求用户在脚本中修改布尔值，不如使用复选框作为提升属性，这样更直观。
 
-To do so, first define the promoted attribute:
+为此，首先定义提升属性：
 
 ```
 #label:groupByExtension="promoted,alias=Group by extension,single,boolean"
 ```
 
-Then use it:
+然后使用它：
 
 ```javascript
 const byExtension = api.currentNote.getLabelValue("groupByExtension") === "true";
 if (byExtension) {
-	// Do something.
+	// 执行某些操作。
 }
 ```
 
-This will work equally well in both front-end and back-end scripts.
+这在前端和后端脚本中都能同样良好地工作。
 
-## Using relations to select notes
+## 使用关系选择笔记
 
-One common use case for a script is to read data from another note and perhaps output its result in another note. To do so we need to define the following promoted attributes:
+脚本的一个常见用例是从另一个笔记读取数据，并可能将结果输出到另一个笔记中。为此，我们需要定义以下提升属性：
 
 ```
 #relation:input="promoted,alias=Input,single" #relation:output="promoted,alias=Output,single"
 ```
 
-Once we have this, we can add some basic error handling to ensure that the fields are completed by the user:
+一旦我们有了这个，我们可以添加一些基本的错误处理，以确保用户填写了这些字段：
 
 ```javascript
 const inputNoteId = api.currentNote.getRelationValue("input");
 if (!inputNoteId) {
-	api.showError("Missing input.");
+	api.showError("缺少输入。");
     return;
 }
 
 const outputNoteId = api.currentNote.getRelationValue("output");
 if (!outputNoteId) {
-    api.showError("Missing output.");
+    api.showError("缺少输出。");
     return;
 }
 ```
 
-Note that here we are using `api.showError` which is only available for frontend notes. If you are writing a backend note, simply remove `api.showError` but the user will no feedback on why the script did not execute properly.
+请注意，这里我们使用了 `api.showError`，它仅适用于前端笔记。如果你正在编写后端笔记，只需移除 `api.showError`，但用户将不会收到关于脚本为何未正确执行的反馈。
 
-Afterwards we can simply read the note and do something with it:
+之后，我们可以简单地读取笔记并对其进行操作：
 
 ```javascript
 const note = api.getNote(inputNoteId);

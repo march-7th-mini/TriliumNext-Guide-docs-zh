@@ -1,43 +1,44 @@
-# Read-Only Notes
-Some note types such as <a class="reference-link" href="../../Note%20Types/Text.md">Text</a> and <a class="reference-link" href="../../Note%20Types/Code.md">Code</a> notes in Trilium can be set to read-only. When a note is in read-only mode, it is presented to the user in a non-editable view, with the option to switch to editing mode if needed.
+# 只读笔记
 
-## Automatic read-only mode
+Trilium 中的某些笔记类型，例如<a class="reference-link" href="../../Note%20Types/Text.md">文本</a>和<a class="reference-link" href="../../Note%20Types/Code.md">代码</a>笔记，可以设置为只读。当笔记处于只读模式时，它会以不可编辑的视图呈现给用户，并在需要时提供切换到编辑模式的选项。
 
-For optimization purposes, Trilium will automatically set very large notes to read-only. Displaying such lengthy notes in editing mode can slow down performance, especially when editing is unnecessary.
+## 自动只读模式
 
-This behavior can be disabled on a per-note basis, by following the instructions of the next section.
+出于优化目的，Trilium 会自动将非常大的笔记设置为只读。在编辑模式下显示此类冗长笔记可能会降低性能，尤其是在不需要编辑的情况下。
 
-In addition, it's possible to change the number of characters at which the automatic read-only mode will trigger in <a class="reference-link" href="../UI%20Elements/Options.md">Options</a> by going to the options for <a class="reference-link" href="#root/_hidden/_options/_optionsTextNotes">Text Notes</a> and <a class="reference-link" href="#root/_hidden/_options/_optionsCodeNotes">Code Notes</a>.
+可以通过遵循下一节的说明，在单个笔记的基础上禁用此行为。
 
-## Changing a note's read-only behavior
+此外，可以在<a class="reference-link" href="../UI%20Elements/Options.md">选项</a>中更改触发自动只读模式的字符数，方法是转到<a class="reference-link" href="#root/_hidden/_options/_optionsTextNotes">文本笔记</a>和<a class="reference-link" href="#root/_hidden/_options/_optionsCodeNotes">代码笔记</a>的选项。
 
-Via the <a class="reference-link" href="../UI%20Elements/Ribbon.md">Ribbon</a>, by going to the _Basic Properties_ tab and looking for the _Editable_ selection. The following options are possible:
+## 更改笔记的只读行为
 
-*   **Auto**  
-    This is the default behavior in which the note will be editable by default, unless it becomes large enough to trigger read-only mode.
-*   **Read-only**  
-    The note will be always marked as read-only, regardless of its size. Nevertheless, it's still possible to temporarily edit the note if needed. This is generally useful for notes that are not prone to change.
-*   **Always Editable**  
-    This option will bypass the automatic read-only activation for this particular note. It's useful for large notes that are frequently edited.
+通过<a class="reference-link" href="../UI%20Elements/Ribbon.md">功能区</a>，转到“基本属性”选项卡并查找“可编辑”选项。可能的选项如下：
 
-If the _Editable_ section is missing from the ribbon, then the note type does not support read-only mode.
+*   **自动**  
+    这是默认行为，笔记默认情况下可编辑，除非它变得足够大以触发只读模式。
+*   **只读**  
+    无论笔记大小如何，该笔记都将始终标记为只读。尽管如此，如果需要，仍然可以临时编辑该笔记。这对于不经常更改的笔记通常很有用。
+*   **始终可编辑**  
+    此选项将绕过此特定笔记的自动只读激活。这对于经常编辑的大型笔记很有用。
 
-### Manually setting the options
+如果功能区中缺少“可编辑”部分，则说明该笔记类型不支持只读模式。
 
-Apart from using the ribbon as previously mentioned, it's also possible to use [labels](../../Advanced%20Usage/Attributes.md) to change the behavior:
+### 手动设置选项
 
-*   To set as read-only, apply the `readOnly` label to the note.
-*   To disable automatic read-only (always editable), apply the `autoReadOnlyDisabled` label.
+除了前面提到的使用功能区之外，还可以使用[标签](../../Advanced%20Usage/Attributes.md)来更改行为：
 
-## Temporarily editing a read-only note
+*   要设置为只读，请对笔记应用 `readOnly` 标签。
+*   要禁用自动只读（始终可编辑），请应用 `autoReadOnlyDisabled` 标签。
 
-When accessing a read-only note, it's possible to temporarily edit it by using the ![](Read-Only%20Notes_image.png) button in the <a class="reference-link" href="../UI%20Elements/Floating%20buttons.md">Floating buttons</a> area.
+## 临时编辑只读笔记
 
-When pressed, the note will become editable but will become read-only again after navigating to a different note.
+访问只读笔记时，可以使用<a class="reference-link" href="../UI%20Elements/Floating%20buttons.md">浮动按钮</a>区域中的![](Read-Only%20Notes_image.png)按钮临时编辑它。
 
-## Special read-only behavior
+按下后，笔记将变为可编辑，但在导航到其他笔记后将再次变为只读。
 
-Some note types have a special behavior based on whether the read-only mode is enabled:
+## 特殊只读行为
 
-*   <a class="reference-link" href="../../Note%20Types/Mermaid%20Diagrams.md">Mermaid Diagrams</a> will hide the Mermaid source code and display the diagram preview in full-size. In this case, the read-only mode can be easily toggled on or off via a dedicated button in the <a class="reference-link" href="../UI%20Elements/Floating%20buttons.md">Floating buttons</a> area.
-*   <a class="reference-link" href="../../Collections/Geo%20Map.md">Geo Map</a> will disallow all interaction that would otherwise change the map (dragging notes, adding new items).
+某些笔记类型根据是否启用只读模式而具有特殊行为：
+
+*   <a class="reference-link" href="../../Note%20Types/Mermaid%20Diagrams.md">Mermaid 图表</a>将隐藏 Mermaid 源代码并全尺寸显示图表预览。在这种情况下，可以通过<a class="reference-link" href="../UI%20Elements/Floating%20buttons.md">浮动按钮</a>区域中的专用按钮轻松切换只读模式。
+*   <a class="reference-link" href="../../Collections/Geo%20Map.md">地理地图</a>将禁止所有可能更改地图的交互（拖动笔记、添加新项目）。

@@ -1,19 +1,20 @@
-# Script API
-For [script code notes](../Scripting.md), Trilium offers an API that gives them access to various features of the application.
+# 脚本 API
 
-There are two APIs:
+对于[脚本代码笔记](../Scripting.md)，Trilium 提供了一个 API，使它们能够访问应用程序的各种功能。
 
-*   One for the front-end scripts: <a class="reference-link" href="Script%20API/Frontend%20API">Frontend API</a>
-*   One for the back-end scripts: <a class="reference-link" href="Script%20API/Backend%20API.dat">Backend API</a>
+有两种 API：
 
-In both cases, the API resides in a global variable, `api`, that can be used anywhere in the script.
+*   一种用于前端脚本：<a class="reference-link" href="Script%20API/Frontend%20API">前端 API</a>
+*   一种用于后端脚本：<a class="reference-link" href="Script%20API/Backend%20API.dat">后端 API</a>
 
-For example, to display a message to the user the following front-end script can be used:
+在这两种情况下，API 都存在于一个全局变量 `api` 中，可以在脚本中的任何位置使用。
+
+例如，要向用户显示一条消息，可以使用以下前端脚本：
 
 ```
 api.showMessage("Hello world.");
 ```
 
 > [!NOTE]
-> **Note**  
-> The Script API is currently experimental and may undergo changes in future updates.
+> **注意**  
+> 脚本 API 目前处于实验阶段，在未来的更新中可能会发生变化。

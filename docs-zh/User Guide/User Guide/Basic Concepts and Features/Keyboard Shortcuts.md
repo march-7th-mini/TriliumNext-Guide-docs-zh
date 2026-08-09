@@ -1,63 +1,64 @@
-# Keyboard Shortcuts
-This is supposed to be a complete list of keyboard shortcuts. Note that some of these may work only in certain contexts (e.g. in tree pane or note editor).
+# 键盘快捷键
 
-It is also possible to configure most keyboard shortcuts in Options -> Keyboard shortcuts. Using `global:` prefix, you can assign a shortcut which will work even without Trilium being in focus (requires app restart to take effect).
+这应该是键盘快捷键的完整列表。请注意，其中一些可能仅在特定上下文中有效（例如在树形面板或笔记编辑器中）。
 
-## Tree
+还可以在“选项 -> 键盘快捷键”中配置大多数键盘快捷键。使用 `global:` 前缀，您可以分配一个即使在 Trilium 未聚焦时也能生效的快捷键（需要重启应用才能生效）。
 
-See the corresponding section: <a class="reference-link" href="UI%20Elements/Note%20Tree/Keyboard%20shortcuts.md">Keyboard shortcuts</a>
+## 树
 
-## Note navigation
+参见相应章节：<a class="reference-link" href="UI%20Elements/Note%20Tree/Keyboard%20shortcuts.md">键盘快捷键</a>
 
-*   <kbd>Alt</kbd> + <kbd><span>←</span></kbd>, <kbd>Alt</kbd> + <kbd><span>→</span></kbd> – go back / forwards in the history
-*   <kbd>Ctrl</kbd> + <kbd>J</kbd> – show ["Jump to" dialog](Navigation/Note%20Navigation.md)
-*   <kbd>Ctrl</kbd> + <kbd>.</kbd> – scroll to current note (useful when you scroll away from your note or your focus is currently in the editor)
-*   <kbd><span>Backspace</span></kbd> – jumps to parent note
-*   <kbd>Alt</kbd> + <kbd>C</kbd> – collapse whole note tree
-*   <kbd>Alt</kbd> + <kbd>-</kbd> (alt with minus sign) – collapse subtree (if some subtree takes too much space on tree pane you can collapse it)
-*   you can define a [label](../Advanced%20Usage/Attributes.md) `#keyboardShortcut` with e.g. value <kbd>Ctrl</kbd> + <kbd>I</kbd> . Pressing this keyboard combination will then bring you to the note on which it is defined. Note that Trilium must be reloaded/restarted (<kbd>Ctrl</kbd> + <kbd>R</kbd> ) for changes to be in effect.
+## 笔记导航
 
-See demo of some of these features in [note navigation](Navigation/Note%20Navigation.md).
+*   <kbd>Alt</kbd> + <kbd><span>←</span></kbd>, <kbd>Alt</kbd> + <kbd><span>→</span></kbd> – 在历史记录中后退/前进
+*   <kbd>Ctrl</kbd> + <kbd>J</kbd> – 显示[“跳转到”对话框](Navigation/Note%20Navigation.md)
+*   <kbd>Ctrl</kbd> + <kbd>.</kbd> – 滚动到当前笔记（当您滚动离开笔记或焦点当前在编辑器中时很有用）
+*   <kbd><span>Backspace</span></kbd> – 跳转到父笔记
+*   <kbd>Alt</kbd> + <kbd>C</kbd> – 折叠整个笔记树
+*   <kbd>Alt</kbd> + <kbd>-</kbd>（Alt 加减号）– 折叠子树（如果某个子树在树形面板上占用太多空间，您可以将其折叠）
+*   您可以定义一个[标签](../Advanced%20Usage/Attributes.md) `#keyboardShortcut`，例如值为 <kbd>Ctrl</kbd> + <kbd>I</kbd>。按下此键盘组合键将带您到定义该标签的笔记。请注意，必须重新加载/重启 Trilium（<kbd>Ctrl</kbd> + <kbd>R</kbd>）才能使更改生效。
 
-## Tabs
+在[笔记导航](Navigation/Note%20Navigation.md)中查看其中一些功能的演示。
 
-*   <kbd>Ctrl</kbd> + <kbd>🖱 Left click</kbd> – (or middle mouse click) on note link opens note in a new tab
+## 标签页
 
-Only in desktop (electron build):
+*   <kbd>Ctrl</kbd> + <kbd>🖱 左键单击</kbd> – （或鼠标中键单击）在新标签页中打开笔记链接
 
-*   <kbd>Ctrl</kbd> + <kbd>T</kbd> – opens empty tab
-*   <kbd>Ctrl</kbd> + <kbd>W</kbd> – closes active tab
-*   <kbd>Ctrl</kbd> + <kbd>Tab</kbd> – activates next tab
-*   <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Tab</kbd> – activates previous tab
+仅在桌面版（Electron 构建）中：
 
-## Creating notes
+*   <kbd>Ctrl</kbd> + <kbd>T</kbd> – 打开空白标签页
+*   <kbd>Ctrl</kbd> + <kbd>W</kbd> – 关闭当前标签页
+*   <kbd>Ctrl</kbd> + <kbd>Tab</kbd> – 激活下一个标签页
+*   <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Tab</kbd> – 激活上一个标签页
 
-*   <kbd>CTRL</kbd>+<kbd>O</kbd> – creates new note after the current note
-*   <kbd>CTRL</kbd>+<kbd>P</kbd> – creates new sub-note into current note
-*   <kbd>F2</kbd> – edit <a class="reference-link" href="Notes/Cloning%20Notes/Branch%20prefix.md">Branch prefix</a> of current note clone
+## 创建笔记
 
-## Editing notes
+*   <kbd>CTRL</kbd>+<kbd>O</kbd> – 在当前笔记之后创建新笔记
+*   <kbd>CTRL</kbd>+<kbd>P</kbd> – 在当前笔记中创建新的子笔记
+*   <kbd>F2</kbd> – 编辑当前笔记克隆的<a class="reference-link" href="Notes/Cloning%20Notes/Branch%20prefix.md">分支前缀</a>
+
+## 编辑笔记
 
 > [!NOTE]
-> For keyboard shortcuts specific to <a class="reference-link" href="../Note%20Types/Text.md">Text</a> notes, refer to <a class="reference-link" href="../Note%20Types/Text/Keyboard%20shortcuts.md">Keyboard shortcuts</a> and <a class="reference-link" href="../Note%20Types/Text/Markdown-like%20formatting.md">Markdown-like formatting</a>.
+> 有关<a class="reference-link" href="../Note%20Types/Text.md">文本</a>笔记特有的键盘快捷键，请参阅<a class="reference-link" href="../Note%20Types/Text/Keyboard%20shortcuts.md">键盘快捷键</a>和<a class="reference-link" href="../Note%20Types/Text/Markdown-like%20formatting.md">类 Markdown 格式</a>。
 
-*   <kbd>Enter</kbd> in tree pane switches from tree pane into note title. Enter from note title switches focus to text editor. <kbd>Ctrl</kbd>+<kbd>.</kbd> switches back from editor to tree pane.
-*   <kbd>Ctrl</kbd>+<kbd>.</kbd> – jump away from the editor to tree pane and scroll to current note
+*   在树形面板中按 <kbd>Enter</kbd> 可从树形面板切换到笔记标题。在笔记标题中按 Enter 可将焦点切换到文本编辑器。按 <kbd>Ctrl</kbd>+<kbd>.</kbd> 可从编辑器切换回树形面板。
+*   <kbd>Ctrl</kbd>+<kbd>.</kbd> – 从编辑器跳转到树形面板并滚动到当前笔记
 
-## Runtime shortcuts
+## 运行时快捷键
 
-These are hooked in Electron to be similar to native browser keyboard shortcuts.
+这些在 Electron 中挂钩，以模拟原生浏览器键盘快捷键。
 
-*   <kbd>F5</kbd>, <kbd>Ctrl</kbd>+<kbd>R</kbd> – reloads Trilium front-end
-*   <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>I</kbd> – show developer tools
-*   <kbd>Ctrl</kbd>+<kbd>F</kbd> – show search dialog
-*   <kbd>Ctrl</kbd>+<kbd>-</kbd> – zoom out
-*   <kbd>Ctrl</kbd>+<kbd>=</kbd> – zoom in
+*   <kbd>F5</kbd>, <kbd>Ctrl</kbd>+<kbd>R</kbd> – 重新加载 Trilium 前端
+*   <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>I</kbd> – 显示开发者工具
+*   <kbd>Ctrl</kbd>+<kbd>F</kbd> – 显示搜索对话框
+*   <kbd>Ctrl</kbd>+<kbd>-</kbd> – 缩小
+*   <kbd>Ctrl</kbd>+<kbd>=</kbd> – 放大
 
-## Other
+## 其他
 
-*   <kbd>Alt</kbd> + <kbd>O</kbd> – show SQL console (use only if you know what you're doing)
-*   <kbd>Alt</kbd> + <kbd>M</kbd> – distraction-free mode - display only note editor, everything else is hidden
-*   <kbd>F11</kbd> – toggle full screen
-*   <kbd>Ctrl</kbd> + <kbd>S</kbd> – toggle [search](Navigation/Search.md) form in tree pane
-*   <kbd>Alt</kbd> +<kbd>A</kbd> – show note [attributes](../Advanced%20Usage/Attributes.md) dialog
+*   <kbd>Alt</kbd> + <kbd>O</kbd> – 显示 SQL 控制台（仅在您了解操作时使用）
+*   <kbd>Alt</kbd> + <kbd>M</kbd> – 免打扰模式 - 仅显示笔记编辑器，其他所有内容均隐藏
+*   <kbd>F11</kbd> – 切换全屏
+*   <kbd>Ctrl</kbd> + <kbd>S</kbd> – 在树形面板中切换[搜索](Navigation/Search.md)表单
+*   <kbd>Alt</kbd> +<kbd>A</kbd> – 显示笔记[属性](../Advanced%20Usage/Attributes.md)对话框

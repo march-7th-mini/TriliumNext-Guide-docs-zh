@@ -1,21 +1,21 @@
 # Nix flake
-Since TriliumNext 0.94.1, the desktop and server applications can be built using [Nix](https://nixos.org/).
+自 TriliumNext 0.94.1 起，桌面版和服务器版应用均可使用 [Nix](https://nixos.org/) 构建。
 
-## System requirements
+## 系统要求
 
-Installation of Nix on Mac or Linux ([download page](https://nixos.org/download/)). About 3-4 gigabytes of additional storage space, for build artifacts.
+在 Mac 或 Linux 上安装 Nix（[下载页面](https://nixos.org/download/)）。需要约 3-4 GB 的额外存储空间，用于存放构建产物。
 
-## Run directly
+## 直接运行
 
-Using [nix run](https://nix.dev/manual/nix/stable/command-ref/new-cli/nix3-run.html), the desktop app can be started as: `nix run github:TriliumNext/Trilium/v0.95.0`
+使用 [nix run](https://nix.dev/manual/nix/stable/command-ref/new-cli/nix3-run.html)，桌面应用可通过以下命令启动：`nix run github:TriliumNext/Trilium/v0.95.0`
 
-Running the server requires explicitly specifying the desired package: `nix run github:TriliumNext/Trilium/v0.95.0#server`
+运行服务器需要显式指定所需的包：`nix run github:TriliumNext/Trilium/v0.95.0#server`
 
-Instead of a version (`v0.95.0` above), you can also specify a commit hash (or a branch name). This makes it easy to test development builds.
+除了版本号（如上文的 `v0.95.0`），您也可以指定提交哈希（或分支名称）。这样可以方便地测试开发版本。
 
-## Install on NixOS
+## 在 NixOS 上安装
 
-Add to your `flake.nix`:
+添加到您的 `flake.nix`：
 
 ```
 {
@@ -53,7 +53,7 @@ Add to your `flake.nix`:
 
 ```
 
-Add to your `configuration.nix`:
+添加到您的 `configuration.nix`：
 
 ```
 {
@@ -73,4 +73,4 @@ Add to your `configuration.nix`:
 }
 ```
 
-The flake aims to be compatible with the latest NixOS stable and unstable.
+该 flake 旨在与最新的 NixOS 稳定版和不稳定版兼容。

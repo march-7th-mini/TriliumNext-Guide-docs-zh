@@ -1,32 +1,33 @@
-# Default Note Title
-When a new note is created, its name is by default "new note". In some cases, it can be desirable to have a different or even a dynamic default note title.
+# 默认笔记标题
 
-For this use case, Trilium (since v0.52) supports `#titleTemplate` [label](Attributes.md). You can create such a label for a given note, assign it a value, and this value will be used as a default title when creating child notes. As with other labels, you can make it inheritable to apply recursively, and you can even place it on the root note to have it applied globally everywhere.
+创建新笔记时，其名称默认为“new note”。在某些情况下，可能需要一个不同甚至动态的默认笔记标题。
 
-As an example use case, imagine you collect books you've read in a given year like this:
+针对此用例，Trilium（自 v0.52 起）支持 `#titleTemplate` [标签](Attributes.md)。您可以为特定笔记创建此类标签，为其赋值，该值将用作创建子笔记时的默认标题。与其他标签一样，您可以将其设为可继承以递归应用，甚至可以将其放置在根笔记上以全局应用。
 
-*   2022 Books
-    *   Neal Stephenson: Anathem, 2008
-    *   Franz Kafka: Die Verwandlung, 1915
+例如，假设您按年份收集已读书籍，如下所示：
 
-Now, to the parent note "2022 Books" you can assign label `#titleTemplate="[Author name]: [Book title], [Publication year]"`.
+*   2022 年书籍
+    *   尼尔·斯蒂芬森：阿纳塞姆，2008
+    *   弗朗茨·卡夫卡：变形记，1915
 
-And all children of "2022 Books" will be created with initial title "\[Author name\]: \[Book title\], \[Publication year\]". There's no artificial intelligence here, the idea is to just prompt you to manually fill in the pieces of information into the note title by yourself.
+现在，您可以向父笔记“2022 年书籍”分配标签 `#titleTemplate="[作者姓名]: [书名], [出版年份]"`。
 
-## Dynamic value
+“2022 年书籍”的所有子笔记将以初始标题“\[作者姓名\]: \[书名\], \[出版年份\]”创建。这里不涉及人工智能，其理念只是提示您手动将信息片段填入笔记标题中。
 
-The value of `#titleTemplate` is evaluated at the point of note's creation as a JavaScript string, which means it can be enriched with the help of JS string interpolation with dynamic data.
+## 动态值
 
-Second variable injected is `parentNote` which gives access to the parent [`FNote`](../Scripting/Script%20API/Frontend%20API/FNote.dat).
+`#titleTemplate` 的值在笔记创建时作为 JavaScript 字符串进行求值，这意味着可以通过 JS 字符串插值使用动态数据来丰富它。
 
-See also <a class="reference-link" href="Templates.md">Templates</a> which provides similar capabilities, including default note's content.
+注入的第二个变量是 `parentNote`，它提供对父级 [`FNote`](../Scripting/Script%20API/Frontend%20API/FNote.dat) 的访问。
 
-### Examples
+另请参阅 <a class="reference-link" href="Templates.md">模板</a>，它提供了类似的功能，包括默认笔记内容。
 
-*   Imagine you collect server outage incidents and write some notes. It looks like this:
-    *   Incidents
-        *   2022-05-09: System crash
-        *   2022-05-15: Backup delay
-    *   You can automatize the date assignment by assigning a label `#titleTemplate="${now.format('YYYY-MM-DD')}: "` to the parent note "Incidents". Whenever a new child note is created, the title template is evaluated with the injected [now](https://day.js.org/docs/en/display/format) object.
-*   To use a parent's attribute in the title of new notes: `#titleTemplate="${parentNote.getLabelValue('authorName')}'s literary works"`
-*   To mirror the parent's note title: `${parentNote.title}`
+### 示例
+
+*   假设您收集服务器中断事件并撰写一些笔记。如下所示：
+    *   事件
+        *   2022-05-09：系统崩溃
+        *   2022-05-15：备份延迟
+    *   您可以通过向父笔记“事件”分配标签 `#titleTemplate="${now.format('YYYY-MM-DD')}: "` 来自动化日期分配。每当创建新的子笔记时，标题模板将使用注入的 [now](https://day.js.org/docs/en/display/format) 对象进行求值。
+*   要在新笔记标题中使用父笔记的属性：`#titleTemplate="${parentNote.getLabelValue('authorName')}的文学作品"`
+*   要镜像父笔记的标题：`${parentNote.title}`

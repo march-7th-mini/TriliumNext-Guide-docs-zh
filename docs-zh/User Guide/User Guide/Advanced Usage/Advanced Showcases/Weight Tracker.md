@@ -1,21 +1,21 @@
-# Weight Tracker
+# 体重追踪器
 ![](Weight%20Tracker_image.png)
 
-The `Weight Tracker` is a [Script API](../../Scripting/Script%20API.md) showcase present in the [demo notes](../Database.md).
+`体重追踪器` 是一个 [脚本 API](../../Scripting/Script%20API.md) 演示，存在于 [演示笔记](../Database.md) 中。
 
-By adding `weight` as a [promoted attribute](../Attributes/Promoted%20Attributes.md) in the [template](../Templates.md) from which [day notes](Day%20Notes.md) are created, you can aggregate the data and plot weight change over time.
+通过在 [模板](../Templates.md) 中添加 `weight` 作为 [提升属性](../Attributes/Promoted%20Attributes.md)（[日记笔记](Day%20Notes.md) 由此模板创建），您可以汇总数据并绘制体重随时间变化的图表。
 
-## Implementation
+## 实现
 
-The `Weight Tracker` note in the screenshot above is of the type `Render Note`. That type of note doesn't have any useful content itself. Instead it is a placeholder where a [script](../../Scripting.md) can render its output.
+上图中的 `体重追踪器` 笔记属于 `渲染笔记` 类型。该类型的笔记本身没有任何实用内容，而是一个占位符，[脚本](../../Scripting.md) 可以在其中渲染其输出。
 
-Scripts for `Render Notes` are defined in a [relation](../Attributes.md) called `~renderNote`. In this example, it's the `Weight Tracker`'s child `Implementation`. The Implementation consists of two [code notes](../../Note%20Types/Code.md) that contain some HTML and JavaScript respectively, which load all the notes with a `weight` attribute and display their values in a chart.
+`渲染笔记` 的脚本通过名为 `~renderNote` 的 [关系](../Attributes.md) 定义。在此示例中，它是 `体重追踪器` 的子笔记 `实现`。该实现由两个 [代码笔记](../../Note%20Types/Code.md) 组成，分别包含一些 HTML 和 JavaScript，用于加载所有带有 `weight` 属性的笔记并将其值显示在图表中。
 
-To actually render the chart, we're using a third party library called [chart.js](https://www.chartjs.org/)which is imported as an attachment, since it's not built into Trilium.
+为了实际渲染图表，我们使用了名为 [chart.js](https://www.chartjs.org/) 的第三方库，它作为附件导入，因为 Trilium 并未内置该库。
 
-### Code
+### 代码
 
-Here's the content of the script which is placed in a [code note](../../Note%20Types/Code.md) of type `JS Frontend`:
+以下是放置在类型为 `JS 前端` 的 [代码笔记](../../Note%20Types/Code.md) 中的脚本内容：
 
 ```
 async function getChartData() {
@@ -65,6 +65,6 @@ new chartjs.Chart(ctx, {
 });
 ```
 
-## How to remove the Weight Tracker button from the top bar
+## 如何从顶部栏移除体重追踪器按钮
 
-In the link map of the `Weight Tracker`, there is a note called `Button`. Open it and delete or comment out its contents. The `Weight Tracker` button will disappear after you restart Trilium.
+在 `体重追踪器` 的链接图中，有一个名为 `按钮` 的笔记。打开它并删除或注释掉其内容。重启 Trilium 后，`体重追踪器` 按钮将消失。

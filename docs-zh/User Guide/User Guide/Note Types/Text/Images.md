@@ -1,53 +1,54 @@
-# Images
-Trilium supports storing and displaying images. Supported formats are PNG, JPEG, GIF, BMP, WebP, AVIF and SVG.
+# 图片
 
-An image can be uploaded in the form of note's [attachment](../../Basic%20Concepts%20and%20Features/Notes/Attachments.md) or as a standalone [note](../../Basic%20Concepts%20and%20Features/Navigation/Tree%20Concepts.md) placed into the [note tree](../../Basic%20Concepts%20and%20Features/Navigation/Tree%20Concepts.md). Its reference can be copied into a text note, in order to display it in the text itself.
+Trilium 支持存储和显示图片。支持的格式有 PNG、JPEG、GIF、BMP、WebP、AVIF 和 SVG。
 
-## Uploading images
+图片可以作为笔记的[附件](../../Basic%20Concepts%20and%20Features/Notes/Attachments.md)上传，也可以作为独立的[笔记](../../Basic%20Concepts%20and%20Features/Navigation/Tree%20Concepts.md)放置在[笔记树](../../Basic%20Concepts%20and%20Features/Navigation/Tree%20Concepts.md)中。其引用可以被复制到文本笔记中，以便在文本中显示。
 
-To add an image to the note:
+## 上传图片
 
-*   Simply drag it from file explorer onto the note editor inside Trilium and the image will be uploaded.
-*   Alternatively, from the <a class="reference-link" href="Formatting%20toolbar.md">Formatting toolbar</a> look for the _Insert image_ icon.
-*   You can also copy and paste an image from web (see section below).
+要向笔记中添加图片：
 
-## Clipboard & automatic download of images
+*   只需将其从文件资源管理器中拖放到 Trilium 内的笔记编辑器上，图片即会上传。
+*   或者，从<a class="reference-link" href="Formatting%20toolbar.md">格式工具栏</a>中查找_插入图片_图标。
+*   您也可以从网页复制并粘贴图片（参见下文）。
 
-Trilium has a special handling for images copied to and pasted from the clipboard.
+## 剪贴板与自动下载图片
 
-*   For a mix of text and images, the images are downloaded automatically by the server (or desktop app, depending on what is being used).
+Trilium 对从剪贴板复制和粘贴的图片有特殊处理。
+
+*   对于文本和图片的混合内容，图片会由服务器（或桌面应用，取决于正在使用的程序）自动下载。
     
-    *   This means that the image must be publicly accessible and reachable from wherever Trilium is running. Inaccessible images will end up as broken images.
-*   If a single image is pasted into Trilium, it will prefer the image that comes in the clipboard. This makes it possible to copy images that Trilium would not otherwise be able to reach, such as Google Chat, Slack, etc.
-*   When a text with images is copied from Trilium and pasted in another app (such as Microsoft Word or LibreOffice Writer), the images will be preserved.
+    *   这意味着图片必须是可以公开访问的，并且可以从 Trilium 运行的位置访问到。无法访问的图片最终会显示为损坏的图片。
+*   如果单个图片被粘贴到 Trilium 中，它将优先使用剪贴板中的图片。这使得复制 Trilium 原本无法访问的图片成为可能，例如来自 Google Chat、Slack 等平台的图片。
+*   当从 Trilium 复制带有图片的文本并粘贴到其他应用（如 Microsoft Word 或 LibreOffice Writer）时，图片将被保留。
 
-The automatic download of images is enabled by default and can be toggled from <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">Options</a> → _Media_ → _Download images automatically._
+图片的自动下载功能默认启用，可以在<a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">选项</a> → _媒体_ → _自动下载图片_ 中进行切换。
 
-## Configuring the images
+## 配置图片
 
-Clicking on an image will reveal a popup with multiple options:  
+点击图片将弹出一个包含多个选项的弹出窗口：  
 ![](7_Images_image.png)
 
-### Alignment
+### 对齐
 
-The first set of options configure the alignment are, in order:
+第一组选项用于配置对齐方式，依次为：
 
-| Icon | Option | Preview | Description |
+| 图标 | 选项 | 预览 | 描述 |
 | --- | --- | --- | --- |
-| ![](5_Images_image.png) | Inline | ![](1_Images_image.png) | As the name suggests, the name can be put inside a paragraph and moved around similarly as if it was a block of text. Use drag & drop or cut-paste to move it around. |
-| ![](8_Images_image.png) | Centered image | ![](2_Images_image.png) | The image will be displayed as a block and centered, not allowing text in either the left or right of it. |
-| ![](4_Images_image.png) | Wrap text | ![](6_Images_image.png) | The image will be displayed to the left or the right of the text. |
-| ![](Images_image.png) | Block align | ![](3_Images_image.png) | Similarly to _Centered image_, the image will be displayed as a block and aligned either to the left or to the right, but not allowing text to flow on either of its sides. |
+| ![](5_Images_image.png) | 内联 | ![](1_Images_image.png) | 顾名思义，图片可以放在段落内部，并可以像文本块一样移动。使用拖放或剪切粘贴来移动它。 |
+| ![](8_Images_image.png) | 居中图片 | ![](2_Images_image.png) | 图片将作为块显示并居中，不允许文本在其左侧或右侧。 |
+| ![](4_Images_image.png) | 文本环绕 | ![](6_Images_image.png) | 图片将显示在文本的左侧或右侧。 |
+| ![](Images_image.png) | 块对齐 | ![](3_Images_image.png) | 与_居中图片_类似，图片将作为块显示，并左对齐或右对齐，但不允许文本在其任一侧流动。 |
 
-## Compression
+## 压缩
 
-Since Trilium isn't really meant to be primary storage for image data, it attempts to compress and resize (with pretty aggressive settings) uploaded images before storing them to the database. You may then notice some quality degradation. Basic quality settings is available in <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">Options</a> → _Media_.
+由于 Trilium 并非主要用于存储图片数据，它会尝试在将上传的图片存储到数据库之前对其进行压缩和调整大小（使用相当激进的设置）。您可能会注意到一些质量下降。基本质量设置可在<a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">选项</a> → _媒体_ 中找到。
 
-If you want to save images in their original resolution, it is recommended to save them as attachment to note (look for the contextual menu in <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20buttons.md">Note buttons</a> → _Import files_).
+如果您想以原始分辨率保存图片，建议将其作为笔记的附件保存（在<a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20buttons.md">笔记按钮</a> → _导入文件_ 中查找上下文菜单）。
 
-## Aligning images side-by-side
+## 并排对齐图片
 
-There are generally two ways to display images side by side:
+通常有两种方式可以并排显示图片：
 
-*   If they are roughly the same size, simply make the two images in-line, according to the alignment section above. The images can be dragged & dropped onto the same line.
-*   If they are on different size, create a [table](Tables.md) with invisible borders.
+*   如果它们大小大致相同，只需根据上面的对齐部分将两张图片设为内联。图片可以拖放到同一行。
+*   如果它们大小不同，可以创建一个带有不可见边框的[表格](Tables.md)。

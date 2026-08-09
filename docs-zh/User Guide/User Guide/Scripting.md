@@ -1,61 +1,62 @@
-# Scripting
-Trilium supports creating <a class="reference-link" href="Note%20Types/Code.md">Code</a> notes, i.e. notes which allow you to store some programming code and highlight it. Special case is JavaScript code notes which can also be executed inside Trilium which can in conjunction with <a class="reference-link" href="Scripting/Script%20API.md">Script API</a> provide extra functionality.
+# 脚本
 
-## Architecture Overview
+Trilium 支持创建<a class="reference-link" href="Note%20Types/Code.md">代码</a>笔记，即允许你存储编程代码并高亮显示的笔记。特殊情况是 JavaScript 代码笔记，它们还可以在 Trilium 内部执行，结合<a class="reference-link" href="Scripting/Script%20API.md">脚本 API</a> 可以提供额外的功能。
 
-To go further I must explain basic architecture of Trilium - in its essence it is a classic web application - it has these two main components:
+## 架构概述
 
-*   frontend running in the browser (using HTML, CSS, JavaScript) - this is mainly used to interact with the user, display notes etc.
-*   backend running JavaScript code in node.js runtime - this is responsible for e.g. storing notes, encrypting them etc.
+为了进一步说明，我必须解释 Trilium 的基本架构——本质上它是一个经典的 Web 应用程序——它有以下两个主要组件：
 
-So we have frontend and backend, each with their own set of responsibilities, but their common feature is that they both run JavaScript code. Add to this the fact, that we're able to create JavaScript <a class="reference-link" href="Note%20Types/Code.md">Code</a> and we're onto something.
+*   **前端** 在浏览器中运行（使用 HTML、CSS、JavaScript）——主要用于与用户交互、显示笔记等。
+*   **后端** 在 node.js 运行时中运行 JavaScript 代码——负责例如存储笔记、加密笔记等。
 
-## Use cases
+所以我们有前端和后端，各自承担不同的职责，但它们的共同特点是都运行 JavaScript 代码。再加上我们能够创建 JavaScript <a class="reference-link" href="Note%20Types/Code.md">代码</a> 笔记这一事实，我们就有了用武之地。
 
-*   <a class="reference-link" href="Scripting/Frontend%20Basics/Examples/New%20Task%20launcher%20button.md">"New Task" launcher button</a>
+## 使用场景
 
-## Action handler
+*   <a class="reference-link" href="Scripting/Frontend%20Basics/Examples/New%20Task%20launcher%20button.md">“新建任务”启动器按钮</a>
 
-Saving the note to the database is backend's responsibility, so we immediately pass control to the backend and ask it to create a note. Once this is done, we show the newly created note so that the user can set the task title and maybe some attributes.
+## 操作处理器
 
-## Script execution
+将笔记保存到数据库是后端的职责，因此我们立即将控制权传递给后端，并请求它创建一个笔记。一旦完成，我们就会显示新创建的笔记，以便用户设置任务标题，也许还可以设置一些属性。
 
-So we have a script which will add the button to the toolbar. But how can we execute it? One possibility is to click on "play" icon (marked by red circle). The problem with this is that this UI change is time bound by Trilium runtime so when we restart Trilium, button won't be there.
+## 脚本执行
 
-We need to execute it every time Trilium starts up, but we probably don't want to have to manually click on play button on every start up.
+所以我们有一个脚本，它会将按钮添加到工具栏。但是我们如何执行它呢？一种可能性是点击“播放”图标（用红色圆圈标出）。这样做的问题在于，这种 UI 更改受限于 Trilium 运行时，因此当我们重启 Trilium 时，按钮将不复存在。
 
-The solution is marked by red circle at the bottom - this note has [label](Advanced%20Usage/Attributes.md) `#run=frontendStartup` - this is one of the "system" labels which Trilium understands. As you might guess, this will cause all such labeled script notes to be executed once Trilium frontend starts up.
+我们需要在每次 Trilium 启动时都执行它，但我们可能不想在每次启动时都手动点击播放按钮。
 
-(`#run=frontendStartup` does not work for [Mobile frontend](Installation%20%26%20Setup/Mobile%20Frontend.md) - if you want to have scripts running there, give the script `#run=mobileStartup` label).
+解决方案在底部用红色圆圈标出——这个笔记有一个 [标签](Advanced%20Usage/Attributes.md) `#run=frontendStartup`——这是 Trilium 理解的“系统”标签之一。正如你可能猜到的，这会导致所有带有此类标签的脚本笔记在 Trilium 前端启动时被执行。
 
-### Execute button
+（`#run=frontendStartup` 不适用于 [移动前端](Installation%20%26%20Setup/Mobile%20Frontend.md) ——如果你希望脚本在那里运行，请给脚本添加 `#run=mobileStartup` 标签）。
 
-Runnable code notes (frontend or backend) and saved SQL consoles can optionally have a dedicated execute button alongside a description.
+### 执行按钮
 
-To do so, apply the following [labels](Advanced%20Usage/Attributes/Labels.md):
+可运行的代码笔记（前端或后端）和已保存的 SQL 控制台可以可选地拥有一个专用的执行按钮以及描述。
 
-*   A `#executeButton` with the value of the label being displayed as the label of the button.
-*   An optional `#executeDescription` which adds explanatory text beside it.
+为此，请应用以下 [标签](Advanced%20Usage/Attributes/Labels.md)：
 
-## Autocomplete & linting
+*   一个 `#executeButton`，其标签值将显示为按钮的标签。
+*   一个可选的 `#executeDescription`，用于在其旁边添加解释性文本。
 
-Starting with Trilium v0.104.0, frontend scripts, backend scripts and render notes benefit from an autocomplete system.
+## 自动补全与代码检查
 
-The autocomplete triggers automatically when typing <kbd>.</kbd> or manually by pressing <kbd>Ctrl</kbd>+<kbd>Space</kbd>.
+从 Trilium v0.104.0 开始，前端脚本、后端脚本和渲染笔记受益于自动补全系统。
 
-In addition to that, the editor will also display syntax errors and warnings such as unreachable code.
+自动补全会在输入 <kbd>.</kbd> 时自动触发，或通过按 <kbd>Ctrl</kbd>+<kbd>Space</kbd> 手动触发。
+
+除此之外，编辑器还会显示语法错误和警告，例如不可达代码。
 
 > [!NOTE]
-> If you notice a false positive in regards with the errors/warnings reported or an incorrect or missing API, feel free to [open a issue](Troubleshooting/Reporting%20issues.md) with a code sample.
+> 如果你发现报告的错误/警告存在误报，或者 API 不正确或缺失，欢迎[提交问题](Troubleshooting/Reporting%20issues.md)并附上代码示例。
 
-## More showcases
+## 更多示例
 
-You can see more scripting with explanation in <a class="reference-link" href="Advanced%20Usage/Advanced%20Showcases.md">Advanced Showcases</a>.
+你可以在 <a class="reference-link" href="Advanced%20Usage/Advanced%20Showcases.md">高级示例</a> 中查看更多带解释的脚本。
 
-## Events
+## 事件
 
-See <a class="reference-link" href="Scripting/Backend%20scripts/Events.md">Events</a>.
+参见 <a class="reference-link" href="Scripting/Backend%20scripts/Events.md">事件</a>。
 
-## Script API
+## 脚本 API
 
-See <a class="reference-link" href="Scripting/Script%20API.md">Script API</a>.
+参见 <a class="reference-link" href="Scripting/Script%20API.md">脚本 API</a>。

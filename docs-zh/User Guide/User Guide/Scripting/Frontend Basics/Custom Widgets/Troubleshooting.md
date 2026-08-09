@@ -1,9 +1,9 @@
-# Troubleshooting
-## Why is my widget clipped by other UI elements
+# 故障排查
+## 为什么我的小组件会被其他 UI 元素裁剪
 
-For performance and layout reasons, the size of widgets in Trilium is independent from its children. At CSS level, this means that the widget container has `contain: size` applied to it.
+出于性能和布局的考虑，Trilium 中小组件的尺寸与其子元素无关。在 CSS 层面，这意味着小组件容器应用了 `contain: size`。
 
-This works well if the widget has a fixed size (or based on its parent container), however to make a widget resize to fit its content, apply the following change:
+如果小组件具有固定尺寸（或基于其父容器），这可以正常工作，但若要使小组件根据其内容调整大小，请应用以下更改：
 
 ```diff
 class MyWidget extends api.RightPanelWidget {
@@ -16,4 +16,4 @@ class MyWidget extends api.RightPanelWidget {
 }
 ```
 
-Alternatively apply `contain: none` to its CSS.
+或者，在其 CSS 中应用 `contain: none`。

@@ -1,17 +1,18 @@
-# SVG rendering
-For diagrams and similar note types, it makes sense to cache an SVG rendering of the content so that it can be used for:
+# SVG 渲染
 
-*   Content preview in note lists (when viewing the list of notes from the parent note).
-*   Note inclusion
-*   Share
+对于图表及类似的笔记类型，缓存内容的 SVG 渲染是有意义的，这样它可以用于：
 
-## Step 1. Save the SVG content as an attachment
+*   笔记列表中的内容预览（从父笔记查看笔记列表时）。
+*   笔记包含
+*   分享
 
-The first step is to obtain the SVG from the custom widget used. For example, for Mind Elixir there is an `exportSvg` method.
+## 步骤 1. 将 SVG 内容保存为附件
 
-If the returned value is a `Blob`, then the underlying text can be obtained via `await blob.text()`.
+第一步是从所使用的自定义组件中获取 SVG。例如，对于 Mind Elixir，有一个 `exportSvg` 方法。
 
-To save the SVG as an attachment alongside the content, simply modify `getData()`:
+如果返回的值是一个 `Blob`，那么可以通过 `await blob.text()` 获取底层文本。
+
+要将 SVG 作为附件与内容一起保存，只需修改 `getData()`：
 
 ```
 async getData() {
@@ -36,16 +37,16 @@ async getData() {
 }
 ```
 
-You can test this step by making a change to the note and then using the “Note attachments” option from the note menu.
+您可以通过对笔记进行更改，然后使用笔记菜单中的“笔记附件”选项来测试此步骤。
 
-## Step 2. Adapting the server to serve SVG attachment
+## 步骤 2. 调整服务器以提供 SVG 附件
 
-The `src/routes/api/image.ts` route is in charge for serving the image previews of image notes, but also of custom note types such as canvases.
+`src/routes/api/image.ts` 路由负责提供图片笔记的图像预览，也负责提供自定义笔记类型（如画布）的预览。
 
-Alter the `returnImageInt` method as follows:
+按如下方式修改 `returnImageInt` 方法：
 
-1.  Add the image type to the guard condition which returns 400 for unsupported note types.
-2.  Add an `if` statement to render the attachment using the correct name:
+1.  将图片类型添加到守护条件中，该条件对不支持的笔记类型返回 400。
+2.  添加一个 `if` 语句，使用正确的名称渲染附件：
 
 ```
 if (image.type === "mindMap") {
@@ -53,20 +54,20 @@ if (image.type === "mindMap") {
 }
 ```
 
-## Step 3. Serve the SVG attachment for note preview
+## 步骤 3. 为笔记预览提供 SVG 附件
 
-The client also needs tweaking to allow it to render SVG attachments by calling the previously modified server route.
+客户端也需要调整，以允许其通过调用先前修改的服务器路由来渲染 SVG 附件。
 
-The `src/public/app/services/content_renderer.js` file is in charge of handling the previews. To render using the image route, modify `getRenderedContent` to add the new note type to the `if` which calls `renderImage`.
+`src/public/app/services/content_renderer.js` 文件负责处理预览。要使用图片路由进行渲染，请修改 `getRenderedContent`，将新的笔记类型添加到调用 `renderImage` 的 `if` 中。
 
-## Step 4. Serve SVG for share
+## 步骤 4. 为分享提供 SVG
 
-By default, `Note type cannot be displayed` will be displayed when trying to access the given note via a share.
+默认情况下，当尝试通过分享访问给定笔记时，会显示 `无法显示笔记类型`。
 
-To serve the SVG, open `src/share/content_renderer.ts` and look for `getContent`. Then add to the `if` containing `renderImage` the new note type.
+要提供 SVG，请打开 `src/share/content_renderer.ts` 并查找 `getContent`。然后，将新的笔记类型添加到包含 `renderImage` 的 `if` 中。
 
-This is not enough, as attempting to access the shared note will result in a broken image that fails with `Requested note is not a shareable image`. To solve this one, go to `src/share/routes.ts` and add a `renderImageAttachment` statement to `router.get('/share/api/images/[…])`.
+这还不够，因为尝试访问共享笔记会导致图片损坏，并出现 `请求的笔记不是可共享的图片` 错误。要解决此问题，请转到 `src/share/routes.ts`，并在 `router.get('/share/api/images/[...]')` 中添加一个 `renderImageAttachment` 语句。
 
-## Step 5. Serve SVG for revisions
+## 步骤 5. 为修订提供 SVG
 
-In the revisions list, to display the SVG, go to `src/public/app/widgets/dialogs/revisions.js` and look for the `renderContent` method. Simply add the note type to one of the already existing `if`s, such as the one for `canvas` and `mindMap` or `mermaid` (if the text content of the diagram should also be displayed).
+在修订列表中，要显示 SVG，请转到 `src/public/app/widgets/dialogs/revisions.js` 并查找 `renderContent` 方法。只需将笔记类型添加到现有的某个 `if` 中，例如用于 `canvas` 和 `mindMap` 或 `mermaid` 的 `if`（如果也应显示图表的文本内容）。

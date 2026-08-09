@@ -1,42 +1,43 @@
-# Split View
-In Trilium, is possible to work with two or more notes side-by-side.
+# 分屏视图
+
+在 Trilium 中，可以并排处理两个或更多笔记。
 
 <figure class="image image-style-align-center"><img style="aspect-ratio:1398/1015;" src="Split View_2_Split View_image.png" width="1398" height="1015"></figure>
 
-## **Interactions**
+## **交互操作**
 
-*   Press the ![](Split%20View_Split%20View_image.png) button to the right of a note's title to open a new split to the right of it.
-    *   It is possible to have as many splits as desired, simply press again the button.
-    *   Only horizontal splits are possible, vertical or drag & dropping is not supported.
-*   When at least one split is open, press the ![](Split%20View_3_Split%20View_image.png) button next to it to close it.
-*   Use the ![](Split%20View_4_Split%20View_image.png) or the ![](Split%20View_1_Split%20View_image.png) button to move around the splits.
-*   Each [tab](Tabs.md) has its own split view configuration (e.g. one tab can have two notes in a split view, whereas the others are one-note views).
-    *   The tab will indicate only the title of the main note (the first one in the list).
+*   按下笔记标题右侧的 ![](Split%20View_Split%20View_image.png) 按钮，可在其右侧打开一个新的分屏。
+    *   可以按需打开任意数量的分屏，只需再次按下该按钮即可。
+    *   仅支持水平分屏，不支持垂直分屏或拖放操作。
+*   当至少打开一个分屏时，按下其旁边的 ![](Split%20View_3_Split%20View_image.png) 按钮即可将其关闭。
+*   使用 ![](Split%20View_4_Split%20View_image.png) 或 ![](Split%20View_1_Split%20View_image.png) 按钮在分屏之间移动。
+*   每个[标签页](Tabs.md)都有其自己的分屏视图配置（例如，一个标签页可以在分屏视图中显示两个笔记，而其他标签页则是单笔记视图）。
+    *   标签页仅显示主笔记（列表中的第一个笔记）的标题。
 
-## Splits and the note tree & hoisting
+## 分屏与笔记树及提升
 
-Clicking on the content of a split will focus that split. While focused, the <a class="reference-link" href="Note%20Tree.md">Note Tree</a> will also indicate the note that is being edited.
+点击分屏的内容将使该分屏获得焦点。获得焦点时，<a class="reference-link" href="Note%20Tree.md">笔记树</a> 也会指示正在编辑的笔记。
 
-It is possible for each of the splits to have their own <a class="reference-link" href="../Navigation/Note%20Hoisting.md">Note Hoisting</a>.
+每个分屏都可以拥有自己的<a class="reference-link" href="../Navigation/Note%20Hoisting.md">笔记提升</a>。
 
-When a new split is created, it will share the same note hoisting as the previous one. An easy solution to this is to simply hoist the notes after the split is created.
+创建新分屏时，它将与之前的分屏共享相同的笔记提升。一个简单的解决方案是在创建分屏后直接提升笔记。
 
-This is generally quite useful for reorganizing notes from one place to the other, by hoisting the old place in the first split and hoisting the new place to the second one. This will allow easy cut and paste without the tree jumping around from switching between notes.
+这对于将笔记从一个位置重新组织到另一个位置通常非常有用，方法是在第一个分屏中提升旧位置，在第二个分屏中提升新位置。这样可以轻松地进行剪切和粘贴，而无需在切换笔记时让树来回跳动。
 
-## Mobile support
+## 移动端支持
 
-Since v0.100.0, it's possible to have a split view on the mobile view as well, with the following differences from the desktop version of the split:
+自 v0.100.0 版本起，移动端视图也可以使用分屏，但与桌面版分屏存在以下差异：
 
-*   On smartphones, the split views are laid out vertically (one on the top and one on the bottom), instead of horizontally as on the desktop.
-*   There can be only one split open per tab.
-*   It's not possible to resize the two split panes.
-*   When the keyboard is opened, the active note will be “maximized”, thus allowing for more space even when a split is open. When the keyboard is closed, the splits become equal in size again.
+*   在智能手机上，分屏视图是垂直排列的（一个在顶部，一个在底部），而不是像桌面版那样水平排列。
+*   每个标签页只能打开一个分屏。
+*   无法调整两个分屏面板的大小。
+*   当键盘打开时，当前活动的笔记将被“最大化”，从而即使在分屏打开时也能提供更多空间。当键盘关闭时，分屏将恢复为相同大小。
 
-Interaction:
+交互操作：
 
-*   To create a new split, click the three dots button on the right of the note title and select _Create new split_.
-    *   This option will only be available if there is no split already open in the current tab.
-*   To close a split, click the three dots button on the right of the note title and select _Close this pane_.
-    *   Note that this option will only be available on the second note in the split (the one at the bottom on smartphones, the one on the right on tablets).
-*   When long-pressing a link, a contextual menu will show up with an option to _Open note in a new split_.
-    *   If there's already a split, the option will replace the existing split instead.
+*   要创建新的分屏，请点击笔记标题右侧的三个点按钮，然后选择 _创建新分屏_。
+    *   仅当当前标签页中尚未打开分屏时，此选项才可用。
+*   要关闭分屏，请点击笔记标题右侧的三个点按钮，然后选择 _关闭此面板_。
+    *   请注意，此选项仅在分屏中的第二个笔记（智能手机上位于底部，平板电脑上位于右侧）上可用。
+*   长按链接时，将显示一个上下文菜单，其中包含 _在新分屏中打开笔记_ 的选项。
+    *   如果已存在分屏，则该选项将替换现有的分屏。

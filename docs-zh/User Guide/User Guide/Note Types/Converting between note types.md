@@ -1,26 +1,26 @@
-# Converting between note types
-A note's type may be converted to another:
+# 在笔记类型之间转换
+笔记的类型可以转换为另一种类型：
 
-*   <a class="reference-link" href="Text.md">Text</a> notes to <a class="reference-link" href="Markdown.md">Markdown</a> notes
-*   Markdown notes to Text notes
+*   <a class="reference-link" href="Text.md">文本</a>笔记转换为<a class="reference-link" href="Markdown.md">Markdown</a>笔记
+*   Markdown 笔记转换为文本笔记
 
-Before conversion, a revision is saved automatically, so you can restore the original or recover any missing elements from it if the conversion produces undesired results. Read more about <a class="reference-link" href="../Basic%20Concepts%20and%20Features/Notes/Note%20Revisions.md">Note Revisions</a>.
+在转换之前，系统会自动保存一个修订版本，因此如果转换产生不理想的结果，您可以恢复原始版本或从中找回任何丢失的元素。了解更多关于<a class="reference-link" href="../Basic%20Concepts%20and%20Features/Notes/Note%20Revisions.md">笔记修订</a>的信息。
 
-## Converting individual notes
+## 转换单个笔记
 
-### Markdown to Text Note
+### Markdown 转换为文本笔记
 
-Markdown notes can be converted to Text Notes with negligible loss of formatting fidelity.
+Markdown 笔记可以转换为文本笔记，格式保真度损失极小。
 
-To do so, go to the note menu → “**Advanced”** and select "**Convert to Text Note**".
+操作方法：进入笔记菜单 → “**高级**”，然后选择“**转换为文本笔记**”。
 
-### Text Note to Markdown
+### 文本笔记转换为 Markdown
 
-> [!WARNING]
-> Since Markdown does not support all the capabilities of Text notes, this conversion is lossy in terms of formatting: some formatting may be lost, and some unsupported elements may even be dropped. It's strongly recommended that you inspect the content for any information that might have gone missing after the conversion.
+> [!警告]
+> 由于 Markdown 不支持文本笔记的所有功能，此转换在格式方面是有损的：某些格式可能会丢失，甚至某些不支持的元素可能会被丢弃。强烈建议您在转换后检查内容，看是否有任何信息丢失。
 
-To convert a text note to Markdown, go to the note menu → **“Advanced”** and select **"Convert to Markdown Note"**.
+要将文本笔记转换为 Markdown，请进入笔记菜单 → **“高级”**，然后选择**“转换为 Markdown 笔记”**。
 
-## Converting multiple notes
+## 转换多个笔记
 
-A note type conversion can also be performed on an entire subtree or a set of multiple notes using <a class="reference-link" href="../Advanced%20Usage/Bulk%20Actions.md">Bulk Actions</a>.
+也可以使用<a class="reference-link" href="../Advanced%20Usage/Bulk%20Actions.md">批量操作</a>对整个子树或一组多个笔记执行笔记类型转换。

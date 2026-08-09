@@ -1,80 +1,81 @@
-# Presentation
+# 演示文稿
+
 <figure class="image"><img style="aspect-ratio:1120/763;" src="Presentation_image.png" width="1120" height="763"></figure>
 
-The Presentation view allows the creation of slideshows directly from within Trilium.
+演示文稿视图允许直接在 Trilium 中创建幻灯片放映。
 
-### Creating a new presentation
+### 创建新的演示文稿
 
-Right click on an existing note in the <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">Note Tree</a> and select _Insert child note_ and look for _Presentation_.
+在<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">笔记树</a>中右键点击现有笔记，选择 _插入子笔记_，然后查找 _演示文稿_。
 
-## How it works
+## 工作原理
 
-*   Each slide is a child note of the collection.
-*   The order of the child notes determines the order of the slides.
-*   Unlike traditional presentation software, slides can be laid out both horizontally and vertically (see belwo for more information).
-*   Direct children will be laid out horizontally and the children of those will be laid out vertically. Children deeper than two levels of nesting are ignored.
+*   每张幻灯片都是集合的一个子笔记。
+*   子笔记的顺序决定了幻灯片的顺序。
+*   与传统演示软件不同，幻灯片可以水平和垂直布局（更多信息见下文）。
+*   直接子笔记将水平布局，而这些子笔记的子笔记将垂直布局。嵌套层级超过两层的子笔记将被忽略。
 
-## Interaction and navigation
+## 交互与导航
 
-In the floating buttons section (top-right):
+在浮动按钮区域（右上角）：
 
-*   Edit button to go to the corresponding note of the current slide.
-*   Press Overview button (or the <kbd>O</kbd> key) to show a birds-eye view of the slides. Press the button again to disable it.
-*   Press the “Start presentation” button to show the presentation in full-screen.
+*   编辑按钮，用于转到当前幻灯片对应的笔记。
+*   按下概览按钮（或 <kbd>O</kbd> 键）可显示幻灯片的鸟瞰视图。再次按下该按钮可将其禁用。
+*   按下“开始演示”按钮可全屏显示演示文稿。
 
-The following keyboard shortcuts are supported:
+支持以下键盘快捷键：
 
-*   Press <kbd>←</kbd> and <kbd>→</kbd> (or <kbd>H</kbd> and <kbd>L</kbd>) to go to the slide on the left or on the right (horizontal).
-*   Press <kbd>↑</kbd> and <kbd>↓</kbd>  (or <kbd>K</kbd> and <kbd>J</kbd>) to go to the upward or downward slide (vertical).
-*   Press <kbd>Space</kbd> and <kbd>Shift</kbd> + <kbd>Space</kbd> or  to go to the next/previous slide in order.
-*   And a few more, press <kbd>?</kbd> to display a popup with all the supported keyboard combinations.
+*   按 <kbd>←</kbd> 和 <kbd>→</kbd>（或 <kbd>H</kbd> 和 <kbd>L</kbd>）转到左侧或右侧的幻灯片（水平）。
+*   按 <kbd>↑</kbd> 和 <kbd>↓</kbd>（或 <kbd>K</kbd> 和 <kbd>J</kbd>）转到上方或下方的幻灯片（垂直）。
+*   按 <kbd>Space</kbd> 和 <kbd>Shift</kbd> + <kbd>Space</kbd> 按顺序转到下一张/上一张幻灯片。
+*   还有更多，按 <kbd>?</kbd> 可显示包含所有支持的键盘组合的弹出窗口。
 
-## Vertical slides and nesting
+## 垂直幻灯片与嵌套
 
-Unlike traditional presentation software such as Microsoft PowerPoint, the slides in Trilium can be laid out horizontally or vertically in order to create depth or better organize the slides by topic.
+与 Microsoft PowerPoint 等传统演示软件不同，Trilium 中的幻灯片可以水平或垂直布局，以创建层次感或更好地按主题组织幻灯片。
 
-This horizontal/vertical organization affects transitions (especially on the “slide” transition), however it is most noticeable in navigation.
+这种水平/垂直组织方式会影响过渡效果（尤其是“幻灯片”过渡），但在导航中最为明显。
 
-*   Pressing <kbd>←</kbd> and <kbd>→</kbd> will navigate through slides horizontally, thus skipping vertical notes under the current slide. This is useful to skip entire chapters/related slides.
-*   Pressing <kbd>↑</kbd> and <kbd>↓</kbd> will navigate through the vertical slides at the current level.
-*   Pressing <kbd>Space</kbd> and <kbd>Shift</kbd> + <kbd>Space</kbd> will go to the next/previous slide in order, regardless of the direction. This is generally the key combination to use when presenting.
-*   The arrows on the bottom-right of the slide will also reflect this navigation scheme.
+*   按 <kbd>←</kbd> 和 <kbd>→</kbd> 将水平导航幻灯片，从而跳过当前幻灯片下的垂直笔记。这对于跳过整个章节/相关幻灯片非常有用。
+*   按 <kbd>↑</kbd> 和 <kbd>↓</kbd> 将在当前层级垂直导航幻灯片。
+*   按 <kbd>Space</kbd> 和 <kbd>Shift</kbd> + <kbd>Space</kbd> 将按顺序转到下一张/上一张幻灯片，无论方向如何。这通常是演示时使用的组合键。
+*   幻灯片右下角的箭头也会反映此导航方案。
 
 <figure class="image image-style-align-right image_resized" style="width:55.57%;"><img style="aspect-ratio:890/569;" src="1_Presentation_image.png" width="890" height="569"></figure>
 
-All direct children of the collection will be laid out horizontally. If a direct child also has children, those children will be placed as vertical slides.
+集合的所有直接子笔记将水平布局。如果直接子笔记也有子笔记，则这些子笔记将作为垂直幻灯片放置。
 
-In the following example, the note structure is as follows:
+在以下示例中，笔记结构如下：
 
-*   Presentation collection
-    *   Trilium Notes (demo page)
-    *   “Introduction” slide
-        *   “The challenge of personal knowledge management”
-        *   “Note-taking structures”
-    *   “Demo & Feature highlights” slide
-        *   “Really fast installation process”
-        *   Video slide
+*   演示文稿集合
+    *   Trilium Notes（演示页面）
+    *   “介绍”幻灯片
+        *   “个人知识管理的挑战”
+        *   “笔记记录结构”
+    *   “演示与功能亮点”幻灯片
+        *   “非常快速的安装过程”
+        *   视频幻灯片
 
-## Customization
+## 自定义
 
-At collection level, it's possible to adjust:
+在集合级别，可以调整：
 
-*   The theme of the entire presentation to one of the predefined themes by going to the <a class="reference-link" href="Collection%20Properties.md">Collection Properties</a> and looking for the _Theme_ option.
-*   It's currently not possible to create custom themes, although it is planned.
-*   Note that it is note possible to alter the CSS via <a class="reference-link" href="../Theme%20development/Custom%20app-wide%20CSS.md">Custom app-wide CSS</a> because the slides are rendered isolated (in a shadow DOM).
+*   整个演示文稿的主题，可通过转到<a class="reference-link" href="Collection%20Properties.md">集合属性</a>并查找 _主题_ 选项，将其设置为预定义主题之一。
+*   目前无法创建自定义主题，尽管已有此计划。
+*   请注意，无法通过<a class="reference-link" href="../Theme%20development/Custom%20app-wide%20CSS.md">自定义应用级 CSS</a> 更改 CSS，因为幻灯片是隔离渲染的（在影子 DOM 中）。
 
-At slide level:
+在幻灯片级别：
 
-*   It's possible to adjust the background color of a slide by using the [predefined promoted attribute](../Advanced%20Usage/Attributes/Promoted%20Attributes.md) for the color or manually setting `#slide:background` to a hex color.
-*   More complex backgrounds can be achieved via gradients. There's no UI for it; it has to be set via `#slide:background` to a CSS gradient definition such as: `linear-gradient(to bottom, #283b95, #17b2c3)`.
+*   可以使用[预定义的提升属性](../Advanced%20Usage/Attributes/Promoted%20Attributes.md)调整幻灯片的背景颜色，或手动将 `#slide:background` 设置为十六进制颜色。
+*   更复杂的背景可以通过渐变实现。没有对应的 UI；必须通过 `#slide:background` 设置为 CSS 渐变定义，例如：`linear-gradient(to bottom, #283b95, #17b2c3)`。
 
-## Tips and tricks
+## 提示与技巧
 
-*   Text notes generally respect the formatting (bold, italic, foreground and background colors) and font size. Code blocks and tables also work.
-*   Try using more than just text notes, the presentation uses the same mechanism as [shared notes](../Advanced%20Usage/Sharing.md) and <a class="reference-link" href="../Basic%20Concepts%20and%20Features/Notes/Note%20List.md">Note List</a> so it should be able to display <a class="reference-link" href="../Note%20Types/Mermaid%20Diagrams.md">Mermaid Diagrams</a>, <a class="reference-link" href="../Note%20Types/Canvas.md">Canvas</a> and <a class="reference-link" href="../Note%20Types/Mind%20Map.md">Mind Map</a> in full-screen (without the interactivity).
-    *   Consider using a transparent background for <a class="reference-link" href="../Note%20Types/Canvas.md">Canvas</a>, if the slides have a custom background (go to the hamburger menu in the Canvas, press the button select a custom color and write `transparent`).
-    *   For <a class="reference-link" href="../Note%20Types/Mermaid%20Diagrams.md">Mermaid Diagrams</a>, some of them have a predefined background which can be changed via the frontmatter. For example, for XY-charts:
-        
+*   文本笔记通常遵循格式（粗体、斜体、前景色和背景色）和字体大小。代码块和表格也可以使用。
+*   尝试使用不仅仅是文本笔记，演示文稿使用与[共享笔记](../Advanced%20Usage/Sharing.md)和<a class="reference-link" href="../Basic%20Concepts%20and%20Features/Notes/Note%20List.md">笔记列表</a>相同的机制，因此应该能够全屏显示<a class="reference-link" href="../Note%20Types/Mermaid%20Diagrams.md">Mermaid 图表</a>、<a class="reference-link" href="../Note%20Types/Canvas.md">画布</a>和<a class="reference-link" href="../Note%20Types/Mind%20Map.md">思维导图</a>（无交互性）。
+    *   如果幻灯片有自定义背景，请考虑为<a class="reference-link" href="../Note%20Types/Canvas.md">画布</a>使用透明背景（转到画布中的汉堡菜单，按下按钮选择自定义颜色并输入 `transparent`）。
+    *   对于<a class="reference-link" href="../Note%20Types/Mermaid%20Diagrams.md">Mermaid 图表</a>，其中一些具有预定义背景，可以通过 frontmatter 更改。例如，对于 XY 图表：
+
         ```
         ---
         config:
@@ -84,6 +85,6 @@ At slide level:
         ---
         ```
 
-## Under the hood
+## 底层机制
 
-The Presentation view uses [Reveal.js](https://revealjs.com/) to handle the navigation and layout of the slides.
+演示文稿视图使用 [Reveal.js](https://revealjs.com/) 来处理幻灯片的导航和布局。

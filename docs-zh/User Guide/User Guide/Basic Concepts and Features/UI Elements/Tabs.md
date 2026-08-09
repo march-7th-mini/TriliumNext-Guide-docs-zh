@@ -1,45 +1,46 @@
-# Tabs
+# 标签页
+
 <figure class="image image-style-align-center"><img style="aspect-ratio:1119/43;" src="2_Tabs_image.png" width="1119" height="43"></figure>
 
-In Trilium, tabs allow easy switching between notes.
+在 Trilium 中，标签页可以方便地在笔记之间切换。
 
-## Layout
+## 布局
 
-Depending on the <a class="reference-link" href="Vertical%20and%20horizontal%20layout.md">Vertical and horizontal layout</a>:
+取决于<a class="reference-link" href="Vertical%20and%20horizontal%20layout.md">垂直和水平布局</a>：
 
-*   For the vertical layout, the tabs will be placed at the top but to the right of the <a class="reference-link" href="Note%20Tree.md">Note Tree</a>.
-*   For the horizontal layout, the tabs will be placed at the top in full-width, above the [note tree](Note%20Tree.md), allowing for more tabs to be comfortably displayed.
+*   对于垂直布局，标签页将放置在顶部，但位于<a class="reference-link" href="Note%20Tree.md">笔记树</a>的右侧。
+*   对于水平布局，标签页将以全宽放置在顶部，位于[笔记树](Note%20Tree.md)上方，从而可以舒适地显示更多标签页。
 
-## Interaction
+## 交互
 
-*   To create a new tab, press the ![](1_Tabs_image.png) button that is to the right of the last tab.
-*   To close a tab, press the corresponding ![](Tabs_image.png) button.
-*   For multitasking, tabs can be used alongside <a class="reference-link" href="Split%20View.md">Split View</a>. Each tab can have one or more notes, displayed horizontally.
-*   Tabs can be reordered by drag-and-dropping it into a new position.
-*   An existing tab can be displayed in a new window by dragging the tab upwards or downwards. It is not possible to combine tabs back into another window.
+*   要创建新标签页，请按最后一个标签页右侧的 ![](1_Tabs_image.png) 按钮。
+*   要关闭标签页，请按相应的 ![](Tabs_image.png) 按钮。
+*   对于多任务处理，标签页可以与<a class="reference-link" href="Split%20View.md">分屏视图</a>一起使用。每个标签页可以包含一个或多个笔记，水平显示。
+*   可以通过拖放将标签页重新排序到新位置。
+*   可以通过向上或向下拖动标签页，在的新窗口中显示现有标签页。无法将标签页重新合并到另一个窗口中。
 
-## Keyboard interaction
+## 键盘交互
 
-Since tabs are a commonly used feature, there are multiple keyboard shortcuts that can be used:
+由于标签页是常用功能，因此有多个键盘快捷键可以使用：
 
-*   <kbd>Ctrl</kbd>+<kbd>T</kbd> to open a new tab.
-*   <kbd>Ctrl</kbd>+<kbd>W</kbd> to close the current tab.
-*   <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd> to reopen the last closed tab.
-*   <kbd>Ctrl</kbd>+<kbd>Tab</kbd> and <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Tab</kbd> to go to the next or previous tab.
-*   <kbd>Ctrl</kbd>+<kbd>1</kbd>, <kbd>Ctrl</kbd>+<kbd>2</kbd>, up to <kbd>Ctrl</kbd>+<kbd>9</kbd> to activate the first, second and up to ninth tab.
-*   There is also a shortcut to go to the last tab, but it is not assigned a key by default.
+*   <kbd>Ctrl</kbd>+<kbd>T</kbd> 打开新标签页。
+*   <kbd>Ctrl</kbd>+<kbd>W</kbd> 关闭当前标签页。
+*   <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd> 重新打开最近关闭的标签页。
+*   <kbd>Ctrl</kbd>+<kbd>Tab</kbd> 和 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Tab</kbd> 转到下一个或上一个标签页。
+*   <kbd>Ctrl</kbd>+<kbd>1</kbd>、<kbd>Ctrl</kbd>+<kbd>2</kbd>，一直到 <kbd>Ctrl</kbd>+<kbd>9</kbd> 激活第一个、第二个直到第九个标签页。
+*   还有一个转到最后一个标签页的快捷键，但默认情况下未分配按键。
 
-## Mobile
+## 移动端
 
 <figure class="image image-style-align-right image_resized" style="width:34.12%;"><img style="aspect-ratio:1242/2688;" src="Tabs_IMG_1767.PNG" width="1242" height="2688"></figure>
 
-Tabs are also supported on the <a class="reference-link" href="../../Installation%20%26%20Setup/Mobile%20Frontend.md">Mobile Frontend</a>.
+<a class="reference-link" href="../../Installation%20%26%20Setup/Mobile%20Frontend.md">移动端前端</a>也支持标签页。
 
-Since v0.102.0, the tabs are displayed by pressing the dedicated tab switcher button in the <a class="reference-link" href="Launch%20Bar.md">Launch Bar</a>. In this view the tabs are laid out on a grid with a preview of the note content.
+自 v0.102.0 版本起，通过按下<a class="reference-link" href="Launch%20Bar.md">启动栏</a>中的专用标签切换按钮来显示标签页。在此视图中，标签页以网格布局显示，并带有笔记内容的预览。
 
-The context menu button at the top-right of the popup allows creating a new tab, reopening the last closed tab and closing all the tabs.
+弹出窗口右上角的上下文菜单按钮允许创建新标签页、重新打开最近关闭的标签页以及关闭所有标签页。
 
-<a class="reference-link" href="Split%20View.md">Split View</a>s are also indicated in the tab switcher, with two titles displayed in a tab.
+<a class="reference-link" href="Split%20View.md">分屏视图</a>也会在标签切换器中显示，标签页中会显示两个标题。
 
 > [!NOTE]
-> Versions prior to v0.102.0 also supported tabs, but they were displayed directly above the <a class="reference-link" href="Launch%20Bar.md">Launch Bar</a>. The decision to use a more mobile-like tab switcher was taken because the original tab bar could not support many tabs at once and the new design better aligns with how mobile applications handle tabs.
+> v0.102.0 之前的版本也支持标签页，但它们直接显示在<a class="reference-link" href="Launch%20Bar.md">启动栏</a>上方。决定采用更类似移动端的标签切换器，是因为原始的标签栏无法同时支持太多标签页，并且新设计更符合移动应用程序处理标签页的方式。

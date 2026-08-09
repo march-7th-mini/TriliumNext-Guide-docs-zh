@@ -1,38 +1,39 @@
-# Attribute Inheritance
-Inheritance refers to the process of having a [label](Labels.md) or a [relation](Relations.md) shared across multiple notes, generally in parent-child relations (or anywhere if using templates).
+# 属性继承
 
-## Standard Inheritance
+继承是指让一个[标签](Labels.md)或[关系](Relations.md)在多个笔记之间共享的过程，通常发生在父子关系中（如果使用模板，则可以在任何地方实现）。
 
-In Trilium, attributes can be automatically inherited by child notes if they have the `isInheritable` flag set to `true`. This means the attribute (a key-value pair) is applied to the note and all its descendants.
+## 标准继承
 
-To make an attribute inheritable, simply use the visual editor for <a class="reference-link" href="Labels.md">Labels</a> or <a class="reference-link" href="Relations.md">Relations</a>. Alternatively, the attribute can be manually defined where `#myLabel=value` becomes `#myLabel(inheritable)=value` when inheritable.
+在 Trilium 中，如果属性设置了 `isInheritable` 标志为 `true`，则子笔记可以自动继承该属性。这意味着该属性（一个键值对）会应用到该笔记及其所有后代笔记上。
 
-As an example, the `archived` label can be set to be inheritable, allowing you to hide a whole subtree of notes from searches and other dialogs by applying this label at the top level.
+要使属性可继承，只需使用[标签](Labels.md)或[关系](Relations.md)的可视化编辑器即可。或者，也可以手动定义属性，其中 `#myLabel=value` 在可继承时变为 `#myLabel(inheritable)=value`。
 
-Standard inheritance forces all the notes that are children (and sub-children) of a note to have that particular label or relation. If there is a need to have some notes not inherit one of the labels, then _copying inheritance_ or _template inheritance_ needs to be used instead.
+例如，`archived` 标签可以设置为可继承，这样你可以通过在顶层应用该标签，从而在搜索和其他对话框中隐藏整个笔记子树。
 
-## Copying Inheritance
+标准继承强制一个笔记的所有子笔记（以及子笔记的子笔记）都拥有该特定的标签或关系。如果有需要让某些笔记不继承其中一个标签，则需要使用_复制继承_或_模板继承_。
 
-Copying inheritance differs from standard inheritance by using a `child:` prefix in the attribute name. This prefix causes new child notes to automatically receive specific attributes from the parent note. These attributes are independent of the parent and will persist even if the note is moved elsewhere.
+## 复制继承
 
-If a parent note has the label `#child:exampleAttribute`, all newly created child notes (one level deep) will inherit the `#exampleAttribute` label. This can be useful for setting default properties for notes in a specific section.
+复制继承与标准继承的不同之处在于，它在属性名称中使用了 `child:` 前缀。此前缀会使新创建的子笔记自动从父笔记接收特定的属性。这些属性独立于父笔记，即使笔记被移动到其他地方，这些属性也会保留。
 
-Similarly, for relations use `~child:myRelation`.
+如果父笔记有 `#child:exampleAttribute` 标签，则所有新创建的子笔记（一层深度）都将继承 `#exampleAttribute` 标签。这对于为特定部分的笔记设置默认属性非常有用。
 
-Due to the way it's designed, copying inheritance cannot be used to cascade infinitely within a hierarchy. For that use case, consider using either standard inheritance or templates.
+同样，对于关系，使用 `~child:myRelation`。
 
-### Chained inheritance
+由于其设计方式，复制继承不能在层级结构中无限级联。对于这种情况，请考虑使用标准继承或模板。
 
-It is possible to define labels across multiple levels of depth. For example, `#child:child:child:foo` applied to a root note would create:
+### 链式继承
 
-*   `#child:child:foo` on the first-level children.
-*   `#child:foo` on the second-level children.
-*   `#foo` on the third-level children.
+可以在多个深度级别上定义标签。例如，应用于根笔记的 `#child:child:child:foo` 将会创建：
 
-Similarly, use `~child:child:child:foo` if dealing with relations.
+*   在第一级子笔记上创建 `#child:child:foo`。
+*   在第二级子笔记上创建 `#child:foo`。
+*   在第三级子笔记上创建 `#foo`。
 
-Do note that same as simple copying inheritance, the changes will not apply retroactively to existing notes in the hierarchy, it will only apply to the newly created notes.
+同样，如果处理的是关系，请使用 `~child:child:child:foo`。
 
-## Template Inheritance
+请注意，与简单的复制继承一样，这些更改不会追溯应用于层级结构中已有的笔记，只会应用于新创建的笔记。
 
-Attributes can also be inherited from <a class="reference-link" href="../Templates.md">Templates</a>. When a new note is created using a template, it inherits the attributes defined in that template. This is particularly useful for maintaining consistency across notes that follow a similar structure or function.
+## 模板继承
+
+属性也可以从[模板](../Templates.md)中继承。当使用模板创建新笔记时，它会继承该模板中定义的属性。这对于保持遵循相似结构或功能的笔记之间的一致性特别有用。

@@ -1,106 +1,106 @@
-# Promoted Attributes
+# 提升属性
 <figure class="image image_resized" style="width:61.4%;"><img style="aspect-ratio:938/368;" src="Promoted Attributes_image.png" width="938" height="368"></figure>
 
-Promoted attributes are [attributes](../Attributes.md) which are displayed prominently in the UI which allow them to be easily viewed and edited.
+提升属性是在界面中突出显示的[属性](../Attributes.md)，便于查看和编辑。
 
-One way of seeing promoted attributes is as a kind of form with several fields. Each field is just regular attribute, the only difference is that they appear on the note itself.
+将提升属性视为一种包含多个字段的表单是理解它的一种方式。每个字段只是一个常规属性，唯一的区别在于它们显示在笔记本身之上。
 
-Attributes can be pretty useful since they allow for querying and script automation etc. but they are also inconveniently hidden. This allows you to select few of the important ones and push them to the front of the user.
+属性非常有用，因为它们支持查询和脚本自动化等，但同时也存在不便隐藏的问题。这允许您选择几个重要的属性并将其推到用户面前。
 
-## Attribute definition
+## 属性定义
 
 <figure class="image image-style-align-right image_resized" style="width:50%;"><img style="aspect-ratio:885/742;" src="2_Promoted Attributes_image.png" width="885" height="742"></figure>
 
-In order to have promoted attributes, there needs to be a way to define them.
+为了拥有提升属性，需要有一种方式来定义它们。
 
-Technically, attributes are only name-value pairs where both name and value are strings.
+从技术上讲，属性只是名称-值对，其中名称和值都是字符串。
 
-The _Attribute definition_ specifies how should this value be interpreted:
+_属性定义_ 指定了应如何解释此值：
 
-*   Is it just string, or is it a date?
-*   Should we allow multiple values or note?
-*   Should we _promote_ the attribute or not?
+*   它只是字符串，还是日期？
+*   我们应该允许多个值还是笔记？
+*   我们是否应该_提升_该属性？
 
-## Types of attributes
+## 属性类型
 
-Attribute definitions have a dedicated type field which will change how the value will be edited in the promoted attributes section.
+属性定义有一个专门的类型字段，该字段将更改在提升属性部分中编辑值的方式。
 
-The following types are supported:
+支持以下类型：
 
-*   _Text_, the default option which allows any type of text to be edited, similar to normal labels that don't have a type associated.
-*   _Multi-line text_, similar to a normal text field, but rendered in a bigger text box that also supports writing on multiple lines.
-*   _Number_, will display as a number input field with up/down arrows.
-    *   Optionally a _precision_ which sets how many decimals the value steps by and is displayed with.
-*   _Boolean_, which renders as a checkbox for a true/false value.
-*   _Select,_ which provides a list of user-defined options when editing.
-    *   The list is not fixed, meaning that new options can be easily added from the promoted attribute.
-    *   Renaming an option does not change the existing values since the value is stored as text. Consider a [bulk rename](../Bulk%20Actions.md).
-    *   The items do not have a custom color or icon. This is intentional as selects are meant to be light-weight. For a more customizable option, consider using <a class="reference-link" href="Relations.md">Relations</a> instead which use notes as items and those notes can be colorized and also carry an icon.
-*   _Date,_ which provides a date picker.
-*   _Date & Time,_ which provides a date & time picker.
-*   _Time,_ which provides a time picker.
-*   _URL,_ which provides a button to open the web address in a new window.
-*   _Email_, which provides a button to quickly send an email to that address using your operating system's default app.
-*   _Phone_, which provides a button to quickly call that number using your operating system's default app.
-*   _Color_, which provides a color picker and a way to remove the value.
-*   _Relation_, which points to another note and uses <a class="reference-link" href="Relations.md">Relations</a> instead of <a class="reference-link" href="Labels.md">Labels</a>.
+*   _文本_，默认选项，允许编辑任何类型的文本，类似于没有关联类型的普通标签。
+*   _多行文本_，类似于普通文本字段，但在更大的文本框中呈现，也支持多行书写。
+*   _数字_，将显示为带有向上/向下箭头的数字输入字段。
+    *   可选地设置_精度_，该精度设置值步进和显示的小数位数。
+*   _布尔值_，呈现为用于真/假值的复选框。
+*   _选择_，在编辑时提供用户自定义选项列表。
+    *   该列表不是固定的，这意味着可以从提升属性轻松添加新选项。
+    *   重命名选项不会更改现有值，因为值以文本形式存储。请考虑使用[批量重命名](../Bulk%20Actions.md)。
+    *   项目没有自定义颜色或图标。这是有意为之，因为选择旨在轻量级。如需更多可自定义选项，请考虑使用<a class="reference-link" href="Relations.md">关系</a>，它使用笔记作为项目，这些笔记可以着色并带有图标。
+*   _日期_，提供日期选择器。
+*   _日期和时间_，提供日期和时间选择器。
+*   _时间_，提供时间选择器。
+*   _URL_，提供在新窗口中打开网页地址的按钮。
+*   _电子邮件_，提供使用操作系统默认应用程序快速向该地址发送电子邮件的按钮。
+*   _电话_，提供使用操作系统默认应用程序快速拨打该号码的按钮。
+*   _颜色_，提供颜色选择器和移除值的方法。
+*   _关系_，指向另一个笔记，并使用<a class="reference-link" href="Relations.md">关系</a>而不是<a class="reference-link" href="Labels.md">标签</a>。
 
 > [!NOTE]
-> For label-based attributes, these types are not enforced by the attribute system, meaning that changing the type afterwards does not guarantee that the values in it correspond to the type (e.g. turning a text into a number).
+> 对于基于标签的属性，属性系统不强制执行这些类型，这意味着之后更改类型并不能保证其中的值与类型对应（例如，将文本转换为数字）。
 
-## Creating a new promoted attribute definition
+## 创建新的提升属性定义
 
-To create a new promoted attribute:
+要创建新的提升属性：
 
-1.  Go to a note.
-2.  Go to _Owned Attributes_ in the <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Ribbon.md">Ribbon</a>.
-3.  Press the + button.
-4.  Select either _Add new label definition_ or _Add new relation definition_.
-5.  Select the name which will be name of the label or relation that will be created when the promoted attribute is edited.
-6.  Ensure _Promoted_ is checked in order to display it at the top of notes.
-7.  Optionally, choose an _Alias_ which will be displayed next to the promoted attribute instead of the attribute name. Generally it's best to choose a “user-friendly” name since it can contain spaces and other characters which are not supported as attribute names.
-8.  Check _Inheritable_ to apply it to this note and all its descendants. To keep it only for the current note, un-check it.
-9.  Press “Save & Close” to apply the changes.
+1.  转到某个笔记。
+2.  转到<a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Ribbon.md">功能区</a>中的_拥有的属性_。
+3.  按 + 按钮。
+4.  选择_添加新标签定义_或_添加新关系定义_。
+5.  选择名称，该名称将是编辑提升属性时创建的标签或关系的名称。
+6.  确保选中_提升_以将其显示在笔记顶部。
+7.  可选地，选择一个_别名_，该别名将显示在提升属性旁边，而不是属性名称。通常最好选择一个“用户友好”的名称，因为它可以包含空格和其他不支持作为属性名称的字符。
+8.  选中_可继承_以将其应用于此笔记及其所有后代。若要仅保留给当前笔记，请取消选中。
+9.  按“保存并关闭”以应用更改。
 
-## How attribute definitions actually work
+## 属性定义的实际工作原理
 
-When a new promoted attribute definition is created, it creates a corresponding label prefixed with either `label` or `relation`, depending on the definition type:
+创建新的提升属性定义时，它会创建一个相应的标签，前缀为 `label` 或 `relation`，具体取决于定义类型：
 
 ```
 #label:myColor(inheritable)="promoted,alias=Color,multi,color"
 ```
 
-The only purpose of the attribute definition is to set up a template. If the attribute was marked as promoted, then it's also displayed to the user for easy editing.
+属性定义的唯一目的是设置模板。如果属性被标记为提升，那么它也会显示给用户以便于编辑。
 
 |  |  |
 | --- | --- |
-| <figure class="image"><img style="aspect-ratio:495/157;" src="1_Promoted Attributes_image.png" width="495" height="157"></figure> | Notice how the promoted attribute definition only creates a “Due date” box above the text content. |
-| <figure class="image"><img style="aspect-ratio:663/160;" src="3_Promoted Attributes_image.png" width="663" height="160"></figure> | Once a value is set by the user, a new label (or relation, depending on the type) is created. The name of the attribute matches one set when creating the promoted attribute. |
+| <figure class="image"><img style="aspect-ratio:495/157;" src="1_Promoted Attributes_image.png" width="495" height="157"></figure> | 请注意提升属性定义如何在文本内容上方仅创建一个“截止日期”框。 |
+| <figure class="image"><img style="aspect-ratio:663/160;" src="3_Promoted Attributes_image.png" width="663" height="160"></figure> | 一旦用户设置了值，就会创建一个新的标签（或关系，取决于类型）。属性名称与创建提升属性时设置的名称匹配。 |
 
-So there's one attribute for value and one for definition. But notice how an definition attribute can be made [Inheritable](Attribute%20Inheritance.md), meaning that it's also applied to all descendant notes. In this case, the definition used for the whole sub-tree while "value" attributes are for each not individually.
+因此，有一个用于值的属性和一个用于定义的属性。但请注意，定义属性可以设置为[可继承](Attribute%20Inheritance.md)，这意味着它也应用于所有后代笔记。在这种情况下，定义用于整个子树，而“值”属性则针对每个笔记单独使用。
 
-## Using system attributes
+## 使用系统属性
 
-It's possible to create promoted attributes out of system attributes, to be able to easily alter them.
+可以从系统属性创建提升属性，以便轻松更改它们。
 
-Here are a few practical examples:
+以下是一些实际示例：
 
-*   <a class="reference-link" href="../../Collections.md">Collections</a> already make use of this practice, for example:
-    *   Calendars add “Start Date”, “End Date”, “Start Time” and “End Time” as promoted attributes. These map to system attributes such as `startDate` which are then interpreted by the calendar view.
-    *   <a class="reference-link" href="../../Collections/Presentation.md">Presentation</a> adds a “Background” promoted attribute for each of the slide to easily be able to customize.
-*   The Trilium documentation (which is edited in Trilium) uses a promoted attribute to be able to easily edit the `#shareAlias` (see <a class="reference-link" href="../Sharing.md">Sharing</a>) in order to form clean URLs.
-*   If you always edit a particular system attribute such as `#color`, simply create a promoted attribute for it to make it easier.
+*   <a class="reference-link" href="../../Collections.md">集合</a>已经利用了这种做法，例如：
+    *   日历添加“开始日期”、“结束日期”、“开始时间”和“结束时间”作为提升属性。这些映射到诸如 `startDate` 之类的系统属性，然后由日历视图解释。
+    *   <a class="reference-link" href="../../Collections/Presentation.md">演示文稿</a>为每张幻灯片添加一个“背景”提升属性，以便轻松自定义。
+*   Trilium 文档（在 Trilium 中编辑）使用提升属性来轻松编辑 `#shareAlias`（参见<a class="reference-link" href="../Sharing.md">分享</a>）以形成简洁的 URL。
+*   如果您经常编辑特定的系统属性，例如 `#color`，只需为其创建一个提升属性即可使其更容易。
 
-### Inverse relation
+### 反向关系
 
-Some relations always occur in pairs - my favorite example is on the family. If you have a note representing husband and note representing wife, then there might be a relation between those two of `isPartnerOf`. This is bidirectional relationship - meaning that if a relation is pointing from husband to wife then there should be always another relation pointing from wife to husband.
+有些关系总是成对出现——我最喜欢的例子是家庭关系。如果您有一个代表丈夫的笔记和一个代表妻子的笔记，那么这两个笔记之间可能存在 `isPartnerOf` 的关系。这是一种双向关系——意味着如果有一个关系从丈夫指向妻子，那么应该总是有另一个关系从妻子指向丈夫。
 
-Another example is with parent-child relationship. Again these always occur in pairs, but in this case it's not exact same relation - the one going from parent to child might be called `isParentOf` and the other one going from child to parent might be called `isChildOf`.
+另一个例子是父子关系。同样，这些总是成对出现，但在这种情况下，关系并不完全相同——从父到子的关系可能称为 `isParentOf`，而从子到父的关系可能称为 `isChildOf`。
 
-Relation definition allows you to specify such "inverse relation" - for the relation you just define you specify which is the inverse relation. Note that in the second example we should have two relation definitions - one for `isParentOf` which defines `isChildOf` as inverse relation and then second relation definition for `isChildOf` which defines `isParentOf` as inverse relation.
+关系定义允许您指定这种“反向关系”——对于您刚刚定义的关系，您可以指定哪个是反向关系。请注意，在第二个示例中，我们应该有两个关系定义——一个用于 `isParentOf`，将 `isChildOf` 定义为反向关系，然后第二个关系定义用于 `isChildOf`，将 `isParentOf` 定义为反向关系。
 
-What this does internally is that whenever we save a relation which has defined inverse relation, we check that this inverse relation exists on the relation target note. Similarly, when we delete relation, we also delete inverse relation on the target note.
+这在内部所做的是，每当我们保存一个已定义反向关系的关系时，我们都会检查该反向关系是否存在于关系目标笔记上。类似地，当我们删除关系时，我们也会删除目标笔记上的反向关系。
 
-## See also
+## 另请参阅
 
-*   The <a class="reference-link" href="../../Collections/Table.md">Table</a> collection makes heavy use of promoted attributes to define the columns of the table, since they already carry the type information. When made inheritable, it's also easy to change those fields when the child notes are opened.
+*   <a class="reference-link" href="../../Collections/Table.md">表格</a>集合大量使用提升属性来定义表格的列，因为它们已经携带了类型信息。当设置为可继承时，在打开子笔记时更改这些字段也很容易。

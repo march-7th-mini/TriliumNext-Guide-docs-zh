@@ -1,30 +1,31 @@
-# Using the desktop application as a server
-Sometimes, setting up a [dedicated server installation](../Server%20Installation.md) is not feasible. The desktop application ships with a fully functional server instance by default.
+# 将桌面应用用作服务器
 
-For security reasons, this feature is **not enabled** by default. To enable it, enable _Network access_ in <a class="reference-link" href="../../Scripting/Security.md">Security</a>.
+有时，搭建[专用服务器安装](../Server%20Installation.md)并不可行。桌面应用默认自带一个功能完整的服务器实例。
 
-After enabling network access and restarting the application, you can access this web interface locally by navigating to [http://localhost:37840/login](http://localhost:37840/login).
+出于安全原因，此功能**默认未启用**。要启用它，请在<a class="reference-link" href="../../Scripting/Security.md">安全</a>中启用_网络访问_。
+
+启用网络访问并重启应用后，您可以通过访问 [http://localhost:37840/login](http://localhost:37840/login) 在本地访问此 Web 界面。
 
 > [!NOTE]
-> The server embedded in the desktop application will only run as long as the desktop application itself is running. So closing the application will also close the server. To overcome this, you can try hiding the application in the system tray.
+> 桌面应用中嵌入的服务器仅在桌面应用本身运行时才会运行。因此，关闭应用也会关闭服务器。要解决此问题，您可以尝试将应用隐藏到系统托盘中。
 
-## Mobile interface
+## 移动端界面
 
-By default, this will display the desktop user interface, even on mobile. To switch to the mobile version, simply go to the <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Global%20menu.md">Global menu</a> and select “Switch to the mobile version”.
+默认情况下，即使在移动设备上，也会显示桌面用户界面。要切换到移动版本，只需进入<a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Global%20menu.md">全局菜单</a>并选择“切换到移动版本”。
 
-## Allowing the port externally on Windows with Windows Defender Firewall
+## 在 Windows 上使用 Windows Defender 防火墙允许外部访问端口
 
-First, find out the IP of your desktop server by running `ipconfig` in your local terminal. Then try accessing `http://<ip>:37840/login` on another device. If it doesn't work, then most likely the port is blocked by your operating system's firewall.
+首先，在本地终端中运行 `ipconfig` 找出桌面服务器的 IP。然后尝试在另一台设备上访问 `http://<ip>:37840/login`。如果无法访问，很可能是端口被操作系统的防火墙阻止了。
 
-If you use Windows Defender Firewall:
+如果您使用 Windows Defender 防火墙：
 
-1.  Go to Windows's start menu and look for “Windows Defender Firewall with Advanced Security”.
-2.  Go to “Inbound Rules” on the left tree, and select “New Rule” in the “Actions” sidebar on the right.
-3.  Select “Port” and press “Next”.
-4.  Type in `37840` in the “Specific local ports” section and then press “Next”.
-5.  Leave “Allow the connection” checked and press “Next”.
-6.  Configure the networks to apply to (check all if unsure) and then press “Next”.
-7.  Add an appropriate name to the rule (e.g. “Trilium Notes”) and press “Finish”.
+1.  转到 Windows 开始菜单，搜索“高级安全 Windows Defender 防火墙”。
+2.  在左侧树中转到“入站规则”，然后在右侧的“操作”侧边栏中选择“新建规则”。
+3.  选择“端口”，然后点击“下一步”。
+4.  在“特定本地端口”部分输入 `37840`，然后点击“下一步”。
+5.  保持选中“允许连接”，然后点击“下一步”。
+6.  配置要应用的网络（如果不确定，请全部勾选），然后点击“下一步”。
+7.  为规则添加适当的名称（例如“Trilium Notes”），然后点击“完成”。
 
 > [!WARNING]
-> Since v0.104.0, the port used by Trilium is accessible only on `localhost`. To enable across the local network, see <a class="reference-link" href="Network%20Access.md">Network Access</a>.
+> 自 v0.104.0 起，Trilium 使用的端口仅可在 `localhost` 上访问。要允许在本地网络中访问，请参阅<a class="reference-link" href="Network%20Access.md">网络访问</a>。

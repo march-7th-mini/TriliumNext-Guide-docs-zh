@@ -1,19 +1,19 @@
-# Releasing a new version
-Releasing is mostly handled by the CI:
+# 发布新版本
+发布主要由 CI 处理：
 
-*   The version on GitHub is published automatically, including the description with the change log which is taken from the documentation.
-*   A PR is created automatically on the Winget repository to update to the new version.
+*   GitHub 上的版本会自动发布，包括取自文档的变更日志描述。
+*   会在 Winget 仓库中自动创建一个 PR，以更新到新版本。
 
-Releases are usually made directly from the `main` branch. For hot-fixes the process is the same but with a different branch, consult the <a class="reference-link" href="../Branching%20strategy.md">Branching strategy</a> for more information.
+发布通常直接从 `main` 分支进行。对于热修复，流程相同，但使用不同的分支，更多信息请参阅 <a class="reference-link" href="../Branching%20strategy.md">分支策略</a>。
 
-The process is as follows:
+流程如下：
 
-1.  Edit the <a class="reference-link" href="../Documentation.md">Documentation</a> to add a corresponding entry in the _Release notes_ section.
-2.  In the root `package.json`, set `version` to the new version to be released.
-3.  Run `chore:update-version` to automatically update the version of the rest of the `package.json` files.
-4.  Run `pnpm i` to update the package lock as well.
-5.  Commit the changes to the `package.json` files and the `package-lock.json`. The commit message is usually `chore(release): prepare for v1.2.3`.
-6.  Tag the newly created commit: `git tag v1.2.3`
-7.  Push the commit and the newly created tag: `git push; git push --tags`.
-8.  Wait for the CI to finish.
-9.  When the release is automatically created in GitHub, download it to make sure it works OK.
+1.  编辑 <a class="reference-link" href="../Documentation.md">文档</a>，在 _发布说明_ 部分添加相应条目。
+2.  在根目录的 `package.json` 中，将 `version` 设置为要发布的新版本。
+3.  运行 `chore:update-version` 以自动更新其余 `package.json` 文件的版本。
+4.  同时运行 `pnpm i` 以更新包锁文件。
+5.  提交对 `package.json` 文件和 `package-lock.json` 的更改。提交信息通常为 `chore(release): prepare for v1.2.3`。
+6.  为新创建的提交打标签：`git tag v1.2.3`
+7.  推送提交和新创建的标签：`git push; git push --tags`。
+8.  等待 CI 完成。
+9.  当版本在 GitHub 中自动创建后，下载它以确保其正常工作。

@@ -1,32 +1,33 @@
 # HTTPS (TLS)
-Configuring TLS is essential for [server installation](../Server%20Installation.md) in Trilium. This guide details the steps to set up TLS within Trilium itself.
+
+在 Trilium 中，配置 TLS 对于[服务器安装](../Server%20Installation.md)至关重要。本指南详细介绍了在 Trilium 中设置 TLS 的步骤。
 
 > [!TIP]
-> While Trilium supports HTTPS on its own, it's generally a good idea to use a [reverse proxy](2.%20Reverse%20proxy.md) instead with TLS termination. You can follow a [guide like this](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-20-04) for such setups.
+> 虽然 Trilium 本身支持 HTTPS，但通常建议使用带有 TLS 终止的[反向代理](2.%20Reverse%20proxy.md)。您可以按照[此类指南](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-20-04)进行设置。
 
-## Obtaining a TLS Certificate
+## 获取 TLS 证书
 
-You have two options for obtaining a TLS certificate:
+您有两种获取 TLS 证书的选项：
 
-*   **Recommended**: Obtain a TLS certificate signed by a root certificate authority. For personal use, [Let's Encrypt](https://letsencrypt.org) is an excellent choice. It is free, automated, and straightforward. Certbot can facilitate automatic TLS setup.
-*   Generate a self-signed certificate. This option is not recommended due to the additional complexity of importing the certificate into all machines connecting to the server.
+*   **推荐**：获取由根证书颁发机构签名的 TLS 证书。对于个人使用，[Let's Encrypt](https://letsencrypt.org) 是一个极好的选择。它免费、自动化且简单直接。Certbot 可以简化自动 TLS 设置。
+*   生成自签名证书。由于需要将证书导入所有连接到服务器的机器，增加了额外的复杂性，因此不推荐此选项。
 
-## Modifying `config.ini`
+## 修改 `config.ini`
 
-Once you have your certificate, modify the `config.ini` file in the [data directory](../Data%20directory.md) to configure Trilium to use it:
+获得证书后，修改[数据目录](../Data%20directory.md)中的 `config.ini` 文件，以配置 Trilium 使用该证书：
 
 ```
 [Network]
 port=8080
-# Set to true for TLS/SSL/HTTPS (secure), false for HTTP (insecure).
+# 设置为 true 以启用 TLS/SSL/HTTPS（安全），设置为 false 以使用 HTTP（不安全）。
 https=true
-# Path to the certificate (run "bash bin/generate-cert.sh" to generate a self-signed certificate).
-# Relevant only if https=true
+# 证书路径（运行 "bash bin/generate-cert.sh" 可生成自签名证书）。
+# 仅在 https=true 时相关
 certPath=/[username]/.acme.sh/[hostname]/fullchain.cer
 keyPath=/[username]/.acme.sh/[hostname]/example.com.key
 ```
 
-You can also review the [configuration](../../Advanced%20Usage/Configuration%20\(config.ini%20or%20environment%20variables\).md) file to provide all `config.ini` values as environment variables instead. For example, you can configure TLS using environment variables:
+您也可以查看[配置](../../Advanced%20Usage/Configuration%20\(config.ini%20or%20environment%20variables\).md)文件，将所有 `config.ini` 值作为环境变量提供。例如，您可以使用环境变量配置 TLS：
 
 ```
 export TRILIUM_NETWORK_HTTPS=true
@@ -34,21 +35,21 @@ export TRILIUM_NETWORK_CERTPATH=/path/to/cert.pem
 export TRILIUM_NETWORK_KEYPATH=/path/to/key.pem
 ```
 
-The above example shows how this is set up in an environment where the certificate was generated using Let's Encrypt's ACME utility. Your paths may differ. For Docker installations, ensure these paths are within a volume or another directory accessible by the Docker container, such as `/home/node/trilium-data/[DIR IN DATA DIRECTORY]`.
+上面的示例展示了在使用 Let's Encrypt 的 ACME 工具生成证书的环境中如何进行设置。您的路径可能不同。对于 Docker 安装，请确保这些路径位于 Docker 容器可访问的卷或其他目录中，例如 `/home/node/trilium-data/[DIR IN DATA DIRECTORY]`。
 
-After configuring `config.ini`, restart Trilium and access the hostname using "https".
+配置 `config.ini` 后，重启 Trilium 并使用 "https" 访问主机名。
 
-## Self-Signed Certificate
+## 自签名证书
 
-If you opt to use a self-signed certificate for your server instance, note that the desktop instance will not trust it by default.
+如果您选择为服务器实例使用自签名证书，请注意桌面实例默认不会信任该证书。
 
-To bypass this, disable certificate validation by setting the following environment variable (for Linux):
+要绕过此问题，请通过设置以下环境变量来禁用证书验证（适用于 Linux）：
 
 ```
 export NODE_TLS_REJECT_UNAUTHORIZED=0
 trilium
 ```
 
-Trilium provides scripts to start in this mode, such as `trilium-no-cert-check.bat` for Windows.
+Trilium 提供了以这种模式启动的脚本，例如适用于 Windows 的 `trilium-no-cert-check.bat`。
 
-**Warning**: Disabling TLS certificate validation is insecure. Proceed only if you fully understand the implications.
+**警告**：禁用 TLS 证书验证是不安全的。只有在完全理解其影响的情况下才继续操作。

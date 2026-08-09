@@ -1,11 +1,11 @@
-# Theme Gallery
-These are user-created themes which were made publicly available:
+# 主题画廊
+以下是由用户创建并公开发布的主题：
 
-## Legacy Themes
+## 传统主题
 
-These themes may or may not be compatible with the latest versions of TriliumNext and are based on the original/legacy theme.
+这些主题可能与最新版本的 TriliumNext 兼容，也可能不兼容，它们基于原始/传统主题。
 
-| Theme | Author |
+| 主题 | 作者 |
 | --- | --- |
 | [Midnight](https://github.com/tobealive/trilium-midnight-theme) | [tobealive](https://github.com/tobealive) |
 | [EOTE](https://github.com/tobealive/trilum-eote-theme) | [tobealive](https://github.com/tobealive) |
@@ -23,8 +23,8 @@ These themes may or may not be compatible with the latest versions of TriliumNex
 | [Bear Note Dark](https://github.com/AllanZyne/trilium-bear-theme) | [AllanZyne](https://github.com/AllanZyne) |
 | [Miku Hatsune](https://github.com/Sebiann/miku-hatsune-trilium-theme) | [Sebiann](https://github.com/Sebiann) |
 | [Midnight](https://github.com/cwilliams5/Midnight-Trilium-Dark-Mode) | [cwilliams5](https://github.com/cwilliams5) |
-| [Blue](https://github.com/SiriusXT/trilium-theme-blue) (light) | [SiriusXT](https://github.com/SiriusXT) |
-| [Blue](https://github.com/SiriusXT/trilium-theme-blue) (dark) | [SiriusXT](https://github.com/SiriusXT) |
+| [Blue](https://github.com/SiriusXT/trilium-theme-blue) (浅色) | [SiriusXT](https://github.com/SiriusXT) |
+| [Blue](https://github.com/SiriusXT/trilium-theme-blue) (深色) | [SiriusXT](https://github.com/SiriusXT) |
 
 > [!TIP]
-> If you would like to add your theme to this gallery, write a new post in [👐 Show and tell](https://github.com/TriliumNext/Trilium/discussions/categories/show-and-tell).
+> 如果您想将自己的主题添加到本画廊，请在 [👐 Show and tell](https://github.com/TriliumNext/Trilium/discussions/categories/show-and-tell) 中发布新帖子。

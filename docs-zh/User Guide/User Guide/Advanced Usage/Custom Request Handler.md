@@ -1,20 +1,21 @@
-# Custom Request Handler
-Trilium provides a mechanism for [scripts](../Scripting.md) to open a public REST endpoint. This opens a way for various integrations with other services - a simple example would be creating new note from Slack by issuing a slash command (e.g. `/trilium buy milk`).
+# 自定义请求处理器
 
-## Create note from outside Trilium
+Trilium 提供了一种机制，允许[脚本](../Scripting.md)开放一个公共 REST 端点。这为与其他服务的各种集成开辟了道路——一个简单的例子是通过 Slack 发出斜杠命令（例如 `/trilium buy milk`）来创建新笔记。
 
-Let's take a look at an example. The goal is to provide a REST endpoint to which we can send title and content and Trilium will create a note.
+## 从 Trilium 外部创建笔记
 
-We'll start with creating a JavaScript backend [code note](../Note%20Types/Code.md) containing:
+让我们看一个例子。目标是提供一个 REST 端点，我们可以向其发送标题和内容，然后 Trilium 将创建一个笔记。
+
+我们将从创建一个包含以下内容的 JavaScript 后端[代码笔记](../Note%20Types/Code.md)开始：
 
 ```
 const {req, res} = api;
 const {secret, title, content} = req.body;
 
 if (req.method == 'POST' && secret === 'secret-password') {
-    // notes must be saved somewhere in the tree hierarchy specified by a parent note. 
-    // This is defined by a relation from this code note to the "target" parent note
-    // alternatively you can just use constant noteId for simplicity (get that from "Note Info" dialog of the desired parent note)
+    // 笔记必须保存在由父笔记指定的树层次结构中的某个位置。
+    // 这是通过从此代码笔记到“目标”父笔记的关系来定义的。
+    // 或者，为简单起见，您可以直接使用常量 noteId（从所需父笔记的“笔记信息”对话框中获取）
     const targetParentNoteId = api.currentNote.getRelationValue('targetNote');
     
     const {note} = api.createTextNote(targetParentNoteId, title, content);
@@ -27,14 +28,14 @@ else {
 }
 ```
 
-This script note has also following two attributes:
+此脚本笔记还具有以下两个属性：
 
-*   label `#customRequestHandler` with value `create-note`
-*   relation `~targetNote` pointing to a note where new notes should be saved
+*   标签 `#customRequestHandler`，值为 `create-note`
+*   关系 `~targetNote`，指向新笔记应保存到的笔记
 
-### Explanation
+### 解释
 
-Let's test this by using an HTTP client to send a request:
+让我们使用 HTTP 客户端发送请求来测试一下：
 
 ```
 POST http://your-trilium-server/custom/create-note
@@ -47,42 +48,42 @@ Content-Type: application/json
 }+++++++++++++++++++++++++++++++++++++++++++++++
 ```
 
-Notice the `/custom` part in the request path - Trilium considers any request with this prefix as "custom" and tries to find a matching handler by looking at all notes which have `customRequestHandler` [label](Attributes.md). Value of this label then contains a regular expression which will match the request path (in our case trivial regex "create-note").
+注意请求路径中的 `/custom` 部分——Trilium 将任何带有此前缀的请求视为“自定义”请求，并通过查找所有具有 `customRequestHandler` [标签](Attributes.md) 的笔记来尝试找到匹配的处理器。然后，此标签的值包含一个正则表达式，该表达式将匹配请求路径（在我们的例子中，是简单的正则表达式 "create-note"）。
 
-Trilium will then find our code note created above and execute it. `api.req`, `api.res` are set to [request](https://expressjs.com/en/api.html#req) and [response](https://expressjs.com/en/api.html#res)objects from which we can get details of the request and also respond.
+然后，Trilium 将找到我们上面创建的代码笔记并执行它。`api.req` 和 `api.res` 被设置为 [请求](https://expressjs.com/en/api.html#req) 和 [响应](https://expressjs.com/en/api.html#res) 对象，我们可以从中获取请求的详细信息并做出响应。
 
-In the code note we check the request method and then use trivial authentication - keep in mind that these endpoints are by default totally unauthenticated, and you need to take care of this yourself.
+在代码笔记中，我们检查请求方法，然后使用简单的身份验证——请记住，这些端点默认是完全未认证的，您需要自己处理这个问题。
 
-Once we pass these checks we will just create the desired note using [Script API](../Scripting/Script%20API.md).
+一旦我们通过这些检查，我们将使用 [脚本 API](../Scripting/Script%20API.md) 创建所需的笔记。
 
-## Custom resource provider
+## 自定义资源提供器
 
-Another common use case is that you want to just expose a file note - in such case you create label `customResourceProvider` (value is again path regex).
+另一个常见的用例是您只想公开一个文件笔记——在这种情况下，您创建标签 `customResourceProvider`（值同样是路径正则表达式）。
 
-For more information, see [Custom Resource Providers](Custom%20Resource%20Providers.md).
+有关更多信息，请参阅 [自定义资源提供器](Custom%20Resource%20Providers.md)。
 
-## Advanced concepts
+## 高级概念
 
-`api.req` and `api.res` are Express.js objects - you can always look into its [documentation](https://expressjs.com/en/api.html) for details.
+`api.req` 和 `api.res` 是 Express.js 对象——您可以随时查看其 [文档](https://expressjs.com/en/api.html) 以了解详细信息。
 
-### Parameters
+### 参数
 
-REST request paths often contain parameters in the URL, e.g.:
+REST 请求路径通常在 URL 中包含参数，例如：
 
 ```
 http://your-trilium-server/custom/notes/123
 ```
 
-The last part is dynamic so the matching of the URL must also be dynamic - for this reason the matching is done with regular expressions. Following `customRequestHandler` value would match it:
+最后一部分是动态的，因此 URL 的匹配也必须是动态的——因此，匹配使用正则表达式完成。以下 `customRequestHandler` 值将匹配它：
 
 ```
 notes/([0-9]+)
 ```
 
-Additionally, this also defines a matching group with the use of parenthesis which then makes it easier to extract the value. The matched groups are available in `api.pathParams`:
+此外，这也通过使用括号定义了一个匹配组，这使得提取值更加容易。匹配的组可在 `api.pathParams` 中获得：
 
 ```
 const noteId = api.pathParams[0];
 ```
 
-Often you also need query params (as in e.g. `http://your-trilium-server/custom/notes?noteId=123`), you can get those with standard express `req.query.noteId`.
+通常您还需要查询参数（例如 `http://your-trilium-server/custom/notes?noteId=123`），您可以使用标准的 express `req.query.noteId` 来获取这些参数。

@@ -1,27 +1,27 @@
-# Block quotes & admonitions
-## Block quotes
+# 块引用与警示框
+## 块引用
 
-As the name suggests, block quotes can be useful to cite one or more paragraphs.
+顾名思义，块引用可用于引用一个或多个段落。
 
-To create a block quote, press <img src="Block quotes &amp; admonitions_image.png" width="15" height="12"> from the <a class="reference-link" href="Formatting%20toolbar.md">Formatting toolbar</a>. It's also possible to type <kbd>&gt;</kbd>, followed by a space to create one (but only if the cursor is at the beginning of a line).
+要创建块引用，请从<a class="reference-link" href="Formatting%20toolbar.md">格式工具栏</a>中按下 <img src="Block quotes &amp; admonitions_image.png" width="15" height="12">。也可以输入 <kbd>&gt;</kbd> 后跟一个空格来创建（但仅当光标位于行首时）。
 
-Inside the quote block, other block items can be inserted such as tables, images, or even other block quotes or admonitions.
+在引用块内部，可以插入其他块级元素，如表格、图片，甚至其他块引用或警示框。
 
-## Admonitions
+## 警示框
 
-Admonitions are a way to highlight information to the reader. Other names for it include _call-outs_ and _info/warning/alert boxes_.
+警示框是一种向读者突出显示信息的方式。它的其他名称包括_标注框_和_信息/警告/提醒框_。
 
 <figure class="image image-style-align-center"><img style="aspect-ratio:959/547;" src="2_Block quotes &amp; admonitions_image.png" width="959" height="547"></figure>
 
-From a functional point of view, admonitions act very similarly to a block quote, just with different styling. This includes the ability to insert other elements in it such as headings, tables, images, etc.
+从功能角度来看，警示框的行为与块引用非常相似，只是样式不同。这包括能够在其中插入其他元素，如标题、表格、图片等。
 
-### Inserting a new admonition
+### 插入新的警示框
 
-In the <a class="reference-link" href="Formatting%20toolbar.md">Formatting toolbar</a>:
+在<a class="reference-link" href="Formatting%20toolbar.md">格式工具栏</a>中：
 
 ![](1_Block%20quotes%20&%20admonitions_image.png)
 
-It's possible to insert an admonition simply by typing:
+可以通过直接输入以下内容来插入警示框：
 
 *   `!!! note`
 *   `!!! tip`
@@ -29,27 +29,27 @@ It's possible to insert an admonition simply by typing:
 *   `!!! caution`
 *   `!!! warning`
 
-In addition to that, it's also possible to type `!!!`  followed by any text, case in which a default admonition type will appear (note) with the entered text inside it.
+除此之外，还可以输入 `!!!` 后跟任意文本，此时将出现默认类型的警示框（note），其中包含输入的文本。
 
-### Interaction
+### 交互
 
-By design, admonitions act very similar to block quotes.
+按照设计，警示框的行为与块引用非常相似。
 
-*   Selecting a text and pressing the admonition button will turn that text into an admonition.
-*   If selecting multiple admonitions, pressing the admonition button will automatically merge them into one.
+*   选中文本并按警示框按钮会将所选文本转换为警示框。
+*   如果选中多个警示框，按警示框按钮将自动将它们合并为一个。
 
-Inside an admonition:
+在警示框内部：
 
-*   Pressing <kbd>Backspace</kbd> while the admonition is empty will remove it.
-*   Pressing <kbd>Enter</kbd> will start a new paragraph. Pressing it twice will exit out of the admonition.
-*   Headings and other block content including tables can be inserted inside the admonition.
+*   当警示框为空时按 <kbd>Backspace</kbd> 将删除该警示框。
+*   按 <kbd>Enter</kbd> 将开始一个新段落。按两次将退出警示框。
+*   标题和其他块级内容（包括表格）都可以插入到警示框内部。
 
-### Types of admonitions
+### 警示框类型
 
-There are currently five types of admonitions: _Note_, _Tip_, _Important_, _Caution_, _Warning_.
+目前有五种类型的警示框：_Note_、_Tip_、_Important_、_Caution_、_Warning_。
 
-These types were inspired by GitHub's support for this feature and there are currently no plans for adjusting it or allowing the user to customize them.
+这些类型受 GitHub 对此功能的支持所启发，目前没有计划调整或允许用户自定义它们。
 
-### Markdown support
+### Markdown 支持
 
-See <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/Import%20%26%20Export/Markdown/Supported%20syntax.md">Supported syntax</a>.
+参见<a class="reference-link" href="../../Basic%20Concepts%20and%20Features/Import%20%26%20Export/Markdown/Supported%20syntax.md">支持的语法</a>。

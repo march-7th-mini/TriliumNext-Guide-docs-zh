@@ -1,37 +1,37 @@
-# Note Tree
-This page explains how to manipulate the note tree in TriliumNext, focusing on moving notes.
+# 笔记树
+本页介绍如何在 TriliumNext 中操作笔记树，重点讲解移动笔记。
 
 ![](Note%20Tree_image.png)
 
-## Drag and Drop
+## 拖放
 
-![Drag and drop example](Note%20Tree_drag-and-drop.gif)
+![拖放示例](Note%20Tree_drag-and-drop.gif)
 
-You can easily rearrange the note tree by dragging and dropping notes, as demonstrated in the example above.
+您可以通过拖放笔记轻松重新排列笔记树，如上例所示。
 
-## Keyboard Manipulation
+## 键盘操作
 
-![Example of using keyboard keys to move a note](Note%20Tree_move-note-with-keyboard.gif)Trilium offers efficient keyboard-based manipulation using the following [shortcuts](../Keyboard%20Shortcuts.md):
+![使用键盘按键移动笔记的示例](Note%20Tree_move-note-with-keyboard.gif)Trilium 提供高效的基于键盘的操作方式，使用以下[快捷键](../Keyboard%20Shortcuts.md)：
 
-*   <kbd>Ctrl</kbd> + <kbd><span>↑</span></kbd> and <kbd>Ctrl</kbd> +<kbd><span>↓</span></kbd>: Move the note up or down in the order.
-*   <kbd>Ctrl</kbd>+<kbd><span>←</span></kbd>: Move the note up in the hierarchy by changing its parent to the note's grandparent.
-*   <kbd>Ctrl</kbd>+<kbd><span>→</span></kbd>: Move the note down in the hierarchy by setting its parent to the note currently above it (this action is best understood through a demo or hands-on experience).
-*   <kbd><span>←</span></kbd> and <kbd><span>→</span></kbd>: Expand and collapse a sub-tree.
+*   <kbd>Ctrl</kbd> + <kbd><span>↑</span></kbd> 和 <kbd>Ctrl</kbd> +<kbd><span>↓</span></kbd>：按顺序向上或向下移动笔记。
+*   <kbd>Ctrl</kbd>+<kbd><span>←</span></kbd>：将笔记的父级更改为其祖父级，从而在层级中向上移动笔记。
+*   <kbd>Ctrl</kbd>+<kbd><span>→</span></kbd>：将笔记的父级设置为当前位于其上方的笔记，从而在层级中向下移动笔记（此操作最好通过演示或实际操作来理解）。
+*   <kbd><span>←</span></kbd> 和 <kbd><span>→</span></kbd>：展开和折叠子树。
 
-## Context Menu
+## 上下文菜单
 
-You can also move notes using the familiar cut and paste functions available in the context menu, or with the associated keyboard [shortcuts](../Keyboard%20Shortcuts.md): `CTRL-C` ( [copy](../Notes/Cloning%20Notes.md)), <kbd>Ctrl</kbd> + <kbd>X</kbd> (cut) and <kbd>Ctrl</kbd> + <kbd>V</kbd> (paste).
+您也可以使用上下文菜单中常见的剪切和粘贴功能，或使用相应的键盘[快捷键](../Keyboard%20Shortcuts.md)来移动笔记：`CTRL-C`（[复制](../Notes/Cloning%20Notes.md)）、<kbd>Ctrl</kbd> + <kbd>X</kbd>（剪切）和 <kbd>Ctrl</kbd> + <kbd>V</kbd>（粘贴）。
 
-See <a class="reference-link" href="Note%20Tree/Note%20tree%20contextual%20menu.md">Note tree contextual menu</a> for more information.
+更多信息请参阅<a class="reference-link" href="Note%20Tree/Note%20tree%20contextual%20menu.md">笔记树上下文菜单</a>。
 
-## Tree Settings
+## 树设置
 
-Click the tree icon in the tree toolbar to open the tree settings popup. It contains the following options:
+单击树工具栏中的树图标以打开树设置弹出窗口。它包含以下选项：
 
-*   **Hide archived notes**: When enabled, archived notes are not shown in the tree.
-*   **Automatically collapse notes**: When enabled, notes are collapsed after a period of inactivity to keep the tree tidy.
-*   **Follow active note**: When enabled (default), the tree automatically scrolls and expands parent nodes to keep the currently active note visible. When disabled, the tree is fully detached from navigation — only the background highlight of the active note is updated, but the tree viewport and its expanded/collapsed state are never changed by navigation. Use the crosshair button to manually jump the tree to the active note at any time.
+*   **隐藏已归档笔记**：启用后，树中不显示已归档的笔记。
+*   **自动折叠笔记**：启用后，笔记在一段时间不活动后会自动折叠，以保持树整洁。
+*   **跟随活动笔记**：启用后（默认），树会自动滚动并展开父节点，以保持当前活动笔记可见。禁用后，树与导航完全分离——仅更新活动笔记的背景高亮，但树视口及其展开/折叠状态不会因导航而改变。可随时使用十字准线按钮手动跳转到活动笔记。
 
-## Keyboard shortcuts
+## 键盘快捷键
 
-The note tree comes with multiple keyboard shortcuts to make editing faster, consult the dedicated <a class="reference-link" href="Note%20Tree/Keyboard%20shortcuts.md">Keyboard shortcuts</a> section.
+笔记树附带多个键盘快捷键以加快编辑速度，请参阅专门的<a class="reference-link" href="Note%20Tree/Keyboard%20shortcuts.md">键盘快捷键</a>部分。

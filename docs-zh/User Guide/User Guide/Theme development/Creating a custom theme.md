@@ -1,25 +1,25 @@
-# Creating a custom theme
-## Step 1. Find a place to place the themes
+# 创建自定义主题
+## 第一步：找个地方存放主题
 
-Organization is an important aspect of managing a knowledge base. When developing a new theme or importing an existing one it's a good idea to keep them into one place.
+组织性是管理知识库的一个重要方面。在开发新主题或导入现有主题时，最好将它们集中放在一个地方。
 
-As such, the first step is to create a new note to gather all the themes.
+因此，第一步是创建一个新笔记来汇集所有主题。
 
 ![](Creating%20a%20custom%20theme_5_Creating%20a%20custom%20theme_im.png)
 
-## Step 2. Create the theme
+## 第二步：创建主题
 
 |  |  |
 | --- | --- |
-| ![](Creating%20a%20custom%20theme_3_Creating%20a%20custom%20theme_im.png) | Themes are code notes with a special attribute. Start by creating a new code note. |
-| ![](Creating%20a%20custom%20theme_1_Creating%20a%20custom%20theme_im.png) | Then change the note type to a CSS code. |
-| ![](Creating%20a%20custom%20theme_Creating%20a%20custom%20theme_im.png) | In the _Owned Attributes_ section define the `#appTheme` attribute to point to any desired name. This is the name that will show up in the appearance section in settings. |
+| ![](Creating%20a%20custom%20theme_3_Creating%20a%20custom%20theme_im.png) | 主题是带有特殊属性的代码笔记。首先创建一个新的代码笔记。 |
+| ![](Creating%20a%20custom%20theme_1_Creating%20a%20custom%20theme_im.png) | 然后将笔记类型更改为 CSS 代码。 |
+| ![](Creating%20a%20custom%20theme_Creating%20a%20custom%20theme_im.png) | 在_拥有的属性_部分中，定义 `#appTheme` 属性并指向任何想要的名称。此名称将显示在设置中的外观部分。 |
 
-## Step 3. Define the theme's CSS
+## 第三步：定义主题的 CSS
 
-As a very simple example we will change the background color of the launcher pane to a shade of blue.
+作为一个非常简单的示例，我们将启动器面板的背景颜色更改为蓝色调。
 
-To alter the different variables of the theme:
+要更改主题的不同变量：
 
 ```css
 :root {
@@ -27,20 +27,20 @@ To alter the different variables of the theme:
 }
 ```
 
-## Step 4. Activating the theme
+## 第四步：激活主题
 
-Refresh the application (Ctrl+Shift+R is a good way to do so) and go to settings. You should see the newly created theme:
+刷新应用程序（按 Ctrl+Shift+R 是一个好方法）并进入设置。您应该能看到新创建的主题：
 
 ![](Creating%20a%20custom%20theme_2_Creating%20a%20custom%20theme_im.png)
 
-Afterwards the application will refresh itself with the new theme:
+之后，应用程序将使用新主题自动刷新：
 
 ![](Creating%20a%20custom%20theme_4_Creating%20a%20custom%20theme_im.png)
 
-Do note that the theme will be based off of the legacy theme. To override that and base the theme on the new TriliumNext theme, see: [Theme base (legacy vs. next)](Customize%20the%20Next%20theme.md)
+请注意，该主题将基于旧版主题。要覆盖此设置并将主题基于新的 TriliumNext 主题，请参阅：[主题基础（旧版 vs 新版）](Customize%20the%20Next%20theme.md)
 
-## Step 5. Making changes
+## 第五步：进行修改
 
-Simply go back to the note and change according to needs. To apply the changes to the current window, press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd> to refresh.
+只需返回笔记并根据需要进行更改。要将更改应用到当前窗口，请按 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd> 进行刷新。
 
-It's a good idea to keep two windows, one for editing and the other one for previewing the changes.
+建议保持两个窗口，一个用于编辑，另一个用于预览更改。

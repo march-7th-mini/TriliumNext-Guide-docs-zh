@@ -1,42 +1,43 @@
 # Web Clipper
-The Web Clipper is present in the monorepo in `apps/web-clipper`. It's based on [WXT](https://wxt.dev/guide/introduction.html), a framework for building web extensions that allows very easy development and publishing.
 
-## Manifest version
+Web Clipper 位于 monorepo 的 `apps/web-clipper` 目录中。它基于 [WXT](https://wxt.dev/guide/introduction.html)，这是一个用于构建浏览器扩展的框架，可以非常轻松地进行开发和发布。
 
-Originally the Web Clipper supported only Manifest v2, which made the extension incompatible with Google Chrome. [#8494](https://github.com/TriliumNext/Trilium/pull/8494) introduces Manifest v3 support for Google Chrome, alongside with Manifest v2 for Firefox.
+## Manifest 版本
 
-Although Firefox does support Manifest v3, we are still using Manifest v2 for it because WXT dev mode doesn't work for the Firefox / Manifest v3 combination and there were some mentions about Manifest v3 not being well supported on Firefox Mobile (and we plan to have support for it).
+最初 Web Clipper 仅支持 Manifest v2，这使得该扩展与 Google Chrome 不兼容。[#8494](https://github.com/TriliumNext/Trilium/pull/8494) 为 Google Chrome 引入了 Manifest v3 支持，同时为 Firefox 保留了 Manifest v2。
 
-## Development
+尽管 Firefox 支持 Manifest v3，我们仍然为其使用 Manifest v2，因为 WXT 开发模式不适用于 Firefox / Manifest v3 的组合，并且有一些关于 Manifest v3 在 Firefox Mobile 上支持不佳的提及（我们计划支持该平台）。
 
-WXT allows easy development of the plugin, with full TypeScript support and live reload. To enter dev mode:
+## 开发
 
-*   Run `pnpm --filter web-clipper dev` to enter dev mode for Chrome (with manifest v3).
-*   Run `pnpm --filter web-clipper dev:firefox` to enter dev mode for Firefox (with manifest v2).
+WXT 允许轻松开发插件，支持完整的 TypeScript 和实时重载。要进入开发模式：
 
-This will open a separate browser instance in which the extension is automatically injected.
+*   运行 `pnpm --filter web-clipper dev` 进入 Chrome 的开发模式（使用 manifest v3）。
+*   运行 `pnpm --filter web-clipper dev:firefox` 进入 Firefox 的开发模式（使用 manifest v2）。
+
+这将打开一个单独的浏览器实例，扩展会自动注入其中。
 
 > [!NOTE]
-> On NixOS, the same development commands work just fine. Just make sure the browser is available in the system path:
+> 在 NixOS 上，相同的开发命令也可以正常工作。只需确保浏览器在系统路径中可用：
 > 
 > ```sh
 > nix-shell -p chromium
 > ```
 
-## Default port
+## 默认端口
 
-The default port is:
+默认端口为：
 
-*   `37742` if in development mode. This makes it possible to use `pnpm desktop:start` to spin up a desktop instance to use the Clipper with.
-*   `37840` in production, the default Trilium port.
+*   开发模式下为 `37742`。这使得可以使用 `pnpm desktop:start` 启动一个桌面实例来配合 Clipper 使用。
+*   生产环境下为 `37840`，即 Trilium 的默认端口。
 
-## Building
+## 构建
 
-*   Run `build` (Chrome) or `build:firefox` to generate the output files, which will be in `.output/[browser]`.
-*   Run `zip` or `zip:firefox` to generate the ZIP files.
+*   运行 `build`（Chrome）或 `build:firefox` 来生成输出文件，这些文件将位于 `.output/[browser]` 目录中。
+*   运行 `zip` 或 `zip:firefox` 来生成 ZIP 文件。
 
 ## CI
 
-`.github/workflows/web-clipper.yml` handles the building of the web clipper. Whenever the web clipper is modified, it generates the ZIPs and uploads them as artifacts.
+`.github/workflows/web-clipper.yml` 负责处理 web clipper 的构建。每当 web clipper 被修改时，它都会生成 ZIP 文件并将其作为工件上传。
 
-There is currently no automatic publishing to the app stores.
+目前还没有自动发布到应用商店的功能。

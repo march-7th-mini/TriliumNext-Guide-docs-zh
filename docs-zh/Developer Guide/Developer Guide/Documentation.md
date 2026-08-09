@@ -1,82 +1,83 @@
-# Documentation
-There are multiple types of documentation for Trilium:
+# 文档
 
-*   The _User Guide_ represents the user-facing documentation. This documentation can be browsed by users directly from within Trilium, by pressing <kbd>F1</kbd>.
-*   The _Developer's Guide_ represents a set of Markdown documents that present the internals of Trilium, for developers.
-*   _Release Notes_, this contains the change log for each released or soon-to-be-released version. The release notes are used automatically by the CI when releasing a version.
-*   The _Script API_, which is an automatically generated documentation for the front-end and back-end APIs for scripts.
+Trilium 有几种类型的文档：
 
-## Location of the documentation
+*   _用户指南_ 代表面向用户的文档。用户可以直接在 Trilium 中按 <kbd>F1</kbd> 键浏览此文档。
+*   _开发者指南_ 代表一组 Markdown 文档，为开发者展示 Trilium 的内部机制。
+*   _发布说明_，包含每个已发布或即将发布版本的变更日志。CI 在发布版本时会自动使用发布说明。
+*   _脚本 API_，这是为脚本自动生成的前端和后端 API 文档。
 
-All documentation is stored in the [Trilium](https://github.com/TriliumNext/Trilium) repository:
+## 文档的位置
 
-*   `docs/Developer Guide` contains Markdown documentation that can be modified either externally (using a Markdown editor, or internally using Trilium).
-*   `docs/Release Notes` is also stored in Markdown format and can be freely edited.
-*   The _Script API_ is auto-generated and is **not** committed to the repository. It is built into the gitignored `site/` directory and published to [docs.triliumnotes.org](https://docs.triliumnotes.org/); see [Updating the Script API](#updating-the-script-api) below.
-*   `docs/User Guide` contains also Markdown-only documentation but must generally not be edited externally.
-    *   The reason is that the `pnpm edit-docs:edit-docs` feature will not only import/export this documentation, but also generate the corresponding HTML documentation and meta structure in `src/public/app/doc_notes/en/User Guide`.
-    *   It's theoretically possible to edit the Markdown files externally and then run `docs:edit` and trigger a change in order to build the documentation, but that would not be a very productive workflow.
+所有文档都存储在 [Trilium](https://github.com/TriliumNext/Trilium) 仓库中：
 
-## Editing the documentation
+*   `docs/Developer Guide` 包含 Markdown 格式的文档，可以在外部（使用 Markdown 编辑器）或内部（使用 Trilium）进行修改。
+*   `docs/Release Notes` 也以 Markdown 格式存储，可以自由编辑。
+*   _脚本 API_ 是自动生成的，**不**提交到仓库。它被构建到 gitignored 的 `site/` 目录中，并发布到 [docs.triliumnotes.org](https://docs.triliumnotes.org/)；请参阅下面的 [更新脚本 API](#updating-the-script-api)。
+*   `docs/User Guide` 也包含纯 Markdown 文档，但通常不应在外部编辑。
+    *   原因是 `pnpm edit-docs:edit-docs` 功能不仅会导入/导出此文档，还会在 `src/public/app/doc_notes/en/User Guide` 中生成相应的 HTML 文档和元数据结构。
+    *   理论上可以在外部编辑 Markdown 文件，然后运行 `docs:edit` 并触发更改以构建文档，但这并不是一个高效的工作流程。
 
-There are two ways to modify documentation:
+## 编辑文档
 
-*   Using a special mode of Trilium.
-*   By manually editing the files.
+有两种修改文档的方法：
 
-### Using the `edit-docs` app
+*   使用 Trilium 的特殊模式。
+*   手动编辑文件。
 
-To edit the documentation using Trilium, set up a working development environment via <a class="reference-link" href="Environment%20Setup.md">Environment Setup</a> and run the following command: `pnpm edit-docs:edit-docs`.
+### 使用 `edit-docs` 应用
 
-How it works:
+要使用 Trilium 编辑文档，请通过 <a class="reference-link" href="Environment%20Setup.md">环境设置</a> 设置一个可用的开发环境，然后运行以下命令：`pnpm edit-docs:edit-docs`。
 
-*   At startup, the documentation from `docs/` is imported from Markdown into a in-memory session (the initialization of the database is already handled by the application).
-*   Each modification will trigger after 10s an export from the in-memory Trilium session back to Markdown, including the meta file.
+工作原理：
 
-### Manual editing
+*   启动时，`docs/` 中的文档会从 Markdown 导入到内存会话中（数据库的初始化已由应用程序处理）。
+*   每次修改后 10 秒，将触发从内存中的 Trilium 会话导出回 Markdown，包括元文件。
 
-Apart from the User Guide, it's generally feasible to make small modifications directly using a Markdown editor or VS Code, for example.
+### 手动编辑
 
-When making manual modifications, avoid:
+除了用户指南外，通常可以直接使用 Markdown 编辑器或 VS Code 进行小幅修改。
 
-*   Uploading pictures, since images are handled as Trilium attachments which are stored in the meta file.
-*   Changing the file or directory structure in any way, since that is also handled by the meta file. A missing file will most certainly cause a crash at start-up when attempting to edit the docs using Trilium.
+进行手动修改时，请避免：
 
-### Reviewing & committing the changes
+*   上传图片，因为图片是作为 Trilium 附件处理的，存储在元文件中。
+*   以任何方式更改文件或目录结构，因为这也由元文件处理。如果尝试使用 Trilium 编辑文档时缺少文件，几乎肯定会导致启动时崩溃。
 
-Since the documentation is tracked with Git, after making the manual or automatic modifications (wait at least 10s after making the modification) the changes will reflect in Git.
+### 审查与提交更改
 
-Make sure to analyze each modified file and report possible issues.
+由于文档使用 Git 跟踪，在进行手动或自动修改（修改后至少等待 10 秒）后，更改将反映在 Git 中。
 
-Important aspects to consider:
+确保分析每个修改过的文件并报告可能的问题。
 
-*   The Trilium import/export mechanism is not perfect, so if you make some modifications to the documentation using `docs:edit`, at the next import/export/import cycle some whitespace might get thrown in. It's generally safe to commit the changes as-is.
-*   Since we are importing Markdown, editing HTML and then exporting the HTML back to Markdown there might be some edge cases where the formatting is not properly preserved. Try to identify such cases and report them in order to get them fixed (this will benefit also the users).
+需要考虑的重要方面：
 
-## Automation
+*   Trilium 的导入/导出机制并不完美，因此如果您使用 `docs:edit` 对文档进行了一些修改，在下一个导入/导出/导入周期中可能会混入一些空白字符。通常可以按原样提交更改。
+*   由于我们导入 Markdown，编辑 HTML，然后将 HTML 导出回 Markdown，在某些边缘情况下格式可能无法正确保留。尝试识别此类情况并报告，以便修复它们（这也将使用户受益）。
 
-The documentation is built via `apps/build-docs`:
+## 自动化
 
-1.  The output directory is cleared.
-2.  The User Guide and the Developer Guide are built.
-    1.  The documentation from the repo is archived and imported into an in-memory instance.
-    2.  The documentation is exported using the shared theme.
-3.  The API docs (internal and ETAPI) are statically rendered via Redocly.
-4.  The script API is generated via `typedoc`
+文档通过 `apps/build-docs` 构建：
 
-The `deploy-docs` workflow triggers the documentation build and uploads it to CloudFlare Pages.
+1.  清空输出目录。
+2.  构建用户指南和开发者指南。
+    1.  仓库中的文档被归档并导入到内存实例中。
+    2.  使用共享主题导出文档。
+3.  API 文档（内部和 ETAPI）通过 Redocly 静态渲染。
+4.  脚本 API 通过 `typedoc` 生成。
 
-## Updating the Script API
+`deploy-docs` 工作流触发文档构建并将其上传到 CloudFlare Pages。
 
-As mentioned previously, the Script API is not manually editable since it is auto-generated using TypeDoc.
+## 更新脚本 API
 
-The Script API is regenerated automatically as part of `pnpm docs:build` — its output goes into the gitignored `site/script-api/{backend,frontend,electron}` directory and is published by the `deploy-docs` workflow, so there is nothing to commit. To preview changes locally, run `pnpm docs:build` and inspect the output under `site/`.
+如前所述，脚本 API 不能手动编辑，因为它是使用 TypeDoc 自动生成的。
 
-Note that in order to simulate the environment a script would have, some fake source files (in the sense that they are only used for documentation) are being used as entrypoints for the documentation. Look for `backend_script_entrypoint` and `frontend_script_entrypoint` in `apps/build-docs/src`.
+脚本 API 会作为 `pnpm docs:build` 的一部分自动重新生成——其输出进入 gitignored 的 `site/script-api/{backend,frontend,electron}` 目录，并由 `deploy-docs` 工作流发布，因此无需提交任何内容。要在本地预览更改，请运行 `pnpm docs:build` 并检查 `site/` 下的输出。
 
-## Building locally
+请注意，为了模拟脚本可能拥有的环境，一些虚拟源文件（仅用于文档）被用作文档的入口点。请在 `apps/build-docs/src` 中查找 `backend_script_entrypoint` 和 `frontend_script_entrypoint`。
 
-In the Git root:
+## 本地构建
 
-*   Run `pnpm docs:build`. The built documentation will be available in `site` at Git root.
-*   To also run a webserver to test it, run `pnpm docs:preview` (this will not build the documentation) and navigate to `localhost:9000`.
+在 Git 根目录中：
+
+*   运行 `pnpm docs:build`。构建的文档将在 Git 根目录的 `site` 中可用。
+*   要同时运行 Web 服务器进行测试，请运行 `pnpm docs:preview`（这不会构建文档）并导航到 `localhost:9000`。

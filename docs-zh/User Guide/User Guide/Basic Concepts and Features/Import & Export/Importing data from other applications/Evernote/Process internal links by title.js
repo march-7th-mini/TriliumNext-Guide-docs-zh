@@ -1,3 +1,4 @@
+```markdown
 const query = `note.type = "text" and note.content *=* "evernote:///view/"`;
 const notes = api.searchForNotes(query);
 
@@ -33,3 +34,4 @@ for (const note of notes) {
     });
     note.setContent($("body").html());   
 }
+```

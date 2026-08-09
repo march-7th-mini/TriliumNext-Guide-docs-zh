@@ -1,42 +1,43 @@
-# Attributes
+# 属性
+
 <figure class="image"><img style="aspect-ratio:1071/146;" src="Attributes_image.png" width="1071" height="146"></figure>
 
-In Trilium, attributes are key-value pairs assigned to notes, providing additional metadata or functionality. There are two primary types of attributes:
+在 Trilium 中，属性是分配给笔记的键值对，用于提供额外的元数据或功能。属性主要有两种类型：
 
-1.  <a class="reference-link" href="Attributes/Labels.md">Labels</a> can be used for a variety of purposes, such as storing metadata or configuring the behavior of notes. Labels are also searchable, enhancing note retrieval.
+1.  <a class="reference-link" href="Attributes/Labels.md">标签</a> 可用于多种用途，例如存储元数据或配置笔记的行为。标签也是可搜索的，有助于增强笔记检索。
     
-    For more information, including predefined labels, see <a class="reference-link" href="Attributes/Labels.md">Labels</a>.
-2.  <a class="reference-link" href="Attributes/Relations.md">Relations</a> define connections between notes, similar to links. These can be used for metadata and scripting purposes.
+    更多信息（包括预定义标签），请参阅 <a class="reference-link" href="Attributes/Labels.md">标签</a>。
+2.  <a class="reference-link" href="Attributes/Relations.md">关系</a> 定义笔记之间的连接，类似于链接。这些可用于元数据和脚本编写目的。
     
-    For more information, including a list of predefined relations, see <a class="reference-link" href="Attributes/Relations.md">Relations</a>.
+    更多信息（包括预定义关系列表），请参阅 <a class="reference-link" href="Attributes/Relations.md">关系</a>。
 
-These attributes play a crucial role in organizing, categorizing, and enhancing the functionality of notes.
+这些属性在组织、分类和增强笔记功能方面发挥着至关重要的作用。
 
-## Types of attributes
+## 属性类型
 
-Conceptually there are two types of attributes (applying to both labels and relations):
+从概念上讲，属性有两种类型（适用于标签和关系）：
 
-1.  **System attributes**  
-    As the name suggest, these attributes have a special meaning since they are interpreted by Trilium. For example the `color` attribute will change the color of the note as displayed in the <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">Note Tree</a> and links, and `iconClass` will change the icon of a note.
-2.  **User-defined attributes**  
-    These are free-form labels or relations that can be used by the user. They can be used purely for categorization purposes (especially if combined with <a class="reference-link" href="../Basic%20Concepts%20and%20Features/Navigation/Search.md">Search</a>), or they can be given meaning through the use of <a class="reference-link" href="../Scripting.md">Scripting</a>.
+1.  **系统属性**  
+    顾名思义，这些属性具有特殊含义，因为它们会被 Trilium 解释。例如，`color` 属性将更改笔记在<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">笔记树</a>和链接中显示的颜色，而 `iconClass` 将更改笔记的图标。
+2.  **用户自定义属性**  
+    这些是用户可以使用的自由格式的标签或关系。它们可以纯粹用于分类目的（尤其是与<a class="reference-link" href="../Basic%20Concepts%20and%20Features/Navigation/Search.md">搜索</a>结合使用时），也可以通过使用<a class="reference-link" href="../Scripting.md">脚本</a>赋予其含义。
 
-In practice, Trilium makes no direct distinction of whether an attribute is a system one or a user-defined one. A label or relation is considered a system attribute if it matches one of the built-in names (e.g. like the aforementioned `iconClass`). Keep this in mind when creating  <a class="reference-link" href="Attributes/Promoted%20Attributes.md">Promoted Attributes</a> in order not to accidentally alter a system attribute (unless intended).
+实际上，Trilium 并不直接区分属性是系统属性还是用户自定义属性。如果标签或关系与内置名称之一匹配（例如前面提到的 `iconClass`），则被视为系统属性。在创建<a class="reference-link" href="Attributes/Promoted%20Attributes.md">提升属性</a>时请记住这一点，以免意外更改系统属性（除非有意为之）。
 
-## Viewing the list of attributes
+## 查看属性列表
 
-Both the labels and relations for the current note are displayed in the _Owned Attributes_ section of the <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Ribbon.md">Ribbon</a>, where they can be viewed and edited. Inherited attributes are displayed in the _Inherited Attributes_ section of the ribbon, where they can only be viewed.
+当前笔记的标签和关系都显示在<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Ribbon.md">功能区</a>的_自有属性_部分中，可以在其中查看和编辑。继承的属性显示在功能区的_继承属性_部分中，只能查看。
 
-In the list of attributes, labels are prefixed with the `#` character whereas relations are prefixed with the `~` character.
+在属性列表中，标签以 `#` 字符为前缀，而关系以 `~` 字符为前缀。
 
-## Attribute Definitions and Promoted Attributes
+## 属性定义和提升属性
 
-<a class="reference-link" href="Attributes/Promoted%20Attributes.md">Promoted Attributes</a> create a form-like editing experience for attributes, which makes it easy to enhancing the organization and management of attributes
+<a class="reference-link" href="Attributes/Promoted%20Attributes.md">提升属性</a>为属性创建了类似表单的编辑体验，使属性的组织和管理更加容易。
 
-## Multiplicity
+## 多重性
 
-Attributes in Trilium can be "multi-valued", meaning multiple attributes with the same name can co-exist. This can be combined with <a class="reference-link" href="Attributes/Promoted%20Attributes.md">Promoted Attributes</a> to easily add them.
+Trilium 中的属性可以是“多值的”，这意味着多个同名的属性可以共存。这可以与<a class="reference-link" href="Attributes/Promoted%20Attributes.md">提升属性</a>结合使用，以便轻松添加它们。
 
-## Attribute Inheritance
+## 属性继承
 
-Trilium supports attribute inheritance, allowing child notes to inherit attributes from their parents. For more information, see <a class="reference-link" href="Attributes/Attribute%20Inheritance.md">Attribute Inheritance</a>.
+Trilium 支持属性继承，允许子笔记继承其父笔记的属性。更多信息，请参阅<a class="reference-link" href="Attributes/Attribute%20Inheritance.md">属性继承</a>。

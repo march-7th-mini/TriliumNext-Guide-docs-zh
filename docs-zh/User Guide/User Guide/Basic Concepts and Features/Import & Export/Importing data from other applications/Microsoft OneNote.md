@@ -1,105 +1,106 @@
 # Microsoft OneNote
-Trilium allows importing from OneNote. Currently the only mechanism supported is via the Microsoft Graph API which requires you to authenticate in a browser in order for the notes to be obtained by Trilium.
 
-## Import process
+Trilium 支持从 OneNote 导入。目前唯一支持的机制是通过 Microsoft Graph API，这需要您在浏览器中进行身份验证，以便 Trilium 获取笔记。
 
-1.  In the <a class="reference-link" href="../../UI%20Elements/Note%20Tree.md">Note Tree</a>, right click and select _Import into note_.
-2.  In the _Import from_ section, select _OneNote_.
-3.  Press the _Connect_ button:
-    1.  On the desktop app, you will be redirected to Microsoft's authentication screen where you can log into your account.
-    2.  On the web app, the process is slightly more involved as it requires copying the code to clipboard, accessing the link, pasting the code and then signing in once more.
-4.  After the connection is successful, you should be able to see a list of sections that can be imported. Simply check the ones to import and press the _Import selected_ button.
-5.  Wait for the import to finish.
+## 导入流程
 
-## Supported features
+1.  在<a class="reference-link" href="../../UI%20Elements/Note%20Tree.md">笔记树</a>中，右键点击并选择 _导入到笔记_。
+2.  在 _从_ 部分，选择 _OneNote_。
+3.  点击 _连接_ 按钮：
+    1.  在桌面应用中，您将被重定向到 Microsoft 的身份验证屏幕，您可以在那里登录您的账户。
+    2.  在 Web 应用中，过程稍微复杂一些，因为它需要将代码复制到剪贴板、访问链接、粘贴代码，然后再次登录。
+4.  连接成功后，您应该能够看到可以导入的分区列表。只需勾选要导入的分区，然后点击 _导入所选_ 按钮。
+5.  等待导入完成。
 
-The following features are preserved by Trilium during the import process:
+## 支持的功能
 
-*   Basic formatting (bold, italic, underline, strikethrough, subscript, super script, font sizes, headings, colors, highlights).
-    *   Black-colored text is intentionally stripped to allow it to work in dark themes.
-*   Inline code is automatically detected and formatted. Paragraphs that use the Code style are also converted to <a class="reference-link" href="../../../Note%20Types/Text/Developer-specific%20formatting/Code%20blocks.md">Code blocks</a>.
-    *   Unfortunately the indentation of the code might be lost because the information is simply not present in the data from the Microsoft API.
-*   <a class="reference-link" href="../../../Note%20Types/Text/Lists.md">Lists</a> with different bullet types.
-*   <a class="reference-link" href="../../../Note%20Types/Text/Tables.md">Tables</a>
-    *   Cell backgrounds are preserved, including a best-effort hue correction because the colors returned by the Graph API are sometimes incorrect.
-    *   Cell widths are also preserved proportionally, with the only difference that tables in Trilium have a percentage-based width, not fixed pixel sizes.
-*   Images and <a class="reference-link" href="../../Notes/Attachments.md">Attachments</a>.
-    *   Screen clippings are also properly supported since v0.104.1, displaying their timestamp as a figure caption.
-*   To-do lists
-*   Hand-drawing is preserved and displayed as an SVG image inside the note
-    *   OneNote's default color (black) is special since it also renders as white for dark themes. Since v0.104.1, this is also supported by using a special SVG tweak which reacts to light/dark themes.
-*   Links between other imported pages are converted to <a class="reference-link" href="../../../Note%20Types/Text/Links/Internal%20(reference)%20links.md">Internal (reference) links</a> if the text of the link matches the name of the page, or plain links otherwise. If the pages are not part of the import, the original `onenote:` link is kept.
-*   Tags (apart from to-do lists) are mildly preserved by converting them to emojis. This loses their searchability. Since Trilium has no concept of inline attributes or badges, this is considered a middle-ground.
+Trilium 在导入过程中会保留以下功能：
 
-Regarding the note structure:
+*   基本格式（粗体、斜体、下划线、删除线、下标、上标、字体大小、标题、颜色、高亮）。
+    *   黑色文本会被有意去除，以便其在深色主题下正常工作。
+*   内联代码会被自动检测并格式化。使用代码样式的段落也会被转换为<a class="reference-link" href="../../../Note%20Types/Text/Developer-specific%20formatting/Code%20blocks.md">代码块</a>。
+    *   不幸的是，代码的缩进可能会丢失，因为 Microsoft API 的数据中根本没有这些信息。
+*   具有不同项目符号类型的<a class="reference-link" href="../../../Note%20Types/Text/Lists.md">列表</a>。
+*   <a class="reference-link" href="../../../Note%20Types/Text/Tables.md">表格</a>
+    *   单元格背景会被保留，包括尽力而为的色调校正，因为 Graph API 返回的颜色有时不正确。
+    *   单元格宽度也会按比例保留，唯一的区别是 Trilium 中的表格宽度是基于百分比的，而不是固定的像素大小。
+*   图片和<a class="reference-link" href="../../Notes/Attachments.md">附件</a>。
+    *   自 v0.104.1 起，屏幕剪辑也得到了正确支持，其时间戳会显示为图表标题。
+*   待办事项列表
+*   手绘内容会被保留，并在笔记内显示为 SVG 图像。
+    *   OneNote 的默认颜色（黑色）比较特殊，因为它也会为深色主题渲染为白色。自 v0.104.1 起，通过使用一种响应明/暗主题的特殊 SVG 调整，也支持了这一点。
+*   如果链接文本与页面名称匹配，则其他已导入页面之间的链接会转换为<a class="reference-link" href="../../../Note%20Types/Text/Links/Internal%20(reference)%20links.md">内部（引用）链接</a>，否则将转换为普通链接。如果页面不属于导入范围，则保留原始的 `onenote:` 链接。
+*   标签（待办事项列表除外）会通过转换为表情符号来轻度保留。这会丧失其可搜索性。由于 Trilium 没有内联属性或徽章的概念，这被认为是一种折中方案。
 
-*   The order of the pages within a section is maintained.
-*   Sub-pages and section groups are maintained by nesting notes in a hierarchical structure.
-*   Creation and modification of both notes and sections is preserved. The order of section or section groups is not preserved (see limitations).
+关于笔记结构：
 
-## Error management and reporting
+*   分区内页面的顺序得以保持。
+*   子页面和分区组通过以层级结构嵌套笔记来保持。
+*   笔记和分区的创建与修改时间得以保留。分区或分区组的顺序不保留（见局限性）。
 
-The OneNote importer uses Microsoft's Graph API which handles the HTML export (that we later post-process for Trilium use). The Graph API itself has to process the OneNote pages before sending them to us, and as such it's a time-consuming operation that is directly proportional to the number of notes and the complexity/size of the notes.
+## 错误管理和报告
 
-The Graph API throttles access if it detects too many operations. The importer takes that into account, but sometimes this means that most of the time is spent waiting for the Graph API to unblock access rather than actually importing data.
+OneNote 导入器使用 Microsoft 的 Graph API，该 API 负责处理 HTML 导出（我们稍后会对其进行后处理以供 Trilium 使用）。Graph API 本身必须先处理 OneNote 页面，然后才能将其发送给我们，因此这是一个耗时操作，其耗时与笔记数量以及笔记的复杂性/大小成正比。
 
-In addition, some pages may fail at the Graph API level due to an internal timeout on their side or other issues. Trilium will try to refetch pages in order to avoid that but sometimes pages cannot be retrieved even after multiple retries. In that case, the importer will still create a corresponding note in Trilium but with an error report instead of a content. This preserves <a class="reference-link" href="../../../Note%20Types/Text/Links/Internal%20(reference)%20links.md">Internal (reference) links</a> and makes it easy to identify and manually fix the pages that failed.
+如果 Graph API 检测到过多操作，它会限制访问。导入器考虑到了这一点，但有时这意味着大部分时间都花在等待 Graph API 解除访问限制上，而不是实际导入数据。
 
-At the end of the import, the top-level note called _OneNote_ _import_ will contain information about how the import went:
+此外，由于 Graph API 端的内部超时或其他问题，某些页面可能会在其级别失败。Trilium 会尝试重新获取页面以避免这种情况，但有时即使多次重试也无法检索到页面。在这种情况下，导入器仍会在 Trilium 中创建相应的笔记，但内容会替换为错误报告。这保留了<a class="reference-link" href="../../../Note%20Types/Text/Links/Internal%20(reference)%20links.md">内部（引用）链接</a>，并便于识别和手动修复失败的页面。
 
-*   The number of notes imported;
-*   The success rate;
-*   A list of notes that could not be imported, as well as the failure reason;
-*   Pages whose images/attachments failed to download
-*   How long the import spent waiting out throttling.
+在导入结束时，名为 _OneNote 导入_ 的顶级笔记将包含有关导入过程的信息：
 
-To avoid cases in which the import is fundamentally broken (e.g. an expired sign-in), the import will error out if it fails to import 6 pages in a row.
+*   导入的笔记数量；
+*   成功率；
+*   无法导入的笔记列表及其失败原因；
+*   图片/附件下载失败的页面；
+*   导入等待限流解除所花费的时间。
 
-## Attributes
+为避免导入从根本上出错的情况（例如登录过期），如果连续 6 个页面导入失败，导入将报错退出。
 
-Pages imported from OneNote have a few built-in [labels](../../../Advanced%20Usage/Attributes/Labels.md):
+## 属性
 
-*   `oneNotePageId`, with the corresponding page ID in OneNote. This can be used to identify the original OneNote page. Trilium doesn't use it in any way at this moment.
-*   `oneNoteImportFailed` attached to notes that couldn't be imported. This can be used to quickly <a class="reference-link" href="../../Navigation/Search.md">Search</a> for failed notes.
+从 OneNote 导入的页面具有一些内置的[标签](../../../Advanced%20Usage/Attributes/Labels.md)：
 
-## Limitations
+*   `oneNotePageId`，对应 OneNote 中的页面 ID。这可用于识别原始的 OneNote 页面。Trilium 目前不以任何方式使用它。
+*   `oneNoteImportFailed` 附加到无法导入的笔记上。这可用于快速<a class="reference-link" href="../../Navigation/Search.md">搜索</a>失败的笔记。
 
-### Regarding OneNote's freehand structure
+## 局限性
 
-OneNote is fundamentally different to Trilium in structure because it allows freehand drawing to coexist with text, and text boxes can be placed anywhere in the document (e.g. a common use case is to have columns). Trilium has a document flow mechanism for <a class="reference-link" href="../../../Note%20Types/Text.md">Text</a> notes which means that it can't be freely positioned.
+### 关于 OneNote 的自由结构
 
-To cope with this difference, Trilium will flatten the text structure into normal paragraphs. The paragraphs will be ordered visually based on the original position of the text boxes, but their horizontal position will not be preserved. Parallel text such as columns may appear interleaved which can cause problems.
+OneNote 在结构上与 Trilium 有根本的不同，因为它允许手绘与文本共存，并且文本框可以放置在文档中的任何位置（例如，常见的用例是分栏）。Trilium 对<a class="reference-link" href="../../../Note%20Types/Text.md">文本</a>笔记采用文档流机制，这意味着它无法自由定位。
 
-In addition, drawing in OneNote can be interleaved with text boxes. Text notes in Trilium do not allow for this feature, so all drawing will appear at the end. For some use cases (diagrams, for example) this will work fine, but if you have highlights or other text-dependent drawings they will appear out of order.
+为了应对这种差异，Trilium 会将文本结构扁平化为普通段落。段落将根据文本框的原始位置在视觉上排序，但其水平位置不会被保留。诸如分栏之类的并行文本可能会出现交错，这可能会导致问题。
+
+此外，OneNote 中的绘图可能与文本框交错。Trilium 中的文本笔记不允许此功能，因此所有绘图都将显示在末尾。对于某些用例（例如图表），这可以正常工作，但如果您有高亮或其他依赖文本的绘图，它们将出现顺序错乱。
 
 > [!NOTE]
-> There are plans to support drawing-heavy notes that interleave with text boxes by converting them to a <a class="reference-link" href="../../../Note%20Types/Canvas.md">Canvas</a> instead.
+> 有计划通过将绘图密集且与文本框交错的笔记转换为<a class="reference-link" href="../../../Note%20Types/Canvas.md">画布</a>来支持它们。
 
-### Password-protected sections
+### 受密码保护的分区
 
-OneNote supports encryption at section level; when importing a notebook that contains these password-protection sections, Trilium will not be able to read the content of password-protected sections so they will appear empty. This is not a limitation of Trilium, the information is simply not available from the source (Graph API).
+OneNote 支持在分区级别进行加密；当导入包含这些受密码保护分区的笔记本时，Trilium 将无法读取受密码保护分区的内容，因此它们会显示为空。这不是 Trilium 的局限性，而是源（Graph API）根本不提供这些信息。
 
-The section itself is kept for reference and all the sections that could not be imported will be shown in the report (the top-level note called _OneNote import_).
+该分区本身会保留以供参考，所有无法导入的分区都会显示在报告（名为 _OneNote 导入_ 的顶级笔记）中。
 
-To unprotect a section in OneNote Desktop, right click on the protected section → _Password Protect This Section_ and press _Remove Password_ and sync. Then reimport either only the protected sessions or the remove everything and start the import from scratch.
+要在 OneNote 桌面版中取消分区的保护，请右键点击受保护的分区 → _密码保护此分区_，然后点击 _删除密码_ 并同步。然后重新导入仅受保护的分区，或者删除所有内容并从头开始导入。
 
-## Other limitations
+## 其他局限性
 
-The following are known limitations due to how the information comes from the import (Microsoft Graph API), which means that they cannot be fixed.
+以下是已知的局限性，是由于导入信息的来源（Microsoft Graph API）所致，这意味着它们无法修复。
 
-*   The order of the sections (and section groups) is not available, the sections are ordered by creation date instead.
-*   Revision history.
-*   Paragraph indentation, as well as code block indentation.
-*   Section colors.
-*   Drawings inside titles, the title might appear incomplete or “Untitled”.
+*   分区（和分区组）的顺序不可用，分区改为按创建日期排序。
+*   修订历史。
+*   段落缩进以及代码块缩进。
+*   分区颜色。
+*   标题内的绘图，标题可能显示不完整或显示为“无标题”。
 
-## Reporting issues
+## 报告问题
 
-When importing notes, you might find that some text is not rendered properly or the structure is not properly maintained. As long as this issue is not a fundamental issue (like the issue with freehand text not being preserved exactly), it's a good idea to [report it](../../../Troubleshooting/Reporting%20issues.md).
+导入笔记时，您可能会发现某些文本渲染不正确或结构未正确维护。只要此问题不是根本性问题（例如手绘文本未被精确保留的问题），最好[报告它](../../../Troubleshooting/Reporting%20issues.md)。
 
-When reporting, make sure that you provide the following information:
+报告时，请确保提供以下信息：
 
-*   Import again the section, checking the debug checkbox before importing. This preserves the original document (and the hand-drawing data if any) as it came through from OneNote's cloud API so that it can be used for comparison.
-*   Export only the affected page as ZIP, making sure not to accidentally expose any sensitive information.
-*   Take screenshots of how the note looked like in OneNote and how it ends up in Trilium.
-*   Attach the ZIP and the screenshots to the issue report.
+*   重新导入该分区，并在导入前勾选调试复选框。这会保留从 OneNote 云 API 获取的原始文档（以及任何手绘数据），以便用于比较。
+*   仅将受影响的页面导出为 ZIP，确保不会意外泄露任何敏感信息。
+*   截取笔记在 OneNote 中的外观以及在 Trilium 中的最终效果的截图。
+*   将 ZIP 文件和截图附加到问题报告中。

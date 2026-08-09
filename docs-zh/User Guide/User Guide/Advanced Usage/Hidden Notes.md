@@ -1,19 +1,20 @@
-# Hidden Notes
+# 隐藏笔记
+
 <figure class="image image-style-align-right"><img style="aspect-ratio:263/445;" src="Hidden Notes_image.png" width="263" height="445"></figure>
 
-For easy extensibility, a lot of features in Trilium make use of actual notes to store information as opposed to having them stored in a separate location in the database. This allows some functions such as <a class="reference-link" href="Attributes.md">Attributes</a>, <a class="reference-link" href="Attributes/Relations.md">Relations</a> or even <a class="reference-link" href="../Basic%20Concepts%20and%20Features/Navigation/Search.md">Search</a> and <a class="reference-link" href="../Note%20Types/Text/Links.md">Links</a> to be able to operate on them.
+为了便于扩展，Trilium 中的许多功能都利用实际笔记来存储信息，而不是将它们存储在数据库中的单独位置。这使得某些功能（如 <a class="reference-link" href="Attributes.md">属性</a>、<a class="reference-link" href="Attributes/Relations.md">关系</a>，甚至 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/Navigation/Search.md">搜索</a> 和 <a class="reference-link" href="../Note%20Types/Text/Links.md">链接</a>）能够对这些笔记进行操作。
 
-As the name suggests, these notes are hidden to the user by default to prevent cluttering the note tree and to prevent them from being accidentally deleted.
+顾名思义，这些笔记默认对用户隐藏，以防止笔记树杂乱无章，并防止它们被意外删除。
 
-The hidden notes are stored in the user's <a class="reference-link" href="Database.md">Database</a> just like normal notes, but they have a unique <a class="reference-link" href="Note%20ID.md">Note ID</a> which allows them to be distinguished from the normal ones.
+隐藏笔记与普通笔记一样存储在用户的 <a class="reference-link" href="Database.md">数据库</a> 中，但它们具有唯一的 <a class="reference-link" href="Note%20ID.md">笔记 ID</a>，从而可以与普通笔记区分开来。
 
-## Accessing the hidden note tree
+## 访问隐藏笔记树
 
-From the <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Global%20menu.md">Global menu</a>, select _Advanced_ → _Show Hidden Subtree_.
+从 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Global%20menu.md">全局菜单</a> 中，选择 _高级_ → _显示隐藏子树_。
 
-## Contents of the hidden note tree
+## 隐藏笔记树的内容
 
-Here is a brief summary of all the notes within the hidden tree:
+以下是隐藏树中所有笔记的简要摘要：
 
 <table class="ck-table-resized">
     <colgroup>
@@ -22,58 +23,58 @@ Here is a brief summary of all the notes within the hidden tree:
     </colgroup>
     <thead>
         <tr>
-            <th>Note</th>
-            <th>Description</th>
+            <th>笔记</th>
+            <th>描述</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td><a class="reference-link" href="#root/_hidden/_globalNoteMap">Note Map</a></td>
-            <td><p>This note is actually opened when the&nbsp;<a class="reference-link" href="../Note%20Types/Note%20Map.md">Note Map</a>&nbsp;feature that is accessed from the&nbsp;<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Launch%20Bar.md">Launch Bar</a>.</p><p>It is possible to create any child notes in it without any additional meaning. For example, it can be used to store a list of note maps which can be linked to from other notes or <a href="../Basic%20Concepts%20and%20Features/Navigation/Bookmarks.md">bookmarked</a>.</p></td>
+            <td><a class="reference-link" href="#root/_hidden/_globalNoteMap">笔记地图</a></td>
+            <td><p>当从 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Launch%20Bar.md">启动栏</a> 访问 <a class="reference-link" href="../Note%20Types/Note%20Map.md">笔记地图</a> 功能时，实际打开的就是此笔记。</p><p>可以在其中创建任何子笔记，而无需附加任何特殊含义。例如，它可以用来存储笔记地图列表，这些地图可以从其他笔记链接或 <a href="../Basic%20Concepts%20and%20Features/Navigation/Bookmarks.md">添加书签</a>。</p></td>
         </tr>
         <tr>
-            <td><a class="reference-link" href="#root/_hidden/_sqlConsole">SQL Console History</a></td>
-            <td><p>When SQL queries or commands are executed in the&nbsp;<a class="reference-link" href="Database/Manually%20altering%20the%20database/SQL%20Console.md">SQL Console</a>, they are stored here, grouped by month. Only the query is stored and not the results.</p><p>This section can be accessed without going to the hidden tree by simply going to the&nbsp;<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Global%20menu.md">Global menu</a>&nbsp;and selecting Advanced → Open SQL Console History.</p><p>Notes can be added as children of this tree, but it's generally not recommended to do so to not interfere with the normal history process.</p></td>
+            <td><a class="reference-link" href="#root/_hidden/_sqlConsole">SQL 控制台历史记录</a></td>
+            <td><p>当在 <a class="reference-link" href="Database/Manually%20altering%20the%20database/SQL%20Console.md">SQL 控制台</a> 中执行 SQL 查询或命令时，它们会按月份分组存储在此处。仅存储查询本身，不存储结果。</p><p>无需进入隐藏树即可访问此部分，只需转到 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Global%20menu.md">全局菜单</a> 并选择 高级 → 打开 SQL 控制台历史记录。</p><p>可以在此树下添加子笔记，但通常不建议这样做，以免干扰正常的歷史记录流程。</p></td>
         </tr>
         <tr>
-            <td><a class="reference-link" href="#root/_hidden/_search">Search History</a></td>
-            <td><p>Whenever a search is executed from the full&nbsp;<a class="reference-link" href="../Basic%20Concepts%20and%20Features/Navigation/Search.md">Search</a>, the query will be stored here, grouped by month. Only the search parameters are stored and not the results themselves.</p><p>This section can be accessed without going to the hidden tree by simply going to the&nbsp;<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Global%20menu.md">Global menu</a>&nbsp;and selecting Advanced → Open Search History.</p><p>Notes can be added as children of this tree, but it's generally not recommended to do so to not interfere with the normal history process.</p></td>
+            <td><a class="reference-link" href="#root/_hidden/_search">搜索历史记录</a></td>
+            <td><p>每当从完整的 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/Navigation/Search.md">搜索</a> 中执行搜索时，查询将按月份分组存储在此处。仅存储搜索参数，不存储结果本身。</p><p>无需进入隐藏树即可访问此部分，只需转到 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Global%20menu.md">全局菜单</a> 并选择 高级 → 打开搜索历史记录。</p><p>可以在此树下添加子笔记，但通常不建议这样做，以免干扰正常的歷史记录流程。</p></td>
         </tr>
         <tr>
-            <td><a class="reference-link" href="#root/_hidden/_bulkAction">Bulk Action</a></td>
-            <td><p>This section is used for&nbsp;<a class="reference-link" href="Bulk%20Actions.md">Bulk Actions</a>. The last configuration for bulk actions will be stored as part of this note, each action in its own <code>action</code> label.</p><p>Notes can be added as children of this tree, but there won't be any benefit in doing so.</p></td>
+            <td><a class="reference-link" href="#root/_hidden/_bulkAction">批量操作</a></td>
+            <td><p>此部分用于 <a class="reference-link" href="Bulk%20Actions.md">批量操作</a>。批量操作的最后配置将存储为此笔记的一部分，每个操作存储在其自己的 <code>action</code> 标签中。</p><p>可以在此树下添加子笔记，但这样做不会有任何好处。</p></td>
         </tr>
         <tr>
-            <td><a class="reference-link" href="#root/_hidden/_backendLog">Backend Log</a></td>
-            <td><p>This note corresponds to the backend log feature (see&nbsp;<a class="reference-link" href="../Troubleshooting/Error%20logs.md">Error logs</a>).</p><p>This item can be accessed without going to the hidden try by going to the&nbsp;<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Global%20menu.md">Global menu</a>&nbsp;and selecting Advanced → Show backend log.</p></td>
+            <td><a class="reference-link" href="#root/_hidden/_backendLog">后端日志</a></td>
+            <td><p>此笔记对应后端日志功能（参见 <a class="reference-link" href="../Troubleshooting/Error%20logs.md">错误日志</a>）。</p><p>无需进入隐藏树即可访问此项目，只需转到 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Global%20menu.md">全局菜单</a> 并选择 高级 → 显示后端日志。</p></td>
         </tr>
         <tr>
-            <td><a class="reference-link" href="#root/_hidden/_userHidden">User Hidden</a></td>
-            <td>This section can be used by <a href="../Scripting.md">scripts</a> to create their own notes that should not be directly visible to the user. The note can be identified by scripts by its unique ID: <code>_userHidden</code></td>
+            <td><a class="reference-link" href="#root/_hidden/_userHidden">用户隐藏</a></td>
+            <td>此部分可供 <a href="../Scripting.md">脚本</a> 用来创建不应直接对用户可见的自己的笔记。脚本可以通过其唯一 ID <code>_userHidden</code> 来识别该笔记。</td>
         </tr>
         <tr>
-            <td><a class="reference-link" href="#root/_hidden/_lbTplRoot">Launch Bar Templates</a></td>
-            <td><p>This section contains the templates for the creation of launchers in the&nbsp;<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Launch%20Bar.md">Launch Bar</a>. It is not possible to create child notes here.</p><p>Theoretically some of the notes here can be customized, but there's not much benefit to be had in doing so.</p></td>
+            <td><a class="reference-link" href="#root/_hidden/_lbTplRoot">启动栏模板</a></td>
+            <td><p>此部分包含用于在 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Launch%20Bar.md">启动栏</a> 中创建启动器的模板。此处无法创建子笔记。</p><p>理论上，此处的某些笔记可以自定义，但这样做没有太大好处。</p></td>
         </tr>
         <tr>
-            <td><a class="reference-link" href="#root/_hidden/_share">Shared Notes</a></td>
-            <td><p>This tree lists all of the notes that are <a href="Sharing.md">shared</a> publicly. It can be useful to track down which notes are shared regardless of their position in the note tree.</p><p>This section can be accessed without going to the hidden tree simply by going to the&nbsp;<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Global%20menu.md">Global menu</a>&nbsp;and selecting <em>Show Shared Notes Subtree</em>.</p><p>Sub-notes cannot be created here.</p></td>
+            <td><a class="reference-link" href="#root/_hidden/_share">共享笔记</a></td>
+            <td><p>此树列出了所有公开 <a href="Sharing.md">共享</a> 的笔记。无论这些笔记在笔记树中的位置如何，它都有助于追踪哪些笔记被共享。</p><p>无需进入隐藏树即可访问此部分，只需转到 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Global%20menu.md">全局菜单</a> 并选择 <em>显示共享笔记子树</em>。</p><p>此处无法创建子笔记。</p></td>
         </tr>
         <tr>
-            <td><a class="reference-link" href="#root/_hidden/_lbRoot">Launch Bar</a></td>
-            <td><p>The tree contains both available and displayed items of the&nbsp;<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Launch%20Bar.md">Launch Bar</a>.</p><p>This section can be accessed without going to the hidden tree by:</p><ul><li>Going to the&nbsp;<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Global%20menu.md">Global menu</a>&nbsp;and selecting <em>Configure Launchbar</em>.</li><li>Right-clicking an empty space on the&nbsp;<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Launch%20Bar.md">Launch Bar</a>&nbsp;and selecting <em>Configure Launchbar</em>.</li></ul><p>Sub-notes cannot be created here.</p></td>
+            <td><a class="reference-link" href="#root/_hidden/_lbRoot">启动栏</a></td>
+            <td><p>此树包含 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Launch%20Bar.md">启动栏</a> 的可用和已显示项目。</p><p>无需进入隐藏树即可通过以下方式访问此部分：</p><ul><li>转到 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Global%20menu.md">全局菜单</a> 并选择 <em>配置启动栏</em>。</li><li>右键单击 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Launch%20Bar.md">启动栏</a> 上的空白区域，然后选择 <em>配置启动栏</em>。</li></ul><p>此处无法创建子笔记。</p></td>
         </tr>
         <tr>
-            <td><a class="reference-link" href="#root/_hidden/_options">Options</a></td>
-            <td><p>This section stores the list of&nbsp;<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">Options</a>.</p><p>This section can be accessed without going to the hidden tree by:</p><ul><li>Going to the&nbsp;<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Global%20menu.md">Global menu</a>&nbsp;and selecting <em>Options</em>.</li><li>Pressing the dedicated Options icon in the&nbsp;<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Launch%20Bar.md">Launch Bar</a>.</li></ul></td>
+            <td><a class="reference-link" href="#root/_hidden/_options">选项</a></td>
+            <td><p>此部分存储 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">选项</a> 的列表。</p><p>无需进入隐藏树即可通过以下方式访问此部分：</p><ul><li>转到 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Global%20menu.md">全局菜单</a> 并选择 <em>选项</em>。</li><li>按下 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Launch%20Bar.md">启动栏</a> 中专用的选项图标。</li></ul></td>
         </tr>
         <tr>
-            <td><a class="reference-link" href="#root/_hidden/_lbMobileRoot">Mobile Launch Bar</a></td>
-            <td><p>This is very similar to the <em>Launch Bar</em>, but is dedicated for the mobile UI only.</p><p>Accessing it outside the <em>Launch Bar</em> is the same as the Launch Bar, but needs to be done so from the mobile interface.</p></td>
+            <td><a class="reference-link" href="#root/_hidden/_lbMobileRoot">移动端启动栏</a></td>
+            <td><p>这与 <em>启动栏</em> 非常相似，但仅专用于移动端 UI。</p><p>在 <em>启动栏</em> 之外访问它的方式与启动栏相同，但需要从移动端界面进行操作。</p></td>
         </tr>
         <tr>
-            <td><a class="reference-link" href="#root/_hidden/_help">User Guide</a></td>
-            <td>This is where the note structure for the User Guide is actually stored. Only the metadata is stored, as the help itself is present as actual files in the application directory.</td>
+            <td><a class="reference-link" href="#root/_hidden/_help">用户指南</a></td>
+            <td>这里实际存储的是用户指南的笔记结构。仅存储元数据，因为帮助内容本身以实际文件的形式存在于应用程序目录中。</td>
         </tr>
     </tbody>
 </table>

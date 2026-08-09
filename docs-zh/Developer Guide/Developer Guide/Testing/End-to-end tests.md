@@ -1,45 +1,46 @@
-# End-to-end tests
-**Server E2E:**
+# 端到端测试
 
-*   Tests the entire ETAPI.
-*   Tests WebSocket functionality
+**服务器端 E2E：**
 
-**Desktop E2E:**
+*   测试整个 ETAPI。
+*   测试 WebSocket 功能。
 
-*   Playwright with Electron
-*   Tests some basic functionality such as creating a new document.
+**桌面端 E2E：**
 
-Shared E2E tests live in `packages/trilium-e2e/`. Server-specific tests are in `apps/server/e2e/`, desktop tests in `apps/desktop/e2e/`.
+*   使用 Playwright 与 Electron。
+*   测试一些基本功能，例如创建新文档。
 
-Run E2E tests via:
+共享的 E2E 测试位于 `packages/trilium-e2e/`。服务器特定测试位于 `apps/server/e2e/`，桌面端测试位于 `apps/desktop/e2e/`。
 
-*   `pnpm --filter server e2e` (server)
-*   `pnpm --filter standalone e2e` (standalone)
-*   `pnpm --filter desktop e2e` (desktop/Electron)
+通过以下命令运行 E2E 测试：
 
-## First-time run
+*   `pnpm --filter server e2e`（服务器）
+*   `pnpm --filter standalone e2e`（独立版）
+*   `pnpm --filter desktop e2e`（桌面版/Electron）
 
-Before starting Playwright, it has to be installed locally via:
+## 首次运行
+
+在启动 Playwright 之前，需要先在本地安装它：
 
 ```
 pnpm playwright install
 ```
 
-## Starting the integration test server
+## 启动集成测试服务器
 
-Simply run `pnpm e2e` in one of the e2e projects.
+只需在某个 e2e 项目中运行 `pnpm e2e` 即可。
 
-The integration server doesn't have authentication enabled to avoid login issues.
+集成服务器未启用身份验证，以避免登录问题。
 
-## Starting the interactive test runner
+## 启动交互式测试运行器
 
-After starting the integration test server, to run the Playwright UI, run in the terminal:
+启动集成测试服务器后，要在终端中运行 Playwright UI，请运行：
 
 ```
 pnpm playwright test --ui
 ```
 
-It is also possible to run the interactive code generator instead:
+也可以改为运行交互式代码生成器：
 
 ```
 pnpm playwright codegen

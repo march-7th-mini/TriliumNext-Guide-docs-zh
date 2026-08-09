@@ -1,25 +1,25 @@
 # Day.js
-Day.js is a date manipulation library that's used by Trilium, but it's also shared with both front-end and back-end scripts. For more information about the library itself, consult the [official documentation](https://day.js.org/en/).
+Day.js 是一个日期操作库，Trilium 使用它，同时它也供前端和后端脚本共用。关于该库本身的更多信息，请查阅[官方文档](https://day.js.org/en/)。
 
-## How to use
+## 如何使用
 
-The `dayjs` method is provided directly in the `api` global:
+`dayjs` 方法直接提供在 `api` 全局对象中：
 
 ```javascript
 const date = api.dayjs();
 api.log(date.format("YYYY-MM-DD"));
 ```
 
-## Plugins
+## 插件
 
-Day.js uses a modular, plugin-based architecture. Generally these plugins must be imported, but this process doesn't work inside Trilium scripts due to the use of a bundler.
+Day.js 采用模块化、基于插件的架构。通常这些插件必须导入，但由于使用了打包器，这一过程在 Trilium 脚本内部无法工作。
 
-Since v0.100.0, the same set of plugins is available for both front-end and back-end scripts.
+自 v0.100.0 起，前端和后端脚本均可使用同一组插件。
 
-The following Day.js plugins are directly integrated into Trilium:
+以下 Day.js 插件已直接集成到 Trilium 中：
 
 *   [AdvancedFormat](https://day.js.org/docs/en/plugin/advanced-format)
-*   [Duration](https://day.js.org/docs/en/plugin/duration), since v0.100.0.
+*   [Duration](https://day.js.org/docs/en/plugin/duration)，自 v0.100.0 起。
 *   [IsBetween](https://day.js.org/docs/en/plugin/is-between)
 *   [IsoWeek](https://day.js.org/docs/en/plugin/iso-week)
 *   [IsSameOrAfter](https://day.js.org/docs/en/plugin/is-same-or-after)
@@ -28,4 +28,4 @@ The following Day.js plugins are directly integrated into Trilium:
 *   [UTC](https://day.js.org/docs/en/plugin/utc)
 
 > [!NOTE]
-> If another Day.js plugin might be needed for scripting purposes, feel free to open a feature request for it. Depending on the size of the plugin and the potential use of it inside the Trilium code base, it has a chance of being integrated.
+> 如果出于脚本编写目的需要其他 Day.js 插件，欢迎为其提交功能请求。根据插件的大小以及在 Trilium 代码库中的潜在使用情况，它有可能被集成。

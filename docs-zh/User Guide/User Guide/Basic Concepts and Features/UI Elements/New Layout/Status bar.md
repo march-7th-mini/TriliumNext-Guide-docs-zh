@@ -1,30 +1,31 @@
-# Status bar
-The status bar displays information about the current note and allows changing settings related to it such as configuring the language or attributes.
+# 状态栏
 
-## Layout and interaction
+状态栏显示当前笔记的信息，并允许更改与其相关的设置，例如配置语言或属性。
 
-On the left side, the <a class="reference-link" href="Breadcrumb.md">Breadcrumb</a> is displayed which indicates the current note as well as its parent notes and allows for quick navigation throughout the hierarchy.
+## 布局与交互
 
-On the right side, specific sections will show depending on the type of the current note.
+左侧显示<a class="reference-link" href="Breadcrumb.md">面包屑</a>，指示当前笔记及其父笔记，并允许在整个层级结构中快速导航。
 
-1.  For <a class="reference-link" href="../../../Note%20Types/Code.md">Code</a> notes, the language mode of the note is indicated (e.g. JavaScript, plain text), as well as allowing easy switching to another mode.
-2.  For <a class="reference-link" href="../../../Note%20Types/Text.md">Text</a> notes, the content language is displayed and can be changed, thus configuring the spell-check and the right-to-left support.
-    1.  Note that this applies to the entire note and not the selection, unlike some text editors.
-3.  If a note is placed in multiple places in the tree (cloned), the number of the note paths will be displayed.
-    1.  Clicking it will reveal the full list of note paths in the sidebar's <a class="reference-link" href="../Right%20Sidebar/Connections%20tab.md">Connections tab</a>.
-4.  If a note has attachments, their number will be displayed.
-    1.  Clicking on it will reveal the list of attachments in a new tab.
-5.  If a note is linked from other text notes (backlinks), the number of backlinks will be displayed.
-    1.  Clicking on it will show the list of notes that link to this note, as well as an excerpt of where the note is referenced in the sidebar's <a class="reference-link" href="../Right%20Sidebar/Connections%20tab.md">Connections tab</a>.
+右侧会根据当前笔记的类型显示特定部分。
 
-Regardless of note type, the following items will always be displayed if there is a note:
+1.  对于<a class="reference-link" href="../../../Note%20Types/Code.md">代码</a>笔记，会显示笔记的语言模式（例如 JavaScript、纯文本），并允许轻松切换到其他模式。
+2.  对于<a class="reference-link" href="../../../Note%20Types/Text.md">文本</a>笔记，会显示内容语言且可以更改，从而配置拼写检查和从右到左支持。
+    1.  请注意，与某些文本编辑器不同，这适用于整个笔记而非选中部分。
+3.  如果笔记在树中被放置在多个位置（已克隆），则会显示笔记路径的数量。
+    1.  点击它将在侧边栏的<a class="reference-link" href="../Right%20Sidebar/Connections%20tab.md">连接选项卡</a>中显示笔记路径的完整列表。
+4.  如果笔记有附件，则会显示其数量。
+    1.  点击它将在新选项卡中显示附件列表。
+5.  如果笔记被其他文本笔记链接（反链），则会显示反链的数量。
+    1.  点击它将在侧边栏的<a class="reference-link" href="../Right%20Sidebar/Connections%20tab.md">连接选项卡</a>中显示链接到此笔记的笔记列表，以及引用该笔记位置的摘录。
 
-1.  Note info, which displays:
-    1.  The creation/modification date of the note.
-    2.  The type and MIME of the note.
-    3.  The note ID.
-    4.  An estimation of the note size of the note itself and its children.
-    5.  A button to reveal the Similar notes in the sidebar's <a class="reference-link" href="../Right%20Sidebar/Connections%20tab.md">Connections tab</a>.
+无论笔记类型如何，只要存在笔记，以下项目将始终显示：
 
-> [!NOTE]
-> When pressing a button which reveals the <a class="reference-link" href="../Right%20Sidebar.md">Right Sidebar</a>, it has a specific behavior if the sidebar is hidden: the sidebar will be peeked instead of docked. Regardless the sidebar will be switched to the appropriate tab and the corresponding section will be highlighted.
+1.  笔记信息，显示：
+    1.  笔记的创建/修改日期。
+    2.  笔记的类型和 MIME。
+    3.  笔记 ID。
+    4.  笔记本身及其子笔记的大小估算。
+    5.  一个按钮，用于在侧边栏的<a class="reference-link" href="../Right%20Sidebar/Connections%20tab.md">连接选项卡</a>中显示相似笔记。
+
+> [!注意]
+> 当按下显示<a class="reference-link" href="../Right%20Sidebar.md">右侧边栏</a>的按钮时，如果侧边栏处于隐藏状态，则具有特定行为：侧边栏将临时显示而非停靠。无论哪种情况，侧边栏都将切换到相应的选项卡，并且相应的部分将被高亮显示。

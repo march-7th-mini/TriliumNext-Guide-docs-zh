@@ -1,18 +1,19 @@
-# Printing and exporting to PDF
-Note printing is handled by `note_detail.js`, in the `printActiveNoteEvent` method. Exporting to PDF works similarly.
+# 打印与导出为 PDF
 
-## How it works
+笔记打印由 `note_detail.js` 中的 `printActiveNoteEvent` 方法处理。导出为 PDF 的方式与之类似。
 
-Both printing and exporting as PDF use the same mechanism: a note is rendered individually in a separate webpage that is then sent to the browser or the Electron application either for printing or exporting as PDF.
+## 工作原理
 
-The webpage that renders a single note can actually be accessed in a web browser. For example `http://localhost:8080/#root/WWRGzqHUfRln/RRZsE9Al8AIZ?ntxId=0o4fzk` becomes `http://localhost:8080/?print#root/WWRGzqHUfRln/RRZsE9Al8AIZ`.
+打印和导出为 PDF 都使用相同的机制：笔记会在一个单独的网页中单独渲染，然后发送到浏览器或 Electron 应用进行打印或导出为 PDF。
 
-Accessing the print note in a web browser allows for easy debugging to understand why a particular note doesn't render well. The mechanism for rendering is similar to the one used in <a class="reference-link" href="#root/0ESUbbAxVnoK">Note List</a>.
+渲染单个笔记的网页实际上可以在网络浏览器中访问。例如，`http://localhost:8080/#root/WWRGzqHUfRln/RRZsE9Al8AIZ?ntxId=0o4fzk` 变为 `http://localhost:8080/?print#root/WWRGzqHUfRln/RRZsE9Al8AIZ`。
 
-## Syntax highlighting
+在网络浏览器中访问打印笔记可以方便地进行调试，以了解为什么某个特定笔记渲染效果不佳。渲染机制与 <a class="reference-link" href="#root/0ESUbbAxVnoK">笔记列表</a> 中使用的机制类似。
 
-Syntax highlighting for code blocks is supported as well:
+## 语法高亮
 
-*   It works by injecting a Highlight.js stylesheet into the print.
-*   The theme used is hard-coded (the _Visual Studio Light theme_, at the time of writing) in order not to have a dark background in print.
-*   <a class="reference-link" href="Syntax%20highlighting.md">Syntax highlighting</a> is handled by the content renderer.
+代码块的语法高亮同样受支持：
+
+*   它通过向打印内容中注入 Highlight.js 样式表来实现。
+*   所使用的主题是硬编码的（在撰写本文时为 _Visual Studio Light 主题_），以避免打印时出现深色背景。
+*   <a class="reference-link" href="Syntax%20highlighting.md">语法高亮</a> 由内容渲染器处理。

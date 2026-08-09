@@ -1,10 +1,11 @@
-# Live reload (HMR)
-Trilium uses Vite's HMR (hot module reloading) mechanism.
+# 实时重载（HMR）
 
-## Server live reload
+Trilium 使用 Vite 的 HMR（热模块重载）机制。
 
-If running the server using `pnpm server:start`, the server will watch for changes. For React components, they will be hot-reloaded without requiring a refresh. For other services, it will reload the page.
+## 服务器实时重载
 
-## Desktop live reload
+如果使用 `pnpm server:start` 运行服务器，服务器将监视更改。对于 React 组件，它们将被热重载，无需刷新。对于其他服务，它将重新加载页面。
 
-`pnpm desktop:start` acts the same as `pnpm server:start` with hot-reloading for client-side changes. Changes on the desktop side require a complete re-run of the `pnpm desktop:start` command.
+## 桌面端实时重载
+
+`pnpm desktop:start` 与 `pnpm server:start` 的作用相同，对客户端更改进行热重载。桌面端的更改需要完全重新运行 `pnpm desktop:start` 命令。

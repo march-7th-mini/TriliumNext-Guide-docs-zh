@@ -1,34 +1,34 @@
-# Vertical and horizontal layout
-## Layouts
+# 垂直与水平布局
+## 布局
 
-Trilium supports two different layouts, based on your preference.
+Trilium 根据您的偏好支持两种不同的布局。
 
-### Vertical layout
+### 垂直布局
 
-The vertical layout is Trilium's original layout:
+垂直布局是 Trilium 的原始布局：
 
-*   The <a class="reference-link" href="Launch%20Bar.md">Launch Bar</a> is positioned on the left side of the screen, with buttons being laid out vertically.
-*   The tab bar is at the top, but to the right of the <a class="reference-link" href="Note%20Tree.md">Note Tree</a>.
-*   The <a class="reference-link" href="../Navigation/Quick%20search.md">Quick search</a> is at the top of the <a class="reference-link" href="Note%20Tree.md">Note Tree</a>.
-*   The <a class="reference-link" href="Note%20Tree.md">Note Tree</a> can be collapsed by pressing the ![](5_Vertical%20and%20horizontal%20layout_image.png) button at the bottom of the <a class="reference-link" href="Launch%20Bar.md">Launch Bar</a>.
-*   The <a class="reference-link" href="Global%20menu.md">Global menu</a> can be accessed via the ![](4_Vertical%20and%20horizontal%20layout_image.png) icon at the top of the <a class="reference-link" href="Launch%20Bar.md">Launch Bar</a>.
+*   <a class="reference-link" href="Launch%20Bar.md">启动栏</a> 位于屏幕左侧，按钮垂直排列。
+*   标签栏位于顶部，但在 <a class="reference-link" href="Note%20Tree.md">笔记树</a> 的右侧。
+*   <a class="reference-link" href="../Navigation/Quick%20search.md">快速搜索</a> 位于 <a class="reference-link" href="Note%20Tree.md">笔记树</a> 的顶部。
+*   可以通过按下 <a class="reference-link" href="Launch%20Bar.md">启动栏</a> 底部的 ![](5_Vertical%20and%20horizontal%20layout_image.png) 按钮来折叠 <a class="reference-link" href="Note%20Tree.md">笔记树</a>。
+*   可以通过 <a class="reference-link" href="Launch%20Bar.md">启动栏</a> 顶部的 ![](4_Vertical%20and%20horizontal%20layout_image.png) 图标访问 <a class="reference-link" href="Global%20menu.md">全局菜单</a>。
 
 ![](3_Vertical%20and%20horizontal%20layout_image.png)
 
-### Horizontal layout
+### 水平布局
 
-The horizontal layout is a more traditional layout, since it bears similarity with other applications. In this mode:
+水平布局是一种更传统的布局，因为它与其他应用程序有相似之处。在此模式下：
 
-*   The <a class="reference-link" href="Launch%20Bar.md">Launch Bar</a> is at the top of the screen, with the buttons laid horizontally.
-*   The tab bar is at the top of the screen, but now covers the entirety of the width, allowing for more tabs to be displayed at once.
-*   The <a class="reference-link" href="../Navigation/Quick%20search.md">Quick search</a> is now part of the <a class="reference-link" href="Launch%20Bar.md">Launch Bar</a>. It can be moved around according to preference and even removed if needed.
-*   The <a class="reference-link" href="Note%20Tree.md">Note Tree</a> can be collapsed by pressing the small ![](1_Vertical%20and%20horizontal%20layout_image.png) button to the left of the first tab.
-*   The <a class="reference-link" href="Global%20menu.md">Global menu</a> can be accessed via the ![](Vertical%20and%20horizontal%20layout_image.png) button at the end of the <a class="reference-link" href="Launch%20Bar.md">Launch Bar</a>.
+*   <a class="reference-link" href="Launch%20Bar.md">启动栏</a> 位于屏幕顶部，按钮水平排列。
+*   标签栏位于屏幕顶部，但现在覆盖了整个宽度，允许一次显示更多标签。
+*   <a class="reference-link" href="../Navigation/Quick%20search.md">快速搜索</a> 现在是 <a class="reference-link" href="Launch%20Bar.md">启动栏</a> 的一部分。可以根据偏好移动它，甚至在需要时将其移除。
+*   可以通过按下第一个标签左侧的 ![](1_Vertical%20and%20horizontal%20layout_image.png) 小按钮来折叠 <a class="reference-link" href="Note%20Tree.md">笔记树</a>。
+*   可以通过 <a class="reference-link" href="Launch%20Bar.md">启动栏</a> 末尾的 ![](Vertical%20and%20horizontal%20layout_image.png) 按钮访问 <a class="reference-link" href="Global%20menu.md">全局菜单</a>。
 
 ![](2_Vertical%20and%20horizontal%20layout_image.png)
 
-## Changing the layout
+## 更改布局
 
-Go to <a class="reference-link" href="Options.md">Options</a> and look for the _Appearance_ option on the left. Then look for the _Layout_ section, where there is the possibility to switch between the two available layouts.
+转到 <a class="reference-link" href="Options.md">选项</a>，在左侧找到 _外观_ 选项。然后找到 _布局_ 部分，可以在其中切换两种可用布局。
 
-Selecting an option will immediately apply the new layout by reloading the window.
+选择一个选项将立即通过重新加载窗口来应用新布局。

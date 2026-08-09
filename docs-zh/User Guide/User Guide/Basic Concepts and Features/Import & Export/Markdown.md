@@ -1,43 +1,43 @@
 # Markdown
-Trilium supports Markdown for both import and export, while trying to keep compatibility as high as possible.
+Trilium 支持 Markdown 的导入和导出，并尽可能保持高兼容性。
 
-## Import
+## 导入
 
-### Clipboard import
+### 剪贴板导入
 
-If you want to import just a chunk of markdown from clipboard, you can do it from editor block menu:
+如果你只想从剪贴板导入一段 Markdown，可以通过编辑器块菜单进行操作：
 
 ![](Markdown_markdown-inline-import.gif)
 
-### File import
+### 文件导入
 
-You can also import Markdown files from files:
+你也可以从文件中导入 Markdown 文件：
 
-*   single markdown file (with .md extension)
-*   whole tree of markdown files (packaged into [.zip](https://en.wikipedia.org/wiki/Tar_\(computing\)) archive)
-    *   Markdown files need to be packaged into ZIP archive because browser can't read directories, only single files.
-    *   You can use e.g. [7-zip](https://www.7-zip.org) to package directory of markdown files into the ZIP file
+*   单个 Markdown 文件（扩展名为 .md）
+*   整个 Markdown 文件树（打包成 [.zip](https://en.wikipedia.org/wiki/Tar_\(computing\)) 归档文件）
+    *   Markdown 文件需要打包成 ZIP 归档文件，因为浏览器无法读取目录，只能读取单个文件。
+    *   你可以使用例如 [7-zip](https://www.7-zip.org) 将 Markdown 文件目录打包成 ZIP 文件
 
 ![](Markdown_markdown-file-import.gif)
 
-## Export
+## 导出
 
-### Subtree export
+### 子树导出
 
-You can export whole subtree to ZIP archive which will have directory structured modelled after subtree structure:
+你可以将整个子树导出为 ZIP 归档文件，该文件的目录结构将模拟子树结构：
 
 ![](Markdown_markdown-export-subtree.gif)
 
-### Single note export
+### 单个笔记导出
 
-If you want to export just single note without its subtree, you can do it from Note actions menu:
+如果你只想导出单个笔记而不包含其子树，可以通过笔记操作菜单进行操作：
 
 ![](Markdown_markdown-export-note.gif)
 
-### Exporting protected notes
+### 导出受保护的笔记
 
-If you want to export protected notes, enter a protected session first! This will export the notes in an unencrypted form, so if you reimport into Trilium, make sure to re-protect these notes.
+如果你想导出受保护的笔记，请先进入受保护会话！这将以未加密的形式导出笔记，因此如果你重新导入到 Trilium，请务必重新保护这些笔记。
 
-## Supported syntax
+## 支持的语法
 
-See the dedicated page: <a class="reference-link" href="Markdown/Supported%20syntax.md">Supported syntax</a>
+请参阅专门页面：<a class="reference-link" href="Markdown/Supported%20syntax.md">支持的语法</a>

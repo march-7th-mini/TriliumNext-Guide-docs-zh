@@ -1,34 +1,35 @@
-# Zen mode
+# 禅模式
+
 ![](3_Zen%20mode_image.png)
 
-Screenshot of Zen Mode activated on a Windows 11 system with native title bar off and background effects on.
+在 Windows 11 系统上激活禅模式的截图，原生标题栏已关闭且背景效果已开启。
 
-When Zen Mode is activated (pictured on the side), most of the user interface of Trilium is hidden away in order to be able to focus on the content, whether it's for reading or writing.
+当禅模式被激活时（如侧图所示），Trilium 的大部分用户界面都会被隐藏，以便专注于内容，无论是阅读还是写作。
 
 ![](2_Zen%20mode_image.png)
 
-Screenshot of the Zen Mode option in the global menu.
+全局菜单中禅模式选项的截图。
 
-## Activating & deactivating
+## 激活与停用
 
-The Zen Mode can be activated by accessing the global menu and selecting the “Zen Mode” option:
+可以通过访问全局菜单并选择“禅模式”选项来激活禅模式：
 
-Aside from the global menu, it's also possible to activate this mode by using a keyboard shortcut (which is <kbd>F9</kbd> since TriliumNext 0.92.5 and <kbd>Alt</kbd>+<kbd>Z</kbd> for older versions). Look for `toggleZenMode` in the shortcut configuration.
+除了全局菜单，还可以使用键盘快捷键（自 TriliumNext 0.92.5 起为 <kbd>F9</kbd>，旧版本为 <kbd>Alt</kbd>+<kbd>Z</kbd>）来激活此模式。请在快捷键配置中查找 `toggleZenMode`。
 
-Once Zen Mode is activated, all the UI elements of the application will be hidden away, including the global menu. In that case, the Zen Mode can be deactivated either by pressing the ![](Zen%20mode_image.png) icon in the top-right corner of the window or by pressing the keyboard combination again.
+一旦禅模式被激活，应用程序的所有界面元素都会被隐藏，包括全局菜单。在这种情况下，可以通过点击窗口右上角的 ![](Zen%20mode_image.png) 图标或再次按下键盘组合键来停用禅模式。
 
-Do note that, by design, activating or deactivating the Zen Mode applies only to the current window. Restarting the application will also disable the Zen Mode.
+请注意，按照设计，激活或停用禅模式仅适用于当前窗口。重新启动应用程序也会停用禅模式。
 
-## Moving the window around
+## 移动窗口
 
-If “Native title bar” is activated, then the operating system's default title bar can be used to drag the window around. If deactivated, the window can still be moved by dragging the mouse across the top part of the window where the note titles are.
+如果“原生标题栏”已激活，则可以使用操作系统的默认标题栏来拖动窗口。如果已停用，仍然可以通过在窗口顶部（笔记标题所在位置）拖动鼠标来移动窗口。
 
 ![](1_Zen%20mode_image.png)
 
-Screenshot of two notes side-by-side while Zen Mode is active, on Windows 11 with background effects off.
+在禅模式激活时，两个笔记并排显示的截图，Windows 11 系统且背景效果已关闭。
 
-## Split windows and tabs
+## 分屏窗口与标签页
 
-Tabs are completely hidden, however it's still possible to use keyboard shortcuts such as `firstTab` (<kbd>Ctrl</kbd>+<kbd>1</kbd> by default), `secondTab` (<kbd>Ctrl</kbd>+<kbd>2</kbd> by default). There are also some newer shortcuts such as `activateNextTab` (<kbd>Ctrl</kbd>+<kbd>Tab</kbd>) or `activatePreviousTab` (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Tab</kbd>) that allow easy navigation, however make sure that they are configured properly in the settings.
+标签页完全被隐藏，但仍然可以使用键盘快捷键，例如 `firstTab`（默认为 <kbd>Ctrl</kbd>+<kbd>1</kbd>）、`secondTab`（默认为 <kbd>Ctrl</kbd>+<kbd>2</kbd>）。还有一些较新的快捷键，如 `activateNextTab`（<kbd>Ctrl</kbd>+<kbd>Tab</kbd>）或 `activatePreviousTab`（<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Tab</kbd>），可以方便地进行导航，但请确保它们在设置中已正确配置。
 
-For the split view of notes, there are no keyboard shortcuts at the time of writing, but it's still possible to have them in Zen Mode by creating the split while the Zen Mode is off and then reactivating it afterwards.
+对于笔记的分屏视图，在撰写本文时还没有键盘快捷键，但仍然可以在禅模式中实现分屏：先在禅模式关闭时创建分屏，然后再重新激活禅模式。

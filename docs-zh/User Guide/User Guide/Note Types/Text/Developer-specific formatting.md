@@ -1,37 +1,37 @@
-# Developer-specific formatting
-### Inline code
+# 开发者专用格式
+### 行内代码
 
-Inline code formats text using a monospace font to indicate technical content in a sentence such as code, paths, etc.
+行内代码使用等宽字体格式化文本，用于表示句子中的技术内容，如代码、路径等。
 
 ![](5_Developer-specific%20formatting_image.png)
 
-Example of inline code being used to illustrate file system paths as well as shell commands (`git` in this case).
+行内代码用于说明文件系统路径以及 shell 命令（此处为 `git`）的示例。
 
-To insert an inline code:
+插入行内代码的方法：
 
-*   Via the [Formatting toolbar](Formatting%20toolbar.md), look for the ![](3_Developer-specific%20formatting_image.png) button.
-*   Type \`code\` where `code` is the desired text to be automatically formatted as inline code.
+*   通过 [格式工具栏](Formatting%20toolbar.md)，查找 ![](3_Developer-specific%20formatting_image.png) 按钮。
+*   输入 \`code\`，其中 `code` 为希望自动格式化为行内代码的文本。
 
-### Code blocks
+### 代码块
 
-Code blocks display a snippet of code as a dedicated block:
+代码块将代码片段显示为独立区块：
 
 ![](4_Developer-specific%20formatting_image.png)
 
-A code block with JavaScript syntax highlight enabled.
+启用了 JavaScript 语法高亮的代码块。
 
-Note that these are not meant for very large portions of code. Use the dedicated [Code](../Code.md) note type instead.
+请注意，代码块并非用于存放超长代码。请改用专用的 [代码](../Code.md) 笔记类型。
 
-See the dedicated documentation for more information: [Code blocks](Developer-specific%20formatting/Code%20blocks.md)
+更多信息请参阅专门文档：[代码块](Developer-specific%20formatting/Code%20blocks.md)
 
-### Keyboard shortcuts
+### 键盘快捷键
 
-This allows marking a portion of text as a shortcut key.
+此功能可将文本的一部分标记为快捷键。
 
 ![](Developer-specific%20formatting_image.png)
 
-To apply this style, press the ![](6_Developer-specific%20formatting_image.png) button in ![](1_Developer-specific%20formatting_image.png) group from the [Formatting toolbar](Formatting%20toolbar.md). On the floating toolbar, the buttons appear when selecting a text.
+要应用此样式，请在 [格式工具栏](Formatting%20toolbar.md) 中按下 ![](6_Developer-specific%20formatting_image.png) 组中的 ![](1_Developer-specific%20formatting_image.png) 按钮。在浮动工具栏中，选中文本时会显示这些按钮。
 
-Alternatively, press the <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>K</kbd> combination to apply keyboard shortcut formatting to the current text selection.
+或者，按下 <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>K</kbd> 组合键，将键盘快捷键格式应用于当前选中的文本。
 
-The formatting can be removed by pressing again the button (from the UI or from the keyboard), or by using the <img src="2_Developer-specific formatting_image.png" width="17" height="16"> _Remove formatting_ button.
+可通过再次按下该按钮（从界面或键盘）来移除格式，或使用 <img src="2_Developer-specific formatting_image.png" width="17" height="16"> _移除格式_ 按钮。

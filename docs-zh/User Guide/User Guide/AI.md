@@ -1,189 +1,190 @@
 # AI
-Trilium can connect to a large language model and use it as an assistant that works directly on your notes: ask questions about the note you're reading, have it draft or restructure content, or get it to write scripts and widgets for you.
 
-The integration is off by default and does nothing until you enable it and configure a provider; Trilium ships no model of its own. Which provider you pick also decides where your notes travel: a cloud API billed per use, a subscription you already pay for, or a model running on your own hardware, in which case nothing leaves the machine. See <a class="reference-link" href="AI/Providers.md">Providers</a> for what each involves, and <a class="reference-link" href="AI/Privacy.md">Privacy</a> for exactly what gets sent.
+Trilium 可以连接到大语言模型，并将其用作直接处理笔记的助手：询问你正在阅读的笔记相关问题，让它起草或重构内容，或者让它为你编写脚本和小组件。
 
-Once enabled, the assistant is available both as a panel in the right sidebar and as a dedicated note type. It can read and modify notes through tools, which you can switch off per conversation if you would rather it only saw what you type.
+该集成默认关闭，在你启用并配置提供商之前不会执行任何操作；Trilium 本身不附带任何模型。你选择的提供商也决定了你的笔记数据去向：按使用量计费的云 API、你已经付费的订阅，或运行在你自己的硬件上的模型（这种情况下数据不会离开你的机器）。有关每种方案的具体内容，请参阅 <a class="reference-link" href="AI/Providers.md">提供商</a>，有关具体发送内容的详细信息，请参阅 <a class="reference-link" href="AI/Privacy.md">隐私</a>。
 
-## Feature highlights
+启用后，助手既可作为右侧边栏中的面板使用，也可作为专用的笔记类型使用。它可以通过工具读取和修改笔记，如果你希望它只能看到你输入的内容，可以在每次对话中关闭这些工具。
 
-*   Chat-based interface with live streaming of the messages.
-*   Provides the AI context with the note currently being looked at.
-*   Tools to alter note content, create new notes, etc.
-*   Statistics regarding context window use and pricing per message.
-*   Attachments for multi-modal chat (images, text files, PDFs).
-*   Optional MCP to allow external chat tools (e.g. Claude Code) to operate on notes within Trilium.
+## 功能亮点
 
-## Sample use-cases
+*   基于聊天的界面，支持消息实时流式传输。
+*   为 AI 提供当前正在查看的笔记作为上下文。
+*   用于修改笔记内容、创建新笔记等的工具。
+*   关于上下文窗口使用情况和每条消息定价的统计信息。
+*   支持多模态聊天的附件（图像、文本文件、PDF）。
+*   可选的 MCP，允许外部聊天工具（例如 Claude Code）操作 Trilium 中的笔记。
 
-*   Create any type of <a class="reference-link" href="Scripting/Frontend%20Basics/Custom%20Widgets.md">Custom Widgets</a>.
-*   Easily create a <a class="reference-link" href="Note%20Types/Render%20Note.md">Render Note</a>, e.g. _Create for me a render note which allows me to play tic-tac-toe. Make sure to use Preact instead of the legacy jQuery._
-*   Create widgets for a <a class="reference-link" href="Collections/Dashboard.md">Dashboard</a>, such as a calculator, a stopwatch, a pomodoro timer.
+## 示例用例
+
+*   创建任何类型的 <a class="reference-link" href="Scripting/Frontend%20Basics/Custom%20Widgets.md">自定义小组件</a>。
+*   轻松创建 <a class="reference-link" href="Note%20Types/Render%20Note.md">渲染笔记</a>，例如 _为我创建一个可以玩井字棋的渲染笔记。确保使用 Preact 而不是旧的 jQuery。_
+*   为 <a class="reference-link" href="Collections/Dashboard.md">仪表板</a> 创建小组件，例如计算器、秒表、番茄钟计时器。
 
 > [!NOTE]
-> Claude Sonnet is known to produce very good frontend or backend scripts with little guidance, as the AI has been instructed in how to produce them.
+> 已知 Claude Sonnet 在很少指导下就能生成非常好的前端或后端脚本，因为 AI 已经接受了如何生成这些脚本的指导。
 
-## LLM Providers
+## 大语言模型提供商
 
-Trilium supports four different types of providers:
+Trilium 支持四种不同类型的提供商：
 
-*   **Cloud providers**  
-    Pay-per use with an API key which is billed separately from any subscription you might already have
+*   **云提供商**
+    按使用量付费，使用 API 密钥，费用与你可能已有的任何订阅分开计费
     *   Anthropic (Claude)
     *   OpenAI (GPT)
     *   Google (Gemini)
     *   DeepSeek
-*   **Subscription-based**  
-    Reuses an existing subscription instead of paying per use.
-    *   Currently only Claude Code is supported.
-*   **Local or self-hosted LLM solutions**
+*   **基于订阅**
+    复用现有订阅，而不是按使用量付费。
+    *   目前仅支持 Claude Code。
+*   **本地或自托管的大语言模型解决方案**
     *   Ollama
-    *   LM Studio.
-*   **Custom OpenAI compatible endpoints**  
-    For other providers that are not directly supported by Trilium, either local or hosted (e.g. OpenRouter, Groq, Mistral).
+    *   LM Studio。
+*   **自定义 OpenAI 兼容端点**
+    用于 Trilium 不直接支持的其他提供商，无论是本地的还是托管的（例如 OpenRouter、Groq、Mistral）。
 
-For more information about each provider, see <a class="reference-link" href="AI/Providers.md">Providers</a>. See the dedicated <a class="reference-link" href="AI/Privacy.md">Privacy</a> to better understand what data is sent to providers.
+有关每个提供商的更多信息，请参阅 <a class="reference-link" href="AI/Providers.md">提供商</a>。请参阅专门的 <a class="reference-link" href="AI/Privacy.md">隐私</a> 页面，以更好地了解哪些数据会发送给提供商。
 
-## Enabling the AI integration
+## 启用 AI 集成
 
-To enable the AI integration, simply go to <a class="reference-link" href="Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">Options</a> → _AI / LLM_ and press the toggle in the top-right of the dialog and configure a provider.
+要启用 AI 集成，只需转到 <a class="reference-link" href="Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">选项</a> → _AI / LLM_，然后按下对话框右上角的切换开关并配置提供商。
 
-## Creating a new chat
+## 创建新对话
 
-There are two different chat interfaces:
+有两种不同的对话界面：
 
-*   One in the sidebar.
-*   A dedicated note type.
+*   侧边栏中的一个。
+*   专用的笔记类型。
 
-### The sidebar interface
+### 侧边栏界面
 
-### The dedicated note type
+### 专用笔记类型
 
-The dedicated chat note is similar to the sidebar interface, but it makes longer conversations more comfortable to read.
+专用的对话笔记与侧边栏界面类似，但它使较长的对话更易于阅读。
 
-Unlike the sidebar, the AI will not be aware of the current note it's in.
+与侧边栏不同，AI 不会感知到它所在的当前笔记。
 
-### Templates
+### 模板
 
-Chat notes can be set as <a class="reference-link" href="Advanced%20Usage/Templates.md">Templates</a> to make them easily reusable. The entire conversation history is kept, allowing a basic form of specialization for the LLM with the existing chat acting like a system prompt. 
+对话笔记可以设置为 <a class="reference-link" href="Advanced%20Usage/Templates.md">模板</a>，以便轻松复用。整个对话历史都会被保留，允许通过现有的对话充当系统提示词，对 LLM 进行一种基本形式的特化。
 
-### Model selection
+### 模型选择
 
-When a provider is configured in <a class="reference-link" href="Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">Options</a>, the next step is to select the models that will be available for the chat.
+在 <a class="reference-link" href="Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">选项</a> 中配置提供商后，下一步是选择对话可用的模型。
 
-The models are retrieved dynamically from the provider, only when the model selection list is visible. To alter the list of models, simply press the Edit button in the model selection box.
+模型仅在模型选择列表可见时从提供商处动态获取。要更改模型列表，只需按下模型选择框中的“编辑”按钮。
 
-Pricing information is displayed for known models. The pricing information (price per million tokens) is embedded in the application (using a subset of LiteLLM's data) and is updated with new versions of Trilium. Local providers are considered free, whereas custom endpoint providers don't offer any pricing information.
+对于已知模型会显示定价信息。定价信息（每百万 token 的价格）内嵌在应用程序中（使用 LiteLLM 数据的子集），并会随着 Trilium 的新版本而更新。本地提供商被视为免费，而自定义端点提供商不提供任何定价信息。
 
-## Features
+## 功能
 
-### Web search
+### 网络搜索
 
-The AI can optionally search the web to find more information about a specific topic. 
+AI 可以选择性地搜索网络以查找有关特定主题的更多信息。
 
-This feature is on by default but it can easily be disabled by clicking on the model selector at the bottom of the chat and unchecking _Web search_.
+此功能默认开启，但可以通过点击对话底部的模型选择器并取消选中 _网络搜索_ 来轻松禁用。
 
 > [!NOTE]
-> Currently only the search native to the LLM provider is supported. External search providers such as Exa, Tavily & SearXNG are not yet supported.
+> 目前仅支持 LLM 提供商自带的搜索功能。尚不支持 Exa、Tavily 和 SearXNG 等外部搜索提供商。
 
-### Note access (tools)
+### 笔记访问（工具）
 
-Tools allow the agentic AI to understand and operate on notes directly within your Trilium instance.
+工具允许智能 AI 直接在你的 Trilium 实例中理解和操作笔记。
 
-This feature is on by default but it can easily be disabled by clicking on the model selector at the bottom of the chat and unchecking _Note access_.
+此功能默认开启，但可以通过点击对话底部的模型选择器并取消选中 _笔记访问_ 来轻松禁用。
 
-Here are a few tools that Trilium provides for the LLM:
+以下是 Trilium 为 LLM 提供的一些工具：
 
-*   At note level:
-    *   Search for notes
-    *   Get the metadata or content of a note.
-    *   Edit a note
-        *   There are multiple mechanism for the LLM to edit a note: completely by re-writing it, find/replace of a text sequence or append.
-        *   Whenever the AI makes a change, a [revision](Basic%20Concepts%20and%20Features/Notes/Note%20Revisions.md) is saved to be able to revert any unwanted changes.
-    *   Create a new note
-    *   Rename or delete a note.
-*   At attribute level:
-    *   Get the full list of attributes, or a specific attribute.
-    *   Set the value of an attribute.
-    *   Delete an attribute.
-*   At tree level:
-    *   Get the direct children of a note.
-    *   Get the entire subtree of a note.
-    *   Move or clone a note somewhere else.
-*   For <a class="reference-link" href="Basic%20Concepts%20and%20Features/Notes/Attachments.md">Attachments</a>:
-    *   Get metadata for an attachment.
-    *   Get the content of an attachment.
-*   Skills (see the dedicated section).
+*   笔记级别：
+    *   搜索笔记
+    *   获取笔记的元数据或内容。
+    *   编辑笔记
+        *   LLM 有多种编辑笔记的机制：完全重写、查找/替换文本序列或追加。
+        *   每当 AI 做出更改时，都会保存一个 [修订](Basic%20Concepts%20and%20Features/Notes/Note%20Revisions.md) 以便能够还原任何不需要的更改。
+    *   创建新笔记
+    *   重命名或删除笔记。
+*   属性级别：
+    *   获取完整的属性列表，或特定属性。
+    *   设置属性的值。
+    *   删除属性。
+*   树级别：
+    *   获取笔记的直接子笔记。
+    *   获取笔记的整个子树。
+    *   将笔记移动或克隆到其他位置。
+*   对于 <a class="reference-link" href="Basic%20Concepts%20and%20Features/Notes/Attachments.md">附件</a>：
+    *   获取附件的元数据。
+    *   获取附件的内容。
+*   技能（参见专门章节）。
 
 > [!WARNING]
-> Currently there is **no permission management** implemented for note tools, meaning that the LLM could potentially remove existing notes or clutter the tree with notes. Generally most actions are easily reversible (deleting the notes, restoring deleted notes, reverting modifications to a note), but there are some that are harder to revert (e.g. setting an attribute because there is no attribute history).
+> 目前笔记工具**没有实现权限管理**，这意味着 LLM 可能会删除现有笔记或用笔记塞满整个树。通常大多数操作都很容易逆转（删除笔记、恢复已删除的笔记、还原对笔记的修改），但有些操作较难逆转（例如设置属性，因为没有属性历史记录）。
 
 > [!NOTE]
-> Gemini has a special case in which _Note access_ and _Web search_ can't be both enabled at the same time.
+> Gemini 有一个特殊情况，即 _笔记访问_ 和 _网络搜索_ 不能同时启用。
 
-### Attachments
+### 附件
 
-Since Trilium v0.140.0, <a class="reference-link" href="Basic%20Concepts%20and%20Features/Notes/Attachments.md">Attachments</a> allow for multi-modal chat:
+自 Trilium v0.140.0 起，<a class="reference-link" href="Basic%20Concepts%20and%20Features/Notes/Attachments.md">附件</a> 支持多模态对话：
 
-*   Raster image (sent as vision input, except for SVGs) with the following supported formats: PNG, JPEG, GIF, WebP.
-*   PDFs, sent natively to the provider (supported by Anthropic, OpenAI and Google).
-*   SVG images (sent as raw HTML).
-*   Text files.
+*   光栅图像（作为视觉输入发送，SVG 除外），支持以下格式：PNG、JPEG、GIF、WebP。
+*   PDF，以原生格式发送给提供商（受 Anthropic、OpenAI 和 Google 支持）。
+*   SVG 图像（作为原始 HTML 发送）。
+*   文本文件。
 
-To upload an attachment:
+要上传附件：
 
-*   Press the dedicated _Attach_ button (paperclip icon) underneath the text box.
-*   Paste an image directly from clipboard using <kbd>Ctrl</kbd>+<kbd>V</kbd>.
+*   按下文本框下方的专用 _附加_ 按钮（回形针图标）。
+*   使用 <kbd>Ctrl</kbd>+<kbd>V</kbd> 直接从剪贴板粘贴图像。
 
-Once one or more attachments are uploaded, they will appear directly above the text box:
+上传一个或多个附件后，它们将出现在文本框正上方：
 
-*   Images have a small thumbnail for easy identifications.
-*   Every attachment can be deleted by pressing their corresponding X button.
+*   图像有一个小缩略图，便于识别。
+*   每个附件都可以通过按下相应的 X 按钮来删除。
 
-When an attachment is present, the LLM is instructed to consider the attachment with priority, even if it has access to the current note.
-
-> [!NOTE]
-> Currently Trilium doesn't pre-process the attachments (e.g. via <a class="reference-link" href="Advanced%20Usage/Text%20Extraction%20(OCR).md">Text Extraction (OCR)</a>) before sending them to the LLM provider.
-
-### Mentions
-
-Mentions are a way to insert references to notes other than the current note, using the same mechanism as <a class="reference-link" href="Note%20Types/Text/Links/Internal%20(reference)%20links.md">Internal (reference) links</a>. To refer to another note, simply type <kbd>@</kbd> followed by the name of the note to reference.
-
-This feature is mostly helpful when note tools are enabled, otherwise the LLM will have no way to access the given note.
-
-### Skills
-
-Skills in Trilium are specialized instruction sets that help the AI be more productive by understanding how Trilium.
-
-These skills are not loaded by default to avoid an increased consumption of tokens, but the AI can load them on-demand if _Note tools_ are enabled.
-
-The following skills are built-in:
-
-*   Search syntax: understands the full syntax of <a class="reference-link" href="Basic%20Concepts%20and%20Features/Navigation/Search.md">Search</a>.
-*   Backend scripting: to be able to write proper <a class="reference-link" href="Scripting/Backend%20scripts.md">Backend scripts</a>.
-*   Frontend scripting: to be able to write proper [front-end scripts](Scripting/Frontend%20Basics.md) (basic scripts, widgets, <a class="reference-link" href="Note%20Types/Render%20Note.md">Render Note</a>).
-
-When _Note tools_ are enabled the skills will automatically be made available to the AI, so no user interaction is required.
+当存在附件时，LLM 会被指示优先考虑该附件，即使它可以访问当前笔记。
 
 > [!NOTE]
-> Custom skills are currently not supported but they are planned.
+> 目前 Trilium 在将附件发送给 LLM 提供商之前不会对其进行预处理（例如通过 <a class="reference-link" href="Advanced%20Usage/Text%20Extraction%20(OCR).md">文本提取 (OCR)</a>）。
+
+### 提及
+
+提及是一种插入对当前笔记之外的其他笔记的引用的方式，使用与 <a class="reference-link" href="Note%20Types/Text/Links/Internal%20(reference)%20links.md">内部（引用）链接</a> 相同的机制。要引用另一个笔记，只需输入 <kbd>@</kbd> 后跟要引用的笔记名称。
+
+此功能在启用笔记工具时最为有用，否则 LLM 将无法访问给定的笔记。
+
+### 技能
+
+Trilium 中的技能是专门的指令集，通过帮助 AI 理解 Trilium 的工作方式来提高其生产力。
+
+这些技能默认不加载，以避免增加 token 消耗，但如果启用了 _笔记工具_，AI 可以按需加载它们。
+
+内置以下技能：
+
+*   搜索语法：理解 <a class="reference-link" href="Basic%20Concepts%20and%20Features/Navigation/Search.md">搜索</a> 的完整语法。
+*   后端脚本：能够编写正确的 <a class="reference-link" href="Scripting/Backend%20scripts.md">后端脚本</a>。
+*   前端脚本：能够编写正确的 [前端脚本](Scripting/Frontend%20Basics.md)（基础脚本、小组件、<a class="reference-link" href="Note%20Types/Render%20Note.md">渲染笔记</a>）。
+
+当启用 _笔记工具_ 时，技能将自动提供给 AI，因此无需用户交互。
+
+> [!NOTE]
+> 目前不支持自定义技能，但已在计划中。
 
 ### MCP
 
-Trilium comes with a built-in MCP server which allows you to use an external agent such as Claude Code have access to your database. See the dedicated <a class="reference-link" href="AI/MCP.md">MCP</a> page for more details.
+Trilium 附带一个内置的 MCP 服务器，允许你使用外部代理（如 Claude Code）访问你的数据库。有关更多详细信息，请参阅专门的 <a class="reference-link" href="AI/MCP.md">MCP</a> 页面。
 
-## History
+## 历史
 
-### Removal in v0.102.0
+### 在 v0.102.0 中移除
 
-Starting with version v0.102.0, AI/LLM integration has been removed from the Trilium Notes core.
+从 v0.102.0 版本开始，AI/LLM 集成已从 Trilium Notes 核心中移除。
 
-While a significant amount of effort went into developing this feature, maintaining and supporting it long-term proved to be unsustainable.
+尽管在开发此功能上投入了大量精力，但长期维护和支持它被证明是不可持续的。
 
-When upgrading to v0.102.0, your Chat notes will be preserved, but instead of the dedicated chat window they will be turned to a normal <a class="reference-link" href="Note%20Types/Code.md">Code</a> note, revealing the underlying JSON of the conversation.
+升级到 v0.102.0 时，你的对话笔记将被保留，但不再是专用的对话窗口，而是会转换为普通的 <a class="reference-link" href="Note%20Types/Code.md">代码</a> 笔记，显示对话底层的 JSON。
 
-### Reintroduction in v0.103.0
+### 在 v0.103.0 中重新引入
 
-Given the recent advancements of the AI scene, we decided to give the LLM integration another try. v0.103.0 introduces a completely new chat system.
+鉴于 AI 领域的最新进展，我们决定再次尝试 LLM 集成。v0.103.0 引入了一个全新的对话系统。
 
-One of the key changes that lead to the reimplementation is that now we are using a library ([Vercel AI](https://github.com/vercel/ai)) to manage the inner mechanism and the differences between LLM providers instead of having to implement it on our own.
+导致重新实现的关键变化之一是，现在我们使用一个库（[Vercel AI](https://github.com/vercel/ai)）来管理内部机制以及不同 LLM 提供商之间的差异，而不是自己实现。

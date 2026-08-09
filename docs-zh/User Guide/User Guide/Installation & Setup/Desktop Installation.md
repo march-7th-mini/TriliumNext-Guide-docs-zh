@@ -1,19 +1,19 @@
-# Desktop Installation
-To install Trilium on your desktop, follow these steps:
+# 桌面安装
+要在桌面上安装 Trilium，请按照以下步骤操作：
 
-1.  **Download the Latest Release**: Obtain the appropriate binary release for your operating system from the [latest release page](https://github.com/TriliumNext/Trilium/releases/latest) on GitHub.
-2.  **Extract the Package**: Unzip the downloaded package to a location of your choice.
-3.  **Run the Application**: Launch Trilium by executing the `trilium` executable found within the unzipped folder.
+1.  **下载最新版本**：从 GitHub 上的[最新版本页面](https://github.com/TriliumNext/Trilium/releases/latest)获取适用于您操作系统的相应二进制版本。
+2.  **解压软件包**：将下载的软件包解压到您选择的位置。
+3.  **运行应用程序**：通过执行解压文件夹中的 `trilium` 可执行文件来启动 Trilium。
 
-## Startup Scripts
+## 启动脚本
 
-Trilium offers various startup scripts to customize your experience:
+Trilium 提供各种启动脚本以自定义您的体验：
 
-*   `trilium-no-cert-check`: Starts Trilium without validating [TLS certificates](Server%20Installation/HTTPS%20\(TLS\).md), useful if connecting to a server with a self-signed certificate.
-    *   Alternatively, set the `NODE_TLS_REJECT_UNAUTHORIZED=0` environment variable before starting Trilium.
-*   `trilium-portable`: Launches Trilium in portable mode, where the [data directory](Data%20directory.md) is created within the application's directory, making it easy to move the entire setup. Electron's internal data (caches, dictionaries, etc.) is also stored within the data directory, so no files are written to the system's roaming profile.
-*   `trilium-safe-mode`: Boots Trilium in "safe mode," disabling any startup scripts that might cause the application to crash.
+*   `trilium-no-cert-check`：启动 Trilium 时不验证 [TLS 证书](Server%20Installation/HTTPS%20\(TLS\).md)，这在连接到使用自签名证书的服务器时很有用。
+    *   或者，在启动 Trilium 前设置 `NODE_TLS_REJECT_UNAUTHORIZED=0` 环境变量。
+*   `trilium-portable`：以便携模式启动 Trilium，[数据目录](Data%20directory.md) 将在应用程序目录内创建，从而可以轻松移动整个设置。Electron 的内部数据（缓存、字典等）也存储在数据目录中，因此不会向系统的漫游配置文件写入任何文件。
+*   `trilium-safe-mode`：以“安全模式”启动 Trilium，禁用任何可能导致应用程序崩溃的启动脚本。
 
-## Synchronization
+## 同步
 
-For Trilium desktop users who wish to synchronize their data with a server instance, refer to the <a class="reference-link" href="Synchronization.md">Synchronization</a> guide for detailed instructions.
+对于希望将数据与服务器实例同步的 Trilium 桌面用户，请参阅 <a class="reference-link" href="Synchronization.md">同步</a> 指南以获取详细说明。

@@ -1,13 +1,13 @@
-# Floating buttons
+# 浮动按钮
 <figure class="image image-style-align-center"><img style="aspect-ratio:893/144;" src="Floating buttons_image.png" width="893" height="144"></figure>
 
-Depending on the current note, a panel will appear near the top-right of the note, right underneath the <a class="reference-link" href="Ribbon.md">Ribbon</a>. These buttons offer additional interaction that is specific to that particular note.
+根据当前笔记的不同，笔记右上角附近、<a class="reference-link" href="Ribbon.md">Ribbon</a>正下方会显示一个面板。这些按钮提供了针对该特定笔记的额外交互功能。
 
-For example:
+例如：
 
-*   For <a class="reference-link" href="../../Note%20Types/Mermaid%20Diagrams.md">Mermaid Diagrams</a> and <a class="reference-link" href="../../Note%20Types/Canvas.md">Canvas</a>, there are buttons to download the SVG representation of the note, or to copy a reference to the note for pasting it a <a class="reference-link" href="../../Note%20Types/Text.md">Text</a> note.
-*   For [read-only notes](../Notes/Read-Only%20Notes.md), there is a button to temporarily edit the note for quick modifications.
+*   对于<a class="reference-link" href="../../Note%20Types/Mermaid%20Diagrams.md">Mermaid 图表</a>和<a class="reference-link" href="../../Note%20Types/Canvas.md">画布</a>，有按钮可以下载笔记的 SVG 表示形式，或复制笔记的引用以粘贴到<a class="reference-link" href="../../Note%20Types/Text.md">文本</a>笔记中。
+*   对于[只读笔记](../Notes/Read-Only%20Notes.md)，有一个按钮可以临时编辑笔记以进行快速修改。
 
-## Interaction
+## 交互
 
-The floating button area can be collapsed by pressing the two right arrows at the end of the section.
+可以通过点击该区域末尾的两个右箭头来折叠浮动按钮区域。

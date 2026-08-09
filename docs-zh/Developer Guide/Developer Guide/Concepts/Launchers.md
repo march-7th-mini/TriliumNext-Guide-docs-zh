@@ -1,13 +1,13 @@
-# Launchers
-Launchers are items that are displayed in the launcher bar (left side of the screen). They are of two different types:
+# 启动器
+启动器是显示在启动器栏（屏幕左侧）中的项目。它们分为两种不同类型：
 
-*   Visible launchers: are displayed by default to the user, can be moved to the available launchers section to hide them.
-*   Available launchers: can be manually added by the user from settings into the list of visible launchers.
+*   可见启动器：默认显示给用户，可以移动到可用启动器部分以将其隐藏。
+*   可用启动器：用户可以通过设置手动将其添加到可见启动器列表中。
 
-## Adding a new launcher
+## 添加新的启动器
 
-Regardless of the type, new launchers are added at server level, inside `hidden_subtree.ts` file.
+无论类型如何，新的启动器都是在服务器级别添加的，位于 `hidden_subtree.ts` 文件中。
 
-*   To add a new available launcher, look for `_lbAvailableLaunchers` and add a new item to its `children`.
-*   Similarly, to add a visible launcher, look for `_lbVisibleLaunchers`.
-    *   If you add a visible launcher, it will be available for both new and old users, since the application will identify that there is a new launcher to be added regardless of the user preference.
+*   要添加新的可用启动器，请查找 `_lbAvailableLaunchers` 并向其 `children` 中添加新项目。
+*   同样，要添加可见启动器，请查找 `_lbVisibleLaunchers`。
+    *   如果您添加了可见启动器，它将对新老用户都可用，因为应用程序会识别出有一个需要添加的新启动器，无论用户偏好如何。

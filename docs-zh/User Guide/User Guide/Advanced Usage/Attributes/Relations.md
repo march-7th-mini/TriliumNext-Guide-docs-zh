@@ -1,52 +1,53 @@
-# Relations
-A relation is similar to a [label](Labels.md), but instead of having a text value it refers to another note.
+# 关系
 
-## Common use cases
+关系（Relation）类似于[标签](Labels.md)，但它的值不是文本，而是指向另一个笔记。
 
-*   **Metadata Relationships for personal use**: For example, linking a book note to an author note.  
-    This can be combined with <a class="reference-link" href="Promoted%20Attributes.md">Promoted Attributes</a> to make their display more user-friendly.
-*   **Configuration**: For configuring some notes such as <a class="reference-link" href="../../Note%20Types/Render%20Note.md">Render Note</a>, or configuring <a class="reference-link" href="../Sharing.md">Sharing</a> or <a class="reference-link" href="../Templates.md">Templates</a> (see the list below).
-*   **Scripting**: Attaching scripts to events or conditions related to the note.
+## 常见用例
 
-## Creating a relation using the visual editor
+*   **个人使用的元数据关系**：例如，将书籍笔记链接到作者笔记。  
+    这可以与<a class="reference-link" href="Promoted%20Attributes.md">提升属性</a>结合使用，使其显示更加用户友好。
+*   **配置**：用于配置某些笔记，例如<a class="reference-link" href="../../Note%20Types/Render%20Note.md">渲染笔记</a>，或配置<a class="reference-link" href="../Sharing.md">分享</a>或<a class="reference-link" href="../Templates.md">模板</a>（参见下面的列表）。
+*   **脚本**：将脚本附加到与笔记相关的事件或条件上。
 
-1.  Go to the _Owned Attributes_ section in the <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Ribbon.md">Ribbon</a>.
-2.  Press the + button (_Add new attribute_) to the right.
-3.  Select _Add new relation_ for the relation.
+## 使用可视化编辑器创建关系
+
+1.  转到<a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Ribbon.md">功能区</a>中的_自有属性_部分。
+2.  点击右侧的 + 按钮（_添加新属性_）。
+3.  选择_添加新关系_来创建关系。
 
 > [!TIP]
-> If you prefer keyboard shortcuts, press <kbd>Alt</kbd>+<kbd>L</kbd> while focused on a note or in the _Owned Attributes_ section to display the visual editor.
+> 如果你更喜欢键盘快捷键，请在聚焦于笔记或_自有属性_部分时按 <kbd>Alt</kbd>+<kbd>L</kbd> 以显示可视化编辑器。
 
-While in the visual editor:
+在可视化编辑器中：
 
-*   Set the desired name
-*   Set the Target note (the note to point to). Unlike labels, relations cannot exist with a target note.
-*   Check _Inheritable_ if the label should be inherited by the child notes as well. See <a class="reference-link" href="Attribute%20Inheritance.md">Attribute Inheritance</a> for more information.
+*   设置所需的名称
+*   设置目标笔记（要指向的笔记）。与标签不同，关系必须有一个目标笔记。
+*   如果希望子笔记也继承该标签，请勾选_可继承_。更多信息请参见<a class="reference-link" href="Attribute%20Inheritance.md">属性继承</a>。
 
-## Creating a relation manually
+## 手动创建关系
 
-In the _Owned Attributes_ section in the <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Ribbon.md">Ribbon</a>:
+在<a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Ribbon.md">功能区</a>的_自有属性_部分：
 
-*   To create a relation called `myRelation`:
-    *   First type `~myRelation=@` .
-    *   After this, an autocompletion box should appear.
-    *   Type the title of the note to point to and press <kbd>Enter</kbd> to confirm (or click the desired note).
-    *   Alternatively copy a note from the <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">Note Tree</a> and paste it after the `=` sign (without the `@` , in this case).
-*   To create an inheritable relation, follow the same steps as previously described but instead of `~myRelation` write `~myRelation(inheritable)`.
+*   要创建一个名为 `myRelation` 的关系：
+    *   首先输入 `~myRelation=@` 。
+    *   之后，应会出现一个自动补全框。
+    *   输入要指向的笔记的标题，然后按 <kbd>Enter</kbd> 确认（或点击所需的笔记）。
+    *   或者，从<a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">笔记树</a>中复制一个笔记，然后粘贴到 `=` 号后面（在这种情况下，不要输入 `@` ）。
+*   要创建一个可继承的关系，请按照上述相同步骤操作，但将 `~myRelation` 写为 `~myRelation(inheritable)`。
 
-## Predefined relations
+## 预定义关系
 
-These relations are supported and used internally by Trilium.
+这些关系由 Trilium 支持并在内部使用。
 
-| Label | Description |
+| 标签 | 描述 |
 | --- | --- |
-| `runOn*` | See <a class="reference-link" href="../../Scripting/Backend%20scripts/Events.md">Events</a> |
-| `template` | note's attributes will be inherited even without a parent-child relationship, note's content and subtree will be added to instance notes if empty. See documentation for details. |
-| `inherit` | note's attributes will be inherited even without a parent-child relationship. See <a class="reference-link" href="../Templates.md">Templates</a> for a similar concept. See <a class="reference-link" href="Attribute%20Inheritance.md">Attribute Inheritance</a> in the documentation. |
-| `renderNote` | notes of type <a class="reference-link" href="../../Note%20Types/Render%20Note.md">Render Note</a> will be rendered using a code note (HTML or script) and it is necessary to point using this relation to which note should be rendered |
-| `widget` | Used in the context of custom <a class="reference-link" href="../../Scripting/Frontend%20Basics/Launch%20Bar%20Widgets.md">Launch Bar Widgets</a>, to refer to the widget that will be rendered. |
-| `shareCss` | CSS note which will be injected into the share page. CSS note must be in the shared sub-tree as well. Consider using `shareHiddenFromTree` and `shareOmitDefaultCss` as well. |
-| `shareJs` | JavaScript note which will be injected into the share page. JS note must be in the shared sub-tree as well. Consider using `shareHiddenFromTree`. |
-| `shareHtml` | HTML note which will be injected into the share page at locations specified by the `shareHtmlLocation` label. HTML note must be in the shared sub-tree as well. Consider using `shareHiddenFromTree`. |
-| `shareTemplate` | Embedded JavaScript note that will be used as the template for displaying the shared note. Falls back to the default template. Consider using `shareHiddenFromTree`. |
-| `shareFavicon` | Favicon note to be set in the shared page. Typically you want to set it to share root and make it inheritable. Favicon note must be in the shared sub-tree as well. Consider using `shareHiddenFromTree`. |
+| `runOn*` | 参见<a class="reference-link" href="../../Scripting/Backend%20scripts/Events.md">事件</a> |
+| `template` | 即使没有父子关系，笔记的属性也会被继承；如果实例笔记为空，笔记的内容和子树将被添加到实例笔记中。详见文档。 |
+| `inherit` | 即使没有父子关系，笔记的属性也会被继承。类似概念参见<a class="reference-link" href="../Templates.md">模板</a>。文档中的<a class="reference-link" href="Attribute%20Inheritance.md">属性继承</a>部分亦有说明。 |
+| `renderNote` | 类型为<a class="reference-link" href="../../Note%20Types/Render%20Note.md">渲染笔记</a>的笔记将使用代码笔记（HTML 或脚本）进行渲染，因此必须使用此关系来指向应被渲染的笔记。 |
+| `widget` | 在自定义<a class="reference-link" href="../../Scripting/Frontend%20Basics/Launch%20Bar%20Widgets.md">启动栏小组件</a>的上下文中使用，用于引用将被渲染的小组件。 |
+| `shareCss` | 将被注入到分享页面中的 CSS 笔记。CSS 笔记也必须位于共享子树中。也可以考虑使用 `shareHiddenFromTree` 和 `shareOmitDefaultCss`。 |
+| `shareJs` | 将被注入到分享页面中的 JavaScript 笔记。JS 笔记也必须位于共享子树中。也可以考虑使用 `shareHiddenFromTree`。 |
+| `shareHtml` | 将被注入到分享页面中由 `shareHtmlLocation` 标签指定位置的 HTML 笔记。HTML 笔记也必须位于共享子树中。也可以考虑使用 `shareHiddenFromTree`。 |
+| `shareTemplate` | 用作显示共享笔记模板的内嵌 JavaScript 笔记。如果未设置，则回退到默认模板。也可以考虑使用 `shareHiddenFromTree`。 |
+| `shareFavicon` | 要在共享页面中设置的网站图标笔记。通常，您希望将其设置为共享根节点并使其可继承。网站图标笔记也必须位于共享子树中。也可以考虑使用 `shareHiddenFromTree`。 |

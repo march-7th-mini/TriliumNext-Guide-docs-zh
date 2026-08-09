@@ -1,155 +1,156 @@
-# Patterns of personal knowledge
+# 个人知识模式
+
 > [!NOTE]
-> This article is a description of the original author of Trilium (zadam) in regards with his own knowledge base.
+> 本文是 Trilium 原作者 (zadam) 对其个人知识库的描述。
 
-This page contains description of some of the patterns I use to organize information in my knowledge base. This is meant to give some inspiration of how one might create and structure their knowledge base in general and also specifically in Trilium Notes. It also gives some background and justification for some of the design decisions.
+此页面包含我在知识库中组织信息所使用的一些模式的描述。这旨在为人们如何创建和构建自己的知识库（尤其是在 Trilium Notes 中）提供一些灵感。同时，它也提供了一些设计决策的背景和理由。
 
-## Meta patterns
+## 元模式
 
-Just to be clear, meta patterns are "patterns of patterns", i.e. patterns appearing in other patterns.
+先说明一下，元模式是“模式的模式”，即出现在其他模式中的模式。
 
-### Hierarchical organization of information
+### 信息的层级组织
 
-Basic meta pattern is that I sort notes (units of information) into a hierarchy - I have some "top level" notes which represent coarse grained organization, these then split into sub-notes defining finer grained organization and so on. I consider this hierarchical (tree) organization very efficient for organization of large amounts of information. A lot of note taking software (such as Evernote) are frustratingly limited in this regard which limits scalability of the software to large amounts of notes.
+基本的元模式是我将笔记（信息单元）分类到一个层级结构中——我有一些代表粗粒度组织的“顶级”笔记，然后这些笔记再分割为定义更细粒度组织的子笔记，依此类推。我认为这种层级（树状）组织对于组织大量信息非常高效。许多笔记软件（如 Evernote）在这方面受到限制，令人沮丧，这限制了软件扩展到大量笔记的能力。
 
-#### Scalability
+#### 可扩展性
 
-It's important to frame the following (meta) patterns with some idea of how large amount of data are we talking about.
+用一些关于我们讨论的数据量级的概念来构建以下（元）模式是很重要的。
 
-My rule of thumb for estimation of size of personal knowledge base is that you can reasonably produce around 10 notes a day, which is 3650 in a year. I plan to use my knowledge base long term (with or without Trilium Notes), probably decades so you can easily get to number 100 000 or even more. Right now, my personal knowledge base has around 10 000 notes.
+我对个人知识库规模估算的经验法则是，你每天可以合理地产出大约 10 条笔记，一年就是 3650 条。我计划长期使用我的知识库（无论是否使用 Trilium Notes），可能是几十年，所以很容易达到 100,000 条甚至更多。目前，我的个人知识库大约有 10,000 条笔记。
 
-100 000 is a number to which most note taking software doesn't scale well (in both performance and UI). Yet I don't think it's really very much considering a lifetime of knowledge.
+100,000 是大多数笔记软件无法良好扩展（在性能和 UI 方面）的数字。然而，考虑到一生的知识，我并不认为这真的很多。
 
-#### Lazy hierarchy
+#### 懒惰的层级结构
 
-My approach to creating the hierarchy is being lazy - I don't create the structure first and then fill it with notes, instead I create single note for some specific topic and start using this one note. Once the content starts to grow, and I see how _some_ parts could be split out, I move them out into separate sub notes. As an example I have a book review for _The Fellowship of the Ring_:
+我创建层级结构的方法是懒惰的——我不是先创建结构然后用笔记填充它，而是为某个特定主题创建单个笔记并开始使用这一个笔记。一旦内容开始增长，并且我看到_某些_部分可以拆分出来时，我就将它们移动到单独的子笔记中。例如，我有一篇关于《指环王：护戒使者》的书评：
 
-*   Book reviews
-    *   The Fellowship of the Ring
+*   书评
+    *   指环王：护戒使者
 
-The note contains basic book info (author, publisher etc.), book highlights with the comments and then overall review. Now it turns out there's far too many book highlights and overall review is also rather long, so I want to change the structure to the following:
+该笔记包含基本书籍信息（作者、出版商等）、带有评论的书籍重点摘录以及整体评论。现在发现书籍重点摘录太多，整体评论也太长，所以我想将结构改为以下形式：
 
-*   Book reviews
-    *   The Fellowship of the Ring       _(still contains basic info)_
-        *   Highlights
-        *   Review
+*   书评
+    *   指环王：护戒使者      _（仍包含基本信息）_
+        *   重点摘录
+        *   评论
 
-If I used standard text file stored in a filesystem I would soon run into an annoying problem that in order to split out the Highlights and Review into sub-notes I would also have to convert _The Fellowship of the Ring_ from text file into directory and split out all sections of the note into sub-notes. Instead, Trilium treats all notes as equal - both leaf notes and inner notes can have both text content which allows me to sub-structure only content which needs it.
+如果我使用文件系统中存储的标准文本文件，我很快就会遇到一个恼人的问题：为了将重点摘录和评论拆分为子笔记，我还必须将_指环王：护戒使者_从文本文件转换为目录，并将笔记的所有部分拆分为子笔记。相反，Trilium 将所有笔记视为平等的——叶笔记和内部笔记都可以有文本内容，这允许我只对需要的内容进行子结构化。
 
-### Sorting notes into multiple places in the hierarchy
+### 将笔记排序到层级结构中的多个位置
 
-While organizing the notes into the hierarchy, you very quickly run into a dilemma - your note seem to belong to two places in the hierarchy equally. As an example - you want to make a note about [bash](https://en.wikipedia.org/wiki/Bash_\(Unix_shell\)) - does it belong to "OS / Linux" or "Programming / Scripting languages"? This is actually a false dichotomy forced down by the limits of the basic tree hierarchy - the answer is _of course it belongs to both_. This is the reason why Trilium doesn't use standard tree structure (which requires every note to have exactly one parent), but an extension which allows every note to have several parents, thus effectively allowing it to appear in multiple places in the hierarchy. For lack of better term I call this "cloning". The main problem with this term is that it suggests that each clone must have an original, but here all clones are completely equal - effectively there's no original.
+在将笔记组织到层级结构时，你很快就会遇到一个困境——你的笔记似乎同等地属于层级结构中的两个位置。例如——你想为 [bash](https://en.wikipedia.org/wiki/Bash_\(Unix_shell\)) 做一个笔记——它属于“操作系统 / Linux”还是“编程 / 脚本语言”？这实际上是由基本树状结构的限制所迫造成的错误二分法——答案是_它当然属于两者_。这就是为什么 Trilium 不使用标准树结构（要求每个笔记恰好有一个父级），而是使用一种扩展，允许每个笔记有多个父级，从而有效地允许它出现在层级结构中的多个位置。由于缺乏更好的术语，我称之为“克隆”。这个术语的主要问题在于它暗示每个克隆必须有一个原始版本，但在这里所有克隆完全平等——实际上没有原始版本。
 
-In tech lingo, it might be better to describe it as a [hard link](https://en.wikipedia.org/wiki/Hard_link) with an important difference that it is possible to hard link (clone) a directory (inner note).
+用技术术语来说，将其描述为 [硬链接](https://en.wikipedia.org/wiki/Hard_link) 可能更好，但有一个重要区别：可以硬链接（克隆）一个目录（内部笔记）。
 
-### Protected notes
+### 受保护的笔记
 
-I have Trilium Notes opened non-stop. Sometimes I forget to lock my computer when going to the bathroom. Sometimes I let a friend or family member to use my computer for a minute without supervision. They might click on (running) Trilium and inadvertently see a note I really don't want anybody to see (personal diary, credentials). To cover this, Trilium has a concept of "[protected notes](https://github.com/zadam/trilium/wiki/Protected-notes)" - protected note is encrypted and on top of that requires the user to enter the password every 5 minutes which guarantees that such note can be in a readable state only for small amount of time. Working with ordinary (not protected) notes don't require password so you're not bothered by extra security when it's not needed.
+我让 Trilium Notes 一直保持打开状态。有时我去洗手间时忘记锁定电脑。有时我会让朋友或家人无人监督地使用我的电脑一分钟。他们可能会点击（正在运行的）Trilium 并无意中看到我真的不想让任何人看到的笔记（个人日记、凭据）。为了覆盖这种情况，Trilium 有一个“[受保护的笔记](https://github.com/zadam/trilium/wiki/Protected-notes)”的概念——受保护的笔记是加密的，并且在此基础上要求用户每 5 分钟输入一次密码，这保证了此类笔记只能在很短的时间内处于可读状态。处理普通（非受保护）笔记不需要密码，因此在不必要时你不会被额外的安全性所困扰。
 
-### Archiving notes
+### 归档笔记
 
-Notes can lose relevancy with time - let's say I switch jobs - all the notes specific to the former employer immediately lose most of its import. This doesn't mean I want to delete these notes though - typically I just want them to somehow deprioritize - in Trilium I would do that by assigning an [inherited](https://github.com/zadam/trilium/wiki/Attribute-inheritance) [label](https://github.com/zadam/trilium/wiki/Attributes) `archived` to the company root note. The main effect of this label is that all the notes from this sub-tree are filtered out from search results (fast search via note autocomplete is my main [navigation approach](https://github.com/zadam/trilium/wiki/Note-navigation)). Apart from this, I also typically move such outdated notes to some less prominent place in the hierarchy.
+笔记会随着时间推移而失去相关性——假设我换了工作——所有与前任雇主相关的笔记立即失去了大部分重要性。但这并不意味着我想删除这些笔记——通常我只是想以某种方式降低它们的优先级——在 Trilium 中，我会通过给公司根笔记分配一个[继承的](https://github.com/zadam/trilium/wiki/Attribute-inheritance)[标签](https://github.com/zadam/trilium/wiki/Attributes) `archived` 来实现。这个标签的主要效果是，该子树中的所有笔记都会从搜索结果中过滤掉（通过笔记自动补全进行快速搜索是我的主要[导航方法](https://github.com/zadam/trilium/wiki/Note-navigation)）。除此之外，我通常也会将此类过时的笔记移动到层级结构中不太显眼的位置。
 
-I use archivation also for notes which are not very relevant from their creation - an example might be automatically imported reddit comments.
+我也对从创建之初就不太相关的笔记使用归档——一个例子可能是自动导入的 Reddit 评论。
 
-Sometimes there's no clear _category_ split between relevant and non-relevant notes, in that case I just create "_OLD_" note with `archived` label and move all irrelevant notes there. So my credentials note might look something like this:
+有时在相关和不相关笔记之间没有明确的_类别_划分，在这种情况下，我只需创建一个带有 `archived` 标签的“_OLD_”笔记，并将所有不相关的笔记移到那里。所以我的凭据笔记可能看起来像这样：
 
-*   Credentials
-    *   Personal
-        *   OLD       _(contains a bunch of notes with credentials for services I don't use anymore)_
+*   凭据
+    *   个人
+        *   OLD      _（包含一堆我不再使用的服务的凭据笔记）_
         *   Gmail
         *   Github
         *   ...
 
-## Patterns
+## 模式
 
-### Day note
+### 日记笔记
 
-Every day has its note which contains or references everything related to the given day. Structure looks like this:
+每天都有一个笔记，包含或引用与当天相关的所有内容。结构如下：
 
 *   2018
-    *   11 - November
-        *   26 - Monday
-        *   27 - Tuesday
-            *   subnote 1
+    *   11 - 十一月
+        *   26 - 星期一
+        *   27 - 星期二
+            *   子笔记 1
 
-Day note serves as a workspace and note inbox at the same time - it's the default location to create a note when I don't have time to think about proper placement. At the end of the day I typically review my day note and clone the notes into suitable locations in the hierarchy.
+日记笔记同时充当工作区和笔记收件箱——当我没有时间考虑合适的位置时，它是创建笔记的默认位置。在一天结束时，我通常会回顾我的日记笔记，并将笔记克隆到层级结构中合适的位置。
 
-Trilium has this pattern partly built-in - Trilium understands and can create this Year / Month / Day structure semi-automatically (on API call). There's also global keyboard shortcut `CTRL-ALT-P` which will create new note in the day note.
+Trilium 部分内置了这种模式——Trilium 理解并可以半自动地创建这种年/月/日结构（通过 API 调用）。还有一个全局键盘快捷键 `CTRL-ALT-P`，它会在日记笔记中创建新笔记。
 
-What notes do I keep under this day note?
+我在这个日记笔记下保留什么笔记？
 
-*   TODO list for given day (this can be automated - see <a class="reference-link" href="../Advanced%20Usage/Advanced%20Showcases/Task%20Manager.md">Task Manager</a>)
-*   Personal diary
-*   [clones](../Basic%20Concepts%20and%20Features/Notes/Cloning%20Notes.md) of notes I created during this day (which kind of represents what I've been working on).
-*   I often clone notes (or sub-trees) of e.g. projects I'm working on at given day so they are at hand
-*   I have some [scripts](../Scripting.md) which allow me to track certain daily metrics (like weight). These are saved into one daily "data note" (actually JSON [code note](../Note%20Types/Code.md)).
-    *   I have other scripts which then help me to visualize these data (see a <a class="reference-link" href="../Advanced%20Usage/Advanced%20Showcases/Weight%20Tracker.md">Weight Tracker</a> example)
-    *   I have a script which automatically imports all my comments from reddit into the day note.
-        *   People are sometimes wondering why. The answer is that I usually put some effort and thought into a comment and that's why I feel it's worth preserving, especially if it can be done automatically.
+*   当天的待办事项列表（这可以自动化——参见 <a class="reference-link" href="../Advanced%20Usage/Advanced%20Showcases/Task%20Manager.md">任务管理器</a>）
+*   个人日记
+*   我当天创建的笔记的[克隆](../Basic%20Concepts%20and%20Features/Notes/Cloning%20Notes.md)（这某种程度上代表了我当天的工作内容）。
+*   我经常克隆例如当天正在进行的项目的笔记（或子树），以便随手可得
+*   我有一些[脚本](../Scripting.md)允许我跟踪某些每日指标（如体重）。这些保存到一个每日“数据笔记”中（实际上是 JSON [代码笔记](../Note%20Types/Code.md)）。
+    *   我还有其他的脚本帮助我可视化这些数据（参见 <a class="reference-link" href="../Advanced%20Usage/Advanced%20Showcases/Weight%20Tracker.md">体重追踪器</a> 示例）
+    *   我有一个脚本自动将我所有的 Reddit 评论导入到日记笔记中。
+        *   人们有时会想知道为什么。答案是，我通常在评论中投入一些努力和思考，因此觉得值得保存，特别是如果可以自动完成的话。
 
-For most notes, this day note placement is _secondary_ and their primary location is somewhere else (e.g. for a book review I've been working on it's _Book / Reviews_, not the day note). So for this pattern to work, ability to [clone](../Basic%20Concepts%20and%20Features/Notes/Cloning%20Notes.md) notes into multiple places is pretty fundamental.
+对于大多数笔记来说，这种日记笔记的放置是_次要的_，它们的主要位置在其他地方（例如，对于我正在写的书评，它的主要位置是_书籍 / 评论_，而不是日记笔记）。因此，要使这种模式有效，将笔记[克隆](../Basic%20Concepts%20and%20Features/Notes/Cloning%20Notes.md)到多个位置的能力是相当基础的。
 
-### Projects
+### 项目
 
-_Project_ is pretty self-explanatory, for me specifically it also means being long term (years) - an example of a project might be Trilium Notes or university studies. Given their longevity, projects can be large and deep, but their structure is very domain specific, and I don't see any common patterns. What's pretty clear is they are often widely interconnected with other parts of the knowledge base - e.g. university credentials are cloned from "Credentials / University" top level notes and Trilium related blog posts are in "Blog / \[Name of the blog\] / Trilium".
+_项目_是不言自明的，对我来说，它特别意味着长期（数年）——一个项目的例子可能是 Trilium Notes 或大学学习。鉴于其长期性，项目可能又大又深，但它们的结构非常特定于领域，我没有看到任何共同的模式。相当清楚的是，它们通常与知识库的其他部分广泛互联——例如，大学凭据从“凭据 / 大学”顶级笔记克隆而来，与 Trilium 相关的博客文章在“博客 / \[博客名称\] / Trilium”中。
 
-_Epics_ are the same thing as projects, but differ in scope - they are typically several months long and as such are usually placed into a year note (e.g. _2018 / Epics_). Epics are often of work nature (also cloned into work note) and personal (e.g. currently I have large epic for moving to a different city).
+_史诗_与项目相同，但范围不同——它们通常持续几个月，因此通常放在年份笔记中（例如 _2018 / 史诗_）。史诗通常是工作性质的（也克隆到工作笔记中）和个人性质的（例如，目前我有一个关于搬到另一个城市的大型史诗）。
 
-I don't have a term for short term projects (typically several days long), but continuing the scrum analogy I might call them _story_. These are often placed directly into day notes and manually moved from one day to another (or place into a month note, e.g. _2018 / 11 - November_).
+我没有用于短期项目（通常持续几天）的术语，但继续使用 Scrum 的类比，我可能称它们为_故事_。这些通常直接放在日记笔记中，并手动从一天移动到另一天（或放在月份笔记中，例如 _2018 / 11 - 十一月_）。
 
-### Credentials
+### 凭据
 
-I keep all my credentials in the knowledge base, they are sorted into categories - work related, project related, personal per country etc. These notes are of course [protected](../Basic%20Concepts%20and%20Features/Notes/Protected%20Notes.md) and are often cloned into other places (e.g. project credentials are cloned into the project itself). This is a pretty important advantage compared to traditional tools like KeePass - all the relevant information is centralized into one place without compromising security.
+我将所有凭据保存在知识库中，它们被分类——工作相关、项目相关、按国家划分的个人等。这些笔记当然是[受保护的](../Basic%20Concepts%20and%20Features/Notes/Protected%20Notes.md)，并且经常被克隆到其他地方（例如，项目凭据被克隆到项目本身）。与 KeePass 等传统工具相比，这是一个相当重要的优势——所有相关信息都集中在一个地方，同时不损害安全性。
 
-### People profiles
+### 人物档案
 
-This might seem creepy to some, but I keep a profile on most people. It contains pretty standard things like date of birth, contacts, address, but also current and previous employments, their hobbies and worldviews and sometimes even important (IM/mail/meatspace) conversations. Just about everything I find notable. It helps to refresh some basic info before meeting people, especially if you haven't been in touch in a while. It gets pretty awkward to ask for the tenth time where do they work for example, because you keep forgetting it.
+这对某些人来说可能看起来有点令人毛骨悚然，但我为大多数人保留了一份档案。它包含相当标准的内容，如出生日期、联系方式、地址，还有当前和以前的工作、他们的爱好和世界观，有时甚至是重要的（即时消息/邮件/线下）对话。几乎所有我觉得值得注意的事情。这有助于在见人之前刷新一些基本信息，特别是如果你有一段时间没有联系了。例如，第十次问他们在哪里工作会变得很尴尬，因为你总是忘记。
 
-Naturally I have a lot of (extended) family members, friends, acquaintances etc. so I need some way to sort them. My main method is to sort them by social circle (work, high school, sports club etc.), sometimes also by their town of residence. Family _circle_ is still too large so the further organization is by _clan_ (as in "Smiths"). Some people are members of several such circles, so they are just cloned into multiple places.
+自然，我有很多（大家庭的）家庭成员、朋友、熟人等，所以我需要某种方式来分类他们。我的主要方法是按社交圈（工作、高中、体育俱乐部等）分类，有时也按他们居住的城市分类。家庭_圈子_仍然太大，所以进一步的组织是按_家族_（如“史密斯家”）。有些人是多个此类圈子的成员，所以他们只是被克隆到多个地方。
 
-For family specifically it's pretty useful to create a <a class="reference-link" href="../Note%20Types/Relation%20Map.md">Relation Map</a> to visualize relationships:
+对于家庭来说，创建一个 <a class="reference-link" href="../Note%20Types/Relation%20Map.md">关系图</a> 来可视化关系是非常有用的：
 
 <figure class="image"><img style="aspect-ratio:941/758;" src="Patterns of personal knowledge_relation-map-family.png" width="941" height="758"></figure>
 
-### Books
+### 书籍
 
-Of course, I keep standard "To read" list. I also keep a record on the books I've read - typically one book has one subtree where the root has some basic info like author, page count, publication date, date started, date finished (in the form of <a class="reference-link" href="../Advanced%20Usage/Attributes/Promoted%20Attributes.md">Promoted Attributes</a>). I also write a (private) review and keep list of highlights from Kindle, optionally with some commentary, these are usually stored in sub notes (unless they are pretty short).
+当然，我保留标准的“想读”列表。我也保留我读过的书的记录——通常一本书有一个子树，根节点有一些基本信息，如作者、页数、出版日期、开始日期、完成日期（以<a class="reference-link" href="../Advanced%20Usage/Attributes/Promoted%20Attributes.md">提升属性</a>的形式）。我也会写（私人的）评论，并保留 Kindle 的重点摘录列表，可选地附带一些评论，这些通常存储在子笔记中（除非它们很短）。
 
-To keep the list of books manageable, I sort them per year (of reading them), this also gives me some basic overview of "reading performance" for given year. I plan to create a [script](../Scripting.md) which would show some timeline chart visualizing book attributes `dateStarted` - `dateFinished` to have nicer view of my reading sprints and trends.
+为了保持书籍列表的可管理性，我按年份（阅读年份）对它们进行排序，这也让我对特定年份的“阅读表现”有一个基本的概览。我计划创建一个[脚本](../Scripting.md)，显示某种时间线图表，可视化书籍属性 `dateStarted` - `dateFinished`，以便更好地查看我的阅读冲刺和趋势。
 
-Some specific authors also have their own note which contains cloned book reviews, links to interviews and other related resources.
+一些特定的作者也有自己的笔记，其中包含克隆的书评、访谈链接和其他相关资源。
 
-I have similar system for movies and TV shows, but not as sophisticated.
+我对电影和电视节目也有类似的系统，但没有那么复杂。
 
-### Personal diary
+### 个人日记
 
-This is a place to reflect on events, experiences, new findings etc. This can help you get deeper understanding of your inner self, clarify your thinking and make better decisions as a result.
+这是一个反思事件、经历、新发现等的地方。这可以帮助你更深入地了解自己的内心，澄清你的想法，并因此做出更好的决定。
 
-I sort personal diary notes directly under _day note_ (explained above), but it can be cloned also to e.g. "trip note" (if the diary note is about given trip) or to person's profile (if the person plays a role in the diary note). All my diary notes are [protected](../Basic%20Concepts%20and%20Features/Notes/Protected%20Notes.md) since they are usually pretty sensitive.
+我将个人日记笔记直接放在_日记笔记_（如上所述）下，但也可以克隆到例如“旅行笔记”（如果日记笔记是关于特定旅行的）或人物的档案（如果该人物在日记笔记中扮演角色）。我所有的日记笔记都是[受保护的](../Basic%20Concepts%20and%20Features/Notes/Protected%20Notes.md)，因为它们通常相当敏感。
 
-### Documents
+### 文档
 
-I keep all my personal documents (ID, passport, education certificates ...) scanned in the knowledge base. They are [synchronized](../Installation%20%26%20Setup/Synchronization.md) across every PC which provides decent backup and makes them available everywhere.
+我将所有个人文件（身份证、护照、学历证书……）扫描保存在知识库中。它们通过[同步](../Installation%20%26%20Setup/Synchronization.md)在每台 PC 之间同步，这提供了不错的备份并使其在任何地方都可用。
 
-Advantage compared to e.g. keeping them in Dropbox or Google Drive is that they are not stored on some 3rd party server and they can be encrypted (see <a class="reference-link" href="../Basic%20Concepts%20and%20Features/Notes/Protected%20Notes.md">Protected Notes</a>).
+与例如将它们保存在 Dropbox 或 Google Drive 中相比，优势在于它们不存储在某个第三方服务器上，并且可以加密（参见 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/Notes/Protected%20Notes.md">受保护的笔记</a>）。
 
-### Inventory
+### 库存
 
-Inventory contains documents and other relevant importation for my important belongings - e.g. for car you can keep the registration card, maintenance record, related costs etc. I also keep inventory for some items personally important to me - mainly computers, phones, cameras and similar electronics. This can be practical at times but also provides sentimental value.
+库存包含我重要物品的文档和其他相关信息——例如，对于汽车，你可以保留登记卡、维护记录、相关费用等。我也为一些对我个人重要的物品保留库存——主要是电脑、手机、相机和类似的电子产品。这在某些时候可能很实用，但也提供了情感价值。
 
-### Topic knowledge base
+### 主题知识库
 
-This where I store hard "knowledge" - summarized topics and findings from different domains. Topics can range from traditional sciences - physics, history, economy to philosophy, mental models, apps (notes about specific apps I use) etc. Of course this is very subjective - given what I do, my Physics sub-tree is pretty sparse compared to my Programming subtree.
+这是我存储硬“知识”的地方——来自不同领域的总结主题和发现。主题可以涵盖传统科学——物理、历史、经济，到哲学、心智模型、应用程序（关于我使用的特定应用程序的笔记）等。当然，这是非常主观的——鉴于我所做的事情，我的物理子树与我的编程子树相比相当稀疏。
 
-### Work knowledge base
+### 工作知识库
 
-I usually keep top level note for the company I currently work at (past jobs are moved elsewhere). I track basic organization of the company (divisions, business units), who is who (<a class="reference-link" href="../Note%20Types/Relation%20Map.md">Relation Map</a>) are again useful for visualization), projects I work at etc.
+我通常为当前工作的公司保留一个顶级笔记（过去的工作被移到其他地方）。我跟踪公司的基本组织（部门、业务单元），谁是谁（<a class="reference-link" href="../Note%20Types/Relation%20Map.md">关系图</a> 再次对可视化很有用），我参与的项目等。
 
-There's a number of credentials to various company services I need to use. Companies usually have a bunch of complex processes and tools. I record meeting minutes, link to the company wiki (which is usually difficult to find relevant info). In general there's a lot of company specific information I need to know or need have them at hand in a nice structure I can understand. Often it's just copy pasting and reshuffling of existing information into something more understandable for me.
+有许多我需要使用的各种公司服务的凭据。公司通常有一堆复杂的流程和工具。我记录会议纪要，链接到公司 wiki（通常很难找到相关信息）。总的来说，有很多公司特定的信息我需要知道或需要以我能理解的良好结构随时掌握。通常只是复制粘贴和重新整理现有信息，使其对我来说更容易理解。
 
-From my experience, keeping this makes me more productive and even more importantly dramatically reduces frustration and stress.
+根据我的经验，保留这些让我更有效率，更重要的是，大大减少了挫败感和压力。
 
-## Conclusion
+## 结论
 
-I could probably go on with more patterns (e.g. study notes, travelling), but I think you get the idea. Whatever is important in your life, it probably makes sense to document and track it.
+我可能可以继续列出更多的模式（例如学习笔记、旅行），但我认为你明白了要点。无论在你的生活中什么是重要的，记录和跟踪它可能都是有意义的。

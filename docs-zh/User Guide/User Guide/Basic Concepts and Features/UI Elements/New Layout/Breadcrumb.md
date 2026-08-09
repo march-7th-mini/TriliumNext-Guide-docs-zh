@@ -1,26 +1,26 @@
-# Breadcrumb
+# 面包屑导航
 <figure class="image"><img style="aspect-ratio:1150/27;" src="Breadcrumb_image.png" width="1150" height="27"></figure>
 
-The breadcrumb allows quickly viewing the note hierarchy of the current note and navigating through it.
+面包屑导航允许快速查看当前笔记的笔记层级结构并从中进行导航。
 
-It is part of the <a class="reference-link" href="Status%20bar.md">Status bar</a>, displayed in the bottom-left of the screen.
+它是<a class="reference-link" href="Status%20bar.md">状态栏</a>的一部分，显示在屏幕的左下方。
 
-## Layout and Interaction
+## 布局与交互
 
-*   If a note or workspace is hoisted, a badge will appear on the left-most side.
-    *   Clicking on the badge will un-hoist the note/workspace.
-*   The left-most icon represents the root note, or the hoisted note or workspace.
-    *   Clicking the icon will jump to the root note.
-    *   Right clicking the icon will display a menu that allows opening the note in a new tab, split, etc.
-*   Each segment shows the title of a note in the current note hierarchy.
-    *   Clicking the icon will jump to that note.
-    *   Right clicking will open a menu with multiple options such as opening the note in a different tab/split/window, hoisting, moving/cloning the note, duplicating as well as changing the color of the note.
-*   Clicking the arrow next to each segment will reveal the child notes of the segment on the left.
-    *   Clicking on an icon will navigate to that particular note.
-    *   It's also possible to create a new child note from here.
-    *   The menu can optionally hide the archived notes.
-*   If the current note is deep within a hierarchy, the segments will collapse into a \[…\] button in order not to occupy too much space.
-    *   Clicking this button will display each collapsed entry as a menu item. Clicking on it will navigate to that particular note.
-*   Right clicking on an empty space to the right of the breadcrumb (before the other status bar items) will reveal another menu that allows:
-    *   Toggling whether archived notes are displayed in the breadcrumb and in the note tree.
-    *   Copying the current note path to clipboard.
+*   如果某个笔记或工作区被提升（hoisted），最左侧将出现一个徽章。
+    *   点击该徽章将取消提升该笔记/工作区。
+*   最左侧的图标代表根笔记，或已提升的笔记或工作区。
+    *   点击该图标将跳转到根笔记。
+    *   右键点击该图标将显示一个菜单，允许在新标签页、分屏等中打开该笔记。
+*   每个分段显示当前笔记层级中一个笔记的标题。
+    *   点击该图标将跳转到该笔记。
+    *   右键点击将打开一个菜单，其中包含多个选项，例如在不同的标签页/分屏/窗口中打开笔记、提升、移动/克隆笔记、复制笔记以及更改笔记颜色。
+*   点击每个分段旁边的箭头将显示左侧分段的子笔记。
+    *   点击某个图标将导航到该特定笔记。
+    *   也可以从此处创建新的子笔记。
+    *   该菜单可以选择隐藏已归档的笔记。
+*   如果当前笔记位于层级结构的深处，分段将折叠成一个 \[…\] 按钮，以免占用过多空间。
+    *   点击此按钮将把每个折叠的条目显示为菜单项。点击它将导航到该特定笔记。
+*   右键点击面包屑右侧的空白区域（在其他状态栏项目之前）将显示另一个菜单，允许：
+    *   切换是否在面包屑和笔记树中显示已归档的笔记。
+    *   将当前笔记路径复制到剪贴板。

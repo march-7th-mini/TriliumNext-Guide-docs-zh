@@ -1,98 +1,98 @@
-# Note tree contextual menu
+# 笔记树右键菜单
 <figure class="image image-style-align-right"><img style="aspect-ratio:269/608;" src="1_Note tree contextual menu_image.png" width="269" height="608"></figure>
 
-The _note tree menu_ can be accessed by right-clicking in the <a class="reference-link" href="../Note%20Tree.md">Note Tree</a>.
+_笔记树菜单_ 可以通过在 <a class="reference-link" href="../Note%20Tree.md">笔记树</a> 中右键点击来访问。
 
-## Interaction
+## 交互
 
-The contextual menu can operate:
+右键菜单可以操作：
 
-*   On a single note, by right clicking it in the note tree.
-*   On multiple notes, by selecting them first. See <a class="reference-link" href="Multiple%20selection.md">Multiple selection</a> on how to do so.
-    *   When right clicking, do note that usually the note being right clicked is also included in the affected notes, regardless of whether it was selected or not.
+*   单个笔记：在笔记树中右键点击该笔记。
+*   多个笔记：先选中它们。关于如何操作，请参阅 <a class="reference-link" href="Multiple%20selection.md">多选</a>。
+    *   右键点击时，请注意，无论该笔记是否被选中，通常被右键点击的笔记也会包含在受影响的笔记中。
 
-## Available options
+## 可用选项
 
 > [!NOTE]
-> When multiple notes are selected, only a subset of notes will be active. The ones that do support multiple notes will mention this in the list below.
+> 当选中多个笔记时，只有部分选项会处于激活状态。支持多笔记操作的选项会在下方列表中注明。
 
-*   **Open in a new tab**
-    *   Will open a single note in a new [tab](../Tabs.md).
-*   **Open in a new split**
-    *   Will open a split to the right with the given note within the current tab.
-*   **Hoist note**
-    *   Will focus the note tree on this note. See <a class="reference-link" href="../../Navigation/Note%20Hoisting.md">Note Hoisting</a> for more information.
-*   **Insert note after**
-    *   Allows easy creation of a note with a specified [note type](../../../Note%20Types.md).
-    *   <a class="reference-link" href="../../../Advanced%20Usage/Templates.md">Templates</a> will also be present (if any) at the end of the list.
-    *   The note will be added on the same level of hierarchy as the note selected.
-*   **Insert child note**
-    *   Same as _Insert note after_, but the note will be created as a child of the selected note.
-*   **Protect subtree**
-    *   Will mark this note and all of its descendents as protected. See <a class="reference-link" href="../../Notes/Protected%20Notes.md">Protected Notes</a> for more information.
-*   **Unprotect subtree**
-    *   Will unprotect this note and all of its descendents.
-*   **Cut**
-    *   Will place the given notes in clipboard.
-    *   Use one of the two paste functions (or the keyboard shortcuts) to move them to the desired location.
-*   **Copy / clone**
-    *   Will place the given notes in clipboard.
-    *   Use one of the two paste functions (or the keyboard shortcuts) to copy them to the desired location.
-    *   Note that the copy function here works according to the <a class="reference-link" href="../../Notes/Cloning%20Notes.md">Cloning Notes</a> functionality (i.e. the note itself will be present in two locations at once, and editing it in one place will edit it everywhere).
-    *   To simply create a duplicate note that can be modified independently, look for _Duplicate subtree_.
-*   **Paste into**
-    *   If there are any notes in clipboard, they will be pasted as child notes to the right-clicked one.
-*   **Paste after**
-    *   If there are any notes in clipboard, they will be pasted underneath the right-clicked one.
-*   **Move to…**
-    *   Will display a modal to specify where to move the desired notes.
-*   **Clone to…**
-    *   Will display a modal to specify where to [clone](../../Notes/Cloning%20Notes.md) the desired notes.
-*   **Duplicate**
-    *   Creates a copy of the note and its descendants.
-    *   This process is different from <a class="reference-link" href="../../Notes/Cloning%20Notes.md">Cloning Notes</a> since the duplicated note can be edited independently from the original.
-    *   An alternative to this, if done regularly, would be <a class="reference-link" href="../../../Advanced%20Usage/Templates.md">Templates</a>.
-*   **Archive/Unarchive**
-    *   Marks a note as [archived](../../Notes/Archived%20Notes.md).
-    *   If the note is already archived, it will be unarchived instead.
-    *   Multiple notes can be selected as well. However, all the selected notes must be in the same state (archived or not), otherwise the option will be disabled.
-*   **Delete**
-    *   Will delete the given notes, asking for confirmation first.
-    *   In the dialog, the following options can be configured:
-        *   _Delete also all clones_ to ensure that the note will be deleted everywhere if it has been placed into multiple locations (see <a class="reference-link" href="../../Notes/Cloning%20Notes.md">Cloning Notes</a>).
-        *   _Erase notes permanently_ will ensure that the note cannot be recovered from <a class="reference-link" href="../Recent%20Changes.md">Recent Changes</a>.
-*   **Import into note**
-    *   Opens the [import](../../Import%20%26%20Export.md) dialog and places the imported notes as child notes of the selected one.
-*   **Export**
-    *   Opens the [export](../../Import%20%26%20Export.md) dialog for the selected notes.
-*   **Search in subtree**
-    *   Opens a full <a class="reference-link" href="../../Navigation/Search.md">Search</a> with it preconfigured to only look into this note and its descendants (the _Ancestor_ field).
+*   **在新标签页中打开**
+    *   将在新的[标签页](../Tabs.md)中打开单个笔记。
+*   **在新分栏中打开**
+    *   将在当前标签页内右侧打开一个包含指定笔记的分栏。
+*   **提升笔记**
+    *   将笔记树聚焦于此笔记。更多信息请参阅 <a class="reference-link" href="../../Navigation/Note%20Hoisting.md">笔记提升</a>。
+*   **在其后插入笔记**
+    *   允许轻松创建具有指定[笔记类型](../../../Note%20Types.md)的笔记。
+    *   <a class="reference-link" href="../../../Advanced%20Usage/Templates.md">模板</a>（如果有）也会出现在列表末尾。
+    *   新笔记将添加到与所选笔记相同的层级。
+*   **插入子笔记**
+    *   与 _在其后插入笔记_ 相同，但新笔记将创建为所选笔记的子笔记。
+*   **保护子树**
+    *   将此笔记及其所有后代标记为受保护。更多信息请参阅 <a class="reference-link" href="../../Notes/Protected%20Notes.md">受保护的笔记</a>。
+*   **取消保护子树**
+    *   取消保护此笔记及其所有后代。
+*   **剪切**
+    *   将指定笔记放入剪贴板。
+    *   使用两个粘贴功能之一（或键盘快捷键）将它们移动到所需位置。
+*   **复制 / 克隆**
+    *   将指定笔记放入剪贴板。
+    *   使用两个粘贴功能之一（或键盘快捷键）将它们复制到所需位置。
+    *   请注意，此处的复制功能遵循 <a class="reference-link" href="../../Notes/Cloning%20Notes.md">克隆笔记</a> 的功能（即笔记本身将同时存在于两个位置，在一个位置编辑它会在所有位置生效）。
+    *   若要简单地创建一个可以独立修改的重复笔记，请查找 _复制子树_。
+*   **粘贴到内部**
+    *   如果剪贴板中有任何笔记，它们将作为子笔记粘贴到被右键点击的笔记下。
+*   **粘贴到后面**
+    *   如果剪贴板中有任何笔记，它们将粘贴到被右键点击的笔记下方。
+*   **移动到…**
+    *   将显示一个模态框，用于指定将所需笔记移动到的位置。
+*   **克隆到…**
+    *   将显示一个模态框，用于指定将所需笔记[克隆](../../Notes/Cloning%20Notes.md)到的位置。
+*   **复制**
+    *   创建笔记及其后代的副本。
+    *   此过程不同于 <a class="reference-link" href="../../Notes/Cloning%20Notes.md">克隆笔记</a>，因为复制的笔记可以独立于原始笔记进行编辑。
+    *   如果经常执行此操作，另一种选择是使用 <a class="reference-link" href="../../../Advanced%20Usage/Templates.md">模板</a>。
+*   **归档/取消归档**
+    *   将笔记标记为[已归档](../../Notes/Archived%20Notes.md)。
+    *   如果笔记已归档，则改为取消归档。
+    *   也可以选择多个笔记。但是，所有选中的笔记必须处于相同状态（已归档或未归档），否则该选项将被禁用。
+*   **删除**
+    *   将删除指定笔记，并首先请求确认。
+    *   在对话框中，可以配置以下选项：
+        *   _同时删除所有克隆_ 以确保如果笔记被放置到多个位置，它将在所有位置被删除（参见 <a class="reference-link" href="../../Notes/Cloning%20Notes.md">克隆笔记</a>）。
+        *   _永久删除笔记_ 将确保无法从 <a class="reference-link" href="../Recent%20Changes.md">最近更改</a> 中恢复该笔记。
+*   **导入到笔记**
+    *   打开[导入](../../Import%20%26%20Export.md)对话框，并将导入的笔记作为所选笔记的子笔记放置。
+*   **导出**
+    *   为所选笔记打开[导出](../../Import%20%26%20Export.md)对话框。
+*   **在子树中搜索**
+    *   打开一个完整的 <a class="reference-link" href="../../Navigation/Search.md">搜索</a>，并预先配置为仅搜索此笔记及其后代（_祖先_ 字段）。
 
-## Advanced options
+## 高级选项
 
 <figure class="image image-style-align-right"><img style="aspect-ratio:231/263;" src="Note tree contextual menu_image.png" width="231" height="263"></figure>
 
-The advanced options menu offers some of the less frequently used actions for notes.
+高级选项菜单提供了一些较少使用的笔记操作。
 
-To access these options, first look for the _Advanced_ option in the contextual menu to reveal a sub-menu with:
+要访问这些选项，请先在右键菜单中找到 _高级_ 选项，以展开一个子菜单，其中包含：
 
-*   **Apply bulk actions**
-    *   Opens the <a class="reference-link" href="../../../Advanced%20Usage/Bulk%20Actions.md">Bulk Actions</a> dialog, to apply actions such as adding labels or moving notes to multiple notes at once (see <a class="reference-link" href="Multiple%20selection.md">Multiple selection</a>).
-*   **Edit branch prefix**
-    *   Opens a dialog to assign a name to be able to distinguish [clones](../../Notes/Cloning%20Notes.md), see <a class="reference-link" href="../../Notes/Cloning%20Notes/Branch%20prefix.md">Branch prefix</a> for more information.
-*   **Convert to attachment**
-    *   Converts the selected notes to <a class="reference-link" href="../../Notes/Attachments.md">Attachments</a> of their parent notes.
-    *   This functional is most useful when dealing with image <a class="reference-link" href="../../../Note%20Types/File.md">File</a> notes that were imported from an external source or an older version of Trilium.
-*   **Expand subtree**
-    *   Expands all the child notes in the <a class="reference-link" href="../Note%20Tree.md">Note Tree</a>.
-*   **Collapse subtree**
-    *   Collapses all the child notes in the note tree.
-*   **Sort by…**
-    *   Opens a dialog to sort all the child notes of the selected note.
-    *   The sorting is done only once, there is an automatic sorting mechanism as well that can be set using <a class="reference-link" href="../../../Advanced%20Usage/Attributes.md">Attributes</a>.
-    *   See <a class="reference-link" href="../../Notes/Sorting%20Notes.md">Sorting Notes</a> for more information.
-*   **Copy note path to clipboard**
-    *   Copies a URL fragment representing the full path to this branch for a note, such as `#root/Hb2E70L7HPuf/4sRFgMZhYFts/2IVuShedRJ3U/LJVMvKXOFv7n`.
-    *   The URL to manually create <a class="reference-link" href="../../../Note%20Types/Text/Links.md">Links</a> within notes, or for note <a class="reference-link" href="../../Navigation">Navigation</a>.
-*   **Recent changes in subtree**
-    *   This will open <a class="reference-link" href="../Recent%20Changes.md">Recent Changes</a>, but filtered to only the changes related to this note or one of its descendants.
+*   **应用批量操作**
+    *   打开 <a class="reference-link" href="../../../Advanced%20Usage/Bulk%20Actions.md">批量操作</a> 对话框，以一次性对多个笔记应用诸如添加标签或移动笔记等操作（参见 <a class="reference-link" href="Multiple%20selection.md">多选</a>）。
+*   **编辑分支前缀**
+    *   打开一个对话框，用于分配名称以区分[克隆](../../Notes/Cloning%20Notes.md)，更多信息请参阅 <a class="reference-link" href="../../Notes/Cloning%20Notes/Branch%20prefix.md">分支前缀</a>。
+*   **转换为附件**
+    *   将选中的笔记转换为其父笔记的 <a class="reference-link" href="../../Notes/Attachments.md">附件</a>。
+    *   此功能在处理从外部来源或旧版 Trilium 导入的图片 <a class="reference-link" href="../../../Note%20Types/File.md">文件</a> 笔记时最为有用。
+*   **展开子树**
+    *   展开 <a class="reference-link" href="../Note%20Tree.md">笔记树</a> 中的所有子笔记。
+*   **折叠子树**
+    *   折叠笔记树中的所有子笔记。
+*   **排序依据…**
+    *   打开一个对话框，用于对所选笔记的所有子笔记进行排序。
+    *   排序只执行一次，也有一个自动排序机制，可以使用 <a class="reference-link" href="../../../Advanced%20Usage/Attributes.md">属性</a> 进行设置。
+    *   更多信息请参阅 <a class="reference-link" href="../../Notes/Sorting%20Notes.md">笔记排序</a>。
+*   **复制笔记路径到剪贴板**
+    *   复制一个表示笔记此分支完整路径的 URL 片段，例如 `#root/Hb2E70L7HPuf/4sRFgMZhYFts/2IVuShedRJ3U/LJVMvKXOFv7n`。
+    *   该 URL 用于在笔记中手动创建 <a class="reference-link" href="../../../Note%20Types/Text/Links.md">链接</a>，或用于笔记<a class="reference-link" href="../../Navigation">导航</a>。
+*   **子树中的最近更改**
+    *   这将打开 <a class="reference-link" href="../Recent%20Changes.md">最近更改</a>，但会过滤为仅显示与此笔记或其某个后代相关的更改。

@@ -1,53 +1,54 @@
-# Templates
-A template in Trilium serves as a predefined structure for other notes, referred to as instance notes. Assigning a template to a note brings three main effects:
+# 模板
 
-1.  **Attribute Inheritance**: All attributes from the template note are [inherited](Attributes/Attribute%20Inheritance.md) by the instance notes. Even attributes with `#isInheritable=false` are inherited by the instance notes, although only inheritable attributes are further inherited by the children of the instance notes.
-2.  **Content Duplication**: The content of the template note is copied to the instance note, provided the instance note is empty at the time of template assignment.
-3.  **Child Note Duplication**: All child notes of the template are deep-duplicated to the instance note.
+Trilium 中的模板为其他笔记（称为实例笔记）提供预定义结构。为笔记分配模板会带来三个主要效果：
 
-## Example
+1.  **属性继承**：模板笔记中的所有属性都会被实例笔记[继承](Attributes/Attribute%20Inheritance.md)。即使带有 `#isInheritable=false` 的属性也会被实例笔记继承，不过只有可继承的属性才会被实例笔记的子笔记进一步继承。
+2.  **内容复制**：如果实例笔记在分配模板时为空，模板笔记的内容会被复制到实例笔记中。
+3.  **子笔记复制**：模板的所有子笔记都会被深度复制到实例笔记中。
 
-A typical example would be a "Book" template note, which might include:
+## 示例
 
-*   **Promoted Attributes**: Such as publication year, author, etc. (see [promoted attributes](Attributes/Promoted%20Attributes.md)).
-*   **Outline**: An outline for a book review, including sections like themes, conclusion, etc.
-*   **Child Notes**: Additional notes for highlights, summary, etc.
+一个典型的例子是“书籍”模板笔记，它可能包含：
 
-![Template Example](Templates_template.png)
+*   **提升属性**：如出版年份、作者等（参见[提升属性](Attributes/Promoted%20Attributes.md)）。
+*   **大纲**：书评大纲，包括主题、结论等部分。
+*   **子笔记**：用于存放摘录、总结等的附加笔记。
 
-## Instance Note
+![模板示例](Templates_template.png)
 
-An instance note is a note related to a template note. This relationship means the instance note's content is initialized from the template, and all attributes from the template are inherited.
+## 实例笔记
 
-To create an instance note through the UI:
+实例笔记是与模板笔记相关联的笔记。这种关系意味着实例笔记的内容从模板初始化，并且模板中的所有属性都被继承。
 
-![show child note templates](Templates_template-create-instance-note.png)
+通过用户界面创建实例笔记：
 
-For the template to appear in the menu, the template note must have the `#template` label. Do not confuse this with the `~template` relation, which links the instance note to the template note. If you use [workspaces](../Basic%20Concepts%20and%20Features/Navigation/Workspaces.md), you can also mark templates with `#workspaceTemplate` to display them only in the workspace.
+![显示子笔记模板](Templates_template-create-instance-note.png)
 
-Templates can also be added or changed after note creation by creating a `~template` relation pointing to the desired template note. 
+要使模板出现在菜单中，模板笔记必须带有 `#template` 标签。不要将其与 `~template` 关系混淆，后者用于将实例笔记链接到模板笔记。如果您使用[工作区](../Basic%20Concepts%20and%20Features/Navigation/Workspaces.md)，还可以用 `#workspaceTemplate` 标记模板，使其仅在工作区中显示。
 
-To specify a template for child notes, you can use a `~child:template` relation pointing to the appropriate template note. There is no limit to the depth of the hierarchy — you can use `~child:child:template`, `~child:child:child:template`, and so on.
+在笔记创建后，也可以通过创建指向所需模板笔记的 `~template` 关系来添加或更改模板。
+
+要为子笔记指定模板，可以使用指向相应模板笔记的 `~child:template` 关系。层级深度没有限制——您可以使用 `~child:child:template`、`~child:child:child:template` 等。
 
 > [!IMPORTANT]
-> Changing the template hierarchy after the parent note is created will not retroactively apply to newly created child notes.  
-> For example, if you initially use `~child:template` and later switch to `~child:child:template`, it will not automatically apply the new template to the grandchild notes. Only the structure present at the time of note creation is considered.
+> 在父笔记创建后更改模板层级不会追溯应用于新创建的子笔记。
+> 例如，如果您最初使用 `~child:template`，之后切换到 `~child:child:template`，它不会自动将新模板应用于孙笔记。只有笔记创建时存在的结构才会被考虑。
 
-## Regarding note types
+## 关于笔记类型
 
-By default, newly created notes are <a class="reference-link" href="../Note%20Types/Text.md">Text</a> notes. If a parent note defines a `child:template` pointing to a template of a different type (e.g. a Code note), the behavior depends on how the new note is created:
+默认情况下，新创建的笔记是<a class="reference-link" href="../Note%20Types/Text.md">文本</a>笔记。如果父笔记定义了指向不同类型（例如代码笔记）模板的 `child:template`，行为取决于新笔记的创建方式：
 
-*   If no note type is explicitly chosen (e.g. the + button in the <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">Note Tree</a>), the template is applied and the new note takes the type and content of the template.
-*   If a note type is explicitly selected (e.g. <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">Note Tree</a> → _Insert note after_ / _Insert child note_):
-    *   If the selected type matches the template's type, the template is applied.
-    *   If the selected type differs, the template is disregarded entirely — the new note is an empty note of the selected type.
+*   如果没有显式选择笔记类型（例如在<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">笔记树</a>中点击 + 按钮），则应用模板，新笔记采用模板的类型和内容。
+*   如果显式选择了笔记类型（例如<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">笔记树</a> → _在之后插入笔记_ / _插入子笔记_）：
+    *   如果所选类型与模板类型匹配，则应用模板。
+    *   如果所选类型不同，则完全忽略模板——新笔记是所选类型的空笔记。
 
-Selecting a specific template from the creation menu always takes precedence over `child:template`.
+从创建菜单中选择特定模板始终优先于 `child:template`。
 
-## Additional Notes
+## 补充说明
 
-From a visual perspective, templates can define `#iconClass` and `#cssClass` attributes, allowing all instance notes (e.g., books) to display a specific icon and CSS style.
+从视觉角度来看，模板可以定义 `#iconClass` 和 `#cssClass` 属性，使所有实例笔记（例如书籍）能够显示特定的图标和 CSS 样式。
 
-Explore the concept further in the <a class="reference-link" href="Database/Demo%20Notes.md">Demo Notes</a>, including examples like the <a class="reference-link" href="../Note%20Types/Relation%20Map.md">Relation Map</a>, <a class="reference-link" href="Advanced%20Showcases/Task%20Manager.md">Task Manager</a>, and <a class="reference-link" href="Advanced%20Showcases/Day%20Notes.md">Day Notes</a>.
+您可以在<a class="reference-link" href="Database/Demo%20Notes.md">演示笔记</a>中进一步探索此概念，包括<a class="reference-link" href="../Note%20Types/Relation%20Map.md">关系图</a>、<a class="reference-link" href="Advanced%20Showcases/Task%20Manager.md">任务管理器</a>和<a class="reference-link" href="Advanced%20Showcases/Day%20Notes.md">日记笔记</a>等示例。
 
-Additionally, see <a class="reference-link" href="Default%20Note%20Title.md">Default Note Title</a> for creating title templates. Note templates and title templates can be combined by creating a `#titleTemplate` for a template note.
+此外，请参阅<a class="reference-link" href="Default%20Note%20Title.md">默认笔记标题</a>以了解创建标题模板的信息。可以通过为模板笔记创建 `#titleTemplate` 来组合使用笔记模板和标题模板。

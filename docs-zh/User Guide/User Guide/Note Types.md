@@ -1,42 +1,43 @@
-# Note Types
-One of the core features of Trilium is that it supports multiple types of notes, depending on the need.
+# 笔记类型
 
-## Creating a new note with a different type via the note tree
+Trilium 的核心特性之一是其支持多种类型的笔记，具体取决于需求。
 
-The default note type in Trilium (e.g. when creating a new note) is <a class="reference-link" href="Note%20Types/Text.md">Text</a>, since it's for general use.
+## 通过笔记树创建不同类型的笔记
 
-To create a new note of a different type, head to the <a class="reference-link" href="Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">Note Tree</a> and right click an existing note where to place the new one and select:
+Trilium 中的默认笔记类型（例如创建新笔记时）是<a class="reference-link" href="Note%20Types/Text.md">文本</a>，因为它适用于一般用途。
 
-*   _Insert note after_, to put the new note underneath the one selected.
-*   _Insert child note_, to insert the note as a child of the selected note.
+要创建其他类型的新笔记，请前往<a class="reference-link" href="Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">笔记树</a>，右键点击要放置新笔记的现有笔记，然后选择：
+
+*   _在其后插入笔记_，将新笔记放在所选笔记的下方。
+*   _插入子笔记_，将新笔记作为所选笔记的子笔记插入。
 
 ![](Note%20Types_image.png)
 
-## Creating a new note of a different type via add link or new tab
+## 通过添加链接或新标签页创建不同类型的笔记
 
-*   When adding a [link](Note%20Types/Text/Links.md) in a <a class="reference-link" href="Note%20Types/Text.md">Text</a> note, type the desired title of the new note and press Enter. Afterwards the type of the note will be asked.
-*   Similarly, when creating a new tab, type the desired title and press Enter.
+*   在<a class="reference-link" href="Note%20Types/Text.md">文本</a>笔记中添加[链接](Note%20Types/Text/Links.md)时，输入新笔记的所需标题并按回车。之后会询问笔记的类型。
+*   类似地，创建新标签页时，输入所需标题并按回车。
 
-## Changing the type of a note
+## 更改笔记的类型
 
-It is possible to change the type of a note after it has been created via the _Basic Properties_ tab in the <a class="reference-link" href="Basic%20Concepts%20and%20Features/UI%20Elements/Ribbon.md">Ribbon</a>. Note that it's generally a good idea to change the note type only if the note is empty. Can also be used to edit the [source of a note](Advanced%20Usage/Note%20source.md).
+创建笔记后，可以通过<a class="reference-link" href="Basic%20Concepts%20and%20Features/UI%20Elements/Ribbon.md">功能区</a>中的_基本属性_选项卡更改笔记的类型。请注意，通常只在笔记为空时更改笔记类型才是个好主意。也可以用于编辑[笔记的源代码](Advanced%20Usage/Note%20source.md)。
 
-## Supported note types
+## 支持的笔记类型
 
-The following note types are supported by Trilium:
+Trilium 支持以下笔记类型：
 
-| Note Type | Description |
+| 笔记类型 | 描述 |
 | --- | --- |
-| <a class="reference-link" href="Note%20Types/Text.md">Text</a> | The default note type, which allows for rich text formatting, images, admonitions and right-to-left support. |
-| <a class="reference-link" href="Note%20Types/Code.md">Code</a> | Uses a mono-space font and can be used to store larger chunks of code or plain text than a text note, and has better syntax highlighting. |
-| <a class="reference-link" href="Note%20Types/Saved%20Search.md">Saved Search</a> | Stores the information about a search (the search text, criteria, etc.) for later use. Can be used for quick filtering of a large amount of notes, for example. The search can easily be triggered. |
-| <a class="reference-link" href="Note%20Types/Relation%20Map.md">Relation Map</a> | Allows easy creation of notes and relations between them. Can be used for mainly relational data such as a family tree. |
-| <a class="reference-link" href="Note%20Types/Note%20Map.md">Note Map</a> | Displays the relationships between the notes, whether via relations or their hierarchical structure. |
-| <a class="reference-link" href="Note%20Types/Render%20Note.md">Render Note</a> | Used in <a class="reference-link" href="Scripting.md">Scripting</a>, it displays the HTML content of another note. This allows displaying any kind of content, provided there is a script behind it to generate it. |
-| <a class="reference-link" href="Collections.md">Collections</a> | Displays the children of the note either as a grid, a list, or for a more specialized case: a calendar.           <br>  <br>Generally useful for easy reading of short notes. |
-| <a class="reference-link" href="Note%20Types/Mermaid%20Diagrams.md">Mermaid Diagrams</a> | Displays diagrams such as bar charts, flow charts, state diagrams, etc. Requires a bit of technical knowledge since the diagrams are written in a specialized format. |
-| <a class="reference-link" href="Note%20Types/Canvas.md">Canvas</a> | Allows easy drawing of sketches, diagrams, handwritten content. Uses the same technology behind [excalidraw.com](https://excalidraw.com). |
-| <a class="reference-link" href="Note%20Types/Web%20View.md">Web View</a> | Displays the content of an external web page, similar to a browser. |
-| <a class="reference-link" href="Note%20Types/Mind%20Map.md">Mind Map</a> | Easy for brainstorming ideas, by placing them in a hierarchical layout. |
-| <a class="reference-link" href="Collections/Geo%20Map.md">Geo Map</a> | Displays the children of the note as a geographical map, one use-case would be to plan vacations. It even has basic support for tracks. Notes can also be created from it. |
-| <a class="reference-link" href="Note%20Types/File.md">File</a> | Represents an uploaded file such as PDFs, images, video or audio files. |
+| <a class="reference-link" href="Note%20Types/Text.md">文本</a> | 默认笔记类型，支持富文本格式、图片、警示框以及从右到左显示。 |
+| <a class="reference-link" href="Note%20Types/Code.md">代码</a> | 使用等宽字体，可用于存储比文本笔记更大的代码块或纯文本，并且具有更好的语法高亮。 |
+| <a class="reference-link" href="Note%20Types/Saved%20Search.md">已保存搜索</a> | 存储搜索信息（搜索文本、条件等）以供以后使用。例如，可用于快速筛选大量笔记。可以轻松触发搜索。 |
+| <a class="reference-link" href="Note%20Types/Relation%20Map.md">关系图</a> | 允许轻松创建笔记及其之间的关系。主要用于关系型数据，例如家谱。 |
+| <a class="reference-link" href="Note%20Types/Note%20Map.md">笔记地图</a> | 显示笔记之间的关系，无论是通过关系还是它们的层级结构。 |
+| <a class="reference-link" href="Note%20Types/Render%20Note.md">渲染笔记</a> | 用于<a class="reference-link" href="Scripting.md">脚本</a>，显示另一个笔记的 HTML 内容。这允许显示任何类型的内容，前提是有脚本在背后生成它。 |
+| <a class="reference-link" href="Collections.md">集合</a> | 将笔记的子笔记显示为网格、列表，或者更专业的场景：日历。          <br>  <br>通常有助于轻松阅读短笔记。 |
+| <a class="reference-link" href="Note%20Types/Mermaid%20Diagrams.md">Mermaid 图表</a> | 显示图表，如条形图、流程图、状态图等。由于图表是用专门格式编写的，因此需要一些技术知识。 |
+| <a class="reference-link" href="Note%20Types/Canvas.md">画布</a> | 允许轻松绘制草图、图表、手写内容。使用与 [excalidraw.com](https://excalidraw.com) 相同的技术。 |
+| <a class="reference-link" href="Note%20Types/Web%20View.md">网页视图</a> | 显示外部网页的内容，类似于浏览器。 |
+| <a class="reference-link" href="Note%20Types/Mind%20Map.md">思维导图</a> | 通过将想法放置在层级布局中，便于头脑风暴。 |
+| <a class="reference-link" href="Collections/Geo%20Map.md">地理地图</a> | 将笔记的子笔记显示为地理地图，一个用例是规划假期。它甚至支持基本的轨迹功能。也可以从中创建笔记。 |
+| <a class="reference-link" href="Note%20Types/File.md">文件</a> | 表示上传的文件，如 PDF、图片、视频或音频文件。 |

@@ -1,22 +1,23 @@
-# Database
-Your Trilium data is stored in a [SQLite](https://www.sqlite.org) database which contains all notes, tree structure, metadata, and most of the configuration. The database file is named `document.db` and is stored in the application's default [Data directory](../Installation%20%26%20Setup/Data%20directory.md).
+# 数据库
 
-## Demo Notes
+您的 Trilium 数据存储在一个 [SQLite](https://www.sqlite.org) 数据库中，其中包含所有笔记、树结构、元数据以及大部分配置。数据库文件名为 `document.db`，存储在应用程序默认的[数据目录](../Installation%20%26%20Setup/Data%20directory.md)中。
 
-When first starting Trilium, it will provide a set of notes to showcase various features of the application.
+## 演示笔记
 
-For more information see <a class="reference-link" href="Database/Demo%20Notes.md">Demo Notes</a>.
+首次启动 Trilium 时，它会提供一组笔记来展示应用程序的各种功能。
 
-## Manually Modifying the Database
+更多信息请参见 <a class="reference-link" href="Database/Demo%20Notes.md">演示笔记</a>。
 
-Trilium provides a lot of flexibility, and with it, opportunities for advanced users to tweak it. If you need to explore or modify the database directly, you can use a tool such as [SQLite Browser](https://sqlitebrowser.org/) to work directly on the database file.
+## 手动修改数据库
 
-See [Manually altering the database](Database/Manually%20altering%20the%20database.md) for more information.
+Trilium 提供了很大的灵活性，也为高级用户提供了调整它的机会。如果您需要直接浏览或修改数据库，可以使用 [SQLite Browser](https://sqlitebrowser.org/) 等工具直接操作数据库文件。
 
-## How to Reset the Database
+更多信息请参见[手动修改数据库](Database/Manually%20altering%20the%20database.md)。
 
-If you are experimenting with Trilium and want to return it to its original state, you can do that by deleting the current database. When you restart the application, it will generate a new database containing the original demo notes.
+## 如何重置数据库
 
-To delete the database, simply go to the [data directory](../Installation%20%26%20Setup/Data%20directory.md) and delete the `document.db` file (and any other files starting with `document.db`).
+如果您正在试用 Trilium 并希望将其恢复到原始状态，可以通过删除当前数据库来实现。当您重新启动应用程序时，它会生成一个包含原始演示笔记的新数据库。
 
-If you do not need to preserve any configurations that might be stored in the `config.ini` file, you can just delete all of the [data directory's](../Installation%20%26%20Setup/Data%20directory.md) contents to fully restore the application to its original state. You can also review the [configuration](Configuration%20\(config.ini%20or%20environment%20variables\).md) file to provide all `config.ini` values as environment variables instead.
+要删除数据库，只需进入[数据目录](../Installation%20%26%20Setup/Data%20directory.md)并删除 `document.db` 文件（以及任何以 `document.db` 开头的其他文件）。
+
+如果您不需要保留可能存储在 `config.ini` 文件中的任何配置，可以直接删除[数据目录](../Installation%20%26%20Setup/Data%20directory.md)中的所有内容，以将应用程序完全恢复到原始状态。您也可以查看[配置](Configuration%20\(config.ini%20or%20environment%20variables\).md)文件，将所有 `config.ini` 值改为通过环境变量提供。

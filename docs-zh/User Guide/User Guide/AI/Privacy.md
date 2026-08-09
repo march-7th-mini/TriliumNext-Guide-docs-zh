@@ -1,55 +1,56 @@
-# Privacy
-Trilium sends nothing to an AI provider until you send a message. Enabling the integration, adding a provider or opening a chat transmits nothing on its own, the one exception is that listing a provider's models sends your API key to that provider, so the list can be fetched.
+# 隐私
 
-Once you send a message, what leaves your machine depends on the provider you chose and on which context options are enabled.
+Trilium 在您发送消息之前不会向 AI 提供商发送任何内容。启用集成、添加提供商或打开对话本身不会传输任何内容，唯一的例外是列出提供商的模型会将您的 API 密钥发送给该提供商，以便获取模型列表。
 
-## Where your notes go
+一旦您发送消息，离开您设备的内容取决于您选择的提供商以及启用的上下文选项。
 
-| Provider type | Destination |
+## 您的笔记去向
+
+| 提供商类型 | 目的地 |
 | --- | --- |
-| Cloud providers | The provider's servers (Anthropic, OpenAI, Google, DeepSeek) |
-| Subscription-based | The provider's servers, via Claude Code running locally |
-| Local / self-hosted | Nothing leaves the machine running the model |
-| Custom endpoint | Wherever you pointed it — which may be your own hardware or a hosted service |
+| 云提供商 | 提供商的服务器（Anthropic、OpenAI、Google、DeepSeek） |
+| 基于订阅 | 提供商的服务器，通过本地运行的 Claude Code |
+| 本地 / 自托管 | 不会离开运行模型的设备 |
+| 自定义端点 | 您指向的任何位置——可能是您自己的硬件或托管服务 |
 
-This is the reason the provider list is grouped this way, and why Trilium pre-selects nothing: the choice of where your notes travel is made explicitly, by you, before anything is sent.
+这就是提供商列表如此分组的原因，也是 Trilium 不预先选择任何项的原因：您的笔记传输到何处，由您在发送任何内容之前明确做出选择。
 
-## What is actually sent
+## 实际发送的内容
 
-*   **Always, with every message**
-    *   The conversation itself: your messages and the assistant's replies, including earlier turns
-    *   Trilium's system prompt describing how to format answers and use tools.
-*   **The current note, only when note context is enabled.**
-    *   In the sidebar chat this is the file icon at the bottom; the dedicated chat note type never sends a current note.
-    *   What travels is a metadata block: the note's ID, title, type, creation and modification dates, its parent IDs, the titles of up to 20 children, up to 20 attributes, and a preview of the content.
-    *   Notes above a size threshold send a size hint instead of the text, and the model must call a tool to read further.
-*   **Any note the model asks for, when note access is enabled.**
-    *   Tools let the model search your tree and read notes, attributes and attachments beyond the current one.
-    *   It decides what to fetch; there is no per-note permission system, so the reachable scope is your whole tree.
-*   **Attachments and mentions**, when you add them: images, PDFs and text files are sent to the provider, and an `@` mention makes that note fetchable.
-*   **Your search query**, when web search is enabled, the model's search terms reach the provider's own search infrastructure.
+*   **始终发送，每条消息都会发送**
+    *   对话本身：您的消息和助手的回复，包括之前的轮次
+    *   Trilium 的系统提示，描述如何格式化答案和使用工具。
+*   **当前笔记，仅在启用笔记上下文时发送。**
+    *   在侧边栏对话中，这是底部的文件图标；专用的对话笔记类型从不发送当前笔记。
+    *   传输的是一个元数据块：笔记的 ID、标题、类型、创建和修改日期、其父级 ID、最多 20 个子笔记的标题、最多 20 个属性，以及内容的预览。
+    *   超过大小阈值的笔记会发送大小提示而不是文本，模型必须调用工具才能进一步读取。
+*   **模型请求的任何笔记，在启用笔记访问时发送。**
+    *   工具允许模型搜索您的笔记树并读取当前笔记之外的笔记、属性和附件。
+    *   由模型决定获取什么；没有针对单个笔记的权限系统，因此可访问范围是您的整个笔记树。
+*   **附件和提及**，当您添加它们时：图片、PDF 和文本文件会发送给提供商，`@` 提及会使该笔记可被获取。
+*   **您的搜索查询**，当启用网络搜索时，模型的搜索词会到达提供商自己的搜索基础设施。
 
-## Protected notes
+## 受保护的笔记
 
-While your [protected session](../Basic%20Concepts%20and%20Features/Notes/Protected%20Notes.md) is locked, protected notes send neither title nor content. **While it is unlocked they are treated like any other note** — a note the model reads through a tool is sent to the provider in full. If you keep sensitive material in protected notes, be aware that unlocking them removes that boundary for the duration of the session.
+当您的[受保护会话](../Basic%20Concepts%20and%20Features/Notes/Protected%20Notes.md)处于锁定状态时，受保护的笔记不会发送标题或内容。**当它处于解锁状态时，它们会像任何其他笔记一样被对待**——模型通过工具读取的笔记会完整地发送给提供商。如果您在受保护的笔记中保存敏感材料，请注意解锁它们会在会话期间移除该边界。
 
-## What you control
+## 您可以控制的内容
 
-*   **Which provider**: the single decision that determines whether anything leaves your machine at all.
-*   **Note access**: turn tools off from the model selector at the bottom of the chat, and the model can read nothing beyond what you type.
-*   **The current note:** the file icon in the sidebar chat.
-*   **Web search:** also in the model selector.
+*   **选择哪个提供商**：这个决定决定了是否有任何内容离开您的设备。
+*   **笔记访问**：从对话底部的模型选择器中关闭工具，模型就只能读取您输入的内容。
+*   **当前笔记**：侧边栏对话中的文件图标。
+*   **网络搜索**：也在模型选择器中。
 
-With note access and note context both off, the provider receives only the words you typed.
+关闭笔记访问和笔记上下文后，提供商只会收到您输入的文本。
 
-## Keeping everything local
+## 保持一切本地化
 
-Adding an Ollama or LM Studio provider keeps every message on the machine running the model, and Trilium marks their models as free because no metered API is involved. The trade-off is quality and hardware: a small local model may fail at tool calls that a cloud model handles, so a local setup that misbehaves is worth benchmarking against a cloud provider before reporting it as a bug.
+添加 Ollama 或 LM Studio 提供商可使每条消息都保留在运行模型的设备上，Trilium 将其模型标记为免费，因为不涉及按量计费的 API。代价是质量和硬件：小型本地模型可能无法完成云模型可以处理的工具调用，因此，行为异常的本地设置值得与云提供商进行基准测试，然后再将其报告为错误。
 
-## Telemetry & security
+## 遥测与安全
 
-Trilium itself collects no telemetry from the AI integration.
+Trilium 本身不会从 AI 集成中收集任何遥测数据。
 
-Your API key is stored in your database, sent only to the provider it belongs to, and is write-only through the options API so that a malevolent <a class="reference-link" href="../Scripting.md">Scripting</a> cannot access it. If you have backend or SQL console access enabled, a malevolent script **could potentially exfiltrate your API keys**.
+您的 API 密钥存储在您的数据库中，仅发送给其所属的提供商，并且通过选项 API 为只写，因此恶意的<a class="reference-link" href="../Scripting.md">脚本</a>无法访问它。如果您启用了后端或 SQL 控制台访问权限，恶意脚本**可能窃取您的 API 密钥**。
 
-The built-in MCP server is off by default. When enabled, every request must carry an ETAPI token, which grants the same full read and write access to your notes as the REST API; treat one like a password. On desktop it is reachable only from `localhost` unless you turn on <a class="reference-link" href="../Installation%20%26%20Setup/Desktop%20Installation/Network%20Access.md">Network Access</a>.
+内置的 MCP 服务器默认关闭。启用后，每个请求都必须携带 ETAPI 令牌，该令牌授予与 REST API 相同的对您笔记的完全读写权限；请将其视为密码。在桌面上，除非您开启<a class="reference-link" href="../Installation%20%26%20Setup/Desktop%20Installation/Network%20Access.md">网络访问</a>，否则只能从 `localhost` 访问。

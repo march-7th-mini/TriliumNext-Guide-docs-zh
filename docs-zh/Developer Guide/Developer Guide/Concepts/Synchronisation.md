@@ -1,22 +1,23 @@
-# Synchronisation
-Trilium implements a **bidirectional synchronization system** that allows users to sync their note databases across multiple devices (desktop clients and server instances). The sync protocol is designed to handle:
+# 同步
 
-*   Concurrent modifications across devices
-*   Simple conflict resolution (without “merge conflict” indication).
-*   Partial sync (only changed entities)
-*   Protected note synchronization
-*   Efficient bandwidth usage
+Trilium 实现了一个**双向同步系统**，允许用户在多台设备（桌面客户端和服务器实例）之间同步其笔记数据库。同步协议旨在处理：
 
-## Sync Architecture
+*   跨设备的并发修改
+*   简单的冲突解决（无需“合并冲突”提示）。
+*   部分同步（仅同步更改的实体）
+*   受保护笔记的同步
+*   高效的带宽使用
+
+## 同步架构
 
 ```
 graph TB
-    Desktop1[Desktop 1<br/>Client]
-    Desktop2[Desktop 2<br/>Client]
+    Desktop1[桌面 1<br/>客户端]
+    Desktop2[桌面 2<br/>客户端]
     
-    subgraph SyncServer["Sync Server"]
-        SyncService[Sync Service<br/>- Entity Change Management<br/>- Conflict Resolution<br/>- Version Tracking]
-        SyncDB[(Database<br/>entity_changes)]
+    subgraph SyncServer["同步服务器"]
+        SyncService[同步服务<br/>- 实体变更管理<br/>- 冲突解决<br/>- 版本跟踪]
+        SyncDB[(数据库<br/>entity_changes)]
     end
     
     Desktop1 <-->|WebSocket/HTTP| SyncService
@@ -24,45 +25,45 @@ graph TB
     SyncService --> SyncDB
 ```
 
-## Core Concepts
+## 核心概念
 
-### Entity Changes
+### 实体变更
 
-Every modification to any entity (note, branch, attribute, etc.) creates an **entity change** record:
+对任何实体（笔记、分支、属性等）的每次修改都会创建一个**实体变更**记录：
 
 ```
 entity_changes (
-    id,                    -- Auto-increment ID
-    entityName,            -- 'notes', 'branches', 'attributes', etc.
-    entityId,              -- ID of the changed entity
-    hash,                  -- Content hash for integrity
-    isErased,              -- If entity was erased (deleted permanently)
-    changeId,              -- Unique change identifier
-    componentId,           -- Unique component/widget identifier
-    instanceId,            -- Process instance identifier
-    isSynced,              -- Whether synced to server
-    utcDateChanged         -- When change occurred
+    id,                    -- 自增 ID
+    entityName,            -- 'notes', 'branches', 'attributes' 等
+    entityId,              -- 变更实体的 ID
+    hash,                  -- 用于完整性校验的内容哈希
+    isErased,              -- 实体是否已被擦除（永久删除）
+    changeId,              -- 唯一变更标识符
+    componentId,           -- 唯一组件/小组件标识符
+    instanceId,            -- 进程实例标识符
+    isSynced,              -- 是否已同步到服务器
+    utcDateChanged         -- 变更发生时间
 )
 ```
 
-**Key Properties:**
+**关键属性：**
 
-*   **changeId**: Globally unique identifier (UUID) for the change
-*   **componentId**: Unique identifier of the component/widget that generated to change (can be used to avoid refreshing the widget being edited).
-*   **instanceId**: Unique per process (changes on restart)
-*   **hash**: SHA-256 hash of entity data for integrity verification
+*   **changeId**：变更的全局唯一标识符 (UUID)
+*   **componentId**：生成变更的组件/小组件的唯一标识符（可用于避免刷新正在编辑的小组件）。
+*   **instanceId**：每个进程唯一（重启时更改）
+*   **hash**：用于完整性验证的实体数据 SHA-256 哈希
 
-### Sync Versions
+### 同步版本
 
-Each Trilium installation tracks:
+每个 Trilium 安装都会跟踪：
 
-*   **Local sync version**: Highest change ID seen locally
-*   **Server sync version**: Highest change ID on server
-*   **Entity versions**: Last sync version for each entity type
+*   **本地同步版本**：本地看到的最新变更 ID
+*   **服务器同步版本**：服务器上的最新变更 ID
+*   **实体版本**：每种实体类型的最后同步版本
 
-### Change Tracking
+### 变更跟踪
 
-**When an entity is modified:**
+**当实体被修改时：**
 
 ```typescript
 // apps/server/src/services/entity_changes.ts
@@ -83,22 +84,22 @@ function addEntityChange(entityName, entityId, entity) {
 }
 ```
 
-**Entity modification triggers:**
+**实体修改触发条件：**
 
-*   Note content update
-*   Note metadata change
-*   Branch creation/deletion/reorder
-*   Attribute addition/removal
-*   Options modification
+*   笔记内容更新
+*   笔记元数据变更
+*   分支创建/删除/重新排序
+*   属性添加/移除
+*   选项修改
 
-## Sync Protocol
+## 同步协议
 
-### Sync Handshake
+### 同步握手
 
-**Step 1: Client Initiates Sync**
+**步骤 1：客户端发起同步**
 
 ```typescript
-// Client sends current sync version
+// 客户端发送当前同步版本
 POST /api/sync/check
 {
     "sourceId": "client-component-id",
@@ -106,27 +107,27 @@ POST /api/sync/check
 }
 ```
 
-**Step 2: Server Responds with Status**
+**步骤 2：服务器响应状态**
 
 ```typescript
-// Server checks for changes
-Response:
+// 服务器检查变更
+响应:
 {
-    "entityChanges": 567,        // Changes on server
-    "maxChangeId": 12890,        // Server's max change ID
-    "outstandingPushCount": 23   // Client changes not yet synced
+    "entityChanges": 567,        // 服务器上的变更
+    "maxChangeId": 12890,        // 服务器的最大变更 ID
+    "outstandingPushCount": 23   // 尚未同步的客户端变更
 }
 ```
 
-**Step 3: Decision**
+**步骤 3：决策**
 
-*   If `entityChanges > 0`: Pull changes from server
-*   If `outstandingPushCount > 0`: Push changes to server
-*   Both can happen in sequence
+*   如果 `entityChanges > 0`：从服务器拉取变更
+*   如果 `outstandingPushCount > 0`：向服务器推送变更
+*   两者可以按顺序进行
 
-### Pull Sync (Server → Client)
+### 拉取同步（服务器 → 客户端）
 
-**Client Requests Changes:**
+**客户端请求变更：**
 
 ```typescript
 POST /api/sync/pull
@@ -136,13 +137,13 @@ POST /api/sync/pull
 }
 ```
 
-**Server Responds:**
+**服务器响应：**
 
 ```typescript
-Response:
+响应:
 {
     "notes": [
-        { noteId: "abc", title: "New Note", ... }
+        { noteId: "abc", title: "新笔记", ... }
     ],
     "branches": [...],
     "attributes": [...],
@@ -155,16 +156,16 @@ Response:
 }
 ```
 
-**Client Processing:**
+**客户端处理：**
 
-1.  Apply entity changes to local database
-2.  Update Froca cache
-3.  Update local sync version
-4.  Trigger UI refresh
+1.  将实体变更应用到本地数据库
+2.  更新 Froca 缓存
+3.  更新本地同步版本
+4.  触发 UI 刷新
 
-### Push Sync (Client → Server)
+### 推送同步（客户端 → 服务器）
 
-**Client Sends Changes:**
+**客户端发送变更：**
 
 ```typescript
 POST /api/sync/push
@@ -174,7 +175,7 @@ POST /api/sync/push
         {
             "entity": {
                 "noteId": "xyz",
-                "title": "Modified Note",
+                "title": "已修改的笔记",
                 ...
             },
             "entityChange": {
@@ -187,95 +188,95 @@ POST /api/sync/push
 }
 ```
 
-**Server Processing:**
+**服务器处理：**
 
-1.  Validate changes
-2.  Check for conflicts
-3.  Apply changes to database
-4.  Update Becca cache
-5.  Mark as synced
-6.  Broadcast to other connected clients via WebSocket
+1.  验证变更
+2.  检查冲突
+3.  将变更应用到数据库
+4.  更新 Becca 缓存
+5.  标记为已同步
+6.  通过 WebSocket 广播给其他已连接的客户端
 
-**Conflict Detection:**
+**冲突检测：**
 
 ```typescript
-// Check if entity was modified on server since client's last sync
+// 检查自客户端上次同步以来实体是否在服务器上被修改
 const serverEntity = becca.getNote(noteId)
 const serverLastModified = serverEntity.utcDateModified
 
 if (serverLastModified > clientSyncVersion) {
-    // CONFLICT!
+    // 冲突！
     resolveConflict(serverEntity, clientEntity)
 }
 ```
 
-## Conflict Resolution
+## 冲突解决
 
-### Conflict Types
+### 冲突类型
 
-**1\. Content Conflict**
+**1\. 内容冲突**
 
-*   Both client and server modified same note content
-*   **Resolution**: Last-write-wins based on `utcDateModified`
+*   客户端和服务器都修改了同一笔记内容
+*   **解决方式**：基于 `utcDateModified` 的最后写入者胜出
 
-**2\. Structure Conflict**
+**2\. 结构冲突**
 
-*   Branch moved/deleted on one side, modified on other
-*   **Resolution**: Tombstone records, reconciliation
+*   分支在一侧被移动/删除，在另一侧被修改
+*   **解决方式**：墓碑记录，对账
 
-**3\. Attribute Conflict**
+**3\. 属性冲突**
 
-*   Same attribute modified differently
-*   **Resolution**: Last-write-wins
+*   同一属性被不同地修改
+*   **解决方式**：最后写入者胜出
 
-### Conflict Resolution Strategy
+### 冲突解决策略
 
-**Last-Write-Wins:**
+**最后写入者胜出：**
 
 ```typescript
 if (clientEntity.utcDateModified > serverEntity.utcDateModified) {
-    // Client wins, apply client changes
+    // 客户端胜出，应用客户端更改
     applyClientChange(clientEntity)
 } else {
-    // Server wins, reject client change
-    // Client will pull server version on next sync
+    // 服务器胜出，拒绝客户端更改
+    // 客户端将在下次同步时拉取服务器版本
 }
 ```
 
-**Tombstone Records:**
+**墓碑记录：**
 
-*   Deleted entities leave tombstone in `entity_changes`
-*   Prevents re-sync of deleted items
-*   `isErased = 1` for permanent deletions
+*   已删除的实体在 `entity_changes` 中留下墓碑
+*   防止已删除项目被重新同步
+*   永久删除时 `isErased = 1`
 
-### Protected Notes Sync
+### 受保护笔记同步
 
-**Challenge:** Encrypted content can't be synced without password
+**挑战：** 加密内容在没有密码的情况下无法同步
 
-**Solution:**
+**解决方案：**
 
-1.  **Encrypted sync**: Content synced in encrypted form
-2.  **Hash verification**: Integrity checked without decryption
-3.  **Lazy decryption**: Only decrypt when accessed
+1.  **加密同步**：内容以加密形式同步
+2.  **哈希验证**：无需解密即可检查完整性
+3.  **延迟解密**：仅在访问时解密
 
-## Sync States
+## 同步状态
 
-### Connection States
+### 连接状态
 
-*   **Connected**: WebSocket connection active
-*   **Disconnected**: No connection to sync server
-*   **Syncing**: Actively transferring data
-*   **Conflict**: Sync paused due to conflict
+*   **已连接**：WebSocket 连接处于活动状态
+*   **已断开**：未连接到同步服务器
+*   **同步中**：正在积极传输数据
+*   **冲突**：因冲突而暂停同步
 
-### Entity Sync States
+### 实体同步状态
 
-Each entity can be in:
+每个实体可以处于以下状态：
 
-*   **Synced**: In sync with server
-*   **Pending**: Local changes not yet pushed
-*   **Conflict**: Conflicting changes detected
+*   **已同步**：与服务器同步
+*   **待处理**：本地更改尚未推送
+*   **冲突**：检测到冲突的更改
 
-### UI Indicators
+### UI 指示器
 
 ```typescript
 // apps/client/src/widgets/sync_status.ts
@@ -292,11 +293,11 @@ class SyncStatusWidget {
 }
 ```
 
-## Performance Optimizations
+## 性能优化
 
-### Incremental Sync
+### 增量同步
 
-Only entities changed since last sync are transferred:
+仅传输自上次同步以来更改的实体：
 
 ```
 SELECT * FROM entity_changes 
@@ -305,9 +306,9 @@ ORDER BY id ASC
 LIMIT 1000
 ```
 
-### Batch Processing
+### 批量处理
 
-Changes sent in batches to reduce round trips:
+更改分批发送以减少往返次数：
 
 ```typescript
 const BATCH_SIZE = 1000
@@ -315,10 +316,10 @@ const changes = getUnsyncedChanges(BATCH_SIZE)
 await syncBatch(changes)
 ```
 
-### Hash-Based Change Detection
+### 基于哈希的变更检测
 
 ```typescript
-// Only sync if hash differs
+// 仅在哈希不同时同步
 const localHash = calculateHash(localEntity)
 const serverHash = getServerHash(entityId)
 
@@ -327,158 +328,158 @@ if (localHash !== serverHash) {
 }
 ```
 
-### Compression
+### 压缩
 
-Large payloads compressed before transmission:
+大型负载在传输前进行压缩：
 
 ```typescript
-// Server sends compressed response
+// 服务器发送压缩响应
 res.setHeader('Content-Encoding', 'gzip')
 res.send(gzip(syncData))
 ```
 
-## Error Handling
+## 错误处理
 
-### Network Errors
+### 网络错误
 
-Reported to the user and the sync will be retried after the interval passes.
+报告给用户，同步将在间隔时间过后重试。
 
-### Sync Integrity Checks
+### 同步完整性检查
 
-**Hash Verification:**
+**哈希验证：**
 
 ```typescript
-// Verify entity hash matches
+// 验证实体哈希是否匹配
 const calculatedHash = calculateHash(entity)
 const receivedHash = entityChange.hash
 
 if (calculatedHash !== receivedHash) {
-    throw new Error('Hash mismatch - data corruption detected')
+    throw new Error('哈希不匹配 - 检测到数据损坏')
 }
 ```
 
-**Consistency Checks:**
+**一致性检查：**
 
-*   Orphaned branches detection
-*   Missing parent notes
-*   Invalid entity references
-*   Circular dependencies
+*   孤立分支检测
+*   缺失父笔记
+*   无效实体引用
+*   循环依赖
 
-## Sync Server Configuration
+## 同步服务器配置
 
-### Server Setup
+### 服务器设置
 
-**Required Options:**
+**必需选项：**
 
 ```javascript
 {
     "syncServerHost": "https://sync.example.com",
     "syncServerTimeout": 60000,
-    "syncProxy": ""  // Optional HTTP proxy
+    "syncProxy": ""  // 可选 HTTP 代理
 }
 ```
 
-**Authentication:**
+**身份验证：**
 
-*   Username/password or
-*   Sync token (generated on server)
+*   用户名/密码 或
+*   同步令牌（在服务器上生成）
 
-## Sync API Endpoints
+## 同步 API 端点
 
-Located at: `apps/server/src/routes/api/sync.ts`
+位于：`apps/server/src/routes/api/sync.ts`
 
-## WebSocket Sync Updates
+## WebSocket 同步更新
 
-Real-time sync via WebSocket:
+通过 WebSocket 进行实时同步：
 
 ```typescript
-// Server broadcasts change to all connected clients
+// 服务器向所有已连接的客户端广播更改
 ws.broadcast('frontend-update', {
     lastSyncedPush,
     entityChanges
 })
 
-// Client receives and processed the information.
+// 客户端接收并处理信息。
 ```
 
-## Sync Scheduling
+## 同步调度
 
-### Automatic Sync
+### 自动同步
 
-**Desktop:**
+**桌面：**
 
-*   Sync on startup
-*   Periodic sync (configurable interval, default: 60s)
+*   启动时同步
+*   定期同步（可配置间隔，默认：60 秒）
 
-**Server:**
+**服务器：**
 
-*   Sync on entity modification
-*   WebSocket push to connected clients
+*   实体修改时同步
+*   通过 WebSocket 推送给已连接的客户端
 
-### Manual Sync
+### 手动同步
 
-User can trigger:
+用户可以触发：
 
-*   Full sync
-*   Sync now
-*   Sync specific subtree
+*   完全同步
+*   立即同步
+*   同步特定子树
 
-## Troubleshooting
+## 故障排除
 
-### Common Issues
+### 常见问题
 
-**Sync stuck:**
+**同步卡住：**
 
 ```
--- Reset sync state
+-- 重置同步状态
 UPDATE entity_changes SET isSynced = 0;
 DELETE FROM options WHERE name LIKE 'sync%';
 ```
 
-**Hash mismatch:**
+**哈希不匹配：**
 
-*   Data corruption detected
-*   Re-sync from backup
-*   Check database integrity
+*   检测到数据损坏
+*   从备份重新同步
+*   检查数据库完整性
 
-**Conflict loop:**
+**冲突循环：**
 
-*   Manual intervention required
-*   Export conflicting notes
-*   Choose winning version
-*   Re-sync
+*   需要手动干预
+*   导出冲突笔记
+*   选择胜出版本
+*   重新同步
 
-## Security Considerations
+## 安全考虑
 
-### Encrypted Sync
+### 加密同步
 
-*   Protected notes synced encrypted
-*   No plain text over network
-*   Server cannot read protected content
+*   受保护笔记以加密形式同步
+*   网络上无明文传输
+*   服务器无法读取受保护内容
 
-### Authentication
+### 身份验证
 
-*   Username/password over HTTPS only
-*   Sync tokens for token-based auth
-*   Session cookies with CSRF protection
+*   用户名/密码仅通过 HTTPS
+*   用于基于令牌认证的同步令牌
+*   带有 CSRF 保护的会话 Cookie
 
-### Authorization
+### 授权
 
-*   Users can only sync their own data
-*   No cross-user sync support
-*   Sync server validates ownership
+*   用户只能同步自己的数据
+*   不支持跨用户同步
+*   同步服务器验证所有权
 
-## Performance Metrics
+## 性能指标
 
-**Typical Sync Performance:**
+**典型同步性能：**
 
-*   1000 changes: ~2-5 seconds
-*   10000 changes: ~20-50 seconds
-*   Initial full sync (100k notes): ~5-10 minutes
+*   1000 个更改：约 2-5 秒
+*   10000 个更改：约 20-50 秒
+*   初始完全同步（10 万条笔记）：约 5-10 分钟
 
-**Factors:**
+**影响因素：**
 
-*   Network latency
-*   Database size
-*   Number of protected notes
-*   Attachment sizes
+*   网络延迟
+*   数据库大小
+*   受保护笔记数量
+*   附件大小

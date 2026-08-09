@@ -1,12 +1,13 @@
-# System Requirements
-The desktop version of Trilium supports all three main operating systems:
+# 系统要求
+
+Trilium 桌面版支持所有三大主流操作系统：
 
 *   Windows
-    *   Windows 11 is officially supported.
-    *   Windows on ARM is also supported
-*   Linux:
-    *   Most modern distributions are supported, including NixOS.
-    *   ARM is supported in `aarch64` (no ARM v7 support).
+    *   官方支持 Windows 11。
+    *   也支持 ARM 版 Windows。
+*   Linux：
+    *   支持大多数现代发行版，包括 NixOS。
+    *   支持 `aarch64` 架构的 ARM（不支持 ARM v7）。
 *   macOS
-    *   Minimum supported operating system: macOS Monterey
-    *   Both Intel and Apple Silicon devices are supported.
+    *   最低支持操作系统版本：macOS Monterey
+    *   同时支持 Intel 和 Apple Silicon 设备。

@@ -1,20 +1,21 @@
-# Sharing
-Trilium allows you to share selected notes as **publicly accessible** read-only documents. This feature is particularly useful for publishing content directly from your Trilium notes, making it accessible to others online.
+# 分享
+
+Trilium 允许你将选定的笔记分享为**可公开访问**的只读文档。此功能对于直接从 Trilium 笔记发布内容特别有用，使其可在线供他人访问。
 
 <figure class="image"><img style="aspect-ratio:1144/660;" src="Sharing_image.png" width="1144" height="660"></figure>
 
-## Features, interaction and limitations
+## 功能、交互与限制
 
-*   Searching by note title.
-*   Automatic dark/light mode based on the user's browser settings.
-*   Mobile-friendly layout, with sidebar.
-*   Collapsible tree with the same note icons as the application.
-*   Customizable logo.
-*   Toggle button for dark/light mode, which also stores the user preferences.
-*   Quick navigation buttons (previous and next note).
-*   Displaying the date of the last update of the note.
+*   按笔记标题搜索。
+*   根据用户的浏览器设置自动切换深色/浅色模式。
+*   移动端友好布局，带侧边栏。
+*   可折叠树，使用与应用相同的笔记图标。
+*   可自定义徽标。
+*   深色/浅色模式切换按钮，同时存储用户偏好。
+*   快速导航按钮（上一个和下一个笔记）。
+*   显示笔记的最后更新日期。
 
-### By note type
+### 按笔记类型
 
 <table class="ck-table-resized">
     <colgroup>
@@ -25,150 +26,150 @@ Trilium allows you to share selected notes as **publicly accessible** read-only 
     <thead>
         <tr>
             <th>&nbsp;</th>
-            <th>Supported features</th>
-            <th>Limitations</th>
+            <th>支持的功能</th>
+            <th>限制</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <th><a class="reference-link" href="../Note%20Types/Text.md">Text</a></th>
-            <td><ul><li>Table of contents.</li><li>Syntax highlight of code blocks, provided a language is selected (does not work if “Auto-detected” is enabled).</li><li>Rendering for math equations.</li><li><a href="../Note%20Types/Text/Include%20Note.md">Including notes</a> (only if the included notes are also shared).</li></ul></td>
-            <td><ul><li>Inline Mermaid diagrams are not rendered.</li></ul></td>
+            <th><a class="reference-link" href="../Note%20Types/Text.md">文本</a></th>
+            <td><ul><li>目录。</li><li>代码块语法高亮，前提是选择了语言（如果启用了“自动检测”则无效）。</li><li>数学公式渲染。</li><li><a href="../Note%20Types/Text/Include%20Note.md">包含笔记</a>（仅当被包含的笔记也被分享时）。</li></ul></td>
+            <td><ul><li>内联 Mermaid 图表不渲染。</li></ul></td>
         </tr>
         <tr>
-            <th><a class="reference-link" href="../Note%20Types/Code.md">Code</a></th>
-            <td><ul><li>Basic support (displaying the contents of the note in a monospace font).</li></ul></td>
-            <td><ul><li>No syntax highlight.</li></ul></td>
+            <th><a class="reference-link" href="../Note%20Types/Code.md">代码</a></th>
+            <td><ul><li>基本支持（以等宽字体显示笔记内容）。</li></ul></td>
+            <td><ul><li>无语法高亮。</li></ul></td>
         </tr>
         <tr>
-            <th><a class="reference-link" href="../Note%20Types/Saved%20Search.md">Saved Search</a></th>
-            <td>Not supported.</td>
+            <th><a class="reference-link" href="../Note%20Types/Saved%20Search.md">已保存搜索</a></th>
+            <td>不支持。</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <th><a class="reference-link" href="../Note%20Types/Relation%20Map.md">Relation Map</a></th>
-            <td>Not supported.</td>
+            <th><a class="reference-link" href="../Note%20Types/Relation%20Map.md">关系图</a></th>
+            <td>不支持。</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <th><a class="reference-link" href="../Note%20Types/Note%20Map.md">Note Map</a></th>
-            <td>Not supported.</td>
+            <th><a class="reference-link" href="../Note%20Types/Note%20Map.md">笔记地图</a></th>
+            <td>不支持。</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <th><a class="reference-link" href="../Note%20Types/Render%20Note.md">Render Note</a></th>
-            <td>Not supported.</td>
+            <th><a class="reference-link" href="../Note%20Types/Render%20Note.md">渲染笔记</a></th>
+            <td>不支持。</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <th><a class="reference-link" href="../Collections.md">Collections</a></th>
-            <td><ul><li>The child notes are displayed in a fixed format.&nbsp;</li></ul></td>
-            <td><ul><li>More advanced view types such as the calendar view are not supported.</li></ul></td>
+            <th><a class="reference-link" href="../Collections.md">集合</a></th>
+            <td><ul><li>子笔记以固定格式显示。&nbsp;</li></ul></td>
+            <td><ul><li>不支持更高级的视图类型，如日历视图。</li></ul></td>
         </tr>
         <tr>
-            <th><a class="reference-link" href="../Note%20Types/Mermaid%20Diagrams.md">Mermaid Diagrams</a></th>
-            <td><ul><li>The diagram is displayed as a vector image.</li></ul></td>
-            <td><ul><li>No further interaction supported.</li></ul></td>
+            <th><a class="reference-link" href="../Note%20Types/Mermaid%20Diagrams.md">Mermaid 图表</a></th>
+            <td><ul><li>图表显示为矢量图像。</li></ul></td>
+            <td><ul><li>不支持进一步交互。</li></ul></td>
         </tr>
         <tr>
-            <th><a class="reference-link" href="../Note%20Types/Canvas.md">Canvas</a></th>
-            <td><ul><li>The diagram is displayed as a vector image.</li></ul></td>
-            <td><ul><li>No further interaction supported.</li></ul></td>
+            <th><a class="reference-link" href="../Note%20Types/Canvas.md">画布</a></th>
+            <td><ul><li>图表显示为矢量图像。</li></ul></td>
+            <td><ul><li>不支持进一步交互。</li></ul></td>
         </tr>
         <tr>
-            <th><a class="reference-link" href="../Note%20Types/Web%20View.md">Web View</a></th>
-            <td>Not supported.</td>
+            <th><a class="reference-link" href="../Note%20Types/Web%20View.md">网页视图</a></th>
+            <td>不支持。</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <th><a class="reference-link" href="../Note%20Types/Mind%20Map.md">Mind Map</a></th>
-            <td>The diagram is displayed as a vector image.</td>
-            <td><ul><li>No further interaction supported.</li></ul></td>
+            <th><a class="reference-link" href="../Note%20Types/Mind%20Map.md">思维导图</a></th>
+            <td>图表显示为矢量图像。</td>
+            <td><ul><li>不支持进一步交互。</li></ul></td>
         </tr>
         <tr>
-            <th><a class="reference-link" href="../Collections/Geo%20Map.md">Geo Map</a></th>
-            <td>Not supported.</td>
+            <th><a class="reference-link" href="../Collections/Geo%20Map.md">地理地图</a></th>
+            <td>不支持。</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <th><a class="reference-link" href="../Note%20Types/File.md">File</a></th>
-            <td>Basic interaction (downloading the file).</td>
-            <td><ul><li>No further interaction supported.</li></ul></td>
+            <th><a class="reference-link" href="../Note%20Types/File.md">文件</a></th>
+            <td>基本交互（下载文件）。</td>
+            <td><ul><li>不支持进一步交互。</li></ul></td>
         </tr>
     </tbody>
 </table>
 
-While the sharing feature is powerful, it has some limitations:
+虽然分享功能很强大，但它也有一些限制：
 
-*   **Code Notes**: No syntax highlighting.
-*   **Static Note Tree**
-*   **Protected Notes**: Cannot be shared.
-*   **Include Notes**: Not supported.
+*   **代码笔记**：无语法高亮。
+*   **静态笔记树**
+*   **受保护笔记**：无法分享。
+*   **包含笔记**：不支持。
 
-Some of these limitations may be addressed in future updates.
+其中一些限制可能会在未来的更新中解决。
 
-## Prerequisites
+## 前提条件
 
-To use the sharing feature, you must have a <a class="reference-link" href="../Installation%20%26%20Setup/Server%20Installation.md">Server Installation</a> of Trilium. This is necessary because the notes will be hosted from the server.
+要使用分享功能，你必须拥有 Trilium 的<a class="reference-link" href="../Installation%20%26%20Setup/Server%20Installation.md">服务器安装</a>。这是必需的，因为笔记将从服务器托管。
 
-## Sharing a note
+## 分享单个笔记
 
-1.  **Enable Sharing**: To share a note, toggle the `Shared` switch within the note's interface. Once sharing is enabled, an URL will appear, which you can click to access the shared note.
+1.  **启用分享**：要分享笔记，请切换笔记界面中的 `Shared` 开关。启用分享后，将出现一个 URL，你可以点击它访问共享笔记。
     
-    ![Share Note](Sharing_share-single-note.png)
-2.  **Access the Shared Note**: The link provided will open the note in your browser. If your server is not configured with a public IP, the URL will refer to `localhost (127.0.0.1)`.
+    ![分享笔记](Sharing_share-single-note.png)
+2.  **访问共享笔记**：提供的链接将在你的浏览器中打开该笔记。如果你的服务器未配置公共 IP，则 URL 将指向 `localhost (127.0.0.1)`。
 
-## Sharing a note subtree
+## 分享笔记子树
 
-When you share a note, you actually share the entire subtree of notes beneath it. If the note has child notes, they will also be included in the shared content. For example, sharing the "Formatting" subtree will display a page with basic navigation for exploring all the notes within that subtree.
+当你分享一个笔记时，实际上分享的是其下方的整个笔记子树。如果该笔记有子笔记，它们也将包含在共享内容中。例如，分享“格式化”子树将显示一个带有基本导航的页面，用于浏览该子树中的所有笔记。
 
-## Viewing and managing shared notes
+## 查看和管理共享笔记
 
-You can view a list of all shared notes by clicking on "Show Shared Notes Subtree" in the <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Global%20menu.md">Global menu</a>. This allows you to manage and navigate through all the notes you have made public.
+你可以通过点击<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Global%20menu.md">全局菜单</a>中的“显示共享笔记子树”来查看所有共享笔记的列表。这允许你管理和浏览所有已公开的笔记。
 
-## Security considerations
+## 安全注意事项
 
-*   Shared notes are published on the open internet and can be accessed by anyone with the URL unless the notes are password-protected.
-*   The URL's randomness does not provide security, so it is crucial not to share sensitive information through this feature.
-*   Trilium takes precautions to protect your publicly shared instance from leaking information for non-shared notes, including opening a separate read-only connection to the <a class="reference-link" href="Database.md">Database</a>. Depending on your threat model, it might make more sense to use <a class="reference-link" href="Sharing/Exporting%20static%20HTML%20for%20web%20publishing.md">Exporting static HTML for web publishing</a> and use battle-tested web servers such as Nginx or Apache to serve static content.
+*   共享笔记发布在开放的互联网上，任何拥有 URL 的人都可以访问，除非笔记受密码保护。
+*   URL 的随机性并不能提供安全性，因此切勿通过此功能分享敏感信息。
+*   Trilium 会采取预防措施保护你的公开共享实例，防止非共享笔记的信息泄露，包括打开一个独立的只读连接至<a class="reference-link" href="Database.md">数据库</a>。根据你的威胁模型，使用<a class="reference-link" href="Sharing/Exporting%20static%20HTML%20for%20web%20publishing.md">导出静态 HTML 用于网页发布</a>并使用经过实战考验的 Web 服务器（如 Nginx 或 Apache）来提供静态内容可能更有意义。
 
-### Password protection
+### 密码保护
 
-To protect shared notes with a username and password, you can use the `#shareCredentials` attribute. Add this label to the note with the format `#shareCredentials="username:password"`. To protect an entire subtree, make sure the label is [inheritable](Attributes/Attribute%20Inheritance.md).
+要使用用户名和密码保护共享笔记，你可以使用 `#shareCredentials` 属性。将此标签添加到笔记中，格式为 `#shareCredentials="username:password"`。要保护整个子树，请确保该标签是[可继承的](Attributes/Attribute%20Inheritance.md)。
 
-## Advanced sharing options
+## 高级分享选项
 
-### Customizing the appearance of shared notes
+### 自定义共享笔记的外观
 
-The default design should be a good starting point, but you can customize it using your own CSS:
+默认设计是一个不错的起点，但你可以使用自己的 CSS 进行自定义：
 
-*   **Custom CSS**: Link a CSS <a class="reference-link" href="../Note%20Types/Code.md">Code</a> note to the shared page by adding a `~shareCss` relation to the note. If you want this style to apply to the entire subtree, make the label inheritable. You can hide the CSS code note from the tree navigation by adding the `#shareHiddenFromTree` label.
-*   **Omitting Default CSS**: For extensive styling changes, use the `#shareOmitDefaultCss` label to avoid conflicts with Trilium's [default stylesheet](../Basic%20Concepts%20and%20Features/Themes.md).
+*   **自定义 CSS**：通过向笔记添加 `~shareCss` 关系，将 CSS <a class="reference-link" href="../Note%20Types/Code.md">代码</a>笔记链接到共享页面。如果你希望此样式应用于整个子树，请使该标签可继承。你可以通过添加 `#shareHiddenFromTree` 标签在树导航中隐藏 CSS 代码笔记。
+*   **省略默认 CSS**：对于大量的样式更改，使用 `#shareOmitDefaultCss` 标签以避免与 Trilium 的[默认样式表](../Basic%20Concepts%20and%20Features/Themes.md)冲突。
 
-### Adding JavaScript
+### 添加 JavaScript
 
-You can inject custom JavaScript into the shared note using the `~shareJs` relation. This allows you to access note attributes or traverse the note tree using the `fetchNote()` API, which retrieves note data based on its ID.
+你可以使用 `~shareJs` 关系将自定义 JavaScript 注入到共享笔记中。这允许你访问笔记属性或使用 `fetchNote()` API 遍历笔记树，该 API 根据其 ID 检索笔记数据。
 
-### Adding custom HTML
+### 添加自定义 HTML
 
-You can inject custom HTML snippets into specific locations of the shared page using the `~shareHtml` relation. The HTML note should contain the raw HTML content you want to inject, and you can control where it appears by adding the `#shareHtmlLocation` label to the HTML snippet note itself.
+你可以使用 `~shareHtml` 关系将自定义 HTML 片段注入到共享页面的特定位置。HTML 笔记应包含你要注入的原始 HTML 内容，你可以通过向 HTML 片段笔记本身添加 `#shareHtmlLocation` 标签来控制其出现的位置。
 
-The `#shareHtmlLocation` label accepts values in the format `location:position`:
+`#shareHtmlLocation` 标签接受格式为 `location:position` 的值：
 
-*   **Locations**: `head`, `body`, `content`
-*   **Positions**: `start`, `end`
+*   **位置**：`head`、`body`、`content`
+*   **位置点**：`start`、`end`
 
-For example:
+例如：
 
-*   `#shareHtmlLocation=head:start` - Injects HTML at the beginning of the `<head>` section
-*   `#shareHtmlLocation=head:end` - Injects HTML at the end of the `<head>` section (default)
-*   `#shareHtmlLocation=body:start` - Injects HTML at the beginning of the `<body>` section
-*   `#shareHtmlLocation=content:start` - Injects HTML at the beginning of the content area
-*   `#shareHtmlLocation=content:end` - Injects HTML at the end of the content area
+*   `#shareHtmlLocation=head:start` - 在 `<head>` 部分的开头注入 HTML
+*   `#shareHtmlLocation=head:end` - 在 `<head>` 部分的末尾注入 HTML（默认）
+*   `#shareHtmlLocation=body:start` - 在 `<body>` 部分的开头注入 HTML
+*   `#shareHtmlLocation=content:start` - 在内容区域的开头注入 HTML
+*   `#shareHtmlLocation=content:end` - 在内容区域的末尾注入 HTML
 
-If no location is specified, the HTML will be injected at `content:end` by default.
+如果未指定位置，HTML 将默认注入到 `content:end`。
 
-Example:
+示例：
 
 ```javascript
 const currentNote = await fetchNote();
@@ -179,56 +180,56 @@ for (const attr of parentNote.attributes) {
 }
 ```
 
-### Custom share templates
+### 自定义分享模板
 
-To completely redesign the share, it is possible to create or use an existing [custom share template](Sharing/Custom%20share%20template.md).
+要完全重新设计分享页面，可以创建或使用现有的[自定义分享模板](Sharing/Custom%20share%20template.md)。
 
-### Creating human-readable URL aliases
+### 创建人类可读的 URL 别名
 
-Shared notes typically have URLs like `http://domain.tld/share/knvU8aJy4dJ7`, where the last part is the note's ID. You can make these URLs more user-friendly by adding the `#shareAlias` label to individual notes (e.g., `#shareAlias=highlighting`). This will change the URL to `http://domain.tld/share/highlighting`.
+共享笔记的 URL 通常类似于 `http://domain.tld/share/knvU8aJy4dJ7`，其中最后一部分是笔记的 ID。你可以通过向单个笔记添加 `#shareAlias` 标签（例如，`#shareAlias=highlighting`）来使这些 URL 更友好。这会将 URL 更改为 `http://domain.tld/share/highlighting`。
 
-**Important**:
+**重要提示**：
 
-1.  Ensure that aliases are unique.
-2.  Using slashes (`/`) within aliases to create subpaths is not supported.
-
-> [!TIP]
-> *   To easily identify pages that don't have a share alias, run a <a class="reference-link" href="../Basic%20Concepts%20and%20Features/Navigation/Search.md">Search</a> with `#!shareAlias`.
-> *   To be able to enter the share alias faster, consider using <a class="reference-link" href="Attributes/Promoted%20Attributes.md">Promoted Attributes</a> (for example `#label:shareAlias(inheritable)="promoted,alias=Slug,single,text"`).
-
-### Setting a custom favicon
-
-To customize the favicon for your shared pages, create a relation `~shareFavicon` pointing to a file note containing the favicon (e.g., in `.ico` format).
-
-### Sharing a note as the root
-
-You can designate a specific note or folder as the root of your shared content by adding the `#shareRoot` label. This note will be linked when visiting `[http://domain.tld/share](http://domain/share)`, making it easier to use Trilium as a fully-fledged website.
+1.  确保别名是唯一的。
+2.  不支持在别名中使用斜杠（`/`）创建子路径。
 
 > [!TIP]
-> Consider combining this with the `#shareIndex` label, which will display a list of all shared notes.
+> *   要轻松识别没有分享别名的页面，请使用 `#!shareAlias` 运行<a class="reference-link" href="../Basic%20Concepts%20and%20Features/Navigation/Search.md">搜索</a>。
+> *   为了更快地输入分享别名，请考虑使用<a class="reference-link" href="Attributes/Promoted%20Attributes.md">提升属性</a>（例如 `#label:shareAlias(inheritable)="promoted,alias=Slug,single,text"`）。
 
-### Displaying an index of shared notes
+### 设置自定义网站图标
 
-When accessing a share, the sub-notes will be displayed in a tree on the left. But since multiple note trees can be shared, it might be useful to display a list of all the different share trees.
+要为你的共享页面自定义网站图标，请创建一个指向包含网站图标（例如 `.ico` 格式）的文件笔记的 `~shareFavicon` 关系。
 
-To do so, create a shared text note and apply the `shareIndex` label. When viewed, the list of shared roots will be displayed at the bottom of the note.
+### 将笔记分享为根
 
-### Linking to an external website
+你可以通过添加 `#shareRoot` 标签将特定笔记或文件夹指定为共享内容的根。访问 `[http://domain.tld/share](http://domain/share)` 时将链接到此笔记，从而更容易将 Trilium 用作功能完备的网站。
 
-Sometimes it's useful to include a link to an external website alongside your shared notes — for example in the shared navigation or in an index. To do so, add the `#shareExternalLink` label to a note, with the target URL as its value (e.g. `#shareExternalLink="https://example.com"`).
+> [!TIP]
+> 考虑将此与 `#shareIndex` 标签结合使用，后者将显示所有共享笔记的列表。
 
-Any link pointing to this note will then redirect to the external website and open in a new browser tab, instead of opening the note's own shared page. This applies to:
+### 显示共享笔记索引
 
-*   the listing produced by the `#shareIndex` label;
-*   the "Subpages" list shown under a parent note;
-*   inline links to this note from within other shared notes.
+访问共享页面时，子笔记将显示在左侧的树中。但由于可以共享多个笔记树，显示所有不同共享树的列表可能会很有用。
 
-The URL must be absolute and include the scheme (e.g. `https://`).
+为此，请创建一个共享文本笔记并应用 `shareIndex` 标签。查看时，共享根的列表将显示在笔记底部。
+
+### 链接到外部网站
+
+有时在共享笔记旁边包含指向外部网站的链接很有用——例如在共享导航或索引中。为此，请向笔记添加 `#shareExternalLink` 标签，并将目标 URL 作为其值（例如 `#shareExternalLink="https://example.com"`）。
+
+任何指向此笔记的链接都将重定向到外部网站并在新的浏览器选项卡中打开，而不是打开笔记自己的共享页面。这适用于：
+
+*   `#shareIndex` 标签生成的列表；
+*   父笔记下显示的“子页面”列表；
+*   其他共享笔记中指向此笔记的内联链接。
+
+URL 必须是绝对的，并包含协议（例如 `https://`）。
 
 > [!NOTE]
-> The note still exists in the share tree and its own page remains reachable by its direct URL — the label only changes how links to it behave.
+> 该笔记仍存在于共享树中，其自身页面仍可通过其直接 URL 访问——该标签仅更改指向它的链接的行为。
 
-## Attribute reference
+## 属性参考
 
 <table class="ck-table-resized">
     <colgroup>
@@ -237,78 +238,78 @@ The URL must be absolute and include the scheme (e.g. `https://`).
     </colgroup>
     <thead>
         <tr>
-            <th>Attribute</th>
-            <th>Description</th>
+            <th>属性</th>
+            <th>描述</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td><code spellcheck="false">#shareHiddenFromTree</code></td>
-            <td>this note is hidden from left navigation tree, but still accessible with its URL</td>
+            <td>此笔记在左侧导航树中隐藏，但仍可通过其 URL 访问</td>
         </tr>
         <tr>
             <td><code spellcheck="false">#shareExternalLink</code></td>
-            <td>when a link points to this note (from the share index, a subpage list, or an inline link in another shared note), it redirects to the given external URL in a new tab instead of the note's shared page. Value is the absolute URL, e.g. <code spellcheck="false">https://example.com</code>.</td>
+            <td>当链接指向此笔记时（来自分享索引、子页面列表或其他共享笔记中的内联链接），它会重定向到新选项卡中给定的外部 URL，而不是笔记的共享页面。值为绝对 URL，例如 <code spellcheck="false">https://example.com</code>。</td>
         </tr>
         <tr>
             <td><code spellcheck="false">#shareAlias</code></td>
-            <td>define an alias using which the note will be available under <code spellcheck="false">https://your_trilium_host/share/[your_alias]</code></td>
+            <td>定义一个别名，笔记将通过该别名在 <code spellcheck="false">https://your_trilium_host/share/[your_alias]</code> 下可用</td>
         </tr>
         <tr>
             <td><code spellcheck="false">#shareOmitDefaultCss</code></td>
-            <td>default share page CSS will be omitted. Use when you make extensive styling changes.</td>
+            <td>将省略默认的分享页面 CSS。当你进行大量样式更改时使用。</td>
         </tr>
         <tr>
             <td><code spellcheck="false">#shareRoot</code></td>
-            <td>marks note which is served on /share root.</td>
+            <td>标记在 /share 根目录下提供的笔记。</td>
         </tr>
         <tr>
             <td><code spellcheck="false">#shareDescription</code></td>
-            <td>define text to be added to the HTML meta tag for description</td>
+            <td>定义要添加到 HTML 描述 meta 标签的文本</td>
         </tr>
         <tr>
             <td><code spellcheck="false">#shareRaw</code></td>
-            <td>Note will be served in its raw format, without HTML wrapper. See also&nbsp;<a class="reference-link" href="Sharing/Serving%20directly%20the%20content%20of%20a%20note.md">Serving directly the content of a note</a>&nbsp;for an alternative method without setting an attribute.</td>
+            <td>笔记将以原始格式提供，不带 HTML 包装器。另请参阅&nbsp;<a class="reference-link" href="Sharing/Serving%20directly%20the%20content%20of%20a%20note.md">直接提供笔记内容</a>&nbsp;以了解无需设置属性的替代方法。</td>
         </tr>
         <tr>
             <td><code spellcheck="false">#shareDisallowRobotIndexing</code></td>
-            <td><p>Indicates to web crawlers that the page should not be indexed of this note by:</p><ul><li>Setting the <code spellcheck="false">X-Robots-Tag: noindex</code> HTTP header.</li><li>Setting the <code spellcheck="false">noindex, follow</code> meta tag.</li></ul></td>
+            <td><p>通过以下方式向网络爬虫指示不应索引此笔记：</p><ul><li>设置 <code spellcheck="false">X-Robots-Tag: noindex</code> HTTP 头。</li><li>设置 <code spellcheck="false">noindex, follow</code> meta 标签。</li></ul></td>
         </tr>
         <tr>
             <td><code spellcheck="false">#shareCredentials</code></td>
-            <td>require credentials to access this shared note. Value is expected to be in format <code spellcheck="false">username:password</code>. Don't forget to make this inheritable to apply to child-notes/images.</td>
+            <td>要求提供凭据才能访问此共享笔记。值应为 <code spellcheck="false">username:password</code> 格式。不要忘记使其可继承以应用于子笔记/图像。</td>
         </tr>
         <tr>
             <td><code spellcheck="false">#shareIndex</code></td>
-            <td>Note with this label will list all roots of shared notes.</td>
+            <td>带有此标签的笔记将列出所有共享笔记的根。</td>
         </tr>
         <tr>
             <td><code spellcheck="false">#shareHtmlLocation</code></td>
-            <td>defines where custom HTML injected via <code spellcheck="false">~shareHtml</code> relation should be placed. Applied to the HTML snippet note itself. Format: <code spellcheck="false">location:position</code> where location is <code spellcheck="false">head</code>, <code spellcheck="false">body</code>, or <code spellcheck="false">content</code> and position is <code spellcheck="false">start</code> or <code spellcheck="false">end</code>. Defaults to <code spellcheck="false">content:end</code>.</td>
+            <td>定义通过 <code spellcheck="false">~shareHtml</code> 关系注入的自定义 HTML 应放置的位置。应用于 HTML 片段笔记本身。格式：<code spellcheck="false">location:position</code>，其中 location 是 <code spellcheck="false">head</code>、<code spellcheck="false">body</code> 或 <code spellcheck="false">content</code>，position 是 <code spellcheck="false">start</code> 或 <code spellcheck="false">end</code>。默认为 <code spellcheck="false">content:end</code>。</td>
         </tr>
     </tbody>
 </table>
 
-### Customizing logo
+### 自定义徽标
 
-It's possible to adjust the logo which is displayed on the top-left of the left pane.
+可以调整显示在左侧窗格左上角的徽标。
 
-| Attribute | Description |
+| 属性 | 描述 |
 | --- | --- |
-| `~shareLogo` | Relation set to an image to use as logo. The image must be part of the share tree (it can be hidden if needed). |
-| `#shareLogoWidth` | The width (in pixels, without unit) to set for the logo. Default is `53`. |
-| `#shareLogoHeight` | The height (in pixels, without unit) to set for the logo. Default is `40`. |
-| `#shareRootLink` | URL to navigate to when the logo is pressed. |
+| `~shareLogo` | 设置为用作徽标的图像的关系。图像必须是共享树的一部分（如果需要可以隐藏）。 |
+| `#shareLogoWidth` | 为徽标设置的宽度（以像素为单位，不带单位）。默认为 `53`。 |
+| `#shareLogoHeight` | 为徽标设置的高度（以像素为单位，不带单位）。默认为 `40`。 |
+| `#shareRootLink` | 按下徽标时要导航到的 URL。 |
 
-### Customizing OpenGraph
+### 自定义 OpenGraph
 
-| Attribute | Description |
+| 属性 | 描述 |
 | --- | --- |
-| `#shareOpenGraphColor` | This adjusts the `theme-color` meta-property. |
-| `#shareOpenGraphURL` | This adjusts the `og:url` and `twitter:url` meta-properties. |
-| `#shareOpenGraphDomain` | Adjusts the `twitter:domain` meta-property. |
-| `#shareOpenGraphImage`   <br>`~shareOpenGraphImage` | Can be either a label, case in which the value is passed on as-is, or it can be a relation to an image <a class="reference-link" href="../Note%20Types/File.md">File</a>. This controls the `og:image` meta-property. |
+| `#shareOpenGraphColor` | 调整 `theme-color` meta 属性。 |
+| `#shareOpenGraphURL` | 调整 `og:url` 和 `twitter:url` meta 属性。 |
+| `#shareOpenGraphDomain` | 调整 `twitter:domain` meta 属性。 |
+| `#shareOpenGraphImage`   <br>`~shareOpenGraphImage` | 可以是一个标签，在这种情况下值会原样传递，也可以是指向图像<a class="reference-link" href="../Note%20Types/File.md">文件</a>的关系。这控制 `og:image` meta 属性。 |
 
-## Credits
+## 致谢
 
-Since v0.95.0, a new theme was introduced (and enabled by default) which greatly improves the visual aspect of the Share feature, as well as its functionality (such as mobile support, dark/light mode, collapsible tree, etc.). This theme is an adaptation of the [Trilium Rocks!](https://github.com/zerebos/trilium.rocks) by [zerebos](https://github.com/zerebos).
+自 v0.95.0 起，引入了一个新主题（并默认启用），极大地改善了分享功能的视觉外观及其功能（例如移动端支持、深色/浅色模式、可折叠树等）。该主题改编自 [zerebos](https://github.com/zerebos) 的 [Trilium Rocks!](https://github.com/zerebos/trilium.rocks)。

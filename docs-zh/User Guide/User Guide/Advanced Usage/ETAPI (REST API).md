@@ -1,70 +1,70 @@
-# ETAPI (REST API)
-> [!TIP]
-> For a quick start, consult the <a class="reference-link" href="ETAPI%20(REST%20API)/API%20Reference.dat">API Reference</a>.
+# ETAPI（REST API）
+> [!提示]
+> 如需快速入门，请参阅 <a class="reference-link" href="ETAPI%20(REST%20API)/API%20Reference.dat">API 参考</a>。
 
-ETAPI is Trilium's public/external REST API. It is available since Trilium v0.50.
+ETAPI 是 Trilium 的公共/外部 REST API。自 Trilium v0.50 起可用。
 
-## API clients
+## API 客户端
 
-As an alternative to calling the API directly, there are client libraries to simplify this
+除了直接调用 API 之外，还可以使用客户端库来简化此过程
 
-*   [trilium-py](https://github.com/Nriver/trilium-py), you can use Python to communicate with Trilium.
+*   [trilium-py](https://github.com/Nriver/trilium-py)，您可以使用 Python 与 Trilium 进行通信。
 
-## Obtaining a token
+## 获取令牌
 
-All operations with the REST API have to be authenticated using a token. You can get this token either from Options -> ETAPI or programmatically using the `/auth/login` REST call (see the [spec](https://github.com/TriliumNext/Trilium/blob/master/src/etapi/etapi.openapi.yaml)).
+所有与 REST API 相关的操作都必须使用令牌进行身份验证。您可以通过“选项”->“ETAPI”获取此令牌，或者使用 `/auth/login` REST 调用以编程方式获取（请参阅[规范](https://github.com/TriliumNext/Trilium/blob/master/src/etapi/etapi.openapi.yaml)）。
 
-## Authentication
+## 身份验证
 
-### Via the `Authorization` header
+### 通过 `Authorization` 请求头
 
 ```
 GET https://myserver.com/etapi/app-info
 Authorization: ETAPITOKEN
 ```
 
-where `ETAPITOKEN` is the token obtained in the previous step.
+其中 `ETAPITOKEN` 是上一步中获取的令牌。
 
-For compatibility with various tools, it's also possible to specify the value of the `Authorization` header in the format `Bearer ETAPITOKEN` (since 0.93.0).
+为了与各种工具兼容，也可以使用 `Bearer ETAPITOKEN` 格式指定 `Authorization` 请求头的值（自 0.93.0 起）。
 
-### Basic authentication
+### 基本身份验证
 
-Since v0.56 you can also use basic auth format:
+自 v0.56 起，您还可以使用基本身份验证格式：
 
 ```
 GET https://myserver.com/etapi/app-info
 Authorization: Basic BATOKEN
 ```
 
-*   Where `BATOKEN = BASE64(username + ':' + password)` - this is a standard Basic Auth serialization
-*   Where `username` is "etapi"
-*   And `password` is the generated ETAPI token described above.
+*   其中 `BATOKEN = BASE64(username + ':' + password)` - 这是标准的 Basic Auth 序列化格式
+*   其中 `username` 为 "etapi"
+*   而 `password` 是上述生成的 ETAPI 令牌。
 
-Basic Auth is meant to be used with tools which support only basic auth.
+基本身份验证旨在用于仅支持基本身份验证的工具。
 
-## Interaction using Bash scripts
+## 使用 Bash 脚本进行交互
 
-It is possible to write simple Bash scripts to interact with Trilium. As an example, here's how to obtain the HTML content of a note:
+可以编写简单的 Bash 脚本来与 Trilium 进行交互。例如，以下是如何获取笔记的 HTML 内容：
 
 ```
 #!/usr/bin/env bash
 
-# Configuration
+# 配置
 TOKEN=z1vA4fkGxjOR_ZXLrZeqHEFOv65yV3882iFCRtNIK9k9iWrHliITNSLQ=
 SERVER=http://localhost:8080
 
-# Download a note by ID
+# 按 ID 下载笔记
 NOTE_ID="i6ra4ZshJhgN"
 curl "$SERVER/etapi/notes/$NOTE_ID/content" -H "Authorization: $TOKEN" 
 ```
 
-Make sure to replace the values of:
+请确保替换以下值：
 
-*   `TOKEN` with your ETAPI token.
-*   `SERVER` with the correct protocol, host name and port to your Trilium instance.
-*   `NOTE_ID` with an existing note ID to download.
+*   将 `TOKEN` 替换为您的 ETAPI 令牌。
+*   将 `SERVER` 替换为您的 Trilium 实例的正确协议、主机名和端口。
+*   将 `NOTE_ID` 替换为要下载的现有笔记 ID。
 
-As another example, to obtain a .zip export of a note and place it in a directory called `out`, simply replace the last statement in the script with:
+再举一个例子，要获取笔记的 .zip 导出文件并将其放入名为 `out` 的目录中，只需将脚本中的最后一条语句替换为：
 
 ```
 curl -H "Authorization: $TOKEN" \

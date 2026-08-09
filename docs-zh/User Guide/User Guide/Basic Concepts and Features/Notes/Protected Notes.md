@@ -1,48 +1,49 @@
-# Protected Notes
-Trilium is designed to store a wide variety of data, including sensitive information such as personal journals, credentials, or confidential documents. To safeguard this type of content, Trilium offers the option to protect notes, which involves the following measures:
+# 受保护笔记
 
-*   **Encryption:** Protected notes are encrypted using a key derived from your password. This ensures that without the correct password, protected notes remain indecipherable. Even if someone gains access to your Trilium [database](../../Advanced%20Usage/Database.md), they won't be able to read your encrypted notes.
-*   **Time-limited access:** To access protected notes, you must first enter your password, which decrypts the note for reading and writing. However, after a specified period of inactivity (10 minutes by default), the note is unloaded from memory, requiring you to re-enter your password to access it again.
-    *   The session timeout is extended automatically while you're interacting with the protected note, so if you're actively editing, the session remains open. However, if you switch to an unprotected note, the session timer starts, and the session expires after 10 minutes of inactivity unless you return to the protected notes.
-*   **Protection scope:** Protected notes ensure the confidentiality of their content and partially their integrity. While unauthorized users cannot read or edit protected notes, they can still delete or move them outside of the protected session.
+Trilium 旨在存储各种数据，包括个人日志、凭据或机密文件等敏感信息。为保护此类内容，Trilium 提供了保护笔记的选项，涉及以下措施：
 
-## Using Protected Notes
+*   **加密：** 受保护的笔记使用从您的密码派生的密钥进行加密。这确保了没有正确的密码，受保护的笔记将无法解读。即使有人访问了您的 Trilium [数据库](../../Advanced%20Usage/Database.md)，他们也无法读取您加密的笔记。
+*   **限时访问：** 要访问受保护的笔记，您必须首先输入密码，该密码会解密笔记以供读写。但是，在指定的不活动时间段（默认10分钟）后，笔记将从内存中卸载，需要您重新输入密码才能再次访问。
+    *   当您与受保护的笔记交互时，会话超时时间会自动延长，因此如果您正在积极编辑，会话将保持打开状态。但是，如果您切换到未受保护的笔记，会话计时器将启动，并且在10分钟不活动后会话将过期，除非您返回受保护的笔记。
+*   **保护范围：** 受保护的笔记确保其内容的机密性及其部分完整性。虽然未经授权的用户无法读取或编辑受保护的笔记，但他们仍然可以在受保护会话之外删除或移动它们。
 
-By default, notes are unprotected. To protect a note, simply click on the shield icon next to the note's title, as shown here:
+## 使用受保护笔记
 
-![example animation of unlocking protected notes](Protected%20Notes_protecting-note.gif)
+默认情况下，笔记不受保护。要保护笔记，只需点击笔记标题旁边的盾牌图标，如下所示：
 
-## What is Encrypted?
+![解锁受保护笔记的示例动画](Protected%20Notes_protecting-note.gif)
 
-Trilium encrypts the data within protected notes but not their metadata. Specifically:
+## 哪些内容被加密？
 
-**Encrypted:**
+Trilium 加密受保护笔记中的数据，但不加密其元数据。具体来说：
 
-*   Note title
-*   Note content
-*   Images
-*   File attachments
+**已加密：**
 
-**Not encrypted:**
+*   笔记标题
+*   笔记内容
+*   图片
+*   文件附件
 
-*   Note structure (i.e., it remains visible that there are protected notes)
-*   Metadata, such as the last modified date
-*   [Attributes](../../Advanced%20Usage/Attributes.md)
+**未加密：**
 
-## Encryption Details
+*   笔记结构（即，仍然可以看到存在受保护的笔记）
+*   元数据，例如最后修改日期
+*   [属性](../../Advanced%20Usage/Attributes.md)
 
-The following steps outline how encryption and decryption work in Trilium:
+## 加密详情
 
-1.  The user enters a password.
-2.  The password is passed through the [scrypt](https://en.wikipedia.org/wiki/Scrypt) algorithm along with a "password verification" [salt](https://en.wikipedia.org/wiki/Salt_\(cryptography\)) to confirm that the password is correct.
-3.  The password is then processed again through scrypt with an "encryption" salt, which generates a hash.
-    *   Scrypt is used for [key stretching](https://en.wikipedia.org/wiki/Key_stretching) to make the password harder to guess.
-4.  The generated hash is used to decrypt the actual _data encryption key_.
-    *   The data encryption key is encrypted using [AES-128](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) with a random [IV](https://en.wikipedia.org/wiki/Initialization_vector).
-    *   The data encryption key is randomly generated during the [database](../../Advanced%20Usage/Database.md) initialization and remains constant throughout the document’s lifetime. When the password is changed, only this key is re-encrypted.
-5.  The data encryption key is then used to decrypt the actual content of the note, including its title and body.
-    *   The encryption algorithm used is AES-128 with [CBC mode](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation), where a unique IV is generated for each encryption operation and stored with the cipher text.
+以下步骤概述了 Trilium 中加密和解密的工作方式：
 
-## Sharing Protected Notes
+1.  用户输入密码。
+2.  密码通过 [scrypt](https://en.wikipedia.org/wiki/Scrypt) 算法以及“密码验证”[盐](https://en.wikipedia.org/wiki/Salt_\(cryptography\)) 进行处理，以确认密码正确。
+3.  然后，密码再次通过 scrypt 使用“加密”盐进行处理，生成一个哈希值。
+    *   Scrypt 用于[密钥拉伸](https://en.wikipedia.org/wiki/Key_stretching)，使密码更难被猜测。
+4.  生成的哈希值用于解密实际的 _数据加密密钥_。
+    *   数据加密密钥使用 [AES-128](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) 和随机 [IV](https://en.wikipedia.org/wiki/Initialization_vector) 进行加密。
+    *   数据加密密钥在 [数据库](../../Advanced%20Usage/Database.md) 初始化期间随机生成，并在文档的整个生命周期内保持不变。当密码更改时，只有此密钥被重新加密。
+5.  然后，数据加密密钥用于解密笔记的实际内容，包括其标题和正文。
+    *   使用的加密算法是带有 [CBC 模式](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation) 的 AES-128，其中每次加密操作都会生成一个唯一的 IV，并与密文一起存储。
 
-Protected notes cannot be shared in the same way as regular notes. Their encryption ensures that only authorized users with the correct password can access them.
+## 共享受保护笔记
+
+受保护的笔记不能像普通笔记那样共享。它们的加密确保只有拥有正确密码的授权用户才能访问它们。

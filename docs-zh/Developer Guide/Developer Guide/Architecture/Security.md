@@ -1,91 +1,92 @@
-# Security
-Trilium implements a **defense-in-depth security model** with multiple layers of protection for user data. The security architecture covers authentication, authorization, encryption, input sanitization, and secure communication.
+# 安全
 
-## Security Principles
+Trilium 实现了**纵深防御安全模型**，为用户数据提供多层保护。安全架构涵盖身份验证、授权、加密、输入净化和安全通信。
 
-1.  **Data Privacy**: User data is protected at rest and in transit
-2.  **Encryption**: Per-note encryption for sensitive content
-3.  **Authentication**: Multiple authentication methods supported
-4.  **Authorization**: Single-user model with granular protected sessions
-5.  **Input Validation**: All user input sanitized
-6.  **Secure Defaults**: Security features enabled by default
-7.  **Transparency**: Open source allows security audits
+## 安全原则
 
-## Threat Model
+1.  **数据隐私**：用户数据在静态存储和传输过程中均受到保护
+2.  **加密**：对敏感内容进行逐笔记加密
+3.  **身份验证**：支持多种身份验证方法
+4.  **授权**：单用户模型，具有细粒度的受保护会话
+5.  **输入验证**：所有用户输入均经过净化处理
+6.  **安全默认值**：默认启用安全功能
+7.  **透明度**：开源允许进行安全审计
 
-### Threats Considered
+## 威胁模型
 
-1.  **Unauthorized Access**
-    *   Physical access to device
-    *   Network eavesdropping
-    *   Stolen credentials
-    *   Session hijacking
-2.  **Data Exfiltration**
-    *   Malicious scripts
-    *   XSS attacks
-    *   SQL injection
-    *   CSRF attacks
-3.  **Data Corruption**
-    *   Malicious modifications
-    *   Database tampering
-    *   Sync conflicts
-4.  **Privacy Leaks**
-    *   Unencrypted backups
-    *   Search indexing
-    *   Temporary files
-    *   Memory dumps
+### 已考虑的威胁
 
-### Out of Scope
+1.  **未授权访问**
+    *   对设备的物理访问
+    *   网络窃听
+    *   凭证被盗
+    *   会话劫持
+2.  **数据外泄**
+    *   恶意脚本
+    *   XSS 攻击
+    *   SQL 注入
+    *   CSRF 攻击
+3.  **数据损坏**
+    *   恶意修改
+    *   数据库篡改
+    *   同步冲突
+4.  **隐私泄露**
+    *   未加密的备份
+    *   搜索索引
+    *   临时文件
+    *   内存转储
 
-*   Nation-state attackers
-*   Zero-day vulnerabilities in dependencies
-*   Hardware vulnerabilities (Spectre, Meltdown)
-*   Physical access with unlimited time
-*   Quantum computing attacks
+### 不在范围内
 
-## Authentication
+*   国家级攻击者
+*   依赖项中的零日漏洞
+*   硬件漏洞（Spectre、Meltdown）
+*   具有无限时间的物理访问
+*   量子计算攻击
 
-### Password Authentication
+## 身份验证
 
-**Implementation:** `apps/server/src/services/password.ts`
+### 密码身份验证
 
-### TOTP (Two-Factor Authentication)
+**实现位置：** `apps/server/src/services/password.ts`
 
-**Implementation:** `apps/server/src/routes/api/login.ts`
+### TOTP（双因素身份验证）
+
+**实现位置：** `apps/server/src/routes/api/login.ts`
 
 ### OpenID Connect
 
-**Implementation:** `apps/server/src/routes/api/login.ts`
+**实现位置：** `apps/server/src/routes/api/login.ts`
 
-**Supported Providers:**
+**支持的提供商：**
 
-*   Any OpenID Connect compatible provider
-*   Google, GitHub, Auth0, etc.
+*   任何兼容 OpenID Connect 的提供商
+*   Google、GitHub、Auth0 等
 
-**Flow:**
+**流程：**
 
 ```typescript
-// 1. Redirect to provider
+// 1. 重定向到提供商
 GET /api/login/openid
 
-// 2. Provider redirects back with code
+// 2. 提供商携带代码重定向回来
 GET /api/login/openid/callback?code=...
 
-// 3. Exchange code for tokens
+// 3. 用代码交换令牌
 const tokens = await openidClient.callback(redirectUri, req.query)
 
-// 4. Verify ID token
+// 4. 验证 ID 令牌
 const claims = tokens.claims()
 
-// 5. Create session
+// 5. 创建会话
 req.session.loggedIn = true
 ```
 
-### Session Management
+### 会话管理
 
-**Session Storage:** SQLite database (sessions table)
+**会话存储：** SQLite 数据库（sessions 表）
 
-**Session Configuration:**
+**会话配置：**
 
 ```typescript
 app.use(session({
@@ -94,7 +95,7 @@ app.use(session({
     saveUninitialized: false,
     rolling: true,
     cookie: {
-        maxAge: 7 * 24 * 60 * 60 * 1000,  // 7 days
+        maxAge: 7 * 24 * 60 * 60 * 1000,  // 7 天
         httpOnly: true,
         secure: isHttps,
         sameSite: 'lax'
@@ -106,140 +107,140 @@ app.use(session({
 }))
 ```
 
-**Session Invalidation:**
+**会话失效：**
 
-*   Automatic timeout after inactivity
-*   Manual logout clears session
-*   Server restart invalidates all sessions (optional)
+*   不活动后自动超时
+*   手动注销清除会话
+*   服务器重启使所有会话失效（可选）
 
-## Authorization
+## 授权
 
-### Single-User Model
+### 单用户模型
 
-**Desktop:**
+**桌面：**
 
-*   Single user (owner of device)
-*   No multi-user support
-*   Full access to all notes
+*   单用户（设备所有者）
+*   不支持多用户
+*   对所有笔记具有完全访问权限
 
-**Server:**
+**服务器：**
 
-*   Single user per installation
-*   Authentication required for all operations
-*   No user roles or permissions
+*   每次安装单用户
+*   所有操作均需身份验证
+*   无用户角色或权限
 
-### Protected Sessions
+### 受保护会话
 
-**Purpose:** Temporary access to encrypted (protected) notes
+**目的：** 临时访问加密（受保护的）笔记
 
-**Implementation:** `apps/server/src/services/protected_session.ts`
+**实现位置：** `apps/server/src/services/protected_session.ts`
 
-**Workflow:**
+**工作流程：**
 
 ```typescript
-// 1. User enters password for protected notes
+// 1. 用户输入受保护笔记的密码
 POST /api/protected-session/enter
 Body: { password: "protected-password" }
 
-// 2. Derive encryption key
+// 2. 派生加密密钥
 const protectedDataKey = deriveKey(password)
 
-// 3. Verify password (decrypt known encrypted value)
+// 3. 验证密码（解密已知的加密值）
 const decrypted = decrypt(testValue, protectedDataKey)
 if (decrypted === expectedValue) {
-    // 4. Store in memory (not in session)
+    // 4. 存储在内存中（不在会话中）
     protectedSessionHolder.setProtectedDataKey(protectedDataKey)
     
-    // 5. Set timeout
+    // 5. 设置超时
     setTimeout(() => {
         protectedSessionHolder.clearProtectedDataKey()
     }, timeout)
 }
 ```
 
-**Protected Session Timeout:**
+**受保护会话超时：**
 
-*   Default: 10 minutes (configurable)
-*   Extends on activity
-*   Cleared on browser close
-*   Separate from main session
+*   默认：10 分钟（可配置）
+*   活动时延长
+*   浏览器关闭时清除
+*   与主会话分离
 
-### API Authorization
+### API 授权
 
-**Internal API:**
+**内部 API：**
 
-*   Requires authenticated session
-*   CSRF token validation
-*   Same-origin policy
+*   需要经过身份验证的会话
+*   CSRF 令牌验证
+*   同源策略
 
-**ETAPI (External API):**
+**ETAPI（外部 API）：**
 
-*   Token-based authentication
-*   No session required
-*   Rate limiting
+*   基于令牌的身份验证
+*   无需会话
+*   速率限制
 
-## Encryption
+## 加密
 
-### Note Encryption
+### 笔记加密
 
-**Encryption Algorithm:** AES-256-CBC
+**加密算法：** AES-256-CBC
 
-**Key Hierarchy:**
+**密钥层级：**
 
 ```
-User Password
+用户密码
     ↓ (scrypt)
-Data Key (for protected notes)
+数据密钥（用于受保护的笔记）
     ↓ (AES-128)
-Protected Note Content
+受保护的笔记内容
 ```
 
-**Protected Note Metadata:**
+**受保护笔记的元数据：**
 
-*   Content IS encrypted
-*   Type and MIME are NOT encrypted
-*   Attributes are NOT encrypted
+*   内容已加密
+*   类型和 MIME 未加密
+*   属性未加密
 
-### Data Key Management
+### 数据密钥管理
 
-**Key Rotation:**
+**密钥轮换：**
 
-*   Not currently supported
-*   Requires re-encrypting all protected notes
+*   目前不支持
+*   需要重新加密所有受保护的笔记
 
-### Transport Encryption
+### 传输加密
 
-**HTTPS:**
+**HTTPS：**
 
-*   Recommended for server installations
-*   TLS 1.2+ only
-*   Strong cipher suites preferred
-*   Certificate validation enabled
+*   推荐用于服务器安装
+*   仅 TLS 1.2+
+*   优先使用强密码套件
+*   启用证书验证
 
-**Desktop:**
+**桌面：**
 
-*   Local communication (no network)
-*   No HTTPS required
+*   本地通信（无网络）
+*   无需 HTTPS
 
-### Backup Encryption
+### 备份加密
 
-**Database Backups:**
+**数据库备份：**
 
-*   Protected notes remain encrypted in backup
-*   Backup file should be protected separately
-*   Consider encrypting backup storage location
+*   受保护的笔记在备份中保持加密状态
+*   备份文件应单独保护
+*   考虑加密备份存储位置
 
-## Input Sanitization
+## 输入净化
 
-### XSS Prevention
+### XSS 防护
 
-*   **HTML Sanitization**
-*   **CKEditor Configuration:**
+*   **HTML 净化**
+*   **CKEditor 配置：**
     
     ```
     // apps/client/src/widgets/type_widgets/text_type_widget.ts
     ClassicEditor.create(element, {
-        // Restrict allowed content
+        // 限制允许的内容
         htmlSupport: {
             allow: [
                 { name: /./, attributes: true, classes: true, styles: true }
@@ -251,11 +252,11 @@ Protected Note Content
         }
     })
     ```
-*   Content Security Policy
+*   内容安全策略
 
-### SQL Injection Prevention
+### SQL 注入防护
 
-**Parameterized Queries:**
+**参数化查询：**
 
 ```typescript
 const notes = sql.getRows(
@@ -264,91 +265,91 @@ const notes = sql.getRows(
 )
 ```
 
-**ORM Usage:**
+**ORM 使用：**
 
 ```typescript
-// Entity-based access prevents SQL injection
+// 基于实体的访问防止 SQL 注入
 const note = becca.getNote(noteId)
-note.title = userInput  // Sanitized by entity
-note.save()  // Parameterized query
+note.title = userInput  // 由实体净化
+note.save()  // 参数化查询
 ```
 
-### CSRF Prevention
+### CSRF 防护
 
-**CSRF Token Validation:**
+**CSRF 令牌验证：**
 
-Location: `apps/server/src/routes/csrf_protection.ts`
+位置：`apps/server/src/routes/csrf_protection.ts`
 
-Stateless CSRF using [Double Submit Cookie Pattern](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#double-submit-cookie) via [`csrf-csrf`](https://github.com/Psifi-Solutions/csrf-csrf).
+使用[双重提交 Cookie 模式](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#double-submit-cookie)通过 [`csrf-csrf`](https://github.com/Psifi-Solutions/csrf-csrf) 实现无状态 CSRF 防护。
 
-### File Upload Validation
+### 文件上传验证
 
-**Validation:**
+**验证：**
 
 ```typescript
-// Validate file size
+// 验证文件大小
 const maxSize = 100 * 1024 * 1024  // 100 MB
 if (file.size > maxSize) {
-    throw new Error('File too large')
+    throw new Error('文件太大')
 }
 ```
 
-## Network Security
+## 网络安全
 
-### HTTPS Configuration
+### HTTPS 配置
 
-**Certificate Validation:**
+**证书验证：**
 
-*   Require valid certificates in production
-*   Self-signed certificates allowed for development
-*   Certificate pinning not implemented
+*   生产环境要求有效证书
+*   开发环境允许自签名证书
+*   未实现证书固定
 
-### Rate Limiting
+### 速率限制
 
-**Login Rate Limiting:**
+**登录速率限制：**
 
 ```typescript
 const loginLimiter = rateLimit({
     windowMs: 15 * 60 * 1000,
-    max: 10,  // 10 failed attempts
+    max: 10,  // 10 次失败尝试
     skipSuccessfulRequests: true
 })
 
 app.post('/api/login/password', loginLimiter, loginHandler)
 ```
 
-## Data Security
+## 数据安全
 
-### Secure Data Deletion
+### 安全数据删除
 
-**Soft Delete:**
+**软删除：**
 
 ```typescript
-// Mark as deleted (sync first)
+// 标记为已删除（先同步）
 note.isDeleted = 1
 note.deleteId = generateUUID()
 note.save()
 
-// Entity change tracked for sync
+// 实体变更被跟踪用于同步
 addEntityChange('notes', noteId, note)
 ```
 
-**Hard Delete (Erase):**
+**硬删除（擦除）：**
 
 ```typescript
-// After sync completed
+// 同步完成后
 sql.execute('DELETE FROM notes WHERE noteId = ?', [noteId])
 sql.execute('DELETE FROM branches WHERE noteId = ?', [noteId])
 sql.execute('DELETE FROM attributes WHERE noteId = ?', [noteId])
 
-// Mark entity change as erased
+// 将实体变更标记为已擦除
 sql.execute('UPDATE entity_changes SET isErased = 1 WHERE entityId = ?', [noteId])
 ```
 
-**Blob Cleanup:**
+**Blob 清理：**
 
 ```typescript
-// Find orphaned blobs (not referenced by any note/revision/attachment)
+// 查找孤立 Blob（未被任何笔记/修订/附件引用）
 const orphanedBlobs = sql.getRows(`
     SELECT blobId FROM blobs
     WHERE blobId NOT IN (SELECT blobId FROM notes WHERE blobId IS NOT NULL)
@@ -356,109 +357,109 @@ const orphanedBlobs = sql.getRows(`
       AND blobId NOT IN (SELECT blobId FROM attachments WHERE blobId IS NOT NULL)
 `)
 
-// Delete orphaned blobs
+// 删除孤立 Blob
 for (const blob of orphanedBlobs) {
     sql.execute('DELETE FROM blobs WHERE blobId = ?', [blob.blobId])
 }
 ```
 
-### Memory Security
+### 内存安全
 
-**Protected Data in Memory:**
+**内存中的受保护数据：**
 
-*   Protected data keys stored in memory only
-*   Cleared on timeout
-*   Not written to disk
-*   Not in session storage
+*   受保护的数据密钥仅存储在内存中
+*   超时后清除
+*   不写入磁盘
+*   不存储在会话存储中
 
-## Dependency Security
+## 依赖安全
 
-### Vulnerability Scanning
+### 漏洞扫描
 
-**Tools:**
+**工具：**
 
-*   Renovate bot - Automatic dependency updates
-*   `pnpm audit` - Check for known vulnerabilities
-*   GitHub Dependabot alerts
+*   Renovate bot - 自动依赖更新
+*   `pnpm audit` - 检查已知漏洞
+*   GitHub Dependabot 警报
 
-**Process:**
+**流程：**
 
 ```
-# Check for vulnerabilities
+# 检查漏洞
 npm audit
 
-# Fix automatically
+# 自动修复
 npm audit fix
 
-# Manual review for breaking changes
+# 手动审查破坏性变更
 npm audit fix --force
 ```
 
-### Dependency Pinning
+### 依赖固定
 
-**package.json:**
+**package.json：**
 
 ```
 {
   "dependencies": {
-    "express": "4.18.2",  // Exact version
-    "better-sqlite3": "^9.2.2"  // Compatible versions
+    "express": "4.18.2",  // 精确版本
+    "better-sqlite3": "^9.2.2"  // 兼容版本
   }
 }
 ```
 
-**pnpm Overrides:**
+**pnpm 覆盖：**
 
 ```
 {
   "pnpm": {
     "overrides": {
-      "lodash@<4.17.21": ">=4.17.21",  // Force minimum version
+      "lodash@<4.17.21": ">=4.17.21",  // 强制最低版本
       "axios@<0.21.2": ">=0.21.2"
     }
   }
 }
 ```
 
-### Patch Management
+### 补丁管理
 
-**pnpm Patches:**
+**pnpm 补丁：**
 
 ```
-# Create patch
+# 创建补丁
 pnpm patch @ckeditor/ckeditor5
 
-# Edit files in temporary directory
+# 在临时目录中编辑文件
 # ...
 
-# Generate patch file
+# 生成补丁文件
 pnpm patch-commit /tmp/ckeditor5-patch
 
-# Patch applied automatically on install
+# 安装时自动应用补丁
 ```
 
-## Security Auditing
+## 安全审计
 
-### Logs
+### 日志
 
-**Security Events Logged:**
+**记录的安全事件：**
 
-*   Login attempts (success/failure)
-*   Protected session access
-*   Password changes
-*   ETAPI token usage
-*   Failed CSRF validations
+*   登录尝试（成功/失败）
+*   受保护会话访问
+*   密码更改
+*   ETAPI 令牌使用
+*   失败的 CSRF 验证
 
-**Log Location:**
+**日志位置：**
 
-*   Desktop: Console output
-*   Server: Log files or stdout
+*   桌面：控制台输出
+*   服务器：日志文件或标准输出
 
-### Monitoring
+### 监控
 
-**Metrics to Monitor:**
+**需要监控的指标：**
 
-*   Failed login attempts
-*   API error rates
-*   Unusual database changes
-*   Large exports/imports
+*   失败的登录尝试
+*   API 错误率
+*   异常的数据库更改
+*   大型导出/导入
