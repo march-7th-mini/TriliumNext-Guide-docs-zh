@@ -37,12 +37,14 @@ jobs:
           # 把三个目录复制进工作区(注意:必须在 /tmp/upstream 里 cd 到别处再复制,
           # 不能 `cp -r "docs/Developer Guide" docs/`,因为目标 docs/Developer Guide
           # 已存在,cp 会报 "are the same file" 导致整个流程失败)
-          mkdir -p docs
+          
+          mkdir -p "$GITHUB_WORKSPACE/docs"
           cp -r "/tmp/upstream/docs/Developer Guide" \
                 "/tmp/upstream/docs/Release Notes" \
-                "/tmp/upstream/docs/User Guide" docs/
+                "/tmp/upstream/docs/User Guide" "$GITHUB_WORKSPACE/docs/"
           echo "--- 已拉取 ---"
-          ls docs/
+          ls "$GITHUB_WORKSPACE/docs/"
+
 
       - name: 设置 Python
         uses: actions/setup-python@v5
