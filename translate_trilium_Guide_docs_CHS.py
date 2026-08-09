@@ -41,6 +41,7 @@ import urllib.request
 import urllib.error
 
 # ====== 配置 ======
+# API 模式:Responses API
 MODEL = "deepseek-v4-flash"                  # OpenAI 改成 "gpt-4o-mini"
 BASE_URL = "https://api.deepseek.com"        # OpenAI 改成 "https://api.openai.com/v1"
 SRC_TREES = [                                # 要翻译的源树(相对仓库根)
