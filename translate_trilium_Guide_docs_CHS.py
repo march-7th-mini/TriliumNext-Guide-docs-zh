@@ -41,7 +41,6 @@ import urllib.request
 import urllib.error
 
 # ====== 配置 ======
-# API 模式:Responses API
 MODEL = "deepseek-v4-flash"                  # OpenAI 改成 "gpt-4o-mini"
 BASE_URL = "https://api.deepseek.com"        # OpenAI 改成 "https://api.openai.com/v1"
 SRC_TREES = [                                # 要翻译的源树(相对仓库根)
@@ -52,7 +51,9 @@ SRC_TREES = [                                # 要翻译的源树(相对仓库�
 OUT_DIR = "docs-zh"                          # 输出根目录
 STATE_FILE = os.path.join(OUT_DIR, ".translated.json")
 MAX_CHARS = 60000                            # 超过此长度的正文跳过,提示手动处理
-TITLE_BATCH = 80                             # 标题批量翻译,每批个数
+TITLE_BATCH = 30                             # 标题批量翻译,每批个数(调小防超限)
+MAX_OUTPUT_TOKENS = 16000                    # Responses 输出预算(reasoning 也占额度)
+REASONING_EFFORT = "none"                    # 关闭思维链(翻译不需要推理);若 API 报 400,改成 None
 GLOSSARY_FILE = "glossary.tsv"               # Weblate 术语表(可选,不存在则跳过)
 GLOSSARY_INJECT = 60                         # prompt 中最多注入的术语条数
 # ==================
@@ -119,18 +120,26 @@ def str_hash(s):
 
 def extract_response_text(data):
     """从 Responses API 返回里提取纯文本,跳过 reasoning 等非文本项。"""
+    texts = []
     for item in data.get("output") or []:
         if item.get("type") != "message":
             continue
         for part in item.get("content") or []:
             if part.get("type") == "output_text":
-                return part.get("text", "").strip()
+                texts.append(part.get("text", ""))
+    if texts:
+        return "\n".join(texts).strip()
     if data.get("output_text"):
         return data["output_text"].strip()
-    raise SystemExit(f"[API 失败] Responses 返回里没有 output_text: {json.dumps(data, ensure_ascii=False)[:500]}")
+    # 失败诊断:输出被截断时给出可操作提示
+    hint = ""
+    if data.get("status") == "incomplete" and (data.get("incomplete_details") or {}).get("reason") == "max_output_tokens":
+        hint = ("(输出被 max_output_tokens 截断:模型把预算花在了 reasoning 上。"
+                "请调大 MAX_OUTPUT_TOKENS,或确认 REASONING_EFFORT = \"none\" 生效)")
+    raise SystemExit(f"[API 失败] Responses 返回里没有 output_text {hint}: {json.dumps(data, ensure_ascii=False)[:400]}")
 
 
-def call_api(prompt, max_tokens=8000, retries=3):
+def call_api(prompt, max_tokens=MAX_OUTPUT_TOKENS, retries=3):
     """调用 LLM Responses API,返回纯文本回复。"""
     body = {
         "model": MODEL,
@@ -138,6 +147,8 @@ def call_api(prompt, max_tokens=8000, retries=3):
         "temperature": 0.3,
         "max_output_tokens": max_tokens,
     }
+    if REASONING_EFFORT:
+        body["reasoning"] = {"effort": REASONING_EFFORT}
     req = urllib.request.Request(
         BASE_URL + "/responses",
         data=json.dumps(body).encode("utf-8"),
@@ -205,7 +216,7 @@ def translate_titles_batch(items, gloss=None):
             + "\n\n5. 标题中的术语必须与术语表一致,术语表里出现过的英文一律用表中中文\n\n"
             "标题列表:\n" + json.dumps(obj, ensure_ascii=False)
         )
-        reply = call_api(prompt, max_tokens=8000)
+        reply = call_api(prompt)
         # 去掉可能的 ```json 围栏
         reply = re.sub(r"^```(?:json)?\s*|\s*```$", "", reply.strip())
         try:
