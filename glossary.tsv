@@ -1,0 +1,259 @@
+AI / LLM Chat	AI/大语言模型对话
+AI Chat	AI对话
+API Key	API 密钥
+Admonition	警示框
+Affected notes	受影响的笔记
+Anchor	锚点
+Anchor name	锚点名称
+Anchor toolbar	锚点工具栏
+Anchors	锚点
+Anytype import	Anytype 导入
+Archive	归档
+Archive note	存档笔记
+Archived	已归档
+Attribute changed	属性变更
+Attribute definition	属性定义
+Attributes	属性
+Authentication	身份验证
+Auto read-only	自动只读
+Automatic backup	自动备份
+Automatic backups	自动备份
+Available Launchers	可用启动器
+Backend Log	后端日志
+Backend Scripts	后端脚本
+Backend script	后端脚本
+Backend script execution	后端脚本执行
+Backend scripting	后端脚本
+Backend startup	后端启动时
+Backlinks	反链
+Backup	备份
+Backup location	备份位置
+Backup name	备份名称
+Backup password	备份密码
+Base URL	基础 URL
+Boolean	布尔值
+Built-in Templates	内置模板
+Built-in Widget	内置小组件
+C4	C4 图
+Calendar	日历
+Change note icon	更改笔记图标
+Clone note	克隆笔记
+Clone selected notes	克隆选中的笔记到
+Code	代码
+Code Blocks	代码块
+Code Snippet	代码片段
+Code notes	代码笔记
+Collapse Tree	折叠整个树
+Collapse note tree	折叠笔记树
+Command Launcher	命令启动器
+Compact database	压缩数据库
+Convert note	转换笔记
+Copy URL	复制链接
+Cross-page links	跨页面链接
+Custom CSS	自定义 CSS
+Custom Widget	自定义小组件
+Custom Widgets	自定义组件
+Daily backup	每日备份
+Dashboard	仪表板
+Database	数据库
+Database Anonymization	数据库匿名化
+Desktop	桌面
+Desktop Application	桌面应用程序
+Download backup	下载备份
+Editor	编辑器
+Emoji auto-completion	表情符号自动补全
+Endpoint URL	端点 URL
+Execute script	执行脚本
+Existing backups	现有备份
+Exit picture-in-picture	退出画中画
+Export	导出
+Export current note	导出当前笔记
+Export note	导出笔记
+File attachments	文件附件
+Filter shortcuts	筛选快捷键
+First note	第一个笔记
+Floating	浮动
+Force sync	强制同步
+Format string	日期/时间格式字符串
+Formatting toolbar	格式工具栏
+Frontend Scripts	前端脚本
+Frontend script	前端脚本
+Frontend startup	前端启动时
+Get attachment	获取附件
+Get attribute	获取属性值
+Get attributes	获取属性
+Get note	获取笔记
+Git	Git 流程图
+HTML Import Tags	HTML 导入标签
+Hoist note	聚焦笔记
+Hoisted	聚焦
+Icon Packs	图标包
+Icon pack	图标包
+Icons	图标
+Ignored notes	忽略的笔记
+Import	导入
+Import files	导入文件
+Import selected	导入所选内容
+Import source	导入来源
+Include archived notes	包括已归档的笔记
+Include note	包含笔记
+Inherited Attributes	继承的属性
+Insert Mermaid source code	插入 Mermaid 源代码
+Inverse relation	反向关系
+Issuer URL	颁发者URL
+JPEG image	JPEG 图片
+JPEG quality	JPEG质量
+Kanban	看板图
+Kanban Board	看板
+Keyboard Shortcuts	快捷键
+Keyboard shortcut	键盘快捷键
+Label	标签
+Label definition	标签定义
+Label interval	标签间隔
+Labels	标签
+Launcher	启动器
+Launcher Widgets	启动器组件
+MCP server	MCP 服务器
+MFA	多因素认证
+MIME type	文件类型
+Markdown Snippet	Markdown 片段
+Markdown import	Markdown 导入
+Markdown symbol	Markdown 符号
+Markdown-like autoformatting	类 Markdown 自动格式化
+Markdown-style	Markdown 风格
+Mermaid Diagram	Mermaid 图
+Mermaid toolbar	Mermaid 工具栏
+Mermaid widget	Mermaid 组件
+Mindmap	思维导图
+Mobile startup	移动端启动时
+Monthly backup	每月备份
+Move note	移动笔记
+Multi-line Text	多行文本
+Note	笔记
+Note ID	笔记 ID
+Note Info	笔记信息
+Note Launcher	笔记启动器
+Note Paths	笔记路径
+Note Revisions	笔记修订
+Note access	笔记访问
+Note attachments	笔记附件
+Note attributes	笔记属性
+Note auto-completion	笔记自动补全
+Note changed	笔记已更改
+Note clipboard	笔记剪贴板
+Note content	笔记内容
+Note map	笔记地图
+Note navigation	笔记导航
+Note size	笔记大小
+Note source	笔记源代码
+Note tree text	笔记树字体
+Note type	笔记类型
+Notes	笔记
+Notion import	Notion 导入
+OPML	大纲标记语言 OPML
+Obsidian import	Obsidian 导入
+OneNote import	OneNote 导入
+OpenAI-compatible	兼容 OpenAI
+Owned Attributes	拥有的属性
+PNG image	PNG 图片
+Picture-in-picture	画中画
+Process OCR	处理 OCR
+Promoted Attributes	升级属性
+Protected session	保护会话
+Proxy server	代理服务器
+Quick search	快速搜索
+Quit Trilium	退出 Trilium
+Re-render note	重新渲染笔记
+Read-only	只读
+Recent notes	最近笔记
+Relation	关联
+Relation Map	关系图
+Relation definition	关系定义
+Relations	关系
+Reload Frontend	重载前端
+Rename attachment	重命名附件
+Rename label	重命名标签
+Rename note	重命名笔记
+Rename relation	重命名关系
+Render Active Note	渲染当前笔记
+Render Note	渲染笔记
+Render Notes	渲染笔记
+Restore backup	还原备份
+Rewrite note	重写笔记
+Run SQL	运行SQL
+Run script	运行脚本
+SQL console	SQL 控制台
+Safe import	安全导入
+Script	脚本
+Script Launcher	脚本启动器
+Search	搜索
+Search Engine	搜索引擎
+Search History	搜索历史
+Search Parameters	搜索参数
+Search engine URL	搜索引擎 URL
+Search icons	搜索图标
+Search notes	搜索笔记
+Search syntax	搜索语法
+Search text snippet	搜索文本片段
+Second note	第二个笔记
+Server address	服务器地址
+Shared Notes	共享笔记
+Shortcuts	快捷键
+Similar Notes	相似笔记
+Site icon	站点图标
+Snippets	代码片段
+Sync	同步
+Sync Server	同步服务器
+Sync Status	同步状态
+Sync failed	同步失败
+Syncing data	正在同步数据
+Tab shortcuts	标签页快捷键
+Target note	目标笔记
+Template	模板
+Templates	模板
+Text Notes	文本笔记
+Text snippet	文本片段
+Third note	第三个笔记
+To-do list	待办列表
+Toggle Archived Notes Visibility	显示/隐藏已归档笔记
+Toggle Note Hoisting	聚焦笔记
+Toggle sidebar	切换侧边栏
+Toolbar style	工具栏样式
+Tray icon	托盘图标
+Tree map	树形地图
+Trilium Log	Trilium 日志
+Trilium Login	Trilium 登录
+Trilium Notes	TriliumNext 笔记
+Trilium server address	Trilium 服务器地址
+Two-factor authentication	双因素认证
+URL	网址
+Unarchive note	解压笔记
+Unhoist note	取消聚焦笔记
+Unused Attachments	未使用的附件
+Upload attachments	上传附件
+Vacuum Database	数据库清理
+Verification code	验证码
+View note attachments	查看笔记附件
+Visible Launchers	可见启动器
+Web search	联网搜索
+Weekly backup	每周备份
+Widget	小部件
+Widgets	组件
+anchor widget	锚点组件
+collapse sub-tree	折叠子树
+collapse whole note tree	折叠整个笔记树
+collapse/expand node	折叠/展开节点
+fast search	快速搜索
+footnote widget	脚注组件
+in-page search	页面内搜索
+include archived	包含归档
+include note widget	嵌入笔记组件
+label name	标签名称
+missing icon	缺少图标
+multi-select note above/below	多选上/下笔记
+relation name	关系名称
+reload Trilium frontend	重载 Trilium 前端
+search script	搜索脚本
+search string	搜索字符串
+select note	选择笔记
+show/hide archived notes	显示/隐藏已归档笔记
