@@ -1,0 +1,4478 @@
+{
+  "formatVersion": 2,
+  "appVersion": "0.104.1",
+  "files": [
+    {
+      "isClone": false,
+      "noteId": "_zh_g2bDercy",
+      "notePath": [
+        "jdjRLhLV3TtI"
+      ],
+      "title": "开发者指南",
+      "notePosition": 1,
+      "prefix": null,
+      "isExpanded": false,
+      "type": "text",
+      "mime": "text/html",
+      "attributes": [
+        {
+          "type": "relation",
+          "name": "internalLink",
+          "value": "T2W7WCZrYZBU",
+          "isInheritable": false,
+          "position": 10
+        },
+        {
+          "type": "relation",
+          "name": "internalLink",
+          "value": "cxfTSHIUQtt2",
+          "isInheritable": false,
+          "position": 20
+        },
+        {
+          "type": "label",
+          "name": "label:shareAlias",
+          "value": "promoted,alias=Slug,single,text",
+          "isInheritable": true,
+          "position": 10
+        },
+        {
+          "type": "label",
+          "name": "iconClass",
+          "value": "bx bx-code-alt",
+          "isInheritable": false,
+          "position": 20
+        },
+        {
+          "type": "label",
+          "name": "shareAlias",
+          "value": "developer-guide",
+          "isInheritable": false,
+          "position": 30
+        },
+        {
+          "type": "label",
+          "name": "originalHelpNoteId",
+          "value": "_help_jdjRLhLV3TtI",
+          "isInheritable": false,
+          "position": 40
+        },
+        {
+          "type": "label",
+          "name": "helpDoc",
+          "value": "zh",
+          "isInheritable": false,
+          "position": 50
+        }
+      ],
+      "format": "markdown",
+      "dataFileName": "Developer Guide.md",
+      "attachments": [],
+      "dirFileName": "Developer Guide",
+      "children": [
+        {
+          "isClone": false,
+          "noteId": "_zh_ig8RJEcK",
+          "notePath": [
+            "jdjRLhLV3TtI",
+            "T2W7WCZrYZBU"
+          ],
+          "title": "环境搭建",
+          "notePosition": 260,
+          "prefix": null,
+          "isExpanded": false,
+          "type": "text",
+          "mime": "text/html",
+          "attributes": [
+            {
+              "type": "relation",
+              "name": "internalLink",
+              "value": "TLXJwBDo8Rdv",
+              "isInheritable": false,
+              "position": 10
+            },
+            {
+              "type": "label",
+              "name": "iconClass",
+              "value": "bx bx-cog",
+              "isInheritable": false,
+              "position": 10
+            },
+            {
+              "type": "label",
+              "name": "shareAlias",
+              "value": "environment-setup",
+              "isInheritable": false,
+              "position": 20
+            },
+            {
+              "type": "label",
+              "name": "originalHelpNoteId",
+              "value": "_help_T2W7WCZrYZBU",
+              "isInheritable": false,
+              "position": 30
+            },
+            {
+              "type": "label",
+              "name": "helpDoc",
+              "value": "zh",
+              "isInheritable": false,
+              "position": 40
+            }
+          ],
+          "format": "markdown",
+          "dataFileName": "Environment Setup.md",
+          "attachments": [],
+          "children": []
+        },
+        {
+          "isClone": false,
+          "noteId": "_zh_vTbvZ3vi",
+          "notePath": [
+            "jdjRLhLV3TtI",
+            "ccIoz7nqgDRK"
+          ],
+          "title": "分支策略",
+          "notePosition": 270,
+          "prefix": null,
+          "isExpanded": false,
+          "type": "text",
+          "mime": "text/html",
+          "attributes": [
+            {
+              "type": "relation",
+              "name": "internalLink",
+              "value": "4nwtTJyjNDKd",
+              "isInheritable": false,
+              "position": 10
+            },
+            {
+              "type": "label",
+              "name": "iconClass",
+              "value": "bx bx-git-merge",
+              "isInheritable": false,
+              "position": 20
+            },
+            {
+              "type": "label",
+              "name": "shareAlias",
+              "value": "branching-strategy",
+              "isInheritable": false,
+              "position": 40
+            },
+            {
+              "type": "label",
+              "name": "originalHelpNoteId",
+              "value": "_help_ccIoz7nqgDRK",
+              "isInheritable": false,
+              "position": 50
+            },
+            {
+              "type": "label",
+              "name": "helpDoc",
+              "value": "zh",
+              "isInheritable": false,
+              "position": 60
+            }
+          ],
+          "format": "markdown",
+          "dataFileName": "Branching strategy.md",
+          "attachments": [],
+          "children": []
+        },
+        {
+          "isClone": false,
+          "noteId": "_zh_GhWTP1zz",
+          "notePath": [
+            "jdjRLhLV3TtI",
+            "cxfTSHIUQtt2"
+          ],
+          "title": "项目结构",
+          "notePosition": 280,
+          "prefix": null,
+          "isExpanded": false,
+          "type": "text",
+          "mime": "text/html",
+          "attributes": [
+            {
+              "type": "relation",
+              "name": "internalLink",
+              "value": "a0mkxxB4Uvbf",
+              "isInheritable": false,
+              "position": 10
+            },
+            {
+              "type": "label",
+              "name": "iconClass",
+              "value": "bx bxs-component",
+              "isInheritable": false,
+              "position": 10
+            },
+            {
+              "type": "label",
+              "name": "shareAlias",
+              "value": "project-structure",
+              "isInheritable": false,
+              "position": 20
+            },
+            {
+              "type": "label",
+              "name": "originalHelpNoteId",
+              "value": "_help_cxfTSHIUQtt2",
+              "isInheritable": false,
+              "position": 30
+            },
+            {
+              "type": "label",
+              "name": "helpDoc",
+              "value": "zh",
+              "isInheritable": false,
+              "position": 40
+            }
+          ],
+          "format": "markdown",
+          "dataFileName": "Project Structure.md",
+          "attachments": [],
+          "children": []
+        },
+        {
+          "isClone": false,
+          "noteId": "_zh_acDRwZjy",
+          "notePath": [
+            "jdjRLhLV3TtI",
+            "MhwWMgxwDTZL"
+          ],
+          "title": "架构",
+          "notePosition": 290,
+          "prefix": null,
+          "isExpanded": false,
+          "type": "text",
+          "mime": "text/html",
+          "attributes": [
+            {
+              "type": "label",
+              "name": "shareAlias",
+              "value": "architecture",
+              "isInheritable": false,
+              "position": 20
+            },
+            {
+              "type": "label",
+              "name": "iconClass",
+              "value": "bx bx-arch",
+              "isInheritable": false,
+              "position": 30
+            },
+            {
+              "type": "label",
+              "name": "originalHelpNoteId",
+              "value": "_help_MhwWMgxwDTZL",
+              "isInheritable": false,
+              "position": 40
+            },
+            {
+              "type": "label",
+              "name": "helpDoc",
+              "value": "zh",
+              "isInheritable": false,
+              "position": 50
+            }
+          ],
+          "format": "markdown",
+          "dataFileName": "Architecture.md",
+          "attachments": [],
+          "dirFileName": "Architecture",
+          "children": [
+            {
+              "isClone": false,
+              "noteId": "_zh_osupNIRJ",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "MhwWMgxwDTZL",
+                "dsMq2EIOMOBU"
+              ],
+              "title": "前端",
+              "notePosition": 10,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "frontend",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_dsMq2EIOMOBU",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 40
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Frontend.md",
+              "attachments": [],
+              "children": []
+            },
+            {
+              "isClone": false,
+              "noteId": "_zh_jpLNRyGy",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "MhwWMgxwDTZL",
+                "tsswRlmHEnYW"
+              ],
+              "title": "后端",
+              "notePosition": 20,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "backend",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_tsswRlmHEnYW",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 40
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Backend.md",
+              "attachments": [],
+              "children": []
+            },
+            {
+              "isClone": false,
+              "noteId": "_zh_DqvYITI7",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "MhwWMgxwDTZL",
+                "pRZhrVIGCbMu"
+              ],
+              "title": "数据库",
+              "notePosition": 40,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "database",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "iconClass",
+                  "value": "bx bx-data",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_pRZhrVIGCbMu",
+                  "isInheritable": false,
+                  "position": 40
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 50
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Database.md",
+              "attachments": [],
+              "dirFileName": "Database",
+              "children": [
+                {
+                  "isClone": false,
+                  "noteId": "_zh_cLYGgxEa",
+                  "notePath": [
+                    "jdjRLhLV3TtI",
+                    "MhwWMgxwDTZL",
+                    "pRZhrVIGCbMu",
+                    "vNMojjUN76jc"
+                  ],
+                  "title": "数据库结构",
+                  "notePosition": 10,
+                  "prefix": null,
+                  "isExpanded": false,
+                  "type": "text",
+                  "mime": "text/html",
+                  "attributes": [
+                    {
+                      "type": "label",
+                      "name": "shareAlias",
+                      "value": "tables",
+                      "isInheritable": false,
+                      "position": 20
+                    },
+                    {
+                      "type": "label",
+                      "name": "iconClass",
+                      "value": "bx bx-table",
+                      "isInheritable": false,
+                      "position": 30
+                    },
+                    {
+                      "type": "label",
+                      "name": "originalHelpNoteId",
+                      "value": "_help_vNMojjUN76jc",
+                      "isInheritable": false,
+                      "position": 40
+                    },
+                    {
+                      "type": "label",
+                      "name": "helpDoc",
+                      "value": "zh",
+                      "isInheritable": false,
+                      "position": 50
+                    }
+                  ],
+                  "format": "markdown",
+                  "attachments": [],
+                  "dirFileName": "Database structure",
+                  "children": [
+                    {
+                      "isClone": false,
+                      "noteId": "_zh_VOJIwTIf",
+                      "notePath": [
+                        "jdjRLhLV3TtI",
+                        "MhwWMgxwDTZL",
+                        "pRZhrVIGCbMu",
+                        "vNMojjUN76jc",
+                        "e6GnYOXeIWjg"
+                      ],
+                      "title": "附件",
+                      "notePosition": 20,
+                      "prefix": null,
+                      "isExpanded": false,
+                      "type": "text",
+                      "mime": "text/html",
+                      "attributes": [
+                        {
+                          "type": "relation",
+                          "name": "internalLink",
+                          "value": "DSkl8C325tEC",
+                          "isInheritable": false,
+                          "position": 10
+                        },
+                        {
+                          "type": "relation",
+                          "name": "internalLink",
+                          "value": "UvXpeSqfYc6d",
+                          "isInheritable": false,
+                          "position": 20
+                        },
+                        {
+                          "type": "relation",
+                          "name": "internalLink",
+                          "value": "VIcWnKGs0sMh",
+                          "isInheritable": false,
+                          "position": 30
+                        },
+                        {
+                          "type": "relation",
+                          "name": "internalLink",
+                          "value": "tM3rIZQzlum4",
+                          "isInheritable": false,
+                          "position": 40
+                        },
+                        {
+                          "type": "label",
+                          "name": "iconClass",
+                          "value": "bx bx-table",
+                          "isInheritable": false,
+                          "position": 10
+                        },
+                        {
+                          "type": "label",
+                          "name": "shareAlias",
+                          "value": "attachments",
+                          "isInheritable": false,
+                          "position": 50
+                        },
+                        {
+                          "type": "label",
+                          "name": "originalHelpNoteId",
+                          "value": "_help_e6GnYOXeIWjg",
+                          "isInheritable": false,
+                          "position": 60
+                        },
+                        {
+                          "type": "label",
+                          "name": "helpDoc",
+                          "value": "zh",
+                          "isInheritable": false,
+                          "position": 70
+                        }
+                      ],
+                      "format": "markdown",
+                      "dataFileName": "attachments.md",
+                      "attachments": [],
+                      "children": []
+                    },
+                    {
+                      "isClone": false,
+                      "noteId": "_zh_dvlfmkKX",
+                      "notePath": [
+                        "jdjRLhLV3TtI",
+                        "MhwWMgxwDTZL",
+                        "pRZhrVIGCbMu",
+                        "vNMojjUN76jc",
+                        "ciL84vNBNi9y"
+                      ],
+                      "title": "属性",
+                      "notePosition": 30,
+                      "prefix": null,
+                      "isExpanded": false,
+                      "type": "text",
+                      "mime": "text/html",
+                      "attributes": [
+                        {
+                          "type": "relation",
+                          "name": "internalLink",
+                          "value": "DSkl8C325tEC",
+                          "isInheritable": false,
+                          "position": 10
+                        },
+                        {
+                          "type": "relation",
+                          "name": "internalLink",
+                          "value": "tM3rIZQzlum4",
+                          "isInheritable": false,
+                          "position": 20
+                        },
+                        {
+                          "type": "label",
+                          "name": "iconClass",
+                          "value": "bx bx-table",
+                          "isInheritable": false,
+                          "position": 10
+                        },
+                        {
+                          "type": "label",
+                          "name": "shareAlias",
+                          "value": "attributes",
+                          "isInheritable": false,
+                          "position": 40
+                        },
+                        {
+                          "type": "label",
+                          "name": "originalHelpNoteId",
+                          "value": "_help_ciL84vNBNi9y",
+                          "isInheritable": false,
+                          "position": 50
+                        },
+                        {
+                          "type": "label",
+                          "name": "helpDoc",
+                          "value": "zh",
+                          "isInheritable": false,
+                          "position": 60
+                        }
+                      ],
+                      "format": "markdown",
+                      "dataFileName": "attributes.md",
+                      "attachments": [],
+                      "children": []
+                    },
+                    {
+                      "isClone": false,
+                      "noteId": "_zh_RW4lqkF2",
+                      "notePath": [
+                        "jdjRLhLV3TtI",
+                        "MhwWMgxwDTZL",
+                        "pRZhrVIGCbMu",
+                        "vNMojjUN76jc",
+                        "VIcWnKGs0sMh"
+                      ],
+                      "title": "blobs",
+                      "notePosition": 40,
+                      "prefix": null,
+                      "isExpanded": false,
+                      "type": "text",
+                      "mime": "text/html",
+                      "attributes": [
+                        {
+                          "type": "label",
+                          "name": "iconClass",
+                          "value": "bx bx-table",
+                          "isInheritable": false,
+                          "position": 10
+                        },
+                        {
+                          "type": "label",
+                          "name": "shareAlias",
+                          "value": "blobs",
+                          "isInheritable": false,
+                          "position": 20
+                        },
+                        {
+                          "type": "label",
+                          "name": "originalHelpNoteId",
+                          "value": "_help_VIcWnKGs0sMh",
+                          "isInheritable": false,
+                          "position": 30
+                        },
+                        {
+                          "type": "label",
+                          "name": "helpDoc",
+                          "value": "zh",
+                          "isInheritable": false,
+                          "position": 40
+                        }
+                      ],
+                      "format": "markdown",
+                      "dataFileName": "blobs.md",
+                      "attachments": [],
+                      "children": []
+                    },
+                    {
+                      "isClone": false,
+                      "noteId": "_zh_VH8hhYT2",
+                      "notePath": [
+                        "jdjRLhLV3TtI",
+                        "MhwWMgxwDTZL",
+                        "pRZhrVIGCbMu",
+                        "vNMojjUN76jc",
+                        "GskLPkgY5n6E"
+                      ],
+                      "title": "branches",
+                      "notePosition": 50,
+                      "prefix": null,
+                      "isExpanded": false,
+                      "type": "text",
+                      "mime": "text/html",
+                      "attributes": [
+                        {
+                          "type": "relation",
+                          "name": "internalLink",
+                          "value": "DSkl8C325tEC",
+                          "isInheritable": false,
+                          "position": 10
+                        },
+                        {
+                          "type": "relation",
+                          "name": "internalLink",
+                          "value": "h8AsuFjSD4fB",
+                          "isInheritable": false,
+                          "position": 20
+                        },
+                        {
+                          "type": "relation",
+                          "name": "internalLink",
+                          "value": "tM3rIZQzlum4",
+                          "isInheritable": false,
+                          "position": 30
+                        },
+                        {
+                          "type": "label",
+                          "name": "iconClass",
+                          "value": "bx bx-table",
+                          "isInheritable": false,
+                          "position": 10
+                        },
+                        {
+                          "type": "label",
+                          "name": "shareAlias",
+                          "value": "branches",
+                          "isInheritable": false,
+                          "position": 40
+                        },
+                        {
+                          "type": "label",
+                          "name": "originalHelpNoteId",
+                          "value": "_help_GskLPkgY5n6E",
+                          "isInheritable": false,
+                          "position": 50
+                        },
+                        {
+                          "type": "label",
+                          "name": "helpDoc",
+                          "value": "zh",
+                          "isInheritable": false,
+                          "position": 60
+                        }
+                      ],
+                      "format": "markdown",
+                      "dataFileName": "branches.md",
+                      "attachments": [],
+                      "children": []
+                    },
+                    {
+                      "isClone": false,
+                      "noteId": "_zh_icAl12VG",
+                      "notePath": [
+                        "jdjRLhLV3TtI",
+                        "MhwWMgxwDTZL",
+                        "pRZhrVIGCbMu",
+                        "vNMojjUN76jc",
+                        "ohhExR078MPU"
+                      ],
+                      "title": "entity_changes",
+                      "notePosition": 51,
+                      "prefix": null,
+                      "isExpanded": false,
+                      "type": "text",
+                      "mime": "text/html",
+                      "attributes": [
+                        {
+                          "type": "label",
+                          "name": "iconClass",
+                          "value": "bx bx-table",
+                          "isInheritable": false,
+                          "position": 10
+                        },
+                        {
+                          "type": "label",
+                          "name": "shareAlias",
+                          "value": "entity-changes",
+                          "isInheritable": false,
+                          "position": 20
+                        },
+                        {
+                          "type": "label",
+                          "name": "originalHelpNoteId",
+                          "value": "_help_ohhExR078MPU",
+                          "isInheritable": false,
+                          "position": 30
+                        },
+                        {
+                          "type": "label",
+                          "name": "helpDoc",
+                          "value": "zh",
+                          "isInheritable": false,
+                          "position": 40
+                        }
+                      ],
+                      "format": "markdown",
+                      "dataFileName": "entity_changes.md",
+                      "attachments": [],
+                      "children": []
+                    },
+                    {
+                      "isClone": false,
+                      "noteId": "_zh_HSI8BcLQ",
+                      "notePath": [
+                        "jdjRLhLV3TtI",
+                        "MhwWMgxwDTZL",
+                        "pRZhrVIGCbMu",
+                        "vNMojjUN76jc",
+                        "bRqbIg633nCs"
+                      ],
+                      "title": "etapi_tokens",
+                      "notePosition": 52,
+                      "prefix": null,
+                      "isExpanded": false,
+                      "type": "text",
+                      "mime": "text/html",
+                      "attributes": [
+                        {
+                          "type": "relation",
+                          "name": "internalLink",
+                          "value": "tM3rIZQzlum4",
+                          "isInheritable": false,
+                          "position": 10
+                        },
+                        {
+                          "type": "label",
+                          "name": "iconClass",
+                          "value": "bx bx-table",
+                          "isInheritable": false,
+                          "position": 10
+                        },
+                        {
+                          "type": "label",
+                          "name": "shareAlias",
+                          "value": "etapi-tokens",
+                          "isInheritable": false,
+                          "position": 20
+                        },
+                        {
+                          "type": "label",
+                          "name": "originalHelpNoteId",
+                          "value": "_help_bRqbIg633nCs",
+                          "isInheritable": false,
+                          "position": 30
+                        },
+                        {
+                          "type": "label",
+                          "name": "helpDoc",
+                          "value": "zh",
+                          "isInheritable": false,
+                          "position": 40
+                        }
+                      ],
+                      "format": "markdown",
+                      "dataFileName": "etapi_tokens.md",
+                      "attachments": [],
+                      "children": []
+                    },
+                    {
+                      "isClone": false,
+                      "noteId": "_zh_fnpBxbnD",
+                      "notePath": [
+                        "jdjRLhLV3TtI",
+                        "MhwWMgxwDTZL",
+                        "pRZhrVIGCbMu",
+                        "vNMojjUN76jc",
+                        "DSkl8C325tEC"
+                      ],
+                      "title": "笔记",
+                      "notePosition": 53,
+                      "prefix": null,
+                      "isExpanded": false,
+                      "type": "text",
+                      "mime": "text/html",
+                      "attributes": [
+                        {
+                          "type": "relation",
+                          "name": "internalLink",
+                          "value": "UvXpeSqfYc6d",
+                          "isInheritable": false,
+                          "position": 10
+                        },
+                        {
+                          "type": "relation",
+                          "name": "internalLink",
+                          "value": "VIcWnKGs0sMh",
+                          "isInheritable": false,
+                          "position": 20
+                        },
+                        {
+                          "type": "relation",
+                          "name": "internalLink",
+                          "value": "tM3rIZQzlum4",
+                          "isInheritable": false,
+                          "position": 30
+                        },
+                        {
+                          "type": "label",
+                          "name": "iconClass",
+                          "value": "bx bx-table",
+                          "isInheritable": false,
+                          "position": 10
+                        },
+                        {
+                          "type": "label",
+                          "name": "shareAlias",
+                          "value": "notes",
+                          "isInheritable": false,
+                          "position": 40
+                        },
+                        {
+                          "type": "label",
+                          "name": "originalHelpNoteId",
+                          "value": "_help_DSkl8C325tEC",
+                          "isInheritable": false,
+                          "position": 50
+                        },
+                        {
+                          "type": "label",
+                          "name": "helpDoc",
+                          "value": "zh",
+                          "isInheritable": false,
+                          "position": 60
+                        }
+                      ],
+                      "format": "markdown",
+                      "dataFileName": "notes.md",
+                      "attachments": [],
+                      "children": []
+                    },
+                    {
+                      "isClone": false,
+                      "noteId": "_zh_yX1WHMxv",
+                      "notePath": [
+                        "jdjRLhLV3TtI",
+                        "MhwWMgxwDTZL",
+                        "pRZhrVIGCbMu",
+                        "vNMojjUN76jc",
+                        "4oeftEmy77Bt"
+                      ],
+                      "title": "选项",
+                      "notePosition": 54,
+                      "prefix": null,
+                      "isExpanded": false,
+                      "type": "text",
+                      "mime": "text/html",
+                      "attributes": [
+                        {
+                          "type": "label",
+                          "name": "iconClass",
+                          "value": "bx bx-table",
+                          "isInheritable": false,
+                          "position": 10
+                        },
+                        {
+                          "type": "label",
+                          "name": "shareAlias",
+                          "value": "options",
+                          "isInheritable": false,
+                          "position": 20
+                        },
+                        {
+                          "type": "label",
+                          "name": "originalHelpNoteId",
+                          "value": "_help_4oeftEmy77Bt",
+                          "isInheritable": false,
+                          "position": 30
+                        },
+                        {
+                          "type": "label",
+                          "name": "helpDoc",
+                          "value": "zh",
+                          "isInheritable": false,
+                          "position": 40
+                        }
+                      ],
+                      "format": "markdown",
+                      "dataFileName": "options.md",
+                      "attachments": [],
+                      "children": []
+                    },
+                    {
+                      "isClone": false,
+                      "noteId": "_zh_M9Sf7Qlr",
+                      "notePath": [
+                        "jdjRLhLV3TtI",
+                        "MhwWMgxwDTZL",
+                        "pRZhrVIGCbMu",
+                        "vNMojjUN76jc",
+                        "VyFirdgAOoh5"
+                      ],
+                      "title": "recent_notes",
+                      "notePosition": 55,
+                      "prefix": null,
+                      "isExpanded": false,
+                      "type": "text",
+                      "mime": "text/html",
+                      "attributes": [
+                        {
+                          "type": "relation",
+                          "name": "internalLink",
+                          "value": "DSkl8C325tEC",
+                          "isInheritable": false,
+                          "position": 10
+                        },
+                        {
+                          "type": "label",
+                          "name": "iconClass",
+                          "value": "bx bx-table",
+                          "isInheritable": false,
+                          "position": 10
+                        },
+                        {
+                          "type": "label",
+                          "name": "shareAlias",
+                          "value": "recent-notes",
+                          "isInheritable": false,
+                          "position": 20
+                        },
+                        {
+                          "type": "label",
+                          "name": "originalHelpNoteId",
+                          "value": "_help_VyFirdgAOoh5",
+                          "isInheritable": false,
+                          "position": 30
+                        },
+                        {
+                          "type": "label",
+                          "name": "helpDoc",
+                          "value": "zh",
+                          "isInheritable": false,
+                          "position": 40
+                        }
+                      ],
+                      "format": "markdown",
+                      "dataFileName": "recent_notes.md",
+                      "attachments": [],
+                      "children": []
+                    },
+                    {
+                      "isClone": false,
+                      "noteId": "_zh_0WdJhYgS",
+                      "notePath": [
+                        "jdjRLhLV3TtI",
+                        "MhwWMgxwDTZL",
+                        "pRZhrVIGCbMu",
+                        "vNMojjUN76jc",
+                        "s7ZBiaJVNumK"
+                      ],
+                      "title": "修订",
+                      "notePosition": 56,
+                      "prefix": null,
+                      "isExpanded": false,
+                      "type": "text",
+                      "mime": "text/html",
+                      "attributes": [
+                        {
+                          "type": "relation",
+                          "name": "internalLink",
+                          "value": "DSkl8C325tEC",
+                          "isInheritable": false,
+                          "position": 10
+                        },
+                        {
+                          "type": "relation",
+                          "name": "internalLink",
+                          "value": "UvXpeSqfYc6d",
+                          "isInheritable": false,
+                          "position": 20
+                        },
+                        {
+                          "type": "relation",
+                          "name": "internalLink",
+                          "value": "VIcWnKGs0sMh",
+                          "isInheritable": false,
+                          "position": 30
+                        },
+                        {
+                          "type": "label",
+                          "name": "iconClass",
+                          "value": "bx bx-table",
+                          "isInheritable": false,
+                          "position": 10
+                        },
+                        {
+                          "type": "label",
+                          "name": "shareAlias",
+                          "value": "revisions",
+                          "isInheritable": false,
+                          "position": 50
+                        },
+                        {
+                          "type": "label",
+                          "name": "originalHelpNoteId",
+                          "value": "_help_s7ZBiaJVNumK",
+                          "isInheritable": false,
+                          "position": 60
+                        },
+                        {
+                          "type": "label",
+                          "name": "helpDoc",
+                          "value": "zh",
+                          "isInheritable": false,
+                          "position": 70
+                        }
+                      ],
+                      "format": "markdown",
+                      "dataFileName": "revisions.md",
+                      "attachments": [],
+                      "children": []
+                    },
+                    {
+                      "isClone": false,
+                      "noteId": "_zh_nPEopwz7",
+                      "notePath": [
+                        "jdjRLhLV3TtI",
+                        "MhwWMgxwDTZL",
+                        "pRZhrVIGCbMu",
+                        "vNMojjUN76jc",
+                        "6DG1au6rgOTl"
+                      ],
+                      "title": "会话",
+                      "notePosition": 66,
+                      "prefix": null,
+                      "isExpanded": false,
+                      "type": "text",
+                      "mime": "text/html",
+                      "attributes": [
+                        {
+                          "type": "label",
+                          "name": "iconClass",
+                          "value": "bx bx-table",
+                          "isInheritable": false,
+                          "position": 20
+                        },
+                        {
+                          "type": "label",
+                          "name": "shareAlias",
+                          "value": "sessions",
+                          "isInheritable": false,
+                          "position": 30
+                        },
+                        {
+                          "type": "label",
+                          "name": "originalHelpNoteId",
+                          "value": "_help_6DG1au6rgOTl",
+                          "isInheritable": false,
+                          "position": 40
+                        },
+                        {
+                          "type": "label",
+                          "name": "helpDoc",
+                          "value": "zh",
+                          "isInheritable": false,
+                          "position": 50
+                        }
+                      ],
+                      "format": "markdown",
+                      "dataFileName": "sessions.md",
+                      "attachments": [],
+                      "children": []
+                    },
+                    {
+                      "isClone": false,
+                      "noteId": "_zh_kP2aATiH",
+                      "notePath": [
+                        "jdjRLhLV3TtI",
+                        "MhwWMgxwDTZL",
+                        "pRZhrVIGCbMu",
+                        "vNMojjUN76jc",
+                        "zWY2LKmas9os"
+                      ],
+                      "title": "用户数据",
+                      "notePosition": 76,
+                      "prefix": null,
+                      "isExpanded": false,
+                      "type": "text",
+                      "mime": "text/html",
+                      "attributes": [
+                        {
+                          "type": "label",
+                          "name": "iconClass",
+                          "value": "bx bx-table",
+                          "isInheritable": false,
+                          "position": 20
+                        },
+                        {
+                          "type": "label",
+                          "name": "originalHelpNoteId",
+                          "value": "_help_zWY2LKmas9os",
+                          "isInheritable": false,
+                          "position": 30
+                        },
+                        {
+                          "type": "label",
+                          "name": "helpDoc",
+                          "value": "zh",
+                          "isInheritable": false,
+                          "position": 40
+                        }
+                      ],
+                      "format": "markdown",
+                      "dataFileName": "user_data.md",
+                      "attachments": [],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "isClone": false,
+              "noteId": "_zh_3g7Mwxlw",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "MhwWMgxwDTZL",
+                "Wxn82Em8B7U5"
+              ],
+              "title": "API",
+              "notePosition": 50,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "api",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_Wxn82Em8B7U5",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 40
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "APIs.md",
+              "attachments": [],
+              "children": []
+            },
+            {
+              "isClone": false,
+              "noteId": "_zh_JDB9q20v",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "MhwWMgxwDTZL",
+                "Vk4zD1Iirarg"
+              ],
+              "title": "架构决策记录",
+              "notePosition": 60,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "relation",
+                  "name": "internalLink",
+                  "value": "Jg7clqogFOyD",
+                  "isInheritable": false,
+                  "position": 10
+                },
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "adr",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_Vk4zD1Iirarg",
+                  "isInheritable": false,
+                  "position": 40
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 50
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Arhitecture Decision Records.md",
+              "attachments": [],
+              "children": []
+            },
+            {
+              "isClone": false,
+              "noteId": "_zh_FQP7Zxsd",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "MhwWMgxwDTZL",
+                "RHbKw3xiwk3S"
+              ],
+              "title": "安全",
+              "notePosition": 80,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "security",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_RHbKw3xiwk3S",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 40
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Security.md",
+              "attachments": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "isClone": false,
+          "noteId": "_zh_rhb8pll9",
+          "notePath": [
+            "jdjRLhLV3TtI",
+            "zdQzavvHDl1k"
+          ],
+          "title": "文档",
+          "notePosition": 300,
+          "prefix": null,
+          "isExpanded": false,
+          "type": "text",
+          "mime": "text/html",
+          "attributes": [
+            {
+              "type": "relation",
+              "name": "internalLink",
+              "value": "T2W7WCZrYZBU",
+              "isInheritable": false,
+              "position": 10
+            },
+            {
+              "type": "label",
+              "name": "shareAlias",
+              "value": "documentation",
+              "isInheritable": false,
+              "position": 20
+            },
+            {
+              "type": "label",
+              "name": "iconClass",
+              "value": "bx bx-book-open",
+              "isInheritable": false,
+              "position": 30
+            },
+            {
+              "type": "label",
+              "name": "originalHelpNoteId",
+              "value": "_help_zdQzavvHDl1k",
+              "isInheritable": false,
+              "position": 40
+            },
+            {
+              "type": "label",
+              "name": "helpDoc",
+              "value": "zh",
+              "isInheritable": false,
+              "position": 50
+            }
+          ],
+          "format": "markdown",
+          "dataFileName": "Documentation.md",
+          "attachments": [],
+          "dirFileName": "Documentation",
+          "children": [
+            {
+              "isClone": false,
+              "noteId": "_zh_6y26A378",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "zdQzavvHDl1k",
+                "LjqM0VUL1CrU"
+              ],
+              "title": "应用程序中的文档引用",
+              "notePosition": 10,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "doc-references",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_LjqM0VUL1CrU",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 40
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Documentation references in the application.md",
+              "attachments": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "isClone": false,
+          "noteId": "_zh_rhcHjjp8",
+          "notePath": [
+            "jdjRLhLV3TtI",
+            "a0mkxxB4Uvbf"
+          ],
+          "title": "构建",
+          "notePosition": 310,
+          "prefix": null,
+          "isExpanded": false,
+          "type": "text",
+          "mime": "text/html",
+          "attributes": [
+            {
+              "type": "label",
+              "name": "shareAlias",
+              "value": "building",
+              "isInheritable": false,
+              "position": 20
+            },
+            {
+              "type": "label",
+              "name": "iconClass",
+              "value": "bx bx-terminal",
+              "isInheritable": false,
+              "position": 30
+            },
+            {
+              "type": "label",
+              "name": "originalHelpNoteId",
+              "value": "_help_a0mkxxB4Uvbf",
+              "isInheritable": false,
+              "position": 40
+            },
+            {
+              "type": "label",
+              "name": "helpDoc",
+              "value": "zh",
+              "isInheritable": false,
+              "position": 50
+            }
+          ],
+          "format": "markdown",
+          "attachments": [],
+          "dirFileName": "Building",
+          "children": [
+            {
+              "isClone": false,
+              "noteId": "_zh_EO3JCpx3",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "a0mkxxB4Uvbf",
+                "czgXkoEYwclZ"
+              ],
+              "title": "运行开发构建",
+              "notePosition": 10,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "relation",
+                  "name": "internalLink",
+                  "value": "T2W7WCZrYZBU",
+                  "isInheritable": false,
+                  "position": 10
+                },
+                {
+                  "type": "relation",
+                  "name": "internalLink",
+                  "value": "mXFYlhuEr1mZ",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "dev-build",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_czgXkoEYwclZ",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 40
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Running a development build.md",
+              "attachments": [],
+              "children": []
+            },
+            {
+              "isClone": false,
+              "noteId": "_zh_SEq39bi0",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "a0mkxxB4Uvbf",
+                "mXFYlhuEr1mZ"
+              ],
+              "title": "Docker",
+              "notePosition": 20,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "docker",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "iconClass",
+                  "value": "bx bxl-docker",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_mXFYlhuEr1mZ",
+                  "isInheritable": false,
+                  "position": 40
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 50
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Docker.md",
+              "attachments": [],
+              "children": []
+            },
+            {
+              "isClone": false,
+              "noteId": "_zh_2gJAXkWL",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "a0mkxxB4Uvbf",
+                "aGlhNBEA9wwo"
+              ],
+              "title": "构建信息",
+              "notePosition": 30,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "build-info",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "iconClass",
+                  "value": "bx bx-info-circle",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_aGlhNBEA9wwo",
+                  "isInheritable": false,
+                  "position": 40
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 50
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Build information.md",
+              "attachments": [],
+              "children": []
+            },
+            {
+              "isClone": false,
+              "noteId": "_zh_3nmpswJc",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "a0mkxxB4Uvbf",
+                "fI16A7NrT713"
+              ],
+              "title": "热重载 (HMR)",
+              "notePosition": 40,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "live-reload",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_fI16A7NrT713",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 40
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Live reload (HMR).md",
+              "attachments": [],
+              "children": []
+            },
+            {
+              "isClone": false,
+              "noteId": "_zh_em3da5Vz",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "a0mkxxB4Uvbf",
+                "PXzm2t3sCdsP"
+              ],
+              "title": "本地构建交付物",
+              "notePosition": 50,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "build-deliveries",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "iconClass",
+                  "value": "bx bx-package",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_PXzm2t3sCdsP",
+                  "isInheritable": false,
+                  "position": 40
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 50
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Build deliveries locally.md",
+              "attachments": [],
+              "children": []
+            },
+            {
+              "isClone": false,
+              "noteId": "_zh_ZudjHpMJ",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "a0mkxxB4Uvbf",
+                "4nwtTJyjNDKd"
+              ],
+              "title": "发布新版本",
+              "notePosition": 70,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "relation",
+                  "name": "internalLink",
+                  "value": "ccIoz7nqgDRK",
+                  "isInheritable": false,
+                  "position": 10
+                },
+                {
+                  "type": "relation",
+                  "name": "internalLink",
+                  "value": "zdQzavvHDl1k",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "iconClass",
+                  "value": "bx bx-rocket",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "releasing",
+                  "isInheritable": false,
+                  "position": 40
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_4nwtTJyjNDKd",
+                  "isInheritable": false,
+                  "position": 50
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 60
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Releasing a new version.md",
+              "attachments": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "isClone": false,
+          "noteId": "_zh_8IrPH8jF",
+          "notePath": [
+            "jdjRLhLV3TtI",
+            "qalhAaJoQ7AN"
+          ],
+          "title": "依赖项",
+          "notePosition": 330,
+          "prefix": null,
+          "isExpanded": false,
+          "type": "text",
+          "mime": "text/html",
+          "attributes": [
+            {
+              "type": "label",
+              "name": "iconClass",
+              "value": "bx bxs-component",
+              "isInheritable": false,
+              "position": 20
+            },
+            {
+              "type": "label",
+              "name": "shareAlias",
+              "value": "dependencies",
+              "isInheritable": false,
+              "position": 30
+            },
+            {
+              "type": "label",
+              "name": "originalHelpNoteId",
+              "value": "_help_qalhAaJoQ7AN",
+              "isInheritable": false,
+              "position": 40
+            },
+            {
+              "type": "label",
+              "name": "helpDoc",
+              "value": "zh",
+              "isInheritable": false,
+              "position": 50
+            }
+          ],
+          "format": "markdown",
+          "attachments": [],
+          "dirFileName": "Dependencies",
+          "children": [
+            {
+              "isClone": false,
+              "noteId": "_zh_FIWz0M22",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "qalhAaJoQ7AN",
+                "fa6hAJ9Ith3A"
+              ],
+              "title": "按依赖检查",
+              "notePosition": 10,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "relation",
+                  "name": "internalLink",
+                  "value": "Xfi1ScuBTKJf",
+                  "isInheritable": false,
+                  "position": 10
+                },
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "updating-deps",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_fa6hAJ9Ith3A",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 40
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Per-dependency checks.md",
+              "attachments": [],
+              "dirFileName": "Per-dependency checks",
+              "children": [
+                {
+                  "isClone": false,
+                  "noteId": "_zh_LdJGVQvr",
+                  "notePath": [
+                    "jdjRLhLV3TtI",
+                    "qalhAaJoQ7AN",
+                    "fa6hAJ9Ith3A",
+                    "Xfi1ScuBTKJf"
+                  ],
+                  "title": "bettersqlite 二进制文件",
+                  "notePosition": 10,
+                  "prefix": null,
+                  "isExpanded": false,
+                  "type": "text",
+                  "mime": "text/html",
+                  "attributes": [
+                    {
+                      "type": "label",
+                      "name": "shareAlias",
+                      "value": "bettersqlite-binaries",
+                      "isInheritable": false,
+                      "position": 20
+                    },
+                    {
+                      "type": "label",
+                      "name": "originalHelpNoteId",
+                      "value": "_help_Xfi1ScuBTKJf",
+                      "isInheritable": false,
+                      "position": 30
+                    },
+                    {
+                      "type": "label",
+                      "name": "helpDoc",
+                      "value": "zh",
+                      "isInheritable": false,
+                      "position": 40
+                    }
+                  ],
+                  "format": "markdown",
+                  "dataFileName": "bettersqlite binaries.md",
+                  "attachments": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "isClone": false,
+              "noteId": "_zh_WzLV7uUi",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "qalhAaJoQ7AN",
+                "Jg7clqogFOyD"
+              ],
+              "title": "CKEditor",
+              "notePosition": 20,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "relation",
+                  "name": "internalLink",
+                  "value": "BRhQZHgwaGyw",
+                  "isInheritable": false,
+                  "position": 10
+                },
+                {
+                  "type": "label",
+                  "name": "iconClass",
+                  "value": "bx bx-package",
+                  "isInheritable": false,
+                  "position": 10
+                },
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "ckeditor",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_Jg7clqogFOyD",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 40
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "CKEditor.md",
+              "attachments": [],
+              "dirFileName": "CKEditor",
+              "children": [
+                {
+                  "isClone": false,
+                  "noteId": "_zh_p776Fj11",
+                  "notePath": [
+                    "jdjRLhLV3TtI",
+                    "qalhAaJoQ7AN",
+                    "Jg7clqogFOyD",
+                    "BRhQZHgwaGyw"
+                  ],
+                  "title": "插件迁移指南",
+                  "notePosition": 10,
+                  "prefix": null,
+                  "isExpanded": false,
+                  "type": "text",
+                  "mime": "text/html",
+                  "attributes": [
+                    {
+                      "type": "label",
+                      "name": "shareAlias",
+                      "value": "plugin-migration",
+                      "isInheritable": false,
+                      "position": 20
+                    },
+                    {
+                      "type": "label",
+                      "name": "originalHelpNoteId",
+                      "value": "_help_BRhQZHgwaGyw",
+                      "isInheritable": false,
+                      "position": 30
+                    },
+                    {
+                      "type": "label",
+                      "name": "helpDoc",
+                      "value": "zh",
+                      "isInheritable": false,
+                      "position": 40
+                    }
+                  ],
+                  "format": "markdown",
+                  "dataFileName": "Plugin migration guide.md",
+                  "attachments": [],
+                  "children": []
+                },
+                {
+                  "isClone": false,
+                  "noteId": "_zh_BQSvhAHw",
+                  "notePath": [
+                    "jdjRLhLV3TtI",
+                    "qalhAaJoQ7AN",
+                    "Jg7clqogFOyD",
+                    "5gBYmUqiupBl"
+                  ],
+                  "title": "与上游的差异",
+                  "notePosition": 20,
+                  "prefix": null,
+                  "isExpanded": false,
+                  "type": "text",
+                  "mime": "text/html",
+                  "attributes": [
+                    {
+                      "type": "relation",
+                      "name": "internalLink",
+                      "value": "lY19SLxUMj3J",
+                      "isInheritable": false,
+                      "position": 10
+                    },
+                    {
+                      "type": "label",
+                      "name": "fullContentWidth",
+                      "value": "",
+                      "isInheritable": false,
+                      "position": 10
+                    },
+                    {
+                      "type": "label",
+                      "name": "shareAlias",
+                      "value": "differences-from-upstream",
+                      "isInheritable": false,
+                      "position": 20
+                    },
+                    {
+                      "type": "label",
+                      "name": "originalHelpNoteId",
+                      "value": "_help_5gBYmUqiupBl",
+                      "isInheritable": false,
+                      "position": 30
+                    },
+                    {
+                      "type": "label",
+                      "name": "helpDoc",
+                      "value": "zh",
+                      "isInheritable": false,
+                      "position": 40
+                    }
+                  ],
+                  "format": "markdown",
+                  "dataFileName": "Differences from upstream.md",
+                  "attachments": [],
+                  "children": []
+                },
+                {
+                  "isClone": false,
+                  "noteId": "_zh_4akn4PkY",
+                  "notePath": [
+                    "jdjRLhLV3TtI",
+                    "qalhAaJoQ7AN",
+                    "Jg7clqogFOyD",
+                    "lY19SLxUMj3J"
+                  ],
+                  "title": "ckeditor5-math",
+                  "notePosition": 30,
+                  "prefix": null,
+                  "isExpanded": false,
+                  "type": "text",
+                  "mime": "text/html",
+                  "attributes": [
+                    {
+                      "type": "label",
+                      "name": "shareAlias",
+                      "value": "ckeditor5-math",
+                      "isInheritable": false,
+                      "position": 40
+                    },
+                    {
+                      "type": "label",
+                      "name": "originalHelpNoteId",
+                      "value": "_help_lY19SLxUMj3J",
+                      "isInheritable": false,
+                      "position": 50
+                    },
+                    {
+                      "type": "label",
+                      "name": "helpDoc",
+                      "value": "zh",
+                      "isInheritable": false,
+                      "position": 60
+                    }
+                  ],
+                  "format": "markdown",
+                  "dataFileName": "ckeditor5-math.md",
+                  "attachments": [
+                    {
+                      "attachmentId": "UlSZYhYX8Kfj",
+                      "title": "image.png",
+                      "role": "image",
+                      "mime": "image/png",
+                      "position": 10,
+                      "dataFileName": "ckeditor5-math_image.png"
+                    }
+                  ],
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "isClone": false,
+          "noteId": "_zh_F2BCFCOl",
+          "notePath": [
+            "jdjRLhLV3TtI",
+            "yeqU0zo0ZQ83"
+          ],
+          "title": "概念",
+          "notePosition": 340,
+          "prefix": null,
+          "isExpanded": false,
+          "type": "text",
+          "mime": "text/html",
+          "attributes": [
+            {
+              "type": "label",
+              "name": "shareAlias",
+              "value": "concepts",
+              "isInheritable": false,
+              "position": 10
+            },
+            {
+              "type": "label",
+              "name": "iconClass",
+              "value": "bx bx-sitemap",
+              "isInheritable": false,
+              "position": 20
+            },
+            {
+              "type": "label",
+              "name": "sorted",
+              "value": "",
+              "isInheritable": false,
+              "position": 30
+            },
+            {
+              "type": "label",
+              "name": "originalHelpNoteId",
+              "value": "_help_yeqU0zo0ZQ83",
+              "isInheritable": false,
+              "position": 40
+            },
+            {
+              "type": "label",
+              "name": "helpDoc",
+              "value": "zh",
+              "isInheritable": false,
+              "position": 50
+            }
+          ],
+          "format": "markdown",
+          "attachments": [],
+          "dirFileName": "Concepts",
+          "children": [
+            {
+              "isClone": false,
+              "noteId": "_zh_Ez5zz7PN",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "yeqU0zo0ZQ83",
+                "3mz4ZYhi9Cy8"
+              ],
+              "title": "反链",
+              "notePosition": 10,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "backlinks",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "iconClass",
+                  "value": "bx bx-link-alt",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_3mz4ZYhi9Cy8",
+                  "isInheritable": false,
+                  "position": 40
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 50
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Backlinks.md",
+              "attachments": [],
+              "children": []
+            },
+            {
+              "isClone": false,
+              "noteId": "_zh_aeuJ4dT9",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "yeqU0zo0ZQ83",
+                "h8AsuFjSD4fB"
+              ],
+              "title": "分支前缀",
+              "notePosition": 20,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "branch-prefix",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_h8AsuFjSD4fB",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 40
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Branch prefixes.md",
+              "attachments": [],
+              "children": []
+            },
+            {
+              "isClone": false,
+              "noteId": "_zh_swY8sIrU",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "yeqU0zo0ZQ83",
+                "6Yms5izbd0GF"
+              ],
+              "title": "缓存",
+              "notePosition": 30,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "iconClass",
+                  "value": "bx bx-microchip",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "cache",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_6Yms5izbd0GF",
+                  "isInheritable": false,
+                  "position": 40
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 50
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Cache.md",
+              "attachments": [],
+              "children": []
+            },
+            {
+              "isClone": false,
+              "noteId": "_zh_hDKvUiFK",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "yeqU0zo0ZQ83",
+                "oqg9OpK8xfcm"
+              ],
+              "title": "CI",
+              "notePosition": 40,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "ci",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_oqg9OpK8xfcm",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 40
+                }
+              ],
+              "format": "markdown",
+              "attachments": [],
+              "dirFileName": "CI",
+              "children": [
+                {
+                  "isClone": false,
+                  "noteId": "_zh_fYtQxHcg",
+                  "notePath": [
+                    "jdjRLhLV3TtI",
+                    "yeqU0zo0ZQ83",
+                    "oqg9OpK8xfcm",
+                    "IxkDdjTogO18"
+                  ],
+                  "title": "主分支",
+                  "notePosition": 10,
+                  "prefix": null,
+                  "isExpanded": false,
+                  "type": "text",
+                  "mime": "text/html",
+                  "attributes": [
+                    {
+                      "type": "relation",
+                      "name": "internalLink",
+                      "value": "PXzm2t3sCdsP",
+                      "isInheritable": false,
+                      "position": 10
+                    },
+                    {
+                      "type": "label",
+                      "name": "shareAlias",
+                      "value": "main",
+                      "isInheritable": false,
+                      "position": 20
+                    },
+                    {
+                      "type": "label",
+                      "name": "originalHelpNoteId",
+                      "value": "_help_IxkDdjTogO18",
+                      "isInheritable": false,
+                      "position": 30
+                    },
+                    {
+                      "type": "label",
+                      "name": "helpDoc",
+                      "value": "zh",
+                      "isInheritable": false,
+                      "position": 40
+                    }
+                  ],
+                  "format": "markdown",
+                  "dataFileName": "Main.md",
+                  "attachments": [
+                    {
+                      "attachmentId": "c3aGEk60ZR2Q",
+                      "title": "image.png",
+                      "role": "image",
+                      "mime": "image/png",
+                      "position": 10,
+                      "dataFileName": "Main_image.png"
+                    },
+                    {
+                      "attachmentId": "q9OGTAguCyWf",
+                      "title": "image.png",
+                      "role": "image",
+                      "mime": "image/png",
+                      "position": 10,
+                      "dataFileName": "1_Main_image.png"
+                    }
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "isClone": false,
+              "noteId": "_zh_DxUG77vc",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "yeqU0zo0ZQ83",
+                "tM3rIZQzlum4"
+              ],
+              "title": "已删除的笔记",
+              "notePosition": 50,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "deleted-notes",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "iconClass",
+                  "value": "bx bx-trash",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_tM3rIZQzlum4",
+                  "isInheritable": false,
+                  "position": 40
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 50
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Deleted notes.md",
+              "attachments": [],
+              "children": []
+            },
+            {
+              "isClone": false,
+              "noteId": "_zh_kip7vdOj",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "yeqU0zo0ZQ83",
+                "oLhKpfi2kGON"
+              ],
+              "title": "演示文档",
+              "notePosition": 60,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "demo-document",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "iconClass",
+                  "value": "bx bxs-file-archive",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_oLhKpfi2kGON",
+                  "isInheritable": false,
+                  "position": 40
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 50
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Demo document.md",
+              "attachments": [],
+              "children": []
+            },
+            {
+              "isClone": false,
+              "noteId": "_zh_xzIddtTm",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "yeqU0zo0ZQ83",
+                "TiUll0Osoaz6"
+              ],
+              "title": "实体",
+              "notePosition": 70,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "entities",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "iconClass",
+                  "value": "bx bxs-note",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_TiUll0Osoaz6",
+                  "isInheritable": false,
+                  "position": 40
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 50
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Entities.md",
+              "attachments": [],
+              "children": []
+            },
+            {
+              "isClone": false,
+              "noteId": "_zh_KqD0590F",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "yeqU0zo0ZQ83",
+                "UzRirf46Xi46"
+              ],
+              "title": "隐藏笔记",
+              "notePosition": 80,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "hidden-notes",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "iconClass",
+                  "value": "bx bx-low-vision",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_UzRirf46Xi46",
+                  "isInheritable": false,
+                  "position": 40
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 50
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Hidden notes.md",
+              "attachments": [],
+              "children": []
+            },
+            {
+              "isClone": false,
+              "noteId": "_zh_S9ueZJzY",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "yeqU0zo0ZQ83",
+                "m2W35hwSDUeh"
+              ],
+              "title": "图标",
+              "notePosition": 90,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "relation",
+                  "name": "internalLink",
+                  "value": "PXzm2t3sCdsP",
+                  "isInheritable": false,
+                  "position": 10
+                },
+                {
+                  "type": "relation",
+                  "name": "internalLink",
+                  "value": "oLhKpfi2kGON",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "icons",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_m2W35hwSDUeh",
+                  "isInheritable": false,
+                  "position": 40
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 50
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Icons.md",
+              "attachments": [],
+              "children": []
+            },
+            {
+              "isClone": false,
+              "noteId": "_zh_vZ3bZebM",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "yeqU0zo0ZQ83",
+                "TLXJwBDo8Rdv"
+              ],
+              "title": "国际化 / 翻译",
+              "notePosition": 100,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "relation",
+                  "name": "internalLink",
+                  "value": "ky5zpmxXZhhr",
+                  "isInheritable": false,
+                  "position": 10
+                },
+                {
+                  "type": "relation",
+                  "name": "internalLink",
+                  "value": "lXjOyKpUSKgE",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "iconClass",
+                  "value": "bx bx-globe",
+                  "isInheritable": false,
+                  "position": 10
+                },
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "i18n",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_TLXJwBDo8Rdv",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 40
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Internationalisation  Translations.md",
+              "attachments": [],
+              "dirFileName": "Internationalisation  Translations",
+              "children": [
+                {
+                  "isClone": false,
+                  "noteId": "_zh_AVDTT3sK",
+                  "notePath": [
+                    "jdjRLhLV3TtI",
+                    "yeqU0zo0ZQ83",
+                    "TLXJwBDo8Rdv",
+                    "ky5zpmxXZhhr"
+                  ],
+                  "title": "指南",
+                  "notePosition": 10,
+                  "prefix": null,
+                  "isExpanded": false,
+                  "type": "text",
+                  "mime": "text/html",
+                  "attributes": [
+                    {
+                      "type": "label",
+                      "name": "shareAlias",
+                      "value": "guidelines",
+                      "isInheritable": false,
+                      "position": 20
+                    },
+                    {
+                      "type": "label",
+                      "name": "originalHelpNoteId",
+                      "value": "_help_ky5zpmxXZhhr",
+                      "isInheritable": false,
+                      "position": 30
+                    },
+                    {
+                      "type": "label",
+                      "name": "helpDoc",
+                      "value": "zh",
+                      "isInheritable": false,
+                      "position": 40
+                    }
+                  ],
+                  "format": "markdown",
+                  "dataFileName": "Guidelines.md",
+                  "attachments": [],
+                  "children": []
+                },
+                {
+                  "isClone": false,
+                  "noteId": "_zh_mtXaLCuQ",
+                  "notePath": [
+                    "jdjRLhLV3TtI",
+                    "yeqU0zo0ZQ83",
+                    "TLXJwBDo8Rdv",
+                    "VTebBD3jZjdp"
+                  ],
+                  "title": "i18n-ally",
+                  "notePosition": 20,
+                  "prefix": null,
+                  "isExpanded": false,
+                  "type": "text",
+                  "mime": "text/html",
+                  "attributes": [
+                    {
+                      "type": "relation",
+                      "name": "internalLink",
+                      "value": "ky5zpmxXZhhr",
+                      "isInheritable": false,
+                      "position": 10
+                    },
+                    {
+                      "type": "label",
+                      "name": "shareAlias",
+                      "value": "i18n-ally",
+                      "isInheritable": false,
+                      "position": 20
+                    },
+                    {
+                      "type": "label",
+                      "name": "originalHelpNoteId",
+                      "value": "_help_VTebBD3jZjdp",
+                      "isInheritable": false,
+                      "position": 30
+                    },
+                    {
+                      "type": "label",
+                      "name": "helpDoc",
+                      "value": "zh",
+                      "isInheritable": false,
+                      "position": 40
+                    }
+                  ],
+                  "format": "markdown",
+                  "dataFileName": "i18n-ally.md",
+                  "attachments": [],
+                  "children": []
+                },
+                {
+                  "isClone": false,
+                  "noteId": "_zh_lZbgBffE",
+                  "notePath": [
+                    "jdjRLhLV3TtI",
+                    "yeqU0zo0ZQ83",
+                    "TLXJwBDo8Rdv",
+                    "KhDvxPlQQybs"
+                  ],
+                  "title": "服务器翻译",
+                  "notePosition": 30,
+                  "prefix": null,
+                  "isExpanded": false,
+                  "type": "text",
+                  "mime": "text/html",
+                  "attributes": [
+                    {
+                      "type": "label",
+                      "name": "shareAlias",
+                      "value": "server-translation",
+                      "isInheritable": false,
+                      "position": 20
+                    },
+                    {
+                      "type": "label",
+                      "name": "originalHelpNoteId",
+                      "value": "_help_KhDvxPlQQybs",
+                      "isInheritable": false,
+                      "position": 30
+                    },
+                    {
+                      "type": "label",
+                      "name": "helpDoc",
+                      "value": "zh",
+                      "isInheritable": false,
+                      "position": 40
+                    }
+                  ],
+                  "format": "markdown",
+                  "dataFileName": "Server translations.md",
+                  "attachments": [],
+                  "children": []
+                },
+                {
+                  "isClone": false,
+                  "noteId": "_zh_mhGrElzs",
+                  "notePath": [
+                    "jdjRLhLV3TtI",
+                    "yeqU0zo0ZQ83",
+                    "TLXJwBDo8Rdv",
+                    "lXjOyKpUSKgE"
+                  ],
+                  "title": "添加新语言环境",
+                  "notePosition": 40,
+                  "prefix": null,
+                  "isExpanded": false,
+                  "type": "text",
+                  "mime": "text/html",
+                  "attributes": [
+                    {
+                      "type": "label",
+                      "name": "shareAlias",
+                      "value": "new-locale",
+                      "isInheritable": false,
+                      "position": 20
+                    },
+                    {
+                      "type": "label",
+                      "name": "originalHelpNoteId",
+                      "value": "_help_lXjOyKpUSKgE",
+                      "isInheritable": false,
+                      "position": 30
+                    },
+                    {
+                      "type": "label",
+                      "name": "helpDoc",
+                      "value": "zh",
+                      "isInheritable": false,
+                      "position": 40
+                    }
+                  ],
+                  "format": "markdown",
+                  "dataFileName": "Adding a new locale.md",
+                  "attachments": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "isClone": false,
+              "noteId": "_zh_q3RespOZ",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "yeqU0zo0ZQ83",
+                "Usiyzn9C4WFv"
+              ],
+              "title": "启动器",
+              "notePosition": 110,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "launchers",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_Usiyzn9C4WFv",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 40
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Launchers.md",
+              "attachments": [],
+              "children": []
+            },
+            {
+              "isClone": false,
+              "noteId": "_zh_1KL7cSCw",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "yeqU0zo0ZQ83",
+                "qjQNyaYXSNWu"
+              ],
+              "title": "笔记修订",
+              "notePosition": 120,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "revisions",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "iconClass",
+                  "value": "bx bx-history",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_qjQNyaYXSNWu",
+                  "isInheritable": false,
+                  "position": 40
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 50
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Note Revisions.md",
+              "attachments": [],
+              "children": []
+            },
+            {
+              "isClone": false,
+              "noteId": "_zh_2Nesha3j",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "yeqU0zo0ZQ83",
+                "7RBJMqVz2EsJ"
+              ],
+              "title": "笔记类型",
+              "notePosition": 130,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "note-types",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_7RBJMqVz2EsJ",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 40
+                }
+              ],
+              "format": "markdown",
+              "attachments": [],
+              "dirFileName": "Note Types",
+              "children": [
+                {
+                  "isClone": false,
+                  "noteId": "_zh_43SMIu6I",
+                  "notePath": [
+                    "jdjRLhLV3TtI",
+                    "yeqU0zo0ZQ83",
+                    "7RBJMqVz2EsJ",
+                    "AdNRgGrYeTCy"
+                  ],
+                  "title": "添加新笔记类型",
+                  "notePosition": 10,
+                  "prefix": null,
+                  "isExpanded": false,
+                  "type": "text",
+                  "mime": "text/html",
+                  "attributes": [
+                    {
+                      "type": "label",
+                      "name": "shareAlias",
+                      "value": "new-note-type",
+                      "isInheritable": false,
+                      "position": 20
+                    },
+                    {
+                      "type": "label",
+                      "name": "originalHelpNoteId",
+                      "value": "_help_AdNRgGrYeTCy",
+                      "isInheritable": false,
+                      "position": 30
+                    },
+                    {
+                      "type": "label",
+                      "name": "helpDoc",
+                      "value": "zh",
+                      "isInheritable": false,
+                      "position": 40
+                    }
+                  ],
+                  "format": "markdown",
+                  "attachments": [],
+                  "dirFileName": "Adding a new note type",
+                  "children": [
+                    {
+                      "isClone": false,
+                      "noteId": "_zh_w4ErpIvG",
+                      "notePath": [
+                        "jdjRLhLV3TtI",
+                        "yeqU0zo0ZQ83",
+                        "7RBJMqVz2EsJ",
+                        "AdNRgGrYeTCy",
+                        "UFtOg3sLumZM"
+                      ],
+                      "title": "第一步",
+                      "notePosition": 10,
+                      "prefix": null,
+                      "isExpanded": false,
+                      "type": "text",
+                      "mime": "text/html",
+                      "attributes": [
+                        {
+                          "type": "relation",
+                          "name": "internalLink",
+                          "value": "lgFwLJT72mdf",
+                          "isInheritable": false,
+                          "position": 10
+                        },
+                        {
+                          "type": "relation",
+                          "name": "internalLink",
+                          "value": "oLhKpfi2kGON",
+                          "isInheritable": false,
+                          "position": 20
+                        },
+                        {
+                          "type": "label",
+                          "name": "shareAlias",
+                          "value": "first-steps",
+                          "isInheritable": false,
+                          "position": 30
+                        },
+                        {
+                          "type": "label",
+                          "name": "originalHelpNoteId",
+                          "value": "_help_UFtOg3sLumZM",
+                          "isInheritable": false,
+                          "position": 40
+                        },
+                        {
+                          "type": "label",
+                          "name": "helpDoc",
+                          "value": "zh",
+                          "isInheritable": false,
+                          "position": 50
+                        }
+                      ],
+                      "format": "markdown",
+                      "dataFileName": "First steps.md",
+                      "attachments": [],
+                      "dirFileName": "First steps",
+                      "children": [
+                        {
+                          "isClone": false,
+                          "noteId": "_zh_1aiaGzbk",
+                          "notePath": [
+                            "jdjRLhLV3TtI",
+                            "yeqU0zo0ZQ83",
+                            "7RBJMqVz2EsJ",
+                            "AdNRgGrYeTCy",
+                            "UFtOg3sLumZM",
+                            "aSO1wqK7L1ma"
+                          ],
+                          "title": "mind_map.js",
+                          "notePosition": 10,
+                          "prefix": null,
+                          "isExpanded": false,
+                          "type": "code",
+                          "mime": "application/javascript;env=frontend",
+                          "attributes": [
+                            {
+                              "type": "label",
+                              "name": "originalHelpNoteId",
+                              "value": "_help_aSO1wqK7L1ma",
+                              "isInheritable": false,
+                              "position": 10
+                            },
+                            {
+                              "type": "label",
+                              "name": "helpDoc",
+                              "value": "zh",
+                              "isInheritable": false,
+                              "position": 20
+                            }
+                          ],
+                          "dataFileName": "mind_map.js",
+                          "attachments": [],
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "isClone": false,
+                      "noteId": "_zh_VwHdOpae",
+                      "notePath": [
+                        "jdjRLhLV3TtI",
+                        "yeqU0zo0ZQ83",
+                        "7RBJMqVz2EsJ",
+                        "AdNRgGrYeTCy",
+                        "lgFwLJT72mdf"
+                      ],
+                      "title": "笔记类型清单",
+                      "notePosition": 20,
+                      "prefix": null,
+                      "isExpanded": false,
+                      "type": "text",
+                      "mime": "text/html",
+                      "attributes": [
+                        {
+                          "type": "relation",
+                          "name": "internalLink",
+                          "value": "UFtOg3sLumZM",
+                          "isInheritable": false,
+                          "position": 10
+                        },
+                        {
+                          "type": "relation",
+                          "name": "internalLink",
+                          "value": "OGYpAbrmEXbX",
+                          "isInheritable": false,
+                          "position": 20
+                        },
+                        {
+                          "type": "label",
+                          "name": "iconClass",
+                          "value": "bx bx-list-check",
+                          "isInheritable": false,
+                          "position": 40
+                        },
+                        {
+                          "type": "label",
+                          "name": "shareAlias",
+                          "value": "checklist",
+                          "isInheritable": false,
+                          "position": 50
+                        },
+                        {
+                          "type": "label",
+                          "name": "originalHelpNoteId",
+                          "value": "_help_lgFwLJT72mdf",
+                          "isInheritable": false,
+                          "position": 60
+                        },
+                        {
+                          "type": "label",
+                          "name": "helpDoc",
+                          "value": "zh",
+                          "isInheritable": false,
+                          "position": 70
+                        }
+                      ],
+                      "format": "markdown",
+                      "dataFileName": "Note type checklist.md",
+                      "attachments": [],
+                      "children": []
+                    },
+                    {
+                      "isClone": false,
+                      "noteId": "_zh_8kmUD2eK",
+                      "notePath": [
+                        "jdjRLhLV3TtI",
+                        "yeqU0zo0ZQ83",
+                        "7RBJMqVz2EsJ",
+                        "AdNRgGrYeTCy",
+                        "PoxUNujeKJ7T"
+                      ],
+                      "title": "通过间隔更新保存数据",
+                      "notePosition": 30,
+                      "prefix": null,
+                      "isExpanded": false,
+                      "type": "text",
+                      "mime": "text/html",
+                      "attributes": [
+                        {
+                          "type": "relation",
+                          "name": "internalLink",
+                          "value": "OGYpAbrmEXbX",
+                          "isInheritable": false,
+                          "position": 10
+                        },
+                        {
+                          "type": "label",
+                          "name": "shareAlias",
+                          "value": "saving-data",
+                          "isInheritable": false,
+                          "position": 20
+                        },
+                        {
+                          "type": "label",
+                          "name": "originalHelpNoteId",
+                          "value": "_help_PoxUNujeKJ7T",
+                          "isInheritable": false,
+                          "position": 30
+                        },
+                        {
+                          "type": "label",
+                          "name": "helpDoc",
+                          "value": "zh",
+                          "isInheritable": false,
+                          "position": 40
+                        }
+                      ],
+                      "format": "markdown",
+                      "dataFileName": "Saving data via spaced update.md",
+                      "attachments": [],
+                      "children": []
+                    },
+                    {
+                      "isClone": false,
+                      "noteId": "_zh_BSg2idl3",
+                      "notePath": [
+                        "jdjRLhLV3TtI",
+                        "yeqU0zo0ZQ83",
+                        "7RBJMqVz2EsJ",
+                        "AdNRgGrYeTCy",
+                        "xYVE7qA3EBwb"
+                      ],
+                      "title": "加载数据",
+                      "notePosition": 40,
+                      "prefix": null,
+                      "isExpanded": false,
+                      "type": "text",
+                      "mime": "text/html",
+                      "attributes": [
+                        {
+                          "type": "relation",
+                          "name": "internalLink",
+                          "value": "PoxUNujeKJ7T",
+                          "isInheritable": false,
+                          "position": 10
+                        },
+                        {
+                          "type": "label",
+                          "name": "shareAlias",
+                          "value": "loading-data",
+                          "isInheritable": false,
+                          "position": 20
+                        },
+                        {
+                          "type": "label",
+                          "name": "originalHelpNoteId",
+                          "value": "_help_xYVE7qA3EBwb",
+                          "isInheritable": false,
+                          "position": 30
+                        },
+                        {
+                          "type": "label",
+                          "name": "helpDoc",
+                          "value": "zh",
+                          "isInheritable": false,
+                          "position": 40
+                        }
+                      ],
+                      "format": "markdown",
+                      "dataFileName": "Loading data.md",
+                      "attachments": [],
+                      "children": []
+                    },
+                    {
+                      "isClone": false,
+                      "noteId": "_zh_UBFxxuCY",
+                      "notePath": [
+                        "jdjRLhLV3TtI",
+                        "yeqU0zo0ZQ83",
+                        "7RBJMqVz2EsJ",
+                        "AdNRgGrYeTCy",
+                        "OGYpAbrmEXbX"
+                      ],
+                      "title": "SVG 渲染",
+                      "notePosition": 50,
+                      "prefix": null,
+                      "isExpanded": false,
+                      "type": "text",
+                      "mime": "text/html",
+                      "attributes": [
+                        {
+                          "type": "label",
+                          "name": "shareAlias",
+                          "value": "svg-rendering",
+                          "isInheritable": false,
+                          "position": 20
+                        },
+                        {
+                          "type": "label",
+                          "name": "originalHelpNoteId",
+                          "value": "_help_OGYpAbrmEXbX",
+                          "isInheritable": false,
+                          "position": 30
+                        },
+                        {
+                          "type": "label",
+                          "name": "helpDoc",
+                          "value": "zh",
+                          "isInheritable": false,
+                          "position": 40
+                        }
+                      ],
+                      "format": "markdown",
+                      "dataFileName": "SVG rendering.md",
+                      "attachments": [],
+                      "children": []
+                    },
+                    {
+                      "isClone": false,
+                      "noteId": "_zh_vvO6N118",
+                      "notePath": [
+                        "jdjRLhLV3TtI",
+                        "yeqU0zo0ZQ83",
+                        "7RBJMqVz2EsJ",
+                        "AdNRgGrYeTCy",
+                        "Q8hgB8EEen80"
+                      ],
+                      "title": "复制图片引用到剪贴板",
+                      "notePosition": 60,
+                      "prefix": null,
+                      "isExpanded": false,
+                      "type": "text",
+                      "mime": "text/html",
+                      "attributes": [
+                        {
+                          "type": "label",
+                          "name": "shareAlias",
+                          "value": "copy-image-reference",
+                          "isInheritable": false,
+                          "position": 20
+                        },
+                        {
+                          "type": "label",
+                          "name": "originalHelpNoteId",
+                          "value": "_help_Q8hgB8EEen80",
+                          "isInheritable": false,
+                          "position": 30
+                        },
+                        {
+                          "type": "label",
+                          "name": "helpDoc",
+                          "value": "zh",
+                          "isInheritable": false,
+                          "position": 40
+                        }
+                      ],
+                      "format": "markdown",
+                      "dataFileName": "Copy image reference to the clipboard.md",
+                      "attachments": [],
+                      "children": []
+                    },
+                    {
+                      "isClone": false,
+                      "noteId": "_zh_y0k647kv",
+                      "notePath": [
+                        "jdjRLhLV3TtI",
+                        "yeqU0zo0ZQ83",
+                        "7RBJMqVz2EsJ",
+                        "AdNRgGrYeTCy",
+                        "AwWq8bJRl6XD"
+                      ],
+                      "title": "将图表导出为 SVG",
+                      "notePosition": 70,
+                      "prefix": null,
+                      "isExpanded": false,
+                      "type": "text",
+                      "mime": "text/html",
+                      "attributes": [
+                        {
+                          "type": "relation",
+                          "name": "internalLink",
+                          "value": "OGYpAbrmEXbX",
+                          "isInheritable": false,
+                          "position": 10
+                        },
+                        {
+                          "type": "label",
+                          "name": "shareAlias",
+                          "value": "export-to-svg",
+                          "isInheritable": false,
+                          "position": 20
+                        },
+                        {
+                          "type": "label",
+                          "name": "originalHelpNoteId",
+                          "value": "_help_AwWq8bJRl6XD",
+                          "isInheritable": false,
+                          "position": 30
+                        },
+                        {
+                          "type": "label",
+                          "name": "helpDoc",
+                          "value": "zh",
+                          "isInheritable": false,
+                          "position": 40
+                        }
+                      ],
+                      "format": "markdown",
+                      "dataFileName": "Export diagram as SVG.md",
+                      "attachments": [],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "isClone": false,
+              "noteId": "_zh_tOuV6vdV",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "yeqU0zo0ZQ83",
+                "6dC7ha5vjqqS"
+              ],
+              "title": "选项",
+              "notePosition": 140,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "options",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "iconClass",
+                  "value": "bx bx-cog",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_6dC7ha5vjqqS",
+                  "isInheritable": false,
+                  "position": 40
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 50
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Options.md",
+              "attachments": [],
+              "dirFileName": "Options",
+              "children": [
+                {
+                  "isClone": false,
+                  "noteId": "_zh_l5UBLlEr",
+                  "notePath": [
+                    "jdjRLhLV3TtI",
+                    "yeqU0zo0ZQ83",
+                    "6dC7ha5vjqqS",
+                    "NcHcYOEn4ol5"
+                  ],
+                  "title": "创建新选项",
+                  "notePosition": 50,
+                  "prefix": null,
+                  "isExpanded": false,
+                  "type": "text",
+                  "mime": "text/html",
+                  "attributes": [
+                    {
+                      "type": "label",
+                      "name": "shareAlias",
+                      "value": "new-option",
+                      "isInheritable": false,
+                      "position": 20
+                    },
+                    {
+                      "type": "label",
+                      "name": "originalHelpNoteId",
+                      "value": "_help_NcHcYOEn4ol5",
+                      "isInheritable": false,
+                      "position": 30
+                    },
+                    {
+                      "type": "label",
+                      "name": "helpDoc",
+                      "value": "zh",
+                      "isInheritable": false,
+                      "position": 40
+                    }
+                  ],
+                  "format": "markdown",
+                  "dataFileName": "Creating a new option.md",
+                  "attachments": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "isClone": false,
+              "noteId": "_zh_K2SzlIvQ",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "yeqU0zo0ZQ83",
+                "W0msUwLxm40d"
+              ],
+              "title": "打印和导出为 PDF",
+              "notePosition": 150,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "relation",
+                  "name": "internalLink",
+                  "value": "k7RavjuXQt8z",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "printing",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "iconClass",
+                  "value": "bx bx-printer",
+                  "isInheritable": false,
+                  "position": 50
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_W0msUwLxm40d",
+                  "isInheritable": false,
+                  "position": 60
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 70
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Printing and exporting to PDF.md",
+              "attachments": [],
+              "children": []
+            },
+            {
+              "isClone": false,
+              "noteId": "_zh_qpyDVkjI",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "yeqU0zo0ZQ83",
+                "UvXpeSqfYc6d"
+              ],
+              "title": "受保护实体",
+              "notePosition": 160,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "relation",
+                  "name": "internalLink",
+                  "value": "e6GnYOXeIWjg",
+                  "isInheritable": false,
+                  "position": 10
+                },
+                {
+                  "type": "relation",
+                  "name": "internalLink",
+                  "value": "DSkl8C325tEC",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "relation",
+                  "name": "internalLink",
+                  "value": "s7ZBiaJVNumK",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "protected-entities",
+                  "isInheritable": false,
+                  "position": 40
+                },
+                {
+                  "type": "label",
+                  "name": "iconClass",
+                  "value": "bx bx-lock-alt",
+                  "isInheritable": false,
+                  "position": 50
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_UvXpeSqfYc6d",
+                  "isInheritable": false,
+                  "position": 60
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 70
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Protected entities.md",
+              "attachments": [],
+              "children": []
+            },
+            {
+              "isClone": false,
+              "noteId": "_zh_Wcb6uWqr",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "yeqU0zo0ZQ83",
+                "vphziLmQeQHY"
+              ],
+              "title": "分享",
+              "notePosition": 170,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "iconClass",
+                  "value": "bx bx-share-alt",
+                  "isInheritable": false,
+                  "position": 10
+                },
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "share",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_vphziLmQeQHY",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 40
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Share.md",
+              "attachments": [],
+              "children": []
+            },
+            {
+              "isClone": false,
+              "noteId": "_zh_oviqp6AY",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "yeqU0zo0ZQ83",
+                "n9wYW9nUTynV"
+              ],
+              "title": "同步",
+              "notePosition": 180,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "sync",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "iconClass",
+                  "value": "bx bx-sync",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_n9wYW9nUTynV",
+                  "isInheritable": false,
+                  "position": 40
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 50
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Synchronisation.md",
+              "attachments": [],
+              "dirFileName": "Synchronisation",
+              "children": [
+                {
+                  "isClone": false,
+                  "noteId": "_zh_1RtgvQVH",
+                  "notePath": [
+                    "jdjRLhLV3TtI",
+                    "yeqU0zo0ZQ83",
+                    "n9wYW9nUTynV",
+                    "wA6tm9xcWWaB"
+                  ],
+                  "title": "内容哈希",
+                  "notePosition": 10,
+                  "prefix": null,
+                  "isExpanded": false,
+                  "type": "text",
+                  "mime": "text/html",
+                  "attributes": [
+                    {
+                      "type": "label",
+                      "name": "shareAlias",
+                      "value": "content-hashing",
+                      "isInheritable": false,
+                      "position": 20
+                    },
+                    {
+                      "type": "label",
+                      "name": "originalHelpNoteId",
+                      "value": "_help_wA6tm9xcWWaB",
+                      "isInheritable": false,
+                      "position": 30
+                    },
+                    {
+                      "type": "label",
+                      "name": "helpDoc",
+                      "value": "zh",
+                      "isInheritable": false,
+                      "position": 40
+                    }
+                  ],
+                  "format": "markdown",
+                  "dataFileName": "Content hashing.md",
+                  "attachments": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "isClone": false,
+              "noteId": "_zh_HrDUJQeZ",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "yeqU0zo0ZQ83",
+                "k7RavjuXQt8z"
+              ],
+              "title": "语法高亮",
+              "notePosition": 190,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "syntax-highlighting",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "iconClass",
+                  "value": "bx bx-highlight",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_k7RavjuXQt8z",
+                  "isInheritable": false,
+                  "position": 40
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 50
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Syntax highlighting.md",
+              "attachments": [],
+              "children": []
+            },
+            {
+              "isClone": false,
+              "noteId": "_zh_sXpnojL4",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "yeqU0zo0ZQ83",
+                "7BCukQTCm7fv"
+              ],
+              "title": "主题",
+              "notePosition": 200,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "themes",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "iconClass",
+                  "value": "bx bx-palette",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_7BCukQTCm7fv",
+                  "isInheritable": false,
+                  "position": 40
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 50
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Themes.md",
+              "attachments": [],
+              "children": []
+            },
+            {
+              "isClone": false,
+              "noteId": "_zh_XBmAl6yX",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "yeqU0zo0ZQ83",
+                "YTAxJMA3uWwn"
+              ],
+              "title": "Web Clipper",
+              "notePosition": 210,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "web-clipper",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "iconClass",
+                  "value": "bx bx-paperclip",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_YTAxJMA3uWwn",
+                  "isInheritable": false,
+                  "position": 40
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 50
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Web Clipper.md",
+              "attachments": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "isClone": false,
+          "noteId": "_zh_A139TvSk",
+          "notePath": [
+            "jdjRLhLV3TtI",
+            "YjerxU7Aii8X"
+          ],
+          "title": "故障排除",
+          "notePosition": 380,
+          "prefix": null,
+          "isExpanded": false,
+          "type": "text",
+          "mime": "text/html",
+          "attributes": [
+            {
+              "type": "label",
+              "name": "iconClass",
+              "value": "bx bx-bug",
+              "isInheritable": false,
+              "position": 10
+            },
+            {
+              "type": "label",
+              "name": "shareAlias",
+              "value": "troubleshooting",
+              "isInheritable": false,
+              "position": 20
+            },
+            {
+              "type": "label",
+              "name": "originalHelpNoteId",
+              "value": "_help_YjerxU7Aii8X",
+              "isInheritable": false,
+              "position": 30
+            },
+            {
+              "type": "label",
+              "name": "helpDoc",
+              "value": "zh",
+              "isInheritable": false,
+              "position": 40
+            }
+          ],
+          "format": "markdown",
+          "attachments": [],
+          "dirFileName": "Troubleshooting",
+          "children": [
+            {
+              "isClone": false,
+              "noteId": "_zh_M7bg5I0j",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "YjerxU7Aii8X",
+                "g9nFZ6dRz1Cg"
+              ],
+              "title": "better-sqlite3 是针对不同的 Node.js 版本编译的",
+              "notePosition": 10,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "better-sqlite3",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_g9nFZ6dRz1Cg",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 40
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "better-sqlite3 was compiled against a different Node.js version.md",
+              "attachments": [],
+              "children": []
+            },
+            {
+              "isClone": false,
+              "noteId": "_zh_UNUo3ulw",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "YjerxU7Aii8X",
+                "QUb0fRhbpT8E"
+              ],
+              "title": "错误 [TransformError]: 找不到包 \"@esbuild/linux-x64\"，而 esbuild 需要它。",
+              "notePosition": 20,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "esbuild-error",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_QUb0fRhbpT8E",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 40
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Error [TransformError] The package @esbuildlinux-x64 could not be found, and is needed by esbuild.md",
+              "attachments": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "isClone": false,
+          "noteId": "_zh_IekVqUZO",
+          "notePath": [
+            "jdjRLhLV3TtI",
+            "dtKC3FmoWOrv"
+          ],
+          "title": "测试",
+          "notePosition": 400,
+          "prefix": null,
+          "isExpanded": false,
+          "type": "text",
+          "mime": "text/html",
+          "attributes": [
+            {
+              "type": "relation",
+              "name": "internalLink",
+              "value": "w6gMvKh0UAVT",
+              "isInheritable": false,
+              "position": 10
+            },
+            {
+              "type": "label",
+              "name": "shareAlias",
+              "value": "testing",
+              "isInheritable": false,
+              "position": 20
+            },
+            {
+              "type": "label",
+              "name": "iconClass",
+              "value": "bx bxs-eyedropper",
+              "isInheritable": false,
+              "position": 30
+            },
+            {
+              "type": "label",
+              "name": "originalHelpNoteId",
+              "value": "_help_dtKC3FmoWOrv",
+              "isInheritable": false,
+              "position": 40
+            },
+            {
+              "type": "label",
+              "name": "helpDoc",
+              "value": "zh",
+              "isInheritable": false,
+              "position": 50
+            }
+          ],
+          "format": "markdown",
+          "dataFileName": "Testing.md",
+          "attachments": [],
+          "dirFileName": "Testing",
+          "children": [
+            {
+              "isClone": false,
+              "noteId": "_zh_xeQfkZmi",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "dtKC3FmoWOrv",
+                "ETeT5YO61DAW"
+              ],
+              "title": "单元测试",
+              "notePosition": 10,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "unit-tests",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_ETeT5YO61DAW",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 40
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Unit tests.md",
+              "attachments": [],
+              "children": []
+            },
+            {
+              "isClone": false,
+              "noteId": "_zh_5jeJaZRK",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "dtKC3FmoWOrv",
+                "C5MUQczZ5R9N"
+              ],
+              "title": "集成测试",
+              "notePosition": 20,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "integration",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_C5MUQczZ5R9N",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 40
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Integration testing.md",
+              "attachments": [],
+              "children": []
+            },
+            {
+              "isClone": false,
+              "noteId": "_zh_silHZEAP",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "dtKC3FmoWOrv",
+                "bIfKwfCnqpeI"
+              ],
+              "title": "测试数据库",
+              "notePosition": 30,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "test-database",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_bIfKwfCnqpeI",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 40
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Test database.md",
+              "attachments": [],
+              "children": []
+            },
+            {
+              "isClone": false,
+              "noteId": "_zh_sOF2vk8M",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "dtKC3FmoWOrv",
+                "w6gMvKh0UAVT"
+              ],
+              "title": "端到端测试",
+              "notePosition": 40,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "running-tests",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_w6gMvKh0UAVT",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 40
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "End-to-end tests.md",
+              "attachments": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "isClone": false,
+          "noteId": "_zh_5f9AsCXG",
+          "notePath": [
+            "jdjRLhLV3TtI",
+            "HMrVxa1lJBKv"
+          ],
+          "title": "互操作性",
+          "notePosition": 410,
+          "prefix": null,
+          "isExpanded": false,
+          "type": "text",
+          "mime": "text/html",
+          "attributes": [
+            {
+              "type": "label",
+              "name": "iconClass",
+              "value": "bx bx-repost",
+              "isInheritable": false,
+              "position": 20
+            },
+            {
+              "type": "label",
+              "name": "originalHelpNoteId",
+              "value": "_help_HMrVxa1lJBKv",
+              "isInheritable": false,
+              "position": 30
+            },
+            {
+              "type": "label",
+              "name": "helpDoc",
+              "value": "zh",
+              "isInheritable": false,
+              "position": 40
+            }
+          ],
+          "format": "markdown",
+          "attachments": [],
+          "dirFileName": "Interoperability",
+          "children": [
+            {
+              "isClone": false,
+              "noteId": "_zh_Oecmtg8Y",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "HMrVxa1lJBKv",
+                "dSgzBgbagtYP"
+              ],
+              "title": "带有扩展任务状态的导出内容",
+              "notePosition": 10,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "iconClass",
+                  "value": "bx bx-list-check",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_dSgzBgbagtYP",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 40
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Exported content with extended task states.md",
+              "attachments": [],
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
