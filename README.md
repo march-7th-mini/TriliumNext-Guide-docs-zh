@@ -1,3 +1,5 @@
+当前进度：翻译docs已经全部跑完，测试已经可以正常将笔记完整结构导入trilium，等完善了TriliumNext中文版帮助文档跳转补丁.zip，我更新具体的使用说明。
+
 # TriliumNext 帮助文档中文翻译
 
 把 [TriliumNext/Trilium](https://github.com/TriliumNext/Trilium) 官方帮助文档(docs 下Developer Guide、User Guide、Release Notes这三个目录)
