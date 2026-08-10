@@ -78,8 +78,8 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if gh pr view translate-bot --json number --jq .number >/dev/null 2>&1; then
-            echo "PR 已存在,跳过创建"
+          if [ "$(gh pr list --head translate-bot --state open --json number --jq 'length')" != "0" ]; then
+            echo "已有 open 的 PR,跳过创建"
           else
             gh pr create \
               --base main \
