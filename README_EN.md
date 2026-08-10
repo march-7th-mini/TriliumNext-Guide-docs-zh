@@ -1,4 +1,4 @@
-<div align="center">
+<div align="left">
 
 # TriliumNext Help Documentation in Chinese
 
@@ -237,7 +237,7 @@ Then re-zip and re-import.
 
 ## Acknowledgements
 
-Thanks to the [TriliumNext](https://github.com/TriliumNext/Trilium) team for the great note-taking app and the open documentation structure.
+Thanks to the [TriliumNext](https://github.com/TriliumNext/Trilium) team .
 
 If this project helps you, feel free to ⭐ star it, share it, or open an Issue / PR to improve the Chinese docs together!
 
