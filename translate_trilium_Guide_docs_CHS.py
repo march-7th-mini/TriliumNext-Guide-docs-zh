@@ -254,10 +254,39 @@ def iter_nodes(root, path=""):
 
 
 def state_key(node):
-    """节点的 state 键:有正文文件用文件相对路径,无正文(book 容器)用 meta:noteId。"""
+    """节点的 state 键:优先用源文件相对路径(带目录,防跨目录同名文件互相覆盖);
+    无正文(book 容器)用 meta:noteId。"""
     if node.get("dataFileName"):
-        return node["dataFileName"]
+        return node.get("_src_path") or node["dataFileName"]
     return "meta:" + node.get("noteId", "")
+
+def assign_src_paths(node, src_dir):
+    """递归给每个有正文的节点标注 _src_path(相对 docs/ 的源文件路径,用于 state key)。"""
+    if node.get("dataFileName"):
+        node["_src_path"] = os.path.relpath(os.path.join(src_dir, node["dataFileName"]), "docs")
+    child_dir = os.path.join(src_dir, node.get("dirFileName") or "")
+    for c in node.get("children") or []:
+        assign_src_paths(c, child_dir)
+
+def migrate_state(state, meta):
+    """旧版 state 用裸文件名做 key,跨目录同名文件互相覆盖(hash 张冠李戴)。
+    迁移为带路径 key:hash 与当前源文件匹配才复用,失配的丢弃(下次重翻)。"""
+    migrated = 0
+    for root in meta.get("files", []):
+        for node, _path in iter_nodes(root):
+            if not node.get("dataFileName"):
+                continue
+            new_key = node.get("_src_path")
+            if not new_key or new_key in state:
+                continue
+            rec = state.get(node["dataFileName"])
+            if not rec or rec.get("status") != "done":
+                continue
+            src_path = os.path.join("docs", new_key)
+            if os.path.exists(src_path) and rec.get("hash") == file_hash(src_path):
+                state[new_key] = rec
+                migrated += 1
+    return migrated
 
 
 # ============ 阶段一:init(建骨架) ============
@@ -391,6 +420,19 @@ def _translate_body_file(src_path, dst_path, state, key, cur_hash, stats):
     with open(src_path, encoding="utf-8", errors="replace") as f:
         content = f.read()
 
+    if not content.strip():
+        # 空源文件:直接拷贝为空,不调 LLM(避免幻觉垃圾)
+        os.makedirs(os.path.dirname(dst_path), exist_ok=True)
+        with open(dst_path, "w", encoding="utf-8") as f:
+            f.write("")
+        rec = state.get(key, {}) or {}
+        rec["hash"] = cur_hash
+        rec["status"] = "done"
+        state[key] = rec
+        stats["copied"] += 1
+        log(f"  [空源-拷贝] {src_path}")
+        return
+
     if len(content) > MAX_CHARS:
         log(f"  [跳过-太大] {src_path} ({len(content)} 字符)")
         translated = content
@@ -455,6 +497,22 @@ def main():
     state = load_state()
     used_ids = set()
     stats = {"translated": 0, "skipped": 0, "too_big": 0, "copied": 0}
+
+    # 预计算 _src_base/_src_path,并迁移旧版 state key(裸文件名 → 带路径)
+    total_migrated = 0
+    for tree in SRC_TREES:
+        meta_path = os.path.join(tree, "!!!meta.json")
+        if not os.path.exists(meta_path):
+            continue
+        meta = load_meta(tree)
+        dst_base = os.path.join(OUT_DIR, os.path.relpath(tree, "docs"))
+        for root in meta.get("files", []):
+            root["_src_base"] = tree
+            root["_dst_base"] = dst_base
+            assign_src_paths(root, tree)
+        total_migrated += migrate_state(state, meta)
+    if total_migrated:
+        log(f"[迁移] 旧 state key → 带路径 key: 复用 {total_migrated} 条;同名冲突文件本次会重翻一次")
 
     for tree in SRC_TREES:
         meta_path = os.path.join(tree, "!!!meta.json")
