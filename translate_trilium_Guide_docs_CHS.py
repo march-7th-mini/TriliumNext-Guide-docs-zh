@@ -65,10 +65,8 @@ DRY_RUN = os.environ.get("LLM_DRY_RUN") == "1"
 
 _ID_CHARS = string.ascii_letters + string.digits
 
-
 def log(msg):
     print(msg, flush=True)
-
 
 def read_glossary(path=GLOSSARY_FILE):
     """读 Weblate 导出的术语表(英文<TAB>中文),返回 {en: zh};不存在时返回空 dict。"""
@@ -88,14 +86,12 @@ def read_glossary(path=GLOSSARY_FILE):
     log(f"[术语表] 已加载 {len(gloss)} 条术语(注入前 {GLOSSARY_INJECT} 条)")
     return gloss
 
-
 def glossary_prompt_block(gloss, limit=GLOSSARY_INJECT):
     """把术语表拼成 prompt 片段;为空时返回空字符串。"""
     if not gloss:
         return ""
     lines = "\n".join(f"{en} → {zh}" for en, zh in list(gloss.items())[:limit])
     return "\n\n[术语表:以下术语翻译时必须使用表中中文,不得自行另译]\n" + lines
-
 
 def gen_id(used):
     while True:
@@ -104,7 +100,6 @@ def gen_id(used):
             used.add(nid)
             return nid
 
-
 def file_hash(path):
     h = hashlib.sha256()
     with open(path, "rb") as f:
@@ -112,11 +107,9 @@ def file_hash(path):
             h.update(chunk)
     return h.hexdigest()
 
-
 def str_hash(s):
     """对字符串做 sha256(用于标题变化检测)。"""
     return hashlib.sha256(s.encode("utf-8")).hexdigest()
-
 
 def extract_response_text(data):
     """从 Responses API 返回里提取纯文本,跳过 reasoning 等非文本项。"""
@@ -137,7 +130,6 @@ def extract_response_text(data):
         hint = ("(输出被 max_output_tokens 截断:模型把预算花在了 reasoning 上。"
                 "请调大 MAX_OUTPUT_TOKENS,或确认 REASONING_EFFORT = \"none\" 生效)")
     raise SystemExit(f"[API 失败] Responses 返回里没有 output_text {hint}: {json.dumps(data, ensure_ascii=False)[:400]}")
-
 
 def call_api(prompt, max_tokens=MAX_OUTPUT_TOKENS, retries=3):
     """调用 LLM Responses API,返回纯文本回复。"""
@@ -171,7 +163,6 @@ def call_api(prompt, max_tokens=MAX_OUTPUT_TOKENS, retries=3):
             time.sleep(5 * (attempt + 1))
     raise SystemExit(f"[API 失败] {last_err}")
 
-
 def translate_text(text, gloss=None):
     """翻译整篇正文。"""
     term_block = glossary_prompt_block(gloss or GLOSSARY)
@@ -190,7 +181,6 @@ def translate_text(text, gloss=None):
         "===== 开始 ====="
     ) + "\n\n" + text
     return call_api(prompt)
-
 
 def translate_titles_batch(items, gloss=None):
     """批量翻译标题。items: [(noteId, title), ...],返回 {noteId: 中文标题}。"""
@@ -232,26 +222,22 @@ def translate_titles_batch(items, gloss=None):
         time.sleep(0.3)
     return mapping
 
-
 def load_state():
     if os.path.exists(STATE_FILE):
         with open(STATE_FILE, encoding="utf-8") as f:
             return json.load(f)
     return {}
 
-
 def save_state(state):
     os.makedirs(os.path.dirname(STATE_FILE), exist_ok=True)
     with open(STATE_FILE, "w", encoding="utf-8") as f:
         json.dump(state, f, ensure_ascii=False, indent=2)
-
 
 def iter_nodes(root, path=""):
     """深度优先遍历,产出 (node, 标题路径)。"""
     yield root, path
     for c in root.get("children") or []:
         yield from iter_nodes(c, path + "/" + (root.get("title") or ""))
-
 
 def state_key(node):
     """节点的 state 键:优先用源文件相对路径(带目录,防跨目录同名文件互相覆盖);
@@ -270,7 +256,8 @@ def assign_src_paths(node, src_dir):
 
 def migrate_state(state, meta):
     """旧版 state 用裸文件名做 key,跨目录同名文件互相覆盖(hash 张冠李戴)。
-    迁移为带路径 key:hash 与当前源文件匹配才复用,失配的丢弃(下次重翻)。"""
+    迁移为带路径 key:hash 与当前源文件匹配才复用,失配的丢弃(下次重翻)。
+    迁移成功的旧裸 key 直接删除,防止 state 无限膨胀。"""
     migrated = 0
     for root in meta.get("files", []):
         for node, _path in iter_nodes(root):
@@ -285,9 +272,9 @@ def migrate_state(state, meta):
             src_path = os.path.join("docs", new_key)
             if os.path.exists(src_path) and rec.get("hash") == file_hash(src_path):
                 state[new_key] = rec
+                state.pop(node["dataFileName"], None)   # 迁移成功就删旧裸 key,防 state 膨胀
                 migrated += 1
     return migrated
-
 
 # ============ 阶段一:init(建骨架) ============
 
@@ -335,7 +322,6 @@ def init_phase(meta, state, used_ids, stats):
         roots.append(build_tree(root, meta, state, used_ids, stats, translate_body=False))
     return roots
 
-
 # ============ 阶段二:translate(翻正文) ============
 
 def translate_phase(meta, state, used_ids, stats):
@@ -344,7 +330,6 @@ def translate_phase(meta, state, used_ids, stats):
     for root in meta.get("files", []):
         roots.append(build_tree(root, meta, state, used_ids, stats, translate_body=True))
     return roots
-
 
 # ============ 共用:建树 ============
 
@@ -412,8 +397,8 @@ def build_tree(node, meta, state, used_ids, stats, translate_body):
 
     out.pop("_src_base", None)
     out.pop("_dst_base", None)
+    out.pop("_src_path", None)   # ← 新增:防止内部字段泄漏到输出 !!!meta.json
     return out
-
 
 def _translate_body_file(src_path, dst_path, state, key, cur_hash, stats):
     """翻译单个正文文件。"""
@@ -454,7 +439,6 @@ def _translate_body_file(src_path, dst_path, state, key, cur_hash, stats):
     rec["status"] = "done"
     state[key] = rec
 
-
 def copy_attachments(src_base, dst_base, node):
     """复制附件文件(与正文同目录)。返回新 attachments 数组。"""
     atts = node.get("attachments") or []
@@ -476,11 +460,9 @@ def copy_attachments(src_base, dst_base, node):
             new_atts.append(a)
     return new_atts
 
-
 def load_meta(tree_dir):
     with open(os.path.join(tree_dir, "!!!meta.json"), encoding="utf-8") as f:
         return json.load(f)
-
 
 def main():
     ap = argparse.ArgumentParser(description="Trilium 帮助文档翻译器 v3(两阶段)")
@@ -554,7 +536,6 @@ def main():
     log("分别导入: 必须进入单个文档目录后再打 zip,让 !!!meta.json 落在 zip 根,例如:")
     log('  cd "docs-zh/User Guide" && zip -r "../User Guide-zh.zip" .')
     log("      注意: .translated.json 是翻译记忆缓存,在 docs-zh 根(不在任何文档目录内),不打进 zip 但要 git 提交")
-
 
 if __name__ == "__main__":
     main()
