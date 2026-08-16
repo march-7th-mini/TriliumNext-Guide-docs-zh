@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Trilium 目录导出格式翻译器 v3(两阶段)
-=======================================
+Trilium 目录导出格式翻译器 v4(两阶段 + 增量同步)
+===================================================
 输入: 上游仓库已 checkout 的三个 Trilium 目录导出树
       docs/Developer Guide, docs/Release Notes, docs/User Guide
 
@@ -22,17 +22,20 @@ Trilium 目录导出格式翻译器 v3(两阶段)
   python3 translate_trilium_Guide_docs_CHS.py                   # 翻译正文(可反复跑,增量)
   LLM_DRY_RUN=1 python3 translate_trilium_Guide_docs_CHS.py     # 试跑:不调 API
 
-说明:
-  - 内部链接是相对路径 <a class="reference-link" href="...">,只依赖 dataFileName;
-    译文目录平行,链接自动指向译文对应文件,无需改写。
-  - 内置帮助 ID 铁律:内置帮助 noteId = "_help_" + GitHub docs 树对应笔记 noteId,
-    故 originalHelpNoteId 必须写成 "_help_<源noteId>",跳转补丁脚本才能搜到。
+v4.0 变更(2026-08-16):
+  - 新增 cleanup_orphans(): 处理完成后删除 docs-zh/ 中上游已删除的孤儿文件 + 清理过期 state 条目
+    修复 Bug 3: 上游删除文档后旧译文残留,错误地出现在 PR 中
+  - 改进 migrate_state(): hash 不匹配时也保留旧 ID 和中文标题,只标记需要重翻
+    修复 Bug 2: 迁移失败时丢失 ID/标题导致不必要重翻 + 重复 API 调用
+  - state key 全面路径化: 确保所有 key 都是路径形式(Developer Guide/xxx.md)
+    杜绝 14 个跨目录同名文件 hash 张冠李戴
+  - 简化 done 判定: 不再依赖 verify_output_matches_src 防分支不同步
+    (工作流改为整体恢复 docs-zh/ 目录,state 和 output 始终同步)
+    保留含中文 + 翻译腔检查作为轻量安全网
 
-v3.3 变更(2026-08-16):
+v3.3 变更:
   - 新增 verify_output_matches_src:done 判定不再只信 hash+含中文,
     还要求输出包含源文件全部 reference-link href、长度不低于源文 30%。
-    根治"state hash 是新的、输出却是旧版翻译"的漏更新问题
-    (例:上游 AI.md 新增 In-editor AI assistant 段落,旧输出缺新链接被强制重翻)。
 """
 import argparse
 import hashlib
@@ -301,9 +304,13 @@ def assign_src_paths(node, src_dir):
 
 def migrate_state(state, meta):
     """旧版 state 用裸文件名做 key,跨目录同名文件互相覆盖(hash 张冠李戴)。
-    迁移为带路径 key:hash 与当前源文件匹配才复用,失配的丢弃(下次重翻)。
-    迁移成功的旧裸 key 直接删除,防止 state 无限膨胀。"""
+    迁移为带路径 key。
+
+    v4.0 改进:hash 不匹配时也保留旧 ID 和中文标题,只标记需要重翻。
+    这样不会丢失已翻译的标题和已生成的 ID,减少不必要的 API 调用。
+    """
     migrated = 0
+    preserved = 0
     for root in meta.get("files", []):
         for node, _path in iter_nodes(root):
             if not node.get("dataFileName"):
@@ -312,14 +319,23 @@ def migrate_state(state, meta):
             if not new_key or new_key in state:
                 continue
             rec = state.get(node["dataFileName"])
-            if not rec or rec.get("status") not in ("done", "too_big", "code"):
+            if not rec:
                 continue
             src_path = os.path.join("docs", new_key)
             if os.path.exists(src_path) and rec.get("hash") == file_hash(src_path):
+                # hash 匹配:文件未变化,完整迁移
                 state[new_key] = rec
-                state.pop(node["dataFileName"], None)   # 迁移成功就删旧裸 key,防 state 膨胀
+                state.pop(node["dataFileName"], None)
                 migrated += 1
-    return migrated
+            elif rec.get("status") in ("done", "too_big", "code", "suspect"):
+                # hash 不匹配:上游改了内容,保留旧 ID 和中文标题,标记需要重翻
+                new_rec = dict(rec)
+                new_rec["status"] = "pending"
+                new_rec.pop("hash", None)  # 清掉旧 hash,build_tree 会检测到需要重翻
+                state[new_key] = new_rec
+                state.pop(node["dataFileName"], None)
+                preserved += 1
+    return migrated, preserved
 
 # ============ 阶段一:init(建骨架) ============
 
@@ -403,10 +419,9 @@ def build_tree(node, meta, state, used_ids, stats, translate_body):
             if not os.path.exists(dst_path):
                 done = False
             elif rec.get("status") == "done":
-                # 防"假成功"、旧版误翻与漏更新:
-                # 1) 代码/资源文件被旧版当 Markdown 翻过(LLM 包了代码围栏),强制用上游原文覆盖
-                # 2) state 标记 done,但输出文件实际不含中文(上次模型返回了英文原文)
-                # 3) state hash 是新的、但输出是旧版翻译(上游更新后未真正重翻)
+                # v4.0: 简化检查。工作流已改为整体恢复 docs-zh/ 目录,
+                # state 和 output 始终来自同一分支,不再需要 verify_output_matches_src 防分支不同步。
+                # 保留轻量安全网:含中文 + 翻译腔检查
                 if not is_markdown(dst_path):
                     log(f"  [修正] {dst_path} 是代码文件,强制用上游原文覆盖")
                     done = False
@@ -417,13 +432,6 @@ def build_tree(node, meta, state, used_ids, stats, translate_body):
                         if _out and (not contains_chinese(_out) or has_translation_chatter(_out)):
                             log(f"  [修正] {dst_path} 输出疑似假成功翻译(纯英文/翻译腔套话),本次重新翻译")
                             done = False
-                        elif _out:
-                            # 强校验:输出必须对应当前源文件版本(链接集合+长度)
-                            with open(src_path, encoding="utf-8", errors="replace") as _sf:
-                                _src_text = _sf.read()
-                            if not verify_output_matches_src(_src_text, _out):
-                                log(f"  [修正] {dst_path} 输出疑似旧版本翻译(缺链接或内容不完整),本次重新翻译")
-                                done = False
                     except OSError:
                         done = False
             if translate_body and not done:
@@ -615,8 +623,77 @@ def load_meta(tree_dir):
     with open(os.path.join(tree_dir, "!!!meta.json"), encoding="utf-8") as f:
         return json.load(f)
 
+
+# ============ v4.0 新增:孤儿文件清理 ============
+
+def collect_expected_outputs(meta, tree, dst_base):
+    """递归收集一棵树中所有应该在 docs-zh/ 里存在的文件绝对路径。"""
+    expected = set()
+    # !!!meta.json 本身
+    expected.add(os.path.abspath(os.path.join(dst_base, "!!!meta.json")))
+
+    def _collect(node, src_base, dst_base):
+        data_fn = node.get("dataFileName")
+        if data_fn:
+            expected.add(os.path.abspath(os.path.join(dst_base, data_fn)))
+        # 附件
+        for a in node.get("attachments") or []:
+            fn = a.get("dataFileName")
+            if fn:
+                expected.add(os.path.abspath(os.path.join(dst_base, fn)))
+        # 子节点
+        child_dst = os.path.join(dst_base, node.get("dirFileName") or "") if node.get("dirFileName") else dst_base
+        child_src = os.path.join(src_base, node.get("dirFileName") or "") if node.get("dirFileName") else src_base
+        for c in node.get("children") or []:
+            _collect(c, child_src, child_dst)
+
+    for root in meta.get("files", []):
+        _collect(root, tree, dst_base)
+
+    return expected
+
+def cleanup_orphans(all_expected, state, valid_keys):
+    """删除 docs-zh/ 中不在上游 meta 里的孤儿文件,并清理过期 state 条目。
+
+    all_expected: 所有应该存在的文件绝对路径集合
+    state: state 字典(会被原地修改)
+    valid_keys: 当前上游 meta 中所有合法的 state key 集合
+    """
+    out_abs = os.path.abspath(OUT_DIR)
+    removed_files = 0
+    removed_dirs = 0
+
+    # 删除孤儿文件
+    for dirpath, dirnames, filenames in os.walk(OUT_DIR, topdown=False):
+        for fn in filenames:
+            if fn == ".translated.json":
+                continue
+            full = os.path.abspath(os.path.join(dirpath, fn))
+            if full not in all_expected:
+                os.remove(full)
+                removed_files += 1
+        # 删除空目录(不删 OUT_DIR 本身)
+        if os.path.abspath(dirpath) != out_abs:
+            try:
+                if not os.listdir(dirpath):
+                    os.rmdir(dirpath)
+                    removed_dirs += 1
+            except OSError:
+                pass
+
+    # 清理过期 state 条目(不在当前上游 meta 中的 key)
+    stale_keys = [k for k in list(state.keys()) if k not in valid_keys]
+    for k in stale_keys:
+        del state[k]
+
+    if removed_files:
+        log(f"[清理] 删除 {removed_files} 个上游已不存在的孤儿文件,清理 {removed_dirs} 个空目录")
+    if stale_keys:
+        log(f"[清理] 移除 {len(stale_keys)} 个过期 state 条目")
+
+
 def main():
-    ap = argparse.ArgumentParser(description="Trilium 帮助文档翻译器 v3(两阶段)")
+    ap = argparse.ArgumentParser(description="Trilium 帮助文档翻译器 v4(两阶段+增量同步)")
     ap.add_argument("--init", action="store_true", help="阶段一:建骨架(翻译标题/生成ID/写属性/拷贝正文原文)")
     args = ap.parse_args()
 
@@ -631,8 +708,14 @@ def main():
     used_ids = set()
     stats = {"translated": 0, "skipped": 0, "too_big": 0, "copied": 0, "suspect": 0}
 
-    # 预计算 _src_base/_src_path,并迁移旧版 state key(裸文件名 → 带路径)
+    # ====== 第一遍:预计算 _src_base/_src_path,迁移旧版 state key ======
+    # 同时收集所有合法的 state key 和期望的输出文件路径
+    all_meta = []          # [(meta, tree, dst_base), ...]
+    all_expected = set()   # 所有应该存在的输出文件绝对路径
+    valid_keys = set()     # 当前上游 meta 中所有合法的 state key
+
     total_migrated = 0
+    total_preserved = 0
     for tree in SRC_TREES:
         meta_path = os.path.join(tree, "!!!meta.json")
         if not os.path.exists(meta_path):
@@ -643,23 +726,26 @@ def main():
             root["_src_base"] = tree
             root["_dst_base"] = dst_base
             assign_src_paths(root, tree)
-        total_migrated += migrate_state(state, meta)
-    if total_migrated:
-        log(f"[迁移] 旧 state key → 带路径 key: 复用 {total_migrated} 条;同名冲突文件本次会重翻一次")
+            # 收集合法 state key
+            for node, _ in iter_nodes(root):
+                valid_keys.add(state_key(node))
+        # 收集期望的输出文件
+        all_expected |= collect_expected_outputs(meta, tree, dst_base)
+        all_meta.append((meta, tree, dst_base))
+        m, p = migrate_state(state, meta)
+        total_migrated += m
+        total_preserved += p
 
-    for tree in SRC_TREES:
-        meta_path = os.path.join(tree, "!!!meta.json")
-        if not os.path.exists(meta_path):
-            log(f"[跳过] 没找到 {meta_path}")
-            continue
-        meta = load_meta(tree)
-        dst_base = os.path.join(OUT_DIR, os.path.relpath(tree, "docs"))
+    if total_migrated or total_preserved:
+        log(f"[迁移] 旧 state key → 路径 key: hash 匹配 {total_migrated} 条, hash 失配(保留ID+标记重翻) {total_preserved} 条")
 
-        # 给每个根挂上基础路径,供 build_tree 递归使用
+    # ====== 第二遍:执行翻译 ======
+    for meta, tree, dst_base in all_meta:
+        # 重新挂载 _src_base/_src_path(build_tree 递归会用到)
         for root in meta.get("files", []):
             root["_src_base"] = tree
             root["_dst_base"] = dst_base
-            assign_src_paths(root, tree)   # ← 关键:重新挂 _src_path,否则 state key 退回裸文件名(假重翻根因)
+            assign_src_paths(root, tree)
 
         phase = "init" if args.init else "正文翻译"
         log(f"== [{phase}] 处理树: {tree} ==")
@@ -675,6 +761,9 @@ def main():
         os.makedirs(dst_base, exist_ok=True)
         with open(os.path.join(dst_base, "!!!meta.json"), "w", encoding="utf-8") as f:
             json.dump(tree_out, f, ensure_ascii=False, indent=2)
+
+    # ====== v4.0: 清理孤儿文件 + 过期 state ======
+    cleanup_orphans(all_expected, state, valid_keys)
 
     save_state(state)
 
