@@ -526,6 +526,7 @@ def main():
         for root in meta.get("files", []):
             root["_src_base"] = tree
             root["_dst_base"] = dst_base
+            assign_src_paths(root, tree)   # ← 关键:重新挂 _src_path,否则 state key 退回裸文件名(假重翻根因)
 
         phase = "init" if args.init else "正文翻译"
         log(f"== [{phase}] 处理树: {tree} ==")
