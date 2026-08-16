@@ -346,11 +346,14 @@ def build_tree(node, meta, state, used_ids, stats, translate_body):
             if translate_body and not done:
                 _translate_body_file(src_path, dst_path, state, key, cur_hash, stats)
             elif not translate_body:
-                # init 阶段:拷贝原文作为骨架
-                os.makedirs(os.path.dirname(dst_path), exist_ok=True)
-                with open(src_path, "rb") as fi, open(dst_path, "wb") as fo:
-                    fo.write(fi.read())
-                stats["copied"] += 1
+                # init 阶段:已翻译且源未变的保留中文,绝不覆盖
+                if done:
+                    stats["skipped"] += 1
+                else:
+                    os.makedirs(os.path.dirname(dst_path), exist_ok=True)
+                    with open(src_path, "rb") as fi, open(dst_path, "wb") as fo:
+                        fo.write(fi.read())
+                    stats["copied"] += 1
             else:
                 stats["skipped"] += 1
         else:
