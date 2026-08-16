@@ -1,13 +1,14 @@
 # 用户指南
-Trilium 是一款用于笔记记录和组织个人知识库的开源解决方案。您可以在桌面上本地使用它，也可以将其与自托管的服务器同步，随时随地访问您的笔记。
+
+Trilium 是一款用于笔记记录和个人知识库组织的开源解决方案。您可以在桌面上本地使用它，或与自托管的服务器同步，随时随地保存您的笔记。
 
 > [!TIP]
-> 在 Trilium Notes 应用程序内按 <kbd>F1</kbd> 键，也可以访问相同的文档。
+> 在 Trilium Notes 应用程序中按 F1 键，也可以从本地访问相同的文档。
 
-## 入门指南
+## 快速入门
 
-1.  参见 <a class="reference-link" href="User%20Guide/Quick%20Start.md">快速入门</a>。
-2.  学习 <a class="reference-link" href="User%20Guide/Basic%20Concepts%20and%20Features">基本概念与功能</a>。
+1.  参见 <a class="reference-link" href="User%20Guide/Quick%20Start.md">快速开始</a>。
+2.  阅读 <a class="reference-link" href="User%20Guide/Basic%20Concepts%20and%20Features">基本概念与功能</a>。
 3.  理解 <a class="reference-link" href="User%20Guide/Basic%20Concepts%20and%20Features/Notes.md">笔记</a>。
 4.  浏览 <a class="reference-link" href="User%20Guide/Collections.md">集合</a>。
 
@@ -20,6 +21,6 @@ Trilium 是一款用于笔记记录和组织个人知识库的开源解决方案
 
 ## 外部链接
 
-*   [Trilium Notes 网站](https://triliumnotes.org/)，用于快速了解该应用程序。
+*   [Trilium Notes 网站](https://triliumnotes.org/)，快速了解应用程序的介绍。
 *   [开发者指南](https://docs.triliumnotes.org/developer-guide/)，了解 Trilium Notes 开发背后的架构和流程。
 *   [GitHub 仓库 (TriliumNext/Trilium)](https://github.com/TriliumNext/Trilium/)
