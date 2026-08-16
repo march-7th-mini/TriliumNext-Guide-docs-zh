@@ -3,9 +3,10 @@
 
 内容语言决定：
 
-*   在浏览器中时，笔记的拼写检查。桌面版安装有专门的拼写检查部分。
+*   在浏览器中笔记的拼写检查。桌面版安装有专门的拼写检查部分。
 *   文本是否从右到左显示，适用于阿拉伯语、希伯来语等语言。
 *   输入的引号如何被[自动替换](Automatic%20replacements.md)（例如，英语使用 `“text”`，而某些语言使用 `«text»`）。
+*   <a class="reference-link" href="In-editor%20AI%20assistant.md">编辑器内 AI 助手</a>提供哪些语言用于翻译。
 
 ## 设置单个笔记的语言
 
@@ -16,10 +17,10 @@
 
 ## 调整语言列表
 
-默认情况下不会配置语言，可以通过转到<a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">选项</a> → 语言与区域来配置，或者在设置语言时选择 _配置语言_ 项。
+默认情况下不会配置语言，可以通过转到<a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">选项</a> → 语言与区域或设置语言时选择 _配置语言_ 项来配置它们。
 
 ## 默认内容语言
 
 没有自己语言的笔记遵循<a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">选项</a> → _语言与区域_ → _默认内容语言_。它最初设置为英语，可以设置为任何内容语言，或设置为 _基于应用程序的语言_。
 
-如果笔记设置了语言，则它始终优先于默认语言。
+如果笔记设置了语言，它总是优先于默认语言。
