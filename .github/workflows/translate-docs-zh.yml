@@ -1,4 +1,4 @@
-name: 翻译 docs → docs-zh（半自动·两阶段）
+name: 翻译 docs → docs-zh(半自动·两阶段)
 
 # 什么时候运行:
 #   1. 手动触发(推荐):仓库页面 → Actions → 本工作流 → Run workflow
@@ -24,6 +24,16 @@ jobs:
       - name: 检出你的翻译仓库(只含脚本和上次的翻译结果)
         uses: actions/checkout@v4
 
+      - name: 恢复上次翻译记忆(state,避免从旧 state 重翻)
+        run: |
+          git fetch origin translate-bot --depth 1 || echo "首次运行,无历史 state"
+          if git cat-file -e origin/translate-bot:docs-zh/.translated.json 2>/dev/null; then
+            git show origin/translate-bot:docs-zh/.translated.json > docs-zh/.translated.json
+            echo "已从 translate-bot 恢复最新 state ($(wc -c < docs-zh/.translated.json) 字节)"
+          else
+            echo "translate-bot 上无 state,继续使用 main 自带版本"
+          fi
+
       - name: 只拉取上游 docs 三个目录(不克隆整个仓库)
         run: |
           # sparse checkout:只下载 docs/Developer Guide、docs/Release Notes、docs/User Guide
@@ -37,14 +47,13 @@ jobs:
           # 把三个目录复制进工作区(注意:必须在 /tmp/upstream 里 cd 到别处再复制,
           # 不能 `cp -r "docs/Developer Guide" docs/`,因为目标 docs/Developer Guide
           # 已存在,cp 会报 "are the same file" 导致整个流程失败)
-          
+
           mkdir -p "$GITHUB_WORKSPACE/docs"
           cp -r "/tmp/upstream/docs/Developer Guide" \
                 "/tmp/upstream/docs/Release Notes" \
                 "/tmp/upstream/docs/User Guide" "$GITHUB_WORKSPACE/docs/"
           echo "--- 已拉取 ---"
           ls "$GITHUB_WORKSPACE/docs/"
-
 
       - name: 设置 Python
         uses: actions/setup-python@v5
@@ -74,22 +83,94 @@ jobs:
           git commit -m "docs-zh: 同步翻译 $(date +%F)"
           git push --force origin HEAD:translate-bot
 
+      - name: 生成动态 PR 描述(基于本次实际改动)
+        id: pr_body
+        run: |
+          git add docs-zh
+          if git diff --cached --quiet; then
+            echo "无改动,跳过 PR 描述生成"
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "skip=false" >> "$GITHUB_OUTPUT"
+
+          # 模式与标题前缀
+          if [ "${{ inputs.only_init }}" = "true" ]; then
+            MODE_LABEL="骨架初始化(建树 + 中文标题 + #originalHelpNoteId/#helpDoc 属性,正文仍为英文)"
+            TITLE_PREFIX="docs-zh: 骨架初始化"
+          else
+            MODE_LABEL="完整翻译(骨架 + 正文增量翻译)"
+            TITLE_PREFIX="docs-zh: 翻译更新"
+          fi
+
+          # 变更统计(staged diff = 本次 commit 的全部内容)
+          FILES_ADD=$(git diff --cached --name-status | awk '$1=="A"{n++} END{print n+0}')
+          FILES_MOD=$(git diff --cached --name-status | awk '$1=="M"{n++} END{print n+0}')
+          FILES_DEL=$(git diff --cached --name-status | awk '$1=="D"{n++} END{print n+0}')
+          LINES_ADD=$(git diff --cached --numstat | awk '{a+=$1} END{print a+0}')
+          LINES_DEL=$(git diff --cached --numstat | awk '{d+=$2} END{print d+0}')
+
+          # 笔记标题列表(去掉 docs-zh/ 前缀,各取前 20;cut -f2- 防止含空格路径被截断)
+          LIST_ADD=$(git diff --cached --name-status --diff-filter=A | cut -f2- | sed 's/^"//; s/"$//' | sed 's|^docs-zh/||' | sed -n '1,20p' | sed 's/^/- 新增: /')
+          LIST_MOD=$(git diff --cached --name-status --diff-filter=M | cut -f2- | sed 's/^"//; s/"$//' | sed 's|^docs-zh/||' | sed -n '1,20p' | sed 's/^/- 更新: /')
+          LIST_DEL=$(git diff --cached --name-status --diff-filter=D | cut -f2- | sed 's/^"//; s/"$//' | sed 's|^docs-zh/||' | sed -n '1,20p' | sed 's/^/- 删除: /')
+
+          # missing-note 锚文本处理量(删除行中出现的占位符行数)
+          FIXED_ANCHORS=$(git diff --cached -U0 | grep -c '^-[^-].*\[\(missing note\|缺失笔记\)\]' || true)
+
+          BODY="$RUNNER_TEMP/pr_body.md"
+          {
+            echo "由 workflow 自动生成的 Trilium 帮助文档中文翻译更新。"
+            echo ""
+            echo "## 本次改动概览"
+            echo ""
+            echo "- **模式**: ${MODE_LABEL}"
+            echo "- **文件**: 新增 ${FILES_ADD} / 更新 ${FILES_MOD} / 删除 ${FILES_DEL}"
+            echo "- **行数**: +${LINES_ADD} / -${LINES_DEL}"
+            if [ "${FIXED_ANCHORS}" != "0" ]; then
+              echo "- **链接修复**: 处理 ${FIXED_ANCHORS} 处 missing-note 锚文本(按 href 目标文件回填中文标题)"
+            fi
+            echo ""
+            if [ -n "${LIST_ADD}" ]; then
+              echo "### 新增笔记(最多 20 条)"
+              echo '```text'
+              echo "${LIST_ADD}"
+              echo '```'
+            fi
+            if [ -n "${LIST_MOD}" ]; then
+              echo "### 更新笔记(最多 20 条)"
+              echo '```text'
+              echo "${LIST_MOD}"
+              echo '```'
+            fi
+            if [ -n "${LIST_DEL}" ]; then
+              echo "### 删除笔记(最多 20 条)"
+              echo '```text'
+              echo "${LIST_DEL}"
+              echo '```'
+            fi
+            echo ""
+            echo "> 列表只截取前 20 条,完整变更请查看 Files changed 标签页。"
+            echo ""
+            echo "请 review 后合并。合并后在 **Actions** 重新跑一次本工作流即可继续增量同步。"
+          } > "${BODY}"
+          echo "body_file=${BODY}" >> "$GITHUB_OUTPUT"
+          echo "title=${TITLE_PREFIX} $(date +%F)" >> "$GITHUB_OUTPUT"
+
       - name: 自动开 PR(已存在则跳过)
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          if [ "${{ steps.pr_body.outputs.skip }}" = "true" ]; then
+            echo "本次无变更,不创建 PR"
+            exit 0
+          fi
           if [ "$(gh pr list --head translate-bot --state open --json number --jq 'length')" != "0" ]; then
             echo "已有 open 的 PR,跳过创建"
           else
             gh pr create \
               --base main \
               --head translate-bot \
-              --title "docs-zh: 翻译更新 $(date +%F)" \
-            --body "由 workflow 自动生成的 Trilium 帮助文档中文翻译更新。
-
-            【两阶段说明】
-            - 骨架 PR(只初始化):tree + 中文标题 + #originalHelpNoteId/#helpDoc 属性,正文仍为英文原文,先 review 结构和标题。
-            - 完整 PR:正文也已翻译。
-
-            请 review 后合并。合并后在 **Actions** 重新跑一次本工作流即可继续增量同步。"
-              fi
+              --title "${{ steps.pr_body.outputs.title }}" \
+              --body-file "${{ steps.pr_body.outputs.body_file }}"
+          fi
