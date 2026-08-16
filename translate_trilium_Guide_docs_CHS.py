@@ -171,7 +171,7 @@ def translate_text(text, gloss=None):
         "要求:\n"
         "1. 忠实原文,不增删内容\n"
         "2. 完整保留 Markdown 结构:标题层级、代码块、表格、列表、图片、加粗斜体\n"
-        "3. 完整保留 HTML 标签,尤其是 <a class=\"reference-link\" href=\"...\"> 的 href 值一字不改\n"
+        "3. 完整保留 HTML 标签,尤其是 <a class=\"reference-link\" href=\"...\"> 的 href 值一字不改;若链接锚文本是 [missing note],按 href 里的文件名翻译成中文笔记名(如 Math%20Equations → 数学公式),绝不要输出\"缺失笔记\"\n"
         "4. 代码块里的代码和英文命令不要翻译\n"
         "5. 专有名词保留英文:Trilium、Markdown、GitHub、API、pnpm 等\n"
         "6. 术语全文保持一致"
@@ -439,6 +439,51 @@ def _translate_body_file(src_path, dst_path, state, key, cur_hash, stats):
     rec["status"] = "done"
     state[key] = rec
 
+
+# ============ 链接锚文本修复(防 [missing note] 被字面翻译) ============
+
+def fix_missing_anchors(root_dir):
+    """修复 <a class="reference-link" href="X">[缺失笔记]/[missing note]</a>:
+    目标译文文件存在时,用其第一行 # 标题回填锚文本(幂等,可反复跑)。
+    目标文件不存在(真缺失)时保持占位,不强行脑补。"""
+    import urllib.parse
+    pat = re.compile(
+        r'(<a class="reference-link" href=")([^"]+)(">)(?:\[缺失笔记\]|\[missing note\])(</a>)',
+        re.IGNORECASE,
+    )
+    fixed = 0
+    checked = 0
+    for dirpath, _, files in os.walk(root_dir):
+        for fn in files:
+            if not fn.endswith(".md"):
+                continue
+            path = os.path.join(dirpath, fn)
+            with open(path, encoding="utf-8") as f:
+                content = f.read()
+            if "[缺失笔记]" not in content and "missing note" not in content:
+                continue
+            def repl(m):
+                nonlocal fixed
+                href = urllib.parse.unquote(m.group(2))
+                target = os.path.normpath(os.path.join(os.path.dirname(path), href))
+                # 防越界:目标必须仍在 root_dir 内
+                if not target.startswith(os.path.abspath(root_dir)):
+                    return m.group(0)
+                if os.path.exists(target):
+                    with open(target, encoding="utf-8") as tf:
+                        title = tf.readline().lstrip("#").strip()
+                    if title:
+                        fixed += 1
+                        return f"{m.group(1)}{m.group(2)}{m.group(3)}{title}{m.group(4)}"
+                return m.group(0)
+            new = pat.sub(repl, content)
+            if new != content:
+                with open(path, "w", encoding="utf-8") as f:
+                    f.write(new)
+                checked += 1
+    log(f"[锚文本] 检查 {checked} 个文件,回填 {fixed} 个 [缺失笔记] 链接")
+
+
 def copy_attachments(src_base, dst_base, node):
     """复制附件文件(与正文同目录)。返回新 attachments 数组。"""
     atts = node.get("attachments") or []
@@ -532,6 +577,7 @@ def main():
         log("下一步: 先 review 这版骨架(树结构+中文标题+属性),确认后运行本脚本(不带 --init)翻译正文。")
     else:
         log(f"\n[translate] 完成: 翻译 {stats['translated']} | 复用 {stats['skipped']} | 太大跳过 {stats['too_big']}")
+        fix_missing_anchors(OUT_DIR)   # ← 修复 [缺失笔记] 锚文本(目标文件存在则回填标题)
     log(f"输出: {OUT_DIR}/ 下三个独立文档目录(各含 !!!meta.json + 正文),1:1 复刻官方 docs 结构")
     log("分别导入: 必须进入单个文档目录后再打 zip,让 !!!meta.json 落在 zip 根,例如:")
     log('  cd "docs-zh/User Guide" && zip -r "../User Guide-zh.zip" .')
