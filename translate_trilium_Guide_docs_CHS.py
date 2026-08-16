@@ -115,6 +115,12 @@ def contains_chinese(s):
     """判断文本是否含中文字符,用于识别"假成功"翻译(模型直接返回英文原文)。"""
     return any('\u4e00' <= ch <= '\u9fff' for ch in s)
 
+MARKDOWN_EXTS = {".md", ".markdown"}
+
+def is_markdown(path):
+    """判断是否为 Markdown 文档:只有 .md 才翻译正文,代码/资源文件原样拷贝。"""
+    return os.path.splitext(path)[1].lower() in MARKDOWN_EXTS
+
 def extract_response_text(data):
     """从 Responses API 返回里提取纯文本,跳过 reasoning 等非文本项。"""
     texts = []
@@ -271,7 +277,7 @@ def migrate_state(state, meta):
             if not new_key or new_key in state:
                 continue
             rec = state.get(node["dataFileName"])
-            if not rec or rec.get("status") not in ("done", "too_big"):
+            if not rec or rec.get("status") not in ("done", "too_big", "code"):
                 continue
             src_path = os.path.join("docs", new_key)
             if os.path.exists(src_path) and rec.get("hash") == file_hash(src_path):
@@ -358,19 +364,25 @@ def build_tree(node, meta, state, used_ids, stats, translate_body):
         if os.path.exists(src_path):
             cur_hash = file_hash(src_path)
             rec = state.get(key, {}) or {}
-            done = rec.get("status") in ("done", "too_big") and rec.get("hash") == cur_hash
+            done = rec.get("status") in ("done", "too_big", "code") and rec.get("hash") == cur_hash
             if not os.path.exists(dst_path):
                 done = False
             elif rec.get("status") == "done":
-                # 防"假成功":state 标记 done,但输出文件实际不含中文(上次模型返回了英文原文)
-                try:
-                    with open(dst_path, encoding="utf-8", errors="ignore") as _f:
-                        _out = _f.read()
-                    if _out and not contains_chinese(_out):
-                        log(f"  [修正] {dst_path} 输出仍是英文,本次重新翻译")
-                        done = False
-                except OSError:
+                # 防"假成功"与旧版误翻:
+                # 1) 代码/资源文件被旧版当 Markdown 翻过(LLM 包了代码围栏),强制用上游原文覆盖
+                # 2) state 标记 done,但输出文件实际不含中文(上次模型返回了英文原文)
+                if not is_markdown(dst_path):
+                    log(f"  [修正] {dst_path} 是代码文件,强制用上游原文覆盖")
                     done = False
+                else:
+                    try:
+                        with open(dst_path, encoding="utf-8", errors="ignore") as _f:
+                            _out = _f.read()
+                        if _out and not contains_chinese(_out):
+                            log(f"  [修正] {dst_path} 输出仍是英文,本次重新翻译")
+                            done = False
+                    except OSError:
+                        done = False
             if translate_body and not done:
                 _translate_body_file(src_path, dst_path, state, key, cur_hash, stats)
             elif not translate_body:
@@ -411,13 +423,26 @@ def build_tree(node, meta, state, used_ids, stats, translate_body):
 
     out.pop("_src_base", None)
     out.pop("_dst_base", None)
-    out.pop("_src_path", None)   # ← 新增:防止内部字段泄漏到输出 !!!meta.json
+    out.pop("_src_path", None)   # 防止内部字段泄漏到输出 !!!meta.json
     return out
 
 def _translate_body_file(src_path, dst_path, state, key, cur_hash, stats):
     """翻译单个正文文件。"""
     with open(src_path, encoding="utf-8", errors="replace") as f:
         content = f.read()
+
+    if not is_markdown(src_path):
+        # 代码/资源文件:原样拷贝,不翻译(LLM 会把代码包进代码围栏,污染输出)
+        os.makedirs(os.path.dirname(dst_path), exist_ok=True)
+        with open(dst_path, "w", encoding="utf-8") as f:
+            f.write(content)
+        rec = state.get(key, {}) or {}
+        rec["hash"] = cur_hash
+        rec["status"] = "code"
+        state[key] = rec
+        stats["copied"] += 1
+        log(f"  [代码文件-拷贝] {src_path}")
+        return
 
     if not content.strip():
         # 空源文件:直接拷贝为空,不调 LLM(避免幻觉垃圾)
@@ -442,14 +467,19 @@ def _translate_body_file(src_path, dst_path, state, key, cur_hash, stats):
         else:
             log(f"  [翻译] {src_path} ...")
             translated = translate_text(content, GLOSSARY)
+            # 输出校验:必须含中文,否则判定"假成功"(模型直接返回英文原文),重试 1 次
             if not contains_chinese(translated):
-                # 防"假成功":模型偶尔直接返回英文原文,重试一次
                 log(f"  [重试] 输出不含中文(疑似返回原文),重试 1 次: {src_path}")
-                time.sleep(2)
                 translated = translate_text(content, GLOSSARY)
             if not contains_chinese(translated):
                 log(f"  [警告] 两次输出均不含中文,标记 suspect,下次运行会重翻: {src_path}")
+                rec = state.get(key, {}) or {}
+                rec["hash"] = cur_hash
+                rec["status"] = "suspect"
+                state[key] = rec
                 stats["suspect"] += 1
+                return
+            time.sleep(0.5)
         stats["translated"] += 1
 
     os.makedirs(os.path.dirname(dst_path), exist_ok=True)
@@ -457,12 +487,7 @@ def _translate_body_file(src_path, dst_path, state, key, cur_hash, stats):
         f.write(translated)
     rec = state.get(key, {}) or {}
     rec["hash"] = cur_hash
-    if contains_chinese(translated):
-        rec["status"] = "done"
-    elif len(content) > MAX_CHARS:
-        rec["status"] = "too_big"     # 太大故意保留英文,不算失败
-    else:
-        rec["status"] = "suspect"     # 模型没翻成中文,下次 run 重新翻
+    rec["status"] = "done"
     state[key] = rec
 
 
@@ -579,7 +604,7 @@ def main():
         for root in meta.get("files", []):
             root["_src_base"] = tree
             root["_dst_base"] = dst_base
-            assign_src_paths(root, tree)   # ← 关键:重新挂 _src_path,否则 state key 退回裸文件名(假重翻根因)
+            assign_src_paths(root, tree)   # 重新挂 _src_path,否则 state key 退回裸文件名(假重翻根因)
 
         phase = "init" if args.init else "正文翻译"
         log(f"== [{phase}] 处理树: {tree} ==")
@@ -602,8 +627,8 @@ def main():
         log(f"\n[init] 完成: 拷贝正文 {stats['copied']} | 标题与 ID 已写入 state")
         log("下一步: 先 review 这版骨架(树结构+中文标题+属性),确认后运行本脚本(不带 --init)翻译正文。")
     else:
-        log(f"\n[translate] 完成: 翻译 {stats['translated']} | 复用 {stats['skipped']} | 太大跳过 {stats['too_big']} | 存疑待重翻 {stats['suspect']}")
-        fix_missing_anchors(OUT_DIR)   # ← 修复 [缺失笔记] 锚文本(目标文件存在则回填标题)
+        log(f"\n[translate] 完成: 翻译 {stats['translated']} | 复用 {stats['skipped']} | 太大跳过 {stats['too_big']} | suspect {stats['suspect']}")
+        fix_missing_anchors(OUT_DIR)   # 修复 [缺失笔记] 锚文本(目标文件存在则回填标题)
     log(f"输出: {OUT_DIR}/ 下三个独立文档目录(各含 !!!meta.json + 正文),1:1 复刻官方 docs 结构")
     log("分别导入: 必须进入单个文档目录后再打 zip,让 !!!meta.json 落在 zip 根,例如:")
     log('  cd "docs-zh/User Guide" && zip -r "../User Guide-zh.zip" .')
