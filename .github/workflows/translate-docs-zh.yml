@@ -24,12 +24,11 @@ jobs:
       - name: 检出你的翻译仓库(只含脚本和上次的翻译结果)
         uses: actions/checkout@v4
 
-      # v4.0 修复:从 translate-bot 恢复整个 docs-zh/ 目录(含译文文件 + state)
-      # 旧版只恢复 .translated.json state 文件,但译文文件仍来自 main 分支,
-      # 导致 state 与 output 分支不同步:
-      #   - state 说 done+hash 匹配 → 错误跳过(Bug 1: 漏翻)
-      #   - verify_output_matches_src 发现磁盘译文是旧的 → 不必要重翻(Bug 2: 重复翻译)
-      # 现在整体恢复,确保 state 和 output 始终来自同一分支。
+      # v4.0/v4.1: 从 translate-bot 恢复整个 docs-zh/ 目录(含译文文件 + state)
+      # v4.1 脚本新增 output_hash 校验:
+      #   - 翻译成功后记录译文文件 sha256,下次运行时对比磁盘译文哈希
+      #   - 若 state 与译文来自不同分支 → output_hash 不匹配 → 强制重翻
+      #   - 配合 verify_output_matches_src 内容强校验,双重防幽灵 bug
       - name: 恢复上次完整翻译结果(整个 docs-zh 目录,含 state 和译文文件)
         run: |
           git fetch origin translate-bot --depth 1 || echo "首次运行,无历史"
@@ -39,6 +38,21 @@ jobs:
             echo "已从 translate-bot 恢复完整 docs-zh 目录(state + 译文文件)"
           else
             echo "translate-bot 上无 docs-zh,继续使用 main 自带版本"
+          fi
+
+      - name: v4.1 恢复后校验(state 与译文文件数量一致性)
+        run: |
+          if [ -f docs-zh/.translated.json ]; then
+            STATE_KEYS=$(python3 -c "import json; d=json.load(open('docs-zh/.translated.json')); print(len(d))")
+            MD_FILES=$(find docs-zh -name '*.md' ! -name '.translated.json' | wc -l)
+            echo "state 条目: ${STATE_KEYS}"
+            echo "译文 .md 文件: ${MD_FILES}"
+            # v4.1: 统计含 output_hash 的条目(首次运行 v4.1 时应全部缺失,后续逐步补全)
+            HAS_OHASH=$(python3 -c "import json; d=json.load(open('docs-zh/.translated.json')); print(sum(1 for v in d.values() if v.get('output_hash')))" 2>/dev/null || echo 0)
+            echo "含 output_hash 的条目: ${HAS_OHASH} / ${STATE_KEYS}"
+            if [ "${HAS_OHASH}" = "0" ] && [ "${STATE_KEYS}" -gt 0 ]; then
+              echo "⚠ 全部条目缺少 output_hash(首次运行 v4.1 或从 v4.0 升级),首次运行会额外做内容校验"
+            fi
           fi
 
       - name: 只拉取上游 docs 三个目录(不克隆整个仓库)
