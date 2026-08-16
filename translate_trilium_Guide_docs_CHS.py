@@ -18,15 +18,21 @@ Trilium 目录导出格式翻译器 v3(两阶段)
   - 标题与 ID 全部复用 init 阶段的成果
 
 用法:
-  python3 translate_trilium_v2.py --init            # 初始化(可反复跑,增量)
-  python3 translate_trilium_v2.py                   # 翻译正文(可反复跑,增量)
-  python3 translate_trilium_v2.py --init --dry-run  # 试跑:不调 API
+  python3 translate_trilium_Guide_docs_CHS.py --init            # 初始化(可反复跑,增量)
+  python3 translate_trilium_Guide_docs_CHS.py                   # 翻译正文(可反复跑,增量)
+  LLM_DRY_RUN=1 python3 translate_trilium_Guide_docs_CHS.py     # 试跑:不调 API
 
 说明:
   - 内部链接是相对路径 <a class="reference-link" href="...">,只依赖 dataFileName;
     译文目录平行,链接自动指向译文对应文件,无需改写。
   - 内置帮助 ID 铁律:内置帮助 noteId = "_help_" + GitHub docs 树对应笔记 noteId,
     故 originalHelpNoteId 必须写成 "_help_<源noteId>",跳转补丁脚本才能搜到。
+
+v3.3 变更(2026-08-16):
+  - 新增 verify_output_matches_src:done 判定不再只信 hash+含中文,
+    还要求输出包含源文件全部 reference-link href、长度不低于源文 30%。
+    根治"state hash 是新的、输出却是旧版翻译"的漏更新问题
+    (例:上游 AI.md 新增 In-editor AI assistant 段落,旧输出缺新链接被强制重翻)。
 """
 import argparse
 import hashlib
@@ -56,6 +62,7 @@ MAX_OUTPUT_TOKENS = 16000                    # Responses 输出预算(reasoning 
 REASONING_EFFORT = "none"                    # 关闭思维链(翻译不需要推理);若 API 报 400,改成 None
 GLOSSARY_FILE = "glossary.tsv"               # Weblate 术语表(可选,不存在则跳过)
 GLOSSARY_INJECT = 60                         # prompt 中最多注入的术语条数
+MIN_OUT_LEN_RATIO = 0.3                      # 输出/源长度下限;低于此值判为截断/只翻开头
 # ==================
 
 GLOSSARY = {}
@@ -114,6 +121,34 @@ def str_hash(s):
 def contains_chinese(s):
     """判断文本是否含中文字符,用于识别"假成功"翻译(模型直接返回英文原文)。"""
     return any('\u4e00' <= ch <= '\u9fff' for ch in s)
+
+def has_translation_chatter(s):
+    """检测 LLM 假成功套话(旧版模型吐的翻译腔开头,如"好的,这是您要求的…")。
+    这类输出含中文但内容张冠李戴/不完整,必须强制重翻。"""
+    head = s[:300]
+    if "好的，这是您要求的" in head:
+        return True
+    return bool(re.search(r"以下.{0,20}简体中文翻译", head))
+
+def verify_output_matches_src(src_text, out_text):
+    """校验译文输出是否对应当前源文件版本(防漏更新/旧版输出骗过增量检测)。
+
+    背景:state 的 hash 被写成新版、但磁盘上的翻译输出还是旧版内容时,
+    仅靠 hash+含中文 的 done 判定会把文件永远判为"已完成",上游再更新也不重翻。
+
+    两条强校验(正常翻译必然通过,旧版/截断输出必然失败):
+      1) 输出必须包含源文全部 <a class="reference-link" href="..."> 的 href
+         (翻译要求 href 一字不改;源文新增了链接而输出没有 → 输出是旧版)
+      2) 输出长度不得低于源文的 MIN_OUT_LEN_RATIO(中文普遍比英文短,
+         低于 30% 说明模型只翻了开头或输出被截断)
+    """
+    src_links = set(re.findall(r'<a class="reference-link" href="([^"]+)"', src_text))
+    out_links = set(re.findall(r'<a class="reference-link" href="([^"]+)"', out_text))
+    if not src_links.issubset(out_links):
+        return False
+    if len(out_text) < len(src_text) * MIN_OUT_LEN_RATIO:
+        return False
+    return True
 
 MARKDOWN_EXTS = {".md", ".markdown"}
 
@@ -368,9 +403,10 @@ def build_tree(node, meta, state, used_ids, stats, translate_body):
             if not os.path.exists(dst_path):
                 done = False
             elif rec.get("status") == "done":
-                # 防"假成功"与旧版误翻:
+                # 防"假成功"、旧版误翻与漏更新:
                 # 1) 代码/资源文件被旧版当 Markdown 翻过(LLM 包了代码围栏),强制用上游原文覆盖
                 # 2) state 标记 done,但输出文件实际不含中文(上次模型返回了英文原文)
+                # 3) state hash 是新的、但输出是旧版翻译(上游更新后未真正重翻)
                 if not is_markdown(dst_path):
                     log(f"  [修正] {dst_path} 是代码文件,强制用上游原文覆盖")
                     done = False
@@ -378,9 +414,16 @@ def build_tree(node, meta, state, used_ids, stats, translate_body):
                     try:
                         with open(dst_path, encoding="utf-8", errors="ignore") as _f:
                             _out = _f.read()
-                        if _out and not contains_chinese(_out):
-                            log(f"  [修正] {dst_path} 输出仍是英文,本次重新翻译")
+                        if _out and (not contains_chinese(_out) or has_translation_chatter(_out)):
+                            log(f"  [修正] {dst_path} 输出疑似假成功翻译(纯英文/翻译腔套话),本次重新翻译")
                             done = False
+                        elif _out:
+                            # 强校验:输出必须对应当前源文件版本(链接集合+长度)
+                            with open(src_path, encoding="utf-8", errors="replace") as _sf:
+                                _src_text = _sf.read()
+                            if not verify_output_matches_src(_src_text, _out):
+                                log(f"  [修正] {dst_path} 输出疑似旧版本翻译(缺链接或内容不完整),本次重新翻译")
+                                done = False
                     except OSError:
                         done = False
             if translate_body and not done:
@@ -423,7 +466,7 @@ def build_tree(node, meta, state, used_ids, stats, translate_body):
 
     out.pop("_src_base", None)
     out.pop("_dst_base", None)
-    out.pop("_src_path", None)   # 防止内部字段泄漏到输出 !!!meta.json
+    out.pop("_src_path", None)   # ← 防止内部字段泄漏到输出 !!!meta.json
     return out
 
 def _translate_body_file(src_path, dst_path, state, key, cur_hash, stats):
@@ -467,18 +510,30 @@ def _translate_body_file(src_path, dst_path, state, key, cur_hash, stats):
         else:
             log(f"  [翻译] {src_path} ...")
             translated = translate_text(content, GLOSSARY)
-            # 输出校验:必须含中文,否则判定"假成功"(模型直接返回英文原文),重试 1 次
-            if not contains_chinese(translated):
-                log(f"  [重试] 输出不含中文(疑似返回原文),重试 1 次: {src_path}")
+            # 输出校验:必须含中文且不带翻译腔套话,否则判定"假成功",重试 1 次
+            if not contains_chinese(translated) or has_translation_chatter(translated):
+                log(f"  [重试] 输出不含中文或带翻译腔套话(疑似假成功),重试 1 次: {src_path}")
                 translated = translate_text(content, GLOSSARY)
-            if not contains_chinese(translated):
-                log(f"  [警告] 两次输出均不含中文,标记 suspect,下次运行会重翻: {src_path}")
+            if not contains_chinese(translated) or has_translation_chatter(translated):
+                log(f"  [警告] 两次输出均不合格,标记 suspect,下次运行会重翻: {src_path}")
                 rec = state.get(key, {}) or {}
                 rec["hash"] = cur_hash
                 rec["status"] = "suspect"
                 state[key] = rec
                 stats["suspect"] += 1
                 return
+            # 内容强校验:译文必须保留源文全部链接、长度不低于下限,否则重试一次
+            if not verify_output_matches_src(content, translated):
+                log(f"  [重试] 输出缺链接或内容不完整(疑似旧版/截断),重试 1 次: {src_path}")
+                translated = translate_text(content, GLOSSARY)
+                if not verify_output_matches_src(content, translated):
+                    log(f"  [警告] 两次输出均未通过内容校验,标记 suspect,下次运行会重翻: {src_path}")
+                    rec = state.get(key, {}) or {}
+                    rec["hash"] = cur_hash
+                    rec["status"] = "suspect"
+                    state[key] = rec
+                    stats["suspect"] += 1
+                    return
             time.sleep(0.5)
         stats["translated"] += 1
 
@@ -604,7 +659,7 @@ def main():
         for root in meta.get("files", []):
             root["_src_base"] = tree
             root["_dst_base"] = dst_base
-            assign_src_paths(root, tree)   # 重新挂 _src_path,否则 state key 退回裸文件名(假重翻根因)
+            assign_src_paths(root, tree)   # ← 关键:重新挂 _src_path,否则 state key 退回裸文件名(假重翻根因)
 
         phase = "init" if args.init else "正文翻译"
         log(f"== [{phase}] 处理树: {tree} ==")
@@ -627,8 +682,8 @@ def main():
         log(f"\n[init] 完成: 拷贝正文 {stats['copied']} | 标题与 ID 已写入 state")
         log("下一步: 先 review 这版骨架(树结构+中文标题+属性),确认后运行本脚本(不带 --init)翻译正文。")
     else:
-        log(f"\n[translate] 完成: 翻译 {stats['translated']} | 复用 {stats['skipped']} | 太大跳过 {stats['too_big']} | suspect {stats['suspect']}")
-        fix_missing_anchors(OUT_DIR)   # 修复 [缺失笔记] 锚文本(目标文件存在则回填标题)
+        log(f"\n[translate] 完成: 翻译 {stats['translated']} | 复用 {stats['skipped']} | 太大跳过 {stats['too_big']} | 可疑 {stats['suspect']}")
+        fix_missing_anchors(OUT_DIR)   # ← 修复 [缺失笔记] 锚文本(目标文件存在则回填标题)
     log(f"输出: {OUT_DIR}/ 下三个独立文档目录(各含 !!!meta.json + 正文),1:1 复刻官方 docs 结构")
     log("分别导入: 必须进入单个文档目录后再打 zip,让 !!!meta.json 落在 zip 根,例如:")
     log('  cd "docs-zh/User Guide" && zip -r "../User Guide-zh.zip" .')
