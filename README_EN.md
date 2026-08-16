@@ -28,7 +28,7 @@ The output is a 1:1 replica of the official structure, stored under `docs-zh/` i
 | Full translation | All three docs fully translated, 1:1 replica of the official tree, internal links preserved, importable separately |
 | Built-in help redirect | Every translated note carries `#originalHelpNoteId=_help_<sourceNoteId>` + `#helpDoc=zh`, mapped 1:1 to the English version; the patch locates the Chinese version via these two attributes |
 | Navigation patch | Help split-pane and quick-edit popup automatically switch to Chinese; falls back to English when no Chinese version exists (no flash) |
-| Incremental sync | Weekly check against upstream; already-translated content is reused via hash comparison — only changed files are re-translated |
+| Incremental sync | Weekly check against upstream; already-translated content is reused via dual hash verification (source hash + output hash) — only changed files are re-translated |
 
 ## Demo
 
@@ -81,7 +81,7 @@ Download `TriliumNext中文版帮助文档跳转补丁.zip` from **Releases**, a
 A GitHub workflow checks upstream **every Sunday** (manual trigger also available under Actions).
 
 ```
-upstream docs → sparse-checkout (3 doc dirs only) → hash comparison → translate only changed files → auto PR
+upstream docs → sparse-checkout (3 doc dirs only) → hash comparison → translate only changed files → translation integrity check → auto PR
 ```
 
 - Already-translated content is **reused incrementally** via hashes, so updates are extremely cheap.
@@ -108,7 +108,7 @@ Trilium export links are relative paths (resolved by `dataFileName`). The transl
 ### Two-phase translation
 
 1. **Initialization (`--init`)**: builds the tree, batch-translates titles, generates stable new IDs (`_zh_xxx`) and writes attributes. Bodies are still English at this stage — review the skeleton first.
-2. **Body translation**: incremental; already-translated files are skipped by hash, so interrupted runs can simply be re-triggered.
+2. **Body translation**: incremental; already-translated files are skipped by hash, so interrupted runs can simply be re-triggered. Each successful translation also records the output file hash (`output_hash`); on the next run, the on-disk translation is verified against this hash to prevent state/output mismatch.
 
 > Why skeleton first? Titles and IDs are fixed and persisted first, so internal links in the bodies resolve stably to the Chinese notes; the skeleton PR also lets you review the structure before translating the bodies.
 
