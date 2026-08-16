@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Trilium 目录导出格式翻译器 v4(两阶段 + 增量同步)
+Trilium 目录导出格式翻译器 v4.1(两阶段 + 增量同步)
 ===================================================
 输入: 上游仓库已 checkout 的三个 Trilium 目录导出树
       docs/Developer Guide, docs/Release Notes, docs/User Guide
@@ -21,6 +21,16 @@ Trilium 目录导出格式翻译器 v4(两阶段 + 增量同步)
   python3 translate_trilium_Guide_docs_CHS.py --init            # 初始化(可反复跑,增量)
   python3 translate_trilium_Guide_docs_CHS.py                   # 翻译正文(可反复跑,增量)
   LLM_DRY_RUN=1 python3 translate_trilium_Guide_docs_CHS.py     # 试跑:不调 API
+
+v4.1 变更(2026-08-16):
+  - 恢复 verify_output_matches_src() 到 done 判定:
+    v4.0 误删此检查,导致旧版译文骗过 hash+含中文轻量检查 → 永远跳过 → 漏翻。
+    重新加入「源文全部 reference-link href ⊂ 译文」+「译文长度 ≥ 源文 30%」两条强校验。
+  - 新增 output_hash 字段: 翻译成功后记录译文文件的 sha256,
+    下次运行时对比磁盘译文哈希。若 state 与译文来自不同分支(分支不同步),
+    output_hash 不匹配 → 强制重翻,杜绝「state 说了 done 但译文是旧的」幽灵 bug。
+  - 已有 state 条目(无 output_hash): 首次 v4.1 运行只做 verify_output_matches_src 校验,
+    通过的补写 output_hash,不通过的标记重翻。不影响性能(纯本地文件对比,无 API 调用)。
 
 v4.0 变更(2026-08-16):
   - 新增 cleanup_orphans(): 处理完成后删除 docs-zh/ 中上游已删除的孤儿文件 + 清理过期 state 条目
@@ -418,22 +428,33 @@ def build_tree(node, meta, state, used_ids, stats, translate_body):
             done = rec.get("status") in ("done", "too_big", "code") and rec.get("hash") == cur_hash
             if not os.path.exists(dst_path):
                 done = False
-            elif rec.get("status") == "done":
-                # v4.0: 简化检查。工作流已改为整体恢复 docs-zh/ 目录,
-                # state 和 output 始终来自同一分支,不再需要 verify_output_matches_src 防分支不同步。
-                # 保留轻量安全网:含中文 + 翻译腔检查
-                if not is_markdown(dst_path):
-                    log(f"  [修正] {dst_path} 是代码文件,强制用上游原文覆盖")
+            elif done:
+                # v4.1: 验证 output_hash —— 检测 state 与译文文件分支不同步
+                # 旧 Bug: 工作流恢复时 state(含新 hash)与译文文件(旧翻译)来自不同来源,
+                # hash 匹配 + 含中文 → 错误跳过,译文永远过时(幽灵 bug)。
+                _out_hash = rec.get("output_hash")
+                if _out_hash and file_hash(dst_path) != _out_hash:
+                    log(f"  [修正] {dst_path} 译文文件与 state 记录不同步(output_hash 不匹配),本次重新翻译")
                     done = False
-                else:
-                    try:
-                        with open(dst_path, encoding="utf-8", errors="ignore") as _f:
-                            _out = _f.read()
-                        if _out and (not contains_chinese(_out) or has_translation_chatter(_out)):
-                            log(f"  [修正] {dst_path} 输出疑似假成功翻译(纯英文/翻译腔套话),本次重新翻译")
-                            done = False
-                    except OSError:
+                elif rec.get("status") == "done":
+                    # v4.1: 恢复内容强校验(防旧版译文骗过 hash+中文轻量检查)
+                    if not is_markdown(dst_path):
+                        log(f"  [修正] {dst_path} 是代码文件,强制用上游原文覆盖")
                         done = False
+                    else:
+                        try:
+                            with open(dst_path, encoding="utf-8", errors="ignore") as _f:
+                                _out = _f.read()
+                            with open(src_path, encoding="utf-8", errors="ignore") as _f:
+                                _src = _f.read()
+                            if not _out or not contains_chinese(_out) or has_translation_chatter(_out):
+                                log(f"  [修正] {dst_path} 输出疑似假成功翻译(纯英文/翻译腔套话),本次重新翻译")
+                                done = False
+                            elif not verify_output_matches_src(_src, _out):
+                                log(f"  [修正] {dst_path} 译文内容与源文不匹配(疑似旧版/截断),本次重新翻译")
+                                done = False
+                        except OSError:
+                            done = False
             if translate_body and not done:
                 _translate_body_file(src_path, dst_path, state, key, cur_hash, stats)
             elif not translate_body:
@@ -489,6 +510,7 @@ def _translate_body_file(src_path, dst_path, state, key, cur_hash, stats):
             f.write(content)
         rec = state.get(key, {}) or {}
         rec["hash"] = cur_hash
+        rec["output_hash"] = file_hash(dst_path)
         rec["status"] = "code"
         state[key] = rec
         stats["copied"] += 1
@@ -502,6 +524,7 @@ def _translate_body_file(src_path, dst_path, state, key, cur_hash, stats):
             f.write("")
         rec = state.get(key, {}) or {}
         rec["hash"] = cur_hash
+        rec["output_hash"] = file_hash(dst_path)
         rec["status"] = "done"
         state[key] = rec
         stats["copied"] += 1
@@ -526,6 +549,7 @@ def _translate_body_file(src_path, dst_path, state, key, cur_hash, stats):
                 log(f"  [警告] 两次输出均不合格,标记 suspect,下次运行会重翻: {src_path}")
                 rec = state.get(key, {}) or {}
                 rec["hash"] = cur_hash
+                rec["output_hash"] = file_hash(dst_path)
                 rec["status"] = "suspect"
                 state[key] = rec
                 stats["suspect"] += 1
@@ -538,6 +562,7 @@ def _translate_body_file(src_path, dst_path, state, key, cur_hash, stats):
                     log(f"  [警告] 两次输出均未通过内容校验,标记 suspect,下次运行会重翻: {src_path}")
                     rec = state.get(key, {}) or {}
                     rec["hash"] = cur_hash
+                    rec["output_hash"] = file_hash(dst_path)
                     rec["status"] = "suspect"
                     state[key] = rec
                     stats["suspect"] += 1
@@ -550,6 +575,7 @@ def _translate_body_file(src_path, dst_path, state, key, cur_hash, stats):
         f.write(translated)
     rec = state.get(key, {}) or {}
     rec["hash"] = cur_hash
+    rec["output_hash"] = file_hash(dst_path)
     rec["status"] = "done"
     state[key] = rec
 
