@@ -24,14 +24,21 @@ jobs:
       - name: 检出你的翻译仓库(只含脚本和上次的翻译结果)
         uses: actions/checkout@v4
 
-      - name: 恢复上次翻译记忆(state,避免从旧 state 重翻)
+      # v4.0 修复:从 translate-bot 恢复整个 docs-zh/ 目录(含译文文件 + state)
+      # 旧版只恢复 .translated.json state 文件,但译文文件仍来自 main 分支,
+      # 导致 state 与 output 分支不同步:
+      #   - state 说 done+hash 匹配 → 错误跳过(Bug 1: 漏翻)
+      #   - verify_output_matches_src 发现磁盘译文是旧的 → 不必要重翻(Bug 2: 重复翻译)
+      # 现在整体恢复,确保 state 和 output 始终来自同一分支。
+      - name: 恢复上次完整翻译结果(整个 docs-zh 目录,含 state 和译文文件)
         run: |
-          git fetch origin translate-bot --depth 1 || echo "首次运行,无历史 state"
+          git fetch origin translate-bot --depth 1 || echo "首次运行,无历史"
           if git cat-file -e origin/translate-bot:docs-zh/.translated.json 2>/dev/null; then
-            git show origin/translate-bot:docs-zh/.translated.json > docs-zh/.translated.json
-            echo "已从 translate-bot 恢复最新 state ($(wc -c < docs-zh/.translated.json) 字节)"
+            # 从 translate-bot 恢复整个 docs-zh 目录(不仅仅是 state 文件)
+            git checkout origin/translate-bot -- docs-zh/
+            echo "已从 translate-bot 恢复完整 docs-zh 目录(state + 译文文件)"
           else
-            echo "translate-bot 上无 state,继续使用 main 自带版本"
+            echo "translate-bot 上无 docs-zh,继续使用 main 自带版本"
           fi
 
       - name: 只拉取上游 docs 三个目录(不克隆整个仓库)
@@ -44,10 +51,9 @@ jobs:
             "docs/Developer Guide" \
             "docs/Release Notes" \
             "docs/User Guide"
-          # 把三个目录复制进工作区(注意:必须在 /tmp/upstream 里 cd 到别处再复制,
-          # 不能 `cp -r "docs/Developer Guide" docs/`,因为目标 docs/Developer Guide
-          # 已存在,cp 会报 "are the same file" 导致整个流程失败)
 
+          # v4.0 修复:先清空工作区的 docs/ 目录,防止上一次残留文件混入
+          rm -rf "$GITHUB_WORKSPACE/docs"
           mkdir -p "$GITHUB_WORKSPACE/docs"
           cp -r "/tmp/upstream/docs/Developer Guide" \
                 "/tmp/upstream/docs/Release Notes" \
@@ -71,24 +77,19 @@ jobs:
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
         run: python3 translate_trilium_Guide_docs_CHS.py
 
-      - name: 提交并推送到 translate-bot 分支
+      # v4.0 修复:先暂存 + 生成 PR 描述,再 commit + push + 创建 PR
+      # 旧版先 commit 再生成 PR 描述,导致 git diff --cached 为空 → skip=true → PR 永远不创建
+      - name: 暂存变更并生成 PR 描述
+        id: pr_body
         run: |
           git config user.name "docs-zh bot"
           git config user.email "docs-zh-bot@users.noreply.github.com"
-          git add docs-zh
+
+          # -A 确保删除操作也被暂存(孤儿文件清理会产生删除)
+          git add -A docs-zh
+
           if git diff --cached --quiet; then
             echo "没有新的翻译变更"
-            exit 0
-          fi
-          git commit -m "docs-zh: 同步翻译 $(date +%F)"
-          git push --force origin HEAD:translate-bot
-
-      - name: 生成动态 PR 描述(基于本次实际改动)
-        id: pr_body
-        run: |
-          git add docs-zh
-          if git diff --cached --quiet; then
-            echo "无改动,跳过 PR 描述生成"
             echo "skip=true" >> "$GITHUB_OUTPUT"
             exit 0
           fi
@@ -157,20 +158,27 @@ jobs:
           echo "body_file=${BODY}" >> "$GITHUB_OUTPUT"
           echo "title=${TITLE_PREFIX} $(date +%F)" >> "$GITHUB_OUTPUT"
 
-      - name: 自动开 PR(已存在则跳过)
+      - name: 提交、推送并创建 PR
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           if [ "${{ steps.pr_body.outputs.skip }}" = "true" ]; then
-            echo "本次无变更,不创建 PR"
+            echo "本次无变更,不提交"
             exit 0
           fi
+
+          # commit + push(暂存区已在上一步骤准备好)
+          git commit -m "docs-zh: 同步翻译 $(date +%F)"
+          git push --force origin HEAD:translate-bot
+
+          # 创建 PR(已存在则跳过)
           if [ "$(gh pr list --head translate-bot --state open --json number --jq 'length')" != "0" ]; then
-            echo "已有 open 的 PR,跳过创建"
+            echo "已有 open 的 PR,跳过创建(新 commit 会自动出现在已有 PR 中)"
           else
             gh pr create \
               --base main \
               --head translate-bot \
               --title "${{ steps.pr_body.outputs.title }}" \
               --body-file "${{ steps.pr_body.outputs.body_file }}"
+            echo "PR 已创建"
           fi
