@@ -447,7 +447,11 @@ def build_tree(node, meta, state, used_ids, stats, translate_body):
                                 _out = _f.read()
                             with open(src_path, encoding="utf-8", errors="ignore") as _f:
                                 _src = _f.read()
-                            if not _out or not contains_chinese(_out) or has_translation_chatter(_out):
+                            if not _src.strip():
+                                pass  # 源文件为空(占位节点),跳过 suspect 检查
+                            elif os.path.basename(src_path) == "License.md":
+                                pass  # License.md 保留英文原文,不翻译,跳过 suspect 检查
+                            elif not _out or not contains_chinese(_out) or has_translation_chatter(_out):
                                 log(f"  [修正] {dst_path} 输出疑似假成功翻译(纯英文/翻译腔套话),本次重新翻译")
                                 done = False
                             elif not verify_output_matches_src(_src, _out):
@@ -502,6 +506,20 @@ def _translate_body_file(src_path, dst_path, state, key, cur_hash, stats):
     """翻译单个正文文件。"""
     with open(src_path, encoding="utf-8", errors="replace") as f:
         content = f.read()
+
+    # License.md: 保留英文原文不翻译,直接拷贝并标记 done
+    if os.path.basename(src_path) == "License.md":
+        os.makedirs(os.path.dirname(dst_path), exist_ok=True)
+        with open(dst_path, "w", encoding="utf-8") as f:
+            f.write(content)
+        rec = state.get(key, {}) or {}
+        rec["hash"] = cur_hash
+        rec["output_hash"] = file_hash(dst_path)
+        rec["status"] = "done"
+        state[key] = rec
+        stats["copied"] += 1
+        log(f"  [跳过-License] {src_path}")
+        return
 
     if not is_markdown(src_path):
         # 代码/资源文件:原样拷贝,不翻译(LLM 会把代码包进代码围栏,污染输出)
