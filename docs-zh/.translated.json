@@ -126,7 +126,8 @@
     "title": "环境搭建",
     "title_hash": "9be5abede631306886346f82ffb44c77a68e08e5e7495578744f025fc5a193e9",
     "status": "done",
-    "hash": "851c993b3739302da8dc9efa15dbcadd8e5e1080033c35cf7c89c2f0cee82b11"
+    "hash": "581111a993b170208e50f654e0ac267258137aa2904c28ab9b39765cecdd2b6f",
+    "output_hash": "90bb265186c9b74bf3418556f0bcf6607d486d1eaacf64e3434ea74fd21ed4a4"
   },
   "Developer Guide/Developer Guide/Branching strategy.md": {
     "id": "_zh_vTbvZ3vi",
@@ -2214,7 +2215,8 @@
     "title": "关系",
     "title_hash": "ba39aabe5da59950f2613ffbe227e06b619cb600ad7e3ec2f7fd296f8edc5026",
     "status": "done",
-    "hash": "162c9ec1ebfd3bbd42bf07a5ef1c51603b8c685a16c42059783efba3c3471ea5"
+    "hash": "e311e48608549644535f47eb3f5a4a71d9b8ccf7b9d920f56f9aa3f8f20565c4",
+    "output_hash": "bb4ce968cf2a50e765890b84c69122be251d2f7dc2cf9d09312d81415518463f"
   },
   "User Guide/User Guide/Advanced Usage/Attributes/Attribute Inheritance.md": {
     "id": "_zh_Ke4chqSp",
@@ -2333,7 +2335,8 @@
     "title": "任务管理器",
     "title_hash": "58d65c201fc09fb0db9b9a8975323f110b12d9b63f4e77f07ac728ed79c689e1",
     "status": "done",
-    "hash": "ee5804745c8db51f48660890441c12d6bec6f320deaa47026ff732c7684dc014"
+    "hash": "abcb33799e87d4ad78861309a2b89afdd8ed5e6e18690a843cfd44b6132525fc",
+    "output_hash": "6b12630e05f1dce57e0f841d03beded98cd74972d364ae966f394e892d24bac1"
   },
   "User Guide/User Guide/Advanced Usage/Customizing to-do task states.md": {
     "id": "_zh_UQBZFxD2",
@@ -2522,14 +2525,16 @@
     "title": "脚本",
     "title_hash": "01846401bd51c6304510b9e2350e45b81678afd5c1b9e937e2f976b0e7127e69",
     "status": "done",
-    "hash": "464f0a63745c75550b8c377a2797813f63967028ab893c3ee599baf8305ec045"
+    "hash": "510f7cc302b9d46c504b88521f4c8ee3b30c6bfb2290ac7d7fec72cf0eef6174",
+    "output_hash": "b5d75a6742083d010f7228b927d73492218c8362a9a38647a31b0e96949fac73"
   },
   "User Guide/User Guide/Scripting/Frontend Basics.md": {
     "id": "_zh_HuntoxzM",
     "title": "前端基础",
     "title_hash": "f6b7a4b19af6c4164a602c841c2ccbc384bc2e5f5fc4d967ed33dfecb9a1355b",
     "status": "done",
-    "hash": "27b46dd28d7decb244b40df30f02b00ce6814410e8cd137c5ba089e1448c147f"
+    "hash": "87bb414c1834c98774333a3dcef6c737cf5118ffe333ca0b3d613514c9cc9583",
+    "output_hash": "a3545785207664ffb90e81d5cb63d11acf14f52cf4cc2840bd22073db83e818a"
   },
   "User Guide/User Guide/Scripting/Frontend Basics/Custom Widgets.md": {
     "id": "_zh_knaRy8fW",
@@ -2578,7 +2583,8 @@
     "title": "“新建任务”启动器按钮",
     "title_hash": "e359a17bb8e35d1e0432199c80e45e6063c94813c052941ac128dd70838d6e9b",
     "status": "done",
-    "hash": "23a43b38e6edc18582c0375868181a2441ed0e0218fe4aab620d6e5921afc3a5"
+    "hash": "b9a75f7042909ee38d37161ac9ac82c86e5db2a2b6a490cd6c0702f25c64b727",
+    "output_hash": "a34efd53c94219d7f0aa36cff17600d91660a0c6676fe4dc6cf990b066c0d6aa"
   },
   "User Guide/User Guide/Scripting/Frontend Basics/Examples/Downloading responses from Google Forms.md": {
     "id": "_zh_tcdf17vo",
@@ -2599,7 +2605,8 @@
     "title": "启动栏小组件",
     "title_hash": "043c2fdcbe463ac1316a375240349d91518f2e497c93947774240596f6d3c3b9",
     "status": "done",
-    "hash": "9f77dc2eb048c56dd6f0a24aaa24c7819889a7f3b34c6b82a83f45db96bfbb89"
+    "hash": "80ca1ac07865a9150bb0b3d5c3d387f5cd4d14d45b935216ee6dde632c655db3",
+    "output_hash": "1e935b3d41ffd7608cf3de17a14a36b23f6298c13ff739ca5426385d7062fdb7"
   },
   "User Guide/User Guide/Scripting/Frontend Basics/Launch Bar Widgets/Note Title Widget.md": {
     "id": "_zh_psbPSKKe",
@@ -2662,7 +2669,8 @@
     "title": "后端脚本",
     "title_hash": "f9f85e47a1b6be13fa67f647fd7f08778f5353a9584ad0fe58db42dd40c75983",
     "status": "done",
-    "hash": "ed38900b1b380fd61ccf83876adee076cb4ab28f7e996e7223ca90fb44e74843"
+    "hash": "0ad1aca1a56db5a69dc41e508ef2198d6dd4170419032bca14a423566e61b6b4",
+    "output_hash": "3f55080321019cbe93700842cec876957f176255b08372b7a6799833ac71f1bd"
   },
   "User Guide/User Guide/Scripting/Backend scripts/Server-side imports.md": {
     "id": "_zh_2qFBD8NS",
@@ -2670,13 +2678,6 @@
     "title_hash": "db79e7f0117a962633b0c86cd0fba14c167e94aff37988e1708ec6ca999f88df",
     "status": "done",
     "hash": "95deb38c786c6b76d0e9a7d2dea27fe22514ee2e9030c8cf62810ee9979b8da9"
-  },
-  "User Guide/User Guide/Scripting/Backend scripts/Events.md": {
-    "id": "_zh_Pl2Fj9sn",
-    "title": "事件",
-    "title_hash": "8d14f6e72de8f18ab1ee5c5330f00653c0c3ce099e63024454f80af97e72d333",
-    "status": "done",
-    "hash": "5c681c68aff50bcea45264cb410df3280e900cbe099ec66674f83ddb914dcb72"
   },
   "User Guide/User Guide/Scripting/Common concepts/Script bundles.md": {
     "id": "_zh_7eS1oWr5",
@@ -2780,7 +2781,7 @@
     "id": "_zh_BwsA2DuI",
     "title": "许可证",
     "title_hash": "c011d6097bfbc8e936280addcf2e3e7d06ea2223ffd596973191b800a7035c32",
-    "status": "suspect",
+    "status": "done",
     "hash": "a1c0d906de953e70d930c8b044c7c726bf81fa85fb286bcf18fc6f171854542d",
     "output_hash": "a1c0d906de953e70d930c8b044c7c726bf81fa85fb286bcf18fc6f171854542d"
   },
@@ -2911,7 +2912,8 @@
     "title": "编辑器内 AI 助手",
     "title_hash": "39a4e2827b934b70eb0d86f28e23c2289b56d4afbf0bf4197245786fbaedae26",
     "status": "done",
-    "hash": "bc0be149588450bbb82f2c5833a023e20b726a2389e7fdd8136b1b3fbcbd0617"
+    "hash": "66286c1041459ab72bfc8cd03b845daa7e53ebc90ec87edbedc906ef3e2efc77",
+    "output_hash": "3357790e80d59198b1b1d1fdf54c43e99563e5b0871ebf0af0d05abfe2cf2040"
   },
   "User Guide/User Guide/Note Types/Text/In-editor AI assistant/Custom AI quick actions.md": {
     "id": "_zh_q6rJTdih",
@@ -2962,7 +2964,8 @@
     "title": "标签",
     "title_hash": "934b8899c3d918d4b40bbb3512aed9c4ecd639c4be8e2263106536922a423121",
     "status": "done",
-    "hash": "0e69544c77461d139d83bbbb6b104e710ec091c6394592db2de51e0568500329"
+    "hash": "f00498c5eeb19027d416a387457267ed95facf8c0de13c7a22628961b2ef9667",
+    "output_hash": "d183a66674a6d2a3226427d1a0596d00c43b8c4531a1fa2b3bc4bc1adf44fe28"
   },
   "User Guide/User Guide/Advanced Usage/Configuration (config.ini or environment variables).md": {
     "id": "_zh_ftYM1Y6n",
@@ -2998,5 +3001,21 @@
     "title_hash": "b581e46042cbfbb0af4542a858079a84fd3ae98e5563f615710191d5b3597680",
     "status": "done",
     "hash": "18f41c3db2e9957090c005cddb460118dbb9b6299bfb4f8f254b0f651100976f"
+  },
+  "User Guide/User Guide/Scripting/Frontend Basics/Frontend Events.md": {
+    "id": "_zh_uMFhTG2E",
+    "title": "前端事件",
+    "title_hash": "ba9fad0c895fd9f45953811b7e0cb7f49c36ba89b37af0e973fa780fc832a907",
+    "status": "done",
+    "hash": "fe433c46e65ac45ace79a0671785111fcf43c4d1ef40807c74251cfc85fdd7fe",
+    "output_hash": "bde20ee0d74980d71a6d0baaa93d9a6deced4670f57de828c86853aca649e177"
+  },
+  "User Guide/User Guide/Scripting/Backend scripts/Backend Events.md": {
+    "id": "_zh_jef4cgXq",
+    "title": "后端事件",
+    "title_hash": "d34144b9b294b108b721203d268b234a37b3b6d0f9e6be6164960f105aeaeca3",
+    "status": "done",
+    "hash": "19cf4d5a512a52df02ce289e316d53afbd25b2e4c1729cba60d8cf83070c6a5c",
+    "output_hash": "efb4b30197a7800b749d04ac29230bc7b41a96ce2d510b97ac34387e63d6c70b"
   }
 }
