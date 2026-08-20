@@ -12,8 +12,8 @@
       "notePosition": 1,
       "prefix": null,
       "isExpanded": false,
-      "type": "book",
-      "mime": "",
+      "type": "text",
+      "mime": "text/html",
       "attributes": [
         {
           "type": "label",
@@ -74,6 +74,7 @@
       ],
       "attachments": [],
       "dirFileName": "Release Notes",
+      "dataFileName": "Release Notes.md",
       "children": [
         {
           "isClone": false,
