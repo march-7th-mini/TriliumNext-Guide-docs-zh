@@ -2134,6 +2134,48 @@
                   "children": []
                 }
               ]
+            },
+            {
+              "isClone": false,
+              "noteId": "_zh_rSr11aaa",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "qalhAaJoQ7AN",
+                "dEpZ1pLibs4Z"
+              ],
+              "title": "压缩库",
+              "notePosition": 30,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "compression-libraries",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_dEpZ1pLibs4Z",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 40
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Compression libraries.md",
+              "attachments": [],
+              "children": []
             }
           ]
         },
@@ -3878,6 +3920,49 @@
                   "dataFileName": "Content hashing.md",
                   "attachments": [],
                   "children": []
+                },
+                {
+                  "isClone": false,
+                  "noteId": "_zh_BQnqTp1e",
+                  "notePath": [
+                    "jdjRLhLV3TtI",
+                    "yeqU0zo0ZQ83",
+                    "n9wYW9nUTynV",
+                    "sYnCT0mbst1E"
+                  ],
+                  "title": "实体变更墓碑",
+                  "notePosition": 20,
+                  "prefix": null,
+                  "isExpanded": false,
+                  "type": "text",
+                  "mime": "text/html",
+                  "attributes": [
+                    {
+                      "type": "label",
+                      "name": "shareAlias",
+                      "value": "entity-change-tombstones",
+                      "isInheritable": false,
+                      "position": 20
+                    },
+                    {
+                      "type": "label",
+                      "name": "originalHelpNoteId",
+                      "value": "_help_sYnCT0mbst1E",
+                      "isInheritable": false,
+                      "position": 30
+                    },
+                    {
+                      "type": "label",
+                      "name": "helpDoc",
+                      "value": "zh",
+                      "isInheritable": false,
+                      "position": 40
+                    }
+                  ],
+                  "format": "markdown",
+                  "dataFileName": "Entity change tombstones.md",
+                  "attachments": [],
+                  "children": []
                 }
               ]
             },
@@ -4158,6 +4243,48 @@
               ],
               "format": "markdown",
               "dataFileName": "Error [TransformError] The package @esbuildlinux-x64 could not be found, and is needed by esbuild.md",
+              "attachments": [],
+              "children": []
+            },
+            {
+              "isClone": false,
+              "noteId": "_zh_Dg2LhPHY",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "YjerxU7Aii8X",
+                "trBshtRcNt5X"
+              ],
+              "title": "笔记出现在最近更改中但树中缺失",
+              "notePosition": 30,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "recent-changes-missing-note",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_trBshtRcNt5X",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 40
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "A note is listed in Recent Changes but missing from the tree.md",
               "attachments": [],
               "children": []
             }
@@ -4467,6 +4594,48 @@
               ],
               "format": "markdown",
               "dataFileName": "Exported content with extended task states.md",
+              "attachments": [],
+              "children": []
+            },
+            {
+              "isClone": false,
+              "noteId": "_zh_vFmhcwPm",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "HMrVxa1lJBKv",
+                "Gntibtjmzi7e"
+              ],
+              "title": "Trilium 备份容器 (.tnbackup) 文件格式",
+              "notePosition": 20,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "iconClass",
+                  "value": "bx bx-history",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_Gntibtjmzi7e",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 40
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Trilium Backup Container (.tnbackup) file format.md",
               "attachments": [],
               "children": []
             }
