@@ -1214,7 +1214,8 @@
     "title": "备份",
     "title_hash": "838557924a5cdfb2f10f233635223e79be8443aef62f9d176cfe18787a2e8b03",
     "status": "done",
-    "hash": "a8a9e4a6a6b63502ef272e0805222c226299735a8ea7b654f7dadf5f7f12dd01"
+    "hash": "f7b5ee33249764b6dfba72ef43312e4c0a5618a39650d4df6f1a6aecdbad3089",
+    "output_hash": "f78a3fd9636e9cad3232808ffb29eb703c2913f7de2584247e4a580b3063a68f"
   },
   "User Guide/User Guide/Installation & Setup/Data directory.md": {
     "id": "_zh_QdANDHLK",
@@ -1305,7 +1306,8 @@
     "title": "分屏视图",
     "title_hash": "0084cf9dc13fba28d316a1fa10d6af78afff3342a274732b477bd7474bd5eaaf",
     "status": "done",
-    "hash": "2dea9555624fdfb199a4bf7b718e9c28e85c9c1ee62acfa8fe4d521564e3b2c4"
+    "hash": "42ec535ea6739d6191486f2dc0f8023cdad14d81b89c2ef4bd3ae77ebca5839e",
+    "output_hash": "eff65ab65104dbe64aee5b32d28d5efd5babfe84bb931af15d12de7e2f63f23c"
   },
   "User Guide/User Guide/Basic Concepts and Features/UI Elements/Floating buttons.md": {
     "id": "_zh_5FkL4kFz",
@@ -1375,7 +1377,8 @@
     "title": "新布局",
     "title_hash": "bf0d151fcab9eeb990393ab34988d79f3667f5d2e67678b541b2a460bfdb0c06",
     "status": "done",
-    "hash": "50960d8efd7cda6fd14889e1fa17310347ed5c7bc9ce80fcdac8622147651664"
+    "hash": "2d2e7ac38065f361d0233db47cccb8a5814c153ff955559387d09f5da49e7192",
+    "output_hash": "d987df24ef2f91fb7caff1518ce46b3a7a0c4b6732f5c09e2f16ddd3f3a33def"
   },
   "User Guide/User Guide/Basic Concepts and Features/UI Elements/New Layout/Breadcrumb.md": {
     "id": "_zh_uUIzo56k",
@@ -1487,7 +1490,8 @@
     "title": "只读笔记",
     "title_hash": "ec9613d4e33ad6e56f65aa1c4215787df66375d626f35a10d2c69810072cde5f",
     "status": "done",
-    "hash": "c164388bdaa85a0fde2504a702c579ad43603aa9a0d036be057e1c715653544b"
+    "hash": "dcebeb94cacd3a79be667eaf5389b61d2b4e98f4f2a530a390d365062ac3436c",
+    "output_hash": "65c7b64e7e518518126f979ac9f8410a886b3d45972efa42656e01e2b12993b5"
   },
   "User Guide/User Guide/Basic Concepts and Features/Notes/Note List.md": {
     "id": "_zh_OauggXxN",
@@ -1592,7 +1596,8 @@
     "title": "键盘快捷键",
     "title_hash": "59cdaa26dd9dcd4cbcded97a7b91029b396bcfdbfd927356facbeb163283a3df",
     "status": "done",
-    "hash": "dec8be5fc63e45472519d3c59ef1787e78eaa46a7d033f6863e7fbc7c55c0d76"
+    "hash": "77d74e29b11c0a41e614579dd3ed6cec089758dfe589369f2dd7ae23a73845b7",
+    "output_hash": "252150f4590f5c1f0537a59bb4d28d9f58ccc4627a183a559be2ad26f9e39d87"
   },
   "User Guide/User Guide/Basic Concepts and Features/Themes.md": {
     "id": "_zh_sXpnojL4",
@@ -1837,7 +1842,8 @@
     "title": "键盘快捷键",
     "title_hash": "e9bef0b0f3c25e6eaf3a754817a8b4f62e1c8473cb2be3e190975926dbf72d6f",
     "status": "done",
-    "hash": "d2bca76495393b72e33cc49c78f52f5cd84c17d83d74cacc161c32330dbd5b57"
+    "hash": "8f79a8a7c5ff9e6bd4bb844f181f8f7cb8b576b4f013bb3a0d90d447dbc25906",
+    "output_hash": "6c558445cfd25a8eab1ffe7319b9e398109cbfb3894a41015f41ef67d2f461fc"
   },
   "User Guide/User Guide/Note Types/Text/Link Previews.md": {
     "id": "_zh_Fi1UDhg7",
@@ -2215,8 +2221,8 @@
     "title": "关系",
     "title_hash": "ba39aabe5da59950f2613ffbe227e06b619cb600ad7e3ec2f7fd296f8edc5026",
     "status": "done",
-    "hash": "e311e48608549644535f47eb3f5a4a71d9b8ccf7b9d920f56f9aa3f8f20565c4",
-    "output_hash": "bb4ce968cf2a50e765890b84c69122be251d2f7dc2cf9d09312d81415518463f"
+    "hash": "7e3bceb9003864d65f13c24e8721404dca71e5cd14ead05564e7b09a4aac2a00",
+    "output_hash": "f22805c28ce5538d63d9e134b530d05aceaf3f17745ce5e7a210eff13125cd9d"
   },
   "User Guide/User Guide/Advanced Usage/Attributes/Attribute Inheritance.md": {
     "id": "_zh_Ke4chqSp",
@@ -2237,7 +2243,8 @@
     "title": "模板",
     "title_hash": "56b564b75c7fdb488865f2198ec362f9c0f5c0b631b28c15eb387b43029f28dc",
     "status": "done",
-    "hash": "4c7e63bf6b703b71f081cfd4eb15237298cc8fab8db51ae7eef936e4e50624a4"
+    "hash": "42873f91d902c1340e37aec311d358f3e5dc3d2faa530c19d5a1e72747df7b91",
+    "output_hash": "914753de2b7c255415a01c95a0479d3141c646bfc004ba24a690e5f2ee116477"
   },
   "User Guide/User Guide/Advanced Usage/Snippets.md": {
     "id": "_zh_td4PS7Fx",
@@ -2385,7 +2392,8 @@
     "title": "数据库",
     "title_hash": "fa7fe67124e94375d97e50896e0c32f44b03bb7ed5e9fb026341b55da724126b",
     "status": "done",
-    "hash": "d4125621a915bf02169d1754b19321c028177a59cdbe382b4da1e27cf3fa67ad"
+    "hash": "03c0d158c6653257f37658a234276a68df02fedd2d818b259947410cba319616",
+    "output_hash": "915c5c697aec0f81e2d47b9370ec1951861c7f0e8e441a6f0cbf986c63690be6"
   },
   "User Guide/User Guide/Advanced Usage/Database/Manually altering the database.md": {
     "id": "_zh_WlAB7Xq0",
@@ -2847,8 +2855,8 @@
     "title": "用户指南",
     "title_hash": "d131ef7f9b5e2b457faba856dcc5f90438b46b97df6a849234432e76c63f6cbd",
     "status": "done",
-    "hash": "47ddb0cbbb699a599fef8c29633979bbfd2cabcf89e19d1f3915f08b36e6f7cc",
-    "output_hash": "370d3b09a717647577b717a668c23f4071fa73a0a5fc1e6eca28122a173da845"
+    "hash": "ebc1c3a7340a1474754b424e1ac91bfda40cca92d603a6b15c17f4e8314309df",
+    "output_hash": "12819cb703bd6f9fa08605a1f654e267692866e9951777e649da1f5870b38728"
   },
   "User Guide/User Guide/Feature Highlights.md": {
     "id": "_zh_9XbnLhFu",
@@ -2949,8 +2957,8 @@
     "title": "地理地图",
     "title_hash": "dd8017f8a9ff69c376920ad645ade5a51dbea2362a09fb6337fbdbb9fa2e3a56",
     "status": "done",
-    "hash": "2f96127af82b8903eedec791b3cb9d9b1d846d5969aa6e705ef7d5d29a0c8eca",
-    "output_hash": "d0831bab31ba7dfddd0bfaf7c182bebf58cd14690666d534b3dcfd310680f32c"
+    "hash": "8d634c3da33afcd0fe4b494bd499e2134d493df20b96886a8411c364bd94fbff",
+    "output_hash": "0fbd67ee3d0748b83a1ba286093bcd34cdf58efc4fcbf2279836bc0c2c375f2b"
   },
   "User Guide/User Guide/Troubleshooting.md": {
     "id": "_zh_DrXAGVg9",
@@ -3017,5 +3025,45 @@
     "status": "done",
     "hash": "19cf4d5a512a52df02ce289e316d53afbd25b2e4c1729cba60d8cf83070c6a5c",
     "output_hash": "efb4b30197a7800b749d04ac29230bc7b41a96ce2d510b97ac34387e63d6c70b"
+  },
+  "Developer Guide/Developer Guide/Dependencies/Compression libraries.md": {
+    "id": "_zh_rSr11aaa",
+    "title": "压缩库",
+    "title_hash": "44d1f0285cac8f196e55119b58cc03bc00ddefb7f6a429ee5d33e04630c4f51d",
+    "status": "done",
+    "hash": "629c0d703560c3e3909ad3d5d7c02efa293231d38d4b62a4e042039602834286",
+    "output_hash": "15028fa1ae135d802eae9ecdb98beb5865bd8dea8b1a4b714ad3a2de77a8bfb8"
+  },
+  "Developer Guide/Developer Guide/Concepts/Synchronisation/Entity change tombstones.md": {
+    "id": "_zh_BQnqTp1e",
+    "title": "实体变更墓碑",
+    "title_hash": "e1bcbd71e949e4a043ae7ab1c744cb2ad1759bcaa376563d5f34394bfd80a043",
+    "status": "done",
+    "hash": "c246dd5e2df0c13d1f932ae0018f685394d6084e29647100d341e932f0c86478",
+    "output_hash": "9db250778ea7d02908bd79db69ed2f0145f1eb43489f099ce654dca94dff821b"
+  },
+  "Developer Guide/Developer Guide/Troubleshooting/A note is listed in Recent Changes but missing from the tree.md": {
+    "id": "_zh_Dg2LhPHY",
+    "title": "笔记出现在最近更改中但树中缺失",
+    "title_hash": "7ae1d0278f36febfd7490a2c069684e004cb1d2a21edb3e60d33792b56760797",
+    "status": "done",
+    "hash": "547b908e1ad3a71f75a58893514b4701c6dcca8e77c32e3d1f14c71135c5e922",
+    "output_hash": "0c4dc59301a1f193a1e70766423a291602624eeb915881867537ce441c160d56"
+  },
+  "Developer Guide/Developer Guide/Interoperability/Trilium Backup Container (.tnbackup) file format.md": {
+    "id": "_zh_vFmhcwPm",
+    "title": "Trilium 备份容器 (.tnbackup) 文件格式",
+    "title_hash": "972223aac49093c72bfe2169426afe5c2dc44579891954a9c65698af76eebdc4",
+    "status": "done",
+    "hash": "e16e9486327c28d29585a2f1b3dccdc778112438cfd5048bde9251a92f8d5222",
+    "output_hash": "e7fe244c1191ee2dc52d40d2b6c0d280609c520de4c866c94ad890a758164dfb"
+  },
+  "Release Notes/Release Notes/v0.105.0.md": {
+    "id": "_zh_xqHGmmri",
+    "title": "v0.105.0",
+    "title_hash": "4d1a11ccebdaba81e2765147588d2ab38d051bcc5c3b81e0468332188dbf358c",
+    "status": "done",
+    "hash": "d8738dbd878416d7afbc81fd31a51de887935b763f1a742c72084a9feb918cba",
+    "output_hash": "51dd4f455b267078141d193ba20db14a68ccffafbfa04c15978e206358968ab0"
   }
 }
