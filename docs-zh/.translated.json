@@ -444,7 +444,8 @@
     "title": "添加新语言环境",
     "title_hash": "e2b6f90ca3fa8e95497d4942f8deacfab29eccd43cdf0c8a18e972480bec7890",
     "status": "done",
-    "hash": "d0e71045107c6baceec2e04e9aa653e914e1d98bf8fd472ce8b289509a14ab40"
+    "hash": "424f71c4ebcec6e32937b86abef63f4e9f1ea83fd994563cf18df9d65647d840",
+    "output_hash": "757989106a8ae2fa6654d7da9e05df5b33957dbb4ab8475dbd516e663881cc70"
   },
   "Developer Guide/Developer Guide/Concepts/Launchers.md": {
     "id": "_zh_q3RespOZ",
@@ -1123,7 +1124,8 @@
     "title": "Traefik",
     "title_hash": "54ace6970a10f1825917542ff3221a163249d02a148914e7d1f3039cf5206649",
     "status": "done",
-    "hash": "4064e43ebc6347c20af8fa33e56f0763b043a5c2d8bb8cd50c6e3190823345ef"
+    "hash": "0803f6aedc837258f1b8250bbf0a15e1daf7af04d6f44c665efb0a0c0e424cda",
+    "output_hash": "c62ac4f24153914d41b50e2f55329f4931d80b785f260ada683a66d2ef361b3b"
   },
   "User Guide/User Guide/Installation & Setup/Server Installation/HTTPS (TLS).md": {
     "id": "_zh_CdQ6rgpB",
@@ -2060,7 +2062,8 @@
     "title": "Markdown",
     "title_hash": "0e52f6b9d02515c59bb4fdeec2762fdbe701080c82986fc4dfbefcb1e2389817",
     "status": "done",
-    "hash": "a6a8f6ba88eaaa170e1f0dfa905e9481c106c8aae015cef033e0a8a1e612be89"
+    "hash": "5f5576b765f2fe6a619395152f79da2432789847e7a8857156a72a31645e4cbb",
+    "output_hash": "76026e61cd0b6c4c9a033a5c1c3cab740e35f51165064b0d08c873f61a9b0456"
   },
   "User Guide/User Guide/Note Types/Converting between note types.md": {
     "id": "_zh_Xnzw5BK9",
@@ -2519,7 +2522,8 @@
     "title": "提供商",
     "title_hash": "996c32b35f2182a9c83815395113f92344269ebb4ab3525017c4cafaa3d1a8fd",
     "status": "done",
-    "hash": "7bcda6220392e3c652a7518d9b46e3ec521d514aa0a2eb3011130be8f01cc666"
+    "hash": "e8f3d5e75f5795e196de0c0bdc18b620c8bbce0adbad76b83f48e37a294a6e99",
+    "output_hash": "1e73b6841ba8b863e133f30ae9fac3cd42d0fa1fbcfb1878fd6a5be37ad708c3"
   },
   "User Guide/User Guide/AI/MCP.md": {
     "id": "_zh_9QFYgRB6",
@@ -2884,7 +2888,8 @@
     "title": "使用 OpenID Connect 登录",
     "title_hash": "85eb5677b4f75923012d9bfb491fa0f4569fddbf3d800c34098d3ca99d1bec37",
     "status": "done",
-    "hash": "2b3f2c89e4abe73762cac6e58d9edb1c9618d698235b5e8b362ba20a1b750846"
+    "hash": "50e4b2ca8998424a6551adde8cf97f72b547da71f12066fc72b2a484bed12f19",
+    "output_hash": "786464ac691a923bd625d81f4dc583e121e59901fd7b83e6a077d86e28b7192c"
   },
   "User Guide/User Guide/Basic Concepts and Features/UI Elements/Note Tree/Keyboard shortcuts.md": {
     "id": "_zh_QkaLzI7n",
