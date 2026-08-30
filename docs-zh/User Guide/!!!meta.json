@@ -16460,6 +16460,49 @@
               "children": [
                 {
                   "isClone": false,
+                  "noteId": "_zh_5Y7Ok2kR",
+                  "notePath": [
+                    "pOsGYCXsbNQG",
+                    "CdNpE2pqjmI6",
+                    "cNpC0ITcfX0N",
+                    "kTx7WqLdZ3Ry"
+                  ],
+                  "title": "v0.106.0：移除 cheerio",
+                  "notePosition": 10,
+                  "prefix": null,
+                  "isExpanded": false,
+                  "type": "text",
+                  "mime": "text/html",
+                  "attributes": [
+                    {
+                      "type": "label",
+                      "name": "shareAlias",
+                      "value": "cheerio-removal",
+                      "isInheritable": false,
+                      "position": 30
+                    },
+                    {
+                      "type": "label",
+                      "name": "originalHelpNoteId",
+                      "value": "_help_kTx7WqLdZ3Ry",
+                      "isInheritable": false,
+                      "position": 40
+                    },
+                    {
+                      "type": "label",
+                      "name": "helpDoc",
+                      "value": "zh",
+                      "isInheritable": false,
+                      "position": 50
+                    }
+                  ],
+                  "format": "markdown",
+                  "dataFileName": "v0.106.0 Removal of cheerio.md",
+                  "attachments": [],
+                  "children": []
+                },
+                {
+                  "isClone": false,
                   "noteId": "_zh_5ByAUPRt",
                   "notePath": [
                     "pOsGYCXsbNQG",
@@ -16468,7 +16511,7 @@
                     "YeOa2l7Pu39I"
                   ],
                   "title": "v0.104.0：在 Electron 中禁用 Node 集成",
-                  "notePosition": 10,
+                  "notePosition": 20,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -16511,7 +16554,7 @@
                     "fqAK6opjUagR"
                   ],
                   "title": "v0.103.0：移除 axios",
-                  "notePosition": 20,
+                  "notePosition": 30,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -16554,7 +16597,7 @@
                     "pAJ0jWz16xFm"
                   ],
                   "title": "v0.103.0：`cheerio` 现已弃用",
-                  "notePosition": 30,
+                  "notePosition": 40,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -16597,7 +16640,7 @@
                     "72dxvnbnkDFY"
                   ],
                   "title": "v0.102.0：升级到 jQuery 4.0.0",
-                  "notePosition": 40,
+                  "notePosition": 50,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
