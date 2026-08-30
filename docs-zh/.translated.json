@@ -1676,7 +1676,8 @@
     "title": "按标题处理内部链接",
     "title_hash": "36e5cd7df2ba6f2ee31a46458bfbcfa0e2a6897022c14df4ba663610ab36cbcf",
     "status": "code",
-    "hash": "d20c0770b2a9093397c80bf490b7dd95201ab3c54a4b0eb3b71afd716ffc3e5b"
+    "hash": "62a4172b798b46a23ad15db46d5f2e72b6dc4e005bab31afd7b0179e7320a326",
+    "output_hash": "62a4172b798b46a23ad15db46d5f2e72b6dc4e005bab31afd7b0179e7320a326"
   },
   "User Guide/User Guide/Basic Concepts and Features/Import & Export/Importing data from other applications/Anytype.md": {
     "id": "_zh_weqU5hTb",
@@ -2759,7 +2760,8 @@
     "title": "v0.103.0：`cheerio` 现已弃用",
     "title_hash": "c7cfbf85f6a363ba0e415f504b8e853ca3a7b75139be33983bea494d0376d8da",
     "status": "done",
-    "hash": "f8c9d46e173cd24f9ec35e1f2bff6a78bcf7d5902182f965dcc95a0f86091c4b"
+    "hash": "e7536b862df1998bd7cbcf84a7e24d30ee8573ab2b5d273eab7c5a70bfdc393b",
+    "output_hash": "7213c8efc3ab00e80d0a86635aad29182edcd45e770828b8a8752f1684d9fa77"
   },
   "User Guide/User Guide/Scripting/Breaking changes/v0.102.0 Upgrade to jQuery 4.0.0.md": {
     "id": "_zh_spdyKhgT",
@@ -2874,7 +2876,8 @@
     "title": "系统要求",
     "title_hash": "ac272c8f84973eca9ec80e0499c5a8bfd45e669d5922afffe6131fdc5b9c29b7",
     "status": "done",
-    "hash": "50543972c6564644e7bac88925c20a7a5a2daf09b957bde6f0e315886df387ef"
+    "hash": "3635d016c3c1192dfa6a508dce4e8442ffcd7a423154fde3ac2d0bf61dbbe2b4",
+    "output_hash": "93e11477c62089ad1fb492eafb5757c6f5ec7982b2422c2a0e10ca3e33df2e77"
   },
   "User Guide/User Guide/Installation & Setup/Desktop Installation/Troubleshooting.md": {
     "id": "_zh_xD4ncrKH",
@@ -2962,8 +2965,8 @@
     "title": "地理地图",
     "title_hash": "dd8017f8a9ff69c376920ad645ade5a51dbea2362a09fb6337fbdbb9fa2e3a56",
     "status": "done",
-    "hash": "8d634c3da33afcd0fe4b494bd499e2134d493df20b96886a8411c364bd94fbff",
-    "output_hash": "0fbd67ee3d0748b83a1ba286093bcd34cdf58efc4fcbf2279836bc0c2c375f2b"
+    "hash": "9bd8046953d9b642dc9b32ee301068e6e52c223af54cd86195a12372016bb2ea",
+    "output_hash": "02b0b0b4c82bb783ac7ba207aaeba0304e1f9c0181e1a50fbdef03b46858a2c6"
   },
   "User Guide/User Guide/Troubleshooting.md": {
     "id": "_zh_DrXAGVg9",
@@ -3070,5 +3073,13 @@
     "status": "done",
     "hash": "d8738dbd878416d7afbc81fd31a51de887935b763f1a742c72084a9feb918cba",
     "output_hash": "51dd4f455b267078141d193ba20db14a68ccffafbfa04c15978e206358968ab0"
+  },
+  "User Guide/User Guide/Scripting/Breaking changes/v0.106.0 Removal of cheerio.md": {
+    "id": "_zh_5Y7Ok2kR",
+    "title": "v0.106.0：移除 cheerio",
+    "title_hash": "d5047b4709e003330ec7e74235df313576d12c083a84fb93034eb9a7160ea091",
+    "status": "done",
+    "hash": "bb06d616f4ccc3f15cfa3ddde72894e7831b00e045feba5fe55dc3f2bcdcaf78",
+    "output_hash": "420bcfde2ce445402139fd395d030a0fc489dd9faea6f3caeb081d3dfc7774c6"
   }
 }
