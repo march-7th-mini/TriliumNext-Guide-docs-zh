@@ -5556,6 +5556,56 @@
                     }
                   ],
                   "children": []
+                },
+                {
+                  "isClone": false,
+                  "noteId": "_zh_X5rMcHo4",
+                  "notePath": [
+                    "pOsGYCXsbNQG",
+                    "gh7bpGYxajRS",
+                    "Wy267RK4M69c",
+                    "w4rMEhJsALlA"
+                  ],
+                  "title": "个性化字体",
+                  "notePosition": 30,
+                  "prefix": null,
+                  "isExpanded": false,
+                  "type": "text",
+                  "mime": "text/html",
+                  "attributes": [
+                    {
+                      "type": "label",
+                      "name": "iconClass",
+                      "value": "bx bx-font",
+                      "isInheritable": false,
+                      "position": 80
+                    },
+                    {
+                      "type": "label",
+                      "name": "shareAlias",
+                      "value": "fonts",
+                      "isInheritable": false,
+                      "position": 90
+                    },
+                    {
+                      "type": "label",
+                      "name": "originalHelpNoteId",
+                      "value": "_help_w4rMEhJsALlA",
+                      "isInheritable": false,
+                      "position": 100
+                    },
+                    {
+                      "type": "label",
+                      "name": "helpDoc",
+                      "value": "zh",
+                      "isInheritable": false,
+                      "position": 110
+                    }
+                  ],
+                  "format": "markdown",
+                  "dataFileName": "Personalizing the font.md",
+                  "attachments": [],
+                  "children": []
                 }
               ]
             },

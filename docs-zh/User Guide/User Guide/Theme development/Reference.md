@@ -2,7 +2,7 @@
 
 ## 检测移动端与桌面端
 
-移动端布局与桌面端不同。使用 `body.mobile` 和 `body.desktop` 来区分它们。
+移动端的布局与桌面端不同。使用 `body.mobile` 和 `body.desktop` 来区分它们。
 
 ```css
 body.mobile #root-widget {
@@ -14,14 +14,14 @@ body.desktop #root-widget {
 }
 ```
 
-请注意，移动端布局中还有一种“平板模式”。对于这种情况，需要使用媒体查询：
+请注意，移动端布局中还有一个“平板模式”。对于这种特殊情况，需要使用媒体查询：
 
 ```css
 @media (max-width: 991px) {
 
     #launcher-pane {
 
-        /* 在移动端布局上执行某些操作 */
+        /* 在移动端布局中执行某些操作 */
 
     }
 
@@ -33,7 +33,7 @@ body.desktop #root-widget {
 
     #launcher-pane {
 
-        /* 在移动端平板 + 桌面端布局上执行某些操作 */
+        /* 在移动端平板 + 桌面端布局中执行某些操作 */
 
     }
 
@@ -60,13 +60,13 @@ body.layout-horizontal #center-pane {
 
 ## 检测平台（Windows、macOS）或 Electron
 
-可以通过在 `body` 中使用类来添加仅适用于特定平台的特定样式：
+可以通过使用 `body` 中的类来添加仅适用于特定平台的特定样式：
 
 | Windows | macOS |
 | --- | --- |
 | `<br>body.platform-win32 {<br> background: red;<br>}<br>` | `<br>body.platform-darwin {<br> background: red;<br>}<br>` |
 
-也可以仅在 Electron（桌面应用程序）环境下应用样式：
+也可以仅在 Electron（桌面应用）环境下运行时应用样式：
 
 ```
 body.electron {
@@ -90,9 +90,9 @@ body.electron:not(.native-titlebar) {
 
 ### 原生窗口按钮
 
-在 Electron 环境下且关闭原生标题栏时，引入了一项功能，可以使用特定于平台的窗口按钮，例如 macOS 上的信号灯按钮。
+在 Electron 下运行且关闭原生标题栏时，引入了一项功能，可以使用特定于平台的窗口按钮，例如 macOS 上的信号灯按钮。
 
-有关此功能的原始实现（包括截图），请参阅 [由 eliandoran 提交的原生标题栏按钮 · Pull Request #702 · TriliumNext/Notes](https://github.com/TriliumNext/Notes/pull/702)。
+有关此功能的原始实现（包括截图），请参阅 [Native title bar buttons by eliandoran · Pull Request #702 · TriliumNext/Notes](https://github.com/TriliumNext/Notes/pull/702)。
 
 #### 在 Windows 上
 
@@ -105,7 +105,7 @@ body {
 }
 ```
 
-也可以使用 RGBA 十六进制颜色来实现透明效果，但代价是悬停颜色会减弱：
+也可以使用 RGBA 十六进制颜色来实现透明效果，但这会降低悬停颜色的丰富度：
 
 ```
 body {
@@ -113,11 +113,11 @@ body {
 }
 ```
 
-请注意，该值在窗口初始化时读取，之后仅在用户更改其浅色/深色模式偏好时才会刷新。
+请注意，该值在窗口初始化时被读取，之后仅在用户更改其浅色/深色模式偏好时才会刷新。
 
 #### 在 macOS 上
 
-在 macOS 上，当禁用原生标题栏时，默认启用信号灯窗口按钮。可以使用以下方式调整按钮的偏移量：
+在 macOS 上，当原生标题栏被禁用时，信号灯窗口按钮默认启用。可以使用以下方式调整按钮的偏移量：
 
 ```css
 body {
@@ -138,11 +138,11 @@ body.electron.platform-win32 {
 
 该值可以是 `tabbed`（对水平布局特别有用）或 `mica`（非常适合垂直布局）。
 
-请注意，Mica 效果应用于 `body` 级别，并且主题需要使整个层级结构（半）透明才能使其可见。可以参考 TriliumNext 主题作为灵感。
+请注意，Mica 效果应用于 `body` 级别，主题需要使整个层级结构（半）透明才能使其可见。可以参考 TrilumNext 主题以获得灵感。
 
 ## 笔记图标、标签页工作区强调色
 
-主题功能是通过 CSS 变量进行的小调整，可以影响应用程序的布局或视觉外观。
+主题能力是通过 CSS 变量进行的小调整，这些变量可以影响应用程序的布局或视觉外观。
 
 在标签栏中，要显示笔记的图标而不是工作区的图标：
 
@@ -152,7 +152,7 @@ body.electron.platform-win32 {
 }
 ```
 
-当某个标签页提升（hoisted）了一个工作区时，可以获取该工作区的背景颜色，例如，在标签页上应用一个小条而不是整个背景颜色：
+当为给定标签页提升某个工作区时，可以获取该工作区的背景颜色，例如，在标签页上应用一个小条而不是整个背景颜色：
 
 ```css
 .note-tab .note-tab-wrapper {
@@ -172,7 +172,9 @@ body.electron.platform-win32 {
 
 ## 自定义字体
 
-目前，包含自定义字体的唯一方法是使用[自定义资源提供器](../Advanced%20Usage/Custom%20Resource%20Providers.md)。基本上，将字体导入 Trilium 并为其分配 `#customResourceProvider=fonts/myfont.ttf`，然后通过 `/custom/fonts/myfont.ttf` 在 CSS 中导入字体。如果你的 Trilium 服务器运行在 `/` 以外的路径上，请使用 `../../../custom/fonts/myfont.ttf`。
+使用自定义字体的推荐方式是直接在 Trilium 中导入字体。有关如何执行此操作的信息，请参阅 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/Themes/Personalizing%20the%20font.md">个性化字体</a>。
+
+或者，对于提供自身字体的主题，可以使用 [自定义资源提供器](../Advanced%20Usage/Custom%20Resource%20Providers.md)：将字体导入 Trilium 并为其分配 `#customResourceProvider=fonts/myfont.ttf`，然后通过 `/custom/fonts/myfont.ttf` 在 CSS 中导入字体。如果你的 Trilium 服务器运行在 `/` 以外的路径上，请使用 `../../../custom/fonts/myfont.ttf`。
 
 ## 深色和浅色主题
 
@@ -186,7 +188,7 @@ body.electron.platform-win32 {
 
 如果主题是深色的，则 `--theme-style` 需要为 `dark`。
 
-如果主题是自动的（例如，根据 `prefers-color-scheme` 同时支持浅色或深色），则它还必须声明（除了将 `--theme-style` 设置为 `light` 或 `dark` 之外）：
+如果主题是自动的（例如，支持基于 `prefers-color-scheme` 的浅色或深色），它还必须声明（除了将 `--theme-style` 设置为 `light` 或 `dark` 之外）：
 
 ```css
 :root {
@@ -196,4 +198,4 @@ body.electron.platform-win32 {
 }
 ```
 
-这将通过将颜色偏好告知操作系统来影响 Electron 应用程序的行为（例如，背景效果在 Windows 上将正确显示）。
+这将通过将颜色偏好告知操作系统来影响 Electron 应用的行为（例如，背景效果在 Windows 上将正确显示）。
