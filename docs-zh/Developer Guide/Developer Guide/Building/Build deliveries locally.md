@@ -1,20 +1,21 @@
 # 本地构建交付物
+## 构建桌面端
 
-## 构建桌面版
+进入 `apps/desktop`，然后：
 
-进入 `apps/desktop` 目录，然后：
+*   要生成软件包，运行 `pnpm electron-forge:make`。
+*   要仅构建 Flatpak，运行 `pnpm electron-forge:make-flatpak`。
+*   要仅构建而不打包，运行 `pnpm electron-forge:package`。
 
-*   要生成安装包，运行 `pnpm electron-forge:make`。
-*   仅构建 Flatpak 包，运行 `pnpm electron-forge:make-flatpak`。
-*   仅构建而不打包，运行 `pnpm electron-forge:package`。
+在 macOS 上，打包时会使用 `actool` 编译 Icon Composer 应用图标（`app-icon/icon.icon`、`icon-dev.icon`），因此需要 macOS 26 和 Xcode 26 或更高版本。在较旧版本上，`@electron/packager` 会因 `actool` 错误而失败，而不会回退到 `.icns` 图标。
 
-## 构建服务器版
+## 构建服务端
 
-进入 `apps/server` 目录并运行 `pnpm package` 来执行构建脚本。构建产物将出现在 `apps/server/dist` 目录中，而打包后的构建版本则位于 `apps/server/out` 目录。
+进入 `apps/server` 并运行 `pnpm package` 以执行构建脚本。构建产物将出现在 `apps/server/dist` 中，而打包后的构建则位于 `apps/server/out`。
 
 ## 在 NixOS 上
 
-在 NixOS 下，需要以下 `nix-shell`：
+在 NixOS 下需要以下 `nix-shell`：
 
 ```
 nix-shell -p jq
