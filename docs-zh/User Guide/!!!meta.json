@@ -1609,14 +1609,6 @@
                   "dataFileName": "Synchronization_image.png"
                 },
                 {
-                  "attachmentId": "wlHlhXqZ0i1S",
-                  "title": "sync-config.png",
-                  "role": "image",
-                  "mime": "image/png",
-                  "position": 10,
-                  "dataFileName": "Synchronization_sync-config.png"
-                },
-                {
                   "attachmentId": "x0t06ATHph6b",
                   "title": "sync-init.png",
                   "role": "image",
@@ -3766,6 +3758,65 @@
                   "format": "markdown",
                   "dataFileName": "Content width.md",
                   "attachments": [],
+                  "children": []
+                },
+                {
+                  "isClone": false,
+                  "noteId": "_zh_AFqKdqRd",
+                  "notePath": [
+                    "pOsGYCXsbNQG",
+                    "gh7bpGYxajRS",
+                    "Vc8PjrjAGuOp",
+                    "jcQVxzYybYgz"
+                  ],
+                  "title": "笔记上下文菜单",
+                  "notePosition": 260,
+                  "prefix": null,
+                  "isExpanded": false,
+                  "type": "text",
+                  "mime": "text/html",
+                  "attributes": [
+                    {
+                      "type": "label",
+                      "name": "shareAlias",
+                      "value": "note-menu",
+                      "isInheritable": false,
+                      "position": 30
+                    },
+                    {
+                      "type": "label",
+                      "name": "iconClass",
+                      "value": "bx bx-menu",
+                      "isInheritable": false,
+                      "position": 70
+                    },
+                    {
+                      "type": "label",
+                      "name": "originalHelpNoteId",
+                      "value": "_help_jcQVxzYybYgz",
+                      "isInheritable": false,
+                      "position": 80
+                    },
+                    {
+                      "type": "label",
+                      "name": "helpDoc",
+                      "value": "zh",
+                      "isInheritable": false,
+                      "position": 90
+                    }
+                  ],
+                  "format": "markdown",
+                  "dataFileName": "Note contextual menu.md",
+                  "attachments": [
+                    {
+                      "attachmentId": "cph789BVB0Zg",
+                      "title": "image.png",
+                      "role": "image",
+                      "mime": "image/png",
+                      "position": 10,
+                      "dataFileName": "Note contextual menu_image.png"
+                    }
+                  ],
                   "children": []
                 }
               ]
@@ -10763,7 +10814,59 @@
                   "dataFileName": "3_Geo Map_image.png"
                 }
               ],
-              "children": []
+              "dirFileName": "Geo Map",
+              "children": [
+                {
+                  "isClone": false,
+                  "noteId": "_zh_KL73JBtK",
+                  "notePath": [
+                    "pOsGYCXsbNQG",
+                    "GTwFsgaA0lCt",
+                    "81SGnPGMk7Xc",
+                    "C2H9HK4BzwG7"
+                  ],
+                  "title": "绘制形状",
+                  "notePosition": 10,
+                  "prefix": null,
+                  "isExpanded": false,
+                  "type": "text",
+                  "mime": "text/html",
+                  "attributes": [
+                    {
+                      "type": "label",
+                      "name": "iconClass",
+                      "value": "bx bx-shape-square",
+                      "isInheritable": false,
+                      "position": 30
+                    },
+                    {
+                      "type": "label",
+                      "name": "shareAlias",
+                      "value": "shapes",
+                      "isInheritable": false,
+                      "position": 40
+                    },
+                    {
+                      "type": "label",
+                      "name": "originalHelpNoteId",
+                      "value": "_help_C2H9HK4BzwG7",
+                      "isInheritable": false,
+                      "position": 50
+                    },
+                    {
+                      "type": "label",
+                      "name": "helpDoc",
+                      "value": "zh",
+                      "isInheritable": false,
+                      "position": 60
+                    }
+                  ],
+                  "format": "markdown",
+                  "dataFileName": "Drawing shapes.md",
+                  "attachments": [],
+                  "children": []
+                }
+              ]
             },
             {
               "isClone": false,
