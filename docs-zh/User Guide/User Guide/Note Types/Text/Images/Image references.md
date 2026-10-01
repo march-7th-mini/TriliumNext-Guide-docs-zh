@@ -9,13 +9,13 @@
 *   <a class="reference-link" href="../../Mermaid%20Diagrams.md">Mermaid 图表</a>
 *   <a class="reference-link" href="../../Mind%20Map.md">思维导图</a>
 
-## 操作步骤
+## 步骤
 
-1.  前往上述支持的笔记类型之一，在<a class="reference-link" href="../../../Basic%20Concepts%20and%20Features/UI%20Elements/Floating%20buttons.md">浮动按钮</a>区域查找 ![](1_Image%20references_image.png) 按钮。
-2.  前往一个<a class="reference-link" href="../../Text.md">文本</a>笔记，使用粘贴功能插入对该笔记的引用。
+1.  转到上述支持的笔记之一，在<a class="reference-link" href="../../../Basic%20Concepts%20and%20Features/UI%20Elements/Floating%20buttons.md">浮动按钮</a>区域中寻找 <span class="tn-icon bx bx-copy"></span> 按钮。
+2.  转到<a class="reference-link" href="../../Text.md">文本</a>笔记，使用粘贴功能插入对该笔记的引用。
 
-## 交互操作
+## 交互
 
-*   双击文本笔记中的图片引用将自动打开目标笔记。
-*   按住 <kbd>Ctrl</kbd> 键的同时点击图片引用将在新标签页中打开目标笔记。
-*   修改目标笔记后，图片引用也应随之更新。如果未更新，请考虑<a class="reference-link" href="../../../Troubleshooting/Refreshing%20the%20application.md">刷新应用程序</a>。
+*   在文本笔记中双击图片引用将自动打开目标笔记。
+*   按住 <kbd>Ctrl</kbd> 的同时点击图片引用将在新标签页中打开目标笔记。
+*   修改目标笔记也应更新图片引用。如果没有更新，请考虑<a class="reference-link" href="../../../Troubleshooting/Refreshing%20the%20application.md">刷新应用程序</a>。
