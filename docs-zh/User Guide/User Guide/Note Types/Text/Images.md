@@ -9,15 +9,18 @@ Trilium 支持存储和显示图片。支持的格式有 PNG、JPEG、GIF、BMP�
 
 *   只需将其从文件资源管理器拖放到 Trilium 内的笔记编辑器中，图片就会被上传。
 *   或者，从 <a class="reference-link" href="Formatting%20toolbar.md">格式工具栏</a> 中查找 _插入图片_ 图标。
-*   你也可以从网页复制并粘贴图片（见下文）。
+*   你也可以从网页复制并粘贴图片（参见下文）。
+
+> [!TIP]
+> 要链接图片而不是显示它，请使用 <span class="tn-icon cke cke-paper-clip"></span> _附加文件_ 按钮将其附加。参见 <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/Notes/Attachments.md">附件</a>。
 
 ## 剪贴板与图片自动下载
 
 Trilium 对复制到剪贴板和从剪贴板粘贴的图片有特殊处理。
 
-*   对于文本和图片的混合内容，图片会由服务器（或桌面应用，取决于所使用的版本）自动下载。
-    *   这意味着图片必须是公开可访问的，并且能从 Trilium 运行的位置访问到。无法访问的图片最终会显示为损坏的图片。
-*   如果粘贴到 Trilium 的是单张图片，它会优先使用剪贴板中的图片。这使得复制 Trilium 原本无法访问的图片成为可能，例如 Google Chat、Slack 等。
+*   对于文本和图片的混合内容，图片会由服务器（或桌面应用，取决于所使用的环境）自动下载。
+    *   这意味着图片必须是公开可访问的，并且能从 Trilium 运行的位置访问到。无法访问的图片将显示为损坏的图片。
+*   如果粘贴到 Trilium 的是单张图片，它会优先使用剪贴板中的图片。这使得可以复制 Trilium 原本无法访问的图片，例如 Google Chat、Slack 等。
 *   当从 Trilium 复制带有图片的文本并粘贴到其他应用（如 Microsoft Word 或 LibreOffice Writer）时，图片会被保留。
 
 图片自动下载默认启用，可以在 <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">选项</a> → _媒体_ → _自动下载图片_ 中切换。
@@ -36,7 +39,7 @@ Trilium 对复制到剪贴板和从剪贴板粘贴的图片有特殊处理。
 | <span class="tn-icon cke cke-object-inline"></span> | 行内 | ![](Images_image.png) | 顾名思义，图片可以放在段落内，像文本块一样移动。使用拖放或剪切粘贴来移动它。 |
 | <span class="tn-icon cke cke-object-center"></span> | 居中图片 | ![](1_Images_image.png) | 图片将作为块显示并居中，不允许文本出现在其左侧或右侧。 |
 | <span class="tn-icon cke cke-object-inline-right"></span> | 文字环绕 | ![](3_Images_image.png) | 图片将显示在文本的左侧或右侧。 |
-| <span class="tn-icon cke cke-object-left"></span> | 块对齐 | ![](2_Images_image.png) | 与 _居中图片_ 类似，图片将作为块显示并左对齐或右对齐，但不允许文本在其两侧流动。 |
+| <span class="tn-icon cke cke-object-left"></span> | 块对齐 | ![](2_Images_image.png) | 与 _居中图片_ 类似，图片将作为块显示并对齐到左侧或右侧，但不允许文本在其两侧流动。 |
 
 ## 压缩
 
@@ -46,7 +49,7 @@ Trilium 对复制到剪贴板和从剪贴板粘贴的图片有特殊处理。
 
 ## 并排对齐图片
 
-通常有两种方式可以并排显示图片：
+通常有两种方式并排显示图片：
 
-*   如果它们大小大致相同，只需按照上面的对齐部分将两张图片设为行内即可。图片可以拖放到同一行。
+*   如果它们大小大致相同，只需根据上面的对齐部分将两张图片设为行内。图片可以拖放到同一行。
 *   如果它们大小不同，创建一个边框不可见的[表格](Tables.md)。

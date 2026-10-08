@@ -1399,6 +1399,55 @@
             },
             {
               "isClone": false,
+              "noteId": "_zh_0o1GdikF",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "a0mkxxB4Uvbf",
+                "713MoR6LVq8o"
+              ],
+              "title": "Docker Hub 维护",
+              "notePosition": 30,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "docker-hub",
+                  "isInheritable": false,
+                  "position": 10
+                },
+                {
+                  "type": "label",
+                  "name": "iconClass",
+                  "value": "bx bx-brush",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_713MoR6LVq8o",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 40
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Docker Hub maintenance.md",
+              "attachments": [],
+              "children": []
+            },
+            {
+              "isClone": false,
               "noteId": "_zh_2gJAXkWL",
               "notePath": [
                 "jdjRLhLV3TtI",
@@ -1406,7 +1455,7 @@
                 "aGlhNBEA9wwo"
               ],
               "title": "构建信息",
-              "notePosition": 30,
+              "notePosition": 40,
               "prefix": null,
               "isExpanded": false,
               "type": "text",
@@ -1455,7 +1504,7 @@
                 "fI16A7NrT713"
               ],
               "title": "热重载 (HMR)",
-              "notePosition": 40,
+              "notePosition": 50,
               "prefix": null,
               "isExpanded": false,
               "type": "text",
@@ -1497,7 +1546,7 @@
                 "PXzm2t3sCdsP"
               ],
               "title": "本地构建交付物",
-              "notePosition": 50,
+              "notePosition": 60,
               "prefix": null,
               "isExpanded": false,
               "type": "text",
@@ -1546,7 +1595,7 @@
                 "4nwtTJyjNDKd"
               ],
               "title": "发布新版本",
-              "notePosition": 70,
+              "notePosition": 80,
               "prefix": null,
               "isExpanded": false,
               "type": "text",
