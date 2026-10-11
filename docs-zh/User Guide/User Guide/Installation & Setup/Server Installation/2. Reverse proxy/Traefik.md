@@ -1,23 +1,22 @@
 # Traefik
+本文的目标是配置 Traefik 代理和 HTTPS。参考 [#7768](https://github.com/TriliumNext/Trilium/issues/7768#issuecomment-3539165814)。
 
-本文旨在配置 Traefik 代理和 HTTPS。参考 [#7768](https://github.com/TriliumNext/Trilium/issues/7768#issuecomment-3539165814)。
+## Traefik 3.6.4 中的破坏性变更
 
-## Traefik 3.6.4 中的重大变更
+Traefik 3.6.4 引入了一个关于 URL 中百分号编码字符处理方式的[破坏性变更](https://doc.traefik.io/traefik/migrate/v3/#encoded-characters-in-request-path)。Trilium 会将图片或附件的标题放入其 URL 路径中，因此标题包含 `#` 或 `/` 的图片或附件会以类似 `/api/images/…/diagram%231.png` 的路径被请求。Traefik 会以 HTTP 400 拒绝这些路径，导致图片无法加载。搜索不受影响，因为它将文本放在查询参数中发送。
 
-Traefik 3.6.4 引入了一项关于 URL 中百分号编码字符处理方式的[重大变更](https://doc.traefik.io/traefik/migrate/v3/#encoded-characters-in-request-path)。更具体地说，Trilium 使用的一些 URL（例如 `search/%23workspace%20%23!template`）会被 Traefik 自动拒绝，导致 HTTP 400 错误。
-
-最简单的解决方案是更新到 Traefik 3.6.7 或更高版本，该版本已还原此配置更改。或者，也可以根据以下章节更改配置。
+最简单的解决方案是升级到 Traefik 3.6.7 或更高版本，该版本回退了此配置变更。或者，也可以按照下面的章节更改配置。
 
 <details>
-    <summary>配置更改</summary>
-    <p>为了解决此问题，必须修改 Traefik 的<a href="https://doc.traefik.io/traefik/getting-started/configuration-overview/#the-install-configuration"><strong>静态</strong>配置</a>以允许这些字符：</p>
+    <summary>配置变更</summary>
+    <p>要解决此问题，必须修改 Traefik 的<a href="https://doc.traefik.io/traefik/getting-started/configuration-overview/#the-install-configuration"><strong>静态</strong>配置</a>以允许这些字符：</p>
     <pre><code class="language-text-x-yaml">entryPoints:
   web:
     http:
       encodedCharacters:
         allowEncodedSlash: true
         allowEncodedHash: true</code></pre>
-    <aside class="admonition tip"><p>如果仍有问题，根据 Trilium 的使用方式（尤其是搜索方面），您可能需要启用更多编码字符组。更多信息，请参阅<a href="https://github.com/TriliumNext/Trilium/issues/7968">相关的 GitHub issue</a>；欢迎反馈您的发现。</p></aside>
+    <aside class="admonition tip"><p>如果图片仍然无法加载，你可能需要启用更多的编码字符组。有关更多信息，请参阅<a href="https://github.com/TriliumNext/Trilium/issues/7968">相关的 GitHub issue</a>；欢迎报告你的发现。</p></aside>
 </details>
 
 ### 构建 docker-compose 文件
@@ -32,19 +31,19 @@ Traefik 3.6.4 引入了一项关于 URL 中百分号编码字符处理方式的[
       - traefik.http.routers.trilium.tls=true
       - traefik.http.routers.trilium.service=trilium
       - traefik.http.services.trilium.loadbalancer.server.port=8080
-      # scheme 必须为 HTTP 而不是通常的 HTTPS，因为 Trilium 在内部监听 HTTP
+      # scheme must be HTTP instead of the usual HTTPS because Trilium listens on HTTP internally
       - traefik.http.services.trilium.loadbalancer.server.scheme=http
       - traefik.docker.network=proxy
-      # 将 HTTP 转发到 HTTPS
+      # forward HTTP to HTTPS
       - traefik.http.routers.trilium.middlewares=trilium-headers@docker
       - traefik.http.middlewares.trilium-headers.headers.customrequestheaders.X-Forwarded-Proto=https
 ```
 
 ### 设置所需的环境变量
 
-设置反向代理后，请确保配置<a class="reference-link" href="Trusted%20proxy.md">受信任的代理</a>。
+设置反向代理后，请务必配置<a class="reference-link" href="Trusted%20proxy.md">受信任代理</a>。
 
-### 示例 `docker-compose.yaml`
+### `docker-compose.yaml` 示例
 
 ```yaml
 services:
@@ -54,7 +53,7 @@ services:
     networks:
       - traefik-proxy
     environment:
-      - TRILIUM_NETWORK_TRUSTEDREVERSEPROXY=my-traefik-host-ip # 例如，172.18.0.0/16
+      - TRILIUM_NETWORK_TRUSTEDREVERSEPROXY=my-traefik-host-ip # e.g., 172.18.0.0/16
     volumes:
       - /path/to/data:/home/node/trilium-data
       - /etc/timezone:/etc/timezone:ro
@@ -66,10 +65,10 @@ services:
       - traefik.http.routers.trilium.tls=true
       - traefik.http.routers.trilium.service=trilium
       - traefik.http.services.trilium.loadbalancer.server.port=8080
-      # scheme 必须为 HTTP 而不是通常的 HTTPS，因为 Trilium 的工作方式如此
+      # scheme must be HTTP instead of the usual HTTPS because of how trilium works
       - traefik.http.services.trilium.loadbalancer.server.scheme=http
       - traefik.docker.network=traefik-proxy
-      # 告知 Trilium 原始请求是 HTTPS
+      # Tell Trilium the original request was HTTPS
       - traefik.http.routers.trilium.middlewares=trilium-headers@docker
       - traefik.http.middlewares.trilium-headers.headers.customrequestheaders.X-Forwarded-Proto=https
 

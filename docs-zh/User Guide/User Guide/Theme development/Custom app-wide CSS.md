@@ -1,12 +1,9 @@
-# 自定义全局 CSS
+# 自定义应用级 CSS
+可以提供一份 CSS 文件，无论用户设置何种主题都会使用它。
 
-可以提供一个 CSS 文件，无论用户设置的主题是什么，都会使用该文件。
+创建它的最快方式是在 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree/Note%20tree%20contextual%20menu.md">笔记树上下文菜单</a> 中 _插入子笔记_ → _代码_ → _自定义 CSS_。
 
-|  |  |
-| --- | --- |
-| ![](Custom%20app-wide%20CSS_image.png) | 首先创建一个新笔记，并将笔记类型更改为 CSS |
-| ![](2_Custom%20app-wide%20CSS_image.png) | 在功能区中，按下“自有属性”部分，并输入 `#appCss`。 |
-| ![](3_Custom%20app-wide%20CSS_image.png) | 输入所需的 CSS。    <br>  <br>通常，对于正在更改的样式，最好附加 `!important`，以防止其他样式覆盖。 |
+或者，手动创建一条 <a class="reference-link" href="../Note%20Types/Code.md">代码</a> 笔记，将语言设置为 CSS 并应用 `#appCss` 标签。
 
 ## 查看更改
 
@@ -17,18 +14,18 @@
 ### 自定义打印样式表
 
 > [!TIP]
-> 自 v0.99.2 起，不再可能使用 `#appCss` 来自定义打印 CSS，因为打印现在在隔离环境中进行。
+> 自 v0.99.2 起，不再可以使用 `#appCss` 来自定义打印 CSS，因为打印现在是在隔离环境中完成的。
 > 
-> 但是，仍然可以通过 `~printCss` 自定义 CSS；有关更多信息，请参阅 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/Notes/Printing%20%26%20Exporting%20as%20PDF.md">打印和导出为 PDF</a>。
+> 不过，仍然可以通过 `~printCss` 来自定义 CSS；更多信息请参见 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/Notes/Printing%20%26%20Exporting%20as%20PDF.md">打印与导出为 PDF</a>。
 
 ### 按工作区设置样式
 
-使用 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/Navigation/Workspaces.md">工作区</a> 时，在不同工作区的笔记之间创建视觉区分会很有帮助。
+使用 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/Navigation/Workspaces.md">工作区</a> 时，为不同工作区中的笔记创建视觉区分会很有帮助。
 
 为此：
 
-1.  在带有 `#workspace` 的笔记中，添加一个可继承的属性 `#cssClass(inheritable)`，其值能唯一标识该工作区（例如 `my-workspace`）。
-2.  在笔记结构中的任意位置，创建一个带有 `#appCss` 的 CSS 笔记。
+1.  在带有 `#workspace` 的笔记中，添加一个可继承属性 `#cssClass(inheritable)`，其值为唯一标识该工作区的值（例如 `my-workspace`）。
+2.  在笔记结构中的任意位置，创建一条带有 `#appCss` 的 CSS 笔记。
 
 #### 更改 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">笔记树</a> 中图标的颜色
 
@@ -51,10 +48,10 @@
 
 #### 为笔记内容添加水印
 
-<figure class="image image-style-align-right image_resized" style="width:39.97%;"><img style="aspect-ratio:641/630;" src="1_Custom app-wide CSS_image.png" width="641" height="630"></figure>
+<figure class="image image-style-align-right image_resized" style="width:39.97%;"><img style="aspect-ratio:641/630;" src="Custom app-wide CSS_image.png" width="641" height="630"></figure>
 
-1.  在任意笔记中插入一张图片，并获取该图片的 URL。
-2.  使用以下 CSS，根据需要调整 `background-image`、`width` 和 `height` 的值。
+1.  在任意笔记中插入一张图片并获取该图片的 URL。
+2.  使用以下 CSS，将 `background-image`、`width` 和 `height` 调整为所需的值。
 
 ```
 .note-split.my-workspace .scrolling-container:after {
@@ -73,8 +70,8 @@
 }
 ```
 
-## 局限性
+## 限制
 
-应用程序的某些部分无法直接通过自定义 CSS 进行样式设置，因为它们是在隔离模式（shadow DOM）中渲染的，具体包括：
+应用程序的某些部分无法直接通过自定义 CSS 设置样式，因为它们是在隔离模式（shadow DOM）中渲染的，具体来说：
 
 *   <a class="reference-link" href="../Collections/Presentation.md">演示文稿</a> 中的幻灯片。

@@ -12,14 +12,14 @@ Trilium 支持存储和显示图片。支持的格式有 PNG、JPEG、GIF、BMP�
 *   你也可以从网页复制并粘贴图片（参见下文）。
 
 > [!TIP]
-> 要链接图片而不是显示它，请使用 <span class="tn-icon cke cke-paper-clip"></span> _附加文件_ 按钮将其附加。参见 <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/Notes/Attachments.md">附件</a>。
+> 要链接图片而不是显示它，请使用 <span class="tn-icon cke cke-paper-clip"></span>_附加文件_ 按钮将其附加。参见 <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/Notes/Attachments.md">附件</a>。
 
 ## 剪贴板与图片自动下载
 
 Trilium 对复制到剪贴板和从剪贴板粘贴的图片有特殊处理。
 
 *   对于文本和图片的混合内容，图片会由服务器（或桌面应用，取决于所使用的环境）自动下载。
-    *   这意味着图片必须是公开可访问的，并且能从 Trilium 运行的位置访问到。无法访问的图片将显示为损坏的图片。
+    *   这意味着图片必须是公开可访问的，并且能从 Trilium 运行的位置访问到。无法访问的图片最终会显示为损坏的图片。
 *   如果粘贴到 Trilium 的是单张图片，它会优先使用剪贴板中的图片。这使得可以复制 Trilium 原本无法访问的图片，例如 Google Chat、Slack 等。
 *   当从 Trilium 复制带有图片的文本并粘贴到其他应用（如 Microsoft Word 或 LibreOffice Writer）时，图片会被保留。
 
@@ -43,13 +43,13 @@ Trilium 对复制到剪贴板和从剪贴板粘贴的图片有特殊处理。
 
 ## 压缩
 
-由于 Trilium 并非真正用作图片数据的主要存储，它会在将上传的图片存储到数据库之前尝试压缩和调整大小（使用相当激进的设置）。你可能会注意到一些质量下降。基本质量设置可在 <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">选项</a> → _媒体_ 中找到。
+由于 Trilium 并非真正用于作为图片数据的主要存储，它会在将上传的图片存储到数据库之前尝试压缩和调整大小（使用相当激进的设置）。你可能会注意到一些质量下降。基本质量设置可在 <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">选项</a> → _媒体_ 中找到。
 
-如果你想以原始分辨率保存图片，建议将其作为附件保存到笔记中（在 <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20buttons.md">笔记按钮</a> → _导入文件_ 中查找上下文菜单）。
+如果你想以原始分辨率保存图片，建议将其作为附件保存到笔记中（在 <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20menu.md">笔记菜单</a> → _导入文件_ 中查找上下文菜单）。
 
 ## 并排对齐图片
 
-通常有两种方式并排显示图片：
+通常有两种方式可以并排显示图片：
 
 *   如果它们大小大致相同，只需根据上面的对齐部分将两张图片设为行内。图片可以拖放到同一行。
-*   如果它们大小不同，创建一个边框不可见的[表格](Tables.md)。
+*   如果它们大小不同，请创建一个边框不可见的[表格](Tables.md)。

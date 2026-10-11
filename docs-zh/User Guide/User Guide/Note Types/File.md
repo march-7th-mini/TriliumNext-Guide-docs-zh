@@ -1,23 +1,22 @@
 # 文件
-
 _文件_ 笔记类型可用于附加各种外部文件，例如图片、视频或 PDF 文档。
 
 ## 上传文件
 
 由于这些文件来自外部来源，因此无法直接创建 _文件_ 笔记类型：
 
-*   将文件拖入<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">笔记树</a>。
-*   右键点击笔记并选择 _导入到笔记中_，然后指向其中一个受支持的文件。
+*   将文件拖入 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">笔记树</a>。
+*   右键点击笔记并选择 _导入到笔记中_，然后指向受支持的文件之一。
 
 ## 支持的文件类型
 
 ### PDF
 
-PDF 可以上传到 Trilium，并会显示实时预览，完全支持目录、注释等各种功能，以及记住上次阅读的页面。更多信息，请参阅专门的 <a class="reference-link" href="File/PDFs.md">PDF</a> 页面。
+PDF 可以上传到 Trilium，它们将显示实时预览，完全支持各种功能，例如目录、注释，以及记住上次阅读的页面。有关更多信息，请参阅专门的 <a class="reference-link" href="File/PDFs.md">PDF</a> 页面。
 
 ## Office 文档
 
-Trilium 为 Office 文档提供预览，例如 Word (`.docx`)、Excel (`.xlsx`) 和 PowerPoint (`.pptx`)。更多信息，请参阅专门的 <a class="reference-link" href="File/Office%20documents.md">Office 文档</a>。
+Trilium 提供 Office 文档的预览，例如 Word（`.docx`）、Excel（`.xlsx`）和 PowerPoint（`.pptx`）。有关更多信息，请参阅专门的 <a class="reference-link" href="File/Office%20documents.md">Office 文档</a>。
 
 ### 图片
 
@@ -25,24 +24,22 @@ Trilium 为 Office 文档提供预览，例如 Word (`.docx`)、Excel (`.xlsx`) 
 
 交互：
 
-*   _复制引用到剪贴板_，用于在<a class="reference-link" href="Text.md">文本</a>笔记中嵌入图片。
-    *   更多信息请参阅 <a class="reference-link" href="Text/Images/Image%20references.md">图片引用</a>。
-    *   或者，按下<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Floating%20buttons.md">浮动按钮</a>中的相应按钮。
+*   可以通过按 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20buttons.md">笔记按钮</a> 区域中的 <span class="tn-icon bx bx-copy"></span> 图标来复制[图片引用](Text/Images/Image%20references.md)，从而允许将其粘贴到 <a class="reference-link" href="Text.md">文本</a> 笔记中。
 
 ### 视频
 
-请参阅 <a class="reference-link" href="File/Audio%20%26%20Video.md">音频与视频</a>。
+请参阅 <a class="reference-link" href="File/Audio%20%26%20Video.md">音频和视频</a>。
 
 ### 音频
 
 <figure class="image image-style-align-center image_resized" style="width:50%;"><img style="aspect-ratio:850/243;" src="1_File_image.png" width="850" height="243"></figure>
 
-添加受支持的音频文件将显示一个基本的音频播放器，可用于播放该文件。
+添加受支持的音频文件将显示一个基本的音频播放器，可用于播放它。
 
 交互：
 
 *   可以使用专用按钮播放/暂停音频。
-*   拖动鼠标或点击进度条可以快进/快退歌曲。
+*   在进度条上拖动鼠标或点击进度条将在歌曲中跳转。
 *   可以设置音量。
 *   可以通过音量旁边的上下文菜单调整播放速度。
 
@@ -50,17 +47,17 @@ Trilium 为 Office 文档提供预览，例如 Word (`.docx`)、Excel (`.xlsx`) 
 
 <figure class="image image-style-align-center image_resized" style="width:50%;"><img style="aspect-ratio:926/347;" src="File_image.png" width="926" height="347"></figure>
 
-被识别为包含文本的文件将显示其内容的预览。此类文件的一个常见用例是嵌入用户不一定感兴趣其内容的文本文件，例如第三方库或生成的内容，这些文件在需要时可以下载。
+被识别为包含文本的文件将显示其内容的预览。此类文件的一个常见用例是嵌入用户不一定感兴趣的文本文件，例如第三方库或生成的内容，然后可以在需要时下载。
 
-请注意，通常文本文件会作为<a class="reference-link" href="Text.md">文本</a>或<a class="reference-link" href="Code.md">代码</a>笔记被[导入](../Basic%20Concepts%20and%20Features/Import%20%26%20Export.md)。要绕过此行为并创建 _文件_ 笔记类型，请使用 _导入到笔记中_ 功能，并取消选中 _将 HTML、Markdown 和 TXT 作为文本笔记导入_ 以及 _将可识别的代码文件作为代码笔记导入_。
+请注意，通常文本文件会作为 <a class="reference-link" href="Text.md">文本</a> 或 <a class="reference-link" href="Code.md">代码</a> 笔记[导入](../Basic%20Concepts%20and%20Features/Import%20%26%20Export.md)。要绕过此行为并创建 _文件_ 笔记类型，请使用 _导入到笔记中_ 功能，并取消勾选 _将 HTML、Markdown 和 TXT 作为文本笔记导入_，以及 _将识别出的代码文件作为代码笔记导入_。
 
-由于使用文件而非笔记的用例之一是显示大文件，因此内容预览仅限于相对较少的字符数。要查看完整文件，请考虑在外部应用程序中打开它。
+由于使用文件而非笔记的用例之一是显示大文件，因此内容预览限制为相对较少的字符数。要查看完整文件，请考虑在外部应用程序中打开它。
 
 ### GPS 轨迹
 
-Trilium 显示 `.gpx` 格式的 GPS 轨迹信息，例如距离、时长、海拔剖面、轨迹、标记点。
+Trilium 显示 `.gpx` 格式的 GPS 轨迹信息，例如距离、持续时间、海拔剖面、轨迹、标记。
 
-当 `.gpx` 笔记被拖放到<a class="reference-link" href="../Collections/Geo%20Map.md">地理地图</a>中时，轨迹本身也会显示在地图上。
+当 `.gpx` 笔记被拖入 <a class="reference-link" href="../Collections/Geo%20Map.md">地理地图</a> 时，轨迹本身也将显示在地图上。
 
 <figure class="image"><img style="aspect-ratio:1500/807;" src="4_File_image.png" width="1500" height="807"></figure>
 
@@ -68,37 +65,37 @@ Trilium 显示 `.gpx` 格式的 GPS 轨迹信息，例如距离、时长、海�
 
 受支持的字体格式将显示字体的交互式预览：
 
-*   一个用于输入自定义文本的字段。
-*   一个用于更改预览字体大小的滑块。
-*   给定大小下文本的预览。
-*   该字体各种字体大小的样本。
+*   用于输入自定义文本的字段。
+*   用于更改预览字体大小的滑块。
+*   给定大小的文本预览。
+*   此字体的各种字体大小示例。
 *   拉丁字母表。
 
-此外，启用 _在字体选择器中显示_ 将使该字体在<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">选项</a> → _外观_ 的字体选择中可用。更多信息请参阅 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/Themes/Personalizing%20the%20font.md">个性化字体</a>。
+此外，启用 _在字体选择器中_ 将使该字体在 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">选项</a> → _外观_ 字体选择中可用。有关更多信息，请参阅 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/Themes/Personalizing%20the%20font.md">个性化字体</a>。
 
 ### 未知文件类型
 
 <figure class="image image-style-align-center image_resized" style="width:50%;"><img style="aspect-ratio:532/240;" src="3_File_image.png" width="532" height="240"></figure>
 
-如果文件无法被识别为上述任何受支持的文件类型，它将被视为未知文件。在这种情况下，所有默认交互（例如下载或在外部打开文件）都可用，但不会有内容的预览。
+如果文件无法被识别为上述任何受支持的文件类型，它将被视为未知文件。在这种情况下，所有默认交互都将可用，例如下载或在外部打开文件，但不会有内容预览。
 
 ## 交互
 
-*   无论文件类型如何，在<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Ribbon.md">功能区</a>的 _图片_ 或 _文件_ 选项卡中都会显示一系列按钮。
-    *   _下载_，将下载文件以供本地使用。
-    *   _打开_，将使用系统默认应用程序打开文件。
-    *   上传新修订版以替换为新文件。
+*   无论文件类型如何，<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20menu.md">笔记菜单</a> 区域中将显示一系列按钮。
+    *   <span class="tn-icon bx bx-download"></span>（下载），将下载文件以供本地使用。
+    *   <span class="tn-icon bx bx-link-external"></span>（打开），将使用系统默认应用程序打开文件。
+    *   <span class="tn-icon bx bx-folder-open"></span>（上传新版本）以用新文件替换该文件。
 *   **无法**更改 _文件_ 笔记的笔记类型。
-*   从[笔记菜单](../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20buttons.md)转换为[附件](../Basic%20Concepts%20and%20Features/Notes/Attachments.md)。
+*   从[笔记菜单](../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20menu.md)转换为[附件](../Basic%20Concepts%20and%20Features/Notes/Attachments.md)。
 
 ## 与其他笔记的关系
 
-*   文件也会根据其类型显示在<a class="reference-link" href="../Basic%20Concepts%20and%20Features/Notes/Note%20List.md">笔记列表</a>中：
+*   文件也会根据其类型显示在 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/Notes/Note%20List.md">笔记列表</a> 中：
     
     <img class="image_resized" style="aspect-ratio:853/315;width:50%;" src="5_File_image.png" width="853" height="315">
-*   非图片文件可以通过<a class="reference-link" href="Text/Include%20Note.md">包含笔记</a>功能作为只读小组件嵌入到文本笔记中。
-*   图片文件可以通过<a class="reference-link" href="Text/Images/Image%20references.md">图片引用</a>像普通图片一样嵌入到文本笔记中。
+*   非图片文件可以通过 <a class="reference-link" href="Text/Include%20Note.md">包含笔记</a> 功能作为只读小组件嵌入到文本笔记中。
+*   图片文件可以通过 <a class="reference-link" href="Text/Images/Image%20references.md">图片引用</a> 像普通图片一样嵌入到文本笔记中。
 
 ## 文件大小限制
 
-单个文件不能大于 374 MiB。更多信息请参阅 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/Import%20%26%20Export.md">导入与导出</a> 中的 _最大导入大小_。
+单个文件不能大于 374 MiB。有关更多信息，请参阅 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/Import%20%26%20Export.md">导入和导出</a> 中的 _最大导入大小_。

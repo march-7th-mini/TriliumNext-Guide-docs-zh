@@ -1,13 +1,13 @@
 # 日历
 <figure class="image"><img style="aspect-ratio:2016/1413;" src="1_Calendar_image.png" width="2016" height="1413"></figure>
 
-日历视图会将每个具有开始日期（以及可选的结束日期）的子笔记作为事件显示在日历中。
+日历视图会将每个具有开始日期和可选结束日期的子笔记作为事件显示在日历中。
 
 日历视图有多种显示模式：
 
 *   月视图，显示整个月，可以插入全天事件。特定时间事件和全天事件都会列出。
 *   周视图，将一周的 7 天（如果隐藏周末则为 5 天）按列显示。此模式允许输入和显示特定时间事件，而不仅仅是全天事件。
-*   日视图，仅查看单日。对于繁忙的日程或移动端视图特别有用。
+*   日视图，仅查看单日。特别适用于繁忙的日程或移动端视图。
 *   列表视图，按顺序显示给定月份的所有事件。
 *   年视图，显示整年以便快速参考。
 
@@ -15,58 +15,60 @@
 
 ## 创建日历
 
-在<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">笔记树</a>中右键点击现有笔记，选择_插入子笔记_，然后查找_日历_。
+在<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">笔记树</a>中右键点击现有笔记，然后选择 _插入子笔记_ → _集合_ → _日历_。
 
 ## 创建新事件/笔记
 
 要创建新事件：
 
 *   首先，点击所需的日期（月视图和周视图）或所需的时间段（日视图）。
-*   或者，跨多天（或时间段）拖动以同时设置开始日期和结束日期。
+*   或者，跨多天（或时间段）拖动以设置开始日期和结束日期。
 
 无论哪种情况，都会弹出一个小窗口，提示输入标题以及将要创建的事件的日期和时间。
 
-此时，事件尚未创建，以防止意外点击。可选择添加标题，然后按_创建_按钮。如果未提供标题，事件将遵循<a class="reference-link" href="../Advanced%20Usage/Default%20Note%20Title.md">默认笔记标题</a>规则。
+此时，事件尚未创建，以防止误点击。可选地添加标题，然后按 _创建_ 按钮。如果未提供标题，事件将遵循<a class="reference-link" href="../Advanced%20Usage/Default%20Note%20Title.md">默认笔记标题</a>规则。
 
-创建事件后，它将显示在日历上。要编辑事件的内容（包括重复），点击它将其带入弹出视图。
+创建事件后，它将显示在日历上。要编辑事件的内容（包括重复），请点击它以打开弹出视图。
 
 > [!NOTE]
 > 从日历创建新笔记将遵循集合笔记上设置的 `~child:template` 关系（如果已设置）。
 
 ## 与事件交互
 
-*   将鼠标悬停在事件上会显示有关笔记的信息。  
+*   将鼠标悬停在事件上会显示有关该笔记的信息。  
     ![](4_Calendar_image.png)
-*   左键点击事件将打开一个专用弹出窗口，用于快速配置事件或编辑其笔记内容。
+*   左键点击事件将打开一个专用弹出窗口，以便快速配置事件或编辑其笔记内容。
 *   右键点击将提供更多选项，包括在新分屏或窗口中打开笔记。
 *   在日历上拖放事件可将其移动到另一天。
 *   可以通过将鼠标放在事件的右边缘并拖动鼠标来更改事件的长度。
+
+在[只读](../Basic%20Concepts%20and%20Features/Notes/Read-Only%20Notes.md)日历上，事件无法拖动、调整大小或创建，其上下文菜单仅提供打开位置，并且固定当前日期的按钮是隐藏的。在月视图、周视图和日视图之间切换仍然有效，但选择不会被保存。
 
 ### 弹出视图
 
 点击事件时，事件附近会显示一个弹出窗口，其中包含以下信息：
 
-*   事件的标题和图标，均可编辑。
-*   与事件交互的按钮：
+*   事件的标题和图标，两者均可编辑。
+*   用于与事件交互的按钮：
     *   在同一窗格、新标签页等中打开事件。
-    *   颜色选择器，用于更改事件的颜色。
-    *   从日历中移除事件的按钮，可选择同时删除其对应的笔记。
+    *   用于更改事件颜色的颜色选择器。
+    *   用于从日历中移除事件的按钮，可以选择同时删除其对应的笔记。
 *   日历特定功能：
     *   全天事件的切换开关。
     *   开始/结束日期和时间选择器。
-    *   完整的重复编辑器，使同一事件按周、按月等重复显示。
+    *   完整的重复编辑器，可使同一事件每周、每月等重复出现。
 *   标记的<a class="reference-link" href="../Advanced%20Usage/Attributes/Promoted%20Attributes.md">提升属性</a>（如果有）。
-*   笔记的内容，可直接从面板中编辑。
+*   笔记的内容，可以直接从面板中编辑。
 
 要关闭弹出窗口：
 
 *   按弹出窗口右上角的 X 按钮。
 *   在日历中，按弹出窗口外的任意位置。
-*   或直接按 <kbd>Escape</kbd> 键。
+*   或者直接按 <kbd>Escape</kbd> 键。
 
 即使弹出视图已经打开，也可以通过点击事件在它们之间切换。
 
-事件之间可以具有<a class="reference-link" href="../Note%20Types/Text/Links/Internal%20(reference)%20links.md">内部（引用）链接</a>，点击此类链接将自动将日历导航到正确的日期，并将弹出视图切换到新笔记。
+事件之间可以具有<a class="reference-link" href="../Note%20Types/Text/Links/Internal%20(reference)%20links.md">内部（引用）链接</a>，点击此类链接将自动将日历导航到正确的日期，并将弹出视图导航到新笔记。
 
 ## 移动端交互
 
@@ -78,13 +80,13 @@
     *   在释放之前，跨多个区域拖动以创建多天事件。
     *   释放时，将出现提示以输入笔记标题。
 *   要移动现有事件，请触摸并按住事件，直到其附近的空白区域变为彩色。
-    *   此时可以将事件拖动到日历上的其他日期。
+    *   此时，事件可以在日历上的其他日期之间拖动。
     *   或者可以通过点击事件右端的小圆圈来调整事件大小。
     *   要退出编辑模式，只需点击日历上任意位置的空白区域。
 
 ## 配置日历视图
 
-在<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Ribbon.md">功能区</a>的_集合_选项卡中，可以调整以下内容：
+在<a class="reference-link" href="Collection%20Properties.md">集合属性</a>中，可以：
 
 *   在周视图中隐藏周末。
 *   在日历上显示周数。
@@ -93,7 +95,7 @@
 
 ## 使用属性配置日历
 
-可以将以下属性添加到集合类型中：
+可以将以下属性添加到集合类型：
 
 <table>
     <thead>
@@ -121,11 +123,11 @@
         </tr>
         <tr>
             <td><code>#calendar:slotDuration</code></td>
-            <td>设置日历上每个时间段的长度。默认为 <code>00:15:00</code>（15 分钟）。必须使用 "HH:MM:SS" 格式。例如，要创建每 10 分钟的时间段，可以设置 <code>#calendar:slotDuration="00:10:00"</code>。</td>
+            <td>设置日历上每个时间段的长度。默认为 <code>00:15:00</code>（15 分钟）。必须使用 "HH:MM:SS" 格式。例如，要创建每 10 分钟的时间段，您应设置 <code>#calendar:slotDuration="00:10:00"</code>。</td>
         </tr>
         <tr>
             <td><code>#calendar:slotLabelInterval</code></td>
-            <td>设置日历上时间段标签的显示频率。默认为 <code>01:00:00</code>（1 小时）。必须使用 "HH:MM:SS" 格式。例如，要每 30 分钟标记时间段，可以设置 <code>#calendar:slotLabelInterval="00:30:00"</code>。</td>
+            <td>设置日历上时间段应多久标记一次。默认为 <code>01:00:00</code>（1 小时）。必须使用 "HH:MM:SS" 格式。例如，要每 30 分钟标记时间段，您应设置 <code>#calendar:slotLabelInterval="00:30:00"</code>。</td>
         </tr>
         <tr>
             <td><code>~child:template</code></td>
@@ -142,16 +144,16 @@
 
 | 名称 | 描述 |
 | --- | --- |
-| `#startDate` | 事件开始的日期，将在日历中显示。格式为 `YYYY-MM-DD`（年、月、日以减号分隔）。 |
-| `#endDate` | 与 `startDate` 类似，如果事件跨越多个日期，则指明结束日期。日期是包含的，因此结束日也会被考虑。对于单日事件，该属性可以缺失。 |
+| `#startDate` | 事件开始的日期，将在日历中显示它。格式为 `YYYY-MM-DD`（年、月、日以减号分隔）。 |
+| `#endDate` | 与 `startDate` 类似，如果事件跨越多天，则指明结束日期。日期是包含性的，因此结束日也被考虑在内。对于单日事件，该属性可以缺失。 |
 | `#startTime` | 事件开始的时间。如果此值缺失，则事件被视为全天事件。格式为 `HH:MM`（24 小时制的小时和分钟）。 |
 | `#endTime` | 与 `startTime` 类似，指明事件结束的时间（与 `endDate`（如果存在）或 `startDate` 相关）。 |
 | `#recurrence` | 这是一个可选的 CalDAV `RRULE` 字符串，如果存在，则确定任务是否应重复。请注意，它不包含 `DTSTART` 属性，该属性直接派生自 `#startDate` 和 `#startTime`。有关有效 `RRULE` 字符串的示例，请参见 [https://icalendar.org/rrule-tool.html](https://icalendar.org/rrule-tool.html) |
 | `#color` | 以指定颜色显示事件（命名如 `red`、`gray` 或十六进制如 `#FF0000`）。这也会更改笔记在其他位置（如笔记树）的颜色。 |
-| `#calendar:color` | **❌️ 自 v0.100.0 起已移除。请改用** `#color` **。**     <br>  <br>与 `#color` 类似，但仅对日历中的事件应用颜色，而不对笔记树等其他位置应用。 |
+| `#calendar:color` | **❌️ 自 v0.100.0 起已移除。请改用** `#color` **。**      <br>  <br>与 `#color` 类似，但仅对日历中的事件应用颜色，而不对笔记树等其他位置应用。 |
 | `#iconClass` | 如果存在，笔记的图标将显示在事件标题的左侧。 |
 | `#calendar:title` | 将事件的标题更改为指向笔记的标题以外的属性，可以是标签或关系（不带 `#` 或 `~` 符号）。有关更多信息，请参见_用例_。 |
-| `#calendar:displayedAttributes` | 允许在日历中显示一个或多个属性的值，如下所示：          <br>  <br>![](6_Calendar_image.png)         <br>  <br>`#weight="70" #Mood="Good" #calendar:displayedAttributes="weight,Mood"`        <br>  <br>它也可以与关系一起使用，在这种情况下，它将显示目标笔记的标题：         <br>  <br>`~assignee=@My assignee #calendar:displayedAttributes="assignee"` |
+| `#calendar:displayedAttributes` | 允许在日历中显示一个或多个属性的值，如下所示：           <br>  <br>![](6_Calendar_image.png)         <br>  <br>`#weight="70" #Mood="Good" #calendar:displayedAttributes="weight,Mood"`         <br>  <br>它也可以与关系一起使用，在这种情况下，它将显示目标笔记的标题：          <br>  <br>`~assignee=@My assignee #calendar:displayedAttributes="assignee"` |
 | `#calendar:startDate` | 允许使用不同的标签来表示开始日期，而不是 `startDate`（例如 `expiryDate`）。标签名称**不得**以 `#` 为前缀。如果笔记未定义该标签，则将使用默认值。 |
 | `#calendar:endDate` | 与 `#calendar:startDate` 类似，允许更改用于读取结束日期的属性。 |
 | `#calendar:startTime` | 与 `#calendar:startDate` 类似，允许更改用于读取开始时间的属性。 |
@@ -163,7 +165,7 @@
 
 日历显示集合中所有具有 `#startDate` 的子笔记。可以选择性地添加 `#endDate`。
 
-可以直接从日历集合本身通过点击事件来轻松编辑开始日期和结束日期。要在事件笔记本身中编辑日期，可以将以下属性添加到集合笔记中：
+开始日期和结束日期可以通过点击事件从日历集合本身轻松编辑。要在事件笔记本身中编辑日期，可以将以下属性添加到集合笔记：
 
 ```
 #viewType=calendar #label:startDate(inheritable)="promoted,alias=Start Date,single,date"
@@ -181,7 +183,7 @@
 
 内置日历视图还支持重复任务（例如每周、每月以及更复杂的重复规则）。
 
-从 v0.105.0 开始，可以通过点击事件然后选择_重复_选项，直接从日历中编辑重复。
+从 v0.105.0 开始，可以通过点击事件然后选择 _重复_ 选项直接从日历编辑重复。
 
 ### 使用 RRULE 子集的自定义重复
 
@@ -194,71 +196,43 @@
 *   每周 - `#recurrence="FREQ=WEEKLY;INTERVAL=1"`
 *   每 2 周的周一、周三和周五 - `#recurrence="FREQ=WEEKLY;INTERVAL=2;BYDAY=MO,WE,FR"`
 *   每 3 个月 - `#recurrence="FREQ=MONTHLY;INTERVAL=3"`
-*   每 2 个月的第 1 个周日 - `#recurrence="FREQ=MONTHLY;INTERVAL=2;BYDAY=1SU"`
+*   每 2 个月的第一个周日 - `#recurrence="FREQ=MONTHLY;INTERVAL=2;BYDAY=1SU"`
 *   每月的最后一个周五 - `#recurrence="FREQ=MONTHLY;INTERVAL=1;BYDAY=-1FR"`
 
 有关有效 `RRULE` 字符串的其他示例，请参见 [https://icalendar.org/rrule-tool.html](https://icalendar.org/rrule-tool.html)
 
 请注意，重复字符串不包含 iCAL 规范中定义的 `DTSTART` 属性。它直接派生自 `startDate` 和 `startTime` 属性
 
-如果要覆盖日历用于获取重复字符串的标签，可以使用 `#calendar:recurrence` 属性。例如，可以设置 `#calendar:recurrence=taskRepeats`。然后可以像这样设置重复字符串 `#taskRepeats="FREQ=DAILY;INTERVAL=1"`
+如果要覆盖日历用于获取重复字符串的标签，可以使用 `#calendar:recurrence` 属性。例如，您可以设置 `#calendar:recurrence=taskRepeats`。然后您可以像这样设置重复字符串 `#taskRepeats="FREQ=DAILY;INTERVAL=1"`
 
 另请注意，重复标签可以像开始日期和结束日期一样被提升。
 
 > [!WARNING]
 > 如果重复字符串无效，将显示一个 toast，其中包含笔记 ID 和具有错误重复消息的笔记标题。此笔记将不会添加到日历中
 
-## 时间段持续时间与时间段标签间隔
+## 自定义时间段持续时间和标签间隔
 
-Trilium 的日历视图由 FullCalendar 提供支持，它使您可以精细控制日视图和周视图中时间网格的外观和行为。可用于配置这些视图的两个标签是 `#calendar:slotDuration` 和 `#calendar:slotLabelInterval`。了解每个标签的作用以及它们如何交互，可以让您定制日历以匹配您的工作流程，无论您是按 15 分钟增量安排日程还是以宽泛的小时块规划您的一天。
+日视图和周视图中的时间段可以从<a class="reference-link" href="Collection%20Properties.md">集合属性</a>自定义
 
-这些设置也可以从<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Ribbon.md">功能区</a>的_集合_选项卡中调整。
+*   _时间段持续时间_ 控制日历上每个时间段的高度（本质上是网格划分为的最小时间单位）。
+    *   较短的持续时间意味着更多的行和更细的粒度；较长的持续时间意味着更少、更粗的行。
+    *   默认是每 15 分钟一行。
+*   _标签间隔_ 控制时间标签在左侧轴上出现的频率。
+    *   这与时间段大小无关：您可以有非常小的时间段，但只每小时标记一次以保持轴的可读性。
+    *   默认是每小时显示一个时间标签。
 
-### 时间段持续时间
-
-控制日历上每个时间段的高度——本质上是网格划分的最小时间单位。较短的持续时间意味着更多的行和更细的粒度；较长的持续时间意味着更少、更粗的行。默认是每 15 分钟一行。
-
-**示例：**
-
-| 值 | 结果 |
-| --- | --- |
-| `#calendar:slotDuration="00:15:00"` | 每 15 分钟一行 |
-| `#calendar:slotDuration="00:30:00"` | 每 30 分钟一行 |
-| `#calendar:slotDuration="01:00:00"` | 每小时一行 |
-
-### 标签间隔
-
-控制时间标签在左侧轴上出现的频率。这与时间段大小无关——您可以有非常小的时间段，但只每小时标记一次以保持轴的可读性。默认是每小时显示一个时间标签。
-
-**示例：**
-
-| 值 | 结果 |
-| --- | --- |
-| `#calendar:slotLabelInterval="00:30:00"` | 每 30 分钟显示一个时间标签 |
-| `#calendar:slotLabelInterval="01:00:00"` | 每小时显示一个时间标签 |
-
-### 有用的组合
-
-| `#calendar:slotDuration` | `#calendar:slotLabelInterval` | 结果 |
-| --- | --- | --- |
-| `00:15:00` | `01:00:00` | 细网格，清晰的轴——适合繁忙的日程 |
-| `00:30:00` | `01:00:00` | 标准日历感觉 |
-| `01:00:00` | `01:00:00` | 简单的小时网格——适合日规划 |
-| `00:15:00` | `00:30:00` | 细网格，每 30 分钟标记——平衡的细节 |
-
-### 格式
-
-两个值都使用 `HH:mm:ss` 格式。小时可以到 `24`（`24:00:00`），而分钟和秒必须在 `00` 和 `59` 之间。最小有意义的持续时间是 1 分钟（`00:01:00`）。
+> [!NOTE]
+> 这些值也可以通过 `#calendar:slotDuration` 和 `#calendar:slotLabelInterval` [标签](../Advanced%20Usage/Attributes/Labels.md)直接自定义。两个值都使用 `HH:mm:ss` 格式。小时可以到 `24`（`24:00:00`），而分钟和秒必须在 `00` 和 `59` 之间。最小有意义的持续时间是 1 分钟（`00:01:00`）。
 
 ## 用例
 
 ### 与日记/日历一起使用
 
-可以将日历视图与日记的日笔记集成。为此，将日记笔记（日历根）的笔记类型更改为集合，然后选择日历视图。
+可以将日历视图集成到带有日笔记的日记中。为此，将日记笔记（日历根）的笔记类型更改为集合，然后选择日历视图。
 
-在日记模式下，弹出编辑器将不显示日期、重复、颜色或移除，因为日笔记不是可编辑的事件。
+在日记模式下，弹出编辑器将不显示日期、重复、颜色或移除，因为日笔记不是可编辑事件。
 
-基于 `#calendarRoot`（或 `#workspaceCalendarRoot`）属性，日历将知道它在日历中并应用以下内容：
+基于 `#calendarRoot`（或 `#workspaceCalendarRoot`）属性，日历将知道它处于日历中并应用以下内容：
 
 *   日历事件现在基于其 `dateNote` 属性而不是 `startDate` 呈现。
 *   不再可能进行交互式编辑，例如在空白区域拖动或调整事件大小。
@@ -271,7 +245,7 @@ Trilium 的日历视图由 FullCalendar 提供支持，它使您可以精细控�
 
 <img class="image-style-align-right" src="2_Calendar_image.png" width="445" height="124">默认情况下，事件在日历上按其笔记标题显示。但是，可以配置显示不同的属性。
 
-为此，将 `#calendar:title` 分配给子笔记（不是日历/集合笔记），其值为 `name`，其中 `name` 可以是任何标签（注意不要添加 `#` 前缀）。该属性也可以通过继承（如模板属性）传入。如果笔记没有请求的标签，则将使用笔记的标题。
+为此，将 `#calendar:title` 分配给子笔记（不是日历/集合笔记），其值为 `name`，其中 `name` 可以是任何标签（注意不要添加 `#` 前缀）。该属性也可以通过继承（如模板属性）而来。如果笔记没有请求的标签，则将使用笔记的标题。
 
 ```
 #startDate=2025-02-11 #endDate=2025-02-13 #name="My vacation" #calendar:title="name"
@@ -281,13 +255,13 @@ Trilium 的日历视图由 FullCalendar 提供支持，它使您可以精细控�
 
 <img class="image-style-align-right image_resized" style="aspect-ratio:294/151;width:21.22%;" src="3_Calendar_image.png" width="294" height="151">与使用属性类似，使用 `#calendar:title` 并将其设置为 `name`，其中 `name` 是要使用的关系的名称。
 
-此外，如果有多个同名关系，它们将显示为来自同一笔记的多个事件。
+此外，如果有更多同名关系，它们将显示为来自同一笔记的多个事件。
 
 ```
 #startDate=2025-02-14 #endDate=2025-02-15 ~for=@John Smith ~for=@Jane Doe #calendar:title="for"
 ```
 
-<img class="image-style-align-left" src="Calendar_image.png" width="296" height="150">请注意，甚至可以在目标笔记（例如 "John Smith"）上设置 `#calendar:title`，它将尝试呈现其某个属性。请注意，出于安全原因，这里也不能使用关系（属性的意外递归可能导致应用程序无限循环）。
+<img class="image-style-align-left" src="Calendar_image.png" width="296" height="150">请注意，甚至可以在目标笔记（例如 "John Smith"）上设置 `#calendar:title`，它将尝试呈现其属性。请注意，出于安全原因，此处也不能使用关系（属性的意外递归可能导致应用程序无限循环）。
 
 ```
 #calendar:title="shortName" #shortName="John S."

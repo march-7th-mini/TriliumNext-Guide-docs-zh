@@ -2,9 +2,9 @@
 
 ### 内部 API
 
-**REST 端点** (`/api/*`)
+**REST 端点**（`/api/*`）
 
-前端用于所有操作：
+供前端用于所有操作：
 
 **笔记操作：**
 
@@ -22,7 +22,7 @@
 
 **搜索：**
 
-*   `GET /api/search?query=...` - 搜索笔记
+*   `GET /api/search?searchString=...` - 搜索笔记
 *   `GET /api/search-note/:noteId` - 执行搜索笔记
 
 ### ETAPI（外部 API）
@@ -37,7 +37,7 @@
 
 **关键端点：**
 
-*   `/etapi/notes` - 笔记增删改查
+*   `/etapi/notes` - 笔记 CRUD
 *   `/etapi/branches` - 分支管理
 *   `/etapi/attributes` - 属性操作
 *   `/etapi/attachments` - 附件处理
@@ -62,7 +62,7 @@ curl -H "Authorization: YOUR_TOKEN" \
 *   `sync` - 同步请求
 *   `entity-change` - 实体更新通知
 *   `refresh-tree` - 树结构已更改
-*   `open-note` - 在界面中打开笔记
+*   `open-note` - 在 UI 中打开笔记
 
 **客户端订阅：**
 
