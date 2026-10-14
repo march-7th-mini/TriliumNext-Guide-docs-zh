@@ -1,13 +1,13 @@
 # Markdown
-Trilium 一直通过其[导入功能](../Basic%20Concepts%20and%20Features/Import%20%26%20Export/Markdown.md)支持 Markdown，但文件要么被转换为 <a class="reference-link" href="Text.md">文本</a> 笔记（转换为 Trilium 的内部 HTML 格式），要么被保存为仅带语法高亮的 <a class="reference-link" href="Code.md">代码</a> 笔记。
+Trilium 一直以来都通过其[导入功能](../Basic%20Concepts%20and%20Features/Import%20%26%20Export/Markdown.md)支持 Markdown，但文件要么被转换为 <a class="reference-link" href="Text.md">文本</a> 笔记（转换为 Trilium 的内部 HTML 格式），要么被保存为仅带语法高亮的 <a class="reference-link" href="Code.md">代码</a> 笔记。
 
-此笔记类型为分栏视图，即源代码和文档预览并排显示。有关更多信息，请参阅 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20types%20with%20split%20view.md">分栏视图的笔记类型</a>。
+此笔记类型为分栏视图，即源代码和文档预览会并排显示。更多信息请参阅 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20types%20with%20split%20view.md">分栏视图的笔记类型</a>。
 
 ## 设计理念
 
-此笔记类型的目标是填补一个空白：渲染 Markdown 但不改变其结构或空白字符，否则通过导入/导出不可避免地会改变这些内容。
+此笔记类型的目标是填补一个空白：渲染 Markdown 但不改变其结构或空白字符，否则这些内容在导入/导出过程中不可避免地会发生变化。
 
-即使 Markdown 现在通过预览机制得到了特殊对待，Trilium 的核心仍然是所见即所得编辑器，因此 Markdown 不会取代文本笔记。
+即使 Markdown 现在通过预览机制得到了特殊处理，Trilium 的核心仍然是所见即所得编辑器，因此 Markdown 不会取代文本笔记。
 
 > [!NOTE]
 > 关于 Markdown 实现的功能请求会被考虑，但如果超出 Trilium 的范围，则不会被实现。Markdown 集成的核心方面之一是复用应用程序其他功能中已有的组件。
@@ -29,7 +29,7 @@ Trilium 的 Markdown 格式支持以下功能，并会在预览窗格中显示�
 *   带语法高亮的代码块。
     
     *   必须指定语言才能应用语法高亮（例如 ` ```js `）。
-    *   代码块将遵循 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">选项</a> 中 <a class="reference-link" href="Text.md">文本</a> 部分的文本换行设置。
+    *   代码块会遵循 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">选项</a> 中 <a class="reference-link" href="Text.md">文本</a> 部分的文本换行设置。
 *   <a class="reference-link" href="Text/Block%20quotes%20%26%20admonitions.md">块引用与警示框</a>
 *   <a class="reference-link" href="Text/Math%20Equations.md">数学公式</a>（行内和块级）
 *   使用 ` ```mermaid ` 的 <a class="reference-link" href="Mermaid%20Diagrams.md">Mermaid 图表</a>
@@ -41,10 +41,10 @@ Trilium 的 Markdown 格式支持以下功能，并会在预览窗格中显示�
     </figure>
     ```
     
-    *   标题是可选的。HTML 块内不会处理 Markdown，因此请使用 HTML 标签来格式化标题。
+    *   标题是可选的。HTML 块内的 Markdown 不会被处理，因此请使用 HTML 标签来格式化标题。
     *   以 `<section class="include-note">` 编写的包含（早期版本的语法）仍然有效。
     *   这些也可以通过 `/include` 命令或专用键盘快捷键（默认未分配）快速创建。
-*   通过其 HTML 语法或类似 _Wikilinks_ 的格式（仅 <a class="reference-link" href="../Advanced%20Usage/Note%20ID.md">笔记 ID</a>）实现的 <a class="reference-link" href="Text/Links/Internal%20(reference)%20links.md">内部（引用）链接</a>：
+*   通过其 HTML 语法或类似 _Wikilinks_ 格式（仅 <a class="reference-link" href="../Advanced%20Usage/Note%20ID.md">笔记 ID</a>）的 <a class="reference-link" href="Text/Links/Internal%20(reference)%20links.md">内部（引用）链接</a>：
     
     ```
     [[Hg8TS5ZOxti6]]
@@ -68,9 +68,9 @@ Trilium 的 Markdown 格式支持以下功能，并会在预览窗格中显示�
         </tbody>
     </table>
     
-    任务状态是可自定义的：你可以重新排序它们、创建具有不同颜色和符号的新状态，或删除不需要的状态。有关更多详细信息，请参阅 <a class="reference-link" href="../Advanced%20Usage/Customizing%20to-do%20task%20states.md">自定义待办任务状态</a>。
+    任务状态是可自定义的：你可以重新排序、创建具有不同颜色和符号的新状态，或删除不需要的状态。更多详情请参阅 <a class="reference-link" href="../Advanced%20Usage/Customizing%20to-do%20task%20states.md">自定义待办任务状态</a>。
     
-    请注意，任务状态不是"None"和"Done"的待办事项是 Trilium 特有的，可能无法与其他 Markdown 软件良好兼容。
+    请注意，任务状态不是“None”和“Done”的待办事项是 Trilium 特有的，可能无法与其他 Markdown 软件良好兼容。
 *   也通过相应的 Markdown 语法支持 <a class="reference-link" href="Text/Footnotes.md">脚注</a>：
     
     ```
@@ -80,13 +80,13 @@ Trilium 的 Markdown 格式支持以下功能，并会在预览窗格中显示�
     [^2]: the second footnote
     ```
     
-    *   这些也可以使用 `/footnote` 命令快速创建。
+    *   这些也可以通过 `/footnote` 命令快速创建。
 *   用于 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/Notes/Printing%20%26%20Exporting%20as%20PDF.md">打印与导出为 PDF</a> 的分页符：
     
     ```
     <div class="page-break"></div>
     ```
-*   高亮（背景色）既可以通过 `==` Markdown 语法支持，也可以通过 Trilium 中的规范 HTML 表示支持：
+*   高亮（背景色）既支持 `==` Markdown 语法，也支持 Trilium 中的规范 HTML 表示：
     
     ```
     ==highlighted==
@@ -97,7 +97,7 @@ Trilium 的 Markdown 格式支持以下功能，并会在预览窗格中显示�
 
 支持多种类型的链接：
 
-*   网页 URL 可以使用标准 Markdown 语法编写：
+*   Web URL 可以使用标准 Markdown 语法编写：
     
     ```
     [Wikipedia](https://www.wikipedia.org)
@@ -129,7 +129,7 @@ Markdown 笔记共享 <a class="reference-link" href="Text.md">文本</a> 笔记
 *   _日期/时间_（<kbd>Alt</kbd>+<kbd>T</kbd>），遵循与文本笔记相同的格式。
 *   _包含笔记_（默认未分配），触发与文本笔记相同的插入笔记对话框。
 
-此外，还提供以下格式键盘快捷键：
+此外，还提供以下格式化键盘快捷键：
 
 *   <kbd>Ctrl</kbd>+<kbd>B</kbd> 切换 **粗体**。
 *   <kbd>Ctrl</kbd>+<kbd>I</kbd> 切换 _斜体_。
@@ -165,23 +165,24 @@ Markdown 笔记共享 <a class="reference-link" href="Text.md">文本</a> 笔记
 *   插入[脚注](Text/Footnotes.md)（`/footnote`）。
 *   插入 [Mermaid](Mermaid%20Diagrams.md) 图表（`/mermaid`），每个示例模板有一个变体（例如 `/mermaid:flowchart`）。
 *   插入可折叠块（`/collapsible`）。
+*   插入[标签页](../Basic%20Concepts%20and%20Features/Import%20%26%20Export/Markdown/Supported%20syntax.md)（`/tabs`）。
 *   插入用于打印的分页符（`/page-break`）。
 *   插入表格（`/table`）。
 *   创建警示框（例如 `/tip`、`/note`、`/important`、`/caution`、`/warning`）。
 *   插入任务项（`/todo:<state>`，例如 `/todo:done`），每个已配置的任务状态一个。
-*   从你的 Markdown/纯文本代码片段笔记中插入代码片段（`/snippet:<name>`）。
+*   从你的 Markdown/纯文本片段笔记中插入代码片段（`/snippet:<name>`）。
 
-该列表按标题显示每个命令，与文本笔记中一样。输入命令的标题、其关键字（如上所列）或相关词（如 `latex` 或 `grid`）即可找到它。
+列表按标题显示每个命令，与文本笔记中一样。输入命令的标题、其关键字（如上所列）或相关词（如 `latex` 或 `grid`）即可找到它。
 
 请注意，斜杠命令仅在代码块和行内代码之外有效。
 
 #### 使用 `@` 或 `[[` 链接笔记
 
-与 <a class="reference-link" href="Text.md">文本</a> 笔记一样，在行首或空格后输入 `@` 会打开笔记搜索。选择一条笔记会将输入的内容替换为类似 Wikilinks 格式的链接（`[[noteId]]`），预览会将其显示为带笔记标题的 <a class="reference-link" href="Text/Links/Internal%20(reference)%20links.md">内部链接</a>。
+与 <a class="reference-link" href="Text.md">文本</a> 笔记一样，在行首或空格后输入 `@` 会打开笔记搜索。选择一条笔记会将输入的内容替换为类似 Wikilinks 格式的链接（`[[noteId]]`），预览会将其显示为带笔记标题的 <a class="reference-link" href="Text/Links/Internal%20(reference)%20links.md">内部（引用）链接</a>。
 
-搜索会基于 `@` 之后输入的所有内容运行，包括空格，因此可以输入诸如 `@My meeting notes` 这样的标题；按 <kbd>Esc</kbd> 关闭列表并继续输入。如果没有匹配的笔记，列表会提供创建一条的选项，作为 Markdown 笔记的子笔记或放在收件箱中；笔记创建后会插入链接。
+搜索会基于 `@` 之后输入的所有内容运行，包括空格，因此可以输入诸如 `@My meeting notes` 这样的标题；按 <kbd>Esc</kbd> 关闭列表并继续编写。如果没有合适的笔记，列表会提供创建一条的选项，作为 Markdown 笔记的子笔记或在收件箱中；笔记创建后会插入链接。
 
-你也可以直接开始输入链接：`[[` 会打开相同的列表，自己输入右括号会关闭它。要更改现有链接的指向，请将光标放在其中并选择另一条笔记。
+你也可以直接开始输入链接：`[[` 会打开相同的列表，自己闭合方括号则会关闭它。要更改现有链接指向的位置，请将光标放在其中并选择另一条笔记。
 
 与斜杠命令一样，`@` 和 `[[` 在代码块和行内代码中不起作用。
 
@@ -189,27 +190,26 @@ Markdown 笔记共享 <a class="reference-link" href="Text.md">文本</a> 笔记
 
 #### 代码块语言自动补全
 
-从 v0.104.0 开始，输入 \`\`\` 插入代码块时会自动打开一个建议语言类型列表，这些语言具有语法高亮。
+从 v0.104.0 开始，输入 \`\`\` 插入代码块时会自动打开一个建议语言类型列表，这些语言类型具有语法高亮。
 
-语言列表与 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">选项</a> 中设置的 <a class="reference-link" href="Code.md">代码</a> 笔记的语言列表一致，并非 Trilium 支持的完整语言列表。
+语言列表与 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">选项</a> 中设置的 <a class="reference-link" href="Code.md">代码</a> 笔记的语言列表一致，并非 Trilium 支持的全部语言列表。
 
 ### 其他功能
 
 *   <a class="reference-link" href="Text/Table%20of%20contents.md">目录</a> 将根据 Markdown 级别的标题显示在 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Right%20Sidebar.md">右侧边栏</a> 中。
-    *   此功能仅在 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/New%20Layout.md">新布局</a> 中可用。
 
 ### 共享笔记
 
 当 Markdown 笔记被[公开共享](../Advanced%20Usage/Sharing.md)时，它会像 <a class="reference-link" href="Text.md">文本</a> 笔记一样以扩展格式渲染。
 
-前面描述的大多数功能都应该得到支持。如果你遇到任何问题，欢迎[报告](../Troubleshooting/Reporting%20issues.md)，并附上一个示例 Markdown 文件。
+前面描述的大多数功能都应受支持。如果你遇到任何问题，欢迎[报告](../Troubleshooting/Reporting%20issues.md)并附上示例 Markdown 文件。
 
 ## 创建 Markdown 笔记
 
-有两种方法可以创建 Markdown 笔记：
+有两种方式创建 Markdown 笔记：
 
-1.  创建一条新笔记（例如在 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">笔记树</a> 中）并选择类型 _Markdown_，就像所有其他笔记类型一样。
-2.  创建一条 <a class="reference-link" href="Code.md">代码</a> 类型的笔记，并选择语言为 _Markdown_ 或 _GitHub-Flavored Markdown_。这保持了与此功能引入之前现有笔记的兼容性。
+1.  创建新笔记（例如在 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">笔记树</a> 中）并选择类型 _Markdown_，就像所有其他笔记类型一样。
+2.  创建类型为 <a class="reference-link" href="Code.md">代码</a> 的笔记，并选择语言为 _Markdown_ 或 _GitHub-Flavored Markdown_。这保持了与此功能引入之前现有笔记的兼容性。
 
 > [!NOTE]
 > 新的 Markdown 笔记类型与 Markdown 类型的代码笔记之间没有区别；在内部，两者都表示为具有以下 MIME 类型之一的 <a class="reference-link" href="Code.md">代码</a> 笔记：
@@ -222,7 +222,7 @@ Markdown 笔记共享 <a class="reference-link" href="Text.md">文本</a> 笔记
 
 ### 导入
 
-默认情况下，导入单个 Markdown 文件时会自动将其转换为 <a class="reference-link" href="Text.md">文本</a> 笔记。要避免这种情况并将其作为 Markdown 笔记导入：
+默认情况下，导入单个 Markdown 文件时，它会自动转换为 <a class="reference-link" href="Text.md">文本</a> 笔记。要避免这种情况并将其作为 Markdown 笔记导入：
 
 *   右键单击 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">笔记树</a> 并选择 _导入到笔记_。
 *   正常选择文件。
@@ -253,4 +253,4 @@ Markdown 笔记共享 <a class="reference-link" href="Text.md">文本</a> 笔记
 此功能目前无法禁用；如果滚动感觉分散注意力，可以考虑暂时切换到编辑器模式，准备好后再切换到预览模式。
 
 > [!NOTE]
-> 此同步滚动功能基于块，但它是尽力提供的，因为我们底层的 Markdown 库不原生支持此功能，所以我们必须实现自己的算法。欢迎[报告问题](../Troubleshooting/Reporting%20issues.md)，但请始终提供示例 Markdown 文件以便重现。
+> 此同步滚动功能基于块，但由于我们的底层 Markdown 库本身不支持此功能，因此是在尽力而为的基础上提供的，我们不得不实现自己的算法。欢迎[报告问题](../Troubleshooting/Reporting%20issues.md)，但请始终提供示例 Markdown 文件以便重现。

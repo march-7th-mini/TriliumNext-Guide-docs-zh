@@ -11,9 +11,9 @@
         <tr>
             <th>依赖项</th>
             <th><code>library_loader</code> 中的名称</th>
-            <th>基本健全性检查事项</th>
+            <th>基本健全性检查需检查的内容</th>
             <th>&nbsp;</th>
-            <th>受单元测试保护</th>
+            <th>是否受单元测试保护</th>
         </tr>
     </thead>
     <tbody>
@@ -27,8 +27,8 @@
         <tr>
             <td><code>jsdom</code></td>
             <td>&nbsp;</td>
-            <td><ul><li>笔记图谱</li><li>剪藏扩展</li><li>笔记相似度</li></ul></td>
-            <td>受类型定义保护，应能捕获 API 的任何潜在变化。</td>
+            <td><ul><li>笔记地图</li><li>剪藏器</li><li>笔记相似度</li></ul></td>
+            <td>受类型定义保护，应能捕获 API 中的任何潜在变更。</td>
             <td>是</td>
         </tr>
         <tr>
@@ -55,14 +55,14 @@
         <tr>
             <td><ul><li><code>ws</code></li><li><code>debounce</code></li></ul></td>
             <td>&nbsp;</td>
-            <td><ul><li>检查是否有任何操作从服务器报告到客户端（例如删除笔记）。</li></ul></td>
+            <td><ul><li>检查任何操作是否从服务器报告到客户端（例如删除笔记）。</li></ul></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td><code>ejs</code></td>
             <td>&nbsp;</td>
-            <td><ul><li>引导流程 / 首次设置</li></ul></td>
+            <td><ul><li>引导 / 首次设置</li></ul></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
@@ -97,28 +97,21 @@
         <tr>
             <td><code>ini</code></td>
             <td>&nbsp;</td>
-            <td><ul><li>影响配置，通常如果应用程序能启动则应该没问题。</li></ul></td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td><code>jsplumb</code></td>
-            <td><code>RELATION_MAP</code></td>
-            <td><ul><li>关系图谱笔记类型</li></ul></td>
+            <td><ul><li>影响配置，通常如果应用程序能启动就没问题。</li></ul></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td><code>jquery.mark.es6</code></td>
             <td><code>MARKJS</code></td>
-            <td><ul><li>在搜索中，当高亮匹配的文本时。</li><li>在 HTML 中搜索时，这可能实际上并未被使用，因为它似乎已被 CKEditor 自身的查找与替换对话框所取代。</li></ul></td>
+            <td><ul><li>在搜索中，高亮显示匹配的文本时。</li><li>在 HTML 中搜索时，这可能实际上并未使用，因为它似乎已被 CKEditor 自带的查找和替换对话框取代。</li></ul></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td><code>knockout.js</code></td>
             <td>&nbsp;</td>
-            <td><ul><li>用于渲染应用程序的登录页面和主布局。</li></ul></td>
+            <td><ul><li>用于渲染应用程序的登录和主布局。</li></ul></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
@@ -139,21 +132,21 @@
         <tr>
             <td><code>fancytree</code></td>
             <td>&nbsp;</td>
-            <td><ul><li>笔记树应完全正常运作。</li></ul></td>
+            <td><ul><li>笔记树应完全可用。</li></ul></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td><code>bootstrap</code></td>
             <td>&nbsp;</td>
-            <td><ul><li>主要检查没有数据库时的引导页面。</li></ul></td>
+            <td><ul><li>主要检查引导页面，即没有数据库时。</li></ul></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td><code>electron-debug</code></td>
             <td>&nbsp;</td>
-            <td><ul><li>使用 <code>npm run start-electron</code> 运行 Electron，并检查调试热键是否仍然有效（Windows/Linux 上为 Ctrl+Shift+I，开发者工具为 Cmd+Alt+I，重新加载为 Cmd/Ctrl+R）。</li></ul></td>
+            <td><ul><li>使用 <code>npm run start-electron</code> 运行 electron，并检查调试快捷键是否仍然有效（Windows/Linux 上为 Ctrl+Shift+I，开发者工具为 Cmd+Alt+I，重新加载为 Cmd/Ctrl+R）。</li></ul></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
@@ -174,14 +167,14 @@
         <tr>
             <td><code>marked</code></td>
             <td>&nbsp;</td>
-            <td><ul><li>导入 Markdown 笔记。</li></ul></td>
+            <td><ul><li>导入 markdown 笔记。</li></ul></td>
             <td>&nbsp;</td>
             <td>是</td>
         </tr>
         <tr>
             <td><code>force-graph</code></td>
             <td>&nbsp;</td>
-            <td><ul><li>笔记图谱</li></ul></td>
+            <td><ul><li>笔记地图</li></ul></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>

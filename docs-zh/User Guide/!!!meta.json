@@ -637,7 +637,46 @@
                       "format": "markdown",
                       "dataFileName": "Packaged version for Linux.md",
                       "attachments": [],
-                      "children": []
+                      "dirFileName": "Packaged version for Linux",
+                      "children": [
+                        {
+                          "isClone": false,
+                          "noteId": "_zh_z6YDZSgK",
+                          "notePath": [
+                            "pOsGYCXsbNQG",
+                            "Otzi9La2YAUX",
+                            "WOcw2SLH6tbX",
+                            "Dgg7bR3b6K9j",
+                            "3tW6mORuTHnB",
+                            "ZNAjFcxqHr9V"
+                          ],
+                          "title": "服务器简易自动更新",
+                          "notePosition": 10,
+                          "prefix": null,
+                          "isExpanded": false,
+                          "type": "code",
+                          "mime": "text/x-sh",
+                          "attributes": [
+                            {
+                              "type": "label",
+                              "name": "originalHelpNoteId",
+                              "value": "_help_ZNAjFcxqHr9V",
+                              "isInheritable": false,
+                              "position": 10
+                            },
+                            {
+                              "type": "label",
+                              "name": "helpDoc",
+                              "value": "zh",
+                              "isInheritable": false,
+                              "position": 20
+                            }
+                          ],
+                          "dataFileName": "Simple auto-update for server.dat",
+                          "attachments": [],
+                          "children": []
+                        }
+                      ]
                     },
                     {
                       "isClone": false,
@@ -2058,14 +2097,6 @@
                       "mime": "image/jpg",
                       "position": 10,
                       "dataFileName": "1_Vertical and horizontal layout_image.png"
-                    },
-                    {
-                      "attachmentId": "NVjM5z6IsNZf",
-                      "title": "image.png",
-                      "role": "image",
-                      "mime": "image/png",
-                      "position": 10,
-                      "dataFileName": "2_Vertical and horizontal layout_image.png"
                     }
                   ],
                   "children": []
@@ -2471,65 +2502,6 @@
                 },
                 {
                   "isClone": false,
-                  "noteId": "_zh_o0FgPKHe",
-                  "notePath": [
-                    "pOsGYCXsbNQG",
-                    "gh7bpGYxajRS",
-                    "Vc8PjrjAGuOp",
-                    "BlN9DFI679QC"
-                  ],
-                  "title": "功能区",
-                  "notePosition": 50,
-                  "prefix": null,
-                  "isExpanded": false,
-                  "type": "text",
-                  "mime": "text/html",
-                  "attributes": [
-                    {
-                      "type": "label",
-                      "name": "iconClass",
-                      "value": "bx bx-dots-horizontal",
-                      "isInheritable": false,
-                      "position": 20
-                    },
-                    {
-                      "type": "label",
-                      "name": "shareAlias",
-                      "value": "ribbon",
-                      "isInheritable": false,
-                      "position": 230
-                    },
-                    {
-                      "type": "label",
-                      "name": "originalHelpNoteId",
-                      "value": "_help_BlN9DFI679QC",
-                      "isInheritable": false,
-                      "position": 240
-                    },
-                    {
-                      "type": "label",
-                      "name": "helpDoc",
-                      "value": "zh",
-                      "isInheritable": false,
-                      "position": 250
-                    }
-                  ],
-                  "format": "markdown",
-                  "dataFileName": "Ribbon.md",
-                  "attachments": [
-                    {
-                      "attachmentId": "JCiJ3vRhgXY9",
-                      "title": "image.png",
-                      "role": "image",
-                      "mime": "image/jpg",
-                      "position": 10,
-                      "dataFileName": "Ribbon_image.png"
-                    }
-                  ],
-                  "children": []
-                },
-                {
-                  "isClone": false,
                   "noteId": "_zh_Q4NGBfDW",
                   "notePath": [
                     "pOsGYCXsbNQG",
@@ -2656,14 +2628,14 @@
                 },
                 {
                   "isClone": false,
-                  "noteId": "_zh_Oxbs8EKC",
+                  "noteId": "_zh_XL1zYqzJ",
                   "notePath": [
                     "pOsGYCXsbNQG",
                     "gh7bpGYxajRS",
                     "Vc8PjrjAGuOp",
                     "8YBEPzcpUgxw"
                   ],
-                  "title": "笔记按钮",
+                  "title": "笔记菜单",
                   "notePosition": 130,
                   "prefix": null,
                   "isExpanded": false,
@@ -2673,14 +2645,14 @@
                     {
                       "type": "label",
                       "name": "iconClass",
-                      "value": "bx bx-dots-vertical-rounded",
+                      "value": "bx bx-dots-horizontal-rounded",
                       "isInheritable": false,
                       "position": 50
                     },
                     {
                       "type": "label",
                       "name": "shareAlias",
-                      "value": "note-buttons",
+                      "value": "note-menu",
                       "isInheritable": false,
                       "position": 60
                     },
@@ -2700,6 +2672,65 @@
                     }
                   ],
                   "format": "markdown",
+                  "dataFileName": "Note menu.md",
+                  "attachments": [
+                    {
+                      "attachmentId": "A7OZsjQuWYAY",
+                      "title": "image.png",
+                      "role": "image",
+                      "mime": "image/png",
+                      "position": 10,
+                      "dataFileName": "Note menu_image.png"
+                    }
+                  ],
+                  "children": []
+                },
+                {
+                  "isClone": false,
+                  "noteId": "_zh_Oxbs8EKC",
+                  "notePath": [
+                    "pOsGYCXsbNQG",
+                    "gh7bpGYxajRS",
+                    "Vc8PjrjAGuOp",
+                    "1P8QXI5edXNd"
+                  ],
+                  "title": "笔记按钮",
+                  "notePosition": 140,
+                  "prefix": null,
+                  "isExpanded": false,
+                  "type": "text",
+                  "mime": "text/html",
+                  "attributes": [
+                    {
+                      "type": "label",
+                      "name": "shareAlias",
+                      "value": "note-buttons",
+                      "isInheritable": false,
+                      "position": 30
+                    },
+                    {
+                      "type": "label",
+                      "name": "iconClass",
+                      "value": "bx bx-download",
+                      "isInheritable": false,
+                      "position": 40
+                    },
+                    {
+                      "type": "label",
+                      "name": "originalHelpNoteId",
+                      "value": "_help_1P8QXI5edXNd",
+                      "isInheritable": false,
+                      "position": 50
+                    },
+                    {
+                      "type": "label",
+                      "name": "helpDoc",
+                      "value": "zh",
+                      "isInheritable": false,
+                      "position": 60
+                    }
+                  ],
+                  "format": "markdown",
                   "dataFileName": "Note buttons.md",
                   "attachments": [],
                   "children": []
@@ -2714,7 +2745,7 @@
                     "4TIF1oA4VQRO"
                   ],
                   "title": "选项",
-                  "notePosition": 140,
+                  "notePosition": 150,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -2773,7 +2804,7 @@
                     "luNhaphA37EO"
                   ],
                   "title": "分屏视图",
-                  "notePosition": 150,
+                  "notePosition": 160,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -2824,65 +2855,6 @@
                 },
                 {
                   "isClone": false,
-                  "noteId": "_zh_5FkL4kFz",
-                  "notePath": [
-                    "pOsGYCXsbNQG",
-                    "gh7bpGYxajRS",
-                    "Vc8PjrjAGuOp",
-                    "XpOYSgsLkTJy"
-                  ],
-                  "title": "浮动按钮",
-                  "notePosition": 160,
-                  "prefix": null,
-                  "isExpanded": false,
-                  "type": "text",
-                  "mime": "text/html",
-                  "attributes": [
-                    {
-                      "type": "label",
-                      "name": "iconClass",
-                      "value": "bx bx-rectangle",
-                      "isInheritable": false,
-                      "position": 10
-                    },
-                    {
-                      "type": "label",
-                      "name": "shareAlias",
-                      "value": "floating-buttons",
-                      "isInheritable": false,
-                      "position": 60
-                    },
-                    {
-                      "type": "label",
-                      "name": "originalHelpNoteId",
-                      "value": "_help_XpOYSgsLkTJy",
-                      "isInheritable": false,
-                      "position": 70
-                    },
-                    {
-                      "type": "label",
-                      "name": "helpDoc",
-                      "value": "zh",
-                      "isInheritable": false,
-                      "position": 80
-                    }
-                  ],
-                  "format": "markdown",
-                  "dataFileName": "Floating buttons.md",
-                  "attachments": [
-                    {
-                      "attachmentId": "drdKIHK5GzfU",
-                      "title": "image.png",
-                      "role": "image",
-                      "mime": "image/png",
-                      "position": 10,
-                      "dataFileName": "Floating buttons_image.png"
-                    }
-                  ],
-                  "children": []
-                },
-                {
-                  "isClone": false,
                   "noteId": "_zh_uWoAEKx0",
                   "notePath": [
                     "pOsGYCXsbNQG",
@@ -2891,7 +2863,7 @@
                     "RnaPdbciOfeq"
                   ],
                   "title": "右侧边栏",
-                  "notePosition": 170,
+                  "notePosition": 180,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -3184,7 +3156,7 @@
                     "r5JGHN99bVKn"
                   ],
                   "title": "最近更改",
-                  "notePosition": 190,
+                  "notePosition": 200,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -3243,7 +3215,7 @@
                     "ny318J39E5Z0"
                   ],
                   "title": "缩放",
-                  "notePosition": 200,
+                  "notePosition": 210,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -3293,7 +3265,7 @@
                     "lgKX7r3aL30x"
                   ],
                   "title": "笔记提示",
-                  "notePosition": 220,
+                  "notePosition": 230,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -3344,226 +3316,6 @@
                 },
                 {
                   "isClone": false,
-                  "noteId": "_zh_9vpFJRRA",
-                  "notePath": [
-                    "pOsGYCXsbNQG",
-                    "gh7bpGYxajRS",
-                    "Vc8PjrjAGuOp",
-                    "IjZS7iK5EXtb"
-                  ],
-                  "title": "新布局",
-                  "notePosition": 230,
-                  "prefix": null,
-                  "isExpanded": false,
-                  "type": "text",
-                  "mime": "text/html",
-                  "attributes": [
-                    {
-                      "type": "label",
-                      "name": "iconClass",
-                      "value": "bx bx-layout",
-                      "isInheritable": false,
-                      "position": 30
-                    },
-                    {
-                      "type": "label",
-                      "name": "shareAlias",
-                      "value": "new-layout",
-                      "isInheritable": false,
-                      "position": 190
-                    },
-                    {
-                      "type": "label",
-                      "name": "originalHelpNoteId",
-                      "value": "_help_IjZS7iK5EXtb",
-                      "isInheritable": false,
-                      "position": 200
-                    },
-                    {
-                      "type": "label",
-                      "name": "helpDoc",
-                      "value": "zh",
-                      "isInheritable": false,
-                      "position": 210
-                    }
-                  ],
-                  "format": "markdown",
-                  "dataFileName": "New Layout.md",
-                  "attachments": [
-                    {
-                      "attachmentId": "3DFGaMiTTHQ1",
-                      "title": "image.png",
-                      "role": "image",
-                      "mime": "image/png",
-                      "position": 10,
-                      "dataFileName": "New Layout_image.png"
-                    },
-                    {
-                      "attachmentId": "6iN5nrmdwG6z",
-                      "title": "image.png",
-                      "role": "image",
-                      "mime": "image/png",
-                      "position": 10,
-                      "dataFileName": "1_New Layout_image.png"
-                    },
-                    {
-                      "attachmentId": "a7dHjn9Uqvsc",
-                      "title": "image.png",
-                      "role": "image",
-                      "mime": "image/png",
-                      "position": 10,
-                      "dataFileName": "2_New Layout_image.png"
-                    },
-                    {
-                      "attachmentId": "KvNAEoJjRhyr",
-                      "title": "image.png",
-                      "role": "image",
-                      "mime": "image/png",
-                      "position": 10,
-                      "dataFileName": "3_New Layout_image.png"
-                    },
-                    {
-                      "attachmentId": "lEKxf6dYMG6u",
-                      "title": "image.png",
-                      "role": "image",
-                      "mime": "image/png",
-                      "position": 10,
-                      "dataFileName": "4_New Layout_image.png"
-                    },
-                    {
-                      "attachmentId": "SYOTVGCyx749",
-                      "title": "image.png",
-                      "role": "image",
-                      "mime": "image/png",
-                      "position": 10,
-                      "dataFileName": "5_New Layout_image.png"
-                    },
-                    {
-                      "attachmentId": "wCwzwfGspejR",
-                      "title": "image.png",
-                      "role": "image",
-                      "mime": "image/png",
-                      "position": 10,
-                      "dataFileName": "6_New Layout_image.png"
-                    }
-                  ],
-                  "dirFileName": "New Layout",
-                  "children": [
-                    {
-                      "isClone": false,
-                      "noteId": "_zh_uUIzo56k",
-                      "notePath": [
-                        "pOsGYCXsbNQG",
-                        "gh7bpGYxajRS",
-                        "Vc8PjrjAGuOp",
-                        "IjZS7iK5EXtb",
-                        "I6p2a06hdnL6"
-                      ],
-                      "title": "面包屑",
-                      "notePosition": 10,
-                      "prefix": null,
-                      "isExpanded": false,
-                      "type": "text",
-                      "mime": "text/html",
-                      "attributes": [
-                        {
-                          "type": "label",
-                          "name": "iconClass",
-                          "value": "bx bx-chevron-right",
-                          "isInheritable": false,
-                          "position": 40
-                        },
-                        {
-                          "type": "label",
-                          "name": "shareAlias",
-                          "value": "breadcrumb",
-                          "isInheritable": false,
-                          "position": 50
-                        },
-                        {
-                          "type": "label",
-                          "name": "originalHelpNoteId",
-                          "value": "_help_I6p2a06hdnL6",
-                          "isInheritable": false,
-                          "position": 60
-                        },
-                        {
-                          "type": "label",
-                          "name": "helpDoc",
-                          "value": "zh",
-                          "isInheritable": false,
-                          "position": 70
-                        }
-                      ],
-                      "format": "markdown",
-                      "dataFileName": "Breadcrumb.md",
-                      "attachments": [
-                        {
-                          "attachmentId": "CjYmaJD0L1D4",
-                          "title": "image.png",
-                          "role": "image",
-                          "mime": "image/png",
-                          "position": 10,
-                          "dataFileName": "Breadcrumb_image.png"
-                        }
-                      ],
-                      "children": []
-                    },
-                    {
-                      "isClone": false,
-                      "noteId": "_zh_OqtV5Psq",
-                      "notePath": [
-                        "pOsGYCXsbNQG",
-                        "gh7bpGYxajRS",
-                        "Vc8PjrjAGuOp",
-                        "IjZS7iK5EXtb",
-                        "AlJ73vBCjWDw"
-                      ],
-                      "title": "状态栏",
-                      "notePosition": 20,
-                      "prefix": null,
-                      "isExpanded": false,
-                      "type": "text",
-                      "mime": "text/html",
-                      "attributes": [
-                        {
-                          "type": "label",
-                          "name": "iconClass",
-                          "value": "bx bx-dock-bottom",
-                          "isInheritable": false,
-                          "position": 40
-                        },
-                        {
-                          "type": "label",
-                          "name": "shareAlias",
-                          "value": "status-bar",
-                          "isInheritable": false,
-                          "position": 50
-                        },
-                        {
-                          "type": "label",
-                          "name": "originalHelpNoteId",
-                          "value": "_help_AlJ73vBCjWDw",
-                          "isInheritable": false,
-                          "position": 60
-                        },
-                        {
-                          "type": "label",
-                          "name": "helpDoc",
-                          "value": "zh",
-                          "isInheritable": false,
-                          "position": 70
-                        }
-                      ],
-                      "format": "markdown",
-                      "dataFileName": "Status bar.md",
-                      "attachments": [],
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "isClone": false,
                   "noteId": "_zh_JRszeOeo",
                   "notePath": [
                     "pOsGYCXsbNQG",
@@ -3572,7 +3324,7 @@
                     "SL5f1Auq7sVN"
                   ],
                   "title": "支持分屏视图的笔记类型",
-                  "notePosition": 240,
+                  "notePosition": 250,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -3622,7 +3374,7 @@
                     "t596jLvPrqkS"
                   ],
                   "title": "内容宽度",
-                  "notePosition": 250,
+                  "notePosition": 260,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -3672,7 +3424,7 @@
                     "jcQVxzYybYgz"
                   ],
                   "title": "笔记上下文菜单",
-                  "notePosition": 260,
+                  "notePosition": 270,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -3681,7 +3433,7 @@
                     {
                       "type": "label",
                       "name": "shareAlias",
-                      "value": "note-menu",
+                      "value": "note-context-menu",
                       "isInheritable": false,
                       "position": 30
                     },
@@ -3717,6 +3469,115 @@
                       "mime": "image/png",
                       "position": 10,
                       "dataFileName": "Note contextual menu_image.png"
+                    }
+                  ],
+                  "children": []
+                },
+                {
+                  "isClone": false,
+                  "noteId": "_zh_xu370SvI",
+                  "notePath": [
+                    "pOsGYCXsbNQG",
+                    "gh7bpGYxajRS",
+                    "Vc8PjrjAGuOp",
+                    "AlJ73vBCjWDw"
+                  ],
+                  "title": "状态栏",
+                  "notePosition": 280,
+                  "prefix": null,
+                  "isExpanded": false,
+                  "type": "text",
+                  "mime": "text/html",
+                  "attributes": [
+                    {
+                      "type": "label",
+                      "name": "iconClass",
+                      "value": "bx bx-dock-bottom",
+                      "isInheritable": false,
+                      "position": 40
+                    },
+                    {
+                      "type": "label",
+                      "name": "shareAlias",
+                      "value": "status-bar",
+                      "isInheritable": false,
+                      "position": 50
+                    },
+                    {
+                      "type": "label",
+                      "name": "originalHelpNoteId",
+                      "value": "_help_AlJ73vBCjWDw",
+                      "isInheritable": false,
+                      "position": 60
+                    },
+                    {
+                      "type": "label",
+                      "name": "helpDoc",
+                      "value": "zh",
+                      "isInheritable": false,
+                      "position": 70
+                    }
+                  ],
+                  "format": "markdown",
+                  "dataFileName": "Status bar.md",
+                  "attachments": [],
+                  "children": []
+                },
+                {
+                  "isClone": false,
+                  "noteId": "_zh_2ZUNbjCm",
+                  "notePath": [
+                    "pOsGYCXsbNQG",
+                    "gh7bpGYxajRS",
+                    "Vc8PjrjAGuOp",
+                    "I6p2a06hdnL6"
+                  ],
+                  "title": "面包屑导航",
+                  "notePosition": 290,
+                  "prefix": null,
+                  "isExpanded": false,
+                  "type": "text",
+                  "mime": "text/html",
+                  "attributes": [
+                    {
+                      "type": "label",
+                      "name": "iconClass",
+                      "value": "bx bx-chevron-right",
+                      "isInheritable": false,
+                      "position": 40
+                    },
+                    {
+                      "type": "label",
+                      "name": "shareAlias",
+                      "value": "breadcrumb",
+                      "isInheritable": false,
+                      "position": 50
+                    },
+                    {
+                      "type": "label",
+                      "name": "originalHelpNoteId",
+                      "value": "_help_I6p2a06hdnL6",
+                      "isInheritable": false,
+                      "position": 60
+                    },
+                    {
+                      "type": "label",
+                      "name": "helpDoc",
+                      "value": "zh",
+                      "isInheritable": false,
+                      "position": 70
+                    }
+                  ],
+                  "format": "markdown",
+                  "dataFileName": "Breadcrumb.md",
+                  "attachments": [
+                    {
+                      "attachmentId": "CjYmaJD0L1D4",
+                      "title": "image.png",
+                      "role": "image",
+                      "mime": "image/png",
+                      "position": 10,
+                      "dataFileName": "Breadcrumb_image.png"
                     }
                   ],
                   "children": []
@@ -3819,7 +3680,24 @@
                   ],
                   "format": "markdown",
                   "dataFileName": "Title.md",
-                  "attachments": [],
+                  "attachments": [
+                    {
+                      "attachmentId": "iG6vP3uWkujz",
+                      "title": "image.png",
+                      "role": "image",
+                      "mime": "image/png",
+                      "position": 10,
+                      "dataFileName": "Title_image.png"
+                    },
+                    {
+                      "attachmentId": "RQKwv6lWjQix",
+                      "title": "image.png",
+                      "role": "image",
+                      "mime": "image/png",
+                      "position": 10,
+                      "dataFileName": "1_Title_image.png"
+                    }
+                  ],
                   "children": []
                 },
                 {
@@ -4536,6 +4414,183 @@
                   "format": "markdown",
                   "dataFileName": "Restoring Deleted Notes.md",
                   "attachments": [],
+                  "children": []
+                },
+                {
+                  "isClone": false,
+                  "noteId": "_zh_8TZ4wyCP",
+                  "notePath": [
+                    "pOsGYCXsbNQG",
+                    "gh7bpGYxajRS",
+                    "BFs8mudNFgCS",
+                    "m3VlURMSeOrd"
+                  ],
+                  "title": "新笔记类型切换器",
+                  "notePosition": 180,
+                  "prefix": null,
+                  "isExpanded": false,
+                  "type": "text",
+                  "mime": "text/html",
+                  "attributes": [
+                    {
+                      "type": "label",
+                      "name": "iconClass",
+                      "value": "bx bxs-widget",
+                      "isInheritable": false,
+                      "position": 60
+                    },
+                    {
+                      "type": "label",
+                      "name": "shareAlias",
+                      "value": "new-note-type-switcher",
+                      "isInheritable": false,
+                      "position": 70
+                    },
+                    {
+                      "type": "label",
+                      "name": "originalHelpNoteId",
+                      "value": "_help_m3VlURMSeOrd",
+                      "isInheritable": false,
+                      "position": 80
+                    },
+                    {
+                      "type": "label",
+                      "name": "helpDoc",
+                      "value": "zh",
+                      "isInheritable": false,
+                      "position": 90
+                    }
+                  ],
+                  "format": "markdown",
+                  "dataFileName": "New note type switcher.md",
+                  "attachments": [
+                    {
+                      "attachmentId": "XKxr20oZiGeP",
+                      "title": "image.png",
+                      "role": "image",
+                      "mime": "image/png",
+                      "position": 10,
+                      "dataFileName": "New note type switcher_image.png"
+                    }
+                  ],
+                  "children": []
+                },
+                {
+                  "isClone": false,
+                  "noteId": "_zh_pSd63elA",
+                  "notePath": [
+                    "pOsGYCXsbNQG",
+                    "gh7bpGYxajRS",
+                    "BFs8mudNFgCS",
+                    "B5dihXRDksTk"
+                  ],
+                  "title": "笔记徽章",
+                  "notePosition": 190,
+                  "prefix": null,
+                  "isExpanded": false,
+                  "type": "text",
+                  "mime": "text/html",
+                  "attributes": [
+                    {
+                      "type": "label",
+                      "name": "shareAlias",
+                      "value": "note-badges",
+                      "isInheritable": false,
+                      "position": 70
+                    },
+                    {
+                      "type": "label",
+                      "name": "iconClass",
+                      "value": "bx bx-square-rounded",
+                      "isInheritable": false,
+                      "position": 80
+                    },
+                    {
+                      "type": "label",
+                      "name": "originalHelpNoteId",
+                      "value": "_help_B5dihXRDksTk",
+                      "isInheritable": false,
+                      "position": 90
+                    },
+                    {
+                      "type": "label",
+                      "name": "helpDoc",
+                      "value": "zh",
+                      "isInheritable": false,
+                      "position": 100
+                    }
+                  ],
+                  "format": "markdown",
+                  "dataFileName": "Note badges.md",
+                  "attachments": [
+                    {
+                      "attachmentId": "nRxe218ROLwP",
+                      "title": "image.png",
+                      "role": "image",
+                      "mime": "image/png",
+                      "position": 10,
+                      "dataFileName": "Note badges_image.png"
+                    }
+                  ],
+                  "children": []
+                },
+                {
+                  "isClone": false,
+                  "noteId": "_zh_0zvKmWpU",
+                  "notePath": [
+                    "pOsGYCXsbNQG",
+                    "gh7bpGYxajRS",
+                    "BFs8mudNFgCS",
+                    "Bsm4fyzPJkSc"
+                  ],
+                  "title": "保存状态指示器",
+                  "notePosition": 210,
+                  "prefix": null,
+                  "isExpanded": false,
+                  "type": "text",
+                  "mime": "text/html",
+                  "attributes": [
+                    {
+                      "type": "label",
+                      "name": "iconClass",
+                      "value": "bx bx-save",
+                      "isInheritable": false,
+                      "position": 30
+                    },
+                    {
+                      "type": "label",
+                      "name": "shareAlias",
+                      "value": "save-status-indicator",
+                      "isInheritable": false,
+                      "position": 40
+                    },
+                    {
+                      "type": "label",
+                      "name": "originalHelpNoteId",
+                      "value": "_help_Bsm4fyzPJkSc",
+                      "isInheritable": false,
+                      "position": 50
+                    },
+                    {
+                      "type": "label",
+                      "name": "helpDoc",
+                      "value": "zh",
+                      "isInheritable": false,
+                      "position": 60
+                    }
+                  ],
+                  "format": "markdown",
+                  "dataFileName": "Save status indicator.md",
+                  "attachments": [
+                    {
+                      "attachmentId": "0GVob2qOILD5",
+                      "title": "image.png",
+                      "role": "image",
+                      "mime": "image/png",
+                      "position": 10,
+                      "dataFileName": "Save status indicator_image.png"
+                    }
+                  ],
                   "children": []
                 }
               ]
@@ -6812,6 +6867,56 @@
                 },
                 {
                   "isClone": false,
+                  "noteId": "_zh_03YnCpFf",
+                  "notePath": [
+                    "pOsGYCXsbNQG",
+                    "KSZ04uQ2D1St",
+                    "iPIMuisry3hd",
+                    "klC3ilXa9kUE"
+                  ],
+                  "title": "块引用",
+                  "notePosition": 40,
+                  "prefix": null,
+                  "isExpanded": false,
+                  "type": "text",
+                  "mime": "text/html",
+                  "attributes": [
+                    {
+                      "type": "label",
+                      "name": "shareAlias",
+                      "value": "block-references",
+                      "isInheritable": false,
+                      "position": 10
+                    },
+                    {
+                      "type": "label",
+                      "name": "iconClass",
+                      "value": "bx bx-paragraph",
+                      "isInheritable": false,
+                      "position": 20
+                    },
+                    {
+                      "type": "label",
+                      "name": "originalHelpNoteId",
+                      "value": "_help_klC3ilXa9kUE",
+                      "isInheritable": false,
+                      "position": 30
+                    },
+                    {
+                      "type": "label",
+                      "name": "helpDoc",
+                      "value": "zh",
+                      "isInheritable": false,
+                      "position": 40
+                    }
+                  ],
+                  "format": "markdown",
+                  "dataFileName": "Block references.md",
+                  "attachments": [],
+                  "children": []
+                },
+                {
+                  "isClone": false,
                   "noteId": "_zh_uBaHYDKd",
                   "notePath": [
                     "pOsGYCXsbNQG",
@@ -6820,7 +6925,7 @@
                     "4n4oQUVbnOxa"
                   ],
                   "title": "可折叠块",
-                  "notePosition": 40,
+                  "notePosition": 50,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -6870,7 +6975,7 @@
                     "veGu4faJErEM"
                   ],
                   "title": "内容语言与从右到左支持",
-                  "notePosition": 50,
+                  "notePosition": 60,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -6921,6 +7026,56 @@
                 },
                 {
                   "isClone": false,
+                  "noteId": "_zh_ovH9y7Wx",
+                  "notePath": [
+                    "pOsGYCXsbNQG",
+                    "KSZ04uQ2D1St",
+                    "iPIMuisry3hd",
+                    "EK2ckIZ74tbT"
+                  ],
+                  "title": "内容标签页",
+                  "notePosition": 70,
+                  "prefix": null,
+                  "isExpanded": false,
+                  "type": "text",
+                  "mime": "text/html",
+                  "attributes": [
+                    {
+                      "type": "label",
+                      "name": "shareAlias",
+                      "value": "content-tabs",
+                      "isInheritable": false,
+                      "position": 10
+                    },
+                    {
+                      "type": "label",
+                      "name": "iconClass",
+                      "value": "cke cke-trilium-tabs",
+                      "isInheritable": false,
+                      "position": 20
+                    },
+                    {
+                      "type": "label",
+                      "name": "originalHelpNoteId",
+                      "value": "_help_EK2ckIZ74tbT",
+                      "isInheritable": false,
+                      "position": 30
+                    },
+                    {
+                      "type": "label",
+                      "name": "helpDoc",
+                      "value": "zh",
+                      "isInheritable": false,
+                      "position": 40
+                    }
+                  ],
+                  "format": "markdown",
+                  "dataFileName": "Content tabs.md",
+                  "attachments": [],
+                  "children": []
+                },
+                {
+                  "isClone": false,
                   "noteId": "_zh_enQxpjhz",
                   "notePath": [
                     "pOsGYCXsbNQG",
@@ -6929,7 +7084,7 @@
                     "2x0ZAX9ePtzV"
                   ],
                   "title": "剪切为子笔记",
-                  "notePosition": 60,
+                  "notePosition": 80,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -6988,7 +7143,7 @@
                     "UYuUB1ZekNQU"
                   ],
                   "title": "开发者专属格式",
-                  "notePosition": 70,
+                  "notePosition": 90,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -7133,7 +7288,7 @@
                     "AgjCISero73a"
                   ],
                   "title": "脚注",
-                  "notePosition": 80,
+                  "notePosition": 100,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -7192,7 +7347,7 @@
                     "5wZallV2Qo1t"
                   ],
                   "title": "格式刷",
-                  "notePosition": 90,
+                  "notePosition": 110,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -7251,7 +7406,7 @@
                     "nRhnJkTT8cPs"
                   ],
                   "title": "格式工具栏",
-                  "notePosition": 100,
+                  "notePosition": 120,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -7290,10 +7445,10 @@
                   "dataFileName": "Formatting toolbar.md",
                   "attachments": [
                     {
-                      "attachmentId": "CZ8ENj2LsBsA",
+                      "attachmentId": "6nnko21wbLAr",
                       "title": "image.png",
                       "role": "image",
-                      "mime": "image/jpg",
+                      "mime": "image/png",
                       "position": 10,
                       "dataFileName": "Formatting toolbar_image.png"
                     },
@@ -7306,18 +7461,18 @@
                       "dataFileName": "1_Formatting toolbar_image.png"
                     },
                     {
-                      "attachmentId": "MMeih4nJVgNk",
+                      "attachmentId": "jYEbPqDcUCNQ",
                       "title": "image.png",
                       "role": "image",
-                      "mime": "image/jpg",
+                      "mime": "image/png",
                       "position": 10,
                       "dataFileName": "2_Formatting toolbar_image.png"
                     },
                     {
-                      "attachmentId": "SGaPJHzNyLLV",
+                      "attachmentId": "WV5kfOEFZdMa",
                       "title": "image.png",
                       "role": "image",
-                      "mime": "image/jpg",
+                      "mime": "image/png",
                       "position": 10,
                       "dataFileName": "3_Formatting toolbar_image.png"
                     }
@@ -7334,7 +7489,7 @@
                     "Gr6xFaF6ioJ5"
                   ],
                   "title": "常规格式",
-                  "notePosition": 110,
+                  "notePosition": 130,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -7417,7 +7572,7 @@
                     "AxshuNRegLAv"
                   ],
                   "title": "高亮列表",
-                  "notePosition": 120,
+                  "notePosition": 140,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -7467,7 +7622,7 @@
                     "mT0HEkOsz6i1"
                   ],
                   "title": "图片",
-                  "notePosition": 130,
+                  "notePosition": 150,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -7620,7 +7775,7 @@
                     "VRoP0g1uHHc2"
                   ],
                   "title": "编辑器内 AI 助手",
-                  "notePosition": 140,
+                  "notePosition": 160,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -7725,7 +7880,7 @@
                     "nBAXQFj20hS1"
                   ],
                   "title": "包含笔记",
-                  "notePosition": 150,
+                  "notePosition": 170,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -7768,7 +7923,7 @@
                     "CohkqWQC1iBv"
                   ],
                   "title": "插入按钮",
-                  "notePosition": 160,
+                  "notePosition": 180,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -7920,7 +8075,7 @@
                     "oiVPnW8QfnvS"
                   ],
                   "title": "键盘快捷键",
-                  "notePosition": 170,
+                  "notePosition": 190,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -7970,7 +8125,7 @@
                     "UmgZAfcltxkS"
                   ],
                   "title": "链接预览",
-                  "notePosition": 180,
+                  "notePosition": 200,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -8045,7 +8200,7 @@
                     "QEAPj01N5f7w"
                   ],
                   "title": "链接",
-                  "notePosition": 190,
+                  "notePosition": 210,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -8250,7 +8405,7 @@
                     "S6Xx8QIWTV66"
                   ],
                   "title": "列表",
-                  "notePosition": 200,
+                  "notePosition": 220,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -8349,7 +8504,7 @@
                     "QrtTYPmdd1qq"
                   ],
                   "title": "类 Markdown 格式",
-                  "notePosition": 210,
+                  "notePosition": 230,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -8399,7 +8554,7 @@
                     "YfYAtQBcfo5V"
                   ],
                   "title": "数学公式",
-                  "notePosition": 220,
+                  "notePosition": 240,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -8450,6 +8605,56 @@
                 },
                 {
                   "isClone": false,
+                  "noteId": "_zh_djVV9kew",
+                  "notePath": [
+                    "pOsGYCXsbNQG",
+                    "KSZ04uQ2D1St",
+                    "iPIMuisry3hd",
+                    "wYDzQ1fBFgfT"
+                  ],
+                  "title": "多栏布局",
+                  "notePosition": 250,
+                  "prefix": null,
+                  "isExpanded": false,
+                  "type": "text",
+                  "mime": "text/html",
+                  "attributes": [
+                    {
+                      "type": "label",
+                      "name": "shareAlias",
+                      "value": "multicolumn-layout",
+                      "isInheritable": false,
+                      "position": 10
+                    },
+                    {
+                      "type": "label",
+                      "name": "iconClass",
+                      "value": "cke cke-trilium-multicolumn",
+                      "isInheritable": false,
+                      "position": 20
+                    },
+                    {
+                      "type": "label",
+                      "name": "originalHelpNoteId",
+                      "value": "_help_wYDzQ1fBFgfT",
+                      "isInheritable": false,
+                      "position": 30
+                    },
+                    {
+                      "type": "label",
+                      "name": "helpDoc",
+                      "value": "zh",
+                      "isInheritable": false,
+                      "position": 40
+                    }
+                  ],
+                  "format": "markdown",
+                  "dataFileName": "Multicolumn layout.md",
+                  "attachments": [],
+                  "children": []
+                },
+                {
+                  "isClone": false,
                   "noteId": "_zh_s9gmTjre",
                   "notePath": [
                     "pOsGYCXsbNQG",
@@ -8458,7 +8663,7 @@
                     "dEHYtoWWi8ct"
                   ],
                   "title": "其他功能",
-                  "notePosition": 230,
+                  "notePosition": 260,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -8525,7 +8730,7 @@
                     "gLt3vA97tMcp"
                   ],
                   "title": "高级功能",
-                  "notePosition": 240,
+                  "notePosition": 270,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -8575,7 +8780,7 @@
                     "ZlN4nump6EbW"
                   ],
                   "title": "斜杠命令",
-                  "notePosition": 250,
+                  "notePosition": 280,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -8634,7 +8839,7 @@
                     "oBo3iHIZnbG2"
                   ],
                   "title": "拼写检查",
-                  "notePosition": 260,
+                  "notePosition": 290,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -8684,7 +8889,7 @@
                     "BFvAtE74rbP6"
                   ],
                   "title": "目录",
-                  "notePosition": 270,
+                  "notePosition": 300,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -8734,7 +8939,7 @@
                     "NdowYOC1GFKS"
                   ],
                   "title": "表格",
-                  "notePosition": 280,
+                  "notePosition": 310,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -8817,7 +9022,7 @@
                     "pwc194wlRzcH"
                   ],
                   "title": "文本片段",
-                  "notePosition": 290,
+                  "notePosition": 320,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -8862,7 +9067,7 @@
                     "fASfBrYnquKU"
                   ],
                   "title": "待办列表",
-                  "notePosition": 300,
+                  "notePosition": 330,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -8967,14 +9172,6 @@
                   "mime": "image/jpg",
                   "position": 10,
                   "dataFileName": "Code_image.png"
-                },
-                {
-                  "attachmentId": "iKJbcEUkME1a",
-                  "title": "image.png",
-                  "role": "image",
-                  "mime": "image/jpg",
-                  "position": 10,
-                  "dataFileName": "1_Code_image.png"
                 }
               ],
               "children": []
@@ -9062,7 +9259,7 @@
                 {
                   "type": "label",
                   "name": "iconClass",
-                  "value": "bx bxs-network-chart",
+                  "value": "bx bx-shape-polygon",
                   "isInheritable": false,
                   "position": 20
                 },
@@ -10476,6 +10673,56 @@
                   "dataFileName": "Drawing shapes.md",
                   "attachments": [],
                   "children": []
+                },
+                {
+                  "isClone": false,
+                  "noteId": "_zh_t8OGsGxA",
+                  "notePath": [
+                    "pOsGYCXsbNQG",
+                    "GTwFsgaA0lCt",
+                    "81SGnPGMk7Xc",
+                    "ZRDXGc0nAIh4"
+                  ],
+                  "title": "图像映射",
+                  "notePosition": 20,
+                  "prefix": null,
+                  "isExpanded": false,
+                  "type": "text",
+                  "mime": "text/html",
+                  "attributes": [
+                    {
+                      "type": "label",
+                      "name": "shareAlias",
+                      "value": "image-maps",
+                      "isInheritable": false,
+                      "position": 10
+                    },
+                    {
+                      "type": "label",
+                      "name": "iconClass",
+                      "value": "bx bx-image-alt",
+                      "isInheritable": false,
+                      "position": 20
+                    },
+                    {
+                      "type": "label",
+                      "name": "originalHelpNoteId",
+                      "value": "_help_ZRDXGc0nAIh4",
+                      "isInheritable": false,
+                      "position": 30
+                    },
+                    {
+                      "type": "label",
+                      "name": "helpDoc",
+                      "value": "zh",
+                      "isInheritable": false,
+                      "position": 40
+                    }
+                  ],
+                  "format": "markdown",
+                  "dataFileName": "Image maps.md",
+                  "attachments": [],
+                  "children": []
                 }
               ]
             },
@@ -11511,36 +11758,12 @@
               "dataFileName": "Custom app-wide CSS.md",
               "attachments": [
                 {
-                  "attachmentId": "fkMLaf6reA6I",
-                  "title": "image.png",
-                  "role": "image",
-                  "mime": "image/png",
-                  "position": 10,
-                  "dataFileName": "Custom app-wide CSS_image.png"
-                },
-                {
                   "attachmentId": "qBzZ9Qpxwoba",
                   "title": "image.png",
                   "role": "image",
                   "mime": "image/png",
                   "position": 10,
-                  "dataFileName": "1_Custom app-wide CSS_image.png"
-                },
-                {
-                  "attachmentId": "TIerrMjmeich",
-                  "title": "image.png",
-                  "role": "image",
-                  "mime": "image/png",
-                  "position": 10,
-                  "dataFileName": "2_Custom app-wide CSS_image.png"
-                },
-                {
-                  "attachmentId": "YUrNq5vsCwHe",
-                  "title": "image.png",
-                  "role": "image",
-                  "mime": "image/png",
-                  "position": 10,
-                  "dataFileName": "3_Custom app-wide CSS_image.png"
+                  "dataFileName": "Custom app-wide CSS_image.png"
                 }
               ],
               "children": []
@@ -16252,6 +16475,56 @@
               "children": [
                 {
                   "isClone": false,
+                  "noteId": "_zh_qPqdjdH5",
+                  "notePath": [
+                    "pOsGYCXsbNQG",
+                    "CdNpE2pqjmI6",
+                    "cNpC0ITcfX0N",
+                    "IjZS7iK5EXtb"
+                  ],
+                  "title": "v0.107.0：移除旧版布局",
+                  "notePosition": 10,
+                  "prefix": null,
+                  "isExpanded": false,
+                  "type": "text",
+                  "mime": "text/html",
+                  "attributes": [
+                    {
+                      "type": "label",
+                      "name": "iconClass",
+                      "value": "bx bx-layout",
+                      "isInheritable": false,
+                      "position": 30
+                    },
+                    {
+                      "type": "label",
+                      "name": "shareAlias",
+                      "value": "old-layout-removal",
+                      "isInheritable": false,
+                      "position": 190
+                    },
+                    {
+                      "type": "label",
+                      "name": "originalHelpNoteId",
+                      "value": "_help_IjZS7iK5EXtb",
+                      "isInheritable": false,
+                      "position": 200
+                    },
+                    {
+                      "type": "label",
+                      "name": "helpDoc",
+                      "value": "zh",
+                      "isInheritable": false,
+                      "position": 210
+                    }
+                  ],
+                  "format": "markdown",
+                  "dataFileName": "v0.107.0 Removal of the old layout.md",
+                  "attachments": [],
+                  "children": []
+                },
+                {
+                  "isClone": false,
                   "noteId": "_zh_5Y7Ok2kR",
                   "notePath": [
                     "pOsGYCXsbNQG",
@@ -16260,7 +16533,7 @@
                     "kTx7WqLdZ3Ry"
                   ],
                   "title": "v0.106.0：移除 cheerio",
-                  "notePosition": 10,
+                  "notePosition": 20,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -16303,7 +16576,7 @@
                     "YeOa2l7Pu39I"
                   ],
                   "title": "v0.104.0：在 Electron 中禁用 Node 集成",
-                  "notePosition": 20,
+                  "notePosition": 30,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -16346,7 +16619,7 @@
                     "fqAK6opjUagR"
                   ],
                   "title": "v0.103.0：移除 axios",
-                  "notePosition": 30,
+                  "notePosition": 40,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -16389,7 +16662,7 @@
                     "pAJ0jWz16xFm"
                   ],
                   "title": "v0.103.0：`cheerio` 现已弃用",
-                  "notePosition": 40,
+                  "notePosition": 50,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -16432,7 +16705,7 @@
                     "72dxvnbnkDFY"
                   ],
                   "title": "v0.102.0：升级到 jQuery 4.0.0",
-                  "notePosition": 50,
+                  "notePosition": 60,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
