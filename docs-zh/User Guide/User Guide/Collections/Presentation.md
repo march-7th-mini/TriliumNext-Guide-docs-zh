@@ -2,26 +2,26 @@
 
 <figure class="image"><img style="aspect-ratio:1120/763;" src="Presentation_image.png" width="1120" height="763"></figure>
 
-演示视图允许直接在 Trilium 中创建幻灯片。
+演示视图允许直接在 Trilium 内创建幻灯片放映。
 
 ### 创建新演示
 
-在<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">笔记树</a>中右键点击现有笔记，然后选择 _插入子笔记_ → _集合_ → _演示_。
+在<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">笔记树</a>中右键点击现有笔记，选择 _插入子笔记_ → _集合_ → _演示_。
 
 ## 工作原理
 
 *   每张幻灯片都是该集合的子笔记。
 *   子笔记的顺序决定了幻灯片的顺序。
-*   与传统演示软件不同，幻灯片可以水平或垂直排列（详见下文）。
-*   直接子笔记将水平排列，而这些子笔记的子笔记将垂直排列。嵌套超过两层的子笔记将被忽略。
+*   与传统演示软件不同，幻灯片可以水平或垂直布局（详见下文）。
+*   直接子笔记将水平布局，而这些子笔记的子笔记将垂直布局。嵌套超过两层的子笔记将被忽略。
 
 ## 交互与导航
 
-在浮动工具栏（右上角）中：
+在浮动工具栏（右上角）：
 
-*   编辑按钮可跳转到当前幻灯片对应的笔记。处于[只读](../Basic%20Concepts%20and%20Features/Notes/Read-Only%20Notes.md)状态的演示不会显示该按钮。
-*   按下概览按钮（或 <kbd>O</kbd> 键）可显示幻灯片的鸟瞰视图。再次按下该按钮可关闭。
-*   按下“开始演示”按钮可以全屏显示演示。
+*   <span class="tn-icon bx bx-edit"></span> _编辑此幻灯片_ 按钮，用于跳转到当前幻灯片对应的笔记。处于[只读](../Basic%20Concepts%20and%20Features/Notes/Read-Only%20Notes.md)状态的演示不会显示此按钮。
+*   按 <span class="tn-icon bx bx-grid-horizontal"></span> 概览按钮（或 <kbd>O</kbd> 键）可显示幻灯片的鸟瞰视图。再次按下该按钮可关闭。
+*   按 <span class="tn-icon bx bx-fullscreen"></span>“开始演示”按钮以全屏模式显示演示。
 
 支持以下键盘快捷键：
 
@@ -32,18 +32,18 @@
 
 ## 垂直幻灯片与嵌套
 
-与 Microsoft PowerPoint 等传统演示软件不同，Trilium 中的幻灯片可以水平或垂直排列，以创建层次感或更好地按主题组织幻灯片。
+与 Microsoft PowerPoint 等传统演示软件不同，Trilium 中的幻灯片可以水平或垂直布局，以创建层次感或更好地按主题组织幻灯片。
 
-这种水平/垂直组织方式会影响过渡效果（尤其是“slide”过渡效果），但在导航中最为明显。
+这种水平/垂直组织方式会影响过渡效果（尤其是在“slide”过渡效果下），但在导航中最为明显。
 
-*   按 <kbd>←</kbd> 和 <kbd>→</kbd> 将在幻灯片之间水平导航，从而跳过当前幻灯片下的垂直笔记。这对于跳过整个章节/相关幻灯片非常有用。
-*   按 <kbd>↑</kbd> 和 <kbd>↓</kbd> 将在当前层级的垂直幻灯片之间导航。
-*   按 <kbd>Space</kbd> 和 <kbd>Shift</kbd> + <kbd>Space</kbd> 将按顺序跳转到下一张/上一张幻灯片，无论方向如何。这通常是演示时使用的键组合。
+*   按 <kbd>←</kbd> 和 <kbd>→</kbd> 将水平浏览幻灯片，从而跳过当前幻灯片下的垂直笔记。这对于跳过整个章节/相关幻灯片很有用。
+*   按 <kbd>↑</kbd> 和 <kbd>↓</kbd> 将在当前层级内浏览垂直幻灯片。
+*   按 <kbd>Space</kbd> 和 <kbd>Shift</kbd> + <kbd>Space</kbd> 将按顺序跳转到下一张/上一张幻灯片，无论方向如何。这通常是演示时使用的按键组合。
 *   幻灯片右下角的箭头也会反映此导航方案。
 
 <figure class="image image-style-align-right image_resized" style="width:55.57%;"><img style="aspect-ratio:890/569;" src="1_Presentation_image.png" width="890" height="569"></figure>
 
-集合的所有直接子笔记将水平排列。如果某个直接子笔记也有子笔记，这些子笔记将作为垂直幻灯片放置。
+集合的所有直接子笔记将水平布局。如果某个直接子笔记也有子笔记，这些子笔记将作为垂直幻灯片放置。
 
 在以下示例中，笔记结构如下：
 
@@ -58,23 +58,23 @@
 
 ## 自定义
 
-在集合级别，可以调整：
+在集合层级，可以调整：
 
-*   通过转到<a class="reference-link" href="Collection%20Properties.md">集合属性</a>并查找 _主题_ 选项，可将整个演示的主题调整为预定义主题之一。
-*   目前无法创建自定义主题，但已列入计划。
+*   通过前往<a class="reference-link" href="Collection%20Properties.md">集合属性</a>并查找 _主题_ 选项，可将整个演示的主题调整为预定义主题之一。
+*   目前无法创建自定义主题，但已计划支持。
 *   请注意，无法通过<a class="reference-link" href="../Theme%20development/Custom%20app-wide%20CSS.md">自定义应用级 CSS</a> 修改 CSS，因为幻灯片是隔离渲染的（在 shadow DOM 中）。
 
-在幻灯片级别：
+在幻灯片层级：
 
 *   可以通过使用[预定义提升属性](../Advanced%20Usage/Attributes/Promoted%20Attributes.md)来调整幻灯片的背景颜色，或手动将 `#slide:background` 设置为十六进制颜色。
 *   更复杂的背景可以通过渐变实现。没有对应的 UI；必须通过 `#slide:background` 设置为 CSS 渐变定义，例如：`linear-gradient(to bottom, #283b95, #17b2c3)`。
 
 ## 提示与技巧
 
-*   文本笔记通常遵循格式（粗体、斜体、前景色和背景色）和字体大小。代码块和表格也可以使用。
-*   尝试使用不仅仅是文本笔记，演示使用与[共享笔记](../Advanced%20Usage/Sharing.md)和<a class="reference-link" href="../Basic%20Concepts%20and%20Features/Notes/Note%20List.md">笔记列表</a>相同的机制，因此它应该能够全屏显示<a class="reference-link" href="../Note%20Types/Mermaid%20Diagrams.md">Mermaid 图表</a>、<a class="reference-link" href="../Note%20Types/Canvas.md">Canvas</a> 和<a class="reference-link" href="../Note%20Types/Mind%20Map.md">思维导图</a>（不含交互功能）。
-    *   如果幻灯片有自定义背景，考虑为 <a class="reference-link" href="../Note%20Types/Canvas.md">Canvas</a> 使用透明背景（转到 Canvas 中的汉堡菜单，按下按钮选择自定义颜色并输入 `transparent`）。
-    *   对于<a class="reference-link" href="../Note%20Types/Mermaid%20Diagrams.md">Mermaid 图表</a>，其中一些有预定义的背景，可以通过 frontmatter 更改。例如，对于 XY 图表：
+*   文本笔记通常遵循格式（粗体、斜体、前景色和背景色）和字体大小。代码块和表格也可以正常工作。
+*   尝试使用文本笔记之外的内容，演示使用与[共享笔记](../Advanced%20Usage/Sharing.md)和<a class="reference-link" href="../Basic%20Concepts%20and%20Features/Notes/Note%20List.md">笔记列表</a>相同的机制，因此它应该能够全屏显示<a class="reference-link" href="../Note%20Types/Mermaid%20Diagrams.md">Mermaid 图表</a>、<a class="reference-link" href="../Note%20Types/Canvas.md">Canvas</a> 和<a class="reference-link" href="../Note%20Types/Mind%20Map.md">思维导图</a>（不含交互功能）。
+    *   如果幻灯片有自定义背景，考虑为<a class="reference-link" href="../Note%20Types/Canvas.md">Canvas</a> 使用透明背景（前往 Canvas 中的汉堡菜单，按下按钮选择自定义颜色并写入 `transparent`）。
+    *   对于<a class="reference-link" href="../Note%20Types/Mermaid%20Diagrams.md">Mermaid 图表</a>，其中一些具有预定义背景，可以通过 frontmatter 更改。例如，对于 XY 图表：
         
         ```
         ---
