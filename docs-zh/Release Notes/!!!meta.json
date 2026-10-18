@@ -2072,7 +2072,7 @@
               "role": "image",
               "mime": "image/jpg",
               "position": 10,
-              "dataFileName": "v0.90.5-beta_image.png"
+              "dataFileName": "v0.90.5-beta_image.jpg"
             }
           ],
           "children": []
@@ -2292,7 +2292,7 @@
               "role": "image",
               "mime": "image/jpg",
               "position": 10,
-              "dataFileName": "v0.48_note-map.png"
+              "dataFileName": "v0.48_note-map.jpg"
             },
             {
               "attachmentId": "c74WFpjTo0p4",
@@ -2300,7 +2300,7 @@
               "role": "image",
               "mime": "image/jpg",
               "position": 10,
-              "dataFileName": "v0.48_screenshot.png"
+              "dataFileName": "v0.48_screenshot.jpg"
             },
             {
               "attachmentId": "szlnTmTJL4HL",
@@ -2308,7 +2308,7 @@
               "role": "image",
               "mime": "image/jpg",
               "position": 10,
-              "dataFileName": "v0.48_split.png"
+              "dataFileName": "v0.48_split.jpg"
             },
             {
               "attachmentId": "VQxrtpQTYmI6",
@@ -2316,7 +2316,7 @@
               "role": "image",
               "mime": "image/jpg",
               "position": 10,
-              "dataFileName": "v0.48_bookmarks.png"
+              "dataFileName": "v0.48_bookmarks.jpg"
             },
             {
               "attachmentId": "ZRyEqxAv1MTd",

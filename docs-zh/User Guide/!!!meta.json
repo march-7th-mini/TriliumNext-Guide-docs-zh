@@ -1652,7 +1652,7 @@
                   "role": "image",
                   "mime": "image/jpg",
                   "position": 10,
-                  "dataFileName": "Synchronization_image.png"
+                  "dataFileName": "Synchronization_image.jpg"
                 },
                 {
                   "attachmentId": "x0t06ATHph6b",
@@ -1932,9 +1932,58 @@
                   "role": "image",
                   "mime": "image/jpg",
                   "position": 10,
-                  "dataFileName": "Data directory_image.png"
+                  "dataFileName": "Data directory_image.jpg"
                 }
               ],
+              "children": []
+            },
+            {
+              "isClone": false,
+              "noteId": "_zh_Cyu899sr",
+              "notePath": [
+                "pOsGYCXsbNQG",
+                "Otzi9La2YAUX",
+                "ebyr7ES2SwOW"
+              ],
+              "title": "已下载资源",
+              "notePosition": 90,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "shareAlias",
+                  "value": "downloaded-resources",
+                  "isInheritable": false,
+                  "position": 10
+                },
+                {
+                  "type": "label",
+                  "name": "iconClass",
+                  "value": "bx bx-download",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_ebyr7ES2SwOW",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 40
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Downloaded resources.md",
+              "attachments": [],
               "children": []
             }
           ]
@@ -2088,7 +2137,7 @@
                       "role": "image",
                       "mime": "image/jpg",
                       "position": 10,
-                      "dataFileName": "Vertical and horizontal layout_image.png"
+                      "dataFileName": "Vertical and horizontal layout_image.jpg"
                     },
                     {
                       "attachmentId": "JwO3rUNb9tyU",
@@ -2096,7 +2145,7 @@
                       "role": "image",
                       "mime": "image/jpg",
                       "position": 10,
-                      "dataFileName": "1_Vertical and horizontal layout_image.png"
+                      "dataFileName": "1_Vertical and horizontal layout_image.jpg"
                     }
                   ],
                   "children": []
@@ -2155,7 +2204,7 @@
                       "role": "image",
                       "mime": "image/jpg",
                       "position": 10,
-                      "dataFileName": "Global menu_image.png"
+                      "dataFileName": "Global menu_image.jpg"
                     }
                   ],
                   "children": []
@@ -2222,7 +2271,7 @@
                       "role": "image",
                       "mime": "image/jpg",
                       "position": 10,
-                      "dataFileName": "Note Tree_image.png"
+                      "dataFileName": "Note Tree_image.jpg"
                     },
                     {
                       "attachmentId": "m0KuVBZvGyzW",
@@ -2366,7 +2415,7 @@
                           "role": "image",
                           "mime": "image/jpg",
                           "position": 10,
-                          "dataFileName": "1_Multiple selection_image.png"
+                          "dataFileName": "Multiple selection_image.jpg"
                         },
                         {
                           "attachmentId": "xZnYDX7rv0rW",
@@ -2374,7 +2423,7 @@
                           "role": "image",
                           "mime": "image/png",
                           "position": 10,
-                          "dataFileName": "2_Multiple selection_image.png"
+                          "dataFileName": "1_Multiple selection_image.png"
                         }
                       ],
                       "children": []
@@ -2621,7 +2670,7 @@
                       "role": "image",
                       "mime": "image/jpg",
                       "position": 10,
-                      "dataFileName": "Launch Bar_image.png"
+                      "dataFileName": "Launch Bar_image.jpg"
                     }
                   ],
                   "children": []
@@ -4747,7 +4796,7 @@
                       "role": "image",
                       "mime": "image/jpg",
                       "position": 10,
-                      "dataFileName": "Note Navigation_image.png"
+                      "dataFileName": "Note Navigation_image.jpg"
                     }
                   ],
                   "children": []
@@ -5263,7 +5312,7 @@
                       "role": "image",
                       "mime": "image/jpg",
                       "position": 10,
-                      "dataFileName": "Workspaces_image.png"
+                      "dataFileName": "Workspaces_image.jpg"
                     },
                     {
                       "attachmentId": "vZSH2mOKzWBx",
@@ -5271,7 +5320,7 @@
                       "role": "image",
                       "mime": "image/jpg",
                       "position": 10,
-                      "dataFileName": "1_Workspaces_image.png"
+                      "dataFileName": "1_Workspaces_image.jpg"
                     }
                   ],
                   "children": []
@@ -5514,7 +5563,7 @@
                   "role": "image",
                   "mime": "image/jpg",
                   "position": 10,
-                  "dataFileName": "Themes_image.png"
+                  "dataFileName": "Themes_image.jpg"
                 }
               ],
               "dirFileName": "Themes",
@@ -5949,7 +5998,7 @@
                         {
                           "type": "label",
                           "name": "iconClass",
-                          "value": "bx bx-window-open",
+                          "value": "tn-brand tn-brand-onenote",
                           "isInheritable": false,
                           "position": 20
                         },
@@ -6054,7 +6103,7 @@
                         {
                           "type": "label",
                           "name": "iconClass",
-                          "value": "bx bx-window-open",
+                          "value": "tn-brand tn-brand-notion",
                           "isInheritable": false,
                           "position": 20
                         },
@@ -6105,7 +6154,7 @@
                         {
                           "type": "label",
                           "name": "iconClass",
-                          "value": "bx bx-window-open",
+                          "value": "tn-brand tn-brand-google-keep",
                           "isInheritable": false,
                           "position": 20
                         },
@@ -6156,7 +6205,7 @@
                         {
                           "type": "label",
                           "name": "iconClass",
-                          "value": "bx bx-window-open",
+                          "value": "tn-brand tn-brand-evernote",
                           "isInheritable": false,
                           "position": 20
                         },
@@ -6246,7 +6295,7 @@
                         {
                           "type": "label",
                           "name": "iconClass",
-                          "value": "bx bx-window-open",
+                          "value": "tn-brand tn-brand-anytype",
                           "isInheritable": false,
                           "position": 30
                         },
@@ -6297,7 +6346,7 @@
                         {
                           "type": "label",
                           "name": "iconClass",
-                          "value": "bx bx-window-open",
+                          "value": "tn-brand tn-brand-obsidian",
                           "isInheritable": false,
                           "position": 30
                         },
@@ -7019,7 +7068,7 @@
                       "role": "image",
                       "mime": "image/jpg",
                       "position": 10,
-                      "dataFileName": "Content language & Right-to-left support_image.png"
+                      "dataFileName": "Content language & Right-to-left support_image.jpg"
                     }
                   ],
                   "children": []
@@ -7187,7 +7236,7 @@
                       "role": "image",
                       "mime": "image/jpg",
                       "position": 10,
-                      "dataFileName": "Developer-specific formatting_image.png"
+                      "dataFileName": "Developer-specific formatting_image.jpg"
                     },
                     {
                       "attachmentId": "V9BY5v8WX15Q",
@@ -7195,7 +7244,7 @@
                       "role": "image",
                       "mime": "image/jpg",
                       "position": 10,
-                      "dataFileName": "1_Developer-specific formatting_image.png"
+                      "dataFileName": "1_Developer-specific formatting_image.jpg"
                     },
                     {
                       "attachmentId": "VYcvGUzbobxQ",
@@ -7203,7 +7252,7 @@
                       "role": "image",
                       "mime": "image/png",
                       "position": 10,
-                      "dataFileName": "2_Developer-specific formatting_image.png"
+                      "dataFileName": "Developer-specific formatting_image.png"
                     }
                   ],
                   "dirFileName": "Developer-specific formatting",
@@ -7263,7 +7312,7 @@
                           "role": "image",
                           "mime": "image/jpg",
                           "position": 10,
-                          "dataFileName": "Code blocks_image.png"
+                          "dataFileName": "Code blocks_image.jpg"
                         },
                         {
                           "attachmentId": "kE8PPw7iyuu9",
@@ -7271,7 +7320,7 @@
                           "role": "image",
                           "mime": "image/png",
                           "position": 10,
-                          "dataFileName": "1_Code blocks_image.png"
+                          "dataFileName": "Code blocks_image.png"
                         }
                       ],
                       "children": []
@@ -7458,7 +7507,7 @@
                       "role": "image",
                       "mime": "image/jpg",
                       "position": 10,
-                      "dataFileName": "1_Formatting toolbar_image.png"
+                      "dataFileName": "Formatting toolbar_image.jpg"
                     },
                     {
                       "attachmentId": "jYEbPqDcUCNQ",
@@ -7466,7 +7515,7 @@
                       "role": "image",
                       "mime": "image/png",
                       "position": 10,
-                      "dataFileName": "2_Formatting toolbar_image.png"
+                      "dataFileName": "1_Formatting toolbar_image.png"
                     },
                     {
                       "attachmentId": "WV5kfOEFZdMa",
@@ -7474,7 +7523,7 @@
                       "role": "image",
                       "mime": "image/png",
                       "position": 10,
-                      "dataFileName": "3_Formatting toolbar_image.png"
+                      "dataFileName": "2_Formatting toolbar_image.png"
                     }
                   ],
                   "children": []
@@ -7666,7 +7715,7 @@
                       "role": "image",
                       "mime": "image/jpg",
                       "position": 10,
-                      "dataFileName": "Images_image.png"
+                      "dataFileName": "Images_image.jpg"
                     },
                     {
                       "attachmentId": "Bi9LiB0eMbcH",
@@ -7674,7 +7723,7 @@
                       "role": "image",
                       "mime": "image/jpg",
                       "position": 10,
-                      "dataFileName": "1_Images_image.png"
+                      "dataFileName": "1_Images_image.jpg"
                     },
                     {
                       "attachmentId": "dRgFtpOcHwke",
@@ -7682,7 +7731,7 @@
                       "role": "image",
                       "mime": "image/jpg",
                       "position": 10,
-                      "dataFileName": "2_Images_image.png"
+                      "dataFileName": "2_Images_image.jpg"
                     },
                     {
                       "attachmentId": "NZJRGKS6yDeg",
@@ -7690,7 +7739,7 @@
                       "role": "image",
                       "mime": "image/jpg",
                       "position": 10,
-                      "dataFileName": "3_Images_image.png"
+                      "dataFileName": "3_Images_image.jpg"
                     },
                     {
                       "attachmentId": "qJXx7vPPD4JW",
@@ -7698,7 +7747,7 @@
                       "role": "image",
                       "mime": "image/png",
                       "position": 10,
-                      "dataFileName": "4_Images_image.png"
+                      "dataFileName": "Images_image.png"
                     }
                   ],
                   "dirFileName": "Images",
@@ -8449,7 +8498,7 @@
                       "role": "image",
                       "mime": "image/jpg",
                       "position": 10,
-                      "dataFileName": "Lists_image.png"
+                      "dataFileName": "Lists_image.jpg"
                     },
                     {
                       "attachmentId": "JopMc0iA0dqA",
@@ -8457,7 +8506,7 @@
                       "role": "image",
                       "mime": "image/jpg",
                       "position": 10,
-                      "dataFileName": "1_Lists_image.png"
+                      "dataFileName": "1_Lists_image.jpg"
                     },
                     {
                       "attachmentId": "kZMYrJubac6T",
@@ -8465,7 +8514,7 @@
                       "role": "image",
                       "mime": "image/jpg",
                       "position": 10,
-                      "dataFileName": "2_Lists_image.png"
+                      "dataFileName": "2_Lists_image.jpg"
                     },
                     {
                       "attachmentId": "VgoG6BtlLYn7",
@@ -8473,7 +8522,7 @@
                       "role": "image",
                       "mime": "image/jpg",
                       "position": 10,
-                      "dataFileName": "3_Lists_image.png"
+                      "dataFileName": "3_Lists_image.jpg"
                     },
                     {
                       "attachmentId": "y0zFP6x0IRRf",
@@ -8481,7 +8530,7 @@
                       "role": "image",
                       "mime": "image/jpg",
                       "position": 10,
-                      "dataFileName": "4_Lists_image.png"
+                      "dataFileName": "4_Lists_image.jpg"
                     },
                     {
                       "attachmentId": "z8eVlXe2WKqr",
@@ -8489,7 +8538,7 @@
                       "role": "image",
                       "mime": "image/jpg",
                       "position": 10,
-                      "dataFileName": "5_Lists_image.png"
+                      "dataFileName": "5_Lists_image.jpg"
                     }
                   ],
                   "children": []
@@ -9171,7 +9220,7 @@
                   "role": "image",
                   "mime": "image/jpg",
                   "position": 10,
-                  "dataFileName": "Code_image.png"
+                  "dataFileName": "Code_image.jpg"
                 }
               ],
               "children": []
@@ -11176,7 +11225,7 @@
                   "role": "image",
                   "mime": "image/jpg",
                   "position": 10,
-                  "dataFileName": "Anonymized Database_image.png"
+                  "dataFileName": "Anonymized Database_image.jpg"
                 }
               ],
               "children": []
@@ -11343,7 +11392,7 @@
                       "role": "image",
                       "mime": "image/jpg",
                       "position": 10,
-                      "dataFileName": "Frontend logs_image.png"
+                      "dataFileName": "Frontend logs_image.jpg"
                     },
                     {
                       "attachmentId": "Y05WqmS4uMMt",
@@ -11558,7 +11607,7 @@
                   "role": "image",
                   "mime": "image/jpg",
                   "position": 10,
-                  "dataFileName": "Creating a custom theme_3_Creating a custom theme_im.png"
+                  "dataFileName": "Creating a custom theme_3_Creating a custom theme_im.jpg"
                 },
                 {
                   "attachmentId": "hJc5fBNfSLoY",
@@ -11566,7 +11615,7 @@
                   "role": "image",
                   "mime": "image/jpg",
                   "position": 10,
-                  "dataFileName": "Creating a custom theme_Creating a custom theme_im.png"
+                  "dataFileName": "Creating a custom theme_Creating a custom theme_im.jpg"
                 },
                 {
                   "attachmentId": "j3OaGihW6eg3",
@@ -11574,7 +11623,7 @@
                   "role": "image",
                   "mime": "image/jpg",
                   "position": 10,
-                  "dataFileName": "Creating a custom theme_1_Creating a custom theme_im.png"
+                  "dataFileName": "Creating a custom theme_1_Creating a custom theme_im.jpg"
                 },
                 {
                   "attachmentId": "LCQ6zvUbvXQr",
@@ -11582,7 +11631,7 @@
                   "role": "image",
                   "mime": "image/jpg",
                   "position": 10,
-                  "dataFileName": "Creating a custom theme_4_Creating a custom theme_im.png"
+                  "dataFileName": "Creating a custom theme_4_Creating a custom theme_im.jpg"
                 },
                 {
                   "attachmentId": "mY5EGlN7TO6I",
@@ -11590,7 +11639,7 @@
                   "role": "image",
                   "mime": "image/jpg",
                   "position": 10,
-                  "dataFileName": "Creating a custom theme_5_Creating a custom theme_im.png"
+                  "dataFileName": "Creating a custom theme_5_Creating a custom theme_im.jpg"
                 },
                 {
                   "attachmentId": "TMHEj1M3XFGO",
@@ -11598,7 +11647,7 @@
                   "role": "image",
                   "mime": "image/jpg",
                   "position": 10,
-                  "dataFileName": "Creating a custom theme_2_Creating a custom theme_im.png"
+                  "dataFileName": "Creating a custom theme_2_Creating a custom theme_im.jpg"
                 }
               ],
               "children": []
@@ -12184,7 +12233,7 @@
                 {
                   "type": "label",
                   "name": "iconClass",
-                  "value": "bx bx-copy",
+                  "value": "bx bx-detail",
                   "isInheritable": false,
                   "position": 110
                 },
@@ -12596,7 +12645,7 @@
                       "role": "image",
                       "mime": "image/jpg",
                       "position": 10,
-                      "dataFileName": "Serving directly the content of a note_image.png"
+                      "dataFileName": "Serving directly the content of a note_image.jpg"
                     },
                     {
                       "attachmentId": "ixkXFTSSkdpL",
@@ -12604,7 +12653,7 @@
                       "role": "image",
                       "mime": "image/png",
                       "position": 10,
-                      "dataFileName": "1_Serving directly the content of a note_image.png"
+                      "dataFileName": "Serving directly the content of a note_image.png"
                     }
                   ],
                   "children": []
@@ -12872,7 +12921,7 @@
                       "role": "image",
                       "mime": "image/jpg",
                       "position": 10,
-                      "dataFileName": "1_Day Notes_image.png"
+                      "dataFileName": "Day Notes_image.jpg"
                     }
                   ],
                   "children": []
@@ -12931,7 +12980,7 @@
                       "role": "image",
                       "mime": "image/jpg",
                       "position": 10,
-                      "dataFileName": "Weight Tracker_image.png"
+                      "dataFileName": "Weight Tracker_image.jpg"
                     }
                   ],
                   "children": []
@@ -13396,7 +13445,7 @@
                       "role": "image",
                       "mime": "image/jpg",
                       "position": 10,
-                      "dataFileName": "Manually altering the database_image.png"
+                      "dataFileName": "Manually altering the database_image.jpg"
                     }
                   ],
                   "dirFileName": "Manually altering the database",
@@ -13456,7 +13505,7 @@
                           "role": "image",
                           "mime": "image/jpg",
                           "position": 10,
-                          "dataFileName": "SQL Console_image.png"
+                          "dataFileName": "SQL Console_image.jpg"
                         },
                         {
                           "attachmentId": "wdBs3e0MApgs",
@@ -13464,7 +13513,7 @@
                           "role": "image",
                           "mime": "image/png",
                           "position": 10,
-                          "dataFileName": "1_SQL Console_image.png"
+                          "dataFileName": "SQL Console_image.png"
                         }
                       ],
                       "children": []
@@ -14528,17 +14577,24 @@
                     },
                     {
                       "type": "label",
+                      "name": "iconClass",
+                      "value": "bx bx-coin",
+                      "isInheritable": false,
+                      "position": 70
+                    },
+                    {
+                      "type": "label",
                       "name": "originalHelpNoteId",
                       "value": "_help_eFhxp9laTW1S",
                       "isInheritable": false,
-                      "position": 40
+                      "position": 80
                     },
                     {
                       "type": "label",
                       "name": "helpDoc",
                       "value": "zh",
                       "isInheritable": false,
-                      "position": 50
+                      "position": 90
                     }
                   ],
                   "format": "markdown",
@@ -14640,6 +14696,54 @@
               "children": []
             }
           ]
+        },
+        {
+          "isClone": false,
+          "noteId": "_zh_FeSMkNEk",
+          "notePath": [
+            "pOsGYCXsbNQG",
+            "Y84QCbArmK3z"
+          ],
+          "title": "会议转录",
+          "notePosition": 350,
+          "prefix": null,
+          "isExpanded": false,
+          "type": "text",
+          "mime": "text/html",
+          "attributes": [
+            {
+              "type": "label",
+              "name": "shareAlias",
+              "value": "transcription",
+              "isInheritable": false,
+              "position": 10
+            },
+            {
+              "type": "label",
+              "name": "iconClass",
+              "value": "bx bx-microphone",
+              "isInheritable": false,
+              "position": 20
+            },
+            {
+              "type": "label",
+              "name": "originalHelpNoteId",
+              "value": "_help_Y84QCbArmK3z",
+              "isInheritable": false,
+              "position": 30
+            },
+            {
+              "type": "label",
+              "name": "helpDoc",
+              "value": "zh",
+              "isInheritable": false,
+              "position": 40
+            }
+          ],
+          "format": "markdown",
+          "dataFileName": "Meeting transcription.md",
+          "attachments": [],
+          "children": []
         },
         {
           "isClone": false,
