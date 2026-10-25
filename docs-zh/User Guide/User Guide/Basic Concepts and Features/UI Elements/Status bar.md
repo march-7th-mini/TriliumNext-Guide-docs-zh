@@ -3,28 +3,29 @@
 
 ## 布局与交互
 
-在左侧，显示 <a class="reference-link" href="Breadcrumb.md">面包屑导航</a>，它指示当前笔记及其父笔记，并允许在整个层级中快速导航。
+在左侧，显示的是<a class="reference-link" href="Breadcrumb.md">面包屑导航</a>，它指示当前笔记及其父笔记，并允许在整个层级中快速导航。
 
-在右侧，将根据当前笔记的类型显示特定部分。
+在右侧，将根据当前笔记的类型显示特定的部分。
 
-1.  对于 <a class="reference-link" href="../../Note%20Types/Code.md">代码</a> 笔记，会显示笔记的语言模式（例如 JavaScript、纯文本），并允许轻松切换到其他模式。
-2.  对于 <a class="reference-link" href="../../Note%20Types/Text.md">文本</a> 笔记，会显示内容语言并可以更改，从而配置拼写检查和从右到左支持。
-    1.  请注意，这适用于整个笔记而非选区，与某些文本编辑器不同。
+1.  对于<a class="reference-link" href="../../Note%20Types/Code.md">代码</a>笔记，会显示笔记的语言模式（例如 JavaScript、纯文本），并允许轻松切换到其他模式。
+    1.  在其之前，光标位置以行和列的形式显示，例如 _Ln: 12 Col: 32_。它会随着光标移动而更新。当选中文本时，随后会显示选中的字符数，例如 _Selected: 120_。
+2.  对于<a class="reference-link" href="../../Note%20Types/Text.md">文本</a>笔记，会显示内容语言并且可以更改，从而配置拼写检查和从右到左的支持。
+    1.  请注意，与某些文本编辑器不同，这适用于整个笔记而非选区。
 3.  如果笔记被放置在树中的多个位置（克隆），则会显示笔记路径的数量。
-    1.  点击它会打开一个弹出窗口，其中包含笔记路径的完整列表，也可以从中将笔记克隆到新位置。相同的列表可在侧边栏的 <a class="reference-link" href="Right%20Sidebar/Connections%20tab.md">连接标签页</a> 中找到。
+    1.  点击它会打开一个弹出窗口，其中包含笔记路径的完整列表，也可以从中将笔记克隆到新位置。同样的列表可在侧边栏的<a class="reference-link" href="Right%20Sidebar/Connections%20tab.md">连接标签页</a>中找到。
 4.  如果笔记有附件，则会显示其数量。
     1.  点击它将在新标签页中显示附件列表。
 5.  如果笔记被其他文本笔记链接（反链），则会显示反链的数量。
-    1.  点击它会打开一个弹出窗口，其中包含链接到此笔记的笔记列表，以及引用该笔记的位置摘录。相同的列表可在侧边栏的 <a class="reference-link" href="Right%20Sidebar/Connections%20tab.md">连接标签页</a> 中找到。
+    1.  点击它会打开一个弹出窗口，其中包含链接到该笔记的笔记列表，以及引用该笔记位置的摘录。同样的列表可在侧边栏的<a class="reference-link" href="Right%20Sidebar/Connections%20tab.md">连接标签页</a>中找到。
 
-无论笔记类型如何，只要存在笔记，以下项目将始终显示：
+无论笔记类型如何，只要有笔记，以下项目将始终显示：
 
 1.  笔记信息，显示：
     1.  笔记的创建/修改日期。
     2.  笔记的类型和 MIME。
     3.  笔记 ID。
     4.  笔记本身及其子笔记大小的估计值。
-    5.  一个按钮，用于在侧边栏的 <a class="reference-link" href="Right%20Sidebar/Connections%20tab.md">连接标签页</a> 中显示相似笔记。
+    5.  一个按钮，用于在侧边栏的<a class="reference-link" href="Right%20Sidebar/Connections%20tab.md">连接标签页</a>中显示相似笔记。
 
 > [!NOTE]
-> 当按下显示 <a class="reference-link" href="Right%20Sidebar.md">右侧边栏</a> 的按钮时，如果侧边栏处于隐藏状态，它会有一个特定的行为：侧边栏将被预览而不是停靠。无论如何，侧边栏都将切换到相应的标签页，并且相应的部分将被高亮显示。
+> 当按下显示<a class="reference-link" href="Right%20Sidebar.md">右侧边栏</a>的按钮时，如果侧边栏处于隐藏状态，则会有特定行为：侧边栏将被窥视而不是停靠。无论如何，侧边栏都会切换到相应的标签页，并且相应的部分会被高亮显示。

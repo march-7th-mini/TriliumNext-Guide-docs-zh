@@ -4,7 +4,7 @@
 
 SQL 控制台是 Trilium 内置的数据库编辑器。
 
-可以通过 <a class="reference-link" href="../../../Basic%20Concepts%20and%20Features/UI%20Elements/Global%20menu.md">全局菜单</a> → 高级 → 打开 SQL 控制台 来访问。
+可以通过 <a class="reference-link" href="../../../Basic%20Concepts%20and%20Features/UI%20Elements/Global%20menu.md">全局菜单</a> → 高级 → SQL 控制台来访问。
 
 ![](SQL%20Console_image.jpg)
 
@@ -22,16 +22,16 @@ SQL 控制台是 Trilium 内置的数据库编辑器。
 
 执行查询后，将显示包含结果的表格：
 
-*   点击某一列可以按升序或降序排序。
-*   每列下方都有一个输入框，可按文本进行筛选。
+*   点击某一列可以按升序或降序排序。`#` 列用于对行编号，无法排序。
+*   每列下方都有一个输入框，可以按文本进行筛选。
 *   按 <kbd>Ctrl</kbd>+<kbd>C</kbd> 可将当前单元格复制到剪贴板。
 *   可以通过拖动或按住 <kbd>Shift</kbd> + 方向键来选择多个单元格。
-*   出于性能考虑，结果会分页显示。表格底部的控件可用于在页面之间导航。
+*   出于性能考虑，结果会分页显示。可以使用表格底部的控件在页面之间导航。
 
 ### 已保存的 SQL 控制台
 
 SQL 查询或命令可以保存到专用笔记中。
 
-为此，只需编写查询并按下 <span class="tn-icon bx bx-save"></span> 按钮。保存后，该笔记默认会出现在 <a class="reference-link" href="../../Advanced%20Showcases/Day%20Notes.md">日记笔记</a> 中。可以通过分配 `#sqlConsoleHome` [标签](../../Attributes/Labels.md) 来更改已保存查询的默认位置。
+为此，只需编写查询并按 <span class="tn-icon bx bx-save"></span> 按钮。保存后，该笔记默认会出现在 <a class="reference-link" href="../../Advanced%20Showcases/Day%20Notes.md">日记笔记</a> 中。可以通过分配 `#sqlConsoleHome` [标签](../../Attributes/Labels.md) 来更改已保存查询的默认位置。
 
 可以通过按标题栏附近笔记操作区域中的 _锁定_ 按钮来锁定笔记以禁止编辑。当编辑被锁定时，SQL 语句将从视图中隐藏。

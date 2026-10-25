@@ -8,14 +8,15 @@
 *   解压归档文件，例如使用 `tar -xf -d TriliumNotes-Server-[VERSION]-linux-x64.tar.xz`
 *   `cd trilium-linux-x64-server`
 *   `./trilium.sh`
-*   你可以打开浏览器并访问 http://\[your-server-hostname\]:8080，你应该能看到 Trilium 初始化页面
+*   你可以打开浏览器并访问 http://\[your-server-hostname\]:8080，应该能看到 Trilium 初始化页面
+*   控制台会列出服务器可访问的地址，你也可以从那里复制一个
 
-上述步骤的问题在于，一旦你关闭 SSH 连接，Trilium 进程就会终止。为避免这种情况，你有两个选择：
+上述步骤的问题在于，一旦关闭 SSH 连接，Trilium 进程就会终止。为避免这种情况，你有两个选择：
 
-*   终止它（例如使用 <kbd>Ctrl</kbd> + <kbd>C</kbd>）并像这样重新运行：`nohup ./trilium.sh &`。（nohup 使进程在后台保持运行，`&` 使其在后台运行）
-*   配置 systemd 以在每次启动时自动在后台运行 Trilium
+*   终止它（例如使用 <kbd>Ctrl</kbd> + <kbd>C</kbd>）并像这样重新运行：`nohup ./trilium.sh &`。（nohup 让进程在后台保持运行，`&` 让它在后台运行）
+*   配置 systemd 在每次启动时自动在后台运行 Trilium
 
-## 配置 Trilium 使用 systemd 开机自启
+## 使用 systemd 配置 Trilium 开机自启
 
 *   下载后，解压并移动 Trilium：
 
@@ -59,11 +60,11 @@ WantedBy=multi-user.target
 sudo systemctl enable --now -q trilium
 ```
 
-*   现在你可以打开浏览器访问 http://\[your-server-hostname\]:8080，你应该能看到 Trilium 初始化页面。
+*   现在你可以打开浏览器访问 http://\[your-server-hostname\]:8080，应该能看到 Trilium 初始化页面。
 
-## 服务器简易自动更新
+## 服务器的简单自动更新
 
-该脚本位于 <a class="reference-link" href="Packaged%20version%20for%20Linux/Simple%20auto-update%20for%20server.dat">服务器简易自动更新</a>。
+该脚本位于 <a class="reference-link" href="Packaged%20version%20for%20Linux/Simple%20auto-update%20for%20server.dat">服务器的简单自动更新</a>。
 
 *   以运行 Trilium 的同一用户运行。
     
@@ -74,7 +75,7 @@ sudo systemctl enable --now -q trilium
     apt install jq
     ```
 
-它将停止上述服务，覆盖所有内容（预期没有 `config.ini`），并启动服务。它还会在 Trilium 目录中创建一个版本文件，以便仅在出现更新版本时才进行更新。
+它会停止上述服务，覆盖所有内容（预期没有 `config.ini`），然后启动服务。它还会在 Trilium 目录中创建一个版本文件，以便仅在版本更新时进行更新。
 
 ## 常见问题
 

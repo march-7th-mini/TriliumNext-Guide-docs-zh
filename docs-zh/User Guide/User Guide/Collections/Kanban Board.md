@@ -4,68 +4,68 @@
 
 ## 创建看板
 
-在<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">笔记树</a>中右键点击一个已有笔记，选择*插入子笔记* → *集合* → *看板*。
+在<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">笔记树</a>中右键点击一个现有笔记，选择*插入子笔记* → *集合* → *看板*。
 
 ## 工作原理
 
-当你首次创建一个*看板*类型的集合时，会创建几个子笔记，每个子笔记都设置了一个 `#status` 标签。看板随后根据每个笔记的状态属性值对其进行分组。
+当你首次创建一个*看板*类型的集合时，会创建几个子笔记，每个都设置了 `#status` 标签。看板随后根据每个笔记的状态属性值对其进行分组。
 
 笔记会以递归方式显示，因此即使是孙笔记以及更深层嵌套的笔记也会被显示。然而，与<a class="reference-link" href="Table.md">表格</a>不同，笔记不会以层级结构显示。
 
-要限制看板的显示深度，请转到<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20menu.md">笔记菜单</a> → *看板属性*，设置*最大嵌套深度*（在*包含的笔记*部分下），或者在看板笔记上应用 `#maxNestingDepth` 标签：`0` 仅显示子笔记，`1` 还会显示子笔记的子笔记，依此类推。如果不设置值，则显示所有层级。
+要限制看板的显示深度，请转到<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20menu.md">笔记菜单</a> → *看板属性*，然后设置*最大嵌套深度*（在*包含的笔记*部分下），或者在看板笔记上应用 `#maxNestingDepth` 标签：`0` 仅显示子笔记，`1` 还会显示子笔记的子笔记，依此类推。如果不设置值，则显示所有层级。
 
 ## 使用列
 
 ### 创建列
 
-你可以通过按最后一列之后的 <span class="tn-icon bx bx-plus"></span> *添加列* 按钮来创建新列。
+你可以通过按最后一列之后的 <span class="tn-icon bx bx-plus"></span>_添加列_按钮来创建新列。
 
-输入新名称（不能与其他列重名），可选地通过按文本框开头的圆圈来选择图标，然后按 (+) 按钮或 <kbd>Enter</kbd>。点击或轻触文本框外部，或按 <kbd>Esc</kbd>，即可关闭。
+输入新名称（不能与其他列重名），可选择按文本框开头的圆圈来选择图标，然后按 (+) 按钮或 <kbd>Enter</kbd>。点击或轻触文本框外部，或按 <kbd>Esc</kbd>，即可关闭。
 
 列也可以通过上下文菜单添加：
 
-*   要在看板末尾添加列，请右键点击看板的空白区域，然后选择 <span class="tn-icon bx bx-columns"></span> *添加新列*。
-*   要在现有列旁边添加列，请打开该列的菜单，然后选择 <span class="tn-icon bx bx-columns"></span> *添加新列* → *之前*（<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Enter</kbd>）或 *之后*（<kbd>Ctrl</kbd>+<kbd>Enter</kbd>）。
+*   要在看板末尾添加列，请右键点击看板的空白区域，然后选择 <span class="tn-icon bx bx-columns"></span>_添加新列*。
+*   要在现有列旁边添加列，请打开该列的菜单，然后选择 <span class="tn-icon bx bx-columns"></span>_添加新列* → *之前*（<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Enter</kbd>）或*之后*（<kbd>Ctrl</kbd>+<kbd>Enter</kbd>）。
 
-看板设置完成后，可以隐藏*添加列*按钮。为此，请转到<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20menu.md">笔记菜单</a> → *看板属性*，关闭*显示"添加列"按钮*（在*常规*部分下），或者在看板笔记上应用 `#board:hideAddColumn` 标签。仍然可以通过上述上下文菜单添加列。
+看板设置完成后，可以隐藏*添加列*按钮。为此，请转到<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20menu.md">笔记菜单</a> → *看板属性*，然后关闭*显示“添加列”按钮*（在*常规*部分下），或者在看板笔记上应用 `#board:hideAddColumn` 标签。仍然可以通过上述上下文菜单添加列。
 
 ### 重新排列列
 
 列的顺序可以随时更改。有以下几种方法：
 
-*   **使用触摸或鼠标：** 触摸并按住列标题，或用鼠标点击并按住它。将列向左或向右拖动，直到到达所需位置，然后释放。
+*   **使用触摸或鼠标：** 触摸并按住列标题，或用鼠标点击并按住。向左或向右拖动列，直到到达所需位置，然后释放。
 *   **使用键盘：** 当键盘焦点位于列内任意位置时，可以使用以下组合键。如果列标题本身已获得焦点，可以省略 <kbd>Alt</kbd>：
     *   <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Right</kbd>：将列向右移动。
     *   <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Left</kbd>：将列向左移动。
     *   <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Home</kbd>：将其设为第一列。
     *   <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>End</kbd>：将其设为最后一列。
-*   *使用列菜单：* 打开列菜单，使用 <span class="tn-icon bx bx-horizontal-left"></span> *移动列* 子菜单。
+*   *使用列菜单：* 打开列菜单，使用 <span class="tn-icon bx bx-horizontal-left"></span> *移动列*子菜单。
 
 ### 重命名和重新着色列
 
 要更改列的名称，请打开列菜单并选择 <span class="tn-icon bx bx-edit-alt"></span> *重命名列*，或在选中列标题时按 <kbd>F2</kbd>。
 
-从同一菜单中，你可以使用菜单底部的调色板为列着色。
+在同一菜单中，你可以使用菜单底部的调色板为列着色。
 
 ### 折叠和展开列
 
 #### 折叠
 
-列可以被折叠（最小化），以在屏幕上占用更少的空间，使看板看起来不那么杂乱。这对于不常用的列特别有用，或者当你只想关注少数几列而将其他列隐藏起来时。
+列可以被折叠（最小化），以占用更少的屏幕空间，使看板看起来不那么杂乱。这对于不常用的列特别有用，或者当你只想关注少数几列而将其他列隐藏起来时。
 
 要折叠列：
 
 *   **使用鼠标：** 双击列标题。
 *   **使用触摸：** 轻触列标题，然后按侧边工具栏上的 <span class="tn-icon bx bx-collapse-horizontal"></span> 按钮。
-*   **使用键盘：** 将焦点放在列标题上，然后按 <kbd>Space</kbd>。
+*   **使用键盘：** 将焦点移到列标题，然后按 <kbd>Space</kbd>。
 
-或者，你可以使用列菜单中的 <span class="tn-icon bx bx-collapse-horizontal"></span> *折叠列* 命令。
+或者，你可以使用列菜单中的 <span class="tn-icon bx bx-collapse-horizontal"></span> *折叠列*命令。
 
 列折叠后，其卡片不再可见，但该列仍然可以接收来自其他列的卡片：
 
-*   **将卡片拖放到折叠的列上：** 卡片将被移动到该列（如果启用了手动排序，则移动到末尾）。
+*   **将卡片拖放到折叠的列上：** 卡片将被移动到该列（如果启用了手动排序，则放在底部）。
 *   **将卡片悬停在折叠的列上几秒钟：** 该列将展开，允许你将卡片拖放到所需位置（如果启用了手动排序），或在决定是否拖放之前查看其他卡片。
-*   **使用键盘将卡片移动到折叠的列：** 该列将临时展开以显示移动的卡片。然后你可以继续将选中的卡片向上或向下移动，或移动到另一列。
+*   **使用键盘将卡片移动到折叠的列：** 该列将临时展开以显示被移动的卡片。然后你可以继续将选中的卡片向上或向下移动，或移动到另一列。
 
 折叠的列仍然可以重新排序，其菜单仍然可用。
 
@@ -77,28 +77,28 @@
 
 *   **使用鼠标：** 点击折叠的列。
 *   **使用触摸：** 轻触折叠的列，然后按侧边工具栏上的 <span class="tn-icon bx bx-expand-horizontal"></span> 按钮。
-*   **使用键盘：** 将焦点移动到折叠的列，然后按 <kbd>Space</kbd>。
+*   **使用键盘：** 将焦点移到折叠的列，然后按 <kbd>Space</kbd>。
 
 #### 保持列折叠
 
-默认情况下，列一旦展开，就会保持展开状态。但是，你可以配置列在完成操作后再次折叠。要激活此行为，请打开列菜单并勾选 <span class="tn-icon bx bx-lock-alt"></span> *保持列折叠*。
+默认情况下，列一旦展开就会保持展开状态。但是，你可以配置列在完成操作后再次折叠。要启用此行为，请打开列菜单并勾选 <span class="tn-icon bx bx-lock-alt"></span> *保持列折叠*。
 
-配置为保持折叠的列会像其他折叠列一样展开，但只是临时展开，直到另一个列获得焦点。
+配置为保持折叠的列会像其他折叠列一样展开，但只是临时的，直到另一个列获得焦点。
 
 #### 折叠和展开所有列
 
-你可以使用 <span class="tn-icon bx bx-collapse-alt"></span>（折叠）和 <span class="tn-icon bx bx-expand-alt"></span>（展开）按钮一次性展开或折叠所有列。在桌面端，这些按钮位于屏幕底部；在移动端界面中，它们位于标题栏中。
+你可以使用 <span class="tn-icon bx bx-collapse-alt"></span>（折叠）和 <span class="tn-icon bx bx-expand-alt"></span>（展开）按钮一次性展开或折叠所有列。在桌面端，这些按钮位于屏幕底部；在移动端界面中，它们位于页眉中。
 
-### 在列内排序卡片
+### 对列中的卡片排序
 
-默认情况下，列中的卡片通过上下移动手动排序。你也可以使用每列可自定义的条件自动排序。要自定义排序选项，请打开列菜单 → *排序*。以下选项可用：
+默认情况下，列中的卡片通过上下移动手动排序。你也可以使用每列的可自定义条件自动排序。要自定义排序选项，请打开列菜单 → *排序*。以下选项可用：
 
 *   <span class="tn-icon bx bx-collection"></span> *看板默认*：使用默认排序顺序（新看板初始为手动排序）。
 *   <span class="tn-icon bx bx-move-vertical"></span> *手动*：通过上下移动手动排序卡片。
 *   <span class="tn-icon bx bx-text"></span> *标题*：按标题排序卡片。
 *   <span class="tn-icon bx bx-calendar-plus"></span> *创建日期和时间*：按每张卡片所代表笔记的创建日期和时间排序。如果卡片是从现有笔记创建的，日期和时间将与该笔记的原始创建日期和时间一致，而不是卡片添加到看板的时间。
 *   任何自定义属性：任何卡片属性（参见<a class="reference-link" href="../Advanced%20Usage/Attributes.md">属性</a>）都可以用作排序条件。
-*   <span class="tn-icon bx bx-sort-up"></span> *升序*：从小到大排序（A 到 Z，0 到 9，或从旧到新）。
+*   <span class="tn-icon bx bx-sort-up"></span> *升序*：从小到大排序（A 到 Z，0 到 9，或最旧到最新）。
 *   <span class="tn-icon bx bx-sort-down"></span> *降序*：按相反顺序排序，从大到小。
 
 > [!IMPORTANT]
@@ -115,7 +115,7 @@
 | 日期、日期和时间 | 最旧 → 最新 |
 | 时间 | 最早的小时（最接近 0）→ 最晚的小时（最接近 24） |
 | 复选框 | 未选中 → 已选中 |
-| 选择 | 选项声明的顺序。      <br>例如，声明了"低"、"中"和"高"选项的选择属性将按如下方式排序：低 → 中 → 高。 |
+| 选择 | 选项声明的顺序。       <br>例如，声明了“低”、“中”和“高”选项的选择属性将按如下方式排序：低 → 中 → 高。 |
 | 颜色 | 灰色 → 彩色。颜色按其色轮[色相](https://en.wikipedia.org/wiki/Hue)角度（从 0° 到 360°）排序。 |
 
 关系属性按目标笔记的标题排序。
@@ -131,11 +131,11 @@
 使用*看板默认*以外排序选项的列不会受到新默认值的影响。要覆盖所有列以使用默认排序选项，请使用*看板属性*中的*将所有列的排序选项重置为默认值*命令。
 
 > [!WARNING]
-> **不再建议**在看板上使用 `#sorted` 属性，因为它适用于每一列并阻止手动排序。请改用 `#board:sortColumns`，它专为看板集合设计，可以取以下值之一：`title`、`creationDate` 或 `attr:_<属性名称>_`，例如 `#board:sortColumns=attr:dueDate`。使用 `#board:sortColumnsDescending` 标签将切换为降序。
+> 在看板上使用 `#sorted` 属性**不再推荐**，因为它适用于每一列并阻止手动排序。请改用 `#board:sortColumns`，它专为看板集合设计，可以取以下值之一：`title`、`creationDate` 或 `attr:_<属性名称>_`，例如 `#board:sortColumns=attr:dueDate`。使用 `#board:sortColumnsDescending` 标签将切换为降序。
 
 ### 设置限制
 
-对于每一列，你可以限制其包含的卡片数量（也称为 WIP 限制）。一旦超过限制，列会显示视觉警告，指示其已超出限制。
+对于每一列，你可以限制其包含的卡片数量（也称为 WIP 限制）。一旦超过限制，列会显示视觉警告，指示已超出限制。
 
 要启用限制，请转到列菜单 → <span class="tn-icon bx bx-tachometer"></span> *设置限制*，然后：
 
@@ -143,25 +143,25 @@
 *   在*列中最大卡片数*文本框中输入所需的限制。
 *   按*设置限制*按钮。
 
-已达到限制的列仍然可以接受新卡片。不支持阻止新卡片，而且很可能永远不会支持，因为 Trilium 的工作方式：卡片是常规笔记，用于将其分组到列的属性可以在应用中的任何位置设置，超出看板的控制范围。因此，强制执行限制将不一致。
+已达到限制的列仍然可以接受新卡片。不支持阻止新卡片，而且很可能永远不会支持，因为 Trilium 的工作方式：卡片是常规笔记，用于将其分组到列的属性可以在应用中的任何位置设置，不受看板控制。因此，强制执行限制将不一致。
 
 ### 归档列
 
-如果你想在不删除列的情况下从看板中隐藏它，可以通过打开列菜单 → <span class="tn-icon bx bx-archive-in"></span> *归档列* 来归档它。归档列不会在其卡片对应的笔记上设置已归档标志（参见<a class="reference-link" href="../Basic%20Concepts%20and%20Features/Notes/Archived%20Notes.md">存档笔记</a>）。
+如果你想在不删除列的情况下从看板中隐藏它，可以通过打开列菜单 → <span class="tn-icon bx bx-archive-in"></span> *归档列*来归档它。归档列不会在其卡片对应的笔记上设置已归档标志（参见<a class="reference-link" href="../Basic%20Concepts%20and%20Features/Notes/Archived%20Notes.md">存档笔记</a>）。
 
-要再次显示已归档的列，请转到 <span class="tn-icon bx bx-cog"></span> *集合选项* 并切换 <span class="tn-icon bx bx-archive-in"></span> *显示已归档笔记*，或在<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20menu.md">笔记菜单</a> → *看板属性*（在*包含的笔记*部分下）中打开*显示已归档卡片和列*。已归档的列将显示为淡色。要恢复一个列，请打开其列菜单并选择 <span class="tn-icon bx bx-archive-out"></span> *取消归档列*。
+要再次显示已归档的列，请转到 <span class="tn-icon bx bx-cog"></span> *集合选项*并切换 <span class="tn-icon bx bx-archive-in"></span> *显示已归档笔记*，或在<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20menu.md">笔记菜单</a> → *看板属性*（在*包含的笔记*部分下）中打开*显示已归档卡片和列*。已归档的列将显示为淡化状态。要恢复一个列，请打开其列菜单并选择 <span class="tn-icon bx bx-archive-out"></span> *取消归档列*。
 
 ### 删除列
 
-你可以通过打开列菜单 → <span class="tn-icon bx bx-trash"></span> *删除列*，或在列标题获得焦点时按 <kbd>Delete</kbd> 并确认来删除列。这会从看板中移除该列，并取消该列中每张卡片所代表笔记的分组属性。如果列中包含卡片，确认时还会提供删除其笔记而不是保留它们的选项。
+你可以通过打开列菜单 → <span class="tn-icon bx bx-trash"></span> *删除列*，或在列标题获得焦点时按 <kbd>Delete</kbd> 然后确认来删除列。这会从看板中移除该列，并取消该列中每张卡片所代表笔记的分组属性。如果列包含卡片，确认时还会提供删除其笔记而不是保留它们的选项。
 
 收件箱列不会以这种方式删除。其菜单项为 <span class="tn-icon bx bx-trash"></span> *移除收件箱列*，在其标题上按 <kbd>Delete</kbd> 会隐藏收件箱而不更改任何卡片。
 
 ### 收件箱列
 
-收件箱列是一个特殊的列，包含未分配到其他列的卡片。当你将包含子笔记的现有集合切换为看板集合时，它特别有用。收件箱列将所有子笔记转换为卡片，你可以快速将它们分配到其他列中。它还可以充当待办列表，你可以在其中保留最终可能成为看板一部分的新卡片。
+收件箱列是一个特殊列，包含未分配到其他列的卡片。当你将包含子笔记的现有集合切换为看板集合时，它特别有用。收件箱列将所有子笔记转换为卡片，你可以快速将它们分配到其他列中。它还可以充当待办列表，你可以在其中保留最终可能成为看板一部分的新卡片。
 
-收件箱列默认隐藏。要显示它，请转到 <span class="tn-icon bx bx-cog"></span> *集合选项* 并切换*显示收件箱列*。收件箱列可通过其透明背景来区分。它始终是第一列，不能移动。它不支持卡片限制。除此之外，它的操作与常规列相同：其标题、图标和颜色可以更改；可以手动或自动排序；可以折叠。
+收件箱列默认隐藏。要显示它，请转到 <span class="tn-icon bx bx-cog"></span> *集合选项*并切换*显示收件箱列*。收件箱列通过其透明背景来区分。它始终是第一列，不能移动。它不支持卡片限制。除此之外，它的操作与常规列相同：其标题、图标和颜色可以更改；可以手动或自动排序；可以折叠。
 
 你也可以通过在看板笔记上应用 `#board:showInbox` 标签（了解更多关于<a class="reference-link" href="../Advanced%20Usage/Attributes.md">属性</a>）来显示收件箱列。
 
@@ -169,11 +169,11 @@
 
 ### 更改列宽
 
-看板列有三种预定义宽度：窄（默认）、中、宽。要更改宽度，请打开<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20menu.md">笔记菜单</a> → *看板属性* → *列宽*（在*常规*部分下）。此选项适用于看板上的每一列，移动版除外。
+看板列有三种预定义宽度：窄（默认）、中、宽。要更改宽度，请打开<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20menu.md">笔记菜单</a> → *看板属性* → *列宽*（在*常规*部分下）。此选项适用于看板上的每一列，移动版本除外。
 
-同样的选项也可以通过看板笔记上的 `#board:columnWidth` 标签（了解更多关于<a class="reference-link" href="../Advanced%20Usage/Attributes.md">属性</a>）使用，该标签接受 "`narrow`"、"`medium`" 或 "`wide`" 作为值。
+同样的选项也可以通过看板笔记上的 `#board:columnWidth` 标签（了解更多关于<a class="reference-link" href="../Advanced%20Usage/Attributes.md">属性</a>）使用，该标签接受“`narrow`”、“`medium`”或“`wide`”作为值。
 
-你还可以通过使用自定义应用 CSS（了解更多关于<a class="reference-link" href="../Theme%20development/Custom%20app-wide%20CSS.md">自定义应用级 CSS</a>）并如下分配所需的像素值来重新定义这三种宽度：
+你还可以使用自定义应用 CSS（了解更多关于<a class="reference-link" href="../Theme%20development/Custom%20app-wide%20CSS.md">自定义应用级 CSS</a>）重新定义这三种宽度，并分配所需的像素值，如下所示：
 
 ```
 #trilium-app {
@@ -187,24 +187,24 @@
 
 ### 创建新卡片
 
-要创建新卡片，请按每列底部的 <span class="tn-icon bx bx-plus"></span> *新建卡片* 按钮。要在特定卡片的上方或下方创建新卡片，请右键点击或按住该卡片，然后从上下文菜单中选择 <span class="tn-icon bx bx-list-plus bx-flip-vertical"></span> *在上方插入新卡片* 或 <span class="tn-icon bx bx-list-plus"></span> *在下方插入新卡片*。或者，按 <kbd>Shift</kbd> + <kbd>Enter</kbd> 在获得焦点的卡片上方创建新卡片，或按 <kbd>Enter</kbd> 在其下方创建。
+要创建新卡片，请按每列底部的 <span class="tn-icon bx bx-plus"></span>_新卡片_按钮。要在特定卡片上方或下方创建新卡片，请右键点击或按住该卡片，然后从上下文菜单中选择 <span class="tn-icon bx bx-list-plus bx-flip-vertical"></span> *在上方插入新卡片*或 <span class="tn-icon bx bx-list-plus"></span> *在下方插入新卡片*。或者，按 <kbd>Shift</kbd> + <kbd>Enter</kbd> 在焦点卡片上方创建新卡片，或按 <kbd>Enter</kbd> 在其下方创建。
 
-接下来，输入新卡片的标题，然后按 <span class="tn-icon bx bx-plus-circle"></span> 按钮或 <kbd>Enter</kbd> 完成。轻触或点击文本框外部任意位置即可关闭。你还可以选择不同的图标和卡片模板。要了解更多关于卡片模板的信息，请参阅卡片模板（了解更多关于<a class="reference-link" href="../Advanced%20Usage/Templates.md">模板</a>）。
+接下来，输入新卡片的标题，然后按 <span class="tn-icon bx bx-plus-circle"></span> 按钮或 <kbd>Enter</kbd> 完成。轻触或点击文本框外任意位置即可关闭。你还可以选择不同的图标和卡片模板。要了解更多关于卡片模板的信息，请参见卡片模板（了解更多关于<a class="reference-link" href="../Advanced%20Usage/Templates.md">模板</a>）。
 
 卡片创建后，你可以轻触或点击它，或按 <kbd>Space</kbd> 来编辑笔记内容。
 
-使用 <span class="tn-icon bx bx-plus"></span> *新建卡片* 按钮时，卡片始终创建在列的末尾。要在列的顶部创建卡片，请右键点击或按住 <span class="tn-icon bx bx-plus-circle"></span> 按钮并选择 <span class="tn-icon bx bx-vertical-top"></span> *在顶部创建*。使用键盘快捷键时，将焦点放在列标题上并按 <kbd>Enter</kbd> 在列的开头创建新卡片，或按 <kbd>Shift</kbd> + <kbd>Enter</kbd> 在末尾创建。
+使用 <span class="tn-icon bx bx-plus"></span> *新卡片*按钮时，卡片始终创建在列的末尾。要在列的顶部创建卡片，请右键点击或按住 <span class="tn-icon bx bx-plus-circle"></span> 按钮并选择 <span class="tn-icon bx bx-vertical-top"></span> *在顶部创建*。使用键盘快捷键时，将焦点移到列标题并按 <kbd>Enter</kbd> 在列的开头创建新卡片，或按 <kbd>Shift</kbd> + <kbd>Enter</kbd> 在末尾创建。
 
 ### 将现有笔记添加为卡片
 
-你知识库中的任何笔记都可以表示为看板上的卡片。要将现有笔记添加到看板，请创建新卡片但不输入标题。而是按 <span class="tn-icon bx bx-folder-open"></span> 按钮。或者，使用列菜单中的 <span class="tn-icon bx bx-folder-open"></span> *将现有笔记添加为卡片* 命令。
+知识库中的任何笔记都可以表示为看板上的卡片。要将现有笔记添加到看板，请创建新卡片但不输入标题。而是按 <span class="tn-icon bx bx-folder-open"></span> 按钮。或者，使用列菜单中的 <span class="tn-icon bx bx-folder-open"></span> *将现有笔记添加为卡片*命令。
 
-在打开的对话框中，按名称搜索笔记，然后按*添加到列*按钮插入它。或者，你可以从笔记树中拖动任何笔记并将其拖放到看板上的所需位置。
+在打开的对话框中，按名称搜索笔记，然后按*添加到列*按钮插入。或者，你可以从笔记树中拖动任何笔记并将其拖放到看板上的所需位置。
 
 如果目标笔记已在看板集合的子树中，它将已列在**收件箱列**中。
 
 > [!IMPORTANT]
-> 添加到看板的笔记是克隆的，而不是复制的。这意味着在看板上对其标题、内容和属性的更改也会反映在其原始位置。了解更多关于克隆笔记的信息。
+> 添加到看板的笔记是克隆的，而不是复制的。这意味着在看板上对其标题、内容和属性的更改也会反映在其原始位置。更多信息请参见<a class="reference-link" href="../Basic%20Concepts%20and%20Features/Notes/Cloning%20Notes.md">克隆笔记</a>。
 
 ### 选择多张卡片
 
@@ -213,17 +213,17 @@
 你可以通过以下方式选择多张卡片：
 
 *   **使用鼠标和键盘：**
-    *   要将卡片添加到选择中，请按住 <kbd>Ctrl</kbd> 并点击该卡片。对其他卡片重复此操作，直到选中所有所需卡片。在按住 <kbd>Ctrl</kbd> 的同时再次点击已选中的卡片将取消选择。
+    *   要将卡片添加到选择中，请按住 <kbd>Ctrl</kbd> 并点击卡片。对其他卡片重复此操作，直到选中所有所需卡片。按住 <kbd>Ctrl</kbd> 再次点击已选中的卡片将取消选择。
     *   如果要选择的卡片在列中形成连续序列，请按住 <kbd>Shift</kbd>，点击序列中的第一张卡片，然后点击最后一张卡片。
     *   按 <kbd>Esc</kbd> 清除选择。
 *   **在移动端：**
-    1.  要进入选择模式，请轻触屏幕顶部的 <span class="tn-icon bx bx-select-multiple"></span> 按钮。标题栏中将出现一个选择工具栏，显示"已选择 0 张卡片"。
+    1.  要进入选择模式，请轻触屏幕顶部的 <span class="tn-icon bx bx-select-multiple"></span> 按钮。页眉中将出现一个选择工具栏，显示“已选择 0 张卡片”。
     2.  轻触要选择的卡片。如果再次轻触已选中的卡片，将取消选择。要选择列中的所有卡片，请按选择工具栏上的 <span class="tn-icon bx bx-list-check"></span> 按钮。要清除选择，请按 <span class="tn-icon bx bx-x"></span> 按钮。
     3.  使用侧边工具栏对选中的卡片应用操作。
 *   **仅使用键盘：**
-    *   要将当前获得焦点的卡片添加到选择中，请按 <kbd>Ctrl</kbd> + <kbd>Space</kbd>。对要选择的其他卡片重复此操作。在已选中的卡片上再次按 <kbd>Ctrl</kbd> + <kbd>Space</kbd> 将取消选择。
-    *   要选择列中的连续卡片序列，请按住 <kbd>Shift</kbd> 并使用 <kbd>Up</kbd> 和 <kbd>Down</kbd> 方向键扩大或缩小选择范围。
-    *   要选择焦点所在列中的每张卡片，请按 <kbd>Ctrl</kbd> + <kbd>A</kbd>。同样的操作也可从列菜单中使用，即 <span class="tn-icon bx bx-selection"></span> *选择所有卡片*。
+    *   要将当前焦点卡片添加到选择中，请按 <kbd>Ctrl</kbd> + <kbd>Space</kbd>。对其他要选择的卡片重复此操作。在已选中的卡片上再次按 <kbd>Ctrl</kbd> + <kbd>Space</kbd> 将取消选择。
+    *   要在列中选择连续的卡片序列，请按住 <kbd>Shift</kbd> 并使用 <kbd>Up</kbd> 和 <kbd>Down</kbd> 方向键扩展或缩小选择。
+    *   要选择焦点所在列中的每张卡片，请按 <kbd>Ctrl</kbd> + <kbd>A</kbd>。同样的操作也可从列菜单中以 <span class="tn-icon bx bx-selection"></span>_选择所有卡片*的形式使用。
     *   按 <kbd>Esc</kbd> 清除选择。
 
 ### 在列之间移动卡片
@@ -232,17 +232,17 @@
 
 #### 使用触摸或鼠标
 
-触摸并按住卡片，或用鼠标点击并按住它，然后将其拖动到所需的列。如果列使用手动排序，你还可以将卡片相对于其他卡片进行定位。
+触摸并按住卡片，或用鼠标点击并按住，然后将其拖动到所需的列。如果列使用手动排序，你还可以相对于其他卡片定位卡片。
 
 > [!TIP]
-> 要将卡片拖到看板外部，例如拖到笔记树、另一个分屏或另一个窗口，请按住 <kbd>Ctrl</kbd> 然后开始拖动。
+> 要将卡片拖到看板外，例如拖到笔记树、另一个分屏或另一个窗口，请按住 <kbd>Ctrl</kbd> 然后开始拖动。
 
-如果目标列已折叠，你可以将卡片拖放到其标题上以将其移动到该列（如果手动排序，则移动到末尾），而无需展开它。但是，如果你想在拖放之前查看其卡片，请将卡片悬停在该列上几秒钟；该列随后将展开。
+如果目标列已折叠，你可以将卡片拖放到其标题上以将其移动到该列（如果手动排序，则放在末尾），而无需展开它。但是，如果你想在拖放之前查看其卡片，请将卡片悬停在该列上几秒钟；该列将展开。
 
 > [!TIP]
 > **你可以快速将卡片拖放到列的开头或末尾。**
 > 
-> 当显示"拖放为第一张卡片"提示时，将卡片拖放到列的上方，使其成为该列中的第一张卡片。或者，当显示"拖放为最后一张卡片"提示时，将其拖放到列的下方，使其成为最后一张卡片。
+> 当显示“拖放为第一张卡片”提示时，将卡片拖放到列上方，使其成为该列的第一张卡片。或者，当显示“拖放为最后一张卡片”提示时，将卡片拖放到列下方，使其成为最后一张卡片。
 
 #### 使用键盘
 
@@ -259,7 +259,7 @@
 
 ### 在列内重新排列卡片
 
-列内的卡片可以自由重新排序，除非该列使用手动以外的排序选项。要重新定位卡片，请按照**在列之间移动卡片**部分所述拖动它，并将其拖放到所需位置。
+除非列使用手动以外的排序选项，否则列内的卡片可以自由重新排序。要重新定位卡片，请按照**在列之间移动卡片**部分所述拖动它，并将其拖放到所需位置。
 
 或者，你可以使用键盘快捷键移动选中的卡片：
 
@@ -268,44 +268,44 @@
 *   <kbd>Ctrl</kbd> + <kbd>Home</kbd>：移动到列的顶部。
 *   <kbd>Ctrl</kbd> + <kbd>End</kbd>：移动到列的末尾。
 
-如果选择了多张卡片，则仅当选择由连续卡片序列组成时，键盘快捷键才有效。
+如果选择了多张卡片，键盘快捷键仅在选择由连续卡片序列组成时才有效。
 
 ### 编辑卡片
 
-看板上的每张卡片都是常规笔记。要编辑与卡片关联的笔记，请点击或轻触该卡片，或在选中卡片时按 <kbd>Space</kbd>。笔记将在快速编辑对话框中打开，你可以在其中进行修改。你还可以使用卡片上下文菜单中的 <span class="tn-icon bx bx-link-external"></span> *打开笔记* 子菜单在新标签页、分屏或窗口中打开笔记。要在桌面版中在新标签页中打开笔记，你也可以直接点击或轻触 <span class="tn-icon bx bx-link-external"></span> *打开笔记* 菜单项，而无需打开其子菜单。
+看板上的每张卡片都是常规笔记。要编辑与卡片关联的笔记，请点击或轻触卡片，或在选中卡片时按 <kbd>Space</kbd>。笔记将在快速编辑对话框中打开，你可以在其中修改它。你还可以使用卡片上下文菜单中的 <span class="tn-icon bx bx-link-external"></span> *打开笔记*子菜单在新标签页、分屏或窗口中打开笔记。在桌面版本中要在新标签页中打开笔记，你也可以直接点击或轻触 <span class="tn-icon bx bx-link-external"></span> *打开笔记*菜单项，而无需打开其子菜单。
 
 要更改卡片的标题或图标，请使用以下方法之一：
 
 *   **使用鼠标：** 将鼠标指针放在卡片上，然后点击 <span class="tn-icon bx bx-rename"></span> 按钮。
 *   **在移动端：** 按住卡片直到侧边工具栏出现，然后轻触 <span class="tn-icon bx bx-rename"></span> 按钮。
-*   **使用键盘：** 选择一张卡片，然后按 <kbd>F2</kbd>。
+*   **使用键盘：** 选择卡片，然后按 <kbd>F2</kbd>。
 *   *使用上下文菜单：* 打开卡片的上下文菜单并选择 <span class="tn-icon bx bx-rename"></span> *编辑标题和图标*。
 
-然后你可以输入新名称并选择另一个图标。要将键盘焦点从标题字段移动到图标选择器，请按 <kbd>Shift</kbd> + <kbd>Tab</kbd>。点击或轻触卡片外部任意位置，或按 <kbd>Enter</kbd>，以应用更改。按 <kbd>Esc</kbd> 放弃更改。
+然后你可以输入新名称并选择另一个图标。要将键盘焦点从标题字段移动到图标选择器，请按 <kbd>Shift</kbd> + <kbd>Tab</kbd>。点击或轻触卡片外任意位置，或按 <kbd>Enter</kbd>，以应用更改。按 <kbd>Esc</kbd> 放弃更改。
 
-每张卡片都可以用不同的颜色着色。打开卡片的上下文菜单并选择所需的颜色。如果未分配颜色，卡片将继承列的颜色。
+每张卡片可以着不同的颜色。打开卡片的上下文菜单并选择所需的颜色。如果未分配颜色，卡片将继承列的颜色。
 
 > [!IMPORTANT]
-> 卡片的标题、图标和颜色与相应笔记的标题、图标和颜色相同。如果该笔记存在于笔记树中的多个位置，则在看板上对其标题、图标或颜色的任何更改也将应用于那些位置，而不仅仅是在看板上。
+> 卡片的标题、图标和颜色与相应笔记的相同。如果该笔记存在于笔记树中的多个位置，则在看板上对其标题、图标或颜色的任何更改也将应用于那些位置，而不仅仅是在看板上。
 
 ### 归档卡片
 
-可以使用卡片上下文菜单中的 <span class="tn-icon bx bx-archive-in"></span> *存档笔记* 命令在不删除卡片的情况下从看板中隐藏卡片。
+可以使用卡片上下文菜单中的 <span class="tn-icon bx bx-archive-in"></span> *存档笔记*命令在不删除卡片的情况下从看板中隐藏卡片。
 
-要再次显示已归档的卡片，请转到 <span class="tn-icon bx bx-cog"></span> *集合选项* 并切换 <span class="tn-icon bx bx-archive-in"></span> *显示已归档笔记*，或在<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20menu.md">笔记菜单</a> → *看板属性*（在*包含的笔记*部分下）中打开*显示已归档卡片和列*。已归档的卡片将显示为淡色。要恢复一张卡片，请打开其上下文菜单并选择 <span class="tn-icon bx bx-archive-out"></span> *取消归档笔记*。
+要再次显示已归档的卡片，请转到 <span class="tn-icon bx bx-cog"></span> *集合选项*并切换 <span class="tn-icon bx bx-archive-in"></span> *显示已归档笔记*，或在<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20menu.md">笔记菜单</a> → *看板属性*（在*包含的笔记*部分下）中打开*显示已归档卡片和列*。已归档的卡片将显示为淡化状态。要恢复一个卡片，请打开其上下文菜单并选择 <span class="tn-icon bx bx-archive-out"></span> *取消归档笔记*。
 
 > [!WARNING]
-> 归档卡片会在其笔记上设置 `#archived` 标志。如果该笔记存在于笔记树中的多个位置，它将在那些位置也显示为已归档。了解更多关于<a class="reference-link" href="../Basic%20Concepts%20and%20Features/Notes/Archived%20Notes.md">存档笔记</a>。
+> 归档卡片会在其笔记上设置 `#archived` 标志。如果该笔记存在于笔记树中的多个位置，它也会在这些位置显示为已归档。了解更多关于<a class="reference-link" href="../Basic%20Concepts%20and%20Features/Notes/Archived%20Notes.md">存档笔记</a>。
 
 ### 删除卡片
 
-你可以使用卡片上下文菜单中的 <span class="tn-icon bx bx-trash"></span> *删除笔记…* 命令，或按 <kbd>Shift</kbd> + <kbd>Delete</kbd>，从看板中移除一张或多张卡片并删除其关联的笔记。在移动端，按住卡片直到侧边工具栏出现，然后轻触 <span class="tn-icon bx bx-trash"></span> 按钮。
+你可以使用卡片上下文菜单中的 <span class="tn-icon bx bx-trash"></span> *删除笔记…*命令，或按 <kbd>Shift</kbd> + <kbd>Delete</kbd>，从看板中移除一张或多张卡片并删除其关联笔记。在移动端，按住卡片直到侧边工具栏出现，然后轻触 <span class="tn-icon bx bx-trash"></span> 按钮。
 
 #### 从看板中移除卡片而不删除笔记
 
-要从看板的列中移除卡片而保留其笔记，请打开卡片的上下文菜单并选择 <span class="tn-icon bx bx-task-x"></span> *从列中移除*，或按 <kbd>Delete</kbd>。在移动端，按住卡片直到侧边工具栏出现，然后轻触 <span class="tn-icon bx bx-task-x"></span> 按钮。
+要从看板的列中移除卡片同时保留其笔记，请打开卡片的上下文菜单并选择 <span class="tn-icon bx bx-task-x"></span> *从列中移除*，或按 <kbd>Delete</kbd>。在移动端，按住卡片直到侧边工具栏出现，然后轻触 <span class="tn-icon bx bx-task-x"></span> 按钮。
 
-启用收件箱列时此命令不可用。相反，将卡片拖动到收件箱列以实现相同的结果。
+启用收件箱列时此命令不可用。相反，将卡片拖动到收件箱列以达到相同结果。
 
 笔记保留在看板集合中，但未分配到任何列。要再次在看板上看到它，请启用收件箱列。
 
@@ -314,13 +314,13 @@
 
 ### 使用自定义卡片属性
 
-默认情况下，卡片的正面显示最少的信息：标题、图标和颜色。在某些情况下，这可能无法提供足够的有用信息。你可以扩展卡片以显示额外信息，称为卡片属性，例如截止日期、优先级、完成状态或你需要的任何其他信息。卡片属性使用与<a class="reference-link" href="../Advanced%20Usage/Attributes/Promoted%20Attributes.md">提升属性</a>相同的原理。
+默认情况下，卡片的正面显示最少的信息：标题、图标和颜色。在某些情况下，这可能无法提供足够的有用信息。你可以扩展卡片以显示额外信息，称为卡片属性，例如截止日期、优先级、完成状态或你需要的任何其他信息。卡片属性使用与<a class="reference-link" href="../Advanced%20Usage/Attributes/Promoted%20Attributes.md">提升属性</a>相同的原则。
 
 #### 创建新属性
 
 要创建新属性，请按照以下步骤操作：
 
-1.  转到<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20menu.md">笔记菜单</a> → *看板属性*，找到*卡片属性*部分，然后按 <span class="tn-icon bx bx-plus"></span> *创建新属性* 按钮。
+1.  转到<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20menu.md">笔记菜单</a> → *看板属性*，找到*卡片属性*部分，然后按 <span class="tn-icon bx bx-plus"></span> *创建新属性*按钮。
 2.  输入属性的名称。这是 Trilium 使用的内部名称，因此不要使用空格或特殊字符。
 3.  选择类型（文本、数字、复选框等）。
 4.  设置显示名称。这是卡片上显示的名称。
@@ -339,32 +339,32 @@
 
 #### 修改自定义属性的值
 
-要设置自定义属性的值，请点击或轻触卡片，然后在对话框标题栏中输入或选择所需的值。
+要设置自定义属性的值，请点击或轻触卡片，然后在对话框页眉中输入或选择所需的值。
 
-对于"选择"或"复选框"类型的属性，你可以使用卡片上下文菜单中的*属性*部分快速更改值。
+对于“选择”、“复选框”或“日期”类型的属性，你可以使用卡片上下文菜单中的*属性*部分快速更改值。日期属性的子菜单提供*未设置*以清除值，以及一个日期选择器：一个用于选择任意日期的日历，其下方有*今天*、*明天*和*下周*（下周的第一天，按照一周第一天选项设置）按钮。使用箭头更改月份，点击某天进行设置。使用键盘时，方向键按天和周移动，<kbd>Page Up</kbd> 和 <kbd>Page Down</kbd> 按月移动，<kbd>Enter</kbd> 设置日期；从最后一周按 <kbd>↓</kbd> 移动到按钮，<kbd>←</kbd> 和 <kbd>→</kbd> 在按钮之间移动，<kbd>↑</kbd> 返回日历。
 
 #### 重新排序、隐藏、重新定义和删除自定义属性
 
 转到<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20menu.md">笔记菜单</a> → *看板属性*。在*卡片属性*部分下，你可以：
 
 *   按住属性旁边显示的 **\=** 手柄，然后向上或向下拖动项目以重新排序属性。这决定了属性在卡片上显示的顺序。
-*   关闭开关以从卡片正面隐藏属性。编辑卡片时该属性仍然可用。对于当前分组属性，该开关被禁用。
+*   关闭开关以从卡片正面隐藏属性。编辑卡片时该属性仍然可用。对于当前分组属性，开关被禁用。
 *   按 <span class="tn-icon bx bxs-edit"></span> 按钮修改属性的定义。
-*   按 <span class="tn-icon bx bx-trash"></span> 按钮从看板集合中的每个笔记中删除该属性及其所有值。
+*   按 <span class="tn-icon bx bx-trash"></span> 按钮从看板集合中的每个笔记删除该属性及其所有值。
 
 卡片从模板或另一个父笔记获得的属性可以在此处重新排序和隐藏，但不能修改或删除。在定义它们的笔记上编辑它们。
 
-如果卡片定义了具有相同名称但不同类型或不同选择选项的属性，例如通过两个不同的模板，或者如果卡片用自己的定义覆盖了看板的定义，则该属性被标记为*多重定义*。此类属性按文本排序，并且不会出现在卡片的上下文菜单中。
+如果卡片定义了具有相同名称但不同类型或不同选择选项的属性，例如通过两个不同的模板，或者如果卡片用自己的定义覆盖了看板的定义，则该属性标记为*多重定义*。此类属性按文本排序，不会出现在卡片的上下文菜单中。
 
 ### 管理卡片模板
 
-创建新卡片时，Trilium 默认提供四个模板：*文本*、*Markdown*、*画布*和*电子表格*。你可以自定义此列表，以包含其他笔记类型或具有预定义占位内容及预填卡片属性的自定义模板。
+创建新卡片时，Trilium 默认提供四个模板：*文本*、*Markdown*、*画布*和*电子表格*。你可以自定义此列表以包含其他笔记类型或具有预定义占位内容和预填卡片属性的自定义模板。
 
-要自定义卡片模板，请转到<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20menu.md">笔记菜单</a> → *看板属性*，找到*卡片模板*。在此你可以：
+要自定义卡片模板，请转到<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20menu.md">笔记菜单</a> → *看板属性*，找到*卡片模板*。在这里你可以：
 
-*   通过按 <span class="tn-icon bx bx-list-plus"></span> *添加现有模板* 按钮，然后选择所需的笔记类型或模板，来包含知识库中已创建的笔记类型或笔记模板。
-*   通过按 <span class="tn-icon bx bx-plus"></span> *创建新模板* 按钮创建新模板。将打开模板编辑器，你可以在其中定义图标、标题、默认属性值和默认内容。笔记模板将创建为看板集合的子笔记。
-*   按 <span class="tn-icon bx bx-x"></span> 按钮从列表中移除模板。模板仅从列表中移除，不会从知识库中删除。你可以使用 <span class="tn-icon bx bx-list-plus"></span> *添加现有模板* 再次添加它。
+*   通过按 <span class="tn-icon bx bx-list-plus"></span> *添加现有模板*按钮，然后选择所需的笔记类型或模板，包含已在知识库中创建的笔记类型或笔记模板。
+*   通过按 <span class="tn-icon bx bx-plus"></span> *创建新模板*按钮创建新模板。模板编辑器将打开，你可以在其中定义图标、标题、默认属性值和默认内容。笔记模板将创建为看板集合的子笔记。
+*   按 <span class="tn-icon bx bx-x"></span> 按钮从列表中移除模板。模板仅从列表中移除，不会从知识库中删除。你可以使用 <span class="tn-icon bx bx-list-plus"></span> *添加现有模板*再次添加它。
 *   按 <span class="tn-icon bx bx-dots-vertical-rounded"></span> 按钮打开下拉菜单，让你编辑、在新窗口中打开、复制或删除模板。此按钮仅对自定义笔记模板可见。
 *   按住模板旁边显示的 **\=** 手柄，然后向上或向下拖动项目以重新排序模板。这决定了创建新卡片时模板在下拉列表中列出的顺序。你可以将最常用的模板移到顶部以便更快访问。
 
@@ -372,7 +372,7 @@
 
 在看板上，卡片被分组到列中。卡片所属的列由**分组属性**的值决定，该属性是卡片笔记的常规属性。
 
-默认情况下，看板使用**状态**属性作为分组属性。当你将卡片移动到名为"等待客户"的列时，卡片的 Status 属性被设置为"等待客户"。
+默认情况下，看板使用 **Status** 属性作为分组属性。当你将卡片移动到名为“Waiting on Customer”的列时，卡片的 Status 属性将设置为“Waiting on Customer”。
 
 > [!NOTE]
 > 在底层，Status 属性在看板集合笔记上以名称 `status` 声明。它是一个选择类型属性，可继承且已提升。每个选择选项成为一列，在看板上创建的每个新列都会扩展选项列表。
@@ -381,17 +381,17 @@
 
 要快速创建新分组属性：
 
-1.  打开看板标题栏中的 <span class="tn-icon bx bx-category-alt"></span> *分组依据* 下拉菜单，然后选择 <span class="tn-icon bx bx-plus"></span> *创建新属性*。
+1.  打开看板页眉中的 <span class="tn-icon bx bx-category-alt"></span> *分组依据*下拉菜单，选择 <span class="tn-icon bx bx-plus"></span> *创建新属性*。
 2.  填写*名称*字段。这是 Trilium 内部使用的，因此不要使用空格或特殊字符。
 3.  输入*显示名称*。这是下拉列表中显示的属性名称。
 4.  按*保存并关闭*。
 
 > [!TIP]
-> 由于分组属性是常规卡片属性，你也可以在*看板属性*中创建它。确保将属性类型设置为"选择"。
+> 由于分组属性是常规卡片属性，你也可以在*看板属性*中创建它。确保将属性类型设置为“选择”。
 
 #### 切换分组属性
 
-切换分组属性可让你按优先级、类别或任何其他自定义分组属性查看卡片。你可以随时使用看板标题栏中的 <span class="tn-icon bx bx-category-alt"></span> *分组依据* 下拉菜单切换分组属性。你也可以使用 `#board:groupBy=<_属性名称_>` 标签更改它。
+切换分组属性可让你按优先级、类别或任何其他自定义分组属性查看卡片。你可以随时使用看板页眉中的 <span class="tn-icon bx bx-category-alt"></span> *分组依据*下拉菜单切换分组属性。你也可以使用 `#board:groupBy=<_属性名称_>` 标签更改它。
 
 > [!WARNING]
 > 手动排序列中卡片的顺序对应于它们在看板集合子树中的位置。这意味着卡片顺序在所有视图中共享，无论分组属性如何。在一个视图中重新排序笔记也会在使用不同分组属性的其他视图中重新排序它们。
@@ -406,7 +406,7 @@
 
 在此模式下：
 
-*   列代表关系的*目标笔记*。
+*   列表示关系的*目标笔记*。
 *   创建新列时，你选择笔记而不是输入列名。
 *   列图标与目标笔记匹配。
 *   在列之间移动笔记会更改它们的关系。
@@ -414,8 +414,8 @@
 
 使用关系而不是标签有几个好处：
 
-*   笔记的状态或分组在看板外部可见，例如在<a class="reference-link" href="../Note%20Types/Note%20Map.md">笔记地图</a>上。
-*   列从目标笔记获取标题和图标，因此在笔记树中的任何位置重命名该笔记都会重命名该列。
+*   笔记的状态或分组在看板外可见，例如在<a class="reference-link" href="../Note%20Types/Note%20Map.md">笔记地图</a>上。
+*   列从目标笔记获取标题和图标，因此在笔记树中任何位置重命名该笔记都会重命名该列。
 
 要使用关系进行分组：
 
@@ -434,21 +434,21 @@
 
 ### 高级筛选
 
-如果你需要细化视图以仅显示匹配常规文本搜索之外的特定条件的卡片，你可以使用 Trilium 的搜索查询语法。以下是一些示例查询：
+如果你需要细化视图以仅显示匹配常规文本搜索之外的特定条件的卡片，可以使用 Trilium 的搜索查询语法。以下是一些示例查询：
 
-仅显示 **Priority** 属性设置为"低"的卡片：
+仅显示 **Priority** 属性设置为“Low”的卡片：
 
 ```
 #priority=Low
 ```
 
-仅显示 **Issue Category** 设置为"软件"且 **Site** 设置为"办公室"或"工厂"的卡片：
+仅显示 **Issue Category** 设置为“Software”且 **Site** 设置为“Office”或“Factory”的卡片：
 
 ```
 #issueCategory="Software" AND (#site="Office" OR #site="Factory")
 ```
 
-仅显示未来七天内 **Due Date** 且尚未标记为 **Done** 的卡片：
+仅显示 **Due Date** 在未来七天内且尚未标记为 **Done** 的卡片：
 
 ```
 #dueDate >= TODAY AND #dueDate <= TODAY+7 AND #!done
@@ -458,10 +458,10 @@
 
 ## 链接到列或卡片
 
-你可以创建一个链接，打开看板并指向特定的列或卡片。打开列菜单或卡片的上下文菜单，选择 <span class="tn-icon bx bx-copy"></span> *复制引用*，然后将链接粘贴到你需要的位置。
+你可以创建一个链接，打开看板并指向特定列或卡片。打开列菜单或卡片的上下文菜单，选择 <span class="tn-icon bx bx-copy"></span> *复制引用*，然后将链接粘贴到你需要的地方。
 
-在文本笔记中，粘贴的链接显示其所指向的列或卡片的标题、图标和颜色。在 Markdown 或代码笔记中，则粘贴纯链接地址。打开链接会将看板滚动到该列或卡片并使其获得焦点。如果该列属于不同的分组属性，看板将首先切换到该属性。
+在文本笔记中，粘贴的链接显示其所指向列或卡片的标题、图标和颜色。在 Markdown 或代码笔记中，则粘贴纯链接地址。打开链接会将看板滚动到该列或卡片并使其获得焦点。如果该列属于不同的分组属性，看板会先切换到该属性。
 
 ## 只读看板
 
-标记为[只读](../Basic%20Concepts%20and%20Features/Notes/Read-Only%20Notes.md)的看板仅显示其卡片。它没有添加卡片或列的按钮，列和卡片标题无法重命名，列图标无法更改。卡片和列无法通过键盘拖动、移动或删除，从笔记树拖入的笔记也不会被添加。卡片或列的上下文菜单仅保留不更改任何内容的条目，例如打开笔记或 <span class="tn-icon bx bx-copy"></span> *复制引用*，并且看板自身的菜单不会打开。卡片仍然可以按另一个属性分组，但选择不会被保存，也无法创建新的分组属性。
+标记为[只读](../Basic%20Concepts%20and%20Features/Notes/Read-Only%20Notes.md)的看板仅显示其卡片。它没有添加卡片或列的按钮，列和卡片标题无法重命名，列图标无法更改。卡片和列无法拖动、移动或使用键盘删除，从笔记树拖入的笔记也不会被添加。卡片或列的上下文菜单仅保留不更改任何内容的条目，例如打开笔记或 <span class="tn-icon bx bx-copy"></span>_复制引用*，看板自身的菜单不会打开。卡片仍然可以按另一个属性分组，但选择不会被保存，也无法创建新的分组属性。

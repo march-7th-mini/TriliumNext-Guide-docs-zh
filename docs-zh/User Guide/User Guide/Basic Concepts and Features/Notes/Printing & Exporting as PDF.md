@@ -5,31 +5,31 @@ Trilium 允许将笔记打印到真实打印机，或通过<a class="reference-l
 
 请注意，目前并非所有笔记类型都可打印。我们计划在未来扩大支持的笔记类型范围。
 
-打印和导出为 PDF 并非完美。由于技术限制，有时甚至浏览器或 Electron 的故障，文本在某些情况下可能会被截断。
+打印和导出为 PDF 并非完美。由于技术限制，有时甚至是浏览器或 Electron 的故障，文本在某些情况下可能会被截断。
 
 ## 在桌面上打印笔记或导出为 PDF
 
 > [!NOTE]
-> v0.103.0 之前的版本有两个不同的选项，一个用于打印，另一个用于导出为 PDF。随着打印预览的引入，这些功能已统一。
+> v0.103.0 之前的版本有两个不同的选项，一个用于打印，另一个用于导出为 PDF。随着打印预览的引入，这些功能已被统一。
 
-在 Trilium 的桌面应用程序上，可以将笔记导出为 PDF。要打印笔记：
+在 Trilium 桌面应用程序上，可以将笔记导出为 PDF。要打印笔记：
 
-*   按下<a class="reference-link" href="../UI%20Elements/Note%20menu.md">笔记菜单</a>中的菜单按钮并选择 _打印笔记_。
+*   按下<a class="reference-link" href="../UI%20Elements/Note%20menu.md">笔记菜单</a>中的菜单按钮，然后选择 _打印/导出为 PDF…_。
 *   或者，可以通过[键盘快捷键](../Keyboard%20Shortcuts.md)（默认未分配）或通过[命令面板](../Navigation/Jump%20to%20%26%20command%20palette.md)触发打印。
 
-这将接下来触发打印预览屏幕。
+接下来将触发打印预览屏幕。
 
 ### 打印预览与打印选项
 
 打印预览对话框允许调整以下打印选项：
 
 *   要使用的打印机
-    *   _另存为 PDF_ 会生成结构化的 PDF（保留目录、保持文本可选中）。优先使用此选项而非操作系统自带的其他虚拟 PDF 打印机。
-*   页面方向：_纵向_（默认）或 _横向_。
+    *   _另存为 PDF_ 会生成结构化的 PDF（保留目录、保持文本可选中）。优先使用此选项，而不是操作系统自带的其他虚拟 PDF 打印机。
+*   页面方向：_纵向_（默认）或_横向_。
 *   页面大小
 *   将整个内容从 10% 缩放到 200%，以改善页面内的适配。
-*   边距，可以完全移除，或为四个边缘分别单独调整。
-*   仅打印部分页面。单个页码用冒号分隔，支持连字符范围（例如 3-5 表示第 3 至第 5 页）。
+*   边距，可以完全移除，或针对四条边分别调整。
+*   仅打印部分页面。单个页码用冒号分隔，支持基于连字符的范围（例如 3-5 表示第 3 页到第 5 页）。
 
 其他交互：
 
@@ -46,7 +46,7 @@ Trilium 允许将笔记打印到真实打印机，或通过<a class="reference-l
 
 此功能允许打印笔记。它既适用于桌面客户端，也适用于 Web 端。
 
-要打印笔记，点击<a class="reference-link" href="../UI%20Elements/Note%20menu.md">笔记菜单</a>并选择 _打印笔记_。根据笔记的大小和类型，这可能需要几秒钟。之后你将重定向到系统/浏览器打印对话框。
+要打印笔记，点击<a class="reference-link" href="../UI%20Elements/Note%20menu.md">笔记菜单</a>并选择 _打印/导出为 PDF…_。根据笔记的大小和类型，这可能需要几秒钟。之后你将跳转到系统/浏览器打印对话框。
 
 在服务器或 PWA（移动端）上，由于技术限制，该选项不可用，将被隐藏。
 
@@ -57,13 +57,13 @@ Trilium 允许将笔记打印到真实打印机，或通过<a class="reference-l
 考虑调整字体大小并使用[分页符](../../Note%20Types/Text/Insert%20buttons.md)来绕过布局问题。
 
 > [!TIP]
-> 虽然应用程序的浏览器版本不提供直接导出为 PDF 的功能，但仍然可以通过选择 _打印_ 选项并选择"另存为 PDF"作为打印机（取决于浏览器）来生成 PDF。一般来说，Mozilla Firefox 具有更好的打印能力。
+> 虽然应用程序的浏览器版本不提供直接导出为 PDF 的功能，但仍然可以通过选择 _打印_ 选项并选择“另存为 PDF”作为打印机（取决于浏览器）来生成 PDF。一般来说，Mozilla Firefox 具有更好的打印能力。
 
 ### 自动打开文件
 
 导出 PDF 后，它会自动使用系统默认应用程序打开以便预览。
 
-请注意，如果你在 Linux 上使用 GNOME 桌面环境，有时默认应用程序可能看起来不正确（例如在 GIMP 中打开）。这是因为使用了 GNOME 的"推荐应用程序"列表。
+请注意，如果你在 Linux 上使用 GNOME 桌面环境，有时默认应用程序可能看起来不正确（例如在 GIMP 中打开）。这是因为它使用了 GNOME 的“推荐应用程序”列表。
 
 要解决此问题，你可以通过以下命令行更改 PDF 的推荐应用程序。首先，通过 `gio mime application/pdf` 列出可用的应用程序，然后设置所需的应用程序。例如使用 GNOME 的 Evince：
 
@@ -82,7 +82,7 @@ gio mime application/pdf
 生成的集合将包含该集合的所有子笔记，同时保持层级结构。
 
 > [!NOTE]
-> 打印或导出为 PDF 时并非支持所有笔记类型。遇到不支持的笔记时，会跳过它。最后，如果有任何笔记被跳过，将显示一条消息，并提供查看完整跳过笔记列表的可能性。_约束与限制_ 中描述的相同限制适用。
+> 打印或导出为 PDF 时并非支持所有笔记类型。遇到不支持的笔记时，将被跳过。最后，如果有任何笔记被跳过，将显示一条消息，并提供查看完整跳过笔记列表的选项。_约束与限制_ 中描述的相同限制同样适用。
 
 ## 键盘快捷键
 
@@ -96,29 +96,28 @@ gio mime application/pdf
 打印时并非支持所有<a class="reference-link" href="../../Note%20Types.md">笔记类型</a>，在这种情况下，_打印_ 和 _导出为 PDF_ 选项将被禁用。
 
 *   对于<a class="reference-link" href="../../Note%20Types/Text.md">文本</a>笔记，无论当前主题如何，字体、背景和表格颜色都以浅色主题的色调打印（参见<a class="reference-link" href="../../Note%20Types/Text/General%20formatting.md">常规格式</a>）。
-*   对于<a class="reference-link" href="../../Note%20Types/Code.md">代码</a>笔记：
-    *   不打印行号。
-    *   启用了语法高亮，但强制使用默认主题（Visual Studio）。
+*   <a class="reference-link" href="../../Note%20Types/Code.md">代码</a>笔记以语法高亮打印，使用<a class="reference-link" href="../UI%20Elements/Options.md">选项</a> → _代码笔记_ → _外观_ 中的 _浅色主题_，无论当前主题如何。除非关闭 _代码笔记_ → _编辑器_ → _行号_，否则行将被编号。
 *   <a class="reference-link" href="../../Note%20Types/Render%20Note.md">渲染笔记</a>按其显示内容打印，一旦设置了其 `~renderNote` 关系，就不会再次运行其脚本。
 *   对于<a class="reference-link" href="../../Collections.md">集合</a>，支持以下内容：
-    *   <a class="reference-link" href="../../Collections/List%20View.md">列表视图</a>，允许一次打印多个笔记同时保留层级结构（类似于一本书）。
+    *   <a class="reference-link" href="../../Collections/List%20View.md">列表视图</a>，允许一次打印多个笔记，同时保留层级结构（类似于一本书）。
     *   <a class="reference-link" href="../../Collections/Presentation.md">演示文稿</a>，其中显示每张幻灯片/子笔记。
         *   支持大多数笔记类型，尤其是具有图像表示的类型，如<a class="reference-link" href="../../Note%20Types/Canvas.md">画布</a>和<a class="reference-link" href="../../Note%20Types/Mind%20Map.md">思维导图</a>。
     *   <a class="reference-link" href="../../Collections/Table.md">表格</a>，其中表格以适合打印的方式渲染。
         *   过于复杂的表格（尤其是具有多列的表格）可能无法正确适配，但得益于分页，支持具有大量行的表格。
         *   考虑以横向模式打印，或在导出为 PDF 时使用 `#printLandscape`。
     *   其余集合类型不受支持，但我们计划在某个时候添加对所有集合类型的支持。
-*   不再支持使用<a class="reference-link" href="../../Theme%20development/Custom%20app-wide%20CSS.md">自定义应用级 CSS</a>进行打印，而是需要使用自定义 `printCss` 关系（见下文）。
+*   <a class="reference-link" href="../Navigation/Search.md">保存的搜索</a>将其结果以列表形式打印，可在 _搜索预览_ 或 _列表_ 视图中显示。
+*   不再支持使用<a class="reference-link" href="../../Theme%20development/Custom%20app-wide%20CSS.md">自定义全应用 CSS</a> 进行打印，而是需要使用自定义的 `printCss` 关系（见下文）。
 
 ## 自定义打印 CSS
 
-作为高级用例，可以自定义用于打印的 CSS，例如调整字体、大小或边距。请注意，<a class="reference-link" href="../../Theme%20development/Custom%20app-wide%20CSS.md">自定义应用级 CSS</a>不适用于打印。
+作为高级用例，可以自定义用于打印的 CSS，例如调整字体、大小或边距。请注意，<a class="reference-link" href="../../Theme%20development/Custom%20app-wide%20CSS.md">自定义全应用 CSS</a> 不适用于打印。
 
 为此：
 
 *   创建一个 CSS [代码笔记](../../Note%20Types/Code.md)。
 *   在要打印的笔记上，应用 `~printCss` 关系指向新创建的 CSS 代码笔记。
-*   要将 CSS 应用于多个笔记，考虑使用[可继承属性](../../Advanced%20Usage/Attributes/Attribute%20Inheritance.md)或<a class="reference-link" href="../../Advanced%20Usage/Templates.md">模板</a>。
+*   要将 CSS 应用于多个笔记，请考虑使用[可继承属性](../../Advanced%20Usage/Attributes/Attribute%20Inheritance.md)或<a class="reference-link" href="../../Advanced%20Usage/Templates.md">模板</a>。
 
 例如，要将文档的字体从主题或用户定义的字体更改为衬线字体：
 
@@ -130,18 +129,18 @@ body {
 ```
 
 > [!IMPORTANT]
-> 更改 `--print-font-family` 时，请确保更改在 `body` 级别而非 `:root` 级别进行，否则由于优先级规则将不会被采用。
+> 更改 `--print-font-family` 时，请确保在 `body` 级别而不是 `:root` 级别进行更改，否则由于优先级规则，它不会被采用。
 
 备注：
 
 *   可以通过使用多个 `~printCss` 关系添加多个 CSS 笔记。
 *   如果指向 `printCss` 的笔记没有正确的笔记类型或 MIME 类型，它将被忽略。
-*   如果从使用<a class="reference-link" href="../../Theme%20development/Custom%20app-wide%20CSS.md">自定义应用级 CSS</a>的先前版本迁移，则不需要 `@media print {`，因为样式表仅用于打印。
+*   如果从使用<a class="reference-link" href="../../Theme%20development/Custom%20app-wide%20CSS.md">自定义全应用 CSS</a> 的先前版本迁移，则不需要 `@media print {`，因为样式表仅用于打印。
 
 ## 底层原理
 
-打印和导出为 PDF 使用相同的机制：笔记在单独的网页中单独渲染，然后发送到浏览器或 Electron 应用程序以进行打印或导出为 PDF。
+打印和导出为 PDF 都使用相同的机制：笔记在单独的网页中单独渲染，然后发送到浏览器或 Electron 应用程序以进行打印或导出为 PDF。
 
 渲染单个笔记的网页实际上可以在 Web 浏览器中访问。例如 `http://localhost:8080/#root/WWRGzqHUfRln/RRZsE9Al8AIZ?ntxId=0o4fzk` 变为 `http://localhost:8080/?print#root/WWRGzqHUfRln/RRZsE9Al8AIZ`。
 
-在 Web 浏览器中访问打印笔记可以方便地调试，以了解特定笔记为何渲染不佳。渲染机制类似于<a class="reference-link" href="Note%20List.md">笔记列表</a>中使用的机制。
+在 Web 浏览器中访问打印笔记可以方便地进行调试，以了解为什么特定笔记渲染不佳。渲染机制类似于<a class="reference-link" href="Note%20List.md">笔记列表</a>中使用的机制。

@@ -11,7 +11,7 @@
         </tr>
         <tr>
             <td><a class="reference-link" href="Frontend%20Basics/Custom%20Widgets.md">自定义小组件</a></td>
-            <td>这些可以在各个位置引入新的 UI 元素，例如靠近<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">笔记树</a>、内容区域，甚至<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Right%20Sidebar.md">右侧边栏</a>。</td>
+            <td>这些可以在各种位置引入新的 UI 元素，例如靠近<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Note%20Tree.md">笔记树</a>、内容区域，甚至<a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Right%20Sidebar.md">右侧边栏</a>。</td>
         </tr>
         <tr>
             <td><a class="reference-link" href="Frontend%20Basics/Launch%20Bar%20Widgets.md">启动栏小组件</a></td>
@@ -19,7 +19,7 @@
         </tr>
         <tr>
             <td><a class="reference-link" href="../Note%20Types/Render%20Note.md">渲染笔记</a></td>
-            <td>这允许在笔记内部渲染自定义内容，使用 HTML 或 Preact JSX。</td>
+            <td>这允许使用 HTML 或 Preact JSX 在笔记内部渲染自定义内容。</td>
         </tr>
     </tbody>
 </table>
@@ -41,7 +41,7 @@
 
 ## 脚本 API
 
-Trilium 的前端 API 对所有在前端上下文中运行的脚本以全局变量 `api` 的形式提供。有关 API 的参考，请参阅<a class="reference-link" href="Script%20API/Frontend%20API">前端 API</a>。
+Trilium 的前端 API 以全局变量 `api` 的形式提供给所有在前端上下文中运行的脚本。有关 API 的参考，请参阅<a class="reference-link" href="Script%20API/Frontend%20API.md">前端 API</a>。
 
 ### 教程
 

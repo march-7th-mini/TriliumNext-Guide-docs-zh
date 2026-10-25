@@ -99,11 +99,6 @@
     "title": "常见概念",
     "title_hash": "a7b3dcb944d40a58d9e9b71f1d7cba73611cf4bb007de2d8ccaf44910ff381e6"
   },
-  "meta:Q2z6av6JZVWm": {
-    "id": "_zh_Xb28Krlw",
-    "title": "前端 API",
-    "title_hash": "5870fd8194ffc282d059cd2e8fa4620ce484f3b7c2e29ab1d3b5f2c59380c77c"
-  },
   "meta:cNpC0ITcfX0N": {
     "id": "_zh_XRavVSfi",
     "title": "破坏性变更",
@@ -270,8 +265,8 @@
     "title": "文档",
     "title_hash": "c205924de0fe636ccdde4ed616fef66f75b78e98b03620637965c033fd161141",
     "status": "done",
-    "hash": "c4335bb395a54e1c37525e760c71fbba54790fc19c879de62cbcfd1b944be5e8",
-    "output_hash": "dafceee21f4d70a5d0767a7dc4b9f620405f8c61164ed5c1d275903eedf4f431"
+    "hash": "e05559ad2885e7de3f949fccdbc8a24d5d0251f0436cfe3924803b2cab332347",
+    "output_hash": "b55088233d1fa41bf619660ceea494b038aaae65a46b5390043a171748d1c148"
   },
   "Developer Guide/Developer Guide/Documentation/Documentation references in the application.md": {
     "id": "_zh_6y26A378",
@@ -1031,8 +1026,8 @@
     "title": "桌面安装",
     "title_hash": "7917af6d4c487d13218980094cdfa5165e61d4ab1cb8837255408558aeb051d4",
     "status": "done",
-    "hash": "3b1a3a96d0db9e3659a64a8d8b01f44761f13622cbc80465c85af2bf52322c40",
-    "output_hash": "d0404b0fa57dba16ebe1f6167ad6c3e8bb4770e443993a09040b8bc62f8d5833"
+    "hash": "a4936127b10c4c019322839c64c06f186efb2434552304df22cc7592b26e2110",
+    "output_hash": "20bf33a9153298b20e2ef1e77a15bc7ce420286a12c20828059e7aa5579ea91a"
   },
   "User Guide/User Guide/Installation & Setup/Desktop Installation/Using the desktop application as a server.md": {
     "id": "_zh_CCySwh8y",
@@ -1060,8 +1055,8 @@
     "title": "托盘图标与自动启动",
     "title_hash": "b2742326740cddade4ed22af83fb4bcc98c2b2af23ac728b0d82b54cdaacf2c5",
     "status": "done",
-    "hash": "93de574e8eef5e9501c78cdc435279e84e666c32af3d104f2e89845fd299d438",
-    "output_hash": "a2b1063af4756b005febd306ccd5d7e08600ad4dd758783800f40343bcbbfc2b"
+    "hash": "9b94e7a07f7a3a9684d03c17ca60cd2e1119cf6c8ba39efbde832e529b2173e4",
+    "output_hash": "97297e6b2501a690474f0f3ed45770339c8e4dfe704e34ce05fea9e1829110c8"
   },
   "User Guide/User Guide/Installation & Setup/Server Installation.md": {
     "id": "_zh_6uSqYiEz",
@@ -1076,8 +1071,8 @@
     "title": "Linux 打包版本",
     "title_hash": "e2b520a5ffbaa37aee9dd95451557468b9d556d6cf75a9e0a9d1195f012ab739",
     "status": "done",
-    "hash": "93561da8efa365c89a0bf69d2bd790d1bf4cc82aa0e39e6f4a708b7a11333ff5",
-    "output_hash": "2b4e4fe989b3a8874be9a1fd09f56c51b8d3ff1727713f637432ff404413e07e"
+    "hash": "081ad9e61c9a7b8ca259ae80992b959a079d070e0c88bfff1627491bf216f0cf",
+    "output_hash": "63dbcad6950442d4ea913475234fafc9d8bf73e32bc980d7313f3eeb73b95e1b"
   },
   "User Guide/User Guide/Installation & Setup/Server Installation/1. Installing the server/Using Docker.md": {
     "id": "_zh_EnTyeHGN",
@@ -1099,7 +1094,8 @@
     "title": "手动安装",
     "title_hash": "57d0ea1cc4df85b4bfc27dcb07cc7a9339cfa1263bde196be587b9423eb9fe0f",
     "status": "done",
-    "hash": "9260dde8fafd576642209a1794469f7dfad82ba19e1770b7d2aa08c1c3c3ad94"
+    "hash": "2de84573ea113070d7451384e60029a04246612359d9288fee8c136b15632841",
+    "output_hash": "dad46edca0981a9997069ffaaf5e5f7422f107f6a68e8c5c8b61a96b7145bc39"
   },
   "User Guide/User Guide/Installation & Setup/Server Installation/1. Installing the server/Using Kubernetes.md": {
     "id": "_zh_KsbkBfI3",
@@ -1142,7 +1138,8 @@
     "title": "可信代理",
     "title_hash": "e708f76d9c728b6dbe5353ecdd39036d7c11dadde67f30ed63c4d70957077fd9",
     "status": "done",
-    "hash": "60b0c1799fa789abcff05f7cbf84f48580cb1be49f79271ec22b1e2a051cc40b"
+    "hash": "ad01c9b4d2ca72287d196b2177163614fad3610ca8bdeac805bfefd2bada6969",
+    "output_hash": "497b63d62d0c08d8ecd23d46af31fc44eba4ffdde8a68115eee5153a72c8ef59"
   },
   "User Guide/User Guide/Installation & Setup/Server Installation/2. Reverse proxy/Traefik.md": {
     "id": "_zh_54ob4TUL",
@@ -1164,7 +1161,8 @@
     "title": "身份验证",
     "title_hash": "66880d2d8216260d201917a72eb245440ef18ba9b54c070ee39aa4c343ae126f",
     "status": "done",
-    "hash": "af7f8931398a096f9cec55ded09e6efa7d64fa6d399a8ea739bed08762495c1b"
+    "hash": "afbbe5feb0695f5167d08dc80a6b1cc4d769b2b3fa3981b0ea4406df4069a20d",
+    "output_hash": "ee46df17c519998532f6075176bf59b987c7d4901fbc11d128f3ea7a4fc96ce9"
   },
   "User Guide/User Guide/Installation & Setup/Server Installation/Authentication/Resetting your password.md": {
     "id": "_zh_yRKd4r1n",
@@ -1178,7 +1176,8 @@
     "title": "使用 TOTP 的多因素身份验证",
     "title_hash": "bbd7d2549feefe885c6d1d30a62fb403e21ad07e8db2b431f39b4e6173902d55",
     "status": "done",
-    "hash": "2924755223b35e178f022a43181e847de9212b19f100f3abfa18e14633d9734f"
+    "hash": "c51d8d57b022e33aba19b25061a494dfc11b6dabc089a02acb6c805b4b87cb00",
+    "output_hash": "6ddcd00436db8905fda6758b24de3d6de0b0eedd1e4f6c677da78236458731ca"
   },
   "User Guide/User Guide/Installation & Setup/Server Installation/Nix flake.clone.md": {
     "id": "_zh_BKFgW4dL",
@@ -1214,16 +1213,16 @@
     "title": "同步",
     "title_hash": "733736e784bf6c3b073020aa6ba0aaf24c60b8daf16b42b7e85673593ba9c172",
     "status": "done",
-    "hash": "acd157bc3bf99ff8746b916410d65b1f586ef7777ac22927afab41e38a6c5dcf",
-    "output_hash": "5bf1ee3cb5b193df52aa16fb945a74019ae1bbe9f4813e1800732d8a48bb2e69"
+    "hash": "3521c8c09eceeeb2309f87b349f0cc11f3fa5b0a29ec413bcf22f68a4cc03239",
+    "output_hash": "cfdb807bded4f0f6aab48f1860064c36a32e6cc69d66b47d7fb9482620944b1c"
   },
   "User Guide/User Guide/Installation & Setup/Mobile Frontend.md": {
     "id": "_zh_HZFGMh1b",
     "title": "移动端前端",
     "title_hash": "abef9473aa82d921892243392543eee88d5f2ef9e5dfdea9e156e4b36c1477de",
     "status": "done",
-    "hash": "794d44bd2c4126064073bd8cd8645a9fcbeae1ff64ea7b0c0ab51b4a3a7cf394",
-    "output_hash": "706b002e509b76861df4312d558cd6dc52583e748dd9161bf87b5bb8dfa19865"
+    "hash": "100a2aaa9e159aba83455c22cfd2aeade7c332a4fec38e85de4fb6a05ea0504e",
+    "output_hash": "d532549e24c7f7d3d617a61a1daa4cd4f846e705bf7d6f0367c0a33fe07a7f1d"
   },
   "User Guide/User Guide/Installation & Setup/Web Clipper.md": {
     "id": "_zh_XBmAl6yX",
@@ -1261,32 +1260,32 @@
     "title": "垂直与水平布局",
     "title_hash": "3f75933d65007b1e28e5ea64cef39da081fd5db10f2e38e031b3650bde50f0a2",
     "status": "done",
-    "hash": "e3c8695ce40c9b56f40239ae7c2ac2bd0f27c75bba442229c89b1b5670fd0f57",
-    "output_hash": "33f93dbdf1cd8958ff0941f283eebb7e4c23fabc31b2ea74a202ac315b50c5dc"
+    "hash": "58e0f7dd2246428d0f84ad78b95229dc590319edaf94ac00532208dab87230b3",
+    "output_hash": "26c9d4444cf605430e0cf9633e6f1b29b64784ee200a2958ad778da23702d0a3"
   },
   "User Guide/User Guide/Basic Concepts and Features/UI Elements/Global menu.md": {
     "id": "_zh_GamJWPpP",
     "title": "全局菜单",
     "title_hash": "5e33240d3058d5cbf8687e81f9f559e73130017f2196607f326cff659c309ca9",
     "status": "done",
-    "hash": "722d5d0825fb166d48a47f4a57560bb5a4db988dd30baf60b35dd72cdb24c832",
-    "output_hash": "282bdb1605ade6aca11752074e7ba55b44a919b32a15a95393925584b3def1ef"
+    "hash": "797b4464f9d9f9716465c02b2bf455f19aa938631dd413675dd989aa55faee49",
+    "output_hash": "111eb62e10644ea87724e455d30a68c6b20f2822010be8b4f7c81707db19c857"
   },
   "User Guide/User Guide/Basic Concepts and Features/UI Elements/Note Tree.md": {
     "id": "_zh_KEcMYlqP",
     "title": "笔记树",
     "title_hash": "f83e4413aece38c283417471fb96807c5daa821a7c4c7b6cf365280404636761",
     "status": "done",
-    "hash": "4b3fb985193b1e8f23b2cd2f870c1050f97c3ae5d351fcfdad5c992c2e586cfb",
-    "output_hash": "f391669026fdb66fa38a84403655c6257849f352346d72b1e5f308ffa93b37e7"
+    "hash": "71cdbd2d59373c1efab7f89efeaf91dbfa80cdfcc6be9496f9edf0d9d52dd24f",
+    "output_hash": "5b9e248f04d96221d565bf874ea03a0fee9ac0f75ae1019d7f2220136b4ab7de"
   },
   "User Guide/User Guide/Basic Concepts and Features/UI Elements/Note Tree/Note tree contextual menu.md": {
     "id": "_zh_ezqPYE91",
     "title": "笔记树右键菜单",
     "title_hash": "d4eb85944fc3398cba6916611a0cf3ec9d127e596061a8104462e96f3d51e40f",
     "status": "done",
-    "hash": "9573c6990f90fce8e1f765dfc62ac49abce930f26cc9ad43b380d11f769194cd",
-    "output_hash": "97120e632517c778ba0e4c5591d8a48f3f2250c744ea4ec82dbe33ca8aaccae3"
+    "hash": "65cd305dd0e5aa8d2d79b5289970e7c31195a97dcb91afa1afd12f32481039f6",
+    "output_hash": "89068869829407e00f8f959665acb1257779da2c8a4f1a4af8e355369b405339"
   },
   "User Guide/User Guide/Basic Concepts and Features/UI Elements/Note Tree/Multiple selection.md": {
     "id": "_zh_d7KJ06xP",
@@ -1308,16 +1307,16 @@
     "title": "标签页",
     "title_hash": "8e5ea509893e6dfd39126d7fb98c5237b273db19f11df5be8bca227fc11fe08a",
     "status": "done",
-    "hash": "c587e94e440acca0eef38e489f61f029db44da55c019be09883b9dee90c7c96f",
-    "output_hash": "8bb802aac440a3c409af9604c3c1bb1820322863d1cf769614e4639844aa83b3"
+    "hash": "68faf921411dc1a2da2bf765509545113de3b8d39e2cd67c2f82b4cb27b187ee",
+    "output_hash": "adcc5cd46e82f3c158d35a80527aa47ea785ece2681ab59e5561c47374b66ed2"
   },
   "User Guide/User Guide/Basic Concepts and Features/UI Elements/Launch Bar.md": {
     "id": "_zh_IPqeST35",
     "title": "启动栏",
     "title_hash": "0c1de2b9f0429a3020bfe0413de61983e92a778ef45c1c5edaefdba82f995e11",
     "status": "done",
-    "hash": "07d014b7d42684993da04bca41b7f146d5433a116a9dcd20e32a0e029cda1c65",
-    "output_hash": "a0feb75f5c51f47d07e8be6065e5135cb500e405fc2f39d932a4bc4e3665d377"
+    "hash": "01c30c75035f06e18f4f5acdedc627b77203e8a5194830ade529cf16e6b5e6e2",
+    "output_hash": "8a9e839852d3d028ef7cb03668f964604a9b51894bb2af362e061f0dfd0c94d9"
   },
   "User Guide/User Guide/Basic Concepts and Features/UI Elements/Note buttons.md": {
     "id": "_zh_Oxbs8EKC",
@@ -1340,16 +1339,16 @@
     "title": "分屏视图",
     "title_hash": "0084cf9dc13fba28d316a1fa10d6af78afff3342a274732b477bd7474bd5eaaf",
     "status": "done",
-    "hash": "fbdd3d57e811d8569e351ff15ae4bb116ce3162d3221b33904a62d53b756d138",
-    "output_hash": "b1271168966cfda33e00040979414b262b6e95ec265927032e1cfcc055c28178"
+    "hash": "1de23eb89ddf2b7b1938610af84ed9b23d0a75e348aab7a67007307c7946ca4d",
+    "output_hash": "ccdd0f21267981dc9d744655b79c3719e7e92b9ad792b6f1e1336e109607d672"
   },
   "User Guide/User Guide/Basic Concepts and Features/UI Elements/Right Sidebar.md": {
     "id": "_zh_uWoAEKx0",
     "title": "右侧边栏",
     "title_hash": "5bfb84fd2e71a9812465bcdc862cefcfd19a6f89982d95b3cdd24e1dd1130630",
     "status": "done",
-    "hash": "0b32e6c59c5166c1dca0732bd9ce5b3f64ad8f8510de2b5260cd37da68148380",
-    "output_hash": "5a1d2edb230afe214d09a7e0f5f076c371f75acc2ec72727a29e4370b0bb8ca0"
+    "hash": "4fb07577cde078fd09adcb97b5b02433cd446fc37038a7901a1569c5f1731863",
+    "output_hash": "8569ed8a1faf59d3ad38a6ae23b51eb065a392b9f875d89d3f3d84a40f6e151c"
   },
   "User Guide/User Guide/Basic Concepts and Features/UI Elements/Right Sidebar/Outline tab.md": {
     "id": "_zh_IRR7senq",
@@ -1364,8 +1363,8 @@
     "title": "属性标签页",
     "title_hash": "3182d6d53678eff39c22a63584e1af2aa0433ebed474ee2466c154f4e55b26be",
     "status": "done",
-    "hash": "4a23296644904f335f76af3c0d07c392533b96acd162ed98f63e9751824b5fc2",
-    "output_hash": "64854c79140700f541e8f0e60a7e8e788d8a5046e05fdb871a4d7c51dcf2325c"
+    "hash": "9b0884504aa562a696004daad7f0a6e121ecb8204c729be38f1e1a1e98b04860",
+    "output_hash": "11575909ae9983dd4b2d213cfb4d72d73876bda6cf1bc650b3d54e5f199a43ca"
   },
   "User Guide/User Guide/Basic Concepts and Features/UI Elements/Right Sidebar/AI chat tab.md": {
     "id": "_zh_RZIOevyc",
@@ -1387,8 +1386,8 @@
     "title": "最近更改",
     "title_hash": "d053d72a81a06c3b2d652fc3bf57cfab545aa5b0bc72af8cb26ddbb274ad338c",
     "status": "done",
-    "hash": "42975aca75a9223ebfeb0b18bd69df8537ed0db7aa622fd37597ff9ca2d080c0",
-    "output_hash": "dcd0f2dc7ee35734d133e3b928c572060dbccb6a2d01ff275643ba80453ba3f3"
+    "hash": "9b9e184d82e75fbca2754a533864ec20b13cbde08d6124a37dd7df4a1e59e5a4",
+    "output_hash": "1f15dc993af429e8472d664344b887a182a4a53345a87a6293cf7af2672c0068"
   },
   "User Guide/User Guide/Basic Concepts and Features/UI Elements/Zoom.md": {
     "id": "_zh_eirN6xra",
@@ -1434,8 +1433,8 @@
     "title": "标题",
     "title_hash": "7e8cd2056da73a7fefb6cd91f4e5d199d08d9058c517b9a2476b1b520324d674",
     "status": "done",
-    "hash": "84869e124b4f3b774fd904a144fc45c978c8ee8dfd8cc8f61a7e6f61631cb307",
-    "output_hash": "a55562485ded0bbf8e1575e901fc5952578b2ad1912aeaa33111c5b3e9a98fed"
+    "hash": "3b1be937e5dd27989abe6c52022149fc88b0544a37baf0d184062aaac4025220",
+    "output_hash": "f4c2149fe0705ce5141cf0d7a08e94f593b5b355550fe22884df761f0e8178aa"
   },
   "User Guide/User Guide/Basic Concepts and Features/Notes/Note Icons & Colors.md": {
     "id": "_zh_LhWIy7GG",
@@ -1449,8 +1448,8 @@
     "title": "附件",
     "title_hash": "634de114775082f002bb5cfdba0a28e768be807c798159c549e7bc930525b476",
     "status": "done",
-    "hash": "e38a209f998a151a57a00f5714f902edd117a78700bb14718b972c44adca3557",
-    "output_hash": "9ceafca9068b935de709e19fea1ef67c6d15c865d97ca6629ec3986d3ee6d2fd"
+    "hash": "edc82cc353b7d03526529039c49a12bedfd87a46a5433006cfb2fdc8605b4dcf",
+    "output_hash": "c6430e9dd8dcf772df0599018b4de34eb31fc93d7830ae1fcad3765167342212"
   },
   "User Guide/User Guide/Basic Concepts and Features/Notes/Cloning Notes.md": {
     "id": "_zh_TvrG8QpN",
@@ -1486,40 +1485,40 @@
     "title": "笔记修订",
     "title_hash": "6e04a42400f0231e3c194bcb69b984b8ade3f15329e3d8fd47528d55fee768ab",
     "status": "done",
-    "hash": "218bcb8ca33d94ec5f2a9cbab6789892e8715c52cf2b0903a2e6be0251cbe768",
-    "output_hash": "e9b9068ba3e828bd1d4f9967be0a7b2ceb4c68f48d3f6b9e0a1c9615b7177d72"
+    "hash": "e4d4ec17584a852541012bcd4bb3ad3ca332760e8731b45f55bc2d071db91bf2",
+    "output_hash": "70a5a084b85ce2da9cd0a565d82f7c422d2ba9dc2808ab7b717d8bd2dca79d3e"
   },
   "User Guide/User Guide/Basic Concepts and Features/Notes/Sorting Notes.md": {
     "id": "_zh_GWWE62JR",
     "title": "笔记排序",
     "title_hash": "571faff16acd42d9fb90decc97bb9bc380891e156b82e2a58d2a0c633960c872",
     "status": "done",
-    "hash": "9a583826606a5fd44e82d07474e096236d7ae9ccfd961d9ccb2cbb18a4aa8294",
-    "output_hash": "8b7943386c5bd479b4840e0118f7ed315d0c6a12c02d453b2da5f58f32ebbfaa"
+    "hash": "ea0c2a56792115fe581a8e6ed1bfd8b4931e12ecc207859cb73430986f86d4b1",
+    "output_hash": "36968b3f038038787b9f1eaa666aac554d918770978ca0d2ec81ac2fe9a2b8a6"
   },
   "User Guide/User Guide/Basic Concepts and Features/Notes/Printing & Exporting as PDF.md": {
     "id": "_zh_CjgGvVeo",
     "title": "打印与导出为 PDF",
     "title_hash": "a6186c3262894a0d6e0499867f3a053dad08fe34a1449b641f485ad931688162",
     "status": "done",
-    "hash": "91f040f2675a8bb2be7ea76c1c78901cb98e12a9dba63ac464583b558a32e4b0",
-    "output_hash": "1c63948c37579fafd0d75301ad26437272bd6fd0caaa0cd8a93cf7c31981b317"
+    "hash": "29279abb1e915eeee52d8894bde1a05abecc20c01f3a5139dd5ca6e5d33724f7",
+    "output_hash": "39757ea255a3acc06d84807a40bc62a9a464d062a180eecd5691ced0f8248bb1"
   },
   "User Guide/User Guide/Basic Concepts and Features/Notes/Read-Only Notes.md": {
     "id": "_zh_e2tlUV6Y",
     "title": "只读笔记",
     "title_hash": "ec9613d4e33ad6e56f65aa1c4215787df66375d626f35a10d2c69810072cde5f",
     "status": "done",
-    "hash": "e034ee17737121694ad17c7ac329691cde18672d0417f61900fa40610147ddfc",
-    "output_hash": "473656c292a551d4c98a09e8ee4ce236b270eb1288adf15a6017fedd8e59e95d"
+    "hash": "8094720e8cc9e40b68c328fc84825667209f68ffe50fa2a4773c6bf9ca8dae74",
+    "output_hash": "f4141759235c303c6a99dcad6bb6008f6548057c90f66045c0ebfcf007b3c411"
   },
   "User Guide/User Guide/Basic Concepts and Features/Notes/Note List.md": {
     "id": "_zh_OauggXxN",
     "title": "笔记列表",
     "title_hash": "fe1dd9f1b2a04c8456286452a08e7d39d3ea0991155b5fc37d0a0603fe42d281",
     "status": "done",
-    "hash": "e4294b8573cefd90f9eba0d2436c7d4ef8b60cf327d3d0a1a359705c426fa43e",
-    "output_hash": "b5e2fa76f51c130f2d4feb3be2dbd0dc34b120adfc80b2cc1d76d2b139bc9380"
+    "hash": "736eee15b6bb12886727a4cd1fd580782600fb03e8cf21f77dbf8978bc7cbbc1",
+    "output_hash": "278312ede9ad6eed9abf84db4a4fbb2b4d0992640c0cfd1d422fa261a03f56ae"
   },
   "User Guide/User Guide/Basic Concepts and Features/Notes/Note Inbox.md": {
     "id": "_zh_GQxa0dZU",
@@ -1534,8 +1533,8 @@
     "title": "恢复已删除的笔记",
     "title_hash": "c7ce8fd01a25486633065f68aa202adfe6e8b0d981b4642e35167f6edefbfc3f",
     "status": "done",
-    "hash": "914a241906c36115644f29524c93686bfa1a3f42366f959677bc82066c8e2617",
-    "output_hash": "43159f39683ebf1e624b3abdef4c5828441c5c07b3be2e0de0a8797a3d428c37"
+    "hash": "3cc2a6c9bb0a204dd12d481b5b893622a4ad60617a893a8615f3a8ed8a90b6dd",
+    "output_hash": "ce213a1bd5b4f975e8bb02cd6847861e3a991de2a6b05bafe37843d07c1c97b4"
   },
   "User Guide/User Guide/Basic Concepts and Features/Navigation/Tree Concepts.md": {
     "id": "_zh_vGAxjil5",
@@ -1549,8 +1548,8 @@
     "title": "笔记导航",
     "title_hash": "67ff82f36f3bb03730fd1b34b60997d7ab46d053ea190c0292584c92b9300ab1",
     "status": "done",
-    "hash": "8a55a249a5a22f7d1a1b295475121664af108f31bc5b56c746e23328cc833fa6",
-    "output_hash": "d35d2c235d1ea664467b120c6be78c33d6ee990a8b1de7bb2b3e2d16f98faf83"
+    "hash": "a0dc9f66595b182fdbd9de2f8fe4725610759470c43182a845e5d5cc952488e4",
+    "output_hash": "156300f4c93b66fd8ab494aa950c8ec3128ccfd061312fa057f7a2e8b71ac457"
   },
   "User Guide/User Guide/Basic Concepts and Features/Navigation/Quick search.md": {
     "id": "_zh_kKjuRtRP",
@@ -1573,54 +1572,56 @@
     "title": "搜索",
     "title_hash": "49c266baaaa70981ea188fa714d5c40cf13830d786a861c9943ae0d26a7f3fe9",
     "status": "done",
-    "hash": "7e4fb5b2a3a9698661a09c37e1ddc58a166facbe853784d85eca096107ebc7af",
-    "output_hash": "36a353c4c54d6450b541b6b211261c5f46da64389430c3e09a8f7a6e30153fa6"
+    "hash": "9f6b1e2b4bbe3ef732bdba4aab32e81b5568760f6ada64ee1dd49af96b287ac6",
+    "output_hash": "b5eac94c52e3ac98c4b41fab294d85a9dc99286854109e3603369a6ea52a1fee"
   },
   "User Guide/User Guide/Basic Concepts and Features/Navigation/Bookmarks.md": {
     "id": "_zh_Nb0L8xPz",
     "title": "书签",
     "title_hash": "96316f0f6404dbe1655965995c00874f695fc1a4332bb8edf77c9821db111b0b",
     "status": "done",
-    "hash": "1e34679c78c2fd5d7d0421ea38ad3d4eac2a665b5feeeec3a13f525fd54cdb6f"
+    "hash": "d72c6e690be8679216c8db5994f314a718195e3261ec688c3a6bc1ece6cc7f2c",
+    "output_hash": "7dce307ac98c91a8f8bef31de16533242adc4da22b3133701ff0831f5537472b"
   },
   "User Guide/User Guide/Basic Concepts and Features/Navigation/Note Hoisting.md": {
     "id": "_zh_4g0h4RA0",
     "title": "笔记提升",
     "title_hash": "80240eb9359e718ebdc36d064f5eaeb59adb2a6c6f09ef04afabe5b5226a789f",
     "status": "done",
-    "hash": "094f2458b51d7a8a35ab6a5020b515b89bb9ccafcb8aa929636597539855847a"
+    "hash": "ad0c4622b0e9a4a9265d95d916ef3ada38387b61d380e9c6262454626425947f",
+    "output_hash": "2ec664a08fd9ba7f35214f9d8725d645d4c255af05b5fe58ab0d63928bbabf76"
   },
   "User Guide/User Guide/Basic Concepts and Features/Navigation/Quick edit.md": {
     "id": "_zh_wGtx17Xd",
     "title": "快速编辑",
     "title_hash": "a813389c201ad55e20334610612745de4a5f6433eedccea514146c2c0c26b520",
     "status": "done",
-    "hash": "a1a956d32eb7c1cd55d51af27345b561b88a9199b317f5c27d41a49295be4480",
-    "output_hash": "f42b4d57b5453ad8d8af4f92159814751473e4859e6dd1bf89083655f75edf06"
+    "hash": "38eab2fd136d89d3a5fa7fb73479d85740e7359377062c9123a3580647b62ff0",
+    "output_hash": "9942ec617a747fdf334ca1ec5bd357cbc0a87057dd570a93863afa90f6848d80"
   },
   "User Guide/User Guide/Basic Concepts and Features/Navigation/Workspaces.md": {
     "id": "_zh_cWU5WfWb",
     "title": "工作区",
     "title_hash": "1377264ba3b0a7172621971b49ac3e82e33b64b14328d9275d02807e67ea8460",
     "status": "done",
-    "hash": "2b180ff5ddcc5e7c633340dc67c417c7e8ea33d406dc6e37d2f357c17288c405",
-    "output_hash": "aaef943b3cc748edd5226c1c8e7e44784e39c88fe9933ab25a07d9a62018caef"
+    "hash": "ab039624d3d9b337664472b04c984a260221a98f377b0d8e41eda54730c7d72e",
+    "output_hash": "4fea4a86fa964422063d19fc8c062c6f48973dd259bb733617e968e38915b637"
   },
   "User Guide/User Guide/Basic Concepts and Features/Navigation/Similar Notes.md": {
     "id": "_zh_dq9opqfv",
     "title": "相似笔记",
     "title_hash": "666e1189120575c78161fcbc7a5964988143db1124ded8eac4383fd71f003241",
     "status": "done",
-    "hash": "e47a523f673635f4917926ecb28aa7f474289ba1b02bfa980da16bd14e2954ee",
-    "output_hash": "178c41dce0de6b5537c7ac6948be37f24f76fa18d9cd186d0e7ca4c6cc293499"
+    "hash": "a3e20fc95ccc0e1c401a0bae1347a8984c3258b7d8c1cda9bee9fc9cd200f895",
+    "output_hash": "e4803eea93f6633950250ba92e9e89bf1baac8ef3cdb8255b30301f18d18ff95"
   },
   "User Guide/User Guide/Basic Concepts and Features/Navigation/Search in note.md": {
     "id": "_zh_dslQLec4",
     "title": "在笔记中搜索",
     "title_hash": "af172f2dcde490caf6231c4f34fad728b2dc1f0296cb3c4ee5cb16185282595b",
     "status": "done",
-    "hash": "95a3081aeb6cbc241fbb921e7042d9fe0dc03798b3df691625cdb167c3386dd9",
-    "output_hash": "13a7c403eed7a2ad61e7e720a487b2e222c92d73c4ec898265693d002bb4bfa6"
+    "hash": "a73eacb3d861d1f9b9cf116104177ced65fda2f1a27f8d51c11e7f5a351a7f38",
+    "output_hash": "9e0910ab70015bc2da5a09eadfdc9dc37bf7f3b6bb8803766ab650ff8b4f400d"
   },
   "User Guide/User Guide/Basic Concepts and Features/Keyboard Shortcuts.md": {
     "id": "_zh_B0pqvxta",
@@ -1635,8 +1636,8 @@
     "title": "主题",
     "title_hash": "43ae3265b99f2f34e9079ca3e2241ca8729718d749b3eaa2a616628dc2d2f751",
     "status": "done",
-    "hash": "bcdfdbb34d6bd2b7a7a9f33ef8bd8f283c72286f6fab6a5ef7781d780de6fd0a",
-    "output_hash": "d1717abdbf19e6101748c01674ce357071c2b2a677f9d6ae56e099de85699382"
+    "hash": "e0342eaf24c056ffecaa12e274b6457d7071b6688d627ffbc67c06dcf9b56fad",
+    "output_hash": "017ab1c6498f3fded75d9975c74fb3d3e014c5cd6b87308da57d0147be27e86d"
   },
   "User Guide/User Guide/Basic Concepts and Features/Themes/Theme Gallery.md": {
     "id": "_zh_lNGUxaMf",
@@ -1665,8 +1666,8 @@
     "title": "支持的语法",
     "title_hash": "214cbe51b2e57e38dab569f1ec048c08a929e3a221f19875840c2e3ce270b07e",
     "status": "done",
-    "hash": "aaa95fb33d8999babbbeae97c9a425f5fc78b49e77e74340193855c428c98f03",
-    "output_hash": "4dd3d973d656cdceda005f2996f75c992c6a3a9d2073cd83e066b1be19a89a72"
+    "hash": "7449ceb2cfa80b1c151342d341886426f82ba5ff8f20bda346f0fde1b57f1b5f",
+    "output_hash": "7a7d398be2dfba1bf74357931fa2378984cd469bcbd313008389274dbf345a4e"
   },
   "User Guide/User Guide/Basic Concepts and Features/Import & Export/Importing data from other applications.md": {
     "id": "_zh_mzTJNwlr",
@@ -1737,8 +1738,8 @@
     "title": "禅定模式",
     "title_hash": "7224fdd49808f1f2c34915bbe935d57064b560ae3da1e76f245c1a0a9f905aef",
     "status": "done",
-    "hash": "be44209e0711505c8bf84af39e309a8a497b95443bf82b669e3cada61a99eb07",
-    "output_hash": "e1b9cd9903cadab98ef4d4e860bb203ea3fbe44fe2125867820896d022ed6e69"
+    "hash": "df99440fee3378c24d6345d9e0edeb5380c233d1b30d9e8e5cc35189d5ea318e",
+    "output_hash": "172c81015476cbf7a2eb12e0afc22973aabe567022e0a43d60d5b9bbc8b8d47a"
   },
   "User Guide/User Guide/Basic Concepts and Features/Active content.md": {
     "id": "_zh_fi7Ji2KE",
@@ -1808,7 +1809,8 @@
     "title": "剪切为子笔记",
     "title_hash": "b142787f08dc4d348fcb17230ef1e90234eaca2944e008dbcb0742bd419c9d2f",
     "status": "done",
-    "hash": "a08c7f8a3e03992867f1b02ecf37ac97800e23b01477f6c547a43a283f47458e"
+    "hash": "2d039daa1d97c12ee122e7cf4f9ea44ac0ca1ba68e282e9532964317323f475e",
+    "output_hash": "f4907811041aa3c314c87786eb6c7b12221554ba1ea715f8cac6b7697c344322"
   },
   "User Guide/User Guide/Note Types/Text/Developer-specific formatting.md": {
     "id": "_zh_Rc9z7o22",
@@ -1823,8 +1825,8 @@
     "title": "代码块",
     "title_hash": "ea9255d5c74dbc572fdacaaa710b8d56f0ad7c34080d00836c82f3984d5efc96",
     "status": "done",
-    "hash": "ca6853c760f2d3839a33a62320d719be26ab72a08e01ab2e8891e50ac423f5d4",
-    "output_hash": "b17d1457c3aa9fde9665bd4c076f79c177f02370a8a2558c5910c364ec8a870c"
+    "hash": "1c9b8ac20ff3c40d18d716f08ea4ed3a8f2cec0282702ff51529ddf557f6e27f",
+    "output_hash": "c1d44b52156fa12ef7354899ba7f6317d0f5d1b0a4a0e53c72882bd24410b12f"
   },
   "User Guide/User Guide/Note Types/Text/Footnotes.md": {
     "id": "_zh_WNTOrSYP",
@@ -1839,8 +1841,8 @@
     "title": "格式刷",
     "title_hash": "3eb4f02294bee7776eab4d523df4db3c35562f0f79a9b2c46ce07e9ade561079",
     "status": "done",
-    "hash": "e7c630323bb79a5e31536af7ccb14341a4bf9afb15487699a87c714e5b449c12",
-    "output_hash": "abd096a1dfeb92528712994eab28d0a502be27bf5a00444f197ca3e2a1787be3"
+    "hash": "45eb98d64e381371aba9f1b0cf6ea035af9400624aeaf54d91c65d007f28efbb",
+    "output_hash": "3d38c4f11d0a59fcdbc6efffb60ae5c32db557cbf4b70fae139ef61aedc3c4f6"
   },
   "User Guide/User Guide/Note Types/Text/Formatting toolbar.md": {
     "id": "_zh_MCVi2KJ2",
@@ -1870,8 +1872,8 @@
     "title": "图片",
     "title_hash": "be7e2f20129365c2899b2c11bfc465541e61b1858f45bf0248cf99b9271bc707",
     "status": "done",
-    "hash": "4b41295efd746207479b7b9cc3bdbf97c37b59a49cc902d80e954836e90fe5db",
-    "output_hash": "e832730f5e9501d3aa4e23bfac5b8f57a4b85aa78995233084b44d6fa082b51c"
+    "hash": "a7c2382f0ff93790609b5a5da9a9d5e3f74e5ee153905d090f75b066e580fff4",
+    "output_hash": "a2298a3209cd6be6ca4d96ac13d13928cba363365c2616ef3adb8011aa59819a"
   },
   "User Guide/User Guide/Note Types/Text/Images/Image references.md": {
     "id": "_zh_HJScfYZY",
@@ -1886,32 +1888,32 @@
     "title": "包含笔记",
     "title_hash": "4b4eb14a6abd99d3a60f2d6e196fc22f8f0d5ecadd31047a3eb19cf1a0e966eb",
     "status": "done",
-    "hash": "bb1105de40da16486d9644b53ce4d91a6dc4700657765b1002281e9669055cc1",
-    "output_hash": "ca4c67b723e0de61c52f26ae5f55a9e933afae062f7c8e4b32370717feeafedb"
+    "hash": "5bf528e668324df627735d7e2c3bdd0ec8029acda625dc0ef19f6e7d858c838e",
+    "output_hash": "76016b2b4c10865a00eabd964168e33386b284747d37fa66f911dadd5f4f7705"
   },
   "User Guide/User Guide/Note Types/Text/Insert buttons.md": {
     "id": "_zh_0kjZrUAy",
     "title": "插入按钮",
     "title_hash": "869faa38f7eec1f6767e29caa801582a0517b88607386603a9990734cc267b09",
     "status": "done",
-    "hash": "9b2e86314712b06e16d8a0a47f3f7496b6b2749b7d560e8fb19d9614493dae35",
-    "output_hash": "e73824663cf5fd73f6b99b629b0e91d8981bdfeed91905bbabfd158376e1f4af"
+    "hash": "21ed25ea602d033360a021b4b8fe2c6ff47f40e15beffada342aa9dd09e62cda",
+    "output_hash": "9348247afc37015b7af3f6993e4fac96c5238b24197c55655df35880247625aa"
   },
   "User Guide/User Guide/Note Types/Text/Keyboard shortcuts.md": {
     "id": "_zh_owPJCh5C",
     "title": "键盘快捷键",
     "title_hash": "e9bef0b0f3c25e6eaf3a754817a8b4f62e1c8473cb2be3e190975926dbf72d6f",
     "status": "done",
-    "hash": "f81fc4af0d4906e0113448ad23f8c59a4aac451f5f14e9f045e9a28cb9daa1f6",
-    "output_hash": "b58fb86fe25396cde5375da7fb4103aec5739eea167ddf5ac95da4f40731fb4b"
+    "hash": "fc877ca46671a6f62992204f8fe1a2c2ce3fbaf655d7972152586bd5e877d79c",
+    "output_hash": "2ea219622048a34c9757e37e104f597738409374ccf1c9063b8ffa553066897b"
   },
   "User Guide/User Guide/Note Types/Text/Link Previews.md": {
     "id": "_zh_Fi1UDhg7",
     "title": "链接预览",
     "title_hash": "fd0d3eed73c3f79467932187006d1eaea6f4482f100819c366faca1f34283865",
     "status": "done",
-    "hash": "610f955fa11afc62ed890e141147c5b9317a1a75de357e3d5d09a7a0659a8f43",
-    "output_hash": "8fc464956943f00dcc5906283cea32892f2ce6f1c81f40de9ba601e2a2dd23ae"
+    "hash": "b58d0b4e8de89a54d4768148a1e14d61ef5f58af3ebcbf413756928161edf009",
+    "output_hash": "1ad91961b83b134259027ae945fef1006a9653fc9768eaa4f15a5a217c546cb9"
   },
   "User Guide/User Guide/Note Types/Text/Links.md": {
     "id": "_zh_mEucuO9T",
@@ -1925,16 +1927,16 @@
     "title": "外部链接",
     "title_hash": "2cedb069633746f45f07d748666e17efa964159469f9e2c993d67c632f661d2a",
     "status": "done",
-    "hash": "6d1db3ca4f71a1abdfa72b12b28a2bf539c7eb49f441bc66f41c2b38582666f4",
-    "output_hash": "cbe3c2bd6f6d73d5140fc987e302e07ea6671754f72733151a48a1e4dd332e0b"
+    "hash": "c296ee5c135dc6bc487afa14d4503259fd49ef74febb2da6f1a29c0dfee6cad0",
+    "output_hash": "d8ba86a5412157b2490cd26e8b2e7f8aa8f1a877120a3386c5aca03c22efc6b2"
   },
   "User Guide/User Guide/Note Types/Text/Links/Internal (reference) links.md": {
     "id": "_zh_0ZHXyfcL",
     "title": "内部（引用）链接",
     "title_hash": "b20d9ca34a692f485abd8ce5771c7cad9863467e8f48710703062aa5b08af347",
     "status": "done",
-    "hash": "8cdbd894bf0fe79bb2ffe4d03ab1f749eaa10ffc20f8a59c7ff003075dcf6372",
-    "output_hash": "181adad61586ac87746b198d2ed918e79409f2289f37fdf378e2bb657e6b4201"
+    "hash": "1796fbc4666a2c941eeda862a145809a63ecf93217d294f1882ff79796ec3273",
+    "output_hash": "e2a88f42e4f71d4370c8bb40cbb2066e05bbc31dc30149d2f9c2572020fcb80a"
   },
   "User Guide/User Guide/Note Types/Text/Links/Backlinks.md": {
     "id": "_zh_Ez5zz7PN",
@@ -1949,8 +1951,8 @@
     "title": "列表",
     "title_hash": "308d5a0903f2c5714ec7774808fc9a67b92c602a01a69b2084b05bdb2f6ae699",
     "status": "done",
-    "hash": "9e3d4b49a0d7d33f21191e499352492996e36cc7ce82d9a376dabde22dc9f118",
-    "output_hash": "0e1f1efed4c066bf78de074faa169a6541928ea260ea817116907b9a952fc10a"
+    "hash": "29e5f04b198ef92a171197a90f619952dbb2a785ab073f7ca22055da126a1f1c",
+    "output_hash": "076884e7349592816806136efffea4fe3bcaa7ae6762cc778243c750932ba29b"
   },
   "User Guide/User Guide/Note Types/Text/Markdown-like formatting.md": {
     "id": "_zh_xLN0owpq",
@@ -1995,8 +1997,8 @@
     "title": "表格",
     "title_hash": "e3fe2a3fe52c9c35874478d22328281ebf754f1b35747152c13e441a9eed92df",
     "status": "done",
-    "hash": "a6e18b08b0af517bab1952ef0b5aa8fe2125d77692d56c19ec86de24ed3d5913",
-    "output_hash": "422075e00885933753099111a3f52003c5a3c199745f6506595a1d59683aa59a"
+    "hash": "99e4bdcc8900ef5fea68e3e073873cec0470782c91370d1f4ed3cd422ae4859e",
+    "output_hash": "2206b312ce2aceed70c95e7288bd04be5a1967b6dea2b9d94e510e3c7e1fdf75"
   },
   "User Guide/User Guide/Note Types/Text/Text Snippets.md": {
     "id": "_zh_xYVcZVZP",
@@ -2011,15 +2013,16 @@
     "title": "待办列表",
     "title_hash": "bc30482472c54e2c21ba62242bf8ee7d1974a8d02b0c66dc1abcb8f547440bb2",
     "status": "done",
-    "hash": "c8e0acae8f1dde174d2e36560bca80a24855e62d79c0e753dae6c1493b3e696f"
+    "hash": "f19929b7d6feb97825d7221a42a215f87da8da887b646a9b93c46f5e0b682067",
+    "output_hash": "d9033a61c9b8cf8d56f77090ae406721e586746265a0243e62b37ec8a6a56a62"
   },
   "User Guide/User Guide/Note Types/Code.md": {
     "id": "_zh_ix2hGmFr",
     "title": "代码",
     "title_hash": "340f463033e0fd5ddeabb922df4d4f1b5747494d0f5ed9894f13b6e13ca831f5",
     "status": "done",
-    "hash": "9aceae14709ee03c6ac46a214e46b04a2f2d6b386da623c9a55b51daf2bb2c30",
-    "output_hash": "4e7e127bf4fee6c0aa9e1c38b1999c933e89fabfd6a3ba6cdd0da813f4e9ff66"
+    "hash": "b12db2ad511d9fc5214e87aecaf0c2103bcd07d5643fd89ef4d98726fededa45",
+    "output_hash": "0069a53cac43ab1b7b7b526e7f961a57c0c51259bcbcae068179505b68ea7931"
   },
   "User Guide/User Guide/Note Types/Saved Search.md": {
     "id": "_zh_RWWo6VSg",
@@ -2057,8 +2060,8 @@
     "title": "Mermaid 图表",
     "title_hash": "00dd15943ff55631d634b652e9739588e498b21d7b50b30835f605fede4758d9",
     "status": "done",
-    "hash": "6be1b4882b8c6f0d77a0b0577ad35a0126e1253fddcd65dcac47be9c76508430",
-    "output_hash": "2d014eb9b6561b4f3b37e0ba66eaf582f9be6c7910f65d2d653da435da534bfb"
+    "hash": "71a9fcbfcf1b20d4fcc9abfee2b42dd1805962279d8ae2546c09d3d86c49a09b",
+    "output_hash": "849b2689e3e39dc877c24f59462820d36d00968896d37bf9544696318bef8d79"
   },
   "User Guide/User Guide/Note Types/Mermaid Diagrams/ELK layout.md": {
     "id": "_zh_YAWY8eRw",
@@ -2141,16 +2144,16 @@
     "title": "Markdown",
     "title_hash": "0e52f6b9d02515c59bb4fdeec2762fdbe701080c82986fc4dfbefcb1e2389817",
     "status": "done",
-    "hash": "1296ea6c82d07d8f78640c6423305175e31c7a5e55b052a1d9ded8a3e13cc3cf",
-    "output_hash": "15b0fc03ea12626b126841383815730e65a9120ce90c776a10c94fdef4acde50"
+    "hash": "06e55b1dfa6b0613090e9a61cd0728542f6265a283c1370aadf0941041020e3a",
+    "output_hash": "863360a900d46aa06b47d2fc9f805f31021be67740816e417fe8248071ae717f"
   },
   "User Guide/User Guide/Note Types/Converting between note types.md": {
     "id": "_zh_Xnzw5BK9",
     "title": "笔记类型转换",
     "title_hash": "335e5af75114326316eecea6f20f2a0847c9cf77d3e5aeeb6c6e264fe0e35c4d",
     "status": "done",
-    "hash": "f92226a4e2d01312585368ae36de4a0ca7f3d3d6d7695533dc01cde7ad81a70b",
-    "output_hash": "a1751e916955a9e495e9c660b3f9db9853a3f619ebf39d452f52f98e9ac947f1"
+    "hash": "560c10bff5dff6204a54705c47a6f35f6b1cdad11933f22a77368ea98e43998a",
+    "output_hash": "7f21027f19a9f41dff137d780b001606924a9988047f847a4237589744e8e602"
   },
   "User Guide/User Guide/Collections.md": {
     "id": "_zh_tfDKSa7J",
@@ -2165,16 +2168,16 @@
     "title": "表格",
     "title_hash": "16d1c9050a0b32e83764a81d801a880773abedfd7f8b0b08a1cd87ca0e404f12",
     "status": "done",
-    "hash": "9afd44eda09455302beb2b75c8d626cb348beba2a4a2efd20ecc5c390fc3bb95",
-    "output_hash": "e47d8da3516b0696ba7499ec3bc986e79be683894ff620e1543bf31ccf285eae"
+    "hash": "51234a216fcdd7e6cb49455aeb9c50d4b68efbd15d389f60c16a1846d8ed3b99",
+    "output_hash": "6bae8276cd94e51e3242b36d6e0324b950c32e2de4d7e2f249f5e9e4a70f4fc9"
   },
   "User Guide/User Guide/Collections/Kanban Board.md": {
     "id": "_zh_DFaCHKAG",
     "title": "看板",
     "title_hash": "8e902805fe3b631135f99610ebdcf8e4d7c88d761238c72a06c47b6a476c45dc",
     "status": "done",
-    "hash": "9570e010bce8b9cc2c75b65f9bef04b762727d36686e465428ad38b9188ae930",
-    "output_hash": "b58e50b6d228b227140e1fcca9d5791620ac6f7569fdba8d77d336daf811a082"
+    "hash": "b255e941e293897b50a48d92fd0982593d910ac9ab50e37073b2f1738bfe25e1",
+    "output_hash": "19a12f15bed88159a12f6c012b366c4527b248740e645ce9a49f2a87cc09ffaf"
   },
   "User Guide/User Guide/Collections/Presentation.md": {
     "id": "_zh_vv6XsR1E",
@@ -2189,24 +2192,24 @@
     "title": "网格视图",
     "title_hash": "38ee89c32a2a983a8b02689b35c8cdb60f5d9949c4e128a77cc3e79785c02b51",
     "status": "done",
-    "hash": "5905728f9362502221f5c5f9115bea2f07efe9eb985afcacc33cff98481173bb",
-    "output_hash": "0e58d5e59493c2956f626acd7dfd920d1fe46f2d17fa2e441ec3320500742858"
+    "hash": "c7c9efdef77150b9c26bbf3f9d3de8804adb4c36958f2feb09726b9f96f34d57",
+    "output_hash": "ba4c1d068da3cff381a6e56f34790dc50a90e9e63c7d12dd7696ddd76368eafc"
   },
   "User Guide/User Guide/Collections/List View.md": {
     "id": "_zh_hTF5bhgL",
     "title": "列表视图",
     "title_hash": "48627bdf5dc06416fd948fb146bb2065e30156be65ef018b804e6e83c2de1b54",
     "status": "done",
-    "hash": "606deedff6ec3fd18c167d6ad341e962ed8da5b8495ace759efe2da235b52072",
-    "output_hash": "95af15d1c2bce5d1b55cf75ec88224e7003c46b9123b1378b364b0681ff7fa48"
+    "hash": "3280acf622dac2800ee4ca8d79410aed91dfcec76d817e8a0bb07eb82bbcd2ab",
+    "output_hash": "9b3916caf0c85131a40839ec56070d1e12584a3cad98538ff4d4b3bb0e93a8d7"
   },
   "User Guide/User Guide/Collections/Collection Properties.md": {
     "id": "_zh_F3xDpd71",
     "title": "集合属性",
     "title_hash": "5d8292ad699b4d1d839da108482f495aa59cbd9341a17f6b0d3113f83dbcf115",
     "status": "done",
-    "hash": "e567f97e9330acf9a3eb94528c3bcb1c0527c25772a0c3a304e9f05b3bb16eab",
-    "output_hash": "c3f7a3911492052b7e8eb490c94cab8290c4441ddbeede95ea4ddfdacad1a6b8"
+    "hash": "cc7dc78d6620fc54e7a2cf29412d57688fcadd2065820a5faa1b3d94a392dade",
+    "output_hash": "63307db8131342b23c3fb347be1a8532f67fbb6c2ecf491a1ec6db3d1cc3d715"
   },
   "User Guide/User Guide/Collections/Dashboard.md": {
     "id": "_zh_cUgdyLd1",
@@ -2243,16 +2246,16 @@
     "title": "后端（服务器）日志",
     "title_hash": "e3a0e2072afb8d7aba774c37e6632433a3f3edddb4979743202822a49ac40486",
     "status": "done",
-    "hash": "d6fddcb47bda1b03448258cd9f0dda9d3d9093f43e1e7043c803fb1672a5375e",
-    "output_hash": "efd04928c036b7204e2fef168ba2e95025bb474563ab8600e869a7c3a89102a2"
+    "hash": "c0b7c9a665b5a601e59c43dff9adab7250719fc6129bfbcd80135c9e00b50b27",
+    "output_hash": "005843aee7e71acda8b9c63a58386efdd5461880be2bd41012cde9e7ca94b8ec"
   },
   "User Guide/User Guide/Troubleshooting/Error logs/Frontend logs.md": {
     "id": "_zh_PXt8GQCI",
     "title": "前端日志",
     "title_hash": "fcfa44e1f436984e5032a74517a6ea2d84c3ccd9d2bea3682bd64fae2e4309e4",
     "status": "done",
-    "hash": "a4bd2844ea777e48c0a84a7767ba49e3e4c58a078e99c33888feb9c9a27e3d78",
-    "output_hash": "3ccd4bf3f5ce13a8184e845f72d0e7b81b8db886c86b8db2c416ac856ce9d85b"
+    "hash": "2f2002f12cbafeaeede50296aef2c9d0ce8fe6f8d4e2a43063903ecaad598210",
+    "output_hash": "a6ee5407ac24bd00fa4277a58352f8db22384a4afaac99629de434a197d0ab47"
   },
   "User Guide/User Guide/Troubleshooting/Synchronization fails with 504 Gateway Timeout.md": {
     "id": "_zh_sbo4ho5S",
@@ -2343,8 +2346,8 @@
     "title": "模板",
     "title_hash": "56b564b75c7fdb488865f2198ec362f9c0f5c0b631b28c15eb387b43029f28dc",
     "status": "done",
-    "hash": "a1ff00d44b452fb60bbf80ff73edceba53796f08641e9d035935bb76567eb434",
-    "output_hash": "0e7b18ad2efffe0e98b29a0fb29562c3362b906e746fb18c303cbab5c8ee12a6"
+    "hash": "5be91eacb2efaff9564514f52b674ea5b669b3c7746986521450f0ad5d7c00b4",
+    "output_hash": "4618bf2ccd5555538e27761f2af4c390ab96216fad5a101352b882aca4306b0d"
   },
   "User Guide/User Guide/Advanced Usage/Snippets.md": {
     "id": "_zh_td4PS7Fx",
@@ -2366,8 +2369,8 @@
     "title": "代码片段",
     "title_hash": "a90f0e622e0eaec2e8d42205fdf5f1f13995901f11d6f12ff66218466edc7cc6",
     "status": "done",
-    "hash": "fab42d72101d0f9c6c66b84df92c879bbaaf492ffd6715d5f99539572fbb4853",
-    "output_hash": "74f78170c0f124dbc1ba8537f0c7cca621a4dd2204c70c5cc8c002cbd6608ce1"
+    "hash": "b8eb507017a6e2f03f9a6aff362064c0698c0db01a78fb58cdc68af6fafe8a5d",
+    "output_hash": "268e0b97c096540c308a3d5668c2632f3f81a0e4e37f2ff7701b4b00fc48764f"
   },
   "User Guide/User Guide/Advanced Usage/Snippets/Text Snippets.clone.md": {
     "id": "_zh_CKsQmcyj",
@@ -2389,8 +2392,8 @@
     "title": "分享",
     "title_hash": "bbedc70e985fe0b6b32c173bf2676cab7d103138c05397f2835d821715b48a89",
     "status": "done",
-    "hash": "5ab6b37642499229f55f4839238834e50a23655283f8d26f07c131602eef8443",
-    "output_hash": "19feaa04ea4222dadada0e746ed586f150dbbdda67e18848adf06c7d39b84cdb"
+    "hash": "6fde0e8a718b0e1feee0c923b7ce811fe787298e86320bd3038dd1108b5b37ea",
+    "output_hash": "9a46a3d094b7aa5e8ebbfe158a87a8b0f8ad5c0615861c7c32adb3c40311ab68"
   },
   "User Guide/User Guide/Advanced Usage/Sharing/Serving directly the content of a note.md": {
     "id": "_zh_oupTHqyX",
@@ -2458,15 +2461,16 @@
     "title": "自定义待办任务状态",
     "title_hash": "ae649af0fc7ba4492f17c3320dacdd4fa33b8da3489677f9c89aa70477b0f41b",
     "status": "done",
-    "hash": "bb1258417d7a41bc352951d16a90387fc40bb7085a57cecea32f76560d37d779",
-    "output_hash": "f4e131380ffb76445162607a08e4a9a83f7a0c3001ff80451398c529bdeda880"
+    "hash": "d743c94ee6470bae5a28124a4fe3eb4c1b2827b906f9d1794ee2a72495d30f4e",
+    "output_hash": "c72cdc17fa63109e460dbfe94644971a5c3863243bf605c13564b27765d7c008"
   },
   "User Guide/User Guide/Advanced Usage/Custom Request Handler.md": {
     "id": "_zh_ydz5v02I",
     "title": "自定义请求处理器",
     "title_hash": "ca0a17445a0a53dcab2331b61bfbd5a170cba37400e2d0e356c6ea02490ea870",
     "status": "done",
-    "hash": "45c0c24417f3e66a252a74869ff2617d729aaa7850d679128d22b83e6d54cf41"
+    "hash": "b6fd3b04e09f4eb7432aa0dd7077910ce27a68424f380e6a2cab4fd314138315",
+    "output_hash": "18995e5d2144712923cf5ffa0c1c7ec73a0298a908376924f959581628db54fd"
   },
   "User Guide/User Guide/Advanced Usage/Custom Resource Providers.md": {
     "id": "_zh_t0OBTw2y",
@@ -2481,23 +2485,16 @@
     "title": "ETAPI (REST API)",
     "title_hash": "25a0fb5be71767b7f25ecb9f5e85d54e3af491f60173bbbd394a886e4a9d540d",
     "status": "done",
-    "hash": "e00f61a3afddbd87b7e4a3d509b58f9a53be97ab240ace09ee8bd3bcb4509f5d",
-    "output_hash": "fbb1e03f26a47c3785efcb3b78453d4d743e4fbf8f73a5ce1690b70bc63cee3f"
-  },
-  "User Guide/User Guide/Advanced Usage/ETAPI (REST API)/API Reference.dat": {
-    "id": "_zh_TADAjCUy",
-    "title": "API 参考",
-    "title_hash": "0b40234a6136f15dedcace3b83580ce8c12f511d2344edcc03075f2dc1852e3d",
-    "status": "code",
-    "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    "hash": "4a76ee7446b36f09dbe4d4edc2c508cfdaabf1d1f963c77124cf74c126590287",
+    "output_hash": "b07bd0211818ad1fc5aecf0a30afd7eb024212f56c4d228e2b3cb5549b43f8d2"
   },
   "User Guide/User Guide/Advanced Usage/Default Note Title.md": {
     "id": "_zh_yMvt0uay",
     "title": "默认笔记标题",
     "title_hash": "27cab928b981c71f55038d17a78b948ef5bc1065de8cc1981f96a55e79728069",
     "status": "done",
-    "hash": "94c72686d9045cba79e9bd2ba0bf6ab7f49c740c96259ebe15f2c2736fb3e12f",
-    "output_hash": "408e79fcdec1437dce69435232ddb3c8130e9416dd5b2825291d785104347801"
+    "hash": "fe026b567b1d33ba0456f0be4f2b4d3f252e5041ea51fad7a31a4589f3a0c762",
+    "output_hash": "28f96acab26bded9e010bfef30d6cb31f0e47c98c235958712aa4e07eb070c06"
   },
   "User Guide/User Guide/Advanced Usage/Database.md": {
     "id": "_zh_DqvYITI7",
@@ -2520,8 +2517,8 @@
     "title": "SQL 控制台",
     "title_hash": "65da5f2011f8562eb620f0434f1bf903a7f91a04996a03924ba6c934053e25eb",
     "status": "done",
-    "hash": "ca204e0d87b8cd052bc4d2e89761a473ad41c487097185f6babffddbd342b129",
-    "output_hash": "66dcb13845b4e6ca616ceea4366a96db8d1e9354f055b73fe702d714fa08ec61"
+    "hash": "3c5c55bb2343295f3f4f84fc07a25c82aab312ca4d560d3152b936742dc45637",
+    "output_hash": "26b006e62b72c0c6fb3cae862773e71b40a0383325fc4683d0665ef139c5e000"
   },
   "User Guide/User Guide/Advanced Usage/Database/Demo Notes.md": {
     "id": "_zh_KHkPvFtm",
@@ -2574,8 +2571,8 @@
     "title": "CKEditor",
     "title_hash": "7501d25be781f0da5a3942a28b300db95160e20a3e83cb786e95c47e91134ce6",
     "status": "done",
-    "hash": "c5b657868de44baf6350aac44a51e26643096d5471542b8ea085d2305fdc179b",
-    "output_hash": "1d9a9e09cf0ccf74ba9937d9e5c980b2a7772b54bc6ff425af7a0baec837f773"
+    "hash": "ca0cee998058378b4082659c6bcae4f23d2780c80a00d0f2695999e35254f15c",
+    "output_hash": "068fe8e9fd88a730a72276c1ab77d6763757d7a682b2b4083ebe4017636ceef0"
   },
   "User Guide/User Guide/Advanced Usage/Note ID.md": {
     "id": "_zh_WXkMSy4i",
@@ -2589,8 +2586,8 @@
     "title": "隐藏笔记",
     "title_hash": "e164cd8a8b668f819c4c2ff7540846d22503d99e92813878fc143bf00d997b61",
     "status": "done",
-    "hash": "6081d5b1c90d9f80631585161d32f3b50d8a483be07a4d3d924f48919c9e1cab",
-    "output_hash": "1ed0304d2a991fcc523872f5e7df6cc23eb69c308bdce7062e14b9a3e301c884"
+    "hash": "41c6c2aa191730814c4613ae2b5a973d9855cee5bcc04bc160003085c550be46",
+    "output_hash": "c9e7b6b5ceab72aa5845bae94a513d321e348be43d134c3a1f687377ed39b1d8"
   },
   "User Guide/User Guide/Advanced Usage/Metrics.md": {
     "id": "_zh_KDHoBaQR",
@@ -2643,32 +2640,32 @@
     "title": "提供商",
     "title_hash": "996c32b35f2182a9c83815395113f92344269ebb4ab3525017c4cafaa3d1a8fd",
     "status": "done",
-    "hash": "45f22890d7b3c9a991176d75c9abe5b54c4750b6c8a1852f8a451ad3f3c6a14c",
-    "output_hash": "f050c9a1bb8a2b803114943ca4a607c275ef70803f082dcf9d29ed74ca033aaa"
+    "hash": "11e1746d779ad82c8cf0c24d108d4b7bf90a4003263027d1b228b41184a37aee",
+    "output_hash": "64acd5406843ac6458f63068745b6c44d266f4c398bbb36811188eb3ddc8737d"
   },
   "User Guide/User Guide/AI/MCP.md": {
     "id": "_zh_9QFYgRB6",
     "title": "MCP",
     "title_hash": "53f13ae99ed53bd346eb8e1c8cefb7ef8260683b50401caf101360967ea052aa",
     "status": "done",
-    "hash": "ad3c2affc897433b0dbba020661d735c8c728b88d9b320c6544651ad407f056d",
-    "output_hash": "e739e745d80855999679d86edae4c5df98e2cb0e484bf0e209929033187fe09b"
+    "hash": "4c3f0774114ed11b9bcfdcc9910d0dd035b23825fbe5c58cef1067b64d8f2cd4",
+    "output_hash": "fdb6f6a37c84e1dd05b9a9a2915710da102285dab38bd886ef95833a6b248ff0"
   },
   "User Guide/User Guide/Scripting.md": {
     "id": "_zh_BcAJ6X7g",
     "title": "脚本",
     "title_hash": "01846401bd51c6304510b9e2350e45b81678afd5c1b9e937e2f976b0e7127e69",
     "status": "done",
-    "hash": "68d2aaedf8813295e4aa4a27c3cf9ef76a3c07e2ba71db2c1ca61119a65473da",
-    "output_hash": "5716fa13cae034d7125a2e01a93a30d5b5b613d7ee2c72ee564177cdb3d737e9"
+    "hash": "16b31ed987708cbc02023418091c1b5a5172f1638800c68278600faada93f03f",
+    "output_hash": "fe2a8f93dff931716094e84a5157ad0d871719d4cf70ef79495b65005fa8045e"
   },
   "User Guide/User Guide/Scripting/Frontend Basics.md": {
     "id": "_zh_HuntoxzM",
     "title": "前端基础",
     "title_hash": "f6b7a4b19af6c4164a602c841c2ccbc384bc2e5f5fc4d967ed33dfecb9a1355b",
     "status": "done",
-    "hash": "72f88a926cfbee63af2ae52f735774848d48648a9cd8bd7b92c72ca2387c1dbb",
-    "output_hash": "b47c200275e7cfacd3e7450bd0f40aff6043a74b4f6914f49a1bb681646eea14"
+    "hash": "b2da3f044bc39480650f292ce707399f7c2d1470a00217984c5274a34069c5eb",
+    "output_hash": "97c6ea1d1c58a394f2baec3f85901f7dc4e41a4081f13d4973f90426f3f3e6b1"
   },
   "User Guide/User Guide/Scripting/Frontend Basics/Custom Widgets.md": {
     "id": "_zh_knaRy8fW",
@@ -2742,8 +2739,8 @@
     "title": "启动栏小组件",
     "title_hash": "043c2fdcbe463ac1316a375240349d91518f2e497c93947774240596f6d3c3b9",
     "status": "done",
-    "hash": "80ca1ac07865a9150bb0b3d5c3d387f5cd4d14d45b935216ee6dde632c655db3",
-    "output_hash": "1e935b3d41ffd7608cf3de17a14a36b23f6298c13ff739ca5426385d7062fdb7"
+    "hash": "a13ad986c549cdd91f54b5d5d7a94ce5b801758988e095dd5fcee77e12f5723b",
+    "output_hash": "c1490d9487eedcc787395aa72fe4d540bd1b13fb4ce125964778d64cc951bb3b"
   },
   "User Guide/User Guide/Scripting/Frontend Basics/Launch Bar Widgets/Note Title Widget.md": {
     "id": "_zh_psbPSKKe",
@@ -2807,8 +2804,8 @@
     "title": "后端脚本",
     "title_hash": "f9f85e47a1b6be13fa67f647fd7f08778f5353a9584ad0fe58db42dd40c75983",
     "status": "done",
-    "hash": "1622ef6963534fa52d21ac5255c70ca2d4a910a5d3ac17a38e096625ecca660e",
-    "output_hash": "008497d37a63703fefe9899c9b87f4496a0ff2dee03558463e4bab9bc5c385da"
+    "hash": "f00fb490aedb855bcc34af55531d6fcd3994a485b65a7bff25e5be00eae33d38",
+    "output_hash": "485c283cb01824cd124c00250ebe7a7d6aeaf582f1a33769192f9e0babea707a"
   },
   "User Guide/User Guide/Scripting/Backend scripts/Server-side imports.md": {
     "id": "_zh_2qFBD8NS",
@@ -2829,28 +2826,8 @@
     "title": "脚本 API",
     "title_hash": "dfe44890e34da52703bffddf773fd4feea51c88c4387655e449eab8766691082",
     "status": "done",
-    "hash": "d2988ff2666a3b49915d83c686f980774f9ed6478525c8ec054782775b623e02"
-  },
-  "User Guide/User Guide/Scripting/Script API/Frontend API/FNote.dat": {
-    "id": "_zh_wBnZQKNd",
-    "title": "FNote",
-    "title_hash": "f1ec0776e62a1d4972f1c0e25bd29885afd0016eb0fe8ae88583c7ce54169f45",
-    "status": "code",
-    "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-  },
-  "User Guide/User Guide/Scripting/Script API/Backend API.dat": {
-    "id": "_zh_bMeSkX5C",
-    "title": "后端 API",
-    "title_hash": "0dad3abb65db02fbe38ae0a464e53b082625cbed48390f808b420a951120897f",
-    "status": "code",
-    "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-  },
-  "User Guide/User Guide/Scripting/Script API/Electron API.dat": {
-    "id": "_zh_EuOWVw1W",
-    "title": "Electron API",
-    "title_hash": "182c627aa37e5780adad5c5ec2ed38e25af9d6f6b3087435e88d84e4a3e0f72e",
-    "status": "code",
-    "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    "hash": "dcb0842a74a89415780a20295c4c2721f272468d0e2620333f113ef29bda1949",
+    "output_hash": "5ad6f1c049176c69af0bcd7cfd493c90768180dce59c1c28e0535a8301b6ff7b"
   },
   "User Guide/User Guide/Scripting/Script API/Day.js.md": {
     "id": "_zh_msI65HEO",
@@ -2872,7 +2849,8 @@
     "title": "v0.104.0：在 Electron 中禁用 Node 集成",
     "title_hash": "9d767d27c6e4d4c1454d487e3cef8657e8d6d1b527e149e3cbd1940afaae25df",
     "status": "done",
-    "hash": "fd17645b729ada4ece972c4f81ffea8f996259baf30f2e4120e1dd56a4429e39"
+    "hash": "e302d6ed33375c25a0ceaccca3120681e296d089947380a596ef15e95bf06402",
+    "output_hash": "b3f4041b7ea6bd437071ef690b9dd1bebbda01c51dc6fd488ff67eb076e0066e"
   },
   "User Guide/User Guide/Scripting/Breaking changes/v0.103.0 Removal of axios.md": {
     "id": "_zh_rzvTAt7b",
@@ -2988,8 +2966,8 @@
     "title": "用户指南",
     "title_hash": "d131ef7f9b5e2b457faba856dcc5f90438b46b97df6a849234432e76c63f6cbd",
     "status": "done",
-    "hash": "ebc1c3a7340a1474754b424e1ac91bfda40cca92d603a6b15c17f4e8314309df",
-    "output_hash": "b209b0f2a361752ffbb40c1463865e843d31530fede0e96699bc4a40ad9660fa"
+    "hash": "ba5188afcee64dfef235205bbf822ebb0a13398e97af6eab1af8d39fa8441e1e",
+    "output_hash": "3e4b66a374dbfbc3b359d298d31a81982a73fc4e168ca5eb30e51569ee6e8087"
   },
   "User Guide/User Guide/Feature Highlights.md": {
     "id": "_zh_9XbnLhFu",
@@ -3027,7 +3005,8 @@
     "title": "键盘快捷键",
     "title_hash": "e9bef0b0f3c25e6eaf3a754817a8b4f62e1c8473cb2be3e190975926dbf72d6f",
     "status": "done",
-    "hash": "9913889fd5b37ea66dd961eede26c61440f0aa51bd70d21308c195ef5cffbdbc"
+    "hash": "2092f1fb25b763506a3b83fd80e2aef132b6c242b652bb3449c73a1baad938c8",
+    "output_hash": "8523cd5b8848df7117c826bb4a68072d5110d526fe73e2cc8103f977bfeeff3f"
   },
   "User Guide/User Guide/Basic Concepts and Features/Import & Export/Markdown.md": {
     "id": "_zh_neJzoBgw",
@@ -3049,16 +3028,16 @@
     "title": "内容语言与从右到左支持",
     "title_hash": "b720961f737df8117e72214df7227474e16998da3d66a6f35557f4782c6a3762",
     "status": "done",
-    "hash": "c9c210193f0810c1e4b43a1570677e3a624040a8a82d5ce22010504c700fa42a",
-    "output_hash": "9b272b82e168032464340b32982970f7344d2ecd3bc6738f8471583d48bbe4fa"
+    "hash": "835f78e79a6a519ffb229ff93d7ffc1d888daa5bb291c4518209b6a490654898",
+    "output_hash": "4d272602e9d1af1cf14bd9959b802fa0b2ad26939274900ee0bafe5056739c91"
   },
   "User Guide/User Guide/Note Types/Text/In-editor AI assistant.md": {
     "id": "_zh_QplSoPnO",
     "title": "编辑器内 AI 助手",
     "title_hash": "39a4e2827b934b70eb0d86f28e23c2289b56d4afbf0bf4197245786fbaedae26",
     "status": "done",
-    "hash": "fca303b2b54dd221fede359f4c68150e314ab40fa720b544560e4151ff599305",
-    "output_hash": "69584f445530a2e2b95ba48b8563fe2fe9c8569b3e41445525fd233cecc71fb2"
+    "hash": "8060b976cec69b2be8cce3476c9f183dbda5fe2a6e2d6bcd916c08bbbf8b397a",
+    "output_hash": "fdedb2979d87f7f9d55add2bd9b504a550a6479dec08a63392a4da697d7eb479"
   },
   "User Guide/User Guide/Note Types/Text/In-editor AI assistant/Custom AI quick actions.md": {
     "id": "_zh_q6rJTdih",
@@ -3088,16 +3067,16 @@
     "title": "日历",
     "title_hash": "d5d0a30b517e3beab07609d7e54c378db5e15066f22280af453f587f7eec7474",
     "status": "done",
-    "hash": "5f3170948f9f53a5d09138cffc232103470fb0b2e8c3aa2b6ec5ebf1dd748676",
-    "output_hash": "32b8eb31d757d9a421c08a45a0c4560ce461c1d3dc2d90d79fef5cfc5d1aa705"
+    "hash": "bc683844006c8d7a227de47c6d59879f1aac91a4385e6faaea51f696edbd36df",
+    "output_hash": "b0e5b8e990e82a2d7c40ce022113affea77b850a93d4773b949338afc3f04daa"
   },
   "User Guide/User Guide/Collections/Geo Map.md": {
     "id": "_zh_kN9EE1Rg",
     "title": "地理地图",
     "title_hash": "dd8017f8a9ff69c376920ad645ade5a51dbea2362a09fb6337fbdbb9fa2e3a56",
     "status": "done",
-    "hash": "c30caf4d10947ed1051e10142bc5d619978c9004fe0dc0d1ea6d158092f4e5a8",
-    "output_hash": "23a356b99f0272fbb2f1c0eba4467842daf65db744fe2cec7030ad2e0c5e9e4e"
+    "hash": "db9e451ea5f520807231e745fe3ecc6312f6c198f1c36717e4cd24990f74f6ff",
+    "output_hash": "8d02eaa67797e002050d7d19ae6176bbd9598ee81d7dd5e03c92594abd5f5b88"
   },
   "User Guide/User Guide/Troubleshooting.md": {
     "id": "_zh_DrXAGVg9",
@@ -3112,39 +3091,32 @@
     "title": "标签",
     "title_hash": "934b8899c3d918d4b40bbb3512aed9c4ecd639c4be8e2263106536922a423121",
     "status": "done",
-    "hash": "0dfeadfbf98111d3940f13e15ebd31bda1c7e102055d1dd51f8305adc865401b",
-    "output_hash": "9132c77ddb5694fbeea1ecbbe5f4c4fa083bbd8b9e20e5c0aa6cb0bc4354cbe3"
+    "hash": "509444383cf97430d8df55d73150d4ff7e3e8394b1f7e13cea2c55dd7fd5cc5a",
+    "output_hash": "df04722d6484bfb6e62d7cad7ec6a66e440205db3aa921dc57130c75c9476a70"
   },
   "User Guide/User Guide/Advanced Usage/Configuration (config.ini or environment variables).md": {
     "id": "_zh_ftYM1Y6n",
     "title": "配置（config.ini 或环境变量）",
     "title_hash": "7dd5e46afed4d25d35ee7571443e9d4bc82f513bbc442e1c2d9c1599143130cc",
     "status": "done",
-    "hash": "183a8a1ca305fc7198184725ccb964efc76e9aa57fc6eb8f69701991c892f957",
-    "output_hash": "358c7bdf8f51b3d0822f56d7d96bf27a73cbc9f36739bc70a57f429c3f0b911d"
-  },
-  "User Guide/User Guide/Advanced Usage/Internal API/API Reference.dat": {
-    "id": "_zh_Kj1G0uqn",
-    "title": "API 参考",
-    "title_hash": "0b40234a6136f15dedcace3b83580ce8c12f511d2344edcc03075f2dc1852e3d",
-    "status": "code",
-    "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    "hash": "2894db114e37638048950d9f0acb06ecebdc631cf168e116c2039b4dcb7a2a0f",
+    "output_hash": "f7ce4cc85a88c8b8856b238fd18be0438d38deb529f529d884534688e6ca1e2e"
   },
   "User Guide/User Guide/AI.md": {
     "id": "_zh_3G4iMFlT",
     "title": "AI",
     "title_hash": "11fb682be0a0233d5fb899721ecfc1827d20f0d2ff2e093310efa61efca8af1c",
     "status": "done",
-    "hash": "6c849884f151bc34ec5b3f985884d9d5f3cd58343ca213001ca06a76e66941a7",
-    "output_hash": "2a34a8fa4862c5cbd96e68bacd330e1acb1d8875daf47470215e3434c185e2fb"
+    "hash": "52b3b5a1fa6029991703af4838dcc2658e8066f37bf34d88c81d8df9d4026279",
+    "output_hash": "b61085792e8b821720e972698f4380f565dea01bc60598d7b25da355650057b9"
   },
   "User Guide/User Guide/AI/Privacy.md": {
     "id": "_zh_25z8q6ca",
     "title": "隐私",
     "title_hash": "54a57c3147c49f33de5898b87084ad2b14c4ab308f762454bf92aca907478ad5",
     "status": "done",
-    "hash": "855ca26fba665e961a3b5162ad9094ebf54b605698ce912c355249a94155c4a6",
-    "output_hash": "c311ab58fec0e57a62a21424b01291f151ff27ccb8d16508bba2dc0ebf7fb424"
+    "hash": "94c3bc47300074c125503841a1ee8e25e7edee2cc21b52a3961393dec39770b1",
+    "output_hash": "29b52d7e4165e0d5523854ff24c87abf464cc198b0eee4dbd2e5fb11d1d79e4b"
   },
   "User Guide/User Guide/Scripting/Frontend Basics/Custom Widgets/CSS.md": {
     "id": "_zh_eKhTOdwK",
@@ -3286,8 +3258,8 @@
     "title": "基于订阅的服务提供商",
     "title_hash": "351ac2d46a65fddae93026ab72425cf0397289d89bfaaaf9a798161338291d0f",
     "status": "done",
-    "hash": "106e01396502536b10c583baa11a202f3898db0a77a33651c93f400704552f01",
-    "output_hash": "6fbbb069918e71cc12c0daf772215ebae8329b31015a7c9fe669c8333448cfc6"
+    "hash": "5daad2b032ec5c9ddeace3cd464f563022857e09a86e360b709c1d1add413693",
+    "output_hash": "7abe63a092720b927d16547452748d61f58a4ff0dcad4ac7e646b10268d9a6f1"
   },
   "Developer Guide/Developer Guide/Building/Docker Hub maintenance.md": {
     "id": "_zh_0o1GdikF",
@@ -3310,24 +3282,24 @@
     "title": "笔记菜单",
     "title_hash": "b2c86196438173600874c4f90276e4e3812fb1b9e6363c4859457df1e474149c",
     "status": "done",
-    "hash": "ed86f760cba5315c5e59512a29d704717cdc74b44034f84cc1a55be812a4515d",
-    "output_hash": "9f2cb367058708138e74de4131efe2881e2d7bd6bf6af6f7fb72772e366d2f63"
+    "hash": "d014893c4327252665a66f051a3b392b0d37abf5f9d2a5e63ce555e1ff38823f",
+    "output_hash": "faca02efe19bb0b432007c501a0bb7a9d5402e4f88d189193f609eb2d800d5d2"
   },
   "User Guide/User Guide/Basic Concepts and Features/UI Elements/Status bar.md": {
     "id": "_zh_xu370SvI",
     "title": "状态栏",
     "title_hash": "0bc4c2af5c39ad1f2312c9237789069d507e0c4daefe678266523b3177ac8b81",
     "status": "done",
-    "hash": "3d93c1023d0751180b7b88b2dd5e2830c83065dda51d3fd0cf586ab1180ce6ab",
-    "output_hash": "f8c96dc616fde70d9b9d8782e16dfc948fbae4224f4c87f2725c535232bc31e7"
+    "hash": "6789b9dd32080ece83f10295aebef3053612b213cbc0c4ee0c91fb0d7bbd1ba8",
+    "output_hash": "0dfd30a041d6b28444070343e5f86b647ce016ee646d3d14bbd9941c9c341b87"
   },
   "User Guide/User Guide/Basic Concepts and Features/UI Elements/Breadcrumb.md": {
     "id": "_zh_2ZUNbjCm",
     "title": "面包屑导航",
     "title_hash": "2bd873d6c734e63ea80e163a6a643f75bf87a3d24e3164987d176a2e3e5c567e",
     "status": "done",
-    "hash": "2e11aa0fb2a260a6be4fa09beca4471dae4c0b6359d5ecd76070b85431822b39",
-    "output_hash": "3371eb861b5d985626991b235bb9705586b4772787f9f487fdf84c0d22ca4608"
+    "hash": "0b3e69d6c3dc85cbd319703b9a68b2dda420effc3c55e2fc2ab74edf35b3f0bb",
+    "output_hash": "b4655bec44a909f5a46e798ca33282ab535235732eba11d6c6e0f5c6ebbd2458"
   },
   "User Guide/User Guide/Basic Concepts and Features/Notes/New note type switcher.md": {
     "id": "_zh_8TZ4wyCP",
@@ -3374,8 +3346,8 @@
     "title": "多栏布局",
     "title_hash": "a8529d33c36c23a1e902908eaeea40ce3942bfdb828bf8bf562247fe8a7dea7f",
     "status": "done",
-    "hash": "4064428f877868e33264e2834ed4150e7b7e1ded0e31c3fed1808c9981126257",
-    "output_hash": "9270cb59bb29aa4ed36dbc8d082ec43cc80c961e57aa9c59c3e047dead3366a9"
+    "hash": "de9b1d363412cc4d952e0414cd902f7c0cc6e2287215bd06a59df56a3511db18",
+    "output_hash": "07b8ca9baa5f1b014f68f1f52da1a02bc0b3d1b54dbfacd4d020010a4f493f20"
   },
   "User Guide/User Guide/Collections/Geo Map/Image maps.md": {
     "id": "_zh_t8OGsGxA",
@@ -3406,7 +3378,55 @@
     "title": "会议转录",
     "title_hash": "f5d082f97e9dfb596096318696a507760aea04335635ea49360116d86b11309a",
     "status": "done",
-    "hash": "544ddb49420786d8ce0b691ce7adf8f156d058a50b7636484672c1ea1987fdb8",
-    "output_hash": "abdcc1c3b5e67b19fad2504cf44c890fbee82525c34c7fe9b36e58685d1803cd"
+    "hash": "fd9f9c907e7e5c3c4384c87a04e808ab751ab918d857a2a9a4b65da3020d743a",
+    "output_hash": "8f85c0ec3459681c12599557521de2338d7a2db7927da58a86dec0a838204aa9"
+  },
+  "Release Notes/Release Notes/v0.106.1.md": {
+    "id": "_zh_DUUJVl5q",
+    "title": "v0.106.1",
+    "title_hash": "61c29f5dbcdc636cf6c61d86ee092ea349954f5b3f9450e14296e90c1a248429",
+    "status": "done",
+    "hash": "be95a3821b2ffd69d96edf53e1f50811f062dfe53b98c526980a71950e3d6b13",
+    "output_hash": "a5e8cc29445aa7c5a01958a7da4671d899d6d3a337c413cb43db50b76dcda8ab"
+  },
+  "User Guide/User Guide/Advanced Usage/ETAPI (REST API)/API Reference.md": {
+    "id": "_zh_TbIcrOAY",
+    "title": "API 参考",
+    "title_hash": "0b40234a6136f15dedcace3b83580ce8c12f511d2344edcc03075f2dc1852e3d",
+    "status": "done",
+    "hash": "a92dbe390bee375fd767e9ba61b07c054fafb5bc912674d305d78ccc2d053e0d",
+    "output_hash": "a92dbe390bee375fd767e9ba61b07c054fafb5bc912674d305d78ccc2d053e0d"
+  },
+  "User Guide/User Guide/Advanced Usage/Internal API/API Reference.md": {
+    "id": "_zh_ItgfAUT5",
+    "title": "API 参考",
+    "title_hash": "0b40234a6136f15dedcace3b83580ce8c12f511d2344edcc03075f2dc1852e3d",
+    "status": "done",
+    "hash": "0b1adccceae346a6d29fee4c286b22c1f4dcc7107080479b6baffdc8da64544c",
+    "output_hash": "0b1adccceae346a6d29fee4c286b22c1f4dcc7107080479b6baffdc8da64544c"
+  },
+  "User Guide/User Guide/Scripting/Script API/Frontend API.md": {
+    "id": "_zh_UDMxThQF",
+    "title": "前端 API",
+    "title_hash": "5870fd8194ffc282d059cd2e8fa4620ce484f3b7c2e29ab1d3b5f2c59380c77c",
+    "status": "done",
+    "hash": "b5008ca50ec750542f585b03cb712ff9aab72d135b0dcf84811cdfb48a988bbe",
+    "output_hash": "b5008ca50ec750542f585b03cb712ff9aab72d135b0dcf84811cdfb48a988bbe"
+  },
+  "User Guide/User Guide/Scripting/Script API/Backend API.md": {
+    "id": "_zh_F2u961Rj",
+    "title": "后端 API",
+    "title_hash": "0dad3abb65db02fbe38ae0a464e53b082625cbed48390f808b420a951120897f",
+    "status": "done",
+    "hash": "96d09f08bff9f12d9945482da63092b089b11080b0b75778fefeba592eeb1524",
+    "output_hash": "96d09f08bff9f12d9945482da63092b089b11080b0b75778fefeba592eeb1524"
+  },
+  "User Guide/User Guide/Scripting/Script API/Electron API.md": {
+    "id": "_zh_rqtggcwv",
+    "title": "Electron API",
+    "title_hash": "182c627aa37e5780adad5c5ec2ed38e25af9d6f6b3087435e88d84e4a3e0f72e",
+    "status": "done",
+    "hash": "c4dd02e190e2a3e5b3e9919886d474e890c363908b6904b3ea9bcb32727283fb",
+    "output_hash": "c4dd02e190e2a3e5b3e9919886d474e890c363908b6904b3ea9bcb32727283fb"
   }
 }

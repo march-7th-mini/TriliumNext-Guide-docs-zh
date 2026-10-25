@@ -1,5 +1,5 @@
 # 垂直与水平布局
-Trilium 支持两种不同的布局，具体取决于你的偏好。
+Trilium 支持两种不同的布局，具体取决于您的偏好。
 
 ### 垂直布局
 
@@ -8,7 +8,7 @@ Trilium 支持两种不同的布局，具体取决于你的偏好。
 *   <a class="reference-link" href="Launch%20Bar.md">启动栏</a>位于屏幕左侧，按钮垂直排列。
 *   标签栏位于顶部，但在<a class="reference-link" href="Note%20Tree.md">笔记树</a>的右侧。
 *   <a class="reference-link" href="../Navigation/Quick%20search.md">快速搜索</a>位于<a class="reference-link" href="Note%20Tree.md">笔记树</a>的顶部。
-*   可以通过按下<a class="reference-link" href="Launch%20Bar.md">启动栏</a>底部的 <span class="tn-icon bx bx-chevrons-left"></span> 按钮来折叠<a class="reference-link" href="Note%20Tree.md">笔记树</a>。
+*   可以通过按下<a class="reference-link" href="Launch%20Bar.md">启动栏</a>底部的 <span class="tn-icon bx bx-chevrons-left"></span> 按钮来折叠<a class="reference-link" href="Note%20Tree.md">笔记树</a>。折叠后，可以通过按下<a class="reference-link" href="Launch%20Bar.md">启动栏</a>右侧的条带，在内容上方临时窥视它。
 *   可以通过<a class="reference-link" href="Launch%20Bar.md">启动栏</a>顶部的 <span class="tn-icon cke cke-trilium"></span> 图标访问<a class="reference-link" href="Global%20menu.md">全局菜单</a>。
 
 ![](1_Vertical%20and%20horizontal%20layout_image.jpg)
@@ -20,13 +20,13 @@ Trilium 支持两种不同的布局，具体取决于你的偏好。
 *   <a class="reference-link" href="Launch%20Bar.md">启动栏</a>位于屏幕顶部，按钮水平排列。
 *   标签栏位于屏幕顶部，但现在占据整个宽度，允许一次显示更多标签。
 *   <a class="reference-link" href="../Navigation/Quick%20search.md">快速搜索</a>现在是<a class="reference-link" href="Launch%20Bar.md">启动栏</a>的一部分。它可以根据偏好移动，甚至可以在需要时移除。
-*   可以通过按下第一个标签左侧的小 <span class="tn-icon bx bx-sidebar"></span> 按钮来折叠<a class="reference-link" href="Note%20Tree.md">笔记树</a>。
+*   可以通过按下第一个标签左侧的小 <span class="tn-icon bx bx-sidebar"></span> 按钮来折叠<a class="reference-link" href="Note%20Tree.md">笔记树</a>。折叠后，可以通过按下应用程序左边缘的条带，在内容上方临时窥视它。
 *   可以通过<a class="reference-link" href="Launch%20Bar.md">启动栏</a>末端的 <span class="tn-icon bx bx-menu"></span> 按钮访问<a class="reference-link" href="Global%20menu.md">全局菜单</a>。
 
 ![](Vertical%20and%20horizontal%20layout_image.jpg)
 
 ## 更改布局
 
-转到<a class="reference-link" href="Options.md">选项</a>，在左侧寻找 _外观_ 选项。然后寻找 _布局_ 部分，在那里可以在两种可用布局之间切换。
+转到<a class="reference-link" href="Options.md">选项</a>，在左侧查找 _外观_ 选项。然后查找 _布局_ 部分，在那里可以在两种可用布局之间切换。
 
 点击某个选项将立即通过重新加载窗口来应用所选布局。
