@@ -1,8 +1,8 @@
 # 用户指南
-Trilium 是一款用于笔记记录和个人知识库整理的开源解决方案。你可以在桌面端本地使用它，也可以将其与自托管服务器同步，让笔记随时随地可用。
+Trilium 是一个用于笔记记录和个人知识库整理的开源解决方案。你可以在桌面端本地使用它，也可以将其与自托管服务器同步，从而随时随地保留你的笔记。
 
 > [!TIP]
-> 在 Trilium Notes 应用程序中按 F1 键，即可在本地访问相同的文档。
+> 在 Trilium Notes 应用程序内按 F1 即可访问相同的本地文档。
 
 ## 快速开始
 
@@ -15,11 +15,11 @@ Trilium 是一款用于笔记记录和个人知识库整理的开源解决方案
 
 *   <a class="reference-link" href="User%20Guide/Installation%20%26%20Setup/Desktop%20Installation.md">桌面端安装</a>
 *   <a class="reference-link" href="User%20Guide/Installation%20%26%20Setup/Server%20Installation.md">服务器安装</a>
-*   <a class="reference-link" href="User%20Guide/Scripting/Script%20API/Frontend%20API">前端 API</a> 或 <a class="reference-link" href="User%20Guide/Scripting/Script%20API/Backend%20API.dat">后端 API</a>
-*   [ETAPI 参考](User%20Guide/Advanced%20Usage/ETAPI%20\(REST%20API\)/API%20Reference.dat)
+*   <a class="reference-link" href="User%20Guide/Scripting/Script%20API/Frontend%20API.md">前端 API</a> 或 <a class="reference-link" href="User%20Guide/Scripting/Script%20API/Backend%20API.md">后端 API</a>
+*   [ETAPI 参考](User%20Guide/Advanced%20Usage/ETAPI%20\(REST%20API\)/API%20Reference.md)
 
 ## 外部链接
 
-*   [Trilium Notes 网站](https://triliumnotes.org/)，快速了解该应用程序。
-*   [开发者指南](https://docs.triliumnotes.org/developer-guide/)，了解 Trilium Notes 开发背后的架构和流程。
-*   [GitHub 仓库（TriliumNext/Trilium）](https://github.com/TriliumNext/Trilium/)
+*   [Trilium Notes 网站](https://triliumnotes.org/)，用于快速了解该应用程序。
+*   [开发者指南](https://docs.triliumnotes.org/developer-guide/)，用于了解 Trilium Notes 开发背后的架构与流程。
+*   [GitHub 仓库 (TriliumNext/Trilium)](https://github.com/TriliumNext/Trilium/)

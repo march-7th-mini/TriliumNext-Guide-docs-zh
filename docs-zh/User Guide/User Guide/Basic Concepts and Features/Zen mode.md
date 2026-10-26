@@ -1,7 +1,7 @@
 # 禅模式
 ![](2_Zen%20mode_image.png)
 
-在 Windows 11 系统上激活禅模式的截图，已关闭原生标题栏并开启背景效果。
+在 Windows 11 系统上启用禅模式的截图，原生标题栏关闭且背景效果开启。
 
 当禅模式被激活时（如侧图所示），Trilium 的大部分用户界面会被隐藏，以便能够专注于内容，无论是阅读还是写作。
 
@@ -13,9 +13,9 @@
 
 可以通过访问全局菜单并选择“禅模式”选项来激活禅模式：
 
-除了全局菜单之外，也可以通过键盘快捷键来激活此模式（自 TriliumNext 0.92.5 起为 <kbd>F9</kbd>，旧版本为 <kbd>Alt</kbd>+<kbd>Z</kbd>）。请在快捷键配置中查找 `toggleZenMode`。
+除了全局菜单之外，也可以使用键盘快捷键来激活此模式（自 TriliumNext 0.92.5 起为 <kbd>F9</kbd>，旧版本为 <kbd>Alt</kbd>+<kbd>Z</kbd>）。在快捷键配置中查找 `toggleZenMode`。
 
-一旦禅模式被激活，应用程序的所有 UI 元素都会被隐藏，包括全局菜单。在这种情况下，可以通过按下窗口右上角的 <span class="tn-icon bx bxs-yin-yang"></span> 图标或再次按下键盘组合键来停用禅模式。
+一旦禅模式被激活，应用程序的所有 UI 元素都会被隐藏，包括全局菜单。在这种情况下，可以通过按窗口右上角的 <span class="tn-icon bx bxs-yin-yang"></span> 图标或再次按下键盘组合键来停用禅模式。
 
 请注意，按照设计，激活或停用禅模式仅适用于当前窗口。重启应用程序也会禁用禅模式。
 
@@ -25,10 +25,10 @@
 
 ![](Zen%20mode_image.png)
 
-在禅模式激活状态下并排显示两个笔记的截图，Windows 11 系统，背景效果已关闭。
+在 Windows 11 上禅模式激活时两个笔记并排显示的截图，背景效果关闭。
 
-## 分屏窗口与标签页
+## 分屏窗口和标签页
 
-标签页被完全隐藏，但仍然可以使用键盘快捷键，例如 `firstTab`（默认为 <kbd>Ctrl</kbd>+<kbd>1</kbd>）、`secondTab`（默认为 <kbd>Ctrl</kbd>+<kbd>2</kbd>）。还有一些较新的快捷键，例如 `activateNextTab`（<kbd>Ctrl</kbd>+<kbd>Tab</kbd>）或 `activatePreviousTab`（<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Tab</kbd>），可以方便地导航，但请确保它们在设置中已正确配置。
+标签页被完全隐藏，但仍然可以使用键盘快捷键，例如 `firstTab`（默认为 <kbd>Ctrl</kbd>+<kbd>1</kbd>）、`secondTab`（默认为 <kbd>Ctrl</kbd>+<kbd>2</kbd>）。还有一些较新的快捷键，例如 `activateNextTab`（<kbd>Ctrl</kbd>+<kbd>Tab</kbd>）或 `activatePreviousTab`（<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Tab</kbd>），可以方便地导航，但请确保在设置中正确配置了它们。
 
-对于笔记的分屏视图，在撰写本文时还没有键盘快捷键，但仍然可以在禅模式中使用它们，方法是在禅模式关闭时创建分屏，然后再重新激活它。
+关于笔记的分屏视图，在撰写本文时还没有键盘快捷键，但仍然可以在禅模式中使用它们，方法是在禅模式关闭时创建分屏，然后再重新激活禅模式。

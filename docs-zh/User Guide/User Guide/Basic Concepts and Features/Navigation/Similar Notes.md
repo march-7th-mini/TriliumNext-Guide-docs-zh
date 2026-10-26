@@ -7,6 +7,7 @@
 
 *   转到<a class="reference-link" href="../UI%20Elements/Right%20Sidebar/Connections%20tab.md">连接选项卡</a>（位于<a class="reference-link" href="../UI%20Elements/Right%20Sidebar.md">右侧边栏</a>中），然后查找相应的部分。
 *   或者，按<a class="reference-link" href="../UI%20Elements/Status%20bar.md">状态栏</a>中的 <span class="tn-icon bx bx-info-circle"></span>，然后选择 _显示相似笔记_，这将在底部打开一个窗格。
+*   在<a class="reference-link" href="../../Installation%20%26%20Setup/Mobile%20Frontend.md">移动前端</a>上，打开<a class="reference-link" href="../UI%20Elements/Note%20menu.md">笔记菜单</a> → _笔记信息_，然后选择 _显示相似笔记_。
 
 ## 交互
 
