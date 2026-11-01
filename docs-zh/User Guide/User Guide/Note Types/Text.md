@@ -4,11 +4,11 @@ Trilium 中的默认笔记类型，文本笔记支持富文本格式、表格、
 
 ## 格式工具栏
 
-与文本笔记的大部分交互都是通过内置工具栏完成的。根据个人偏好，有两种不同的布局：
+与文本笔记的大多数交互都是通过内置工具栏完成的。根据个人偏好，有两种不同的布局：
 
 *   _浮动工具栏_ 默认隐藏，仅在需要时出现。在此模式下实际上有两种不同的工具栏：
     <img src="1_Text_image.png" width="496" height="91"><img src="2_Text_image.png" width="812" height="114">
-*   选中文本时出现的工具栏。这提供了文本级别的格式设置，如粗体、斜体、文本颜色、行内代码等。
+*   选中文本时出现的工具栏。它提供文本级别的格式设置，如加粗、斜体、文字颜色、行内代码等。
     _<img src="Text_image.png" width="1109" height="124">_
 
 更多信息请参见 <a class="reference-link" href="Text/Formatting%20toolbar.md">格式工具栏</a>。
@@ -20,26 +20,26 @@ Trilium 中的默认笔记类型，文本笔记支持富文本格式、表格、
 <table>
     <thead>
         <tr>
-            <th>专用文章</th>
+            <th>专题文章</th>
             <th>功能</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td><a class="reference-link" href="Text/General%20formatting.md">通用格式</a></td>
-            <td><ul><li>标题（章节标题、段落）</li><li>字体大小</li><li>粗体、斜体、下划线、删除线</li><li>上标、下标</li><li>字体颜色和背景颜色</li><li>清除格式</li></ul></td>
+            <td><ul><li>标题（章节标题、段落）</li><li>字号</li><li>加粗、斜体、下划线、删除线</li><li>上标、下标</li><li>字体颜色与背景颜色</li><li>清除格式</li></ul></td>
         </tr>
         <tr>
             <td><a class="reference-link" href="Text/Lists.md">列表</a></td>
-            <td><ul><li>无序列表</li><li>有序列表</li><li>待办事项列表</li></ul></td>
+            <td><ul><li>项目符号列表</li><li>编号列表</li><li>待办事项列表</li></ul></td>
         </tr>
         <tr>
-            <td><a class="reference-link" href="Text/Block%20quotes%20%26%20admonitions.md">块引用和警示框</a></td>
+            <td><a class="reference-link" href="Text/Block%20quotes%20%26%20admonitions.md">块引用与警示框</a></td>
             <td><ul><li>块引用</li><li>警示框</li></ul></td>
         </tr>
         <tr>
             <td><a class="reference-link" href="Text/Tables.md">表格</a></td>
-            <td><ul><li>基本表格</li><li>合并单元格</li><li>表格和单元格样式</li><li>表格标题</li></ul></td>
+            <td><ul><li>基本表格</li><li>合并单元格</li><li>表格与单元格样式</li><li>表格标题</li></ul></td>
         </tr>
         <tr>
             <td><a class="reference-link" href="Text/Developer-specific%20formatting.md">开发者专用格式</a></td>
@@ -63,7 +63,7 @@ Trilium 中的默认笔记类型，文本笔记支持富文本格式、表格、
         </tr>
         <tr>
             <td><a class="reference-link" href="Text/Block%20references.md">块引用</a></td>
-            <td><ul><li>指向笔记块的链接</li><li>包含笔记的块</li></ul></td>
+            <td><ul><li>指向笔记中块的链接</li><li>包含笔记中的块</li></ul></td>
         </tr>
         <tr>
             <td><a class="reference-link" href="Text/Insert%20buttons.md">插入按钮</a></td>
@@ -71,7 +71,7 @@ Trilium 中的默认笔记类型，文本笔记支持富文本格式、表格、
         </tr>
         <tr>
             <td><a class="reference-link" href="Text/Other%20features.md">其他功能</a></td>
-            <td><ul><li>缩进<ul><li>Markdown 导入</li></ul></li><li><a class="reference-link" href="Text/Cut%20to%20subnote.md">剪切为子笔记</a></li></ul></td>
+            <td><ul><li>缩进<ul><li>Markdown 导入</li></ul></li><li><a class="reference-link" href="Text/Cut%20to%20subnote.md">剪切为子笔记</a></li><li><a class="reference-link" href="Text/Sorting.md">排序</a></li></ul></td>
         </tr>
         <tr>
             <td><a class="reference-link" href="Text/Premium%20features.md">高级功能</a></td>
@@ -86,11 +86,11 @@ Trilium 中的默认笔记类型，文本笔记支持富文本格式、表格、
 
 ## 键盘快捷键
 
-有大量键盘快捷键可用于格式化文本，无需使用鼠标。有关所有按键组合的参考，请参见 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/Keyboard%20Shortcuts.md">键盘快捷键</a>。此外，请参见 <a class="reference-link" href="Text/Markdown-like%20formatting.md">类 Markdown 格式</a> 作为键盘快捷键的替代方案。
+有许多键盘快捷键可以在不使用鼠标的情况下格式化文本。有关所有按键组合的参考，请参见 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/Keyboard%20Shortcuts.md">键盘快捷键</a>。此外，请参见 <a class="reference-link" href="Text/Markdown-like%20formatting.md">类 Markdown 格式</a> 作为键盘快捷键的替代方案。
 
 ## 内容宽度
 
-为了在较宽屏幕上提高可读性，文本笔记的宽度通过一个可配置选项进行限制。更多信息请参见 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Content%20width.md">内容宽度</a>。
+为了在更宽的屏幕上提高可读性，文本笔记的宽度通过一个可配置选项进行限制。更多信息请参见 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Content%20width.md">内容宽度</a>。
 
 ## 转换为 Markdown 笔记
 
