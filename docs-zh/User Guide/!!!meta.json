@@ -8880,6 +8880,56 @@
                 },
                 {
                   "isClone": false,
+                  "noteId": "_zh_RvnAuxvl",
+                  "notePath": [
+                    "pOsGYCXsbNQG",
+                    "KSZ04uQ2D1St",
+                    "iPIMuisry3hd",
+                    "0vgWgxQAWj4a"
+                  ],
+                  "title": "排序",
+                  "notePosition": 290,
+                  "prefix": null,
+                  "isExpanded": false,
+                  "type": "text",
+                  "mime": "text/html",
+                  "attributes": [
+                    {
+                      "type": "label",
+                      "name": "shareAlias",
+                      "value": "sorting",
+                      "isInheritable": false,
+                      "position": 10
+                    },
+                    {
+                      "type": "label",
+                      "name": "iconClass",
+                      "value": "bx bx-sort-alt-2",
+                      "isInheritable": false,
+                      "position": 20
+                    },
+                    {
+                      "type": "label",
+                      "name": "originalHelpNoteId",
+                      "value": "_help_0vgWgxQAWj4a",
+                      "isInheritable": false,
+                      "position": 30
+                    },
+                    {
+                      "type": "label",
+                      "name": "helpDoc",
+                      "value": "zh",
+                      "isInheritable": false,
+                      "position": 40
+                    }
+                  ],
+                  "format": "markdown",
+                  "dataFileName": "Sorting.md",
+                  "attachments": [],
+                  "children": []
+                },
+                {
+                  "isClone": false,
                   "noteId": "_zh_7qBFeAy6",
                   "notePath": [
                     "pOsGYCXsbNQG",
@@ -8888,7 +8938,7 @@
                     "oBo3iHIZnbG2"
                   ],
                   "title": "拼写检查",
-                  "notePosition": 290,
+                  "notePosition": 300,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -8938,7 +8988,7 @@
                     "BFvAtE74rbP6"
                   ],
                   "title": "目录",
-                  "notePosition": 300,
+                  "notePosition": 310,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -8988,7 +9038,7 @@
                     "NdowYOC1GFKS"
                   ],
                   "title": "表格",
-                  "notePosition": 310,
+                  "notePosition": 320,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -9071,7 +9121,7 @@
                     "pwc194wlRzcH"
                   ],
                   "title": "文本片段",
-                  "notePosition": 320,
+                  "notePosition": 330,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -9116,7 +9166,7 @@
                     "fASfBrYnquKU"
                   ],
                   "title": "待办列表",
-                  "notePosition": 330,
+                  "notePosition": 340,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",

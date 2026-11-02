@@ -1,6 +1,6 @@
 # ETAPI (REST API)
 > [!TIP]
-> 如需快速入门，请参阅 <a class="reference-link" href="ETAPI%20(REST%20API)/API%20Reference.md">API 参考</a>。
+> 如需快速上手，请参阅 <a class="reference-link" href="ETAPI%20(REST%20API)/API%20Reference.md">API 参考</a>。
 
 ETAPI 是 Trilium 的公共/外部 REST API。自 Trilium v0.50 起可用。
 
@@ -12,7 +12,7 @@ ETAPI 是 Trilium 的公共/外部 REST API。自 Trilium v0.50 起可用。
 
 ## 获取令牌
 
-所有 REST API 操作都必须使用令牌进行身份验证。你可以从 选项 -> ETAPI 获取此令牌，也可以通过 `/auth/login` REST 调用以编程方式获取（参见[规范](https://github.com/TriliumNext/Trilium/blob/master/src/etapi/etapi.openapi.yaml)）。
+所有 REST API 操作都必须使用令牌进行身份验证。你可以从 选项 -> ETAPI 获取此令牌，也可以通过 `/auth/login` REST 调用以编程方式获取（参见[规范](https://github.com/TriliumNext/Trilium/blob/main/apps/server/src/assets/etapi.openapi.yaml)）。启用[多因素身份验证](../Installation%20%26%20Setup/Server%20Installation/Multi-factor%20authentication%20with%20TOTP.md)后，`/auth/login` 还需要在 `totpToken` 中提供一次性密码或恢复代码。
 
 ## 身份验证
 
@@ -36,9 +36,9 @@ GET https://myserver.com/etapi/app-info
 Authorization: Basic BATOKEN
 ```
 
-*   其中 `BATOKEN = BASE64(username + ':' + password)` - 这是标准的 Basic Auth 序列化格式
+*   其中 `BATOKEN = BASE64(username + ':' + password)` —— 这是标准的 Basic Auth 序列化格式
 *   其中 `username` 为 "etapi"
-*   而 `password` 为上述生成的 ETAPI 令牌。
+*   而 `password` 是上述生成的 ETAPI 令牌。
 
 基本身份验证适用于仅支持基本身份验证的工具。
 
@@ -76,7 +76,7 @@ curl -H "Authorization: $TOKEN" \
 
 JSON 请求体只能携带文本，因此 `POST /etapi/attachments` 的 `content` 字段会原样存储它接收到的字符串。要上传图片、PDF 或任何其他二进制文件，请将原始字节以 `application/octet-stream` 内容类型发送到内容端点。笔记的内容（`PUT /etapi/notes/{noteId}/content`）也是如此。
 
-要将文件附加到笔记，请先创建不带内容的附件，然后上传文件到该附件：
+要将文件附加到笔记，请先创建不带内容的附件，然后将文件上传到该附件：
 
 ```
 ATTACHMENT_ID=$(curl -s -X POST "$SERVER/etapi/attachments" \

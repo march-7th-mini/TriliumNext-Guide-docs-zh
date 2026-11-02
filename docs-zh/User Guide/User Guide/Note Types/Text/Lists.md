@@ -6,7 +6,7 @@
 *   <span class="tn-icon cke cke-numbered-list"></span> 编号列表（或有序列表）。
 *   <span class="tn-icon cke cke-todo-list"></span> 待办列表
 
-对于项目符号列表和编号列表，可以通过按下 <span class="tn-icon cke cke-dropdown-arrow"></span> 图标来配置替代标记，例如方块或罗马数字编号。对于编号列表，还可以指定起始编号或是否按倒序计数。在 <a class="reference-link" href="../../Installation%20%26%20Setup/Mobile%20Frontend.md">移动端前端</a> 上，这些选项位于 _列表 ›_ 按钮所在的行中，当光标位于列表中时会显示该按钮；其 _列表类型_ 按钮还可以将列表转换为另一种类型，包括待办列表。
+对于项目符号列表和编号列表，可以通过按下 <span class="tn-icon cke cke-dropdown-arrow"></span> 图标来配置替代标记，例如方块或罗马数字编号。对于编号列表，还可以指定起始编号或是否按相反顺序计数。在 <a class="reference-link" href="../../Installation%20%26%20Setup/Mobile%20Frontend.md">移动端前端</a> 上，这些选项位于 _列表 ›_ 按钮所在的行中，当光标位于列表中时会显示该按钮；其 _列表类型_ 按钮也可以将列表转换为另一种类型，包括待办列表。
 
 ## 键盘交互
 
@@ -39,7 +39,7 @@
         <tr>
             <td>3</td>
             <td><img src="1_Lists_image.jpg"></td>
-            <td>按 Backspace 去除项目符号。注意光标位置。</td>
+            <td>按 Backspace 删除项目符号。注意光标位置。</td>
         </tr>
         <tr>
             <td>4</td>
@@ -49,7 +49,7 @@
         <tr>
             <td>5</td>
             <td><img class="image_resized" style="aspect-ratio:675/129;width:94.22%;" src="3_Lists_image.jpg" width="675" height="129"></td>
-            <td>要继续添加新的项目符号，请按 Enter 直到光标移动到新的空白位置。</td>
+            <td>要继续创建新的项目符号，请按 Enter 直到光标移动到新的空白位置。</td>
         </tr>
         <tr>
             <td>6</td>
@@ -61,9 +61,13 @@
 
 同样的原理适用于所有三种列表类型（项目符号、编号和待办）。
 
+## 排序
+
+列表的项目可以排序，嵌套项目会随其所属项目一起移动。这是实验性功能，参见 <a class="reference-link" href="Sorting.md">排序</a>。
+
 ## 对齐
 
-列表项可以居中或右对齐，可以通过格式工具栏中的文本对齐按钮，或通过对齐包含该列表的 <a class="reference-link" href="Tables.md">表格</a> 单元格来实现。项目符号、编号或复选框随后会随项目文本一起移动。
+列表项可以居中对齐或右对齐，可以通过格式工具栏中的文本对齐按钮，或通过对齐包含该列表的 <a class="reference-link" href="Tables.md">表格</a> 单元格来实现。项目符号、编号或复选框会随项目文本一起移动。
 
 ## 待办列表
 
@@ -73,16 +77,16 @@
 
 从 Trilium v0.104.0 开始，可以折叠嵌套的列表项。这适用于项目符号列表、编号列表以及待办列表。
 
-要折叠或展开具有嵌套子项的列表项：
+要折叠或展开具有嵌套子项目的列表项：
 
 *   使用鼠标，将光标移到列表项上，其左侧会出现一个箭头。点击它将在折叠和展开之间切换。
-*   对于项目符号列表和编号列表，也可以直接点击标记（例如项目符号或编号）而不是箭头来折叠或展开它。这不适用于待办列表，因为这样会切换待办状态。
+*   对于项目符号列表和编号列表，也可以直接点击标记（例如项目符号或编号）而不是箭头来折叠或展开。这对待办列表不起作用，因为这样会切换待办状态。
 *   按 <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Enter</kbd>，将切换光标位置处项目的折叠/展开状态。
 
 注意事项：
 
 *   折叠的项目始终显示箭头以指示其状态。
 *   折叠状态保存在笔记级别，并在各实例之间同步，这意味着在刷新或重新打开应用程序后它会恢复。
-*   折叠状态也会持久化在 <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/Import%20%26%20Export.md">导入 &amp; 导出</a> 中，但仅限 HTML 格式。Markdown 导出不会保留折叠状态。
+*   折叠状态也会持久化在 <a class="reference-link" href="../../Basic%20Concepts%20and%20Features/Import%20%26%20Export.md">导入与导出</a> 中，但仅限 HTML 格式。Markdown 导出不会保留折叠状态。
 *   可折叠项目符号仅存在于可编辑文本笔记的上下文中。只读列表将始终完全展开。
 *   列表项在编辑时会自动展开，以避免在隐藏区域中键入。
