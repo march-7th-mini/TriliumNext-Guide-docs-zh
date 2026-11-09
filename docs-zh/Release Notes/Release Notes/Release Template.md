@@ -1,11 +1,15 @@
 # 发布模板
-> [!注意]
-> 如果您喜欢本次发布，不妨通过以下方式表达感谢：
+> [!NOTE]
+> 如果你喜欢这个版本，可以考虑通过以下方式表示感谢：
 > 
-> *   在 [GitHub](https://github.com/TriliumNext/Trilium) 上点击“Star”按钮（右上角）。
+> *   点击 [GitHub](https://github.com/TriliumNext/Trilium) 右上角的“Star”按钮。
 > *   考虑通过 [GitHub Sponsors](https://github.com/sponsors/eliandoran) 或 [PayPal](https://paypal.me/eliandoran) 向[首席开发者](https://github.com/eliandoran)进行一次性或定期捐赠。
 
-## 💡 主要亮点
+## 💡 重点亮点
+
+1.  \[…\]
+
+## 🔄 兼容性
 
 1.  \[…\]
 
@@ -17,11 +21,11 @@
 
 1.  \[…\]
 
-## 🐞 错误修复
+## 🐞 缺陷修复
 
 1.  \[…\]
 
-## ✨ 功能改进
+## ✨ 改进
 
 1.  \[…\]
 

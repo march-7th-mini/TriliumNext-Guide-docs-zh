@@ -13,7 +13,7 @@ body.desktop #root-widget {
 }
 ```
 
-请注意，移动端布局中还存在“平板模式”。对于这种特殊情况，需要使用媒体查询：
+请注意，移动端布局中还有“平板模式”。针对这种特定情况，需要使用媒体查询：
 
 ```css
 @media (max-width: 991px) {
@@ -69,7 +69,7 @@ body.layout-horizontal #center-pane {
 
 === "<span class="tn-icon bx bx-windows"></span> Electron（桌面应用）"
 
-    要区分<a class="reference-link" href="../Installation%20%26%20Setup/Desktop%20Installation.md">桌面安装</a>和<a class="reference-link" href="../Installation%20%26%20Setup/Server%20Installation.md">服务器安装</a>：
+    要区分<a class="reference-link" href="../Installation%20%26%20Setup/Desktop%20Installation.md">桌面端安装</a>和<a class="reference-link" href="../Installation%20%26%20Setup/Server%20Installation.md">服务器安装</a>：
 
     ```
     body.electron {
@@ -81,7 +81,7 @@ body.layout-horizontal #center-pane {
 
 ### 原生标题栏
 
-可以通过查询 `body` 来检测用户是否选择了原生标题栏或自定义标题栏：
+可以通过查询 `body` 来检测用户选择的是原生标题栏还是自定义标题栏：
 
 ```
 body.electron.native-titlebar {
@@ -95,7 +95,7 @@ body.electron:not(.native-titlebar) {
 
 ### 原生窗口按钮
 
-在 Electron 下运行时，如果关闭了原生标题栏，则引入了一项功能，使用平台特定的窗口按钮，例如 macOS 上的信号灯按钮。
+在 Electron 下运行且关闭原生标题栏时，引入了一项功能，可以使用平台特定的窗口按钮，例如 macOS 上的信号灯按钮。
 
 有关此功能的原始实现（包括截图），请参阅 [Native title bar buttons by eliandoran · Pull Request #702 · TriliumNext/Notes](https://github.com/TriliumNext/Notes/pull/702)。
 
@@ -122,7 +122,7 @@ body.electron:not(.native-titlebar) {
 
 === "<span class="tn-icon bx bxl-apple"></span> macOS"
 
-    在 macOS 上，当禁用原生标题栏时，信号灯窗口按钮默认启用。按钮的偏移量可以使用以下方式调整：
+    在 macOS 上，当原生标题栏被禁用时，信号灯窗口按钮默认启用。按钮的偏移量可以使用以下方式调整：
 
     ```css
     body {
@@ -133,7 +133,7 @@ body.electron:not(.native-titlebar) {
 
 ### Windows 上的背景/透明效果（Mica）
 
-Windows 11 提供了一种特殊的背景/透明效果，称为 Mica，主题可以通过在 `body` 层级设置 `--background-material` 变量来启用：
+Windows 11 提供了一种名为 Mica 的特殊背景/透明效果，主题可以通过在 `body` 层级设置 `--background-material` 变量来启用它：
 
 ```css
 body.electron.platform-win32 {
@@ -141,13 +141,13 @@ body.electron.platform-win32 {
 }
 ```
 
-该值可以是 `tabbed`（对水平布局特别有用）或 `mica`（非常适合垂直布局）。
+该值可以是 `tabbed`（特别适用于水平布局）或 `mica`（适用于垂直布局）。
 
 请注意，Mica 效果应用于 `body` 层级，主题需要使整个层级结构（半）透明才能使其可见。可以参考 TrilumNext 主题作为灵感。
 
-## 笔记图标、标签页工作区强调色
+## 笔记图标、标签工作区强调色
 
-主题功能是通过 CSS 变量进行的小调整，可以影响应用程序的布局或视觉外观。
+主题能力是通过 CSS 变量进行的小幅调整，可以影响应用程序的布局或视觉外观。
 
 在标签栏中，显示笔记的图标而不是工作区的图标：
 
@@ -157,7 +157,7 @@ body.electron.platform-win32 {
 }
 ```
 
-当某个标签页的工作区被提升时，可以获取该工作区的背景颜色，例如在标签页上应用一个小条而不是整个背景颜色：
+当某个标签的工作区被提升时，可以获取该工作区的背景颜色，例如在标签上应用一个小条带而不是整个背景颜色：
 
 ```css
 .note-tab .note-tab-wrapper {
@@ -179,7 +179,7 @@ body.electron.platform-win32 {
 
 使用自定义字体的推荐方式是直接在 Trilium 中导入字体。有关如何操作的信息，请参阅<a class="reference-link" href="../Basic%20Concepts%20and%20Features/Themes/Personalizing%20the%20font.md">个性化字体</a>。
 
-或者，对于提供自己字体的主题，可以使用[自定义资源提供程序](../Advanced%20Usage/Custom%20Resource%20Providers.md)：将字体导入 Trilium 并为其分配 `#customResourceProvider=fonts/myfont.ttf`，然后通过 `/custom/fonts/myfont.ttf` 在 CSS 中导入字体。如果您的 Trilium 服务器运行在 `/` 以外的路径上，请使用 `../../../custom/fonts/myfont.ttf`。
+或者，对于提供自己字体的主题，可以使用[自定义资源提供者](../Advanced%20Usage/Custom%20Resource%20Providers.md)：将字体导入 Trilium 并为其分配 `#customResourceProvider=fonts/myfont.ttf`，然后通过 `/custom/fonts/myfont.ttf` 在 CSS 中导入字体。如果你的 Trilium 服务器运行在 `/` 以外的路径上，请使用 `../../../custom/fonts/myfont.ttf`。
 
 ## 深色和浅色主题
 
@@ -191,9 +191,9 @@ body.electron.platform-win32 {
 }
 ```
 
-如果主题是深色的，则 `--theme-style` 需要为 `dark`。深色的 `--theme-style` 还会告诉 Dark Reader 浏览器扩展不要修改页面。
+如果主题是深色的，则 `--theme-style` 需要为 `dark`。深色的 `--theme-style` 还会告诉 Dark Reader 浏览器扩展不要处理该页面。
 
-如果主题是自动的（例如基于 `prefers-color-scheme` 同时支持浅色或深色），则还必须声明（除了将 `--theme-style` 设置为 `light` 或 `dark` 之外）：
+如果主题是自动的（例如根据 `prefers-color-scheme` 同时支持浅色或深色），则还必须声明（除了将 `--theme-style` 设置为 `light` 或 `dark` 之外）：
 
 ```css
 :root {
@@ -203,11 +203,11 @@ body.electron.platform-win32 {
 }
 ```
 
-这将通过向操作系统告知颜色偏好来影响 Electron 应用程序的行为（例如，背景效果在 Windows 上将正确显示）。
+这将通过向操作系统告知颜色偏好来影响 Electron 应用程序的行为（例如，背景效果在 Windows 上会正确显示）。
 
 ## 自适应文本和表格颜色
 
-在文本笔记中应用的颜色，来自字体颜色和背景颜色按钮（请参阅<a class="reference-link" href="../Note%20Types/Text/General%20formatting.md">通用格式</a>）或来自表格和单元格属性（请参阅<a class="reference-link" href="../Note%20Types/Text/Tables.md">表格</a>），会以适合主题的色调显示：色相保持不变，而亮度和饱和度则保持在限制范围内。主题可以更改这些限制，例如，如果其页面背景比内置主题的页面背景暗得多或亮得多：
+在文本笔记中应用的颜色，来自字体颜色和背景颜色按钮（参见<a class="reference-link" href="../Note%20Types/Text/General%20formatting.md">通用格式</a>）或来自表格和单元格属性（参见<a class="reference-link" href="../Note%20Types/Text/Tables.md">表格</a>），会以适合主题的色调显示：色相保持不变，而亮度和饱和度保持在限制范围内。主题可以更改这些限制，例如，如果其页面背景比内置主题的页面背景暗得多或亮得多：
 
 ```css
 :root {
@@ -219,16 +219,16 @@ body.electron.platform-win32 {
 每个变量的命名为 `--adaptive-<role>-<light|dark>-<limit>`：
 
 *   角色为 `text`（字体颜色）、`background`（字体背景颜色）、`table-border` 或 `table-background`（表格和单元格）。
-*   `light` 或 `dark` 是该限制所适用的主题类型，由 `--theme-style` 声明。
-*   限制为 `min-lightness` 或 `max-lightness`（CIELAB 亮度，从黑色的 0 到白色的 100），或 `max-chroma`（颜色的最大饱和度；`150` 表示没有实际限制）。每个值必须是纯数字，否则颜色将失去其自适应能力。
+*   `light` 或 `dark` 是限制所适用的主题类型，由 `--theme-style` 声明。
+*   限制为 `min-lightness` 或 `max-lightness`（CIELAB 亮度，从 0 表示黑色到 100 表示白色），或 `max-chroma`（颜色的饱和度上限；`150` 表示没有实际限制）。每个值必须是纯数字，否则颜色将失去其自适应效果。
 
 默认值为：
 
 | 角色 | 浅色主题 | 深色主题 |
 | --- | --- | --- |
-| `text` | `max-lightness: 40`、`max-chroma: 150` | `min-lightness: 75`、`max-chroma: 55` |
+| `text` | `max-lightness: 45`、`max-chroma: 150` | `min-lightness: 75`、`max-chroma: 55` |
 | `background` | `min-lightness: 90`、`max-chroma: 20` | `max-lightness: 30`、`max-chroma: 30` |
 | `table-border` | `max-lightness: 60`、`max-chroma: 150` | `min-lightness: 47`、`max-chroma: 150` |
 | `table-background` | `min-lightness: 90`、`max-chroma: 20` | `max-lightness: 30`、`max-chroma: 30` |
 
-这些限制在笔记显示时生效，因此对它们的更改会同时影响每个笔记。笔记本身会保留每个颜色在被选取时的状态，存储在其 `color`、`background-color` 或 `border-color` 样式中，并再次存储在 `--tn-color`、`--tn-background` 或 `--tn-border-color` 变量中，自适应功能会读取这些变量。
+这些限制在笔记显示时生效，因此更改它们会同时影响所有笔记。笔记本身会按照选取时的颜色保留每种颜色，存储在其 `color`、`background-color` 或 `border-color` 样式中，并再次存储在 `--tn-color`、`--tn-background` 或 `--tn-border-color` 变量中，自适应效果会读取这些变量。
