@@ -1,19 +1,35 @@
 # 发布新版本
-发布主要由 CI 处理：
 
-*   GitHub 上的版本会自动发布，包括取自文档的变更日志描述。
-*   会在 Winget 仓库中自动创建一个 PR，以更新到新版本。
+发布工作主要由 CI 处理：
 
-发布通常直接从 `main` 分支进行。对于热修复，流程相同，但使用不同的分支，更多信息请参阅 <a class="reference-link" href="../Branching%20strategy.md">分支策略</a>。
+*   GitHub 上的版本会自动发布，包括带有变更日志的描述，该描述取自文档。
+*   会自动在 Winget 仓库上创建一个 PR 以更新到新版本。
+
+发布通常直接从 `main` 分支进行。对于热修复，流程相同但使用不同的分支，请参阅<a class="reference-link" href="../Branching%20strategy.md">分支策略</a>了解更多信息。
+
+## 使用发布 CLI
+
+`pnpm chore:release` 会以交互方式引导完成整个流程：
+
+1.  检查分支是否落后于 `origin`，以及每个变更日志条目是否有效。
+2.  根据变更日志条目提议版本号：当条目包含破坏性变更、亮点、兼容性变更或新功能时，当同步或数据库版本发生变化时，或当条目数量很多时，提议主版本发布（`0.106.1` → `0.107.0`）；否则提议次版本发布（`0.106.1` → `0.106.2`）。已为更新版本起草的发布说明优先。
+3.  如果没有发布说明则起草一份，将其登记到发布说明文件夹中，并对之后发生变化的变更日志条目发出警告。一旦说明定稿，它会消耗这些条目并提交该说明。
+4.  在每个 `package.json` 中设置版本号，提交并运行发布预检。
+5.  为提交打标签并推送分支和标签，从而启动发布工作流。
+6.  将标签合并到 `stable` 分支并推送（不适用于预发布版本）。
+
+它在每次提交和推送前都会询问，并且每一步都会跳过已完成的部分，因此中途停止的运行可以重新开始。`pnpm chore:release --dry-run` 会询问相同的问题，但会打印命令而不是执行它们。
+
+## 手动流程
 
 流程如下：
 
-1.  编辑 <a class="reference-link" href="../Documentation.md">文档</a>，在 _发布说明_ 部分添加相应条目。
+1.  编辑<a class="reference-link" href="../Documentation.md">文档</a>，在 _发布说明_ 部分添加相应的条目。
 2.  在根目录的 `package.json` 中，将 `version` 设置为要发布的新版本。
 3.  运行 `chore:update-version` 以自动更新其余 `package.json` 文件的版本。
-4.  同时运行 `pnpm i` 以更新包锁文件。
-5.  提交对 `package.json` 文件和 `package-lock.json` 的更改。提交信息通常为 `chore(release): prepare for v1.2.3`。
+4.  运行 `pnpm i` 以同时更新包锁定文件。
+5.  将更改提交到 `package.json` 文件和 `package-lock.json`。提交消息通常为 `chore(release): prepare for v1.2.3`。
 6.  为新创建的提交打标签：`git tag v1.2.3`
 7.  推送提交和新创建的标签：`git push; git push --tags`。
 8.  等待 CI 完成。
-9.  当版本在 GitHub 中自动创建后，下载它以确保其正常工作。
+9.  当 GitHub 中自动创建发布后，下载它以确保其正常工作。
