@@ -1,19 +1,19 @@
 # 主题
 ## 默认主题
 
-Trilium 预装了几个配色主题，默认是浅色主题。要切换到深色主题或任何其他可用主题，请导航到 <span class="tn-icon bx bx-cog"></span> 选项菜单（可通过左上角的应用图标访问），选择外观选项卡，然后选择你偏好的主题。<a class="reference-link" href="UI%20Elements/Global%20menu.md">全局菜单</a>的_主题_子菜单也可以切换主题和配色方案。
+Trilium 附带几个预装的彩色主题，默认是浅色主题。要切换到深色主题或任何其他可用主题，请导航到 <span class="tn-icon bx bx-cog"></span> 选项菜单（可通过左上角的应用图标访问），选择外观选项卡，然后选择您偏好的主题。<a class="reference-link" href="UI%20Elements/Global%20menu.md">全局菜单</a>的_主题_子菜单也会切换主题和配色方案。
 
 ![深色主题](Themes_dark-theme.png)
 
-当深色主题处于激活状态时，Trilium 会请求 Dark Reader 浏览器扩展不要再次将页面变暗。Dark Reader 仍会将浅色主题变暗。从深色主题切换到浅色主题后，请重新加载页面（<kbd>Ctrl</kbd>+<kbd>R</kbd>），以便 Dark Reader 再次生效。
+当深色主题处于活动状态时，Trilium 会请求 Dark Reader 浏览器扩展不要再次将页面变暗。Dark Reader 仍会将浅色主题变暗。从深色主题切换到浅色主题后，请重新加载页面（<kbd>Ctrl</kbd>+<kbd>R</kbd>）以使 Dark Reader 再次生效。
 
 ## 创建自定义 CSS 主题
 
-Trilium 支持自定义用户主题，允许你个性化应用的外观。要创建自定义主题，请按照以下步骤操作：
+Trilium 支持自定义用户主题，允许您个性化应用程序的外观。要创建自定义主题，请按照以下步骤操作：
 
 1.  **创建 CSS 代码笔记**：首先创建一个类型为 `CSS` 的新[代码笔记](../Note%20Types/Code.md)。
-2.  **使用** `#appTheme` **标注**：为你的笔记添加[属性](../Advanced%20Usage/Attributes.md) `#appTheme=my-theme-name`，其中 `my-theme-name` 是你的自定义主题名称。
-3.  **定义你的样式**：在笔记中编写你的自定义 CSS。
+2.  **使用** `#appTheme` **标注**：为您的笔记添加[属性](../Advanced%20Usage/Attributes.md) `#appTheme=my-theme-name`，其中 `my-theme-name` 是您自定义主题的名称。
+3.  **定义您的样式**：在笔记中编写您的自定义 CSS。
 
 <details open="">
     <summary>自定义主题示例</summary>
@@ -58,7 +58,7 @@ Trilium 支持自定义用户主题，允许你个性化应用的外观。要创
     --link-color: lightskyblue;
     --modal-background-color: #404552;
     --modal-backdrop-color: black;
-    --scrollbar-border-color: rgba(175, 184, 198, 0.5);
+    --scrollbar-thumb-color: rgba(175, 184, 198, 0.5);
 }&#10;
 body .note-detail-text {
     font-size: 120%;
@@ -69,31 +69,31 @@ body .CodeMirror {
     <p>&nbsp;</p>
 </details>
 
- 
+ 
 
-### 激活你的自定义主题
+### 激活您的自定义主题
 
 创建自定义主题后：
 
-1.  转到“菜单” -> “选项”（<span class="tn-icon bx bx-cog"></span>） -> “外观”。
-2.  在主题选择下拉菜单中，你应该能看到你的自定义主题列在你通过 `#appTheme` [标签](../Advanced%20Usage/Attributes.md)提供的名称下。
-3.  选择你的自定义主题以激活它。
+1.  转到“菜单” -> “选项”（<span class="tn-icon bx bx-cog"></span>）-> “外观”。
+2.  在主题选择下拉菜单中，您应该能看到您的自定义主题以您通过 `#appTheme` [标签](../Advanced%20Usage/Attributes.md)提供的名称列出。
+3.  选择您的自定义主题以激活它。
 
-你的自定义主题也会列在<a class="reference-link" href="UI%20Elements/Global%20menu.md">全局菜单</a> → _主题_下，并带有其笔记的图标。
+您的自定义主题也会列在<a class="reference-link" href="UI%20Elements/Global%20menu.md">全局菜单</a> → _主题_下，并带有其笔记的图标。
 
-如果你对主题进行了更改，请按 Ctrl + R 重新加载前端并应用你的更新。
+如果您对主题进行了更改，请按 Ctrl + R 重新加载前端并应用您的更新。
 
 ### 共享和导入主题
 
-自定义主题可以导出为 `.tar` 归档文件，以便与其他用户共享。但是，从不受信任的来源导入主题时要谨慎，因为它们可能包含可执行脚本，从而带来安全风险。
+自定义主题可以导出为 `.tar` 归档文件，可与其他用户共享。但是，从不受信任的来源导入主题时要谨慎，因为它们可能包含可执行脚本，可能带来安全风险。
 
-一个示例用户主题 _Steel Blue_ 可在演示文档中找到。
+演示文档中提供了一个示例用户主题 _Steel Blue_。
 
 ![Steel Blue 主题](Themes_steel-blue.png)
 
 ### 将自定义 CSS 用于特定目的
 
-除了完整的主题外，Trilium 还允许使用不绑定到主题的自定义 CSS。这在脚本编写场景中特别有用，你可能希望修改特定的 UI 元素，例如更改树视图中笔记的颜色。
+除了完整主题外，Trilium 还允许使用不绑定到主题的自定义 CSS。这在脚本编写场景中特别有用，您可能希望修改特定的 UI 元素，例如更改树视图中笔记的颜色。
 
 ### 应用自定义 CSS
 
@@ -101,7 +101,7 @@ body .CodeMirror {
 
 1.  **创建 CSS 代码笔记**：创建一个类型为 `CSS` 的新<a class="reference-link" href="../Note%20Types/Code.md">代码</a>笔记。
 2.  **添加** `appCss` **标签**：使用 `#appCss` [标签](../Advanced%20Usage/Attributes.md)标注该笔记。
-3.  **编写你的 CSS**：将你的自定义 CSS 规则添加到笔记中。
+3.  **编写您的 CSS**：将您的自定义 CSS 规则添加到笔记中。
 
 例如：
 
@@ -112,9 +112,9 @@ body .CodeMirror {
 }
 ```
 
-当 Trilium 的前端启动时，所有标记为 `appCss` 的笔记都会自动包含在 HTML 页面的 style 元素中。
+当 Trilium 的前端启动时，所有标记为 `appCss` 的笔记都会自动包含在 HTML 页面的样式元素中。
 
-进行更改后，按 Ctrl + R 重新加载前端并应用你的新样式。
+进行更改后，按 Ctrl + R 重新加载前端并应用您的新样式。
 
 ![](Themes_image.jpg)
 
@@ -123,9 +123,9 @@ body .CodeMirror {
 要为树中的某些笔记应用特定样式：
 
 *   **使用** `cssClass` **属性**：为笔记添加 `cssClass` [属性](../Advanced%20Usage/Attributes.md)，并为其分配一个表示所需 CSS 类的值。
-*   **定义** `iconClass`：你还可以使用 `iconClass` 属性为笔记定义自定义图标，可从 [Box Icons](https://boxicons.com) 或你自己的自定义类中选择。
+*   **定义** `iconClass`：您还可以使用 `iconClass` 属性为笔记定义自定义图标，可从 [Box Icons](https://boxicons.com) 或您自己的自定义类中选择。
 
-例如，如果你想为特定类型的笔记设置样式，例如包含 PNG 图像的笔记，你可以使用 `type-image mime-image-png` 等类来定位它们。
+例如，如果您想为特定类型的笔记设置样式，例如包含 PNG 图像的笔记，您可以使用 `type-image mime-image-png` 等类来定位它们。
 
 ### 用户提供的主题
 
@@ -133,4 +133,4 @@ body .CodeMirror {
 
 ### 资源路径管理
 
-在自定义主题或 CSS 中引用内置资源（如图像）时，你可以使用 `vX` 别名来避免硬编码版本号。例如，无需指定 `/assets/v0.57.0-beta/images/icon-grey.png`，你可以使用 `/assets/vX/images/icon-grey.png`，以保持你的主题与 Trilium 的未来版本兼容。
+在自定义主题或 CSS 中引用内置资源（如图像）时，您可以使用 `vX` 别名来避免硬编码版本号。例如，无需指定 `/assets/v0.57.0-beta/images/icon-grey.png`，您可以使用 `/assets/vX/images/icon-grey.png` 来保持您的主题与 Trilium 的未来版本兼容。

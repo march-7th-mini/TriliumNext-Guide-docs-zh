@@ -3,13 +3,13 @@
 
 <figure class="image image-style-align-right"><img style="aspect-ratio:255/284;" src="2_General formatting_image.png" width="255" height="284"></figure>
 
-Trilium 提供标题来定义文本中的章节。标题编号从 2 到 6。
+Trilium 提供标题用于在文本中定义章节。标题编号从 2 到 6。
 
 列表中缺少标题 1 的原因是它被保留用于笔记的标题。
 
 要将标题转换回普通文本，请从列表中选择_段落_。
 
-除了使用界面外，还可以使用类似 Markdown 的快捷方式快速插入标题：
+除了使用 UI 之外，也可以使用类似 Markdown 的快捷方式快速插入标题：
 
 *   `##` 用于标题 2
 *   `###` 用于标题 3
@@ -25,7 +25,7 @@ Trilium 提供标题来定义文本中的章节。标题编号从 2 到 6。
 
 为此，请选择一些文本并从_字体大小_（<span class="tn-icon cke cke-font-size"></span>）选择器中选择一个选项（如右图所示）。
 
-与 Microsoft Word 等其他文本编辑器不同，字体大小是相对的（即“极小”、“小”，而不是像 12 这样的数字）。
+与其他文本编辑器（如 Microsoft Word）不同，字体大小是相对的（即“极小”、“小”，而不是像 12 这样的数字）。
 
 避免仅仅为了让所有文本变大而使用此功能。在这种情况下，通常最好在<a class="reference-link" href="../../Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">选项</a>中调整所有笔记的字体大小，或者通过缩放来实现。
 
@@ -33,7 +33,7 @@ Trilium 提供标题来定义文本中的章节。标题编号从 2 到 6。
 
 <figure class="image image-style-align-right"><img style="aspect-ratio:215/71;" src="3_General formatting_image.png" width="215" height="71"></figure>
 
-可以通过格式工具栏中的专用按钮（<span class="tn-icon cke cke-bold"></span>、<span class="tn-icon cke cke-italic"></span>、<span class="tn-icon cke cke-underline"></span>、<span class="tn-icon cke cke-strikethrough"></span>）将文本格式化为**粗体、** _斜体、_ 下划线或 ~~删除线~~。
+文本可以通过格式工具栏中的专用按钮（<span class="tn-icon cke cke-bold"></span>、<span class="tn-icon cke cke-italic"></span>、<span class="tn-icon cke cke-underline"></span>、<span class="tn-icon cke cke-strikethrough"></span>）格式化为**粗体、**_斜体、_下划线或~~删除线~~。
 
 可以使用_移除格式_（<span class="tn-icon cke cke-remove-format"></span>）项轻松移除此格式。
 
@@ -61,17 +61,17 @@ Trilium 提供标题来定义文本中的章节。标题编号从 2 到 6。
 
 <figure class="image image-style-align-right"><img style="aspect-ratio:167/204;" src="1_General formatting_image.png" width="167" height="204"></figure>
 
-可以为选中的文本使用调色板中的预定义颜色之一进行着色，也可以使用颜色选择器（<span class="tn-icon cke cke-color-palette"></span>）选择任意颜色。
+选中的文本可以使用调色板中的预定义颜色之一进行着色，也可以使用颜色选择器（<span class="tn-icon cke cke-color-palette"></span>）选择任意颜色。
 
 一旦文档中至少定义了一种颜色，它就会出现在列表中以便于重复使用。
 
-颜色会适应[主题](../../Basic%20Concepts%20and%20Features/Themes.md)。Trilium 会以适合当前主题的较浅或较深色调显示每种颜色，因此在浅色和深色主题之间切换后文本仍然可读。色相保持不变：红色文本在两个主题中都是红色，只是更浅或更深。这同样适用于调色板、颜色选择器和文档颜色，也适用于共享笔记。打印的笔记和 PDF 导出始终使用浅色主题的色调，适合白纸。笔记本身保留所选颜色，因此导出的笔记会原样显示。
+颜色会适应[主题](../../Basic%20Concepts%20and%20Features/Themes.md)。Trilium 会以适合当前主题的较浅或较深色调显示每种颜色，因此在浅色和深色主题之间切换后文本仍然可读。色相保持不变：红色文本在两个主题中都是红色，只是更浅或更深。这同样适用于调色板、颜色选择器和文档颜色，也适用于共享笔记。字体颜色和背景颜色下拉菜单的色块在示例文本“Ab”上显示相同的色调：作为文本颜色或作为其背景。打印的笔记和 PDF 导出始终使用浅色主题的色调，适合白纸。笔记本身保留所选颜色的原样，因此导出的笔记会原样显示。
 
-使用旧版本 Trilium 应用的颜色会完全按照所选的样子显示，直到笔记下次被编辑。
+使用旧版 Trilium 应用的颜色会完全按照所选的样子显示，直到笔记下次被编辑。
 
 无法适应颜色的旧版浏览器会完全按照所选的样子显示颜色。
 
-当你在 Chrome、Edge 或基于 Chromium 的应用（如 Visual Studio Code）中粘贴从网页复制的文本时，Trilium 会移除页面的样式：
+当在 Chrome、Edge 或基于 Chromium 的应用（如 Visual Studio Code）中粘贴从网页复制的文本时，Trilium 会移除页面的样式：
 
 *   文本和背景颜色。
 *   字体和字体大小。
@@ -99,8 +99,8 @@ Trilium 提供标题来定义文本中的章节。标题编号从 2 到 6。
 
 ## 格式刷
 
-<a class="reference-link" href="Format%20Painter.md">格式刷</a>允许用户复制文本的格式（如粗体、斜体、删除线等）并将其应用到文档的其他部分。它有助于保持一致的格式并加速富内容的创建。
+<a class="reference-link" href="Format%20Painter.md">格式刷</a>允许用户复制文本的格式（如粗体、斜体、删除线等）并将其应用到文档的其他部分。它有助于保持格式一致并加速富内容的创建。
 
 ## 对 Markdown 的支持
 
-当导出为<a class="reference-link" href="../../Basic%20Concepts%20and%20Features/Import%20%26%20Export/Markdown.md">Markdown</a>时，大多数通用格式都会被保留，如标题、粗体、斜体、下划线等。
+导出为<a class="reference-link" href="../../Basic%20Concepts%20and%20Features/Import%20%26%20Export/Markdown.md">Markdown</a>时，大多数通用格式都会被保留，如标题、粗体、斜体、下划线等。
