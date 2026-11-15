@@ -1,8 +1,8 @@
 # ETAPI (REST API)
 > [!TIP]
-> 如需快速上手，请参阅 <a class="reference-link" href="ETAPI%20(REST%20API)/API%20Reference.md">API 参考</a>。
+> 如需快速入门，请参阅 <a class="reference-link" href="ETAPI%20(REST%20API)/API%20Reference.md">API 参考</a>。
 
-ETAPI 是 Trilium 的公共/外部 REST API。自 Trilium v0.50 起可用。
+ETAPI 是 Trilium 的公开/外部 REST API。自 Trilium v0.50 起可用。
 
 ## API 客户端
 
@@ -12,7 +12,9 @@ ETAPI 是 Trilium 的公共/外部 REST API。自 Trilium v0.50 起可用。
 
 ## 获取令牌
 
-所有 REST API 操作都必须使用令牌进行身份验证。你可以从 选项 -> ETAPI 获取此令牌，也可以通过 `/auth/login` REST 调用以编程方式获取（参见[规范](https://github.com/TriliumNext/Trilium/blob/main/apps/server/src/assets/etapi.openapi.yaml)）。启用[多因素身份验证](../Installation%20%26%20Setup/Server%20Installation/Multi-factor%20authentication%20with%20TOTP.md)后，`/auth/login` 还需要在 `totpToken` 中提供一次性密码或恢复代码。
+所有 REST API 操作都必须使用令牌进行身份验证。你可以从 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">选项</a> → _ETAPI_ 获取此令牌，也可以通过 `/auth/login` REST 调用以编程方式获取（参见[规范](https://github.com/TriliumNext/Trilium/blob/main/apps/server/src/assets/etapi.openapi.yaml)）。启用[多因素身份验证](../Installation%20%26%20Setup/Server%20Installation/Multi-factor%20authentication%20with%20TOTP.md)后，`/auth/login` 还需要在 `totpToken` 中提供一次性密码或恢复代码。
+
+令牌会一直有效，直到在 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Options.md">选项</a> → _ETAPI_ 中被删除，或通过 `/auth/logout` 注销。更改密码不会使其失效，包括通过 `/auth/login` 获取的令牌，因此脚本在密码更改后仍可继续工作。
 
 ## 身份验证
 
@@ -58,13 +60,13 @@ NOTE_ID="i6ra4ZshJhgN"
 curl "$SERVER/etapi/notes/$NOTE_ID/content" -H "Authorization: $TOKEN" 
 ```
 
-请确保替换以下各项的值：
+请确保替换以下值：
 
 *   `TOKEN` 替换为你的 ETAPI 令牌。
-*   `SERVER` 替换为正确的协议、主机名和端口，指向你的 Trilium 实例。
+*   `SERVER` 替换为你的 Trilium 实例的正确协议、主机名和端口。
 *   `NOTE_ID` 替换为要下载的现有笔记 ID。
 
-另一个示例，要获取笔记的 .zip 导出并将其放入名为 `out` 的目录中，只需将脚本中的最后一条语句替换为：
+再举一个例子，要获取笔记的 .zip 导出并将其放入名为 `out` 的目录中，只需将脚本中的最后一条语句替换为：
 
 ```
 curl -H "Authorization: $TOKEN" \
@@ -74,7 +76,7 @@ curl -H "Authorization: $TOKEN" \
 
 ## 上传二进制内容
 
-JSON 请求体只能携带文本，因此 `POST /etapi/attachments` 的 `content` 字段会原样存储它接收到的字符串。要上传图片、PDF 或任何其他二进制文件，请将原始字节以 `application/octet-stream` 内容类型发送到内容端点。笔记的内容（`PUT /etapi/notes/{noteId}/content`）也是如此。
+JSON 请求体只能携带文本，因此 `POST /etapi/attachments` 的 `content` 字段会原样存储接收到的字符串。要上传图片、PDF 或任何其他二进制文件，请将原始字节以 `application/octet-stream` 内容类型发送到内容端点。笔记的内容（`PUT /etapi/notes/{noteId}/content`）也是如此。
 
 要将文件附加到笔记，请先创建不带内容的附件，然后将文件上传到该附件：
 
@@ -91,4 +93,4 @@ curl -X PUT "$SERVER/etapi/attachments/$ATTACHMENT_ID/content" \
     --data-binary @report.pdf
 ```
 
-请使用 `--data-binary` 而不是 `-d`，因为后者会去除文件中的换行符。对于图片，请将 `role` 设置为 `image`，并将 `mime` 设置为图片的类型，例如 `image/png`。
+请使用 `--data-binary` 而不是 `-d`，后者会去除文件中的换行符。对于图片，请将 `role` 设置为 `image`，并将 `mime` 设置为图片的类型，例如 `image/png`。
