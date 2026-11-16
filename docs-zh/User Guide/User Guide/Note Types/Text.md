@@ -1,6 +1,6 @@
 # 文本
 
-Trilium 中的默认笔记类型，文本笔记支持富文本格式、表格、图片、警示框以及其他一些功能。
+Trilium 中的默认笔记类型，文本笔记支持富格式、表格、图片、警示框以及其他一些功能。
 
 ## 格式工具栏
 
@@ -8,10 +8,10 @@ Trilium 中的默认笔记类型，文本笔记支持富文本格式、表格、
 
 *   _浮动工具栏_ 默认隐藏，仅在需要时出现。在此模式下实际上有两种不同的工具栏：
     <img src="1_Text_image.png" width="496" height="91"><img src="2_Text_image.png" width="812" height="114">
-*   选中文本时出现的工具栏。它提供文本级别的格式设置，如加粗、斜体、文字颜色、行内代码等。
+*   选中文本时出现的工具栏。这提供了文本级别的格式设置，如加粗、斜体、文本颜色、行内代码等。
     _<img src="Text_image.png" width="1109" height="124">_
 
-更多信息请参见 <a class="reference-link" href="Text/Formatting%20toolbar.md">格式工具栏</a>。
+更多信息请参阅 <a class="reference-link" href="Text/Formatting%20toolbar.md">格式工具栏</a>。
 
 ## 功能与格式
 
@@ -27,7 +27,7 @@ Trilium 中的默认笔记类型，文本笔记支持富文本格式、表格、
     <tbody>
         <tr>
             <td><a class="reference-link" href="Text/General%20formatting.md">通用格式</a></td>
-            <td><ul><li>标题（章节标题、段落）</li><li>字号</li><li>加粗、斜体、下划线、删除线</li><li>上标、下标</li><li>字体颜色与背景颜色</li><li>清除格式</li></ul></td>
+            <td><ul><li>标题（章节标题、段落）</li><li>字体大小</li><li>加粗、斜体、下划线、删除线</li><li>上标、下标</li><li>字体颜色与背景颜色</li><li>清除格式</li></ul></td>
         </tr>
         <tr>
             <td><a class="reference-link" href="Text/Lists.md">列表</a></td>
@@ -63,7 +63,7 @@ Trilium 中的默认笔记类型，文本笔记支持富文本格式、表格、
         </tr>
         <tr>
             <td><a class="reference-link" href="Text/Block%20references.md">块引用</a></td>
-            <td><ul><li>指向笔记中块的链接</li><li>包含笔记中的块</li></ul></td>
+            <td><ul><li>链接到笔记的块</li><li>包含笔记的块</li></ul></td>
         </tr>
         <tr>
             <td><a class="reference-link" href="Text/Insert%20buttons.md">插入按钮</a></td>
@@ -82,19 +82,21 @@ Trilium 中的默认笔记类型，文本笔记支持富文本格式、表格、
 
 ## 只读模式与编辑模式
 
-文本笔记通常以编辑模式打开。但是，如果笔记过大或笔记被明确标记为只读，则可能以只读模式打开。更多信息请参见 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/Notes/Read-Only%20Notes.md">只读笔记</a>。
+文本笔记通常以编辑模式打开。但是，如果笔记过大或笔记被明确标记为只读，则可能以只读模式打开。更多信息请参阅 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/Notes/Read-Only%20Notes.md">只读笔记</a>。
 
 ## 键盘快捷键
 
-有许多键盘快捷键可以在不使用鼠标的情况下格式化文本。有关所有按键组合的参考，请参见 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/Keyboard%20Shortcuts.md">键盘快捷键</a>。此外，请参见 <a class="reference-link" href="Text/Markdown-like%20formatting.md">类 Markdown 格式</a> 作为键盘快捷键的替代方案。
+有许多键盘快捷键可以在不使用鼠标的情况下格式化文本。有关所有按键组合的参考，请参阅 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/Keyboard%20Shortcuts.md">键盘快捷键</a>。此外，请参阅 <a class="reference-link" href="Text/Markdown-like%20formatting.md">类 Markdown 格式</a> 作为键盘快捷键的替代方案。
+
+要使用 Vim 文本编辑器的按键进行编辑，请参阅 <a class="reference-link" href="Text/Vim%20mode.md">Vim 模式</a>。
 
 ## 内容宽度
 
-为了在更宽的屏幕上提高可读性，文本笔记的宽度通过一个可配置选项进行限制。更多信息请参见 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Content%20width.md">内容宽度</a>。
+为了在更宽的屏幕上提高可读性，文本笔记的宽度通过一个可配置选项进行限制。更多信息请参阅 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Content%20width.md">内容宽度</a>。
 
 ## 转换为 Markdown 笔记
 
-文本笔记可以转换为 <a class="reference-link" href="Markdown.md">Markdown</a> 笔记。请参见 <a class="reference-link" href="Converting%20between%20note%20types.md">在笔记类型之间转换</a>。
+文本笔记可以转换为 <a class="reference-link" href="Markdown.md">Markdown</a> 笔记。请参阅 <a class="reference-link" href="Converting%20between%20note%20types.md">在笔记类型之间转换</a>。
 
 ## 技术细节
 

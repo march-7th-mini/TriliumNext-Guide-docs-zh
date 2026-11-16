@@ -7016,6 +7016,56 @@
                 },
                 {
                   "isClone": false,
+                  "noteId": "_zh_qtkmeTZT",
+                  "notePath": [
+                    "pOsGYCXsbNQG",
+                    "KSZ04uQ2D1St",
+                    "iPIMuisry3hd",
+                    "ExlzCSENCWaF"
+                  ],
+                  "title": "可折叠标题",
+                  "notePosition": 60,
+                  "prefix": null,
+                  "isExpanded": false,
+                  "type": "text",
+                  "mime": "text/html",
+                  "attributes": [
+                    {
+                      "type": "label",
+                      "name": "shareAlias",
+                      "value": "collapsible-headings",
+                      "isInheritable": false,
+                      "position": 10
+                    },
+                    {
+                      "type": "label",
+                      "name": "iconClass",
+                      "value": "bx bx-collapse-vertical",
+                      "isInheritable": false,
+                      "position": 20
+                    },
+                    {
+                      "type": "label",
+                      "name": "originalHelpNoteId",
+                      "value": "_help_ExlzCSENCWaF",
+                      "isInheritable": false,
+                      "position": 30
+                    },
+                    {
+                      "type": "label",
+                      "name": "helpDoc",
+                      "value": "zh",
+                      "isInheritable": false,
+                      "position": 40
+                    }
+                  ],
+                  "format": "markdown",
+                  "dataFileName": "Collapsible headings.md",
+                  "attachments": [],
+                  "children": []
+                },
+                {
+                  "isClone": false,
                   "noteId": "_zh_5T6QxL2v",
                   "notePath": [
                     "pOsGYCXsbNQG",
@@ -7024,7 +7074,7 @@
                     "veGu4faJErEM"
                   ],
                   "title": "内容语言与从右到左支持",
-                  "notePosition": 60,
+                  "notePosition": 70,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -7083,7 +7133,7 @@
                     "EK2ckIZ74tbT"
                   ],
                   "title": "内容标签页",
-                  "notePosition": 70,
+                  "notePosition": 80,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -7133,7 +7183,7 @@
                     "2x0ZAX9ePtzV"
                   ],
                   "title": "剪切为子笔记",
-                  "notePosition": 80,
+                  "notePosition": 90,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -7192,7 +7242,7 @@
                     "UYuUB1ZekNQU"
                   ],
                   "title": "开发者专属格式",
-                  "notePosition": 90,
+                  "notePosition": 100,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -7337,7 +7387,7 @@
                     "AgjCISero73a"
                   ],
                   "title": "脚注",
-                  "notePosition": 100,
+                  "notePosition": 110,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -7396,7 +7446,7 @@
                     "5wZallV2Qo1t"
                   ],
                   "title": "格式刷",
-                  "notePosition": 110,
+                  "notePosition": 120,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -7455,7 +7505,7 @@
                     "nRhnJkTT8cPs"
                   ],
                   "title": "格式工具栏",
-                  "notePosition": 120,
+                  "notePosition": 130,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -7538,7 +7588,7 @@
                     "Gr6xFaF6ioJ5"
                   ],
                   "title": "常规格式",
-                  "notePosition": 130,
+                  "notePosition": 140,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -7621,7 +7671,7 @@
                     "AxshuNRegLAv"
                   ],
                   "title": "高亮列表",
-                  "notePosition": 140,
+                  "notePosition": 150,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -7671,7 +7721,7 @@
                     "mT0HEkOsz6i1"
                   ],
                   "title": "图片",
-                  "notePosition": 150,
+                  "notePosition": 160,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -7824,7 +7874,7 @@
                     "VRoP0g1uHHc2"
                   ],
                   "title": "编辑器内 AI 助手",
-                  "notePosition": 160,
+                  "notePosition": 170,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -7929,7 +7979,7 @@
                     "nBAXQFj20hS1"
                   ],
                   "title": "包含笔记",
-                  "notePosition": 170,
+                  "notePosition": 180,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -7972,7 +8022,7 @@
                     "CohkqWQC1iBv"
                   ],
                   "title": "插入按钮",
-                  "notePosition": 180,
+                  "notePosition": 190,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -8124,7 +8174,7 @@
                     "oiVPnW8QfnvS"
                   ],
                   "title": "键盘快捷键",
-                  "notePosition": 190,
+                  "notePosition": 200,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -8174,7 +8224,7 @@
                     "UmgZAfcltxkS"
                   ],
                   "title": "链接预览",
-                  "notePosition": 200,
+                  "notePosition": 210,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -8249,7 +8299,7 @@
                     "QEAPj01N5f7w"
                   ],
                   "title": "链接",
-                  "notePosition": 210,
+                  "notePosition": 220,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -8454,7 +8504,7 @@
                     "S6Xx8QIWTV66"
                   ],
                   "title": "列表",
-                  "notePosition": 220,
+                  "notePosition": 230,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -8553,7 +8603,7 @@
                     "QrtTYPmdd1qq"
                   ],
                   "title": "类 Markdown 格式",
-                  "notePosition": 230,
+                  "notePosition": 240,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -8603,7 +8653,7 @@
                     "YfYAtQBcfo5V"
                   ],
                   "title": "数学公式",
-                  "notePosition": 240,
+                  "notePosition": 250,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -8662,7 +8712,7 @@
                     "wYDzQ1fBFgfT"
                   ],
                   "title": "多栏布局",
-                  "notePosition": 250,
+                  "notePosition": 260,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -8712,7 +8762,7 @@
                     "dEHYtoWWi8ct"
                   ],
                   "title": "其他功能",
-                  "notePosition": 260,
+                  "notePosition": 270,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -8779,7 +8829,7 @@
                     "gLt3vA97tMcp"
                   ],
                   "title": "高级功能",
-                  "notePosition": 270,
+                  "notePosition": 280,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -8829,7 +8879,7 @@
                     "ZlN4nump6EbW"
                   ],
                   "title": "斜杠命令",
-                  "notePosition": 280,
+                  "notePosition": 290,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -8888,7 +8938,7 @@
                     "0vgWgxQAWj4a"
                   ],
                   "title": "排序",
-                  "notePosition": 290,
+                  "notePosition": 300,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -8938,7 +8988,7 @@
                     "oBo3iHIZnbG2"
                   ],
                   "title": "拼写检查",
-                  "notePosition": 300,
+                  "notePosition": 310,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -8988,7 +9038,7 @@
                     "BFvAtE74rbP6"
                   ],
                   "title": "目录",
-                  "notePosition": 310,
+                  "notePosition": 320,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -9038,7 +9088,7 @@
                     "NdowYOC1GFKS"
                   ],
                   "title": "表格",
-                  "notePosition": 320,
+                  "notePosition": 330,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -9121,7 +9171,7 @@
                     "pwc194wlRzcH"
                   ],
                   "title": "文本片段",
-                  "notePosition": 330,
+                  "notePosition": 340,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -9166,7 +9216,7 @@
                     "fASfBrYnquKU"
                   ],
                   "title": "待办列表",
-                  "notePosition": 340,
+                  "notePosition": 350,
                   "prefix": null,
                   "isExpanded": false,
                   "type": "text",
@@ -9214,6 +9264,160 @@
                     }
                   ],
                   "children": []
+                },
+                {
+                  "isClone": false,
+                  "noteId": "_zh_BI4PTU7a",
+                  "notePath": [
+                    "pOsGYCXsbNQG",
+                    "KSZ04uQ2D1St",
+                    "iPIMuisry3hd",
+                    "enVNpi1Njswq"
+                  ],
+                  "title": "Vim 模式",
+                  "notePosition": 360,
+                  "prefix": null,
+                  "isExpanded": false,
+                  "type": "text",
+                  "mime": "text/html",
+                  "attributes": [
+                    {
+                      "type": "label",
+                      "name": "shareAlias",
+                      "value": "vim-mode",
+                      "isInheritable": false,
+                      "position": 10
+                    },
+                    {
+                      "type": "label",
+                      "name": "iconClass",
+                      "value": "bx bx-terminal",
+                      "isInheritable": false,
+                      "position": 20
+                    },
+                    {
+                      "type": "label",
+                      "name": "originalHelpNoteId",
+                      "value": "_help_enVNpi1Njswq",
+                      "isInheritable": false,
+                      "position": 30
+                    },
+                    {
+                      "type": "label",
+                      "name": "helpDoc",
+                      "value": "zh",
+                      "isInheritable": false,
+                      "position": 40
+                    }
+                  ],
+                  "format": "markdown",
+                  "dataFileName": "Vim mode.md",
+                  "attachments": [],
+                  "dirFileName": "Vim mode",
+                  "children": [
+                    {
+                      "isClone": false,
+                      "noteId": "_zh_ecQ1DnxM",
+                      "notePath": [
+                        "pOsGYCXsbNQG",
+                        "KSZ04uQ2D1St",
+                        "iPIMuisry3hd",
+                        "enVNpi1Njswq",
+                        "qxtXjXzFOEn1"
+                      ],
+                      "title": "Vim 入门指南",
+                      "notePosition": 10,
+                      "prefix": null,
+                      "isExpanded": false,
+                      "type": "text",
+                      "mime": "text/html",
+                      "attributes": [
+                        {
+                          "type": "label",
+                          "name": "shareAlias",
+                          "value": "beginner-guide",
+                          "isInheritable": false,
+                          "position": 10
+                        },
+                        {
+                          "type": "label",
+                          "name": "iconClass",
+                          "value": "bx bx-book-reader",
+                          "isInheritable": false,
+                          "position": 20
+                        },
+                        {
+                          "type": "label",
+                          "name": "originalHelpNoteId",
+                          "value": "_help_qxtXjXzFOEn1",
+                          "isInheritable": false,
+                          "position": 30
+                        },
+                        {
+                          "type": "label",
+                          "name": "helpDoc",
+                          "value": "zh",
+                          "isInheritable": false,
+                          "position": 40
+                        }
+                      ],
+                      "format": "markdown",
+                      "dataFileName": "Vim beginner guide.md",
+                      "attachments": [],
+                      "children": []
+                    },
+                    {
+                      "isClone": false,
+                      "noteId": "_zh_xZld2Lci",
+                      "notePath": [
+                        "pOsGYCXsbNQG",
+                        "KSZ04uQ2D1St",
+                        "iPIMuisry3hd",
+                        "enVNpi1Njswq",
+                        "EF1o4L2hif4c"
+                      ],
+                      "title": "Vim 完整参考",
+                      "notePosition": 20,
+                      "prefix": null,
+                      "isExpanded": false,
+                      "type": "text",
+                      "mime": "text/html",
+                      "attributes": [
+                        {
+                          "type": "label",
+                          "name": "shareAlias",
+                          "value": "reference",
+                          "isInheritable": false,
+                          "position": 10
+                        },
+                        {
+                          "type": "label",
+                          "name": "iconClass",
+                          "value": "bx bx-book-content",
+                          "isInheritable": false,
+                          "position": 20
+                        },
+                        {
+                          "type": "label",
+                          "name": "originalHelpNoteId",
+                          "value": "_help_EF1o4L2hif4c",
+                          "isInheritable": false,
+                          "position": 30
+                        },
+                        {
+                          "type": "label",
+                          "name": "helpDoc",
+                          "value": "zh",
+                          "isInheritable": false,
+                          "position": 40
+                        }
+                      ],
+                      "format": "markdown",
+                      "dataFileName": "Vim full reference.md",
+                      "attachments": [],
+                      "children": []
+                    }
+                  ]
                 }
               ]
             },
