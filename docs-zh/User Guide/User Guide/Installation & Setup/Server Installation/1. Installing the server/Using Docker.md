@@ -7,7 +7,7 @@
 
 如果你需要安装 Docker 的帮助，请参考 [Docker 安装文档](https://docs.docker.com/engine/install/)
 
-默认情况下，容器以 root 身份启动，准备数据目录，然后以非特权用户身份运行 Trilium。它也可以完全以非 root 身份运行，如下文 _以非 root 用户身份运行_ 所述。
+默认情况下，容器以 root 身份启动，准备数据目录，然后以非特权用户身份运行 Trilium。它也可以完全以非 root 身份运行，如下文 _以非 root 用户运行_ 所述。
 
 > [!WARNING]
 > 如果你使用 SMB/CIFS 共享或文件夹作为 Trilium 数据目录，[你需要](https://github.com/TriliumNext/Notes/issues/415#issuecomment-2344824400)在挂载 SMB 共享时添加 `nobrl` 和 `noperm` 挂载选项。
@@ -20,13 +20,13 @@
 wget https://raw.githubusercontent.com/TriliumNext/Trilium/master/docker-compose.yml
 ```
 
-可选地，在启动之前编辑 `docker-compose.yml` 文件以配置容器设置。除非另有配置，数据目录将是 `docker-compose.yml` 旁边的 `trilium-data`，容器将可通过端口 8080 访问。
+可选地，在启动之前编辑 `docker-compose.yml` 文件以配置容器设置。除非另有配置，数据目录将是 `docker-compose.yml` 旁边的 `trilium-data`，容器可通过端口 8080 访问。
 
-要将数据保存在其他地方，请编辑 `docker-compose.yml` 中的 `volumes` 条目，并更改冒号前的主机路径（例如 `- /srv/trilium-data:/home/node/trilium-data`）。冒号后的路径保持不变。
+要将数据保存在其他位置，请编辑 `docker-compose.yml` 中的 `volumes` 条目，并更改冒号前的主机路径（例如 `- /srv/trilium-data:/home/node/trilium-data`）。冒号后的路径保持不变。
 
 ### 启动容器：
 
-运行以下命令在后台启动容器：
+运行以下命令以在后台启动容器：
 
 ```
 docker compose up -d
@@ -42,11 +42,11 @@ docker compose up -d
 docker pull triliumnext/trilium:v0.91.6
 ```
 
-**警告：** 避免使用 "latest" 标签，因为它可能会自动将你的实例升级到新的次要版本，可能中断同步设置或导致其他问题。
+**警告：** 避免使用 "latest" 标签，因为它可能会自动将你的实例升级到新的次要版本，从而可能破坏同步设置或导致其他问题。
 
 ### 准备数据目录
 
-Trilium 需要主机系统上的一个目录来存储其数据。此目录必须以写入权限挂载到 Docker 容器中。
+Trilium 需要主机系统上的一个目录来存储其数据。该目录必须以写权限挂载到 Docker 容器中。
 
 ### 运行 Docker 容器
 
@@ -61,7 +61,7 @@ Trilium 需要主机系统上的一个目录来存储其数据。此目录必须
     ```
 
     1.  使用 `docker ps` 验证容器正在运行。
-    2.  通过 Web 浏览器访问 Trilium，地址为 `127.0.0.1:8080`。
+    2.  通过 Web 浏览器在 `127.0.0.1:8080` 访问 Trilium。
 
 === "本地网络访问"
 
@@ -77,7 +77,7 @@ Trilium 需要主机系统上的一个目录来存储其数据。此目录必须
     docker run --net=mynet -d -p 127.0.0.1:8080:8080 -v ~/trilium-data:/home/node/trilium-data triliumnext/trilium:-latest
     ```
 
-    要为保存的数据设置不同的用户 ID (UID) 和组 ID (GID)，请使用 `USER_UID` 和 `USER_GID` 环境变量：
+    要为保存的数据设置不同的用户 ID（UID）和组 ID（GID），请使用 `USER_UID` 和 `USER_GID` 环境变量：
 
     ```sh
     docker run --net=mynet -d -p 127.0.0.1:8080:8080 -e "USER_UID=1001" -e "USER_GID=1001" -v ~/trilium-data:/home/node/trilium-data triliumnext/trilium:-latest
@@ -100,34 +100,34 @@ Trilium 需要主机系统上的一个目录来存储其数据。此目录必须
     	triliumnext/trilium:[VERSION]
     ```
 
-    使用 `docker stop <CONTAINER ID>` 停止容器，其中容器 ID 从 `docker ps` 获取。
+    使用 `docker stop <CONTAINER ID>` 停止容器，其中容器 ID 可从 `docker ps` 获取。
 
 ### 自定义数据目录
 
-要使用自定义数据目录，请使用：
+对于自定义数据目录，请使用：
 
 ```
 -v ~/YourOwnDirectory:/home/node/trilium-data triliumnext/trilium:[VERSION]
 ```
 
-如果你想以非默认方式运行实例，请按如下方式使用卷开关：`-v ~/YourOwnDirectory:/home/node/trilium-data triliumnext/trilium:<VERSION>`。重要的是要了解 Docker 如何处理卷，第一个路径是你自己的路径，第二个是要虚拟绑定的路径。[https://docs.docker.com/storage/volumes/](https://docs.docker.com/storage/volumes/) 冒号前的路径是主机目录，冒号后的路径是容器的路径。更多详情请参见 [Docker 卷文档](https://docs.docker.com/storage/volumes/)。
+如果你想以非默认方式运行实例，请按如下方式使用卷开关：`-v ~/YourOwnDirectory:/home/node/trilium-data triliumnext/trilium:<VERSION>`。重要的是要了解 Docker 如何处理卷，第一个路径是你自己的路径，第二个是要虚拟绑定的路径。[https://docs.docker.com/storage/volumes/](https://docs.docker.com/storage/volumes/) 冒号前的路径是主机目录，冒号后的路径是容器的路径。更多详情可在 [Docker 卷文档](https://docs.docker.com/storage/volumes/) 中找到。
 
 ## 反向代理
 
 1.  [Nginx](../2.%20Reverse%20proxy/Nginx.md)
 2.  [Apache](../2.%20Reverse%20proxy/Apache%20using%20Docker.md)
 
-### 关于时区
+### 关于时区的说明
 
-如果你遇到时区问题且未使用 docker-compose，你可能需要添加一个 `TZ` 环境变量，其值为你本地时区的 [TZ 标识符](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)。
+默认情况下，容器以 UTC 运行。提供的 `docker-compose.yml` 挂载了主机的 `/etc/localtime`，以便容器使用主机的时区。如果主机没有 `/etc/localtime`，或者你没有使用 docker-compose，请使用你本地时区的 [TZ 标识符](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) 设置 `TZ` 环境变量（例如 `TZ=America/New_York`）。
 
 ### 其他环境变量
 
-有关 Trilium 读取的完整环境变量列表（网络设置、身份验证、同步等），请参见 <a class="reference-link" href="../../../Advanced%20Usage/Configuration%20(config.ini%20or%20environment%20variables).md">配置（config.ini 或环境变量）</a>。
+有关 Trilium 读取的完整环境变量列表（网络设置、身份验证、同步等），请参阅 <a class="reference-link" href="../../../Advanced%20Usage/Configuration%20(config.ini%20or%20environment%20variables).md">配置（config.ini 或环境变量）</a>。
 
-## 以非 root 用户身份运行
+## 以非 root 用户运行
 
-默认情况下，容器以 root 身份启动，将数据目录交给 `node` 用户（UID 和 GID 为 `1000`，或 `USER_UID` 和 `USER_GID` 的值），然后以该用户身份运行 Trilium。某些环境完全不允许容器以 root 身份启动，例如无 root 的 Docker 或 Podman，或使用 `runAsNonRoot` 的 Kubernetes。从 v0.107.0 开始，同一镜像可以完全以非 root 用户身份运行。
+默认情况下，容器以 root 身份启动，将数据目录交给 `node` 用户（UID 和 GID 为 `1000`，或 `USER_UID` 和 `USER_GID` 的值），然后以该用户身份运行 Trilium。某些环境完全不允许容器以 root 身份启动，例如无根 Docker 或 Podman，或使用 `runAsNonRoot` 的 Kubernetes。从 v0.107.0 开始，同一镜像可以完全以非 root 用户身份运行。
 
 要以非 root 用户身份运行 Trilium，请使用 Docker 的 `--user` 标志设置用户：
 
@@ -153,10 +153,10 @@ services:
     mkdir -p /srv/trilium-data
     sudo chown 1000:1000 /srv/trilium-data
     ```
-*   使用命名卷而非主机目录仅对 UID `1000` 有效：Docker 会将新卷的所有者设为镜像数据目录的所有者，即 `node` 用户。
+*   使用命名卷而不是主机目录仅适用于 UID `1000`：Docker 会将新卷的所有者设为镜像数据目录的所有者，即 `node` 用户。
 *   `USER_UID` 和 `USER_GID` 会被忽略。用户仅来自 `--user` 或 `user:`。
 
 如果 Trilium 无法使用其数据目录，它会在启动时停止，并打印出它无法使用的目录或文件、其所有者以及修复命令。
 
 > [!NOTE]
-> 以 root 身份运行的安装会将其文件的所有者保留为 UID `1000`，或者如果设置了 `USER_UID` 则为该值。要将其切换为 `--user`，请使用相同的 UID，或先将数据目录交给新用户，例如使用 `sudo chown -R 1001:1001 /srv/trilium-data`。
+> 以 root 身份运行的安装会将其文件的所有者保留为 UID `1000`，如果设置了 `USER_UID` 则为该值。要将其切换为 `--user`，要么使用相同的 UID，要么先将数据目录交给新用户，例如使用 `sudo chown -R 1001:1001 /srv/trilium-data`。

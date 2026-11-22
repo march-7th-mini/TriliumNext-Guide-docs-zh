@@ -1,6 +1,6 @@
 # 指标
 
-Trilium 指标 API 提供了关于你的 Trilium 实例的全面监控数据，专为 Prometheus 等外部监控系统设计。
+Trilium 指标 API 提供关于你的 Trilium 实例的全面监控数据，专为 Prometheus 等外部监控系统设计。
 
 ## 端点
 
@@ -11,7 +11,7 @@ Trilium 指标 API 提供了关于你的 Trilium 实例的全面监控数据，�
 
 ## 身份验证
 
-你需要一个 ETAPI 令牌来访问指标端点。获取方式：
+你需要一个 ETAPI 令牌来访问指标端点。通过以下方式获取：
 
 ```
 # Get an ETAPI token
@@ -62,22 +62,22 @@ curl -X POST http://localhost:8080/etapi/auth/login \
 ### 数据库指标
 
 *   `trilium_notes_total` - 笔记总数（包括已删除）
-*   `trilium_notes_deleted` - 已删除笔记数量
-*   `trilium_notes_active` - 活跃笔记数量
-*   `trilium_notes_protected` - 受保护笔记数量
+*   `trilium_notes_deleted` - 已删除笔记数
+*   `trilium_notes_active` - 活动笔记数
+*   `trilium_notes_protected` - 受保护笔记数
 *   `trilium_attachments_total` - 附件总数
-*   `trilium_attachments_active` - 活跃附件
+*   `trilium_attachments_active` - 活动附件数
 *   `trilium_revisions_total` - 笔记修订总数
-*   `trilium_branches_total` - 活跃分支
-*   `trilium_attributes_total` - 活跃属性
+*   `trilium_branches_total` - 活动分支数
+*   `trilium_attributes_total` - 活动属性数
 *   `trilium_blobs_total` - blob 记录总数
-*   `trilium_etapi_tokens_total` - 活跃 ETAPI 令牌
-*   `trilium_embeddings_total` - 笔记嵌入（如果可用）
+*   `trilium_etapi_tokens_total` - 活动 ETAPI 令牌数
+*   `trilium_embeddings_total` - 笔记嵌入（如可用）
 
 ### 分类指标
 
-*   `trilium_notes_by_type{type="text|code|image|file"}` - 按类型分类的笔记
-*   `trilium_attachments_by_type{mime_type="..."}` - 按 MIME 类型分类的附件
+*   `trilium_notes_by_type{type="text|code|image|file"}` - 按类型统计的笔记
+*   `trilium_attachments_by_type{mime_type="..."}` - 按 MIME 类型统计的附件
 
 ### 统计信息
 
@@ -103,18 +103,12 @@ scrape_configs:
 
 ## 错误响应
 
-*   `400` - 无效的格式参数
+*   `400` - 无效的 format 参数
 *   `401` - 缺少或无效的 ETAPI 令牌
 *   `500` - 内部服务器错误
 
 ## Grafana 仪表板
 
-<figure class="image"><img style="aspect-ratio:2594/1568;" src="1_Metrics_image.png" width="2594" height="1568"></figure>
+<figure class="image"><img style="aspect-ratio:2594/1568;" src="Metrics_image.png" width="2594" height="1568"></figure>
 
-你也可以使用为 TriliumNext 创建的 Grafana 仪表板——只需从 <a class="reference-link" href="Metrics/grafana-dashboard.json">grafana-dashboard.json</a> 获取 JSON，然后按照以下截图导入仪表板：
-
-<figure class="image"><img style="aspect-ratio:1881/282;" src="2_Metrics_image.png" width="1881" height="282"></figure>
-
-然后粘贴 JSON，并点击加载：
-
-<figure class="image"><img style="aspect-ratio:1055/830;" src="Metrics_image.png" width="1055" height="830"></figure>
+你也可以使用为 Trilium 创建的 Grafana 仪表板：从 <a class="reference-link" href="Metrics/grafana-dashboard.json">grafana-dashboard.json</a> 获取 JSON，并通过 _仪表板_ → _新建_ → _导入_ 在 Grafana 中导入：粘贴 JSON 并按下 _加载_。

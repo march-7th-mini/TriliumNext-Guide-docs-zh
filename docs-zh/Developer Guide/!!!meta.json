@@ -4305,6 +4305,48 @@
             },
             {
               "isClone": false,
+              "noteId": "_zh_0wQDcWAD",
+              "notePath": [
+                "jdjRLhLV3TtI",
+                "HMrVxa1lJBKv",
+                "EkzGQJhQgZsP"
+              ],
+              "title": "Markdown 引用",
+              "notePosition": 20,
+              "prefix": null,
+              "isExpanded": false,
+              "type": "text",
+              "mime": "text/html",
+              "attributes": [
+                {
+                  "type": "label",
+                  "name": "iconClass",
+                  "value": "bx bx-anchor",
+                  "isInheritable": false,
+                  "position": 20
+                },
+                {
+                  "type": "label",
+                  "name": "originalHelpNoteId",
+                  "value": "_help_EkzGQJhQgZsP",
+                  "isInheritable": false,
+                  "position": 30
+                },
+                {
+                  "type": "label",
+                  "name": "helpDoc",
+                  "value": "zh",
+                  "isInheritable": false,
+                  "position": 40
+                }
+              ],
+              "format": "markdown",
+              "dataFileName": "Markdown references.md",
+              "attachments": [],
+              "children": []
+            },
+            {
+              "isClone": false,
               "noteId": "_zh_vFmhcwPm",
               "notePath": [
                 "jdjRLhLV3TtI",
@@ -4312,7 +4354,7 @@
                 "Gntibtjmzi7e"
               ],
               "title": "Trilium 备份容器 (.tnbackup) 文件格式",
-              "notePosition": 20,
+              "notePosition": 30,
               "prefix": null,
               "isExpanded": false,
               "type": "text",
