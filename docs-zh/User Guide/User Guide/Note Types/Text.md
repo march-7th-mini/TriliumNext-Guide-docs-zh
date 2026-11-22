@@ -1,15 +1,15 @@
 # 文本
 
-Trilium 中的默认笔记类型，文本笔记支持富格式、表格、图片、警示框以及其他一些功能。
+<figure class="image"><img style="aspect-ratio:1152/720;" src="Text_demo.webp" width="1152" height="720"></figure>
+
+作为 Trilium 中的默认笔记类型，文本笔记支持富文本格式、表格、图片、警示框以及其他一些功能。
 
 ## 格式工具栏
 
-与文本笔记的大多数交互都是通过内置工具栏完成的。根据个人偏好，有两种不同的布局：
+与文本笔记的大多数交互都通过内置工具栏完成。根据个人偏好，有两种不同的布局：
 
-*   _浮动工具栏_ 默认隐藏，仅在需要时出现。在此模式下实际上有两种不同的工具栏：
-    <img src="1_Text_image.png" width="496" height="91"><img src="2_Text_image.png" width="812" height="114">
-*   选中文本时出现的工具栏。这提供了文本级别的格式设置，如加粗、斜体、文本颜色、行内代码等。
-    _<img src="Text_image.png" width="1109" height="124">_
+*   _浮动工具栏_ 默认隐藏，仅在需要时出现。在此模式下，实际上有两种不同的工具栏。
+*   选中文本时出现的工具栏。它提供文本级别的格式设置，如加粗、斜体、文本颜色、行内代码等。
 
 更多信息请参阅 <a class="reference-link" href="Text/Formatting%20toolbar.md">格式工具栏</a>。
 
@@ -63,7 +63,7 @@ Trilium 中的默认笔记类型，文本笔记支持富格式、表格、图片
         </tr>
         <tr>
             <td><a class="reference-link" href="Text/Block%20references.md">块引用</a></td>
-            <td><ul><li>链接到笔记的块</li><li>包含笔记的块</li></ul></td>
+            <td><ul><li>指向笔记中块的链接</li><li>包含笔记中的块</li></ul></td>
         </tr>
         <tr>
             <td><a class="reference-link" href="Text/Insert%20buttons.md">插入按钮</a></td>
@@ -86,13 +86,13 @@ Trilium 中的默认笔记类型，文本笔记支持富格式、表格、图片
 
 ## 键盘快捷键
 
-有许多键盘快捷键可以在不使用鼠标的情况下格式化文本。有关所有按键组合的参考，请参阅 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/Keyboard%20Shortcuts.md">键盘快捷键</a>。此外，请参阅 <a class="reference-link" href="Text/Markdown-like%20formatting.md">类 Markdown 格式</a> 作为键盘快捷键的替代方案。
+有大量键盘快捷键可用于格式化文本，无需使用鼠标。有关所有按键组合的参考，请参阅 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/Keyboard%20Shortcuts.md">键盘快捷键</a>。此外，请参阅 <a class="reference-link" href="Text/Markdown-like%20formatting.md">类 Markdown 格式</a> 作为键盘快捷键的替代方案。
 
 要使用 Vim 文本编辑器的按键进行编辑，请参阅 <a class="reference-link" href="Text/Vim%20mode.md">Vim 模式</a>。
 
 ## 内容宽度
 
-为了在更宽的屏幕上提高可读性，文本笔记的宽度通过一个可配置选项进行限制。更多信息请参阅 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Content%20width.md">内容宽度</a>。
+为了在较宽屏幕上提高可读性，文本笔记的宽度通过一个可配置选项进行限制。更多信息请参阅 <a class="reference-link" href="../Basic%20Concepts%20and%20Features/UI%20Elements/Content%20width.md">内容宽度</a>。
 
 ## 转换为 Markdown 笔记
 
